@@ -1,4 +1,4 @@
-# Download and Build AGL Source Code
+# Download AGL Source Code
 
 The AGL source code and Yocto layers are maintained on the AGL Gerrit server. For information on how to create accounts for gerrit see Getting Started with AGL.
 
@@ -50,13 +50,13 @@ Once you run aglsetup.sh with your desired paramaters, you can build any target 
 
 Here is the list of features for AGL 2.0 that can be specified in the aglsetup.sh command line:
 
-- in meta-agl
-    * agl-devel: activate development options (empty root password, debugger, strace, valgrind …)
-    * agl-netboot: enable network boot support through TFTP and NBD (see meta-netboot layer)
-- in meta-agl-extra
-    * agl-appfw-smack: enables IoT.bzh Application Framework + SMACK + Cynara
-    * agl-demo: enable layer meta-agl-demo and meta-qt5 - required to build     * agl-demo-platform
-    * agl-localdev: add a local layer named “meta-localdev” in meta directory and a local.dev.inc conf file if present
-    * agl-sota: enable SOTA components and dependencies (meta-sota, meta-filesystems, meta-ruby, meta-rust are added)
+- in **meta-agl**
+    * **agl-devel**: activate development options (empty root password, debugger, strace, valgrind …)
+    * **agl-netboot**: enable network boot support through TFTP and NBD (see meta-netboot layer)
+- in **meta-agl-extra**
+    * **agl-appfw-smack**: enables IoT.bzh Application Framework + SMACK + Cynara
+    * **agl-demo**: enable layer meta-agl-demo and meta-qt5 - required to build     * agl-demo-platform
+    * **agl-localdev**: add a local layer named “meta-localdev” in meta directory and a local.dev.inc conf file if present
+    * **agl-sota**: enable SOTA components and dependencies (meta-sota, meta-filesystems, meta-ruby, meta-rust are added)
 
 For newer features or to get more details on a given feature, take a look at the configuration files stored for each feature and/or each machine in meta-agl/templates and meta-agl-extra/templates.
