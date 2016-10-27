@@ -11,8 +11,8 @@ pandoc -N --template=templates/agl.tex --variable mainfont="Arial" --variable sa
 
 # Export HTML
 
-Execute the following command to export a markdown file to HTML:
+Execute the following command to export a markdown file with instructions for Raspberry Pi to HTML:
 
 ```
-pandoc source-code/source-code.md -f markdown -t html -s -S --toc -c templates/html/pandoc.css -B templates/html/header.html -A templates/html/footer.html -o source-code.html
+pandoc source-code/source-code.md source-code/raspberrypi.md source-code/troubleshooting.md -f markdown -t html -s -S --toc -c templates/html/pandoc.css -B templates/html/header.html -A templates/html/footer.html -o raspberrypi.html
 ```
