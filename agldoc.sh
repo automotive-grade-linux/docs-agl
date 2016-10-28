@@ -45,12 +45,16 @@ if [ ! -e $FILEDOC ] ; then
 fi
 
 if [ "pdf" == $DOCTYPE ] ; then
-	FILEEXPORT="$MACHINE.pdf"
 	FILECONFIG="-N --template=templates/pdf/agl.tex --variable mainfont=\"Arial\" --variable sansfont=\"Arial\" --variable monofont=\"Arial\" --variable fontsize=12pt --latex-engine=xelatex --toc"
+elif [ "dokuwiki" == $DOCTYPE ] ; then
+	FILECONFIG="-t dokuwiki"
 else
-	FILEEXPORT="$MACHINE.html"
-	FILECONFIG="-f markdown -t html -s -S --toc -c templates/html/pandoc.css -B templates/html/header.html -A templates/html/footer.html"
+	DOCTYPE="html"
+	FILECONFIG="-f markdown -t html -s -S --toc -c ../templates/html/pandoc.css -B templates/html/header.html -A templates/html/footer.html"
 fi
+
+mkdir -p "$DOCTYPE"
+FILEEXPORT="$DOCTYPE/$MACHINE.$DOCTYPE"
 
 pandoc ../source-code/source-code.md $FILEDOC ../source-code/troubleshooting.md $FILECONFIG -o $FILEEXPORT
 
