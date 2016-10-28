@@ -20,7 +20,7 @@ if [ 1 == $HELP ] ; then
 	printf "Usage: . agldoc.sh [options]\n"
 	printf "Options:\n"
 	printf "\t-m|--machine <machine>\n\t\twhat machine to use\n\t\tdefault: 'all'\n"
-	printf "\t-d|--document <pdf|html>\n\t\twhat document format to use\n\t\tdefault: 'html'\n"
+	printf "\t-d|--document <pdf|html|dokuwiki>\n\t\twhat document format to use\n\t\tdefault: 'html'\n"
 	printf "\t-h|--help\n\t\tget some help\n"
 	exit 0
 fi
