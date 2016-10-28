@@ -1,12 +1,16 @@
 # docs-agl
 AGL Technical Documentation
 
+# Prerequirements
+
+Please install pandoc and its dependencies.
+
 # Export PDF
 
 Execute the following command to export a markdown file to PDF:
 
 ```
-pandoc -N --template=templates/agl.tex --variable mainfont="Arial" --variable sansfont="Arial" --variable monofont="Arial" --variable fontsize=12pt --variable version="Automotive Grade Linux" source-code/source-code.md --latex-engine=xelatex --toc -o source-code.pdf
+./agldoc.sh -m raspberrypi -d pdf
 ```
 
 # Export HTML
@@ -14,5 +18,5 @@ pandoc -N --template=templates/agl.tex --variable mainfont="Arial" --variable sa
 Execute the following command to export a markdown file with instructions for Raspberry Pi to HTML:
 
 ```
-pandoc source-code/source-code.md source-code/raspberrypi.md source-code/troubleshooting.md -f markdown -t html -s -S --toc -c templates/html/pandoc.css -B templates/html/header.html -A templates/html/footer.html -o raspberrypi.html
+./agldoc.sh -m raspberrypi -d html
 ```
