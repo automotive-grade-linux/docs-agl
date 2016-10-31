@@ -5,6 +5,21 @@ MACHINE=all
 DOCTYPE=html
 HELP=0
 
+function exportdoc {
+        FILEDOC="../source-code/machines/$1.md"
+        if [ ! -e $FILEDOC ] ; then
+                echo "Document for $1 not found."
+                exit 1
+        fi
+        FILETROUBLE="../source-code/troubleshooting/$1-troubleshooting.md"
+        if [ ! -e $FILETROUBLE ] ; then
+                FILETROUBLE=""
+        fi
+        FILEEXPORT="$DOCTYPE/$1.$DOCTYPE"
+        pandoc ../source-code/source-code.md $FILEDOC ../source-code/troubleshooting.md $FILETROUBLE $FILECONFIG -o $FILEEXPORT
+        echo "Document exported to $DIRROOT/export/$FILEEXPORT"
+}
+
 while [[ $# -gt 0 ]]
 do
 	case $1 in
@@ -54,18 +69,8 @@ if [ "all" == $MACHINE ] ; then
 	do
 		TARGET=$(basename $TARGET)
 		TARGET=${TARGET%.*}
-		FILEEXPORT="$DOCTYPE/$TARGET.$DOCTYPE"
-		FILEDOC="../source-code/machines/$TARGET.md"
-		pandoc ../source-code/source-code.md $FILEDOC ../source-code/troubleshooting.md $FILECONFIG -o $FILEEXPORT
-		echo "Document exported to $DIRROOT/export/$FILEEXPORT"
+		exportdoc $TARGET
 	done
 else
-	FILEDOC="../source-code/machines/$MACHINE.md"
-	if [ ! -e $FILEDOC ] ; then
-		echo "Document for $MACHINE not found."
-		exit 1
-	fi
-	FILEEXPORT="$DOCTYPE/$MACHINE.$DOCTYPE"
-	pandoc ../source-code/source-code.md $FILEDOC ../source-code/troubleshooting.md $FILECONFIG -o $FILEEXPORT
-	echo "Document exported to $DIRROOT/export/$FILEEXPORT"
+	exportdoc $MACHINE
 fi
