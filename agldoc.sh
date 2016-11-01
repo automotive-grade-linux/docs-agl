@@ -11,7 +11,7 @@ function exportdoc {
                 echo "Document for $1 not found."
                 exit 1
         fi
-        FILETROUBLE="../source-code/troubleshooting/$1-troubleshooting.md"
+        FILETROUBLE="../source-code/footers/$1-footer.md"
         if [ ! -e $FILETROUBLE ] ; then
                 FILETROUBLE=""
         fi
