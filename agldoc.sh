@@ -50,6 +50,7 @@ DIRROOT=$(dirname "$0")
 cd $DIRROOT
 mkdir -p export
 cp -R templates export
+cp -R images export
 cd export
 
 if [ "pdf" == $DOCTYPE ] ; then
