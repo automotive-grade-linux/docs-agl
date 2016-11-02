@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+OBJECTS=$(patsubst %.md,%.wiki,$(wildcard *.md))
+
+all: $(OBJECTS)
+	@echo "To clean objects: $(lastword $(MAKEFILE_LIST)) clean"
+
+.PHONY: clean
+clean:
+	@echo "Cleaning objects..."
+	rm -f $(OBJECTS)
+	@echo "Done."
+
+%.wiki: %.md
+	@echo "Converting $< to $@ ..."
+	@pandoc --from=markdown --to=dokuwiki -o $@ $<
