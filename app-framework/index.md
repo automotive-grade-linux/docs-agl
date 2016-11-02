@@ -32,7 +32,7 @@ Temporarily, a static documentation has been made in PDF format:
 
 Some extra guides are also available in PDF format:
 
-* [Build 1st Application](http://iot.bzh/download/public/2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf)
+* [Build your 1st AGL Application](http://iot.bzh/download/public/2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf)
 * Applications Templates are available on [github:iotbzh/app-framework-templates](https://github.com/iotbzh/app-framework-templates)
 
 ### Bindings Examples
@@ -45,12 +45,12 @@ Some bindings are  available to quickstart new projects:
 * Radio - see [gerrit:src/app-framework-binder](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;a=tree;f=bindings/radio;hb=master)
 * Audio - see [gerrit:src/app-framework-binder](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;a=tree;f=bindings/audio;hb=master)
 
-The list is not exhaustive. ***Please add your own bindings here !***
+The list is not exhaustive. ***Please add other bindings here !***
 
 
 ### Demos
 
-* Legacy Tizen HTML5 Demos are available on [github:iotbzh/afm-widget-examples](https://github.com/iotbzh/afm-widget-examples)
+* Simple HTML5 Demos apps (ported from Tizen) on [github:iotbzh/afm-widget-examples](https://github.com/iotbzh/afm-widget-examples)
 * Installable package with [TXC Demo Application](http://iot.bzh/download/public/2016/afb-demos/txc-demo_0.1.wgt)
 * Applications available in [gerrit:app-framework-demo](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-demo.git;a=summary)
 
@@ -62,15 +62,16 @@ The list is not exhaustive. ***Please add your own bindings here !***
 * Feb 16 - [Application & Security Framework Proposal AGL 2.0](http://iot.bzh/download/public/2016/security/Security-Proposal-AGL20-Fulup.pdf)
 * Jan 16 - [Security Architecture Proposal](http://iot.bzh/download/public/2016/security/Security-Architecture-AGL20.pdf)
 
-
 ## History
 
 ### Motivation for rewriting the App. Framework
 
 To get the background and motivation on why Application Framework has been rewritten:
+
 * [Tizen Security: lessons learnt](http://iot.bzh/download/public/2015/tizen-security-lessons-learnt-initial.pdf)
 * [this discussion](https://lists.linuxfoundation.org/pipermail/automotive-discussions/2016-October/002749.html)
-* * [Linux Automotive Security](http://iot.bzh/download/public/2016/security/Linux-Automotive-Security-v10.pdf)
+* [Linux Automotive Security](http://iot.bzh/download/public/2016/security/Linux-Automotive-Security-v10.pdf)
+
 
 ### Comparison/Relationship with Tizen
 
