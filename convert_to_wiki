@@ -13,4 +13,8 @@ clean:
 
 %.wiki: %.md
 	@echo "Converting $< to $@ ..."
-	@pandoc --from=markdown --to=dokuwiki -o $@ $<
+	@echo "**IMPORTANT NOTE**: //This page has been generated from a Markdown file located on https://github.com/automotive-grade-linux/docs-agl. Please edit the source document for any modification.//" >$@
+	@echo >>$@
+	@pandoc --from=markdown --to=dokuwiki -o $@.tmp $<
+	@cat $@.tmp >>$@; rm $@.tmp
+	
