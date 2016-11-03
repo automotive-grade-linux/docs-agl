@@ -6,18 +6,18 @@ DOCTYPE=html
 HELP=0
 
 function exportdoc {
-        FILEDOC="../source-code/machines/$1.md"
+        FILEDOC="../getting-started/machines/$1.md"
         if [ ! -e $FILEDOC ] ; then
                 echo "Document for $1 not found."
                 exit 1
         fi
-        FILETROUBLE="../source-code/footers/$1-footer.md"
+        FILETROUBLE="../getting-started/footers/$1-footer.md"
         if [ ! -e $FILETROUBLE ] ; then
                 FILETROUBLE=""
         fi
         FILEEXPORT="$DOCTYPE/$1.$DOCTYPE"
-        pandoc ../source-code/source-code.md $FILEDOC ../source-code/troubleshooting.md $FILETROUBLE $FILECONFIG -o $FILEEXPORT
-        echo "Document exported to $DIRROOT/export/$FILEEXPORT"
+        pandoc ../getting-started/source-code.md $FILEDOC ../getting-started/troubleshooting.md $FILETROUBLE $FILECONFIG -o $FILEEXPORT
+        echo "Document exported to $DIREXPORT/$FILEEXPORT"
 }
 
 while [[ $# -gt 0 ]]
@@ -48,10 +48,11 @@ esac
 
 DIRROOT=$(dirname "$0")
 cd $DIRROOT
-mkdir -p export
-cp -R templates export
-cp -R images export
-cd export
+mkdir -p ../export
+cp -R ../templates ../export
+cp -R ../images ../export
+cd ../export
+DIREXPORT=`pwd`
 
 if [ "pdf" == $DOCTYPE ] ; then
 	FILECONFIG="-N --template=templates/pdf/agl.tex --variable mainfont=\"Arial\" --variable sansfont=\"Arial\" --variable monofont=\"Arial\" --variable fontsize=12pt --latex-engine=xelatex --toc"
@@ -66,7 +67,7 @@ mkdir -p "$DOCTYPE"
 
 if [ "all" == $MACHINE ] ; then
 	echo "Exporting documentation for all machines."
-	for TARGET in ../source-code/machines/*.md
+	for TARGET in ../getting-started/machines/*.md
 	do
 		TARGET=$(basename $TARGET)
 		TARGET=${TARGET%.*}
