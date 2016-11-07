@@ -4,20 +4,25 @@
 MACHINE=all
 DOCTYPE=html
 HELP=0
+TOOLDIR=$(cd $(dirname $0) && pwd -P)
+TOPDIR=$(cd $TOOLDIR/.. && pwd -P)
+DOCDIR=$TOPDIR/getting-started
+EXPORTDIR=$TOPDIR/export
 
 function exportdoc {
-        FILEDOC="../getting-started/machines/$1.md"
+        FILEDOC="$DOCDIR/machines/$1.md"
         if [ ! -e $FILEDOC ] ; then
                 echo "Document for $1 not found."
                 exit 1
         fi
-        FILETROUBLE="../getting-started/footers/$1-footer.md"
+        FILETROUBLE="$DOCDIR/footers/$1-footer.md"
         if [ ! -e $FILETROUBLE ] ; then
                 FILETROUBLE=""
         fi
-        FILEEXPORT="$DOCTYPE/$1.$DOCTYPE"
-        pandoc ../getting-started/source-code.md $FILEDOC ../getting-started/troubleshooting.md $FILETROUBLE $FILECONFIG -o $FILEEXPORT
-        echo "Document exported to $DIREXPORT/$FILEEXPORT"
+        FILEEXPORT="$EXPORTDIR/$DOCTYPE/$1.$DOCTYPE"
+		mkdir -p $(dirname $FILEEXPORT)
+        pandoc $DOCDIR/source-code.md $FILEDOC $DOCDIR/troubleshooting.md $FILETROUBLE $FILECONFIG -o $FILEEXPORT
+        echo "Document exported to $FILEEXPORT"
 }
 
 while [[ $# -gt 0 ]]
@@ -31,8 +36,8 @@ do
 	shift
 done
 
-if [ 1 == $HELP ] ; then
-	printf "Usage: . agldoc.sh [options]\n"
+if [[ 1 == $HELP ]] ; then
+	printf "Usage: . $(basename $0) [options]\n"
 	printf "Options:\n"
 	printf "\t-m|--machine <machine>\n\t\twhat machine to use\n\t\tdefault: 'all'\n"
 	printf "\t-d|--document <pdf|html|dokuwiki>\n\t\twhat document format to use\n\t\tdefault: 'html'\n"
@@ -46,32 +51,35 @@ case $MACHINE in
 	qemux86-64|qemux86) MACHINE=qemu;;
 esac
 
-DIRROOT=$(dirname "$0")
-cd $DIRROOT
-mkdir -p ../export
-cp -R ../templates ../export
-cp -R ../images ../export
-cd ../export
-DIREXPORT=`pwd`
 
-if [ "pdf" == $DOCTYPE ] ; then
-	FILECONFIG="-N --template=templates/pdf/agl.tex --variable mainfont=\"Arial\" --variable sansfont=\"Arial\" --variable monofont=\"Arial\" --variable fontsize=12pt --latex-engine=xelatex --toc"
-elif [ "dokuwiki" == $DOCTYPE ] ; then
-	FILECONFIG="-t dokuwiki"
-else
-	DOCTYPE="html"
-	FILECONFIG="-f markdown -t html -s -S --toc -c ../templates/html/pandoc.css -B templates/html/header.html -A templates/html/footer.html"
-fi
+case $DOCTYPE in
+	pdf)
+		DOCTYPE=pdf
+		mkdir -p $EXPORTDIR/$DOCTYPE/
+		FILECONFIG="-N --template=$TOOLDIR/templates/pdf/agl.tex --variable mainfont=\"Arial\" --variable sansfont=\"Arial\" --variable monofont=\"Arial\" --variable fontsize=12pt --latex-engine=xelatex --toc"
+		;;
+	dokuwiki|wiki)
+		DOCTYPE=dokuwiki
+		mkdir -p $EXPORTDIR/$DOCTYPE/
+		FILECONFIG="-t dokuwiki"
+		;;
+	html)
+		DOCTYPE=html
+		mkdir -p $EXPORTDIR/$DOCTYPE/
+		cp -R $DOCDIR/images $EXPORTDIR/$DOCTYPE/
+		FILECONFIG="-f markdown -t html -s -S --toc -c $TOOLDIR/templates/html/pandoc.css -B $TOOLDIR/templates/html/header.html -A $TOOLDIR/templates/html/footer.html"
+		;;
+	*)
+		echo "Unknown doctype '$DOCTYPE'." >&2
+		exit 1
+		;;
+esac
 
-mkdir -p "$DOCTYPE"
-
-if [ "all" == $MACHINE ] ; then
+if [[ "all" == $MACHINE ]] ; then
 	echo "Exporting documentation for all machines."
-	for TARGET in ../getting-started/machines/*.md
+	for TARGET in $DOCDIR/machines/*.md
 	do
-		TARGET=$(basename $TARGET)
-		TARGET=${TARGET%.*}
-		exportdoc $TARGET
+		exportdoc $(basename $TARGET .md)
 	done
 else
 	exportdoc $MACHINE

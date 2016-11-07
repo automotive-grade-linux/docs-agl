@@ -45,7 +45,7 @@ It is possible to debug AGL images on Raspberry Pi using 3.3V USB to serial cabl
 * Connect the RX line of the cable (GREEN wire if you are using Olimex USB-Serial-Cable-F) to pin 8 (TX line) of Raspberry Pi,
 * Connect the TX line of the cable (RED wire if you are using Olimex USB-Serial-Cable-F) to pin 10 (RX line) of Raspberry Pi.
 
-![Olimex USB-Serial-Cable-F attached to Raspberry PI 2 for debugging through the serial console](../images/RaspberryPi2-ModelB-debug-serial-cable.jpg)
+![Olimex USB-Serial-Cable-F attached to Raspberry PI 2 for debugging through the serial console](images/RaspberryPi2-ModelB-debug-serial-cable.jpg)
 
 * Plug the USB connector of the cable to your computer and use your favorite tool for serial communication, for example on Ubuntu and other Linux distributions you may use screen:
 
