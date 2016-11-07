@@ -6,7 +6,7 @@ DOCTYPE=html
 HELP=0
 TOOLDIR=$(cd $(dirname $0) && pwd -P)
 TOPDIR=$(cd $TOOLDIR/.. && pwd -P)
-DOCDIR=$TOPDIR/getting-started
+DOCDIR=$TOPDIR/docs/getting-started
 EXPORTDIR=$TOPDIR/export
 
 function exportdoc {
