@@ -1,0 +1,27 @@
+{
+  "name": "websdocs-doctools",
+  "version": "0.0.1",
+  "description": "WebDocs Tools for Technical Documentation by IoT.bzh",
+  "main": "echo \"not specified\" && exit 1",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {},
+  "author": "Fulup Ar Foll & Stephane Desneux based on https://github.com/apache/cordova-docs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fs-extra": "^0.11.1",
+    "glob": "^7.0.3",
+    "js-yaml": "^3.2.2",
+    "less": "^2.5.1",
+    "minimist": "^1.2.0",
+    "q": "^1.4.1",
+    "simplecrawler": "^0.7.0",
+    "walk": "^2.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/automotive-grade-linux/docs-agl"
+  },
+  "homepage": "https://docs.automotivelinux.org"
+}
