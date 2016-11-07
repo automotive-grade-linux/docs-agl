@@ -1,0 +1,6 @@
+[submodule "external/app-framework-binder"]
+	path = external/app-framework-binder
+	url = https://git.automotivelinux.org/gerrit/p/src/app-framework-binder.git
+[submodule "external/app-framework-main"]
+	path = external/app-framework-main
+	url = https://git.automotivelinux.org/gerrit/p/src/app-framework-main.git

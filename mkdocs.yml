@@ -1,0 +1,13 @@
+site_name: AGL Documentation
+repo_url: https://github.com/automotive-grade-linux/docs-agl
+edit_uri: edit/master/docs/
+#pages:
+#- Home: 'index.md'
+#- User Documentation:
+#    - 'Getting started': 'user/getting-started/index.md'
+#- Developer Documentation:
+#    - '
+extra_css: [ agl.css ]
+#theme: 'readthedocs'
+#theme: 'readable'
+#theme: 'cosmo'
