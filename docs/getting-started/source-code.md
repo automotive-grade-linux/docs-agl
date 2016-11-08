@@ -13,10 +13,10 @@ chmod a+x ~/bin/repo
 ```
 ## Download Latest Stable Release
 
-To download all layers for the for the latest stable release, Blowfish 2.0.2:
+To download all layers for the for the latest stable release, Blowfish 2.0.3:
 
 ```
-repo init -b blowfish -m default_blowfish_2.0.2.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b blowfish -m default_blowfish_2.0.3.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
