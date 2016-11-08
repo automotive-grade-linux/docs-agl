@@ -65,9 +65,13 @@ case $DOCTYPE in
 		;;
 	html)
 		DOCTYPE=html
+		EXPORTTEMPLATES=$EXPORTDIR/$DOCTYPE/templates
 		mkdir -p $EXPORTDIR/$DOCTYPE/
 		cp -R $DOCDIR/images $EXPORTDIR/$DOCTYPE/
-		FILECONFIG="-f markdown -t html -s -S --toc -c $TOOLDIR/templates/html/pandoc.css -B $TOOLDIR/templates/html/header.html -A $TOOLDIR/templates/html/footer.html"
+		# Delete the old and copy the latest templates
+		rm -rf $EXPORTTEMPLATES
+		cp -R $TOOLDIR/templates/html  $EXPORTTEMPLATES
+		FILECONFIG="-f markdown -t html -s -S --toc -c templates/pandoc.css -B $EXPORTTEMPLATES/header.html -A $EXPORTTEMPLATES/footer.html"
 		;;
 	*)
 		echo "Unknown doctype '$DOCTYPE'." >&2
