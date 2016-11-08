@@ -14,19 +14,15 @@
  * limitations under the License.
  */
 
-var path= require("path");
-
 // Default config will be:
 //  - completed with default from DOCS_TOOLS/conf/AppDefault.js
 //  - superseaded by ProjectRoot/.config-???.js $HOME/.config-???.js /etc/default/config-???.js
+
 config = {
     
     DST_PROD   : "build-prod",
     DST_DEVL   : "build-dev",
     VER_CURRENT: "2.x",
-    
-    SITE_DIR   : "site",
-    DOCS_TOOLS : "../doctools/webdocs",
     
     PUSH_DEST  : "apache@some.sample.server:/srv/www/docs/",
     CRAWL_PROD : "http://some.sample.server/",

@@ -5,10 +5,10 @@
 version-renames:
     "master": "dev"
     "1.0": "1.x"
-	"2.0": "2.x"
-	"2.0.1": "2.x"
-	"2.0.2": "2.x"
-	"2.0.3": "2.x"
+    "2.0": "2.x"
+    "2.0.1": "2.x"
+    "2.0.2": "2.x"
+    "2.0.3": "2.x"
 
 # 302 (temporary) renames of languages
 #language-renames:

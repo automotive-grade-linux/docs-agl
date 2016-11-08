@@ -14,33 +14,38 @@
  * limitations under the License.
  */
 
+var path=require('path');
 var fs = require('fs');
 
-function Config (extention) {
+function Config (extension) {
    'use strict';
-   var values=[];
+   var values={};
    var conf;
 
-   if (!extention) extention='.js';
-   else extention= extention + '.js';
+   if (!extension) extension='.js';
+   else extension= extension + '.js';
 
-   // Configs file path last one supersead first one.
-   var files= [__dirname + "/../../conf/AppDefaults.js", "/etc/default/noderc"+ extention, process.env.NODERC, process.env.HOME + "/.noderc"+ extention , __dirname +"/../../.noderc.js" ];
+   // Configs file path last one superseeds first one.
+   var files= [
+	  "/etc/default/noderc"+extension,
+	  path.join(process.env.HOME,".noderc"+extension),
+	  process.env.NODERC,
+      path.join(__dirname,"../conf/AppDefaults.js"),
+   ];
 
    // Parse any existing files within config list & merge them
    for (var idx in files) { 
       if (files[idx]) {
-        //console.log ("files=", files[idx]);  
-        if (fs.existsSync (files[idx])) conf=require (files[idx]);
+        if (fs.existsSync (files[idx])) {
+			console.log ("Loading tool config file "+files[idx]);  
+			conf=require(files[idx]);
+		}
         for (var i in conf) values[i] = conf[i];
       }     
    }
-   
- // set path to search for node_module within parent directory
- process.env.NODE_PATH= process.env.NODE_PATH + '../node_modules';
    
  // console.log ("values=", values);
  return values;
 }
 
-module.exports = Config();
+module.exports = Config;

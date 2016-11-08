@@ -27,17 +27,19 @@ function remove(argv, path) {
 }
 
 // main
-function main (config, argv, nextRequest) {
+function main (config, argv) {
     
     var targetVersion  = config.VERSION_TAGDEV;
     var targetLanguage = config.LANG_DEFAULT;
     
 
+    remove(argv,path.join (config.CONFIG_DIR, config.VERSION_RELEASE));
     remove(argv,config.DST_DEVL);
     remove(argv,config.DST_PROD);
     remove(argv,path.join (config.TOCS_DIR, config.VER_CURRENT));
     remove(argv,config.ALL_PAGES_FILE);
     remove(argv,path.join (config.TOCS_DIR,config.DEFAULTS_FILE));
+	remove(argv,path.join(config.DATA_DIR, "tocs",config.DEFAULTS_FILE));
     remove(argv,path.join(config.DATA_DIR, "tocs", "*", "*.yml"));
     remove(argv,path.join (config.DATA_DIR, "tocs","*",config.VERSION_FILE));
     
@@ -48,14 +50,6 @@ function main (config, argv, nextRequest) {
     }
     
     if (argv.verbose) console.log ("  + clean_all done");
-}
-
-// if started as a main and not as module, then process test.
-if (process.argv[1] === __filename) {
-    var config= require("../lib/_Config")("docs");
-    var argv = require('minimist')(process.argv.slice(2));
-
-    main(config, argv, undefined);
 }
 
 module.exports = main;

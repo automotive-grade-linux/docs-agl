@@ -76,12 +76,4 @@ function main(config, argv) {
     } else if (argv.verbose)  console.log ("  + gen_htlm done");
 }
 
-
-// if started as a main and not as module, then process test.
-if (process.argv[1] === __filename) {
-    var argv = require('minimist')(process.argv.slice(2));
-    var config= require("../lib/_Config")("docs");
-    main(config, argv);
-}
-
 module.exports = main;

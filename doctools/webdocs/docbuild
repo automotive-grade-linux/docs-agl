@@ -21,15 +21,17 @@
 var path= require("path");
 
 var argv  = require("minimist")(process.argv.slice(2));
+if (argv.verbose) console.log ("Start cmd=%s", process.argv[1]);
+
 var utils = require(__dirname + "/lib/_Utils");
-var config= utils.GetConfig("agl");
+var config= utils.GetConfig("docs");
 
 function main () {
     
-  process.chdir (path.dirname (process.argv[1]));  
+  process.chdir(path.join(config.SITE_DIR,".."));
+  console.log("Moving to %s",path.resolve("."));
   
   var success=0;  
-  if (argv.verbose) console.log ("Start cmd=%s", process.argv[1]);
   
   if (argv.all) {
      argv.build=true;
@@ -113,12 +115,12 @@ function main () {
       console.log ('   --serve (run localhost devel httpd)');
       console.log ('   --watch (watch for Markdown & Template update)');
       console.log ('   --profile (stat analysis on build time)');
-      console.log (' --site=xxx (force documents source default="%s")', config.DOCS_DIR);
+      console.log (' --site=xxx (adjust documents source default="%s")', config.SITE_DIR);
       console.log (' --clean (clean all generated files)');
       console.log (' --fetch [--dumponly --force] (update references from git default=%s)', config.FETCH_CONFIG);
       console.log (' --push  (push site to "%s")', config.PUSH_DEST);
       console.log (' --crawl [--prod] (check invalid links)');
-      console.log (' --configs (vers+defs+tocs+defs)');
+      console.log (' --config (vers+defs+dict+tocs)');
       console.log (' --build (config+html)');
       console.log (' --all (build+push [but not fetch])');
       console.log (' --verbose (display steps)');

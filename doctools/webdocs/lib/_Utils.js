@@ -21,23 +21,35 @@ var argv= require("minimist")(process.argv.slice(2));
 var config; // will be set at 1st getConfig call
 var requests = [];
 
-var GetConfig= function (extention) {
+var toolspath=path.resolve(path.join(__dirname,".."));
+
+var GetConfig=function (extension) {
     
     if (!config) {
-        
-        // Make sure we get site config first
-        var sitecfg= require(__dirname+"/_Config")(extention);
-
-        // get site main variable before loading tools default config
-        if (argv.docstool && typeof argv.docstool === "string") {
-            sitecfg.DOCS_TOOLS= argv.docstool;
+    
+		// copy site path if specified
+		var sitedir="site";
+        if (argv.site && typeof argv.site === "string") {
+            sitedir = argv.site;
         }
+		sitedir=path.resolve(sitedir);
 
-        process.env.SITE_PATH = sitecfg.SITE_DIR || "site";
+		// export for other config files
+        process.env.SITE_DIR = sitedir;
+
+        // Make sure we get site config first
+        var toolcfg=require(__dirname+"/_Config")(extension);
+
+		var siteconf=path.resolve(path.join(sitedir, "../conf/AppDefaults.js"));
+		if (!fs.existsSync(siteconf)) {
+			console.log("Site configuration file not found in %s. Please specify correct site dir with option --site=...",siteconf);
+			process.exit(1);
+		}
         try {
-            config= require(path.join("..", sitecfg.DOCS_TOOLS, "/tools/lib/_Config"));
+			console.log("Loading site config at %s",siteconf);
+            config=require(siteconf);
         } catch(error){
-            console.log ("Hoop --doctool=xxx needed (DocTools not at: [%s])\n-- %s", sitecfg.DOCS_TOOLS, error);
+            console.log ("Invalid configuration file %s -- %s",siteconf,error);
             process.exit(1);
         }
         
@@ -45,15 +57,18 @@ var GetConfig= function (extention) {
         if (config.LANG_DEFAULT) process.env.LANG_DEFAULT=config.LANG_DEFAULT;
 
         // load DocsTools config and merge it local config
-        for (var value in sitecfg) config[value] = sitecfg[value];  
+        for (var value in toolcfg) config[value] = toolcfg[value];  
+
+		// override SITE_DIR
+		config.SITE_DIR=sitedir;
     }
     return config;
 };
 
 var RequestQueue = function (filename) {
-    var docstool = require (path.join("..", config.DOCS_TOOLS, filename));
+    var docstool = require(path.join(toolspath, filename));
     if (typeof docstool !== "function") {
-        console.log ("HOOP: not a valid node.js function [%s]", path.join (config.DOCS_TOOLS, filename));
+        console.log ("HOOP: not a valid node.js function [%s]", path.join(toolspath, filename));
         process.exit(1);
     }
     
@@ -85,8 +100,6 @@ var UtilMethods = {
   ExecQueue     : ExecQueue,
   
   LAST: undefined
-  };
-  
-
+};
 
 module.exports = UtilMethods;

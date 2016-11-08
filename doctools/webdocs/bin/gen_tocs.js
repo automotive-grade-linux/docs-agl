@@ -76,20 +76,12 @@ function main (config, argv) {
     var tocs = fs.readdirSync(config.TOCS_DIR);
     for (var item in tocs) {
         var tocDir  = path.join (config.TOCS_DIR, tocs[item]);
-        var verFile = path.join (config.TOCS_DIR, tocs[item], config.VERSION_LASTEST);
+        var verFile = path.join (config.TOCS_DIR, tocs[item], config.VERSION_LATEST);
         
         genToc (argv, config, tocDir, tocs[item]);
     }
     if (argv.verbose) console.log ("  + get_tocs done");
 
-}
-
-// if started as a main and not as module, then process test.
-if (process.argv[1] === __filename) {
-    var config= require("../lib/_Config")("docs");
-    var argv = require('minimist')(process.argv.slice(2));
-
-    main(config, argv);
 }
 
 module.exports = main;

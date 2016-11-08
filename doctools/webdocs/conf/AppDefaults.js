@@ -14,20 +14,17 @@
  * limitations under the License.
  */
 
-var path= require("path");
-var argv= require("minimist")(process.argv.slice(2));
+var path=require("path");
 
-// try to get SITE_DIR from cli arguments or from environment variables
-var SITE_DIR=argv.site;
-if (!SITE_DIR) SITE_DIR= process.env.SITE_PATH;
+var SITE_DIR=process.env.SITE_DIR; // must be set before by caller (_Util.js)
 if (!SITE_DIR || (typeof SITE_DIR !== "string")) {
-    console.log ("HOOPS: SITE_PATH env var not defined please use --site=xxxx");
+    console.log ("HOOPS: SITE_DIR env var not defined please use --site=xxxx");
     process.exit(1);
 }
 
 var LANG_DEFAULT= process.env.LANG_DEFAULT || 'en';
 
-// Default config will be superseaded by ProjectRoot/.config-jkl.js $HOME/.config-l4a.js /etc/default/config-jkl.js
+// default config, superseeded by $SITE_DIR/conf/AppDefaults.js
 config = {
     
     DST_PROD   : "build-prod",
@@ -40,7 +37,7 @@ config = {
     
     VER_CURRENT   : "xx.x",
     VERSION_TAGDEV    : 'dev',
-    VERSION_LASTEST   : 'latest.yml', 
+    VERSION_LATEST    : 'latest.yml', 
     VERSION_RELEASE   : '_release.yml', 
     VERSION_FILE      : '_versions.yml', 
     DEFAULTS_FILE     : '_defaults.yml',

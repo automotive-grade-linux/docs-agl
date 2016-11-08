@@ -268,7 +268,7 @@ function main (conf, argv, nextRequest) {
     for (var item in tocs) {
         var tocDir   = path.join (config.TOCS_DIR, tocs[item]);
         var fetchconf= path.join (config.TOCS_DIR, tocs[item], config.FETCH_CONFIG);
-        var version  = path.join (config.TOCS_DIR, tocs[item], config.VERSION_LASTEST);
+        var version  = path.join (config.TOCS_DIR, tocs[item], config.VERSION_LATEST);
         
         if (fs.existsSync(fetchconf)) {
             FetchFiles (argv, tocs[item], fetchconf, version);
@@ -279,14 +279,6 @@ function main (conf, argv, nextRequest) {
             
     if (argv.verbose) console.log ("  + fetch_docs in progress count=%d", getCount);
     return true; // do not run nextRequest imediatly
-}
-
-
-// if started as a main and not as module, then process test.
-if (process.argv[1] === __filename) {
-    var config= require("../lib/_Config")("docs");
-    var argv = require('minimist')(process.argv.slice(2));
-    main(config, argv);
 }
 
 module.exports = main;

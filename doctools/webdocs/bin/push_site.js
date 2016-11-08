@@ -58,12 +58,4 @@ function main (config, argv) {
     exec (command, optAtgs, { stdio: 'inherit' });
 }
 
-// if started as a main and not as module, then process test.
-if (process.argv[1] === __filename) {
-    var config= require("../lib/_Config")("docs");
-    var argv = require('minimist')(process.argv.slice(2));
-
-    main(config, argv);
-}
-
 module.exports = main;
