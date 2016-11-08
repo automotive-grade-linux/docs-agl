@@ -56,6 +56,8 @@ case $DOCTYPE in
 	pdf)
 		DOCTYPE=pdf
 		mkdir -p $EXPORTDIR/$DOCTYPE/
+		# Go to the docs directory to have accsss to images
+		cd $DOCDIR
 		FILECONFIG="-N --template=$TOOLDIR/templates/pdf/agl.tex --variable mainfont=\"Arial\" --variable sansfont=\"Arial\" --variable monofont=\"Arial\" --variable fontsize=12pt --latex-engine=xelatex --toc"
 		;;
 	dokuwiki|wiki)
