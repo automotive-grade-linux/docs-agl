@@ -56,6 +56,8 @@ case $DOCTYPE in
 	pdf)
 		DOCTYPE=pdf
 		mkdir -p $EXPORTDIR/$DOCTYPE/
+		# Go to the docs directory to have accsss to images
+		cd $DOCDIR
 		FILECONFIG="-N --template=$TOOLDIR/templates/pdf/agl.tex --variable mainfont=\"Arial\" --variable sansfont=\"Arial\" --variable monofont=\"Arial\" --variable fontsize=12pt --latex-engine=xelatex --toc"
 		;;
 	dokuwiki|wiki)
@@ -65,9 +67,13 @@ case $DOCTYPE in
 		;;
 	html)
 		DOCTYPE=html
+		EXPORTTEMPLATES=$EXPORTDIR/$DOCTYPE/templates
 		mkdir -p $EXPORTDIR/$DOCTYPE/
 		cp -R $DOCDIR/images $EXPORTDIR/$DOCTYPE/
-		FILECONFIG="-f markdown -t html -s -S --toc -c $TOOLDIR/templates/html/pandoc.css -B $TOOLDIR/templates/html/header.html -A $TOOLDIR/templates/html/footer.html"
+		# Delete the old and copy the latest templates
+		rm -rf $EXPORTTEMPLATES
+		cp -R $TOOLDIR/templates/html  $EXPORTTEMPLATES
+		FILECONFIG="-f markdown -t html -s -S --toc -c templates/pandoc.css -B $EXPORTTEMPLATES/header.html -A $EXPORTTEMPLATES/footer.html"
 		;;
 	*)
 		echo "Unknown doctype '$DOCTYPE'." >&2
