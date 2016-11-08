@@ -1,0 +1,13 @@
+
+{% for entry in include.entries %}
+{% if entry.url != null %}
+<li>
+    <a class="{% if include.my_entry == entry.url %}this-page{% endif %}" href="{{ include.version_root }}{{ entry.url }}">
+        {{ entry.name }}
+    </a>
+</li>
+{% endif %}
+{% if entry.children %}
+{% include toc_recursive_dropdown.html entries=entry.children my_entry=include.my_entry version_root=version_root %}
+{% endif %}
+{% endfor %}

@@ -1,0 +1,20 @@
+# WARNING: 
+#  - TOC should reference .HTML and .md (Index OK but Error 404)
+#  - do not forget ./buid --tocs after any changes 
+
+-
+    name: Introduction to AGL project
+    children:
+        - url: reference/ap/main/overview.html
+        - url: reference/ap/binder/afb-overview.html
+        - url: reference/ap/binder/afb-bindings-overview.html
+-
+    name: Booting AGL on your target
+    children:
+        - url: reference/ap/main/afm-system-daemon.html
+        - url: reference/ap/main/afm-user-daemon.html
+        - url: reference/ap/binder/afb-application-writing.html
+        - url: reference/ap/binder/afb-bindings-writing.html
+        
+
+ 

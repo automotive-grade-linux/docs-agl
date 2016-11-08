@@ -1,0 +1,116 @@
+---
+---
+
+###############################################################################
+# WARNING
+###############################################################################
+# Only modify this file if you know what you're doing. This file has
+# the potential to make pages become PERMANENTLY UNREACHABLE. If in
+# doubt, refer to these links:
+#
+# RewriteRule       - http://httpd.apache.org/docs/current/mod/mod_rewrite.html
+# RewriteRule flags - http://httpd.apache.org/docs/current/rewrite/flags.html
+# .htaccess tester  - http://htaccess.madewithlove.be/
+#
+# And remember: three-oh-ONE (301) menas you get ONE chance to get it right;
+#               three-oh-TWO (302) means you get TWO chances.
+###############################################################################
+
+# set error pages
+ErrorDocument 404 {{site.baseurl}}/404.html
+
+# turn off automatic directory indices
+Options -Indexes
+
+# turn on redirection
+Options +FollowSymLinks
+RewriteEngine on
+
+# NOTE:
+#      Some of the below redirects are 302s, and some are 301s. 302s are used
+#      for redirects whose targets change sometimes. For example:
+#          - /docs/          -> /docs/fr/, /docs/en/, etc.
+#          - /docs/en/       -> /docs/en/dev/, /docs/en/latest/, etc.
+#          - /docs/en/latest -> /docs/en/4.0.0/, /docs/en/5.0.0/, etc.
+#
+#      301s are for PERMANENT redirects. These are used only for mapping old
+#      pages to new pages.
+#
+# NOTE:
+#      (\w\w(?:-\w\w)?)                   - regex for languages
+#      (?:\d+\.(?:\d+\.\d+|x))|dev|latest - regex for versions
+#
+# NOTE:
+#      Meanings of some of the flags at the ends of rules:
+#
+#      L  - terminal rule; if it applies, no more rules are checked
+#      R  - redirect (followed by code)
+#      NE - no escaping special characters
+
+# 302 (temporary):
+#
+#     docs/         -> docs/[default language]/latest/
+#     docs/*        -> docs/*/latest/
+#     docs/*/       -> docs/*/latest/
+#     docs/*/latest -> docs/*/latest/
+#
+RewriteRule ^.*docs/$ {{site.baseurl}}/docs/{{site.language}}/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)$ {{site.baseurl}}/docs/$1/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/$ {{site.baseurl}}/docs/$1/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/latest$ {{site.baseurl}}/docs/$1/latest/ [R=302,L]
+
+# 302 (temporary):
+#
+#     docs/*/XX/* -> docs/*/YY/*
+#
+{% for redirect in site.data.redirects.version-renames %}RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/{{redirect[0]}}/(.*)$ {{site.baseurl}}/docs/$1/{{redirect[1]}}/$2 [R=302,L]
+{% endfor %}
+
+# 302 (temporary):
+#
+#     docs/XX/* -> docs/YY/*
+#
+{% for redirect in site.data.redirects.language-renames %}RewriteRule ^.*docs/{{redirect[0]}}/((?:\d+\.(?:\d+\.\d+|x))|dev|latest)/(.*)$ {{site.baseurl}}/docs/{{redirect[1]}}/$1/$2 [R=302,L]
+{% endfor %}
+
+# 301 (PERMANENT):
+#
+#     old docs pages -> new docs pages (global)
+#
+# NOTE:
+#       The first part of the path (i.e. the ".*") is thrown away and replaced
+#       by site.baseurl. It is thrown away because there is no RewriteCond to
+#       control whether the rewrite happens to a URI or a local file path
+#       (when Apache is locating the local file to serve).
+{% for redirect in site.data.redirects.docs-global %}RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/((?:\d+\.(?:\d+\.\d+|x))|dev|latest)/{{redirect[0]}}$ {{site.baseurl}}/docs/$1/$2/{{redirect[1]}} [NE,R=301,L]
+{% endfor %}
+
+# 301 (PERMANENT):
+#
+#     old docs pages -> new docs pages (version-specific)
+#
+{% for redirect in site.data.redirects.docs %}RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/{{redirect[0]}}$ {{site.baseurl}}/docs/$1/{{redirect[1]}} [NE,R=301,L]
+{% endfor %}
+
+# 301 (PERMANENT):
+#
+#     old pages -> new pages
+#
+{% for redirect in site.data.redirects.general %}RewriteRule ^.*/{{redirect[0]}}$ {{site.baseurl}}/{{redirect[1]}} [NE,R=301,L]
+{% endfor %}
+
+# rewrite only:
+#
+#     /docs/XX/latest/* -> /docs/XX/Y.Y.Y/*
+#
+# NOTE:
+#       This does NOT return a redirect. It returns the resource *as if* the
+#       redirected URI was requested. That is, both URIs return the same
+#       resource, but the browser won't change the URI (no redirects followed).
+#
+# NOTE:
+#       This needs to be *after* the docs redirects because they might need the
+#       "/latest/" to be in the URI in order to activate. Placing this rule
+#       before them will rewrite "/latest/" to the latest version and redirects
+#       for "/latest/some/path.html" will never activate.
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/latest/(.*)$ {{site.baseurl}}/docs/$1/{{site.latest_docs_version}}/$2 [L]

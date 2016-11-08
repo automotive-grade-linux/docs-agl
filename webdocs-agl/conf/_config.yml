@@ -1,0 +1,111 @@
+# NOTE:
+#      some of the settings in this file get overwritten in later config
+#      files like _prod.yml, _dev.yml, and _defaults.yml
+
+# =======
+# Site settings
+# =======
+title:          "AGL WebDocs"
+title_suffix:   "Contributed initially by IoT.bzh"
+url:            "http://docs.automotivelinux.org" # the base hostname & protocol
+description:    AGL (Automotive Grade Linux) Developer Website
+
+baseurl:        "" # the subpath of the site, e.g. /blog; NOTE: no trailing slash
+docsurl:        "/docs" # docsearch entry point 
+rss_path:       /misc/feed.xml
+
+
+excerpt_separator: <!--more-->
+
+# the version to which /latest/ points
+# NOTE:
+#      this value gets overwritten in _version.yml, which is a generated file
+latest_docs_version: dev  # overloaded by AppDefault.js
+
+# the docs version that is shown by default when clicking on docs links on the site
+default_linked_docs_version: latest
+
+# the language that serves as the source for the translations
+src_language: en
+
+# NOTE:
+#      this value _might_ get overwritten on some pages;
+#      see _defaults.yml, which is a generated file
+language: en
+
+# Note: I did not find a way to have more than one SASS dir in search path
+sass:
+    sass_dir: static/styles/scss
+    # style   : compressed
+
+urls:
+    edit_git : https://github.com/automotive-grade-linux/docs-agl/blob/master/site/
+
+logo:
+    navbar  :  /static/img/iot_bzh_full.svg
+    textonly:  /static/img/iot_bzh_full.svg
+    stamp   :  /static/img/iot_bzh_stamp_white.png
+    icone   :  /static/img/iot_bzh_icone.svg
+    
+message:
+    indev : "Draft version of documentation under development may change!"
+    
+ganalytics: xxxxxxxx    
+
+# NOTE:
+#      this value gets overwritten in _defaults.yml, which is a generated file
+defaults:
+
+# =======
+# Build settings 
+# =======
+source:      www           # overloaded by AppDefaults.js
+destination: build-dev     # overloaded by AppDefaults.js
+
+# don't erase these files in the output directory
+keep_files: [".git", ".svn", "wiki-images", "images", "downloads"]
+
+lsi:  false # don't produce an index for related posts
+safe: false # disables plugins
+
+
+# this is default github rendering engine
+markdown: kramdown
+kramdown:
+    input: GFM
+    hard_wrap: false
+    syntax_highlighter: rouge
+    toc_levels: "2,3"
+    
+graph: # ~~~ UML-style-class
+    def_style: simple 
+    tag_uml  : UML 
+    tag_flow : FLOW
+    debug    : false
+    
+# exclude these directories from the build
+exclude:
+    - static/css-src
+    
+algolia: # https://community.algolia.com/docsearch/
+    index : "TBD"
+    apikey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    
+disqus: # check https://disqus.com/admin
+    name: "TBD"
+    devmode: 0
+    
+twitter:
+    hashtag: autogradelinux
+    widgetid: 629424968011386884
+    
+slack:
+    host: https://agl.slack.com
+    
+linkto:
+    jira_specs  : https://jira.automotivelinux.org/browse/TEST-10?jql=
+    jira_users  : https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel
+    code_contrib: https://git.automotivelinux.org/gerrit/#/q/status:open
+    mail_lists  : https://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions
+    
+    

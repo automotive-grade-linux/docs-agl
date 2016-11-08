@@ -1,0 +1,13 @@
+-   title: Dev Mailing List
+    links:
+        -   label: Writing to the list
+            text: automotive-discussions@lists.linuxfoundation.org. 
+            href: mailto:automotive-discussions@lists.linuxfoundation.org. 
+
+        -   label: Browse online
+            text: Dev Mailing List Archive
+            href: http://callback.markmail.org/search/?q=#query:%20list%3Aorg.apache.incubator.callback-dev+page:1+state:facets
+    description: >
+        The Dev mailing list is a place for discussion about developing AGL.
+        <br/>If you are ab AGK user looking for help, use the <a href="http://stackoverflow.com/questions/tagged/agl">AGL tag on Stack Overflow</a>.
+

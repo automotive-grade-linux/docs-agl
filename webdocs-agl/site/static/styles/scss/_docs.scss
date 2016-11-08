@@ -1,0 +1,407 @@
+.docs {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+
+    /* this is so that wide images don't stick out of their paragraphs */
+    p {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    pre {
+        word-wrap: normal;
+
+        code {
+            overflow: auto;
+            white-space: pre;
+        }
+    }
+    .row {
+        margin: 0px;
+    }
+
+    /*
+     * Used to style the platform logos in xml references. Uses the mark element
+     * because we hijack the markdown highlight syntax using js (e.g. ==android==).
+     * See www/static/js/docs.js
+     */
+    mark {
+        display: inline-block;
+        height:30px;
+        background-color: #ffffff;
+    }
+
+    mark.logo {
+        background-image:url($baseurl+'/static/img/platform-logos-all-sprite.svg');
+        width:35px;
+        background-size: 385px 35px;
+    }
+
+    mark.android    { background-position: 0 }
+    mark.ios        { background-position: 10%; }
+    mark.windows    { background-position: 20%; }
+    mark.blackberry { background-position: 30%; }
+    mark.ubuntu     { background-position: 40%; }
+    mark.firefox    { background-position: 50%; }
+    mark.webos      { background-position: 60%; }
+    mark.fireos     { background-position: 70%; }
+    mark.osx        { background-position: 80.8%; }
+    mark.browser    { background-position: 92.2%; }
+
+    .sub-header {
+        color: #6d6d6d;
+        font-size: 9pt;
+        display: block;
+        min-width: 120px;
+        font-weight: 300;
+    }
+
+    .site-toc-title {
+        font-weight: 300;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+
+    /* outer ToC for the site */
+    .site-toc-container {
+        position: fixed;
+        height: 100%;
+        overflow-y: scroll;
+        background: $gray-85;
+
+        .site-toc {
+
+            /* NOTE: the bottom padding is special because it offsets the header */
+            padding-top: 35px;
+            padding-bottom: 80px;
+            padding-left: 55px;
+            padding-right: 10px;
+
+            li {
+                list-style: none;
+            }
+            > li {
+                font-size: 16px;
+                font-weight: 600;
+                padding-top: 0.05em;
+                line-height: 30px;
+                a {
+                    color: white;
+                    &.this-page {
+                        font-weight: bold;
+                    }
+                }
+                .entry-highlight {
+                    width: 200%;
+                    position: absolute;
+                    height: 31px;
+                    background-color: #d60c3f;
+                    opacity: 0.7;
+                    margin-left: -100%;
+                    z-index: -1;
+                }
+            }
+            .toc-section-heading {
+                font-size: 30px;
+                font-weight: 300;
+                margin: 0.3em 0em 0.3em 0em;
+                display: block;
+                color: $brand-primary;
+            }
+
+            /* NOTE: this is not a mistake; .site-toc gets nested inside itself */
+            .site-toc {
+                padding-left: 15px;
+                padding-right: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                .toc-section-heading {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /* non-IE scrollbar styling */
+    .site-toc-container::-webkit-scrollbar {
+        width: 13px;  /* for vertical scrollbars */
+        height: 13px; /* for horizontal scrollbars */
+    }
+    .site-toc-container::-webkit-scrollbar-track {
+        background-color: black;
+    }
+    .site-toc-container::-webkit-scrollbar-thumb {
+        background-color: $gray-70;
+    }
+
+    /* IE-only scrollbar styling */
+    .site-toc-container {
+        scrollbar-arrow-color: $gray-70;
+        scrollbar-face-color: $gray-70;
+        scrollbar-highlight-color: black;
+        scrollbar-shadow-color: $gray-70;
+    }
+
+    .page-content-container {
+        padding: 0px;
+        .page-content {
+            margin-bottom: 20px;
+            .header-link {
+                position: relative;
+                left: 0.5em;
+                opacity: 0;
+                font-size: 0.7em;
+
+                -webkit-transition: opacity 0.2s ease-in-out 0.1s;
+                -moz-transition: opacity 0.2s ease-in-out 0.1s;
+                -ms-transition: opacity 0.2s ease-in-out 0.1s;
+            }
+            h1:hover .header-link,
+            h2:hover .header-link,
+            h3:hover .header-link,
+            h4:hover .header-link,
+            h5:hover .header-link,
+            h6:hover .header-link {
+                opacity: 1;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                color: #2C7185;
+            }
+            h1 {
+                font-size: 48px;
+                font-weight: 300;
+            }
+            h2 {
+                color: #D60C3F;
+                font-size: 30px;
+                font-weight: 300;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            h3, h4, h5, h6 {
+                font-weight: 600;
+            }
+        }
+    }
+
+    /* inner ToC for the page */
+    .page-toc ul {
+        padding: 0px;
+    }
+    .page-toc ul > li {
+        padding: 0.05em 0em 0.05em 1em;
+        font-size: 14px;
+        font-weight: 300;
+    }
+    .page-toc ul > li.toc-active {
+        font-weight: bold;
+    }
+
+    /* Quick fix to remove redundant TOC entries */
+    .page-toc li:first-of-type {
+        display: none;
+    }
+
+    /* header above page content */
+    .content-header {
+        text-align: right;
+        margin-top: 22px;
+
+        /* this trick sets spacing _between_ items in .content-header, but _not inside_ them */
+        word-spacing: 0.3em;
+        * {
+            word-spacing: 0em;
+        }
+
+        .alert {
+            text-align: left;
+        }
+        .dropdown, .edit {
+            margin-top: 0.3em;
+            margin-bottom: 0.3em;
+            display: inline-block;
+        }
+        .edit {
+            line-height: 32px;
+        }
+        .dropdown.toc-dropdown {
+            text-align: center;
+            width: 100%;
+            button {
+                width: 100%;
+            }
+        }
+        .dropdown {
+            .dropdown-menu {
+                left: inherit;
+                right: 0;
+            }
+            .selected {
+                font-weight: bold;
+                font-style: italic;
+            }
+            button.dropdown-toggle {
+                border-radius: 4px;
+                background-color: rgb(214, 214, 214);
+                &:hover {
+                    background-color: rgb(191, 191, 191);
+                }
+            }
+        }
+    }
+    .alert.alert-warning.alert-dismissible {
+        margin-top: 15px;
+    }
+
+    /* missing page highlight */
+    .missing-page {
+        color: gray !important;
+    }
+
+    table {
+        @extend .table;
+        @extend .table-bordered;
+    }
+
+    .docs-alert {
+        margin-top: 22px;
+    }
+
+    /* Formatting for compatibility table on plugin docs page */
+    .compat {
+        td {
+            text-align: center;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
+            padding:2px;
+        }
+        th {
+            text-align: center;
+        }
+
+        /* Not compataible (pink with X) */
+        .n::before {
+            margin-right: 5px;
+            content: "\2718";
+        }
+        .n {
+            background-color: pink;
+            margin-right: 5px;
+        }
+
+        /* Is compataible (green with check) */
+        .y::before {
+            margin-right: 5px;
+            content: "\2714";
+        }
+        .y {
+            background-color: lightgreen;
+        }
+
+        /* Partially compataible */
+        .p {
+            background-color: khaki;
+        }
+    }
+
+    .hooks {
+        td[data-col="description"] {
+            text-align: left;
+            vertical-align: middle;
+        }
+        td[rowspan="2"], th[colspan="3"], td[data-col="code"] {
+            text-align: center;
+            vertical-align: middle;
+        }
+        td[data-col="description"] {
+            text-align: left;
+            vertical-align: middle;
+        }
+    }
+
+    /* Styling for the /docs/language/version/index.html pages */
+    .home {
+        h1 {
+            border-bottom: 1px solid #919395;
+            font-size: 37px !important;
+        }
+        h2 {
+            padding: 0px;
+            display: block;
+            font-size: 27px !important;
+        }
+        .summary {
+            font-size: 14px;
+            height: 60px;
+            display: inline-block;
+        }
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        ul li {
+            display: inline-block;
+            vertical-align: top;
+            list-style: none;
+            margin: 0px 15px;
+            width: 250px;
+        }
+    }
+
+    /* Styling for old /docs/language/version/index.html pages */
+    #old-home {
+        h1 {
+            border-bottom: 1px solid #919395;
+            padding-bottom: 20px;
+            margin: 30px 0px;
+        }
+        h2 {
+            font-weight: normal;
+            margin: 0px 0px 10px 0px;
+            padding: 0px;
+            display: block;
+            font-size: 18px;
+            color: #266172;
+        }
+        h2:after {
+            content: '';
+        }
+        span {
+            font-size: 14px;
+        }
+        ul {
+            float: left;
+            margin: 0px;
+            padding: 0px;
+        }
+        ul li {
+            float: left;
+            list-style: none;
+            margin-bottom: 20px;
+            padding: 0px 20px;
+            width: 240px;
+            height: 120px;
+        }
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    .header-link {
+        opacity: 1 !important;
+    }
+}
+
+/* Workaround for the spacing on the Russian /docs/ru/version/index.html pages */
+html[lang="ru"] .docs .home .summary {
+    height: 100px;
+}
+html[lang="ru"] .docs #old-home ul li {
+    height: 160px;
+}

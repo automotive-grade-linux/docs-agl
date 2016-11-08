@@ -1,0 +1,18 @@
+---
+analytics_id: {{ site.ganalytics }}
+---
+
+<!DOCTYPE html>
+<html lang="{% if page.language %}{{ page.language }}{% else %}{{ site.language }}{% endif %}">
+{% include head.html %}
+<body>
+    {{ content }}
+    <script defer type="text/javascript" src="{{ site.baseurl }}/static/js/twitter.js"></script>
+    {% include algolia.html %}
+            
+    {% for script in layout.scripts %}
+        <script src="{{ site.baseurl }}/static/js/{{script}}"></script>
+    {% endfor %}
+
+</body>
+</html>

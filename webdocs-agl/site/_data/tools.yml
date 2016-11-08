@@ -1,0 +1,21 @@
+# -   name: Example Tool
+#     image: sometool.png
+#     url: http://example.com
+#     description: >
+#         A description that can
+#         span multiple lines.
+
+-   name: MyTool1 - The first tool
+    image: tool1.png
+    url: https://mytool1.com
+    description: >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.a
+		Sed sem odio, tincidunt in odio ac, cursus vestibulum arcu.
+
+-   name: MyTool2 - The second application
+    image: tool2.png
+    url: https://mytool2.com
+    description: >
+	    Donec felis mauris, placerat quis sollicitudin ac, vehicula eget mi. 
+		Nullam suscipit elementum euismod. Duis et convallis ex, at congue risus.
+

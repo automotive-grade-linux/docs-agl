@@ -1,0 +1,16 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="{% if page.language %}{{ page.language }}{% else %}{{ site.language }}{% endif %}">
+{% include head.html %}
+<body>
+    
+     <h3><a href="{{ site.docsurl }}/architecture/en/{{ site.default_linked_docs_version }}/">Achitecture Guideline</a></h3>
+     <h3><a href="{{ site.docsurl }}/bindings/en/{{ site.default_linked_docs_version }}/">Services & API</a></h3>
+     <h3><a href="{{ site.docsurl }}/hardware/en/{{ site.default_linked_docs_version }}/">Supported Hardware</a></h3>
+     <h3><a href="{{ site.docsurl }}/quickstart/en/{{ site.default_linked_docs_version }}/">Quick Start</a></h3>
+
+    {% include algolia.html %}
+</body>
+</html>

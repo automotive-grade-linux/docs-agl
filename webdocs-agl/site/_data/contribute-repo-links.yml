@@ -1,0 +1,53 @@
+-   title: AGL-Core
+    projects:
+    -   project: Meta-AGL
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/AGL/meta-agl
+
+    -   project: AGL-JTA-Code
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/AGL-JTA-core
+
+-   title: AGL-Extra
+    projects:
+    -   project: Application Framework
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/src/app-framework-main
+        mirror: https://github.com/iotbzh/afb-main
+
+    -   project: Application Binder
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/src/app-framework-binder
+        mirror: https://github.com/iotbzh/afb-daemon
+
+    -   project: Most Driver
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/src/most
+
+    -   project: Can/Lin Driver
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/src/can-lin
+
+    
+-   title: AGL-Staging
+    projects:
+    -   project: AudioManagerPlugin
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/staging/AudioManagerPlugins
+        
+    -   project: Most-Can-Plugin
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/staging/most-can-demo-bin
+        
+    -   project: QT-HomeScreen
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/staging/HomeScreen
+        
+    -   project: Meta-IOT-AGL
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/staging/meta-iot-agl
+        
+    -   project: Qt-Wayland
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/staging/qtwayland
+        
+    -   project: Wayland-IVI-Extension
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/staging/wayland-ivi-extension
+
+
+-   title: AGL-Demos/POCs
+    projects:
+    -   project: CES2016
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/AGL/DemoApps/CES2016
+        
+    -   project: ALS2016
+        gerrit: https://gerrit.automotivelinux.org/gerrit/#/admin/projects/AGL/DemoApps/ALS2016

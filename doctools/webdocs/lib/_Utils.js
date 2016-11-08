@@ -26,7 +26,7 @@ var GetConfig= function (extention) {
     if (!config) {
         
         // Make sure we get site config first
-        var sitecfg= require(__dirname+"/lib/_Config")(extention);
+        var sitecfg= require(__dirname+"/_Config")(extention);
 
         // get site main variable before loading tools default config
         if (argv.docstool && typeof argv.docstool === "string") {

@@ -1,0 +1,57 @@
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ site.baseurl }}/"><img id="logo_top" src="{{ site.baseurl }}{{ site.logo.navbar }}"/></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_center">
+                    <ul class="nav navbar-nav">
+                        <li {% if page.specs_tab %}class="active"{% endif %}>
+                            <a href="{{ site.docsurl }}/architecture/en/{{ site.default_linked_docs_version }}/">ArchitectureGuide</a>
+                        </li>
+                        
+                        <li {% if page.specs_tab %}class="active"{% endif %}>
+                            <a href="{{ site.docsurl }}/quickstart/en/{{ site.default_linked_docs_version }}/">GetStarted</a>
+                        </li>
+                                                
+                        <li {% if page.appfw_tab %}class="active"{% endif %}>
+                            <a href="{{ site.docsurl }}/bindings/en/{{ site.default_linked_docs_version }}/">API&Services</a>
+                        </li>
+
+                        <li {% if page.appfw_tab %}class="active"{% endif %}>
+                            <a href="{{ site.docsurl }}/hardware/en/{{ site.default_linked_docs_version }}/">HardwareSupport</a>
+                        </li>
+
+                        <li {% if page.blog_tab %}class="active"{% endif %}>
+                            <a href="{{ site.baseurl }}/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                        </li>
+                        <li {% if page.contribute_tab %}class="active"{% endif %}>
+                            <a href="{{ site.baseurl }}/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    {% if page.version %}
+                                        {% assign version = page.version %}
+                                    {% else %}
+                                        {% assign version = site.latest_docs_version %}
+                                    {% endif %}
+                                    <input id="header-search-field" type="text" placeholder="Search '{{ version }}' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>

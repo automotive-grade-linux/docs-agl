@@ -1,0 +1,45 @@
+# REFERENCE ENTRY:
+# -
+#   url_fetch : gitweb fetch URL (format string with token %repo% %uri%
+#      GERRIT_FETCH=  "https://gerrit.automotivelinux.org/gerrit/gitweb?p=%repo%;a=blob_plain;f=%source%;hb=%commit%"
+#      GITHUB_FETCH= "https://raw.githubusercontent.com/%repo%/%commit%/%source%"
+#   repository: git repository name
+#      GITHUB_EDIT= "https://raw.github.com/%repo%/blob/%commit%/%source%"
+#   git_commit: git commit when not default
+#   destination_prefix: optional destination prefix 
+#   documents:
+#     -
+#       source  : "source patch within url_fetch"
+#       destination  : "optional: destination path default=path.join(destination_prefix+source)"
+#       label: "optional: friendly name for submenu default=basename(source) overloaded by file content"
+#       title: "optional: info about document (default label, overloaded by file content)"
+#
+
+url_fetch  : "GITHUB_FETCH"
+url_edit   : "GITHUB_EDIT"
+git_commit : "master"
+#dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
+
+repositories:
+    
+- 
+    git_name   : "apache/cordova-cli"
+    documents  :
+    - 
+        label: "cordova"
+        source: "doc/readme.md"
+        destination: "cordova-cli/index.md"
+
+-   
+    git_name:  "apache/cordova-plugin-battery-status"
+    documents:
+    -    
+        source: "README.md"
+        destination: "cordova-plugin-battery-status/index.md"
+
+-        
+    git_name:  "apache/cordova-plugin-camera"
+    documents:
+    -
+        source: "README.md"
+        destination: "cordova-plugin-camera/index.md"
