@@ -1,5 +1,10 @@
-# WARNING: should reference .HTML and not .MD
+# WARNING: 
+#  - TOC should reference .HTML and .md (Index OK but Error 404)
+#  - do not forget to run 'docbuild --tocs' after any changes 
 
+name: Bindings
+template: generated_index.html
+children:
 -
     name: Introduction
     children:

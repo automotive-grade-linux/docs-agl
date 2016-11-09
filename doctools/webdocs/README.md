@@ -20,10 +20,12 @@ Add Gem SCSS with "sudo gem install sass"
 
 On OpenSuse on any other Linux plateform installation should be as simple as
 ```
+ sudo zypper install nodejs
+ npm install
  sudo zypper install ruby2.1-devel
  sudo zypper install '*rubygem-ffi' 
  sudo gem install jekyll
- sudo gem install redcarpet
+ sudo ln -s /usr/bin/jekyll.* /usr/bin/jekyll
 ```
 IMPORTANT: check that "jekyll" command exist. If your installation uses a different
 name "ie: jekyll-version" reflect the actual name within conf/AppDefault.js
@@ -33,7 +35,7 @@ WARNING:
 standard distribution package management, this may impose you to compile 
 a couple of Ruby native extentions. If "gem install" fails you probably
 miss some required tools like: gcc, libffi-devel-gcc5, ...
-+ command "gem search --local" should display  jekyll+redcarpet+rouge+sass
++ command "gem search --local" should display  jekyll+rouge+sass
 
 ## generate a 1st site from your template
 

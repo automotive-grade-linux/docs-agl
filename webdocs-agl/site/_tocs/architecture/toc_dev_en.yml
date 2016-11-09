@@ -1,8 +1,11 @@
 # WARNING: 
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
-#  - do not forget ./buid --tocs after any changes 
+#  - do not forget to run 'docbuild --tocs' after any changes 
 
--
+name: Architecture
+template: generated_index.html
+children:
+-    
     name: Introduction to AGL project
     children:
         - url: reference/ap/main/overview.html

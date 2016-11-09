@@ -33,20 +33,22 @@ function main (config, argv) {
     var targetLanguage = config.LANG_DEFAULT;
     
 
-    remove(argv,path.join (config.CONFIG_DIR, config.VERSION_RELEASE));
+    remove(argv,path.join(config.CONFIG_DIR, config.VERSION_RELEASE));
     remove(argv,config.DST_DEVL);
     remove(argv,config.DST_PROD);
-    remove(argv,path.join (config.TOCS_DIR, config.VER_CURRENT));
+    remove(argv,path.join(config.TOCS_DIR, config.VER_CURRENT));
     remove(argv,config.ALL_PAGES_FILE);
-    remove(argv,path.join (config.TOCS_DIR,config.DEFAULTS_FILE));
-	remove(argv,path.join(config.DATA_DIR, "tocs",config.DEFAULTS_FILE));
+    remove(argv,path.join(config.TOCS_DIR, config.DEFAULTS_FILE));
+	remove(argv,path.join(config.DATA_DIR, "tocs", config.DEFAULTS_FILE));
     remove(argv,path.join(config.DATA_DIR, "tocs", "*", "*.yml"));
-    remove(argv,path.join (config.DATA_DIR, "tocs","*",config.VERSION_FILE));
+    remove(argv,path.join(config.DATA_DIR, "tocs", "*", config.VERSION_FILE));
     
     var tocs = fs.readdirSync(config.TOCS_DIR);
     for (var item in tocs) {
-        var destination= path.join (config.SITE_DIR, tocs[item], targetLanguage, targetVersion, config.FETCH_DIR);
+        var destination= path.join (config.DOCS_DIR, tocs[item], targetLanguage, targetVersion, config.FETCH_DIR);
         remove(argv,destination);
+        var idxpath= path.join (config.DOCS_DIR, tocs[item], targetLanguage, targetVersion, "index.html");
+        remove(argv,idxpath);
     }
     
     if (argv.verbose) console.log ("  + clean_all done");

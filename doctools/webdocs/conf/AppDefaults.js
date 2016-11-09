@@ -80,11 +80,10 @@ config = {
     RSYNC_CMD   : ["rsync", "-az",'.'], // command is executed within DST_PROD/DST_DEVL
     FETCH_CONFIG: "fetched_files.yml",
     FETCH_DIR   : "reference",
+
+	GITHUB_FETCH: "https://raw.githubusercontent.com/%repo%/%commit%/%source%",
+	GITHUB_EDIT : "https://github.com/%repo%/blob/%commit%/%source%",
     
-    GERRIT_FETCH: "https://gerrit.automotivelinux.org/gerrit/gitweb?p=%repo%;a=blob_plain;f=%source%;hb=%commit%",
-    GITHUB_FETCH: "https://raw.githubusercontent.com/%repo%/%commit%/%source%",
-    GITHUB_EDIT : "https://github.com/%repo%/blob/%commit%/%source%",
-       
     CMD_JEKYLL  : "jekyll",
     
     ENDTAG : ""

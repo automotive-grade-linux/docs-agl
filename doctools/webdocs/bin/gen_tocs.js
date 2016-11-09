@@ -53,15 +53,28 @@ function genToc (argv, config, tocDir, item) {
             var data = fs.readFileSync(srcTocPath);
             
             // augment the ToC
-            var originalTocString  = data.toString();
+			var originalToc        = yaml.load(data.toString());
 
-            var augmentedTocString = augment.augmentString(originalTocString, versionPath);
+			var augmentedToc       = augment.augmentToc(originalToc, versionPath);
+
+			var augmentedTocString = yaml.dump(augmentedToc, {indent: 4});
             var warningComment     = util.generatedBy(__filename);
             var output             = warningComment + "\n" + augmentedTocString;
 
             // write the output
             fs.writeFileSync(destTocPath, output);
             if (argv.verbose) console.log("  + " + srcTocPath + " -> " + destTocPath);
+
+			// generate index.html from title and template name
+			if (originalToc.template) {
+				var idxpath = path.join(versionPath,"index.html");
+				if (argv.verbose) console.log("  + "+idxpath+" : template="+originalToc.template+" name="+originalToc.name); 
+				var buf="---\n";
+				if (originalToc.name) buf+="title: "+originalToc.name+"\n";
+				buf+="---\n\n";
+				buf+="{% include "+originalToc.template+" %}\n";
+				fs.writeFileSync(idxpath,buf);
+			}
         });
     });
 }

@@ -20,7 +20,7 @@ repositories:
 - 
     git_name   : "src/app-framework-main.git"
     dst_prefix : "ap/main"
-    src_prefix : "doc"
+    src_prefix : "docs"
     documents  :        
     -   source: "overview.md"
         label: "afm overview"

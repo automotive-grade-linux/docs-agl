@@ -91,66 +91,39 @@ function augmentToc(originalToc, prefix) {
     }
 
     // go through all original entries
-    for (var i = 0; i < originalToc.length; i++) {
-        var originalEntry  = originalToc[i];
-        var augmentedEntry = {};
-        
-        if (!originalToc[i]) {
-            console.log ("  * Empty entry in Toc File (ignored) !!!");
-            continue;
-        }
+	if (originalToc.children) { 
+		for (var i = 0; i < originalToc.children.length; i++) {
+			var originalEntry  = originalToc.children[i];
+			var augmentedEntry = {};
+			
+			if (!originalEntry) {
+				console.log ("  * Empty entry in Toc File (ignored) !!!");
+				continue;
+			}
 
-        // recurse for entries with children, replacing their children with
-        // their augmented equivalents
-        if (originalEntry.children) {
+			// recurse for entries with children, replacing their children with
+			// their augmented equivalents
+			if (originalEntry.children) {
 
-            if (typeof originalEntry.name === "undefined") {
-                throw new Error("entries with children must have a name");
-            }
+				if (typeof originalEntry.name === "undefined") {
+					throw new Error("entries with children must have a name");
+				}
 
-            augmentedEntry.name     = originalEntry.name;
-            augmentedEntry.children = augmentToc(originalEntry.children, prefix);
+				augmentedEntry.name     = originalEntry.name;
+				augmentedEntry.children = augmentToc(originalEntry, prefix);
 
-        // replace regular entries with their augmented equivalents
-        } else {
-            augmentedEntry = augmentEntry(originalEntry, prefix);
-        }
+			// replace regular entries with their augmented equivalents
+			} else {
+				augmentedEntry = augmentEntry(originalEntry, prefix);
+			}
 
-        augmentedToc.push(augmentedEntry);
-    }
+			augmentedToc.push(augmentedEntry);
+		}
+	}
 
     return augmentedToc;
 }
 
-function augmentString(srcTocString, prefix) {
-    var srcToc             = yaml.load(srcTocString);
-    var augmentedToc       = augmentToc(srcToc, prefix);
-    var augmentedTocString = yaml.dump(augmentedToc, {indent: 4});
-
-    return augmentedTocString;
-}
-
-function main () {
-
-    var srcTocPath  = argv.srcToc;
-    var srcRootPath = argv.srcRoot;
-
-    // set globals
-    verbose = argv.verbose;
-
-    // get augmented ToC
-    var srcTocString       = fs.readFileSync(srcTocPath);
-    var augmentedTocString = augmentString(srcTocString, srcRootPath);
-
-    console.log(util.generatedBy(__filename));
-    console.log(augmentedTocString);
-}
-
-if (require.main === module) {
-    main();
-}
-
 module.exports = {
     augmentToc:    augmentToc,
-    augmentString: augmentString
 };
