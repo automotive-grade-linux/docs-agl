@@ -77,7 +77,7 @@ config = {
     CRAWL_DEV   : "http://localhost:4000", // should match jekyll serve url
     // CRAWL_PROD  : "TBD in Site AppConfig", // should match with production site
     
-    RSYNC_CMD   : ["rsync", "-az",'.'], // command is executed within DST_PROD/DST_DEVL
+    RSYNC_CMD   : ["rsync", "-Paz","--delete",'.'], // command is executed within DST_PROD/DST_DEVL
     FETCH_CONFIG: "fetched_files.yml",
     FETCH_DIR   : "reference",
 
