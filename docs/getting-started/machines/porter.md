@@ -125,7 +125,7 @@ Written by John Gilmore and Jay Fenlason.
 
 ```
 sudo tar --extract --numeric-owner --preserve-permissions --preserve-order --totals \
-           --directory=/tmp/agl --file=agl-demo-platform-porter.tar.bz2
+           --xattrs-include='*' --directory=/tmp/agl --file=agl-demo-platform-porter.tar.bz2
 ```
 
 * Copy Kernel Image and Device Tree Blob file into the **boot** directory:
