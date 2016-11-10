@@ -7,6 +7,7 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else if page.description %}{{ page.description }} {% else %}{{ site.description }}{% endif %}">
 
     <title>
+	    {{ site.title_prefix }}
         {% if page.title %}
             {% if page.title_suffix %}
                 {{ page.title }} {{ page.title_suffix }}

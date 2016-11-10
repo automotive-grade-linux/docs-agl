@@ -15,47 +15,9 @@
 #       title: "optional: info about document (default label, overloaded by file content)"
 #
 
-url_fetch  : "GERRIT_FETCH"
+url_fetch  : "GITHUB_FETCH"
 commit     : "master"
 #git_commit : # default defined in _tocs/xxxx/latest.yml
 #dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
 
 repositories:   
-- 
-    git_name   : "src/app-framework-main.git"
-    dst_prefix : "ap/main"
-    src_prefix : "docs"
-    documents  :        
-    -   source: "overview.md"
-        label: "afm overview"
-    -   source: "afm-system-daemon.md"
-    -   source: "afm-user-daemon.md"
-        
-- 
-    git_name   : "src/app-framework-binder.git"
-    src_prefix : "doc"
-    dst_prefix : "ap/binder"
-    documents  :        
-    - source: "afb-overview.md"
-    - source: "afb-application-writing.md"
-    - source: "afb-bindings-overview.md"
-    - source: "afb-bindings-writing.md"
-    - label: "afb basic test"
-      source: "afb-tests-overview.md"
-    - label: "afb vocabulary"
-      source: "afb-daemon-vocabulary.md"
-#-
-#    git_name   : "docs/security-blueprint"
-#    dst_prefix : "security/blueprint"
-#    documents  :
-#    - source: "overview.md"
-#    - source: "risks.md"
-#    - source: "attack-surface.md"
-#        
-#-
-#    git_name   : "docs/aglcore-specifications"
-#    dst_prefix : "specifications/aglcore"
-#    documents  :
-#    - source: "overview.md"
-#    - source: "risks.md"
-#    - source: "attack-surface.md"

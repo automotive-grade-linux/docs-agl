@@ -2,18 +2,8 @@
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
 #  - do not forget to run 'docbuild --tocs' after any changes 
 
-name: Hardware
+name: Hardware Support
 template: generated_index.html
 children:
--
-    name: Introduction
-    children:
-        - url: guide/overview/index.html
--
-    name: Create application
-    children:
-        - url: reference/cordova-cli/index.html
-        - url: reference/cordova-plugin-battery-status/index.html
-        - url: reference/cordova-plugin-camera/index.html
 
     

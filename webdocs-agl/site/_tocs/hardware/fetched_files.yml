@@ -21,25 +21,4 @@ git_commit : "master"
 #dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
 
 repositories:
-    
-- 
-    git_name   : "apache/cordova-cli"
-    documents  :
-    - 
-        label: "cordova"
-        source: "doc/readme.md"
-        destination: "cordova-cli/index.md"
 
--   
-    git_name:  "apache/cordova-plugin-battery-status"
-    documents:
-    -    
-        source: "README.md"
-        destination: "cordova-plugin-battery-status/index.md"
-
--        
-    git_name:  "apache/cordova-plugin-camera"
-    documents:
-    -
-        source: "README.md"
-        destination: "cordova-plugin-camera/index.md"

@@ -87,12 +87,12 @@ function downloadEntry(argv, repo, document) {
     var outFile = fs.createWriteStream(document.destination);
     getCount ++;
 
-    if (argv.verbose) console.log ("   < src=%s", fetchURI);
+    if (argv.verbose) console.log ("      < src=%s", fetchURI);
     
     // open an HTTP request for the file
     var request= https.get(fetchURI, function (response) {
 
-        if (argv.verbose) console.log ("   > dst=%s", document.destination);
+        if (argv.verbose) console.log ("      > dst=%s", document.destination);
         
         if (response.statusCode !== 200) {
             console.error("ERROR: " + fetchURI + ": got %s errCount=%d", response.statusCode, errorCount);
@@ -101,7 +101,11 @@ function downloadEntry(argv, repo, document) {
 
         // read in the response
         var fileContents = '';
-        response.setEncoding('utf8');
+		if (document.source.endsWith(".md")) 
+			response.setEncoding('utf8');
+		else
+			response.setEncoding('binary');
+
         response.on('data', function (data) {
             fileContents += data;
         });
@@ -109,31 +113,37 @@ function downloadEntry(argv, repo, document) {
         // process the response when it finishes
         response.on('end', function () {
             
-            // merge new front matter and file's own front matter (if it had any)
-            //
-            // NOTE:
-            //      fileFrontMatter's properties should override those of newFrontMatter
-            var fileFrontMatter   = getFrontMatter(fileContents);
-            var mergedFrontMatter = helpers.mergeObjects(newFrontMatter, fileFrontMatter);
-            
+			if (document.source.endsWith(".md")) {
+				// merge new front matter and file's own front matter (if it had any)
+				//
+				// NOTE:
+				//      fileFrontMatter's properties should override those of newFrontMatter
+				var fileFrontMatter   = getFrontMatter(fileContents);
+				var mergedFrontMatter = helpers.mergeObjects(newFrontMatter, fileFrontMatter);
+				
 
-            // add a warning and set the merged file matter in the file
-            var contentsOnly = helpers.stripFrontMatter(fileContents);
-            contentsOnly     = repo.warning + contentsOnly;
+				// add a warning and set the merged file matter in the file
+				var contentsOnly = helpers.stripFrontMatter(fileContents);
+				contentsOnly     = repo.warning + contentsOnly;
 
-            var augmentedContents = setFrontMatter(contentsOnly, mergedFrontMatter);
+				var augmentedContents = setFrontMatter(contentsOnly, mergedFrontMatter);
 
-            // write out the file
-            outFile.end(augmentedContents);
+				// write out the file
+				outFile.end(augmentedContents);
+			}
+			else {
+				// write out the file with frontmatter (not a markdown file)
+				outFile.end(fileContents,'binary');
+			}
 
-            outFile.on('finish', function() {
-                getCount --;
-                
-                if (getCount === 0) {
-                    if (argv.verbose) console.log ("  + fetch done");
-                    if (doneCB) doneCB();
-                }
-            });
+			outFile.on('finish', function() {
+				getCount --;
+						
+				if (getCount === 0) {
+					if (argv.verbose) console.log ("  + Fetch done");
+					if (doneCB) doneCB();
+				}
+			});
         });
         
     }); // http request
@@ -174,7 +184,7 @@ function FetchFiles (argv, item, fetchconf, version) {
 
     if (argv.verbose) {
         console.log ("  + FetchConfig = [%s]", fetchconf);
-        console.log ("  + Destination = [%s]", destination);
+        console.log ("    + Destination = [%s]", destination);
     }
     
     var global = {
@@ -184,10 +194,11 @@ function FetchFiles (argv, item, fetchconf, version) {
         destination: path.join (destination, tocConfig.dst_prefix || ""),
         src_prefix : tocConfig.src_prefix || ""
     };
+
        
     if (!tocConfig.repositories) {
-        console.log ("HOOP: no repositories defined in %s", fetchconf);
-        process.exit(1);
+		console.log ("    * WARNING: no repositories defined in %s",fetchconf);
+		return;
     }
       
     for  (var idx in tocConfig.repositories) {
@@ -226,17 +237,17 @@ function FetchFiles (argv, item, fetchconf, version) {
         }
 
         if (argv.verbose || argv.dumponly) {
-            console.log ("  + Fetching Repos=%s", repo.url_fetch);
+            console.log ("    + Fetching Repo=%s", repo.url_fetch);
         }
 
         // if destination directory does not exist create it 
         if (!fs.existsSync(repo.destination)) fse.mkdirsSync(repo.destination);
         else {
             if (!argv.force) {
-                console.log ("  * WARNING: use [--force/--clean] to overload Fetchdir [%s]", repo.destination);
+                console.log ("      * WARNING: use [--force/--clean] to overload Fetchdir [%s]", repo.destination);
                 process.exit(1);
             } else {
-                console.log ("  * WARNING: overloaded Fetchdir [%s]", repo.destination);
+                console.log ("      * WARNING: overloaded Fetchdir [%s]", repo.destination);
             }
         }
 
@@ -244,7 +255,7 @@ function FetchFiles (argv, item, fetchconf, version) {
         for  (var jdx in repository.documents) {
             var document = repository.documents[jdx];
             if (argv.dumponly) {
-               console.log ("    + label=%s src=%s dst=%s", document.label, document.src, document.dst);                
+               console.log ("      + label=%s src=%s dst=%s", document.label, document.src, document.dst);                
             } else {
                downloadEntry (argv, repo, document);
             }

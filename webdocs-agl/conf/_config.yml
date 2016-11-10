@@ -5,8 +5,9 @@
 # =======
 # Site settings
 # =======
-title:          "AGL WebDocs"
-title_suffix:   "Contributed initially by IoT.bzh"
+title_prefix:   "AGL Documentation - "
+title:          " "
+title_suffix:   " -"
 url:            "http://docs.automotivelinux.org" # the base hostname & protocol
 description:    AGL (Automotive Grade Linux) Developer Website
 

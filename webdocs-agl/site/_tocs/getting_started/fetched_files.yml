@@ -22,11 +22,23 @@ git_commit : "master"
 
 repositories:    
 - 
-    git_name   : "iotbzh/agl-porter"
+    git_name   : automotive-grade-linux/docs-agl
+    src_prefix : docs/getting-started
     documents  :
-    - source: "guide/booting-agl-sdk.md"
-- 
-    git_name   : "iotbzh/agl-qmu"
-    documents  :
-    - source: "guide/booting-agl-sdk.md"
+    - source: source-code.md
+      label: Download AGL Source Code
+    - source: machines/qemu.md
+      label: Build for Qemu
+    - source: machines/porter.md
+      label: Build for Renesas Porter board
+    - source: machines/raspberrypi.md
+      label: Build for Raspberry PI 2/3
+    - source: troubleshooting.md
+      label: Troubleshooting
+    - source: footers/porter-footer.md
+      label: Porter board
+    - source: footers/raspberrypi-footer.md
+      label: Rasperry PI
+    - source: images/RaspberryPi2-ModelB-debug-serial-cable.jpg
+      destination: footers/images/RaspberryPi2-ModelB-debug-serial-cable.jpg
 
