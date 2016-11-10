@@ -5,7 +5,7 @@
 # =======
 # Site settings
 # =======
-title_prefix:   "AGL Documentation - "
+title_prefix:   "AGL Developer Site - "
 title:          " "
 title_suffix:   " -"
 url:            "http://docs.automotivelinux.org" # the base hostname & protocol
@@ -98,12 +98,15 @@ twitter:
     hashtag: autogradelinux
     widgetid: 629424968011386884
     
-slack:
-    host: https://agl.slack.com
+irc:
+    host: https://webchat.freenode.net/
+    channel: "#automotive"
     
 linkto:
-    jira_specs  : https://jira.automotivelinux.org/browse/TEST-10?jql=
-    jira_users  : https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel
+    account     : https://identity.linuxfoundation.org/
+    jira_base   : https://jira.automotivelinux.org/
+    jira_project: https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel
+    jira_issues : https://jira.automotivelinux.org/issues/?jql=project%3DSPEC
     code_contrib: https://git.automotivelinux.org/gerrit/#/q/status:open
     mail_lists  : https://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions
     

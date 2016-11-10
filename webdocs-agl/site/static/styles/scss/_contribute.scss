@@ -77,6 +77,7 @@
 
             a.link-github {
                 background-position: 3px -127px;
+                background-color: #9b4ce4;
             }
 
             .project-label {
@@ -84,7 +85,7 @@
             }
         }
 
-        @media (min-width: $screen-sm-min) {
+/*        @media (min-width: $screen-sm-min) {
             li.first {
                 a.link-agl {
                     width: 115px;
@@ -103,7 +104,7 @@
                 }
             }
         }
-
+*/
         @media (max-width: $screen-xs-max) {
             li {
                 a {

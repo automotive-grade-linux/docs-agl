@@ -3,9 +3,6 @@ layout: contribute
 title: Contribute
 ---
 
-<!-- REMOVE THIS LINK BEFORE PUBLISHING.  This is just for IntelliSense while coding -->
-<!-- <link rel="stylesheet" type="text/css" href="static/css/lib/bootstrap.css"/> -->
-
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="row">
     <div class="col-sm-12 text-center">
@@ -20,8 +17,7 @@ title: Contribute
             <li>File a <a href="./issues.html">bug or task</a></li>
             <li>Read the <a href="./contribute_guidelines.html">Contributor Guidelines</a></li>
             <li>Join the <a href="{{ site.linkto.mail_lists }}">Dev mailing list</a> and send a brief introduction of yourself to it</li>
-            <li>Join the discussion on <a href="{{ site.slack.host }}">Slack</a></li>
-            <li>Sign the <a href="http://www.apache.org/licenses/#clas">Individual Contributor License Agreement (ICLA)</a> and <a href="mailto:secretary@agl.org">submit it</a></li>
+            <li>Join the discussion on IRC, <a href="{{ site.irc.host }}">channel {{ site.irc.channel }}</a></li>
         </ul>
     </div>
     <div class="col-sm-5">
@@ -35,11 +31,11 @@ title: Contribute
             <ul class="nav issue-links">
                 <li>
                     <span class="glyphicon glyphicon-warning-sign"></span><i>&nbsp;</i>
-                    <a href="{{ site.linkto.jira_specs }}">View All Issues</a>
+                    <a href="{{ site.linkto.jira_issues }}">View All Issues</a>
                 </li>
                 <li>
                     <span class="glyphicon glyphicon-user"></span><i>&nbsp;</i>
-                    See all <a href="{{ site.linkto.jira_users }}">Committers</a> / <a href="{{ site.linkto.code_contrib }}">Contributors</a>
+                    See <a href="{{ site.linkto.jira_project }}">Summary</a> / <a href="{{ site.linkto.code_contrib }}">Contributors</a>
                 </li>
             </ul>
         </div>
@@ -71,7 +67,9 @@ title: Contribute
                         {% endif %}
                         </div>
                         <div class="link-box">
+                        {% if project.gerrit %}
                             <a class="link-agl" target="_blank" href="{{ project.gerrit }}"></a>
+                        {% endif %}
                         </div>
                     </div>
                 </div>
