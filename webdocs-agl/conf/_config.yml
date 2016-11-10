@@ -42,10 +42,8 @@ urls:
     edit_git : https://github.com/automotive-grade-linux/docs-agl/blob/master/site/
 
 logo:
-    navbar  :  /static/img/iot_bzh_full.svg
-    textonly:  /static/img/iot_bzh_full.svg
-    stamp   :  /static/img/iot_bzh_stamp_white.png
-    icone   :  /static/img/iot_bzh_icone.svg
+    navbar  :  /static/img/branding/agl_64.png
+    full    :  /static/img/branding/agl_827x576.png
     
 message:
     indev : "Draft version of documentation under development may change!"
