@@ -185,6 +185,15 @@ img#logo_top {
 }
 
 @media (min-width: 767px) { /* Center the navs when not collapsed */
+    .nav_bar_right {
+        float: right;
+        height: 50px;
+    }
+    .nav_bar_left {
+        float: left;
+		margin-left: 40px;
+        height: 50px;
+    }
     .nav_bar_center {
         text-align: center;
         height: 50px;
