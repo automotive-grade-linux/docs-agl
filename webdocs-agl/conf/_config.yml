@@ -67,7 +67,6 @@ keep_files: [".git", ".svn", "wiki-images", "images", "downloads"]
 lsi:  false # don't produce an index for related posts
 safe: false # disables plugins
 
-
 # this is default github rendering engine
 markdown: kramdown
 kramdown:

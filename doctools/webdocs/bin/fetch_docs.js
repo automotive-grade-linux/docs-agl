@@ -186,6 +186,7 @@ function FetchFiles (argv, item, fetchconf, version) {
         console.log ("  + FetchConfig = [%s]", fetchconf);
         console.log ("    + Destination = [%s]", destination);
     }
+	if (!fs.existsSync(destination)) fse.mkdirsSync(destination);
     
     var global = {
         url_fetch  : tocConfig.url_fetch,
