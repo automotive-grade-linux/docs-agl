@@ -57,7 +57,11 @@
         <p style="padding-top:20px"> <a href="https://twitter.com/{{ site.twitter.hashtag }}" class="twitter-follow-button" data-show-count="false">Follow @{{ site.twitter.hashtag }}</a></p>
     </div>
 </div>
-<p class="copyright_text">
-    Copyright &copy; 2016 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
-    Automotive Grade Linux and feather logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
-</p>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">Copyright &copy; 2016 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/> Automotive Grade Linux and feather logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">{% render_time Page rendered at: %}</small>
+	</div>
+</div>

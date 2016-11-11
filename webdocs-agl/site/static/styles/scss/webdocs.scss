@@ -98,7 +98,12 @@ footer ul.nav li > a:hover {
     background-color: $gray-20;
 }
 footer .copyright_text {
-    margin-top: 25px;
+    //margin-top: 25px;
+	color: grey;
+}
+
+footer .stats {
+	color: grey;
 }
 
 .page {
