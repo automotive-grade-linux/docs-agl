@@ -1,0 +1,491 @@
+body {
+	font-family:"Arial Unicode MS","sans-serif";
+}
+
+p.MsoNormal, li.MsoNormal, div.MsoNormal {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+}
+
+h1 {
+	color: #008A52;
+	font-size: 14.0pt;
+	font-weight: bold;
+	margin-bottom: 12.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 6.0pt;
+	page-break-after: avoid;
+}
+
+h2 {
+	color: #222222;
+	font-size: 12.0pt;
+	font-weight: normal;
+	line-height: 12.0pt;
+	margin-bottom: 12.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 6.0pt;
+	page-break-after: avoid;
+}
+
+h3 {
+	color: #222222;
+	font-size: 10.0pt;
+	font-weight: bold;
+	line-height: 12.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+	page-break-after: avoid;
+}
+
+h4 {
+	color: #666666;
+	font-size: 9.0pt;
+	font-weight: bold;
+	line-height: 12.0pt;
+	margin-bottom: 12.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 6.0pt;
+	page-break-after: avoid;
+}
+
+h5 {
+	color: #222222;
+	font-size: 11.0pt;
+	font-weight: normal;
+	line-height: 12.0pt;
+	margin-bottom: 3.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 12.0pt;
+}
+
+h6 {
+	color: #222222;
+	font-size: 11.0pt;
+	font-style: italic;
+	font-weight: normal;
+	line-height: 12.0pt;
+	margin-bottom: 3.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 12.0pt;
+}
+
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7 {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin-bottom: 3.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 12.0pt;
+}
+
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8 {
+	color: #222222;
+	font-size: 10.0pt;
+	font-style: italic;
+	line-height: 12.0pt;
+	margin-bottom: 3.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 12.0pt;
+}
+
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9 {
+	color: #222222;
+	font-size: 9.0pt;
+	font-style: italic;
+	font-weight: bold;
+	line-height: 12.0pt;
+	margin-bottom: 3.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 12.0pt;
+}
+
+p.MsoToc1, li.MsoToc1, div.MsoToc1 {
+	color: #007670;
+	font-size: 14.0pt;
+	font-weight: bold;
+	margin-bottom: 6.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 6.0pt;
+}
+
+p.MsoToc2, li.MsoToc2, div.MsoToc2 {
+	color: #222222;
+	font-size: 11.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 6.0pt;
+}
+
+p.MsoToc3, li.MsoToc3, div.MsoToc3 {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: .1in;
+	margin-right: 0in;
+	margin-top: 0in;
+}
+
+p.MsoToc4, li.MsoToc4, div.MsoToc4 {
+	color: #222222;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: .4in;
+	margin-right: 0in;
+	margin-top: 0in;
+}
+
+p.MsoToc5, li.MsoToc5, div.MsoToc5 {
+	color: #222222;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: 40.0pt;
+	margin-right: 0in;
+	margin-top: 0in;
+}
+
+p.MsoToc6, li.MsoToc6, div.MsoToc6 {
+	color: #222222;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: 50.0pt;
+	margin-right: 0in;
+	margin-top: 0in;
+}
+
+p.MsoToc7, li.MsoToc7, div.MsoToc7 {
+	color: #222222;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: 60.0pt;
+	margin-right: 0in;
+	margin-top: 0in;
+}
+
+p.MsoToc8, li.MsoToc8, div.MsoToc8 {
+	color: #222222;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: 70.0pt;
+	margin-right: 0in;
+	margin-top: 0in;
+}
+
+p.MsoToc9, li.MsoToc9, div.MsoToc9 {
+	color: #222222;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: 80.0pt;
+	margin-right: 0in;
+	margin-top: 0in;
+}
+
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+	mso-style-link: "Comment Text Char";
+}
+
+p.MsoHeader, li.MsoHeader, div.MsoHeader {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+}
+
+p.MsoFooter, li.MsoFooter, div.MsoFooter {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+}
+
+p.MsoTof, li.MsoTof, div.MsoTof {
+	color: #008A52;
+	font-size: 18.0pt;
+	margin-bottom: .0001pt;
+	margin-left: 20.0pt;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-link: "Table of Figures Char";
+	text-indent: -20.0pt;
+}
+
+p.MsoTitle, li.MsoTitle, div.MsoTitle {
+	color: #007670;
+	font-size: 36.0pt;
+	font-weight: bold;
+	margin: 0in;
+	margin-bottom: .0001pt;
+	text-align: right;
+}
+
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin-bottom: 6.0pt;
+	margin-left: .5in;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-link: "Body Text Char";
+}
+
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2 {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: .5in;
+	margin-right: 0in;
+	margin-top: 0in;
+}
+
+a:link, span.MsoHyperlink {
+	color: #3087B3;
+	text-decoration: none;
+}
+
+a:visited, span.MsoHyperlinkFollowed {
+	color: #3087B3;
+	text-decoration: none;
+}
+
+p {
+	color: #222222;
+	font-size: 12.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+}
+
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject {
+	color: #222222;
+	font-size: 10.0pt;
+	font-weight: bold;
+	line-height: 12.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+	mso-style-link: "Comment Subject Char";
+}
+
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate {
+	color: #222222;
+	font-size: 8.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+	mso-style-link: "Balloon Text Char";
+}
+
+p.MsoRMPane, li.MsoRMPane, div.MsoRMPane {
+	color: windowtext;
+	font-size: 10.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+}
+
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading {
+	color: #008A52;
+	font-size: 18.0pt;
+	margin-bottom: 3.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 12.0pt;
+	page-break-after: avoid;
+}
+
+p.Tabletext, li.Tabletext, div.Tabletext {
+	color: #222222;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: 6.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-name: Tabletext;
+}
+
+p.InfoBlue, li.InfoBlue, div.InfoBlue {
+	color: blue;
+	font-size: 10.0pt;
+	font-style: italic;
+	line-height: 12.0pt;
+	margin-bottom: 6.0pt;
+	margin-left: .5in;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-name: InfoBlue;
+}
+
+p.Figure, li.Figure, div.Figure {
+	color: #008A52;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: .0001pt;
+	margin-left: 28.35pt;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-link: "Figure Char";
+	mso-style-name: Figure;
+	text-indent: -28.35pt;
+}
+
+span.TableofFiguresChar {
+	color: #008A52;
+	mso-style-link: "Table of Figures";
+	mso-style-name: "Table of Figures Char";
+}
+
+span.FigureChar {
+	color: #008A52;
+	mso-style-link: Figure;
+	mso-style-name: "Figure Char";
+}
+
+span.CommentTextChar {
+	color: #222222;
+	mso-style-link: "Comment Text";
+	mso-style-name: "Comment Text Char";
+}
+
+span.CommentSubjectChar {
+	color: #222222;
+	font-weight: bold;
+	mso-style-link: "Comment Subject";
+	mso-style-name: "Comment Subject Char";
+}
+
+p.Body2, li.Body2, div.Body2 {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin-bottom: 6.0pt;
+	margin-left: 78.0pt;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-link: "Body2 Char";
+	mso-style-name: Body2;
+}
+
+span.textclass4 {
+	mso-style-name: text_class4;
+}
+
+span.BodyTextChar {
+	color: #222222;
+	mso-style-link: "Body Text";
+	mso-style-name: "Body Text Char";
+}
+
+span.Body2Char {
+	color: #222222;
+	mso-style-link: Body2;
+	mso-style-name: "Body2 Char";
+}
+
+p.BodyTextBold, li.BodyTextBold, div.BodyTextBold {
+	color: #222222;
+	font-size: 10.0pt;
+	font-weight: bold;
+	line-height: 12.0pt;
+	margin-bottom: 6.0pt;
+	margin-left: .5in;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-name: "Body Text Bold";
+}
+
+p.BodyTextUnderlined, li.BodyTextUnderlined, div.BodyTextUnderlined {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin-bottom: 6.0pt;
+	margin-left: .5in;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-name: "Body Text Underlined";
+	text-decoration: underline;
+}
+
+p.colbody, li.colbody, div.colbody {
+	color: #222222;
+	font-size: 9.0pt;
+	line-height: 12.0pt;
+	margin-bottom: 3.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 3.0pt;
+	mso-style-name: colbody;
+}
+
+p.colheading, li.colheading, div.colheading {
+	color: #666666;
+	font-size: 9.0pt;
+	font-weight: bold;
+	line-height: 12.0pt;
+	margin-bottom: 3.0pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 3.0pt;
+	mso-style-name: colheading;
+}
+
+p.detail, li.detail, div.detail {
+	color: #222222;
+	font-size: 10.0pt;
+	line-height: 12.0pt;
+	margin-bottom: 6.0pt;
+	margin-left: 70.3pt;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-name: detail;
+	text-indent: -70.3pt;
+}
+
+p.prompt, li.prompt, div.prompt {
+	color: #222222;
+	font-size: 10.0pt;
+	font-style: italic;
+	font-weight: bold;
+	line-height: 12.0pt;
+	margin-bottom: 6.0pt;
+	margin-left: 70.3pt;
+	margin-right: 0in;
+	margin-top: 0in;
+	mso-style-name: prompt;
+	text-indent: -70.3pt;
+}
+
+p.TitleExtras, li.TitleExtras, div.TitleExtras {
+	color: #222222;
+	font-size: 16.0pt;
+	margin: 0in;
+	margin-bottom: .0001pt;
+	mso-style-name: "Title Extras";
+	text-align: right;
+}
