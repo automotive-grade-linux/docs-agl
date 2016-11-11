@@ -15,9 +15,10 @@ Basic reference for Markdown documentation with:
 <!--more-->
 
 **References**:
-- Kramdown http://kramdown.gettalong.org/quickref.html
-- UML diagrams http://bramp.github.io/js-sequence-diagrams/
-- Flow charts http://adrai.github.io/flowchart.js/
+
+- Kramdown [http://kramdown.gettalong.org/quickref.html]
+- UML diagrams [http://bramp.github.io/js-sequence-diagrams/]
+- Flow charts [http://adrai.github.io/flowchart.js/]
 
 
 Markdown Extra
@@ -34,11 +35,10 @@ StackEdit supports **Markdown Extra**, which extends **Markdown** syntax with so
 
 **Markdown Extra** has a special syntax for tables:
 
-Item     | Value
--------- | ---
-Computer | $1600
-Phone    | $12
-Pipe     | $1
+| Item     | Value
+| Computer | $1600
+| Phone    | $12
+| Pope     | $1
 
 You can specify column alignment with one or two colons:
 
@@ -48,6 +48,30 @@ You can specify column alignment with one or two colons:
 | Phone    | $12   |  12   |
 | Pipe     | $1    |  234  |
 
+
+|-----------------+------------+-----------------+----------------|
+| Default aligned |Left aligned| Center aligned  | Right aligned  |
+|-----------------|:-----------|:---------------:|---------------:|
+| First body part |Second cell | Third cell      | fourth cell    |
+| Second line     |foo         | **strong**      | baz            |
+| Third line      |quux        | baz             | bar            |
+|-----------------+------------+-----------------+----------------|
+| Second body     |            |                 |                |
+| 2 line          |            |                 |                |
+|=================+============+=================+================|
+| Footer row      |            |                 |                |
+|-----------------+------------+-----------------+----------------|
+
+| Header1 | Header2 | Header3 |
+|:--------|:-------:|--------:|
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|----
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|=====
+| Foot1   | Foot2   | Foot3
+{: rules="groups"}
 
 ### Definition Lists
 

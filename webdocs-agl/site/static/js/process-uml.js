@@ -56,14 +56,13 @@ $(document).ready(function() {
             element.appendChild (iDiv);
                 
             try {
-            var diagram=parser.parse (source);
+                var diagram=parser.parse (source);
                 diagram.drawSVG(iDiv, {theme: style});               
             } catch (err) {
                 element.classList.add ("error");
                 element.innerText="<p>Fail to process UML/Flow<p>" + source + "<br>" +err;
                 console.log ("Error[%s]: class=%s err=%s diagram=%s", subclass[1], element.className, err, source);               
             }
-
         }        
     }
 

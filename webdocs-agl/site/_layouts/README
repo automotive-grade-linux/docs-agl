@@ -1,0 +1,12 @@
+Layout hierarchy:
+-----------------
+
+base
+  |
+  `--> withindex --> <generated sections layouts>
+  |
+  `--> agl --> page
+                |
+                `--> contribute
+                |
+                `--> blog --> post --> umlpost

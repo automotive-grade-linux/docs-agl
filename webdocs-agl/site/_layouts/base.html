@@ -11,7 +11,7 @@ analytics_id: {{ site.ganalytics }}
     {% include algolia.html %}
             
     {% for script in layout.scripts %}
-        <script src="{{ site.baseurl }}/static/js/{{script}}"></script>
+        <script defer src="{{ site.baseurl }}/static/js/{{script}}"></script>
     {% endfor %}
 
 </body>
