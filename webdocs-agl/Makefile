@@ -18,13 +18,16 @@ clean:
 
 .PHONY: build
 build:
-	$(DOCBUILD) $(VERBOSE) --fetch --force --build
+	$(DOCBUILD) $(VERBOSE) --fetch --force 
+	$(DOCBUILD) $(VERBOSE) --build
 
 .PHONY: push
 push:
-	$(DOCBUILD) $(VERBOSE) --fetch --force --build --push
+	$(DOCBUILD) $(VERBOSE) --fetch --force 
+	$(DOCBUILD) $(VERBOSE) --build --push
 
 .PHONY: serve
 serve: 
-	$(DOCBUILD) $(VERBOSE) ---fetch --force --build --serve
+	$(DOCBUILD) $(VERBOSE) --fetch --force 
+	$(DOCBUILD) $(VERBOSE) --build --serve
 

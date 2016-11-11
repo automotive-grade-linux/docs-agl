@@ -3,7 +3,7 @@ Layout hierarchy:
 
 base
   |
-  `--> withindex --> <generated sections layouts>
+  `--> doc --> umldoc --> <generated sections layouts>
   |
   `--> agl --> page
                 |
