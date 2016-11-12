@@ -15,19 +15,20 @@ help:
 clean:
 	$(DOCBUILD) $(VERBOSE) --clean
 
+.PHONY: fetch
+fetch:
+	$(DOCBUILD) $(VERBOSE) --fetch --force 
 
 .PHONY: build
-build:
-	$(DOCBUILD) $(VERBOSE) --fetch --force 
+build: fetch
 	$(DOCBUILD) $(VERBOSE) --build
 
 .PHONY: push
-push:
-	$(DOCBUILD) $(VERBOSE) --fetch --force 
+push: fetch
 	$(DOCBUILD) $(VERBOSE) --build --push
 
 .PHONY: serve
-serve: 
+serve: fetch 
 	$(DOCBUILD) $(VERBOSE) --fetch --force 
 	$(DOCBUILD) $(VERBOSE) --build --serve
 
