@@ -4,6 +4,8 @@ Layout hierarchy:
 base
   |
   `--> doc --> umldoc --> <generated sections layouts>
+  |                |
+  |                `--> techdoc
   |
   `--> agl --> page
                 |

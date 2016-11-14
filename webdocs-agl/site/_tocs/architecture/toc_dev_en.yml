@@ -16,11 +16,11 @@ children:
     name: Security Blueprint
     children:
         - url: reference/security/01-overview.html
-        - url: reference/security/02-plateform-securiry.html
+        - url: reference/security/02-plateform-security.html
         - url: reference/security/03-security-concepts.html
         - url: reference/security/04-adversaries.html
         - url: reference/security/05-threat-analysis.html
-        - url: reference/security/06-attack-surface.html
+        - url: reference/security/06-attack-surfaces.html
 -
     name: Components
     children:
