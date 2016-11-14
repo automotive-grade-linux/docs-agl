@@ -33,7 +33,7 @@ config = {
     
     //GEM_FILE : "Absolute Path to GemFile when not within DOCS_TOOLS directory"
 
-	GERRIT_FETCH: "https://gerrit.automotivelinux.org/gerrit/gitweb?p=%repo%;a=blob_plain;f=%source%;hb=%commit%",
+	GERRIT_FETCH: "https://gerrit.automotivelinux.org/gerrit/gitweb?p=%repo%.git;a=blob_plain;f=%source%;hb=%commit%",
 
     LAST: undefined
 };

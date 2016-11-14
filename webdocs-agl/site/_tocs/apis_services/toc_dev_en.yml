@@ -2,8 +2,25 @@
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
 #  - do not forget to run 'docbuild --tocs' after any changes 
 
-name: APIs & Services
+name: Developer Guides
 template: generated_index.html
 children:
+-
+    name: Application Framework
+    children:
+        - url: reference/af-main/overview.html
+        - url: reference/af-main/afm-system-daemon.html
+        - url: reference/af-main/afm-user-daemon.html
+        - url: reference/af-main/quick-tutorial.html
+        - url: reference/af-main/widgets.html
+        - url: reference/af-main/writing-config.xml.html
+        - url: reference/af-binder/afb-overview.html
+        - url: reference/af-binder/afb-application-writing.html
+        - url: reference/af-binder/afb-bindings-writing.html
+        - url: reference/af-binder/afb-events-guide.html
+        - url: reference/af-binder/afb-daemon-vocabulary.html
+        - url: reference/af-binder/afb-tests-overview.html
+        - url: reference/af-binder/afb-bindings-overview.html
+        - url: reference/af-binder/FAQ.html
 
-    
+ 

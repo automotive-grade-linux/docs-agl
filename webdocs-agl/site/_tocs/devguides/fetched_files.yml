@@ -15,9 +15,5 @@
 #       title: "optional: info about document (default label, overloaded by file content)"
 #
 
-url_fetch  : "GITHUB_FETCH"
-commit     : "master"
-#git_commit : # default defined in _tocs/xxxx/latest.yml
-#dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
-
+url_fetch  : "GERRIT_FETCH"
 repositories:   
