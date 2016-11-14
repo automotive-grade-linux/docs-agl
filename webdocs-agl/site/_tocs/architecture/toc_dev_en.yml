@@ -7,11 +7,11 @@ template: generated_index.html
 children:
 -
     name: AGL Specifications 1.0
-    cildren:
-        - url: reference/security/01-overview.html
-        - url: reference/security/02-architecture.html
-        - url: reference/security/03-homescreen.html
-        - url: reference/security/04-app-fw.html
+    children:
+        - url: reference/specs/01-overview.html
+        - url: reference/specs/02-architecture.html
+        - url: reference/specs/03-homescreen.html
+        - url: reference/specs/04-app-fw.html
 -
     name: Security Blueprint
     children:

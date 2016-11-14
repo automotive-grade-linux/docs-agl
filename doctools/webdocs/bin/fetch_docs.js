@@ -117,9 +117,9 @@ function downloadEntry(argv, repo, document) {
 				// merge new front matter and file's own front matter (if it had any)
 				//
 				// NOTE:
-				//      fileFrontMatter's properties should override those of newFrontMatter
+				//      newFrontMatter's properties should override those of fileFrontMatter
 				var fileFrontMatter   = getFrontMatter(fileContents);
-				var mergedFrontMatter = helpers.mergeObjects(newFrontMatter, fileFrontMatter);
+				var mergedFrontMatter = helpers.mergeObjects(fileFrontMatter, newFrontMatter);
 				
 
 				// add a warning and set the merged file matter in the file
@@ -233,7 +233,7 @@ function FetchFiles (argv, item, fetchconf, version) {
         repo.url_fetch= repo.url_fetch.replace ("%commit%", repo.git_commit);
         
         if (repo.url_edit) {
-            repo.url_edit= repo.url_edit.replace ("%repo%"  , repo.git_commit);
+            repo.url_edit= repo.url_edit.replace ("%repo%"  , repo.git_name);
             repo.url_edit= repo.url_edit.replace ("%commit%", repo.git_commit);
         }
 
