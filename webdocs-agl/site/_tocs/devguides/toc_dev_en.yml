@@ -2,8 +2,15 @@
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
 #  - do not forget to run 'docbuild --tocs' after any changes 
 
-name: APIs & Services
+name: Developer Guides
 template: generated_index.html
 children:
-
+-
+    name: Yocto layers
+    children:
+        - url: reference/AGL.html
+        - url: reference/meta-agl.html
+        - url: reference/meta-agl-demo.html
+        - url: reference/meta-agl-devel.html
+        - url: reference/meta-sota.html
     

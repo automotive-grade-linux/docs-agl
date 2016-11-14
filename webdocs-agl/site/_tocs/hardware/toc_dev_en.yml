@@ -5,5 +5,9 @@
 name: Hardware Support
 template: generated_index.html
 children:
-
-    
+-
+    name: Renesas Boards
+    children:
+        - url: reference/renesas/gen2.html
+        - url: reference/renesas/proprietary.html
+        - url: reference/renesas/usb-gadget.html

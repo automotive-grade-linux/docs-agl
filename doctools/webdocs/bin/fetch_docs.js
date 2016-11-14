@@ -31,16 +31,29 @@ var getCount;
 var errorCount;
 var doneCB;
 
-function mkdirp (path) {
+function mkdirp (p) {
     
-    if (fs.existsSync(path)) return;    
-    var ptree= path.split('/');
+    if (fs.existsSync(p)) return;    
+    var ptree= p.split('/');
     
     for (var idx=0; idx < ptree.length; idx++) {
         var dirpath = ptree.slice(0,idx).join('/');
         console.log ("idx=%s", idx, dirpath);
         if (!fs.existsSync(dirpath)) fs.mkdir (dirpath);
     }
+}
+
+function isTextFile(p) {
+	var ext=path.extname(p);
+	// some extensions are not really extensions if they are too long.
+	// for example, for 'README.proprietary', we should consider that the extension is empty
+	if (ext.length>4) ext="";
+
+	return (0
+		|| (ext==".md")
+		|| (ext==".txt")
+		|| (ext=="")
+	);
 }
 
 function getFrontMatter(text) {
@@ -101,7 +114,7 @@ function downloadEntry(argv, repo, document) {
 
         // read in the response
         var fileContents = '';
-		if (document.source.endsWith(".md")) 
+		if (isTextFile(document.source))
 			response.setEncoding('utf8');
 		else
 			response.setEncoding('binary');
@@ -113,7 +126,7 @@ function downloadEntry(argv, repo, document) {
         // process the response when it finishes
         response.on('end', function () {
             
-			if (document.source.endsWith(".md")) {
+			if (isTextFile(document.source)) {
 				// merge new front matter and file's own front matter (if it had any)
 				//
 				// NOTE:

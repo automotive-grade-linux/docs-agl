@@ -16,4 +16,34 @@
 #
 
 url_fetch  : "GERRIT_FETCH"
+git_commit: master
 repositories:   
+-
+    git_name: AGL/meta-agl
+    documents:
+        - source: README-AGL.md
+          destination: AGL.md
+          label: AGL Overview
+        - source: README.md
+          destination: meta-agl.md
+          label: meta-agl
+-
+    git_name: AGL/meta-agl-demo
+    documents:
+        - source: README.md
+          destination: meta-agl-demo.md
+          label: meta-agl-demo
+-
+    git_name: AGL/meta-agl-devel
+    documents:
+        - source: README.md
+          destination: meta-agl-devel.md
+          label: meta-agl-devel
+-
+    git_name: AGL/meta-agl-extra
+    documents:
+        - source: meta-sota/README.md
+          destination: meta-sota.md
+          label: meta-sota
+
+

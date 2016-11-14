@@ -43,12 +43,13 @@ function augmentEntry(originalEntry, prefix) {
 
     // get the path to the file to which this entry points
     var filePath = path.join(prefix, originalEntry.url).replace('.html', '.md');
-
     // skip entries that don't point to a valid file
     if (!fs.existsSync(filePath)) {
         console.warn("WARNING! Possible 404 in ToC: \"" + filePath + "\"");
         return originalEntry;
     }
+
+	if (verbose) console.log("     * augmentToc:",filePath);
 
     // read in the referenced file and get its front matter
     var fileContents      = fs.readFileSync(filePath).toString();

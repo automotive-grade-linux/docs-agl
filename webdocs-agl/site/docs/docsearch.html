@@ -5,12 +5,11 @@
 <html lang="{% if page.language %}{{ page.language }}{% else %}{{ site.language }}{% endif %}">
 {% include head.html %}
 <body>
-    
-     <h3><a href="{{ site.docsurl }}/architecture/en/{{ site.default_linked_docs_version }}/">Architecture Guides</a></h3>
-     <h3><a href="{{ site.docsurl }}/apis_services/en/{{ site.default_linked_docs_version }}/">APIs & Services</a></h3>
-     <h3><a href="{{ site.docsurl }}/hardware/en/{{ site.default_linked_docs_version }}/">Hardware Support</a></h3>
      <h3><a href="{{ site.docsurl }}/getting_started/en/{{ site.default_linked_docs_version }}/">Getting started</a></h3>
-
+     <h3><a href="{{ site.docsurl }}/hardware/en/{{ site.default_linked_docs_version }}/">Hardware Support</a></h3>
+     <h3><a href="{{ site.docsurl }}/architecture/en/{{ site.default_linked_docs_version }}/">Architecture Guides</a></h3>
+     <h3><a href="{{ site.docsurl }}/devguides/en/{{ site.default_linked_docs_version }}/">Developer Guides</a></h3>
+     <h3><a href="{{ site.docsurl }}/apis_services/en/{{ site.default_linked_docs_version }}/">APIs & Services</a></h3>
     {% include algolia.html %}
 </body>
 </html>

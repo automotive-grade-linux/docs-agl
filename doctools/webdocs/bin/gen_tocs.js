@@ -48,6 +48,8 @@ function genToc (argv, config, tocDir, item) {
             if(!fs.existsSync(destPath)) fs.mkdirSync(destPath);
     
             var destTocPath = path.join (destPath, destTocName);
+
+            if (argv.verbose) console.log("  + " + srcTocPath + " -> " + destTocPath);
             
             // read the input
             var data = fs.readFileSync(srcTocPath);
@@ -63,7 +65,6 @@ function genToc (argv, config, tocDir, item) {
 
             // write the output
             fs.writeFileSync(destTocPath, output);
-            if (argv.verbose) console.log("  + " + srcTocPath + " -> " + destTocPath);
 
 			// generate index.html from title and template name
 			if (originalToc.template) {

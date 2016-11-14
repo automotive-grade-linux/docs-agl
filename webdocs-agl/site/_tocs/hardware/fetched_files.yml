@@ -15,10 +15,22 @@
 #       title: "optional: info about document (default label, overloaded by file content)"
 #
 
-url_fetch  : "GITHUB_FETCH"
-url_edit   : "GITHUB_EDIT"
+url_fetch  : "GERRIT_FETCH"
 git_commit : "master"
 #dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
 
-repositories:
+repositories:   
+-
+    git_name: AGL/meta-renesas
+    dst_prefix: renesas
+    documents:
+        - source: meta-rcar-gen2/README
+          destination: gen2.md
+          label: meta-rcar-gen2 layer
+        - source: meta-rcar-gen2/README.proprietary
+          destination: proprietary.md
+          label: Proprietary drivers
+        - source: meta-rcar-gen2/README-usbgadget.md 
+          destination: usb-gadget.md
+          label: USB Gadget on Porter board
 
