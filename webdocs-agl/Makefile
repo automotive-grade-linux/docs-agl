@@ -29,6 +29,5 @@ push: fetch
 
 .PHONY: serve
 serve: fetch 
-	$(DOCBUILD) $(VERBOSE) --fetch --force 
 	$(DOCBUILD) $(VERBOSE) --build --serve
 

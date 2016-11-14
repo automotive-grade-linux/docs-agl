@@ -13,7 +13,7 @@ children:
         - url: reference/machines/porter.html
         - url: reference/machines/raspberrypi.html
 -
-    name: Known Issues
+    name: Troubleshooting
     children:
         - url: reference/troubleshooting.html
         - url: reference/footers/porter-footer.html

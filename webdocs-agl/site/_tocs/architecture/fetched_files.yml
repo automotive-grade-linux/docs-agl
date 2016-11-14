@@ -16,8 +16,54 @@
 #
 
 url_fetch  : "GITHUB_FETCH"
-commit     : "master"
+url_edit   : "GITHUB_EDIT"
+git_commit : "master"
 #git_commit : # default defined in _tocs/xxxx/latest.yml
 #dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
 
 repositories:   
+-
+    git_name : automotive-grade-linux/docs-agl
+    git_commit: sandbox/sdesneux/aglspecs1.0
+    src_prefix : docs/agl-specs-v1.0
+    dst_prefix: specs
+    documents:
+        - source: 01-overview.md
+          label: Overview
+        - source: 02-architecture.md
+          label: Architecture
+        - source: 03-homescreen.md
+          label: Homescreen
+        - source: 04-app-fw.md
+          label: Application Framework
+-
+    git_name : automotive-grade-linux/docs-agl
+    src_prefix : docs/sec-blueprint
+    dst_prefix: security
+    documents:
+        - source: 01-overview.md
+          label: Overview
+        - source: 02-plateform-security.md
+          label: Platform Security
+        - source: 03-security-concepts.md
+          label: Security Concepts
+        - source: 04-adversaries.md
+          label: Adversaries
+        - source: 05-threat-analysis.md
+          label: Threat Analysis
+        - source: 06-attack-surfaces.md
+          label: Attack Surfaces
+-
+    git_name : automotive-grade-linux/docs-agl
+    src_prefix : docs
+    dst_prefix: components
+    documents:
+        - source: app-framework/index.md
+          destination: app-framework.md
+          label: Application Framework
+        - source: signaling/index.md
+          destination: signaling.md
+          label: Message signaling
+        - source: audio/index.md
+          destination: audio.md
+          label: Audio Framework

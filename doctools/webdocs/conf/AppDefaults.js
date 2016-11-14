@@ -82,7 +82,7 @@ config = {
     FETCH_DIR   : "reference",
 
 	GITHUB_FETCH: "https://raw.githubusercontent.com/%repo%/%commit%/%source%",
-	GITHUB_EDIT : "https://github.com/%repo%/blob/%commit%/%source%",
+	GITHUB_EDIT : "https://github.com/%repo%/edit/%commit%/%source%",
     
     CMD_JEKYLL  : "jekyll",
     

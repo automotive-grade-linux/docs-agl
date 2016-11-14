@@ -34,7 +34,7 @@ repositories:
     - source: machines/raspberrypi.md
       label: Build for Raspberry PI 2/3
     - source: troubleshooting.md
-      label: Troubleshooting
+      label: Generic issues
     - source: footers/porter-footer.md
       label: Porter board
     - source: footers/raspberrypi-footer.md

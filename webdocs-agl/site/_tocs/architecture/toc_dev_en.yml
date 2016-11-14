@@ -5,4 +5,28 @@
 name: Architecture Guides
 template: generated_index.html
 children:
+-
+    name: AGL Specifications 1.0
+    cildren:
+        - url: reference/security/01-overview.html
+        - url: reference/security/02-architecture.html
+        - url: reference/security/03-homescreen.html
+        - url: reference/security/04-app-fw.html
+-
+    name: Security Blueprint
+    children:
+        - url: reference/security/01-overview.html
+        - url: reference/security/02-plateform-securiry.html
+        - url: reference/security/03-security-concepts.html
+        - url: reference/security/04-adversaries.html
+        - url: reference/security/05-threat-analysis.html
+        - url: reference/security/06-attack-surface.html
+-
+    name: Components
+    children:
+        - url: reference/components/app-framework.html
+        - url: reference/components/signaling.html
+        - url: reference/components/audio.html
+
+
  
