@@ -63,4 +63,4 @@ children:
             url: reference/iotbzh2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf
         -
             name: AppFW - Privileges Management
-            url: reference/iotbzh2016appfw/03-AGL-AppFW-Privileges-Management.pdf
+            url: reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf

@@ -60,6 +60,10 @@ children:
     name: Message Signaling
     children:
         - url: reference/signaling/architecture.html
+        - name: Developer Guidelines
+          url: reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf
+        - name: CAN Signaling Benchmark
+          url: reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf
         - url: reference/signaling/resources.html
 -
     name: Audio Framework

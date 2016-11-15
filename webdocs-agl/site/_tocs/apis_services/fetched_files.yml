@@ -112,6 +112,12 @@ repositories:
         - source: images/distributed-arch.svg
         - source: images/signal-agent-arch.svg
 -
+    url_fetch: http://iot.bzh/download/public/2016/%source%
+    dst_prefix: iotbzh2016
+    documents:
+        - source: signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf
+        - source: signaling/AGL-Message-Signaling-Developer-Guidelines.pdf
+-
     url_fetch: GITHUB_FETCH
     url_edit: GITHUB_EDIT
     git_name: automotive-grade-linux/docs-agl
