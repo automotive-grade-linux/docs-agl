@@ -59,7 +59,7 @@ function augmentEntry(originalEntry, prefix) {
     augmentedEntry.name = decideOnName(originalEntry, frontMatter);
     augmentedEntry.url  = originalEntry.url;
 
-    if (frontMatter.description) {
+    if (frontMatter && frontMatter.description) {
         augmentedEntry.description = frontMatter.description;
     }
 
@@ -72,6 +72,9 @@ function decideOnName(originalEntry, frontMatter) {
     if (originalEntry.name && verbose === true) {
         console.warn("'name' property will be ignored");
     }
+
+	if (!frontMatter)
+		return originalEntry.name;
 
     // error out if there is no name
     if (!frontMatter.toc_title && !frontMatter.title) {

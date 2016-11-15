@@ -1,6 +1,39 @@
+#######################################################################
 # WARNING: 
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
 #  - do not forget to run 'docbuild --tocs' after any changes 
+#
+# 
+############################ SYNTAX ###################################
+# GLOBAL OPTIONS:
+#    name: TOC (page) title
+#    template: name of template to use for this page - use 'generated_index.html' if unknown
+#    children: array of TOC entries
+#
+# TOC Entry:
+#     name: TOC entry (level 1)
+#     children:
+#         - 
+#            name: optional name for TOC entry (default: use URL FrontMatter info)
+#            url: <subdir as defined with FETCH_DIR in conf/AppDefault.js:
+#         -
+#            name: ...
+#            url: ...
+#         ...
+#
+# EXAMPLE:
+# -------------------------------
+# name: Developer Guides
+# template: generated_index.html
+# children:
+# -
+#   name: Application Framework
+#   children:
+#       - url: reference/af-main/overview.html
+#       - url: reference/af-main/afm-system-daemon.html
+#       - url: reference/af-main/afm-user-daemon.html
+# -------------------------------
+#######################################################################
 
 name: Developer Guides
 template: generated_index.html
@@ -13,4 +46,21 @@ children:
         - url: reference/meta-agl-demo.html
         - url: reference/meta-agl-devel.html
         - url: reference/meta-sota.html
-    
+-
+    name: Guides 
+    children:
+        - 
+            name: Kickstart on Renesas Porter board
+            url: reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
+        - 
+            name: Devkit - Image and SDK for Porter board
+            url: reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf
+        - 
+            name: Devkit - Build your 1st AGL Application
+            url: reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf
+        - 
+            name: Devkit - Howto bake a service
+            url: reference/iotbzh2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf
+        -
+            name: AppFW - Privileges Management
+            url: reference/iotbzh2016appfw/03-AGL-AppFW-Privileges-Management.pdf

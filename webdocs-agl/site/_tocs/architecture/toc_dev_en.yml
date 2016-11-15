@@ -1,12 +1,45 @@
+#######################################################################
 # WARNING: 
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
 #  - do not forget to run 'docbuild --tocs' after any changes 
+#
+# 
+############################ SYNTAX ###################################
+# GLOBAL OPTIONS:
+#    name: TOC (page) title
+#    template: name of template to use for this page - use 'generated_index.html' if unknown
+#    children: array of TOC entries
+#
+# TOC Entry:
+#     name: TOC entry (level 1)
+#     children:
+#         - 
+#            name: optional name for TOC entry (default: use URL FrontMatter info)
+#            url: <subdir as defined with FETCH_DIR in conf/AppDefault.js:
+#         -
+#            name: ...
+#            url: ...
+#         ...
+#
+# EXAMPLE:
+# -------------------------------
+# name: Developer Guides
+# template: generated_index.html
+# children:
+# -
+#   name: Application Framework
+#   children:
+#       - url: reference/af-main/overview.html
+#       - url: reference/af-main/afm-system-daemon.html
+#       - url: reference/af-main/afm-user-daemon.html
+# -------------------------------
+#######################################################################
 
 name: Architecture Guides
 template: generated_index.html
 children:
 -
-    name: AGL Specifications 1.0
+    name: AGL Specifications
     children:
         - url: reference/specs/01-overview.html
         - url: reference/specs/02-architecture.html
@@ -21,12 +54,6 @@ children:
         - url: reference/security/04-adversaries.html
         - url: reference/security/05-threat-analysis.html
         - url: reference/security/06-attack-surfaces.html
--
-    name: Components
-    children:
-        - url: reference/components/app-framework.html
-        - url: reference/components/signaling.html
-        - url: reference/components/audio.html
 
 
  

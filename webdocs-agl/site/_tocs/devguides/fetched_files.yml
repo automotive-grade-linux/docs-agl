@@ -1,19 +1,41 @@
-# REFERENCE ENTRY:
-# -
-#   url_fetch : gitweb fetch URL (format string with token %repo% %uri%
-#      GERRIT_FETCH=  "https://gerrit.automotivelinux.org/gerrit/gitweb?p=%repo%;a=blob_plain;f=%source%;hb=%commit%"
-#      GITHUB_FETCH= "https://raw.githubusercontent.com/%repo%/%commit%/%source%"
-#   repository: git repository name
-#      GITHUB_EDIT= "https://raw.github.com/%repo%/blob/%commit%/%source%"
-#   git_commit: git commit when not default
-#   destination_prefix: optional destination prefix 
-#   documents:
-#     -
-#       source  : "source patch within url_fetch"
-#       destination  : "optional: destination path default=path.join(destination_prefix+source)"
-#       label: "optional: friendly name for submenu default=basename(source) overloaded by file content"
-#       title: "optional: info about document (default label, overloaded by file content)"
+##############################################################################################################
+# GLOBAL DOCUMENT
+#   <any REPOSITORY option>: global setting
+#   repositories: array of objects with documents to fetchd
 #
+# REPOSITORY ENTRY:
+# -
+#   url_fetch : gitweb fetch URL (format string with token %repo% %commit% %source%, defined in configuration)
+#   url_edit  : gitweb edut URL (format string with token %repo% %commit% %source%, defined in configuration)
+#   git_name: repository name (%repo%)
+#   git_commit: git reference: revision, SHA1, branch... (%commit%)
+#   src_prefix: prefix prepended to %source%
+#   dst_prefix: prefix prepended to destination name
+#   documents: array of documents to fetch
+#
+# DOCUMENT ENTRY:
+#   source: subpath within repository (%source%)
+#   destination: local destination filename
+#   label|title: name within TOC
+#   edit|editURI: specific edition URI
+#
+# EXAMPLE:
+# ------------------------------------
+# url: "GERRIT_FETCH"
+# git_commit: "master"
+# repositories: 
+# -
+#    git_name: src/foo
+#    src_prefix: docs
+#    dst_prefix: foodocs
+#    documents:
+#       - source: intro.md
+#         label: Introduction
+#       - source: topic/README.md
+#         destination: topic.md
+#         label: My Topic
+# ------------------------------------
+##############################################################################################################
 
 url_fetch  : "GERRIT_FETCH"
 git_commit: master
@@ -45,5 +67,13 @@ repositories:
         - source: meta-sota/README.md
           destination: meta-sota.md
           label: meta-sota
-
+-
+    url_fetch: http://iot.bzh/download/public/2016/%source%
+    dst_prefix: iotbzh2016
+    documents:
+        - source: sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
+        - source: sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf
+        - source: sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf
+        - source: bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf
+        - source: appfw/03-AGL-AppFW-Privileges-Management.pdf
 
