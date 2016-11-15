@@ -12,7 +12,7 @@
                 </button>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <div class="nav_bar_center">
+                <div class="nav_bar_left">
                     <ul class="nav navbar-nav">
                         <li {% if page.specs_tab %}class="active"{% endif %}>
                             <a href="{{ site.docsurl }}/getting_started/en/{{ site.default_linked_docs_version }}/">Getting Started</a>
@@ -33,7 +33,10 @@
                         <li {% if page.appfw_tab %}class="active"{% endif %}>
                             <a href="{{ site.docsurl }}/apis_services/en/{{ site.default_linked_docs_version }}/">APIs & Services</a>
                         </li>
-
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
                         <li {% if page.blog_tab %}class="active"{% endif %}>
                             <a href="{{ site.baseurl }}/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
                         </li>
