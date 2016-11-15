@@ -43,7 +43,7 @@ urls:
     edit_git : https://github.com/automotive-grade-linux/docs-agl/blob/master/site/
 
 logo:
-    navbar  :  /static/img/branding/agl_64.png
+    navbar  :  /static/img/branding/agl_title_793x211.png
     full    :  /static/img/branding/agl_827x576.png
     
 message:
