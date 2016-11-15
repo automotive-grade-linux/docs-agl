@@ -89,7 +89,8 @@ function downloadEntry(argv, repo, document) {
     // start a default front master
     var newFrontMatter = {
         edit_link: document.edit  || editURI || "",
-        title:     document.title || document.label
+        title:     document.title || document.label,
+		origin_url: fetchURI
     };
     
     // create directory for the file if it doesn't exist

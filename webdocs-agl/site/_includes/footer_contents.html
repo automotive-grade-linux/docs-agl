@@ -63,5 +63,8 @@
 	</div>
     <div class="col-sm-3">
 		<small class="stats">{% render_time Page rendered at: %}</small>
+		{% if page.origin_url != nil %}
+		<small class="stats"><a href="{{ page.origin_url }}">Link to source document</small>
+		{% endif %}
 	</div>
 </div>
