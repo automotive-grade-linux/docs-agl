@@ -86,9 +86,9 @@ exclude:
     - static/css-src
     
 algolia: # https://community.algolia.com/docsearch/
-    index : "TBD"
-    apikey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    
+    index : "iot"
+    apikey: "40ffa808affb354450e0c0ddabe94aa9"
+
 disqus: # check https://disqus.com/admin
     name: "TBD"
     devmode: 0
