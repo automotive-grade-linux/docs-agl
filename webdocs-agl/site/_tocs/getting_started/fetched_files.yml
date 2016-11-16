@@ -60,7 +60,7 @@ repositories:
     - source: footers/porter-footer.md
       label: Porter board
     - source: footers/raspberrypi-footer.md
-      label: Rasperry PI
+      label: Raspberry PI
     - source: images/RaspberryPi2-ModelB-debug-serial-cable.jpg
       destination: footers/images/RaspberryPi2-ModelB-debug-serial-cable.jpg
 

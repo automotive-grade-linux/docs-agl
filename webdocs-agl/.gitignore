@@ -5,3 +5,4 @@ build-dev
 conf/_release.yml
 site/_data/all-pages.yml
 site/_data/tocs
+.fetch.ts

@@ -48,6 +48,11 @@ RewriteEngine on
 #      NE - no escaping special characters
 
 # 302 (temporary):
+#     *.md -> *.html
+RewriteRule ^(.*?)\.md$ $1.html
+#RewriteRule ^.*docs/(.*?)\.md$ {{site.baseurl}}/docs/$1.html [R=302]
+
+# 302 (temporary):
 #
 #     docs/         -> docs/[default language]/latest/
 #     docs/*        -> docs/*/latest/
