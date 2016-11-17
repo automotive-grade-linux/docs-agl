@@ -14,28 +14,28 @@
  * limitations under the License.
  */
 
-// Default config will be:
-//  - completed with default from DOCS_TOOLS/conf/AppDefault.js
-//  - superseaded by ProjectRoot/.config-???.js $HOME/.config-???.js /etc/default/config-???.js
+// Runtime config will be:
+//  - initialized with default from doctools/webdocs/conf/AppDefault.js
+//  - overridden by this config
 
 config = {
+	DST_PROD   : "build-prod",
+	DST_DEVL   : "build-dev",
+	VER_CURRENT: "2.x",
     
-    DST_PROD   : "build-prod",
-    DST_DEVL   : "build-dev",
-    VER_CURRENT: "2.x",
-    
-//    PUSH_DEST  : "apache@some.sample.server:/srv/www/docs/",
-//    CRAWL_PROD : "http://some.sample.server/",
-    PUSH_DEST  : "apache@www.ovh.iot:/srv/www/iotbzh/webdocs-sample/",
+//	PUSH_DEST  : "apache@some.sample.server:/srv/www/docs/",
+//	CRAWL_PROD : "http://some.sample.server/",
+	PUSH_DEST  : "apache@www.ovh.iot:/srv/www/iotbzh/webdocs-sample/",
+	CRAWL_DEV  : "http://docs.iot.bzh",
 	CRAWL_PROD : "http://docs.iot.bzh",
 
-    LANGUAGES: ['en','fr'],
+	LANGUAGES: ['en','fr'],
     
     //GEM_FILE : "Absolute Path to GemFile when not within DOCS_TOOLS directory"
 
 	GERRIT_FETCH: "https://gerrit.automotivelinux.org/gerrit/gitweb?p=%repo%.git;a=blob_plain;f=%source%;hb=%commit%",
 
-    LAST: undefined
+	LAST: undefined
 };
 
 module.exports = config;

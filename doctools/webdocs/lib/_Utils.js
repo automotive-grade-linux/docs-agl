@@ -38,26 +38,26 @@ var GetConfig=function (extension) {
         process.env.SITE_DIR = sitedir;
 
         // Make sure we get site config first
-        var toolcfg=require(__dirname+"/_Config")(extension);
+        config=require(__dirname+"/_Config")(extension);
 
-		var siteconf=path.resolve(path.join(sitedir, "../conf/AppDefaults.js"));
-		if (!fs.existsSync(siteconf)) {
-			console.log("Site configuration file not found in %s. Please specify correct site dir with option --site=...",siteconf);
+		var siteConfPath=path.resolve(path.join(sitedir, "../conf/AppDefaults.js"));
+		if (!fs.existsSync(siteConfPath)) {
+			console.log("Site configuration file not found in %s. Please specify correct site dir with option --site=...",siteConfPath);
 			process.exit(1);
 		}
         try {
-			console.log("Loading site config at %s",siteconf);
-            config=require(siteconf);
+			console.log("Loading site config at %s",siteConfPath);
+            siteConfig=require(siteConfPath);
         } catch(error){
-            console.log ("Invalid configuration file %s -- %s",siteconf,error);
+            console.log ("Invalid configuration file %s -- %s",siteConfPath,error);
             process.exit(1);
         }
         
         // if default change default language
-        if (config.LANG_DEFAULT) process.env.LANG_DEFAULT=config.LANG_DEFAULT;
+        if (siteConfig.LANG_DEFAULT) process.env.LANG_DEFAULT=siteConfig.LANG_DEFAULT;
 
         // load DocsTools config and merge it local config
-        for (var value in toolcfg) config[value] = toolcfg[value];  
+        for (var value in siteConfig) config[value] = siteConfig[value];  
 
 		// override SITE_DIR
 		config.SITE_DIR=sitedir;

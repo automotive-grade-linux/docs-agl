@@ -15,6 +15,7 @@ baseurl:        "" # the subpath of the site, e.g. /blog; NOTE: no trailing slas
 docsurl:        "/docs" # docsearch entry point 
 rss_path:       /misc/feed.xml
 
+copyright_date: "2015-2016"
 
 excerpt_separator: <!--more-->
 

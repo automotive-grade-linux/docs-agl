@@ -22,7 +22,7 @@ var crawler    = require("simplecrawler");
 function main (config, argv) {   
     
     var uri;
-    
+console.log("*********************", config.CRAWL_DEV); 
     if (argv.prod) uri=config.CRAWL_PROD;
     else uri=uri=config.CRAWL_DEV;
     

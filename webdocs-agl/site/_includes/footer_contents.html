@@ -59,12 +59,18 @@
 </div>
 <div class="row">
 	<div class="col-sm-9">
-		<p class="copyright_text">Copyright &copy; 2016 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/> Automotive Grade Linux and feather logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.</p>
+		<p class="copyright_text">
+			Copyright &copy; {{ site.copyright_date }} Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
 	</div>
     <div class="col-sm-3">
 		<small class="stats">{% render_time Page rendered at: %}</small>
 		{% if page.origin_url != nil %}
-		<small class="stats"><a href="{{ page.origin_url }}">Link to source document</small>
+		<br/><small class="stats"><a href="{{ page.origin_url }}">Link to source document</small>
 		{% endif %}
 	</div>
 </div>

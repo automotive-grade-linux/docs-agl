@@ -35,7 +35,7 @@ config = {
     TOCS_DIR   : path.join (SITE_DIR, "_tocs"),
     DOCS_DIR   : path.join (SITE_DIR, "docs"),
     
-    VER_CURRENT   : "xx.x",
+    VER_CURRENT       : "xx.x",
     VERSION_TAGDEV    : 'dev',
     VERSION_LATEST    : 'latest.yml', 
     VERSION_RELEASE   : '_release.yml', 
