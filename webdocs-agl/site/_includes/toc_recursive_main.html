@@ -1,0 +1,28 @@
+<ul class="site-toc">
+    {% for entry in include.entries %}
+
+    <li>
+        {% if entry.children %}
+            <span class="toc-section-heading">
+                {{ entry.name }}
+            </span>
+        {% else %}
+            <a class="{% if include.my_entry == entry.url %}this-page{% endif %}" href="{{ include.version_root }}{{ entry.url }}">
+                {{ entry.name }}
+            </a>
+            {% if include.my_entry == entry.url %}
+                <span class="entry-highlight"></span>
+            {% endif %}
+        {% endif %}
+
+        {% comment %}
+        Insert page-specific ToC here if this is the entry for this page
+        {% endcomment %}
+        {% if include.my_entry == entry.url %}<div id="page-toc" class="page-toc"></div>{% endif %}
+
+        {% if entry.children %}
+        {% include toc_recursive_main.html entries=entry.children my_entry=include.my_entry version_root=include.version_root %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
