@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Writing Applications  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/docs-agl//favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="https://automotive-grade-linux.github.io/docs-agl/docs-agl//docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/docs-agl//static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/docs-agl//static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/docs-agl//static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/docs-agl//"><img id="logo_top" src="/docs-agl//static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs-agl/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs-agl/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs-agl/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs-agl/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs-agl/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs-agl//techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                        </li>
+                        <li >
+                            <a href="/docs-agl//contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
+                System Daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-user-daemon.html">
+                User Daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/writing-config.xml.html">
+                Writing config.xml
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+                Binder overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+                Writing Applications
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
+                Writing Bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+                Events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-tests-overview.html">
+                Tests overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
+                Bindings Examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/FAQ.html">
+                FAQ
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture (proposal)
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/audio/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/afm-system-daemon.html">
+        System Daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/afm-user-daemon.html">
+        User Daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/writing-config.xml.html">
+        Writing config.xml
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-overview.html">
+        Binder overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-application-writing.html">
+        Writing Applications
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-bindings-writing.html">
+        Writing Bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-events-guide.html">
+        Events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-tests-overview.html">
+        Tests overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-bindings-overview.html">
+        Bindings Examples
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/FAQ.html">
+        FAQ
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/architecture.html">
+        Signaling Architecture (proposal)
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
+
+                    
+                    
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning -->
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs-agl//docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+                            
+                        </a>
+                    </div>
+                
+                
+                <!-- outdated warning -->
+                
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /home/dl9pf/user/git/LF/AGL/WRITE/docs-agl/webdocs-agl/site/_tocs/apis_services/fetched_files.yml -->
+
+<h1 id="howto-write-an-application-above-agl-framework">HOWTO WRITE an APPLICATION above AGL FRAMEWORK</h1>
+
+<h2 id="programmation-languages-for-applications">Programmation Languages for Applications</h2>
+
+<h3 id="writing-an-html5-application">Writing an HTML5 application</h3>
+
+<p>Developers of HTML5 applications (client side) can easily create
+applications for AGL framework using their preferred
+HTML5 framework.</p>
+
+<p>Developers may also take advantage of powerful server side plugins to improve
+application behavior. Server side plugins return an application/json mine-type
+and can be accessed though either HTTP or Websockets.</p>
+
+<p>In a near future, JSON-RPC protocol should be added to complete current x-afb-json1 protocol.</p>
+
+<p>Two examples of HTML5 applications are given:</p>
+
+<ul>
+  <li>
+    <p><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-demo.git;a=tree;f=afb-client">afb-client</a> a simple “hello world” application template</p>
+  </li>
+  <li>
+    <p><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-demo.git;a=tree;f=afm-client">afm-client</a> a simple “Home screen” application template</p>
+  </li>
+</ul>
+
+<h3 id="writing-a-qt-application">Writing a Qt application</h3>
+
+<p>Writing Qt applications is also supported. Qt offers standard API to send request through HTTP or WebSockets.</p>
+
+<p>It is also possible to write QML applications. A sample QML application [token-websock] is avaliable..</p>
+
+<ul>
+  <li><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;a=blob;f=test/token-websock.qml">token-websock</a>
+a simple “hello world” application in QML</li>
+</ul>
+
+<h3 id="writing-c-application">Writing “C” application</h3>
+
+<p>C applications can use afb-daemon binder through a websocket connection.</p>
+
+<p>The library <strong>libafbwsc</strong> is provided for C clients that need
+to connect with an afb-daemon binder.</p>
+
+<p>The program <strong>afb-client-demo</strong> is the C example that use
+<strong>libafbwsc</strong> library.
+Source code is available here
+<a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;a=blob;f=src/afb-client-demo.c">src/afb-client-demo.c</a>.</p>
+
+<p>Current implementation relies on libsystemd and file descriptors.
+This model might be review in the future to support secure sockets
+and free the dependency with libsystemd.</p>
+
+<h2 id="handling-sessions-within-applications">Handling sessions within applications</h2>
+
+<p>Applications should understand sessions and tokens management when interacting with afb-daemon binder.</p>
+
+<p>Applications are communicating with their private binder(afb-daemon) using
+a network connection or potentially any other connection channel. While current version
+does not yet implement unix domain this feature might be added in a near future.
+Developers need to be warn that HTTP protocol is a none connected protocol. This prevents
+from using HTTP socket connection to authenticate clients.</p>
+
+<p>For this reason, the binder should authenticate the application
+by using a shared secret. The secret is named “token” and the identification
+of client is named “session”.</p>
+
+<p>The examples <strong>token-websock.qml</strong> and <strong>afb-client</strong> are demonstrating
+how authentication and sessions are managed.</p>
+
+<h3 id="handling-sessions">Handling sessions</h3>
+
+<p>Plugins and other binder feature need to keep track of client
+instances. This is especially important for plugins running as services
+as they may typically have to keep each client’s data separated.</p>
+
+<p>For HTML5 applications, the web runtime handles the cookie of session
+that the binder afb-daemon automatically sets.</p>
+
+<p>Session identifier can be set using the parameter
+<strong>uuid</strong> or <strong>x-afb-uuid</strong> in URI requests. Within current version of the
+framework session UUID is supported by both HTTP requests and websocket negotiation.</p>
+
+<h3 id="exchanging-tokens">Exchanging tokens</h3>
+
+<p>At application start, AGL framework communicates a shared secret to both binder
+and client application. This initial secret is called the “initial token”.</p>
+
+<p>For each of its client application, the binder manages a current active
+token for session management. This authentication token can be use to restrict
+access to some plugin’s methods.</p>
+
+<p>The token must be included in URI request on HTTP or during websockets
+connection using parameter <strong>token</strong> or <strong>x-afb-token</strong>.</p>
+
+<p>To ensure security, tokens must be refreshed periodically.</p>
+
+<h3 id="example-of-session-management">Example of session management</h3>
+
+<p>In following examples, we suppose that <strong>afb-daemon</strong> is launched with something equivalent to:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ afb-daemon --port=1234 --token=123456 [...]
+</code></pre>
+</div>
+
+<p>making the expectation that <strong>AuthLogin</strong> plugin is requested as default.</p>
+
+<h4 id="using-curl">Using curl</h4>
+
+<p>First, connects with the initial token, 123456:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl http://localhost:1234/api/auth/connect?token=123456
+{
+  "jtype": "afb-reply",
+  "request": {
+     "status": "success",
+     "token": "0aef6841-2ddd-436d-b961-ae78da3b5c5f",
+     "uuid": "850c4594-1be1-4e9b-9fcc-38cc3e6ff015"
+  },
+  "response": {"token": "A New Token and Session Context Was Created"}
+}
+</code></pre>
+</div>
+
+<p>It returns an answer containing session UUID, 850c4594-1be1-4e9b-9fcc-38cc3e6ff015,
+and a refreshed token, 850c4594-1be1-4e9b-9fcc-38cc3e6ff015.</p>
+
+<p>Check if session and token is valid:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl http://localhost:1234/api/auth/check?token=0aef6841-2ddd-436d-b961-ae78da3b5c5f\&amp;uuid=850c4594-1be1-4e9b-9fcc-38cc3e6ff015
+{
+  "jtype": "afb-reply",
+  "request": {"status":"success"},
+  "response": {"isvalid":true}
+}
+</code></pre>
+</div>
+
+<p>Refresh the token:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl http://localhost:1234/api/auth/refresh?token=0aef6841-2ddd-436d-b961-ae78da3b5c5f\&amp;uuid=850c4594-1be1-4e9b-9fcc-38cc3e6ff015
+{
+  "jtype": "afb-reply",
+  "request": {
+     "status":"success",
+     "token":"b8ec3ec3-6ffe-448c-9a6c-efda69ad7bd9"
+  },
+  "response": {"token":"Token was refreshed"}
+}
+</code></pre>
+</div>
+
+<p>Close the session:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl http://localhost:1234/api/auth/logout?token=b8ec3ec3-6ffe-448c-9a6c-efda69ad7bd9\&amp;uuid=850c4594-1be1-4e9b-9fcc-38cc3e6ff015
+{
+  "jtype": "afb-reply",
+  "request": {"status": "success"},
+  "response": {"info":"Token and all resources are released"}
+}
+</code></pre>
+</div>
+
+<p>Checking on closed session for uuid should be refused:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl http://localhost:1234/api/auth/check?token=b8ec3ec3-6ffe-448c-9a6c-efda69ad7bd9\&amp;uuid=850c4594-1be1-4e9b-9fcc-38cc3e6ff015
+{
+  "jtype": "afb-reply",
+  "request": {
+     "status": "failed",
+     "info": "invalid token's identity"
+  }
+}
+</code></pre>
+</div>
+
+<h4 id="using-afb-client-demo">Using afb-client-demo</h4>
+
+<blockquote>
+  <p>The program is packaged within AGL in the rpm <strong>libafbwsc-dev</strong></p>
+</blockquote>
+
+<p>Here is an example of exchange using <strong>afb-client-demo</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ afb-client-demo ws://localhost:1234/api?token=123456
+auth connect
+ON-REPLY 1:auth/connect: {"jtype":"afb-reply","request":{"status":"success",
+   "token":"63f71a29-8b52-4f9b-829f-b3028ba46b68","uuid":"5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1"},
+   "response":{"token":"A New Token and Session Context Was Created"}}
+auth check
+ON-REPLY 2:auth/check: {"jtype":"afb-reply","request":{"status":"success"},"response":{"isvalid":true}}
+auth refresh
+ON-REPLY 4:auth/refresh: {"jtype":"afb-reply","request":{"status":"success",
+   "token":"8b8ba8f4-1b0c-48fa-962d-4a00a8c9157e"},"response":{"token":"Token was refreshed"}}
+auth check
+ON-REPLY 5:auth/check: {"jtype":"afb-reply","request":{"status":"success"},"response":{"isvalid":true}}
+auth refresh
+ON-REPLY 6:auth/refresh: {"jtype":"afb-reply","request":{"status":"success",
+   "token":"e83b36f8-d945-463d-b983-5d8ed73ba529"},"response":{"token":"Token was refreshed"}}
+</code></pre>
+</div>
+
+<p>After closing connection, reconnect as here after:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ afb-client-demo ws://localhost:1234/api?token=e83b36f8-d945-463d-b983-5d8ed73ba529\&amp;uuid=5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1 auth check
+ON-REPLY 1:auth/check: {"jtype":"afb-reply","request":{"status":"success"},"response":{"isvalid":true}}
+</code></pre>
+</div>
+
+<p>Same connection check using <strong>curl</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl http://localhost:1234/api/auth/check?token=e83b36f8-d945-463d-b983-5d8ed73ba529\&amp;uuid=5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1
+{"jtype":"afb-reply","request":{"status":"success"},"response":{"isvalid":true}}
+</code></pre>
+</div>
+
+<h2 id="format-of-replies">Format of replies</h2>
+
+<p>Replies use javascript object returned as serialized JSON.</p>
+
+<p>This object contains at least 2 mandatory fields of name <strong>jtype</strong> and <strong>request</strong>
+and one optional field of name <strong>response</strong>.</p>
+
+<h3 id="template">Template</h3>
+
+<p>This is a template of replies:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"jtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"informationnal text"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e83b36f8-d945-463d-b983-5d8ed73ba52"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reqid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application-generated-id-23456"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="err">....any</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">object....</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="field-jtype">Field jtype</h3>
+
+<p>The field <strong>jtype</strong> must have a value of type string equal to <strong>“afb-reply”</strong>.</p>
+
+<h3 id="field-request">Field request</h3>
+
+<p>The field <strong>request</strong> must have a value of type object. This request object
+has at least one field named <strong>status</strong> and four optional fields named
+<strong>info</strong>, <strong>token</strong>, <strong>uuid</strong>, <strong>reqid</strong>.</p>
+
+<h4 id="subfield-requeststatus">Subfield request.status</h4>
+
+<p><strong>status</strong> must have a value of type string. This string is equal to <strong>“success”</strong>
+only in case of success.</p>
+
+<h4 id="subfield-requestinfo">Subfield request.info</h4>
+
+<p><strong>info</strong> is of type string and represent optional information added to the reply.</p>
+
+<h4 id="subfield-requesttoken">Subfield request.token</h4>
+
+<p><strong>token</strong> is of type string. It is sent either at session creation 
+or when the token is refreshed.</p>
+
+<h4 id="subfield-requestuuid">Subfield request.uuid</h4>
+
+<p><strong>uuid</strong> is of type string. It is sent at session creation.</p>
+
+<h4 id="subfield-requestreqid">Subfield request.reqid</h4>
+
+<p><strong>reqid</strong> is of type string. It is sent in response to HTTP requests
+that added a parameter of name <strong>reqid</strong> or <strong>x-afb-reqid</strong> at request time.
+Value returns in the reply has the exact same value as the one received in the request.</p>
+
+<h3 id="field-response">Field response</h3>
+
+<p>This field response optionally contains an object returned when request succeeded.</p>
+
+<h2 id="format-of-events">Format of events</h2>
+
+<p>Events are javascript object serialized as JSON.</p>
+
+<p>This object contains at least 2 mandatory fields of name <strong>jtype</strong> and <strong>event</strong>
+and one optional field of name <strong>data</strong>.</p>
+
+<h3 id="template-1">Template</h3>
+
+<p>Here is a template of event:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"jtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-event"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample_api_name/sample_event_name"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">...any</span><span class="w"> </span><span class="err">event</span><span class="w"> </span><span class="err">data...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="field-jtype-1">Field jtype</h3>
+
+<p>The field <strong>jtype</strong> must have a value of type string equal to <strong>“afb-event”</strong>.</p>
+
+<h3 id="field-event">Field event</h3>
+
+<p>The field <strong>event</strong> carries the event’s name.</p>
+
+<p>The name of the event is made of two parts separated by a slash:
+the name of the name of the API that generated the event
+and the name of event within the API.</p>
+
+<h3 id="field-data">Field data</h3>
+
+<p>This field data if present holds the data carried by the event.</p>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/docs-agl//contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2016 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2016-11-21 12:02:43 +0100</small>
+		
+		<br/><small class="stats"><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;a=blob_plain;f=doc/afb-application-writing.md;hb=master">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/docs-agl//static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/docs-agl//static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/docs-agl//static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: '40ffa808affb354450e0c0ddabe94aa9',
+        indexName: 'iot',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+        <script defer src="/docs-agl//static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/docs-agl//static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/docs-agl//static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/docs-agl//static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/docs-agl//static/js/process-uml.js"></script>
+    
+
+</body>
+</html>

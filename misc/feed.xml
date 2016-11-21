@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <description>AGL (Automotive Grade Linux) Developer Website</description>
+    <link>https://automotive-grade-linux.github.io/docs-agl/docs-agl//</link>
+    <atom:link href="https://automotive-grade-linux.github.io/docs-agl/docs-agl//docs-agl/misc/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 21 Nov 2016 12:02:42 +0100</pubDate>
+    <lastBuildDate>Mon, 21 Nov 2016 12:02:42 +0100</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Test Markdown to UML</title>
+        <description>&lt;p&gt;Basic reference for Markdown documentation with:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;kramdown extentions&lt;/li&gt;
+  &lt;li&gt;UML/Flow diagrams&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kramdown [http://kramdown.gettalong.org/quickref.html]&lt;/li&gt;
+  &lt;li&gt;UML diagrams [http://bramp.github.io/js-sequence-diagrams/]&lt;/li&gt;
+  &lt;li&gt;Flow charts [http://adrai.github.io/flowchart.js/]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;markdown-extra&quot;&gt;Markdown Extra&lt;/h2&gt;
+
+&lt;p&gt;StackEdit supports &lt;strong&gt;Markdown Extra&lt;/strong&gt;, which extends &lt;strong&gt;Markdown&lt;/strong&gt; syntax with some nice features.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; You can disable any &lt;strong&gt;Markdown Extra&lt;/strong&gt; feature in the &lt;strong&gt;Extensions&lt;/strong&gt; tab of the &lt;i class=&quot;icon-cog&quot;&gt;&lt;/i&gt; &lt;strong&gt;Settings&lt;/strong&gt; dialog.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You can find more information about &lt;strong&gt;Markdown&lt;/strong&gt; syntax &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot; title=&quot;Markdown&quot;&gt;here&lt;/a&gt; and &lt;strong&gt;Markdown Extra&lt;/strong&gt; extension &lt;a href=&quot;https://github.com/jmcmanus/pagedown-extra&quot; title=&quot;Pagedown Extra&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;tables&quot;&gt;Tables&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Markdown Extra&lt;/strong&gt; has a special syntax for tables:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Item&lt;/td&gt;
+      &lt;td&gt;Value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Computer&lt;/td&gt;
+      &lt;td&gt;$1600&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Phone&lt;/td&gt;
+      &lt;td&gt;$12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Pope&lt;/td&gt;
+      &lt;td&gt;$1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You can specify column alignment with one or two colons:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Item&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Value&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Qty&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Computer&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$1600&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Phone&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$12&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Pipe&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;234&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;table rules=&quot;groups&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Header1&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Header2&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Header3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Foot1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Foot2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Foot3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;definition-lists&quot;&gt;Definition Lists&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Markdown Extra&lt;/strong&gt; has a special syntax for definition lists too:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Term 1&lt;/dt&gt;
+  &lt;dt&gt;Term 2&lt;/dt&gt;
+  &lt;dd&gt;Definition A&lt;/dd&gt;
+  &lt;dd&gt;Definition B&lt;/dd&gt;
+  &lt;dt&gt;Term 3&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Definition C&lt;/p&gt;
+  &lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Definition D&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;part of definition D&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h3 id=&quot;fenced-code-blocks&quot;&gt;Fenced code blocks&lt;/h3&gt;
+
+&lt;p&gt;GitHub’s fenced code blocks are also supported with &lt;strong&gt;Highlight.js&lt;/strong&gt; syntax highlighting:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Foo
+var bar = 0;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; To use &lt;strong&gt;Prettify&lt;/strong&gt; instead of &lt;strong&gt;Highlight.js&lt;/strong&gt;, just configure the &lt;strong&gt;Markdown Extra&lt;/strong&gt; extension in the &lt;i class=&quot;icon-cog&quot;&gt;&lt;/i&gt; &lt;strong&gt;Settings&lt;/strong&gt; dialog.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You can find more information:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;about &lt;strong&gt;Prettify&lt;/strong&gt; syntax highlighting &lt;a href=&quot;https://code.google.com/p/google-code-prettify/&quot;&gt;here&lt;/a&gt;,&lt;/li&gt;
+    &lt;li&gt;about &lt;strong&gt;Highlight.js&lt;/strong&gt; syntax highlighting &lt;a href=&quot;http://highlightjs.org/&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h3&gt;
+
+&lt;p&gt;You can create footnotes like this&lt;sup id=&quot;fnref:footnote&quot;&gt;&lt;a href=&quot;#fn:footnote&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;smartypants&quot;&gt;SmartyPants&lt;/h3&gt;
+
+&lt;p&gt;SmartyPants converts ASCII punctuation characters into “smart” typographic punctuation HTML entities. For example:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;ASCII&lt;/th&gt;
+      &lt;th&gt;HTML&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Single backticks&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'Isn't this fun?'&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;‘Isn’t this fun?’&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Quotes&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Isn't this fun?&quot;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;“Isn’t this fun?”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Dashes&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-- is en-dash, --- is em-dash&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;– is en-dash, — is em-dash&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h3&gt;
+
+&lt;p&gt;You can insert a table of contents using the marker &lt;code class=&quot;highlighter-rouge&quot;&gt;[TOC]&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ol id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#markdown-extra&quot; id=&quot;markdown-toc-markdown-extra&quot;&gt;Markdown Extra&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#tables&quot; id=&quot;markdown-toc-tables&quot;&gt;Tables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#definition-lists&quot; id=&quot;markdown-toc-definition-lists&quot;&gt;Definition Lists&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#fenced-code-blocks&quot; id=&quot;markdown-toc-fenced-code-blocks&quot;&gt;Fenced code blocks&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#footnotes&quot; id=&quot;markdown-toc-footnotes&quot;&gt;Footnotes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#smartypants&quot; id=&quot;markdown-toc-smartypants&quot;&gt;SmartyPants&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot; id=&quot;markdown-toc-table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#uml-diagrams&quot; id=&quot;markdown-toc-uml-diagrams&quot;&gt;UML diagrams&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;uml-diagrams&quot;&gt;UML diagrams&lt;/h3&gt;
+
+&lt;p&gt;You can also render sequence diagrams like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Alice-&amp;gt;Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob--&amp;gt;Alice: I am good thanks!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-UML&quot;&gt; Alice-&amp;gt;Bob: Hello Bob, how are you?
+ Note right of Bob: Bob thinks
+ Bob--&amp;gt;Alice: I am good thanks!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-UML-hand&quot;&gt;Alice-&amp;gt;Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob--&amp;gt;Alice: I am good thanks!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And flow charts like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; st=&amp;gt;start: Start
+ e=&amp;gt;end
+ op=&amp;gt;operation: My Operation
+ cond=&amp;gt;condition: Yes or No?
+
+ st-&amp;gt;op-&amp;gt;cond
+ cond(yes)-&amp;gt;e
+ cond(no)-&amp;gt;op
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-FLOW&quot;&gt;st=&amp;gt;start: Start
+e=&amp;gt;end
+op=&amp;gt;operation: My Operation
+cond=&amp;gt;condition: Yes or No?
+
+st-&amp;gt;op-&amp;gt;cond
+cond(yes)-&amp;gt;e
+cond(no)-&amp;gt;op
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You can find more information:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;about &lt;strong&gt;Sequence diagrams&lt;/strong&gt; syntax &lt;a href=&quot;http://bramp.github.io/js-sequence-diagrams/&quot;&gt;here&lt;/a&gt;,&lt;/li&gt;
+    &lt;li&gt;about &lt;strong&gt;Flow charts&lt;/strong&gt; syntax &lt;a href=&quot;http://adrai.github.io/flowchart.js/&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:footnote&quot;&gt;
+      &lt;p&gt;Here is the &lt;em&gt;text&lt;/em&gt; of the &lt;strong&gt;footnote&lt;/strong&gt;. &lt;a href=&quot;#fnref:footnote&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 02 Jul 2016 00:00:00 +0200</pubDate>
+        <link>https://automotive-grade-linux.github.io/docs-agl/docs-agl//2016/07/02/markdown-tuto.html</link>
+        <guid isPermaLink="true">https://automotive-grade-linux.github.io/docs-agl/docs-agl//2016/07/02/markdown-tuto.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Security White Paper</title>
+        <description>&lt;p&gt;Cars are expensive pieces of equipment, yet they represent a huge mass market.
+Adding Internet connectivity to previous elements generates perfect conditions for the growth of a viable business model on attacking “Connected Cars”. It is already well understood that cars will be connected and connected cars will be attacked. While it’s still too early to predict with certainty how “Connected Cars” will be impacted by security flaws, making the assumption that a car should be at least as secure as a TV, a set-top-box or a smart phone should make sense to everyone. 
+This white paper focuses on how Linux best practices security mechanisms
+that could be used today and within the next couple of years to make connected cars safer and more secure.
+&lt;!--more--&gt;
+Download in PDF &lt;a href=&quot;http://iot.bzh/download/public/2016/security/Linux-Automotive-Security-v10.pdf&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 10 Jan 2016 13:45:04 +0100</pubDate>
+        <link>https://automotive-grade-linux.github.io/docs-agl/docs-agl//blog/2016/01/10/security-white-paper.html</link>
+        <guid isPermaLink="true">https://automotive-grade-linux.github.io/docs-agl/docs-agl//blog/2016/01/10/security-white-paper.html</guid>
+        
+        <category>security</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>This is a sample post</title>
+        <description>&lt;p&gt;This is a sample of post for webdoc-tools 
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;Be sure to &lt;a href=&quot;/docs-agl//docs-agl/misc/feed.xml&quot;&gt;subscribe&lt;/a&gt; using RSS&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 01:00:00 +0100</pubDate>
+        <link>https://automotive-grade-linux.github.io/docs-agl/docs-agl//blog/2016/01/01/sample-test-blog.html</link>
+        <guid isPermaLink="true">https://automotive-grade-linux.github.io/docs-agl/docs-agl//blog/2016/01/01/sample-test-blog.html</guid>
+        
+        <category>test</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,119 @@
+###############################################################################
+# WARNING
+###############################################################################
+# Only modify this file if you know what you're doing. This file has
+# the potential to make pages become PERMANENTLY UNREACHABLE. If in
+# doubt, refer to these links:
+#
+# RewriteRule       - http://httpd.apache.org/docs/current/mod/mod_rewrite.html
+# RewriteRule flags - http://httpd.apache.org/docs/current/rewrite/flags.html
+# .htaccess tester  - http://htaccess.madewithlove.be/
+#
+# And remember: three-oh-ONE (301) menas you get ONE chance to get it right;
+#               three-oh-TWO (302) means you get TWO chances.
+###############################################################################
+
+# set error pages
+ErrorDocument 404 /docs-agl//404.html
+
+# turn off automatic directory indices
+Options -Indexes
+
+# turn on redirection
+Options +FollowSymLinks
+RewriteEngine on
+
+# NOTE:
+#      Some of the below redirects are 302s, and some are 301s. 302s are used
+#      for redirects whose targets change sometimes. For example:
+#          - /docs/          -> /docs/fr/, /docs/en/, etc.
+#          - /docs/en/       -> /docs/en/dev/, /docs/en/latest/, etc.
+#          - /docs/en/latest -> /docs/en/4.0.0/, /docs/en/5.0.0/, etc.
+#
+#      301s are for PERMANENT redirects. These are used only for mapping old
+#      pages to new pages.
+#
+# NOTE:
+#      (\w\w(?:-\w\w)?)                   - regex for languages
+#      (?:\d+\.(?:\d+\.\d+|x))|dev|latest - regex for versions
+#
+# NOTE:
+#      Meanings of some of the flags at the ends of rules:
+#
+#      L  - terminal rule; if it applies, no more rules are checked
+#      R  - redirect (followed by code)
+#      NE - no escaping special characters
+
+# 302 (temporary):
+#     *.md -> *.html
+RewriteRule ^(.*?)\.md$ $1.html
+#RewriteRule ^.*docs/(.*?)\.md$ /docs-agl//docs/$1.html [R=302]
+
+# 302 (temporary):
+#
+#     docs/         -> docs/[default language]/latest/
+#     docs/*        -> docs/*/latest/
+#     docs/*/       -> docs/*/latest/
+#     docs/*/latest -> docs/*/latest/
+#
+RewriteRule ^.*docs/$ /docs-agl//docs/en/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)$ /docs-agl//docs/$1/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/$ /docs-agl//docs/$1/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/latest$ /docs-agl//docs/$1/latest/ [R=302,L]
+
+# 302 (temporary):
+#
+#     docs/*/XX/* -> docs/*/YY/*
+#
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/master/(.*)$ /docs-agl//docs/$1/dev/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/1.0/(.*)$ /docs-agl//docs/$1/1.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.1/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.2/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.3/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=302,L]
+
+
+# 302 (temporary):
+#
+#     docs/XX/* -> docs/YY/*
+#
+
+
+# 301 (PERMANENT):
+#
+#     old docs pages -> new docs pages (global)
+#
+# NOTE:
+#       The first part of the path (i.e. the ".*") is thrown away and replaced
+#       by site.baseurl. It is thrown away because there is no RewriteCond to
+#       control whether the rewrite happens to a URI or a local file path
+#       (when Apache is locating the local file to serve).
+
+
+# 301 (PERMANENT):
+#
+#     old docs pages -> new docs pages (version-specific)
+#
+
+
+# 301 (PERMANENT):
+#
+#     old pages -> new pages
+#
+
+
+# rewrite only:
+#
+#     /docs/XX/latest/* -> /docs/XX/Y.Y.Y/*
+#
+# NOTE:
+#       This does NOT return a redirect. It returns the resource *as if* the
+#       redirected URI was requested. That is, both URIs return the same
+#       resource, but the browser won't change the URI (no redirects followed).
+#
+# NOTE:
+#       This needs to be *after* the docs redirects because they might need the
+#       "/latest/" to be in the URI in order to activate. Placing this rule
+#       before them will rewrite "/latest/" to the latest version and redirects
+#       for "/latest/some/path.html" will never activate.
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/latest/(.*)$ /docs-agl//docs/$1/2.x/$2 [L]

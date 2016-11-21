@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Signaling Architecture (proposal)  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/docs-agl//favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="https://automotive-grade-linux.github.io/docs-agl/docs-agl//docs/apis_services/en/dev/reference/signaling/architecture.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/docs-agl//static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/docs-agl//static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/docs-agl//static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/docs-agl//"><img id="logo_top" src="/docs-agl//static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs-agl/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs-agl/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs-agl/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs-agl/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs-agl/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs-agl//techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                        </li>
+                        <li >
+                            <a href="/docs-agl//contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
+                System Daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-user-daemon.html">
+                User Daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/writing-config.xml.html">
+                Writing config.xml
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+                Binder overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+                Writing Applications
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
+                Writing Bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+                Events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-tests-overview.html">
+                Tests overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
+                Bindings Examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/FAQ.html">
+                FAQ
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture (proposal)
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/audio/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/afm-system-daemon.html">
+        System Daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/afm-user-daemon.html">
+        User Daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/writing-config.xml.html">
+        Writing config.xml
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-overview.html">
+        Binder overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-application-writing.html">
+        Writing Applications
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-bindings-writing.html">
+        Writing Bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-events-guide.html">
+        Events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-tests-overview.html">
+        Tests overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-bindings-overview.html">
+        Bindings Examples
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/FAQ.html">
+        FAQ
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/architecture.html">
+        Signaling Architecture (proposal)
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    
+                    
+                        <a class="edit" href="https://github.com/automotive-grade-linux/docs-agl/edit/master/docs/signaling/architecture.md"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
+
+                    
+                    
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning -->
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs-agl//docs/apis_services/en/dev/reference/signaling/architecture.html">
+                            
+                        </a>
+                    </div>
+                
+                
+                <!-- outdated warning -->
+                
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /home/dl9pf/user/git/LF/AGL/WRITE/docs-agl/webdocs-agl/site/_tocs/apis_services/fetched_files.yml -->
+
+<p><strong>Table of Content</strong></p>
+
+<ol id="markdown-toc">
+  <li><a href="#context" id="markdown-toc-context">Context</a></li>
+  <li><a href="#objectives" id="markdown-toc-objectives">Objectives</a></li>
+  <li><a href="#architecture" id="markdown-toc-architecture">Architecture</a></li>
+  <li><a href="#leveraging-existing-solutions" id="markdown-toc-leveraging-existing-solutions">Leveraging Existing solutions</a>    <ol>
+      <li><a href="#transport-solutions" id="markdown-toc-transport-solutions">Transport Solutions</a></li>
+      <li><a href="#query-and-filtering-language" id="markdown-toc-query-and-filtering-language">Query and Filtering Language</a></li>
+    </ol>
+  </li>
+  <li><a href="#describing-signal-subscriptions-using-json" id="markdown-toc-describing-signal-subscriptions-using-json">Describing Signal Subscriptions using JSON</a></li>
+  <li><a href="#naming-signal" id="markdown-toc-naming-signal">Naming Signal</a></li>
+  <li><a href="#leveraging-agl-binder" id="markdown-toc-leveraging-agl-binder">Leveraging AGL binder</a></li>
+  <li><a href="#work-to-be-done" id="markdown-toc-work-to-be-done">Work to be Done</a></li>
+  <li><a href="#reusing-existinglegacy-code" id="markdown-toc-reusing-existinglegacy-code">Reusing existing/legacy code</a></li>
+  <li><a href="#proposal" id="markdown-toc-proposal">Proposal</a></li>
+</ol>
+
+<h2 id="context">Context</h2>
+
+<p>Automotive applications need to understand in real time the context in which 
+vehicles operate. In order to do so, it is critical for automotive application
+to rely on a simple, fast and secure method to access data generated by the
+multiple sensors/ECU embedded in modern cars.</p>
+
+<p>This signaling problem is neither new, neither unique to the automotive and
+multiple solutions often described as Message Broker or Signaling Gateway have
+been around for a while.
+In the context of Linux for Automotive, the “Automotive Message Broker Daemon
+“ (aka AMBd) has been around for few years and is pretty well known within the
+Linux Automotive community.</p>
+
+<p>The present discussion is a proposal to enhance existing signaling/message
+models. Our proposal relies on [<a href="https://gerrit.automotivelinux.org/gerrit/#/q/project:src/app-framework-binder" title="AppFw Binder">APbinder</a>] binder/bindings model to minimize
+complexity while keeping the system fast and secure.
+We propose a model with multiple transport options and a full set of security
+feature to protect the agent generating the signal as well as consuming them.</p>
+
+<h2 id="objectives">Objectives</h2>
+
+<p>Our objectives are to solve following 3 key issues:</p>
+
+<ol>
+  <li>reduce as much as possible the amount of exchanged data to the meaningful subset really used by applications</li>
+  <li>offer a high level API that obfuscates low level and proprietary interface to improve stability in time of the code</li>
+  <li>hide specificities of low level implementation as well as the chosen deployment distribution model.</li>
+</ol>
+
+<p>To reach first objective, events emission frequency should be controlled at the lowest level it possibly can.
+Aggregation, composition, treatment, filtering of signals should be supported at software level when 
+not supported by the hardware.</p>
+
+<p>Second objectives of offering long term stable hight level API while allowing flexibility in changing low level implementation
+may look somehow conflicting. Nevertheless by isolating low level interface from high level and allowing dynamic composition
+it is possible to mitigate both objectives.</p>
+
+<h2 id="architecture">Architecture</h2>
+
+<p>Good practice is often based on modularity with clearly separated components assembled within a common framework.
+Such modularity ensures separation of duties, robustness, resilience and achievable long term maintenance.</p>
+
+<p>This document uses the term “AGENT” to define a specific instance of this proposed common framework used to host a group
+of dedicated separated components that handle targeted signals/events. Each agent exposes to services/applications
+the signals/events it is responsible for.</p>
+
+<p>As an example, a CAN-bus agent may want to mix non-public proprietary API with CANopen compatible devices while hiding this
+complexity to applications. The goal is on one hand to isolate proprietary piece of code in such a way that it is
+as transparent as possible for the remaining part of the architecture. On a second hand isolation of code related
+to a specific device provides a better separation of responsibilities, keeping all specificity related to a given
+component clearly isolated and much easier to test or maintain. Last but not least if needed this model may also
+help to provide some proprietary code directly as binary and not as source code.</p>
+
+<p><img src="./images/signal-agent-arch.svg" alt="image" title="Signal Agent Architecture" /></p>
+
+<p>While in some cases it may be chosen to implement a single agent responsible for everything, other scenarii may chose
+to split responsibility between multiple agents. Those multiple agents may run on a single ECU or on multiple ECUs.
+Chosen deployment distribution strategy should not impact the development of components responsible for signals/events
+capture. As well as it should have a loose impact on applications/services consuming those events.</p>
+
+<p>A distributed capable architecture may provide multiple advantages:</p>
+
+<ul>
+  <li>it avoids to concentrate complexity in a single big/fat component.</li>
+  <li>it leverages naturally multiple ECUs and existing network architecture</li>
+  <li>it simplifies security by enabling isolation and sandboxing</li>
+  <li>it clearly separates responsibilities and simplifies resolution of conflicts</li>
+</ul>
+
+<p><img src="./images/distributed-arch.svg" alt="image" title="Distributed Architecture" /></p>
+
+<p>Performance matters. There is a trade-off between modularity and efficiency.
+This is specially critical for signals where propagation time from one module to the other
+should remain as short as possible and furthermore should consume as little computing resources as possible.</p>
+
+<p>A flexible solution should provide enough versatility to either compose modules in separate processes;
+either chose a model where everything is hosted within a single process. Chosen deployment model should have minor
+or no impact on development/integration processes. Deployment model should be something easy to change, it should remain
+a tactical decision and never become a structuring decision.</p>
+
+<p>Nevertheless while grouping modules may improve performance and reduce resource consumption, on the other hand,
+it has a clear impact on security. No one should forget that some signals have very different level of security from other ones.
+Mixing everything within a single process makes all signal’s handling within a single security context.
+Such a decision may have a significant impact on the level on confidence one may have in the global system.</p>
+
+<p>Providing such flexibility constrains the communication model used by modules:</p>
+
+<ul>
+  <li>The API of integration of the modules (the API of the framework) that enables
+the connection of modules must be independent of the implementation of
+the communication layer</li>
+  <li>The communication layer must be as transparent as possible, its
+implementation shouldn’t impact how it is used</li>
+  <li>The cost of the abstraction for modules grouped in a same process
+must be as little as possible</li>
+  <li>The cost of separating modules with the maximum of security must remain as minimal as possible</li>
+</ul>
+
+<p>Another point impacting performance relates to a smart limitation on the number of emitted signals.
+Improving the cost of sending a signal is one thing, reducing the number of signals is an other one.
+No one should forget that the faster you ignore a useless signal the better it is. 
+The best way to achieve this is by doing the filtering of useless signal as close as possible
+of the component generating the signal and when possible directly at the hardware level.</p>
+
+<p>To enable the right component to filter useless signals, consumer clients must describe
+precisely the data they need. Then services and agent must organise their computing to provide
+only expected data at the expected rate. Also, any data not required by any client should at
+the minimum never be transmitted. Furthermore when possible then should even not be computed at all.</p>
+
+<p>Describing expected data in a precise but nevertheless simple manner remains a challenge.
+It implies to manage:</p>
+
+<ul>
+  <li>requested frequency of expected data</li>
+  <li>accuracy of data to avoid detection of inaccurate changes</li>
+  <li>when signaling is required (raising edge, falling edge,
+on maintained state, …),</li>
+  <li>filtering of data to avoid glitches and noise,</li>
+  <li>composition of signals both numerically and logically (adding,
+subtracting, running logical operators like AND/OR/XOR, getting the mean, …)</li>
+  <li>etc…</li>
+</ul>
+
+<p>It is critical to enable multiple features in signal queries to enable modules 
+to implement the best computing method. The best computing method may have an impact on
+which device to query as well as on which filters should be applied. Furthermore
+filtering should happen as soon as possible and obviously when possible directly at hardware level.</p>
+
+<h2 id="leveraging-existing-solutions">Leveraging Existing solutions</h2>
+
+<p>Unfortunately, there is no existing solution ready to be integrated. Obviously some parts of required technologies to
+implement such solution exist, but a significant part of the work remains to be done. If we look at the main building
+blocks used in the proposed architecture.</p>
+
+<h3 id="transport-solutions">Transport Solutions</h3>
+
+<p>D-Bus is the standard choice for Linux, nevertheless it has some serious performance limitation due to
+internal verbosity. Nevertheless because it is available and pre-integrated with almost every Linux component, D-Bus may
+still remains an acceptable choice for signal with low rate of emission (i.e. HMI).</p>
+
+<p>For a faster communication, Jaguar-Land-Rover proposes a memory shared signal infrastructure.
+Unfortunately this solution is far from solving all issues and has some drawbacks.
+Let check the open issues it has:</p>
+
+<ul>
+  <li>there is no management of what requested data are. This
+translate in computing data even when not needed.</li>
+  <li>on top of shared memory, an extra side channel is required for processes to communicate with the
+daemon.</li>
+  <li>a single shared memory implies a lot of concurrency handling. This might
+introduce drawbacks that otherwise would be solved through communication buffering.</li>
+</ul>
+
+<p>ZeroMQ, NanoMSG and equivalent libraries focused on fast communication. Some (e.g. ZeroMQ) come with
+a commercial licensing model when others (e.g. NanoMSG) use an open source licensing. 
+Those solutions are well suited for both communicating inside a unique ECU or across several ECUs.
+However, most of them are using Unix domain sockets and TCP sockets and typically do not use shared memory for inter-process communication.</p>
+
+<p>Last but not least Android binder, Kdbus and other leverage shared memory, zero copy and sit directly within Linux kernel. 
+While this may boost information passing between local processes, it also has some limitations. The first one is
+the non support of a multi-ECU or vehicle to cloud distribution. The second one is that none of them is
+approved upstream in kernel tree. This last point may create some extra burden each time a new version
+of Linux kernel is needed or when porting toward a new hardware is required.</p>
+
+<h3 id="query-and-filtering-language">Query and Filtering Language</h3>
+
+<p>Description language for filtering of expected data remains an almost green field where nothing really fit signal agent requirements.
+Languages like Simulink or signal processing graphical languages are valuable modelling tools. Unfortunately they
+cannot be inserted in the car. Furthermore those languages have many features that are not useful in proposed signal agent
+context and cost of integrating such complex languages might not be justified for something as simple as a signal agent.
+The same remarks apply for automation languages.</p>
+
+<p>Further investigations would be needed. Even if there is no obvious solutions fit or need. Existing solution use a different context or industry may exist or nearby solutions
+might worse the value be adapted to our requirements.</p>
+
+<h2 id="describing-signal-subscriptions-using-json">Describing Signal Subscriptions using JSON</h2>
+
+<p>JSON is a rich structured representation of data. For requested data, it allows the expression of multiple features and constraints.
+JSON is both very flexible and efficient.
+There are significant advantages in describing requested data at subscription time using a language like JSON.
+Another advantage of JSON is that no parser is required to analyse the request.</p>
+
+<p>Here is an example of what could be a subscription specification:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"define"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"speed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average-wheel-speed"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"km/h"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"accuracy"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"filtered"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+   </span><span class="nt">"expect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"speed"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"when"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"cross"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"speed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">110</span><span class="p">,</span><span class="w"> </span><span class="mi">130</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"max-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>A generic library to handle such request definition should be provided.
+This library should allow the agent to process the request, search if its business logic or any of present low level modules support requested signal. Finally it should notify the concerned lower module to optimise signal generation.</p>
+
+<p>While such an approach might not be the most common approach, organisation like <a href="http://signalk.org/overview.html">Signal-K</a> already uses JSON to transmit NMEA-2000 signals on boats. Others might already used it as well and some further investigations on existing solutions would be needed before moving in such a direction.</p>
+
+<h2 id="naming-signal">Naming Signal</h2>
+
+<p>Naming and defining signals is something very complex.
+For example just <strong><em>speed</em></strong>, as a signal, is difficult to define.
+What unit is used (km/h, M/h, m/s, …)?
+From which source (wheels, GPS, AccelMeter)?
+How was it captured (period of measure, instantaneous, mean, filtered)?</p>
+
+<p>In order to simplify application development we should nevertheless agree on some naming convention for key signals.
+Those names might be relatively complex and featured. They may include a unit, a rate, a precision, etc.</p>
+
+<p>How these names should be registered, documented and managed is out of scope of this document but
+extremely important and at some point in time should be addressed. Nevertheless this issue should not prevent
+from moving forward developing a modern architecture.
+Developers should be warned that naming is a complex
+task, and that in the future naming scheme should be redefined, and potential adjustments would be required.</p>
+
+<h2 id="leveraging-agl-binder">Leveraging AGL binder</h2>
+
+<p>Such a model is loosely coupled with AGL binder. Low level signal modules as well as virtual signal
+components may potentially run within any hosting environment that would provide the right API with corresponding required facilities.
+Nevertheless leveraging [<a href="https://gerrit.automotivelinux.org/gerrit/#/q/project:src/app-framework-binder" title="AppFw Binder">APbinder</a>] has multiple advantages. It already implements event notification to support
+a messaging/signaling model for distributed agents. It enables a subscribe model responding to the requirement and finally it uses JSON
+natively.</p>
+
+<p>This messaging/signalling model already enforces the notion of subscription for receiving data.
+It implies that unexpected data are not sent and merely not computed.
+When expected data is available, it is pushed to all waiting subscriber only one time.</p>
+
+<p>The [<a href="https://gerrit.automotivelinux.org/gerrit/#/q/project:src/app-framework-binder" title="AppFw Binder">APbinder</a>] provides transparency of communication.
+It currently implements the transparency over D-Bus/Kdbus and WebSocket.
+Its transparency mechanism of communication is easy to extend to other
+technologies: pools of shared memory or any proprietary transport model.</p>
+
+<p>When modules are loaded by the same service agent, the [<a href="https://gerrit.automotivelinux.org/gerrit/#/q/project:src/app-framework-binder" title="AppFw Binder">APbinder</a>] provides transparently “in-memory” communication.
+This in-memory communication is really efficient: on one hand, the exchanged
+JSON objects are not serialized (because not streamed), on the other hand,
+those JSON objects provide a high level of abstraction able to transfer any
+data.</p>
+
+<p>Technically an agent is a standard [<a href="https://gerrit.automotivelinux.org/gerrit/#/q/project:src/app-framework-binder" title="AppFw Binder">APbinder</a>] service.
+Therefore Signal/Agent inherits of security protection through SMACK, access
+control through Cynara, transparency of API to transport layer, life cycle
+management, … Like any other [<a href="https://gerrit.automotivelinux.org/gerrit/#/q/project:src/app-framework-binder" title="AppFw Binder">APbinder</a>] service Signal/Agent is composed of a set of bindings. In signal agent specific case, those bindings are in fact the “signal modules”.</p>
+
+<p>The proposed model allows to implement low level dependencies as independent signal modules.
+Those modules when developed are somehow like “Lego Bricks”.
+They can be spread or grouped within one or multiple agents depending on
+deployment constraints (performance, multi-ECU, security &amp; isolation constraints,
+…).</p>
+
+<p>The model naturally uses JSON to represent data.</p>
+
+<p><strong>Multi-ECU and Vehicule to Cloud interactions:</strong> while this might not be a
+show stopper for current projects, it is obvious that in the near future
+Signal/Agent should support a fully distributed architectures.
+Some event may come from the cloud (i.e. request to start monitoring a given
+feature), some may come from SmartCity and nearby vehicles, and last but
+not least some may come from another ECU within the same vehicle or from a
+virtualized OS within the same ECU (e.g. cluster &amp; IVI). 
+In order to do so, Signal modules should enable composition within one or more
+[<a href="https://gerrit.automotivelinux.org/gerrit/#/q/project:src/app-framework-binder" title="AppFw Binder">APbinder</a>] inside the same ECU.
+Furthermore they should also support chaining with the outside world.</p>
+
+<p><img src="./images/cloud-arch.svg" alt="image" title="CLoud &amp; Multi-ECU Architecture" /></p>
+
+<ol>
+  <li>Application requests Virtual Signal exactly like if it was a low level
+signal</li>
+  <li>Agent Signal has direct relation to low level signal</li>
+  <li>Agent needs to proxy to an other agent inside the same ECU to access the
+signal</li>
+  <li>Signal is not present on current ECU. Request has to be proxied to the
+outside world</li>
+</ol>
+
+<h2 id="work-to-be-done">Work to be Done</h2>
+
+<p>As stated before, the foundation for event signaling is already in place in
+development branch of [<a href="https://gerrit.automotivelinux.org/gerrit/#/q/project:src/app-framework-binder" title="AppFw Binder">APbinder</a>].
+Nevertheless in order to provide a real added value to developers missing
+components should be developed.</p>
+
+<ul>
+  <li><strong>Agent Core Components</strong>
+    <ul>
+      <li>Create a simple configuration model to move from low level signal
+description to something more generic that could help to abstract the
+hardware.</li>
+      <li>Search for an already existing library that provide high level signal
+subscription and adapt it.
+If no such library exist, create it.</li>
+      <li>Implement some form of introspection to allow application to discover
+the list of signal supported by a given agent.</li>
+    </ul>
+  </li>
+  <li><strong>Few Common Agents</strong>
+    <ul>
+      <li>Provide at least a reference implementation for a generic CAN agent</li>
+      <li>Agent simulation, most developers may not have access to physical
+devices during development phase, some form of simulator would be more
+than welcome.</li>
+      <li>etc …</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="reusing-existinglegacy-code">Reusing existing/legacy code</h2>
+
+<p>Whatever the final architecture will be, it is important not to forget how
+to leverage existing/legacy code within the new model.
+There are multiple sources for reusable code that can be classified in two
+main categories:</p>
+
+<ul>
+  <li>
+    <p><strong>Low Level</strong> Typically those existing code interface with CAN-BUS or any
+other low level device.
+Some AMBd[<a href="https://github.com/otcshare/automotive-message-broker">6</a>] plugins could be a good source of input for low level
+implementation.
+But also more community oriented projects like: ArduPilot/Rover[<a href="http://ardupilot.org/rover/index.html">7</a>]
+Barometer or Camera interfaces[<a href="https://github.com/ArduPilot/ardupilot/tree/master/libraries">8</a>].</p>
+  </li>
+  <li>
+    <p><strong>Virtual Signal</strong> In many cases accessing to low level signal is not enough.
+Low level information might need to be composed (i.e. GPS+Gyro+Accel).
+Raw value might need to be processed (i.e.: change unit, average on the
+last xx seconds, …).
+Writing this composition logic might be quite complex and reusing existing
+libraries like: LibEkNav for Kalman filtering [<a href="https://bitbucket.org/jbrandmeyer/libeknav/wiki/Home">9</a>] or Vrgimbal for 3 axes
+control[<a href="http://ardupilot.org/rover/docs/common-vrgimbal.html">10</a>] may help saving a lot of time.</p>
+  </li>
+</ul>
+
+<h2 id="proposal">Proposal</h2>
+
+<p>In order to start moving forward one option would be to take a concrete example
+with some existing can devices (i.e. the one from MicroChips use within ALS demo).</p>
+
+<p>An other option would be to leverage Porter+Cogent-Extension[<a href="http://elinux.org/R-Car/Boards/Porter:PEXT01">11</a>] that supports
+both a GPS and a 9 axis sensor to implement a smart geoposition agent. 
+We could  reuse some existing code like the one from Rover[<a href="http://ardupilot.org/rover/index.html">7</a>] to provide a
+fine grain positioning service and then interface this new GeoPositioning
+agent with an application like GpsNavi[<a href="https://github.com/gpsnavi/gpsnavi">12</a>] to get a end-to-end demonstrator.</p>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/docs-agl//contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2016 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2016-11-21 12:02:44 +0100</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-agl/master/docs/signaling/architecture.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/docs-agl//static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/docs-agl//static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/docs-agl//static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: '40ffa808affb354450e0c0ddabe94aa9',
+        indexName: 'iot',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+        <script defer src="/docs-agl//static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/docs-agl//static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/docs-agl//static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/docs-agl//static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/docs-agl//static/js/process-uml.js"></script>
+    
+
+</body>
+</html>
