@@ -20,9 +20,15 @@ function exportdoc {
                 FILETROUBLE=""
         fi
         FILEEXPORT="$EXPORTDIR/$DOCTYPE/$1.$DOCTYPE"
-		mkdir -p $(dirname $FILEEXPORT)
-        pandoc $DOCDIR/source-code.md $FILEDOC $DOCDIR/troubleshooting.md $FILETROUBLE $FILECONFIG -o $FILEEXPORT
-        echo "Document exported to $FILEEXPORT"
+        mkdir -p $(dirname $FILEEXPORT)
+        if  which pandoc 1>/dev/null 2>/dev/null; 
+        then
+            pandoc $DOCDIR/source-code.md $FILEDOC $DOCDIR/troubleshooting.md $FILETROUBLE $FILECONFIG -o $FILEEXPORT;
+            echo "Document exported to $FILEEXPORT";
+        else
+            echo -e "Command \"pandoc\" not found!\n"
+            exit 1
+        fi
 }
 
 while [[ $# -gt 0 ]]
