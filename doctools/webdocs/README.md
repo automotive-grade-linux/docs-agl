@@ -21,21 +21,41 @@ Add Gem SCSS with "sudo gem install sass"
 On OpenSuse on any other Linux plateform installation should be as simple as
 ```
  sudo zypper install nodejs
+```
+check your nodejs version:
+```
+node --version
+	v4.6.1
+```
+You need a recent version of nodejs > 4.6
+```
+ cd doctools/webdocs/
  npm install
  sudo zypper install ruby2.1-devel
  sudo zypper install '*rubygem-ffi' 
  sudo gem install jekyll
- sudo ln -s /usr/bin/jekyll.* /usr/bin/jekyll
+ sudo ln -sf /usr/bin/jekyll.* /usr/bin/jekyll
 ```
-IMPORTANT: check that "jekyll" command exist. If your installation uses a different
-name "ie: jekyll-version" reflect the actual name within conf/AppDefault.js
+IMPORTANT: check that "jekyll" command exist.
+```
+jekyll -version
+```
 
 WARNING: 
 + would you choose to install everything through GEM bypassing your
 standard distribution package management, this may impose you to compile 
 a couple of Ruby native extentions. If "gem install" fails you probably
 miss some required tools like: gcc, libffi-devel-gcc5, ...
-+ command "gem search --local" should display  jekyll+rouge+sass
++ This command should display jekyll+rouge+sass :
+```
+gem search --local | grep -E "jekyll|rouge|sass" 
+	jekyll (3.3.1)
+	jekyll-sass-converter (1.5.0)
+	jekyll-watch (1.5.0)
+	rouge (1.11.1)
+	sass (3.5.0.pre.rc.1)
+	sass-listen (3.0.7)
+```
 
 ## generate a 1st site from your template
 
@@ -43,7 +63,10 @@ miss some required tools like: gcc, libffi-devel-gcc5, ...
  cd docs-agl/webdocs-agl
  ../doctools/webdocs/docbuild --verbose --clean --force --fetch
  ../doctools/webdocs/docbuild --verbose --build --serve --watch
-  point a browser on http://localhost:4000
+```
+point a browser on http://localhost:4000
+```
+xdg-open http://localhost:4000
 ```
 
 ## bugs
