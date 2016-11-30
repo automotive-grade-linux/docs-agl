@@ -15,7 +15,7 @@
 #     children:
 #         - 
 #            name: optional name for TOC entry (default: use URL FrontMatter info)
-#            url: <subdir as defined with FETCH_DIR in conf/AppDefault.js:
+#            url: <subdir as defined with FETCH_DIR in conf/AppDefaults.js:
 #         -
 #            name: ...
 #            url: ...

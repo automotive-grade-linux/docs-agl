@@ -15,7 +15,7 @@
  */
 
 // Runtime config will be:
-//  - initialized with default from doctools/webdocs/conf/AppDefault.js
+//  - initialized with default from doctools/webdocs/conf/AppDefaults.js
 //  - overridden by this config
 
 config = {

@@ -2,3 +2,5 @@
 export
 *.wiki
 .*.sw*
+.directory
+npm-debug.log
