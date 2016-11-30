@@ -26,7 +26,7 @@ function main (config, argv) {
     var fromdir;
     
     if (!config.RSYNC_CMD) {
-        console.log ("Hoop: RSYNC_CMD not defined in AppDefault.js");
+        console.log ("Hoop: RSYNC_CMD not defined in AppDefaults.js");
         process.exit();
     }
     

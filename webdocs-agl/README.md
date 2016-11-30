@@ -13,7 +13,7 @@ See how to install webdocs: read file in doctools/webdocs/README.md
 
 ## configure webdoc
 
-Some default configuration options can be overridden in the project directory. For this, you can adjust the configuration file conf/AppDefault.js
+Some default configuration options can be overridden in the project directory. For this, you can adjust the configuration file conf/AppDefaults.js
 
 Other configuration files in conf/ starting by an underscore (_) are used by Jekyll. Some options may also be adjusted in particular in conf/_config.yml.
 
