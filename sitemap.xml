@@ -31,7 +31,7 @@
     
 
     <url>
-    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/architecture/en/dev/reference/security/01-overview.html</loc>
+    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/architecture/en/dev/reference/specs/01-overview.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
 </url>
@@ -42,7 +42,7 @@
     
 
     <url>
-    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/architecture/en/dev/reference/specs/01-overview.html</loc>
+    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/architecture/en/dev/reference/security/01-overview.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
 </url>
@@ -311,29 +311,20 @@
     
 
     <url>
-    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/architecture/en/dev/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-</url>
-
-
-    
-    
-    
-
-    <url>
-    <loc>https://automotive-grade-linux.github.io/docs-agl/contribute/</loc>
-</url>
-
-
-    
-    
-    
-
-    <url>
     <loc>https://automotive-grade-linux.github.io/docs-agl/techpost/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/architecture/en/dev/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
 </url>
 
 
@@ -353,7 +344,16 @@
     
 
     <url>
-    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/hardware/en/dev/</loc>
+    <loc>https://automotive-grade-linux.github.io/docs-agl/contribute/</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/getting_started/en/dev/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
 </url>
@@ -395,7 +395,7 @@
     
 
     <url>
-    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/getting_started/en/dev/</loc>
+    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/hardware/en/dev/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
 </url>
@@ -565,17 +565,6 @@
     
 
     <url>
-    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/apis_services/en/dev/reference/signaling/resources.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-</url>
-
-
-    
-    
-    
-
-    <url>
     <loc>https://automotive-grade-linux.github.io/docs-agl/docs/apis_services/en/dev/reference/af-binder/resources.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -588,6 +577,17 @@
 
     <url>
     <loc>https://automotive-grade-linux.github.io/docs-agl/docs/apis_services/en/dev/reference/audio/resources.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>https://automotive-grade-linux.github.io/docs-agl/docs/apis_services/en/dev/reference/signaling/resources.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
 </url>
