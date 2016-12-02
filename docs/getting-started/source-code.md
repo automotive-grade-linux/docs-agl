@@ -1,3 +1,5 @@
+
+
 # Introduction: Building target AGL image with Yocto project
 The standard Yocto process is made of the following steps:
 * Setting up your operating system.
@@ -12,7 +14,6 @@ The standard Yocto process is made of the following steps:
 
 For convenience, the resulting development images are made available [Here][AGL snapshots master latest]
 
-
 If you want to bypass the build phase and quick boot the board, you can download the image tarball and the kernel then follow the installation procedure.
 
 ## Setting up your operating system
@@ -21,7 +22,7 @@ The very first step is to ensure that your system can run the build system of th
 **Important**: it only runs on Linux
  * if your system is Windows© or iOS© you should use a virtualization solution  (Virtualbox, VMWare ...) to run a Linux VM on your system.
 
-For AGL 2.0, Yocto Project 2.0, known as jethro, has been selected for the BSP and build system.
+For AGL 2.1, Yocto Project 2.1, known as krogoth, has been selected for the BSP and build system.
 This will change in the future but as of today [jul-2016] it is currently strongly recommended to use 2.0.
 
 Reference data for configuring your system can be found in the Yocto documentation [Here][yocto ref Manual]
