@@ -90,9 +90,9 @@ algolia: # https://community.algolia.com/docsearch/
     index : "iot"
     apikey: "40ffa808affb354450e0c0ddabe94aa9"
 
-disqus: # check https://disqus.com/admin
-    name: "docsiotbzh"
-    devmode: 0
+#disqus: # check https://disqus.com/admin
+#    name: "docsiotbzh"
+#    devmode: 0
     
 twitter:
     hashtag: autogradelinux
@@ -103,6 +103,7 @@ irc:
     channel: "#automotive"
     
 linkto:
+    askbot      : https://ask.automotivelinux.org/
     account     : https://identity.linuxfoundation.org/
     jira_base   : https://jira.automotivelinux.org/
     jira_project: https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel
