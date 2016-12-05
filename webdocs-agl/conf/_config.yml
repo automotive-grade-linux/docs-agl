@@ -87,8 +87,8 @@ exclude:
     - static/css-src
     
 algolia: # https://community.algolia.com/docsearch/
-    index : "iot"
-    apikey: "40ffa808affb354450e0c0ddabe94aa9"
+    index : "automotivelinux"
+    apikey: "edd30bcff9f6df4b095c41cba3e5a418"
 
 #disqus: # check https://disqus.com/admin
 #    name: "docsiotbzh"
