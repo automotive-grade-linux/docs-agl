@@ -17,18 +17,18 @@
         
     </title>
 
-    <link rel="SHORTCUT ICON" href="/docs-agl//favicon.ico"/>
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
 
     
 
     
     
 
-    <link rel="canonical" href="https://automotive-grade-linux.github.io/docs-agl/docs-agl//contribute/contribute_guidelines.html">
+    <link rel="canonical" href="http://docs.automotivelinux.org/contribute/contribute_guidelines.html">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
 
@@ -41,21 +41,21 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script defer type="text/javascript">
+    <!-- <script defer type="text/javascript">
         var disqus_developer = ; // this would set it to developer mode
-    </script>
+    </script>-->
 
     <!-- JS -->
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/jquery-2.1.1.min.js"></script>
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/bootstrap.min.js"></script>
-<!--    <script defer type="text/javascript" src="/docs-agl//static/js/lib/ZeroClipboard.js"></script>-->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '', 'auto');
+    ga('create', '{}', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -67,7 +67,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/docs-agl//"><img id="logo_top" src="/docs-agl//static/img/branding/agl_title_793x211.png"/></a>
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -79,33 +79,31 @@
                 <div class="nav_bar_left">
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/docs-agl/docs/getting_started/en/dev/">Getting Started</a>
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
                         </li>
                                                 
                         <li >
-                            <a href="/docs-agl/docs/architecture/en/dev/">Architecture Guides</a>
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/hardware/en/dev/">Hardware Support</a>
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/devguides/en/dev/">Developer Guides</a>
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
                         </li>
                         
                         <li >
-                            <a href="/docs-agl/docs/apis_services/en/dev/">APIs & Services</a>
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
                         </li>
 					</ul>
 				</div>
                 <div class="nav_bar_right">
                     <ul class="nav navbar-nav">
-                        <li >
-                            <a href="/docs-agl//techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
-                        </li>
-                        <li >
-                            <a href="/docs-agl//contribute">Contribute</a>
+
+                        <li class="active">
+                            <a href="/contribute">Contribute</a>
                         </li>
                         <li>
                             <form class="navbar-form navbar-right" id="header-search-form" role="search">
@@ -148,9 +146,107 @@
 
 <h2 id="submitting-code">Submitting Code</h2>
 
-<p>TODO: copy article details from <a href="https://wiki.automotivelinux.org/agl-distro/contributing">WIKI</a></p>
+<h3 id="access-control">Access Control</h3>
 
-<h3 id="git-commit-messages">Git Commit Messages</h3>
+<p>Access control to gerrit is defined in this <a href="https://docs.google.com/spreadsheets/d/1lA_B7LEwn_VyJy_JplRNe9AOKTRGAMtpJ66JHm-vJCM/pubhtml?gid#0&amp;single#true">google doc spreadsheet</a></p>
+
+<h5 id="gerrit-roles">Gerrit Roles</h5>
+
+<p>The overall Gerrit workflow for a code change submitted to the project follows this diagram.</p>
+
+<p><img src="../static/img/agl_gerrit_dataflow.png" alt="Gerrit roles" title="Gerrit roles" /></p>
+
+<p>One can assume that requesting changes to be reverted will follow the same flow as those for new code and patches. Access to various functions within gerrit is granted according the roles defined here.</p>
+
+<h4 id="agl-committer">AGL Committer</h4>
+<p>The most general role in the project is the AGL-committer. They may push proposed changes to gerrit, initiate a code review of those changes, and perform code reviews of proposed changes.</p>
+
+<p><img src="../static/img/agl_committer_access_gerrit.png" alt="AGL Committer" title="Committer access" /></p>
+
+<h4 id="agl-mergers">AGL Mergers</h4>
+
+<p>The ability to accept and merge changes into the AGL Repositories is reserved for role of AGL-mergers. AGL-mergers have all access granted to AGL-committers as well as the ability to +2 or -2 any proposed changes and submit those changes to the AGL Repository in gerrit. Self-review  by AGL Mergers is generally frowned upon and AGL-mergers should only give a +2 or -2 after others reviewers after weighed in on the change.</p>
+
+<p><img src="../static/img/agl_mergers_access.png" alt="AGL Mergers" title="Mergers access" /></p>
+
+<h4 id="general-access">General Access</h4>
+
+<p>Registered users in gerrit without any of the above access levels may fetch the repositories or may participate in reviews. This allows registered users to be added to reviews by committers without having to be added to the Committer list.</p>
+
+<p><img src="../static/img/agl_general_gerrit_access_v2.png" alt="Gerrit Access" title="Gerrit Access" /></p>
+
+<hr />
+
+<h4 id="patch-review-and-merge-policy">Patch Review and Merge Policy</h4>
+
+<p>In addition to providing comments and suggestions for improvement, reviewers are encouraged to respond to changes with an overall +1, -1 type value. The meaning of these numbers is explained in the <a href="Gerrit documentation">https://gerrit.baserock.org/Documentation/config-labels.html#label_Code-Review</a></p>
+
+<p>Here is a brief summary of the values:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-2: This must not be merged.
+-1: I would prefer that this is not merged as is.
+0: I am not making any statement about this change at the moment.
++1: Looks good to me, but someone else must approve it.
++2: Looks good to me, approved.
+</code></pre>
+</div>
+
+<p>These values do not get added together by Gerrit, so two +1s do not lead to an automatic merge.</p>
+
+<p>Changes can only be merged to the master branch once they have received a +2 and no -2. Only members of the  AGL-Mergers group can give +2.</p>
+
+<hr />
+
+<h3 id="gerrit-use-cases">Gerrit Use Cases</h3>
+
+<h4 id="actors">Actors</h4>
+<ul>
+  <li><strong>App Developer (AD)</strong> - Someone who is developing applications to be used with AGL. The AD is assumed to need no knowledge of Yocto and relies on an SDK.</li>
+  <li><strong>Registered Developer (RD)</strong> - Someone who wants to contribute code to AGL but may not be affiliated with a subsystem</li>
+  <li><strong>Subsystem Maintainer (SM)</strong> - A SM is the same as Subsystem Developer but with additional privileges that allow him to submit changes to the master branch, tracking branch, or a maintenance branch</li>
+  <li><strong>System Integrator (SI)</strong></li>
+  <li><strong>Release Manager (RM)</strong></li>
+  <li><strong>Unregistered Developer (UD)</strong> - A developer who downloads and uses AGL code but does not plan to contribute code.</li>
+  <li><strong>CI System Manager (CISM)</strong></li>
+</ul>
+
+<h4 id="repositories">Repositories</h4>
+
+<ul>
+  <li>Meta-data repositories define Yocto layers and contain build recipes and patches. They do not contain source code other than patches</li>
+  <li>Source Code repositories contain source code. Build recipes for the code will being the meta-data repositories Examples include:
+    <ul>
+      <li>AGL is the upstream for the particular component</li>
+      <li>AGL is using code back-ported from later versions of a new component or part of a component (e.g., MOST USB driver in mainline kernel tree)</li>
+      <li>AGL is maintaining code out of the upstream tree which may or may not be accepted upstream (this should be rare since it implies a fork of the upstream code. Patches are preferable)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="prepare-to-push-changes-in-gerrit">Prepare to push changes in Gerrit</h4>
+<p>By default the repo tool will have clone git repo with http for fetch and ssh to push.
+   #cd meta-agl
+   #git remote -v
+       agl	https://gerrit.automotivelinux.org/gerrit/AGL/meta-agl (fetch)
+       agl	ssh://gerrit.automotivelinux.org:29418/AGL/meta-agl (push)</p>
+
+<p>if you want to use your ssh config, add your gerrit user accout to your ssh config file like:
+   #cat ~/.ssh/config
+     Host gerrit.automotivelinux.org
+     User XXXMyNameXXX</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Then you still need to enter you ssh public key in Gerrit. You can find a HowTo [[ https://www.mediawiki.org/wiki/Gerrit/Tutorial#Set_Up_SSH_Keys_in_Gerrit</td>
+      <td>here ]]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="push-changes-for-review-to-gerrit">Push changes for review to Gerrit</h4>
+
+<h5 id="git-commit-messages">Git Commit Messages</h5>
 
 <p>You are highly encouraged to describe your git commit with enough detail for someone else to understand it. In doing so, your commit message can consist of multiple lines. However, it also is highly encouraged that the first line of your commit message not exceed 50 characters. This is because some of the tooling that sits on top of git (such as the httpd apps that let you browse the repos) assumes that the first line is top-level summary that is 50 characters or less. Thus there will be highlighting and truncating of the commit message using these assumptions and it will look weird if these assumptions are not kept. There should also be a blank line between the summary and any further description.</p>
 
@@ -171,13 +267,153 @@ Bug-AGL: SPEC-0000
 
 <p>As an alternate to a bullet list, you could put long text here in paragraph form, with each line wrapped at 72 chars and blank lines between paragraphs.</p>
 
+<p>Please sign you commit before you submit the change (otherwise it will not be accepted by gerrit):
+   git commit –signoff</p>
+
+<ul>
+  <li>Then either use plain git to push:</li>
+</ul>
+
+<p>git push agl HEAD:refs/for/master
+   git push <remote> HEAD:refs/for/<targetbranch></targetbranch></remote></p>
+
+<ul>
+  <li><strong>Or</strong> for more convenience, install “git-review” and instead of git push use:</li>
+</ul>
+
+<p># first time only
+   git review -s</p>
+
+<p># then to push use
+   git review</p>
+
+<p>Find more details in these guides:</p>
+
+<ul>
+  <li><a href="https://gerrit.automotivelinux.org/gerrit/Documentation/user-upload.html">Official gerrit guide</a></li>
+  <li><a href="https://source.android.com/source/developing.html#git-and-repo-cheatsheet">Git and repo cheatsheet</a></li>
+  <li><a href="https://education.github.com/git-cheat-sheet-education.pdf">git cheatsheet from github</a></li>
+  <li><a href="https://www.mediawiki.org/wiki/User:Wctaiwan/Gerrit_cheatsheet">Gerrit cheatsheet from mediawiki</a></li>
+  <li><a href="https://wiki.opendaylight.org/view/GIT_Cheat_Sheet">Git cheatsheet from opendaylight.org</a></li>
+</ul>
+
+<h4 id="personal-sandbox-projects-in-gerrit">Personal Sandbox Projects in Gerrit</h4>
+
+<p>First time:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>   meta-agl&gt; git push gerrit testsandbox:refs/heads/sandbox/jsmoeller/test
+  Total 0 (delta 0), reused 0 (delta 0)
+  remote: Processing changes: closed: 114, refs: 1, done
+  To ssh://jsmoeller@gerrit.automotivelinux.org:29418/AGL/meta-agl
+   * [new branch]      testsandbox -&gt; sandbox/jsmoeller/test''
+</code></pre>
+</div>
+
+<p>Push to personal branch:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  git push gerrit testsandbox:refs/for/sandbox/jsmoeller/test
+  Counting objects: 2, Fertig.
+  Delta compression using up to 8 threads.
+  Compressing: 100% (2/2), Fertig.
+  Writing objects: 100% (2/2), 327 bytes | 0 bytes/s, Fertig.
+  Total 2 (delta 1), reused 0 (delta 0)
+  remote: Resolving deltas: 100% (1/1)
+  remote: Processing changes: new: 1, refs: 1, done
+  remote:
+  remote: New Changes:
+  remote:   https://gerrit.automotivelinux.org/gerrit/5643 test1
+  remote:
+  To ssh://jsmoeller@gerrit.automotivelinux.org:29418/AGL/meta-agl
+   * [new branch]      testsandbox -&gt; refs/for/sandbox/jsmoeller/test
+</code></pre>
+</div>
+
+<hr />
+
+<hr />
+
+<h4 id="notes-on-use-cases">Notes on Use Cases</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>* In this context a subsystem is part of the AGL platform code (meta-agl, meta-ivi-common, meta-oe, etc.). A subsystem may have a meta-data repository and/or multiple Code repositories
+* In this context an App is any code that runs on the AGL platform and will generally be part of Code Repositories
+* A role of App Maintainer can be envisioned, but since the App Developer has the power of +2 an App Maintainer was not included
+</code></pre>
+</div>
+
+<h4 id="use-cases">Use Cases</h4>
+
+<h3 id="app-developer-use-cases">App Developer Use Cases</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- As an AD I want to write App code and approve code (+2) without getting +2 from anyone else.
+- As an AD I want to write App code and request reviews from any other developers
+- As an AD I want to submit patches to the AGL subsystems for review by SDs and SMs.
+</code></pre>
+</div>
+
+<h3 id="subsystem-developer-use-cases">Subsystem Developer Use Cases</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- On further review the SD role is identical to the RD and can be removed (Walt 21 Mar 2016)
+- &lt;del&gt;As a SD I want to write code and submit it for review by other developers. They can be RDs, SDs and/or SMs&lt;del&gt;
+- &lt;del&gt;As a SD I want to review code and approve or reject it. (+1, -1)&lt;/del&gt;
+</code></pre>
+</div>
+
+<h3 id="subsystem-maintainer-use-cases">Subsystem Maintainer Use Cases</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>- As a SM I want to review and approve code (+1,+2) submitted to my subsystem
+- As a SM I want to review and reject code (-1,-2) submitted to my subsystem
+- &lt;del&gt;As a SM I want to review and approve code (+1) submitted to my subsystem&lt;/del&gt;
+- As a SM I want to write code for my subsystem and submit for review by other developers (+1) and SMs (+1 or +2)
+  - Alternate Scenario
+    - As a SM I want to write code and push it to master without getting +2 from another SM
+- As a SM I want to pull changes from upstream for the packages that are part of the subsystem.
+- As a SM I want to push changes upstream for the packages that are part of the subsystem
+- As a SM I want to back port new features (code) to AGL code from upstream. In some cases this will be patches and in some cases this is source code.
+- As a SM I want to create branches to test changes prior to merging to the master branch.
+</code></pre>
+</div>
+
+<h3 id="registered-developer-use-cases">Registered Developer Use Cases</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>- As a RD I want to download AGL pre-built binaries
+- As a RD I want to write code for a subsystem and submit it for review (+1, +2) by SMs or RDs (+1)
+- As a RD I want to write code for an existing app and submit it for review (+1, +2) by the ADs for the particular app.
+- As a RD I want to review code and approve or reject it. (+1, -1)
+- As a RD I want to be able to create a sandbox branch to develop code within the AGL build environment and share the sandbox branch with other RDs for collaboration
+- As a RD I do not want other RDs to push to my sandbox branch
+- As a RD I want to build other RDs sandbox branches in my environment and add changes using to it using my own sandbox branch.
+- As a RD I want to push sandbox code into the AGL platform and have it maintained as part of the regular process. Once this is accomplished the AGL platform becomes the upstream for the formerly sandboxed code
+</code></pre>
+</div>
+
+<h3 id="unregistered-developer-use-cases">Unregistered Developer Use Cases</h3>
+<ul>
+  <li>As a UD I want to see AGL source code</li>
+  <li>As a UD I want to download AGL pre-built binaries</li>
+</ul>
+
+<h3 id="system-integrator-use-cases">System Integrator Use Cases</h3>
+<ul>
+  <li>As a SI I want to update the Yocto version of the entire AGL code base.</li>
+  <li>As a SI I want to add additional boards to be supported to the build</li>
+  <li>As a SI I want to approve all changes to the master for meta-data repositories (+2)</li>
+  <li>As a SI I want to tag Release Candidates on the master branch and inform team members how to access those release candidates</li>
+  <li>As a SI I want to inform the RM that a stable release should be prepared</li>
+  <li>As a SI I want to inform the RM that a patch release should be prepared</li>
+</ul>
+
+<h3 id="release-manager">Release Manager</h3>
+<ul>
+  <li>As a RM I want to create maintenance branches for stable releases</li>
+  <li>As a RM I want to approve all changes to maintenance branches for meta-data repositories (+2)</li>
+  <li>As a RM I want to tag stable releases and be able to recreate the build for those stable releases</li>
+  <li>As a RM I want to make patch releases to stable releases</li>
+</ul>
+
 <h2 id="documentation">Documentation</h2>
 
 <h3 id="markdown-format-and-extensions">Markdown format and Extensions</h3>
 
 <p>The documentation is written using Markdown format.</p>
 
-<p>The developpers site is generated using  <a href="https://jekyllrb.com">Jekyll</a> which in turn uses <a href="http://kramdown.gettalong.org/">Kramdown</a> to generate HTML. Kramdown is compatible with most extensions introduced by <a href="http://michelf.com/projects/php-markdown/extra/">PHP Markdown Extra</a></p>
+<p>The developers site is generated using  <a href="https://jekyllrb.com">Jekyll</a> which in turn uses <a href="http://kramdown.gettalong.org/">Kramdown</a> to generate HTML. Kramdown is compatible with most extensions introduced by <a href="http://michelf.com/projects/php-markdown/extra/">PHP Markdown Extra</a></p>
 
 <p>Here a the reference guides for Markdown syntax:</p>
 
@@ -266,7 +502,7 @@ Bug-AGL: SPEC-0000
         <h1>Contribute</h1>
         <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
         <p>Report bugs, improve the docs, or contribute to the code.</p>
-        <a href="/docs-agl//contribute" class="btn btn-lg btn-primary">
+        <a href="/contribute" class="btn btn-lg btn-primary">
             Learn More
         </a>
         <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
@@ -275,7 +511,7 @@ Bug-AGL: SPEC-0000
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2016 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -283,7 +519,7 @@ Bug-AGL: SPEC-0000
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2016-12-01 23:48:54 +0100</small>
+		<small class="stats">Page rendered at:  2018-12-18 00:04:54 +0000</small>
 		
 	</div>
 </div>
@@ -292,7 +528,7 @@ Bug-AGL: SPEC-0000
 </footer>
 
 
-    <script defer type="text/javascript" src="/docs-agl//static/js/twitter.js"></script>
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
     
 
 
@@ -300,8 +536,8 @@ Bug-AGL: SPEC-0000
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: '40ffa808affb354450e0c0ddabe94aa9',
-        indexName: 'iot',
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
         inputSelector: '#header-search-field',
     });
 </script>

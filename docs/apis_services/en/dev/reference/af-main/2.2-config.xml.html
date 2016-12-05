@@ -1,0 +1,3265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Widget configuration file  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-main/2.2-config.xml.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/0-introduction.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/1-afm-daemons.html">
+                The afm daemons
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2-widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.1-widgets.html">
+                Overview of widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/apis_services/en/dev/reference/af-main/2.2-config.xml.html">
+                Widget configuration file
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/3-permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/4-quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework Binder
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Binder daemon vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-binding-writing.html">
+                How to write a binding ?
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Binder references
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/types-and-globals.html">
+                Types and globals
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/macro-log.html">
+                Macros for logging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-api.html">
+                Functions of class afb_api
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-req.html">
+                Functions of class afb_req
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-event.html">
+                Functions of class afb_event
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-daemon.html">
+                Functions of class afb_daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-service.html">
+                Functions of class afb_service
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+                Binder events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+                Binder Application writing guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Annexes
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-migration-to-binding-v3.html">
+                Migration to bindings v3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/protocol-x-afb-ws-json1.html">
+                WebSocket protocol x-afb-ws-json1
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-desktop-package.html">
+                Installing the binder on a desktop
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-options.html">
+                Options of afb-daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-debugging.html">
+                Debugging binder and bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+                LEGACY Migration from v1 to v2
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-binding-v2-references.html">
+                LEGACY Binding V2 references
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/REVISIONS.html">
+                Document revision
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Test Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/Installation.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/write-the-tests.html">
+                Write the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/the-test-widget.html">
+                The test widget
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/launch-the-tests.html">
+                Launch the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/tests-examples.html">
+                Tests examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                References
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-test-functions.html">
+                Binding Test Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-assert-functions.html">
+                Binding Assert Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/test-framework-functions.html">
+                Test Framework Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                LuaUnit Assertion Functions
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/general-assertions.html">
+                General Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/value-assertions.html">
+                Value Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/scientific-assertions.html">
+                Scientific Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/string-assertions.html">
+                String Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/error-assertions.html">
+                Error Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/type-assertions.html">
+                Type Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/table-assertions.html">
+                Table Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Low level CAN service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-installation-guide.html">
+                Installation Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-usage-guide.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                High level ViWi service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-install-usage-guide.html">
+                Installation and Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Signal Composer service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-configuration.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-plugins.html">
+                Plugins
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-api.html">
+                Signal Composer API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                CanDevStudio Quickstart
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/1_Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+                Bringing up a CAN device using socketcan backend
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/3_Add_CAN_Device.html">
+                Add a CAN device in CANdevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+                Configure a CanRawSender node
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/5_Using_CanRawView.html">
+                Using CanRawView
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/bluez-alsa.html">
+                bluez-alsa
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/pulseaudio-module-4a.html">
+                Pulseaudio - 4A Integration Module
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                4a Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/README.html">
+                Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/concepts.html">
+                Concepts
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/components.html">
+                Components
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                high-level-api
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/README.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/kickstart.html">
+                Kickstart
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/reference.html">
+                Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Tips And Tricks
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+                Adjust volumes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+                4a-tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+                Devices
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+                HALs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HMI Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+                Home Screen Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_2-WindowManager-Guide.html">
+                Window Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_3-SoundManager-Guide.html">
+                Sound Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen (old)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/homescreen/homescreen_api.html">
+                HomeScreen API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/0-introduction.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/1-afm-daemons.html">
+        The afm daemons
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2-widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.1-widgets.html">
+        Overview of widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/af-main/2.2-config.xml.html">
+        Widget configuration file
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/3-permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/4-quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Binder daemon vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-binding-writing.html">
+        How to write a binding ?
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/types-and-globals.html">
+        Types and globals
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/macro-log.html">
+        Macros for logging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-api.html">
+        Functions of class afb_api
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-req.html">
+        Functions of class afb_req
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-event.html">
+        Functions of class afb_event
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-daemon.html">
+        Functions of class afb_daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-service.html">
+        Functions of class afb_service
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-events-guide.html">
+        Binder events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-application-writing.html">
+        Binder Application writing guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-migration-to-binding-v3.html">
+        Migration to bindings v3
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/protocol-x-afb-ws-json1.html">
+        WebSocket protocol x-afb-ws-json1
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-desktop-package.html">
+        Installing the binder on a desktop
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-options.html">
+        Options of afb-daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-debugging.html">
+        Debugging binder and bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+        LEGACY Migration from v1 to v2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-binding-v2-references.html">
+        LEGACY Binding V2 references
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/REVISIONS.html">
+        Document revision
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/Installation.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/write-the-tests.html">
+        Write the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/the-test-widget.html">
+        The test widget
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/launch-the-tests.html">
+        Launch the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/tests-examples.html">
+        Tests examples
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-test-functions.html">
+        Binding Test Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-assert-functions.html">
+        Binding Assert Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/test-framework-functions.html">
+        Test Framework Functions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/general-assertions.html">
+        General Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/value-assertions.html">
+        Value Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/scientific-assertions.html">
+        Scientific Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/string-assertions.html">
+        String Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/error-assertions.html">
+        Error Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/type-assertions.html">
+        Type Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/table-assertions.html">
+        Table Assertions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/architecture.html">
+        Signaling Architecture
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-installation-guide.html">
+        Installation Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-usage-guide.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-install-usage-guide.html">
+        Installation and Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-configuration.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-plugins.html">
+        Plugins
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-api.html">
+        Signal Composer API
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/1_Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+        Bringing up a CAN device using socketcan backend
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/3_Add_CAN_Device.html">
+        Add a CAN device in CANdevStudio
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+        Configure a CanRawSender node
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/5_Using_CanRawView.html">
+        Using CanRawView
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/bluez-alsa.html">
+        bluez-alsa
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/pulseaudio-module-4a.html">
+        Pulseaudio - 4A Integration Module
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/README.html">
+        Architecture
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/concepts.html">
+        Concepts
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/components.html">
+        Components
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/README.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/kickstart.html">
+        Kickstart
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/reference.html">
+        Reference
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+        Adjust volumes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+        4a-tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/Devices.html">
+        Devices
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/HALs.html">
+        HALs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_1-HomeScreen-Guide.html">
+        Home Screen Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_2-WindowManager-Guide.html">
+        Window Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_3-SoundManager-Guide.html">
+        Sound Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/apis_services/fetched_files.yml -->
+
+<h1 id="configuration-file---configxml">Configuration file - config.xml</h1>
+
+<p>The widgets are described by the W3C’s technical recommendations
+<a href="http://www.w3.org/TR/widgets" title="Packaged Web Apps">Packaged Web Apps (Widgets)</a> and <a href="http://www.w3.org/TR/widgets-digsig" title="XML Digital Signatures for Widgets">XML Digital Signatures for Widgets</a>
+ that specifies the configuration file <strong>config.xml</strong>.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>The file <strong>config.xml</strong> describes important data of the application
+to the framework:</p>
+
+<ul>
+  <li>the unique identifier of the application</li>
+  <li>the name of the application</li>
+  <li>the type of the application</li>
+  <li>the icon of the application</li>
+  <li>the permissions linked to the application</li>
+  <li>the services and dependencies of the application</li>
+</ul>
+
+<p>The file MUST be at the root of the widget and MUST be case sensitively name
+<strong><em>config.xml</em></strong>.</p>
+
+<p>The file <strong>config.xml</strong> is a XML file described by the document
+<a href="http://www.w3.org/TR/widgets" title="Packaged Web Apps">widgets</a>.</p>
+
+<p>Here is the example of the config file for the QML application SmartHome.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;widget</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/ns/widgets"</span> <span class="na">id=</span><span class="s">"smarthome"</span> <span class="na">version=</span><span class="s">"0.1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;name&gt;</span>SmartHome<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;icon</span> <span class="na">src=</span><span class="s">"smarthome.png"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;content</span> <span class="na">src=</span><span class="s">"qml/smarthome/smarthome.qml"</span> <span class="na">type=</span><span class="s">"text/vnd.qt.qml"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;description&gt;</span>This is the Smarthome QML demo application. It shows some user interfaces for controlling an
+automated house. The user interface is completely done with QML.<span class="nt">&lt;/description&gt;</span>
+  <span class="nt">&lt;author&gt;</span>Qt team<span class="nt">&lt;/author&gt;</span>
+  <span class="nt">&lt;license&gt;</span>GPL<span class="nt">&lt;/license&gt;</span>
+<span class="nt">&lt;/widget&gt;</span>
+</code></pre>
+</div>
+
+<p>The most important items are:</p>
+
+<ul>
+  <li>
+    <p><strong>&lt;widget id=”……”&gt;</strong>: gives the id of the widget. It must be unique.</p>
+  </li>
+  <li>
+    <p><strong>&lt;widget version=”……”&gt;</strong>: gives the version of the widget</p>
+  </li>
+  <li>
+    <p><strong>&lt;icon src=”…”&gt;</strong>: gives a path to the icon of the application
+(can be repeated with different sizes)</p>
+  </li>
+  <li>
+    <p><strong>&lt;content src=”…” type=”…”&gt;</strong>: this indicates the entry point and its type.</p>
+  </li>
+</ul>
+
+<h2 id="standard-elements-of-configxml">Standard elements of “config.xml”</h2>
+
+<h3 id="the-element-widget">The element widget</h3>
+
+<h4 id="the-attribute-id-of-widget">the attribute id of widget</h4>
+
+<p>The attribute <em>id</em> is mandatory (for version 2.x, blowfish) and must be unique.</p>
+
+<p>Values for <em>id</em> are any non empty string containing only latin letters,
+arabic digits, and the three characters ‘.’ (dot), ‘-‘ (dash) and
+‘_’ (underscore).</p>
+
+<p>Authors can use a mnemonic id or can pick a unique id using
+command <strong>uuid</strong> or <strong>uuidgen</strong>.</p>
+
+<h3 id="the-attribute-version-of-widget">the attribute version of widget</h3>
+
+<p>The attribute <em>version</em> is mandatory (for version 2.x, blowfish).</p>
+
+<p>Values for <em>version</em> are any non empty string containing only latin letters,
+arabic digits, and the three characters ‘.’ (dot), ‘-‘ (dash) and
+‘_’ (underscore).</p>
+
+<p>Version values are dot separated fields MAJOR.MINOR.REVISION.
+Such version would preferably follow guidelines of
+<a href="http://semver.org/" title="Semantic versioning">semantic versioning</a>.</p>
+
+<h3 id="the-element-content">The element content</h3>
+
+<p>The element <em>content</em> is mandatory (for version 2.x, blowfish) and must designate a file
+(subject to localization) with its attribute <em>src</em>.</p>
+
+<p>The content designed depends on its type. See below for the known types.</p>
+
+<h3 id="the-element-icon">The element icon</h3>
+
+<p>The element <em>icon</em> is mandatory (for version 2.x, blowfish) and must
+be unique. It must designate an image file with its attribute <em>src</em>.</p>
+
+<h2 id="agl-features">AGL features</h2>
+
+<p>The AGL framework uses the feature tag for specifying security and binding
+requirement of the widget.</p>
+
+<p>Since the migration of the framework to leverage systemd power,
+the features are of important use to:</p>
+
+<ul>
+  <li>declare more than just an application</li>
+  <li>declare the expected dependencies</li>
+  <li>declare the expected permissions</li>
+  <li>declare the exported apis</li>
+</ul>
+
+<p>The specification of <a href="http://www.w3.org/TR/widgets" title="Packaged Web Apps">widgets</a> is intended to describe
+only one application.
+In the present case, we expect to describe more than just an application.
+For example, a publisher could provide a widget containing a service,
+an application for tuning that service, an application that
+leverage the service.
+Here, the term of service means a background application that
+runs without IHM and whose public api can be accessed by other
+applications.</p>
+
+<p>So the features are used to describe each of the possible
+units of widgets.
+The “standard” unit in the meaning of <a href="http://www.w3.org/TR/widgets" title="Packaged Web Apps">widgets</a>
+is called the “main” unit.</p>
+
+<h3 id="required-api-feature-nameurnaglwidgetrequired-api">required-api: feature name=”urn:AGL:widget:required-api”</h3>
+
+<p>List of the api required by the widget.</p>
+
+<p>Each required api must be explicit using a <code class="highlighter-rouge">&lt;param&gt;</code> entry.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-api"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"#target"</span> <span class="na">value=</span><span class="s">"main"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"gps"</span> <span class="na">value=</span><span class="s">"auto"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"afm-main"</span> <span class="na">value=</span><span class="s">"link"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/feature&gt;</span>
+</code></pre>
+</div>
+
+<p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"required-api"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gps"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="w"> </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afm-main"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"link"</span><span class="w"> </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="required-api-param-nametarget">required-api: param name=”#target”</h4>
+
+<p>OPTIONAL</p>
+
+<p>Declares the name of the unit requiring the listed apis.
+Only one instance of the param “#target” is allowed.
+When there is not instance of this param, it behave as if
+the target main was specified.</p>
+
+<h4 id="required-api-param-namerequired-api-name">required-api: param name=[required api name]</h4>
+
+<p>The name is the name of the required API.</p>
+
+<p>The value describes how to connect to the required api.
+It is either:</p>
+
+<ul>
+  <li>
+    <p>local: OBSOLETE SINCE FF (AGL6), PROVIDED FOR COMPATIBILITY 
+Use the feature <strong>urn:AGL:widget:required-binding</strong> instead.
+The binding is a local shared object.<br />
+In that case, the name is the relative path of the
+shared object to be loaded.</p>
+  </li>
+  <li>
+    <p>auto:
+The framework set automatically the kind of
+the connection to the API</p>
+  </li>
+  <li>
+    <p>ws:
+The framework connect using internal websockets</p>
+  </li>
+  <li>
+    <p>dbus: [OBSOLETE, shouldn’t be used currently]
+The framework connect using internal dbus</p>
+  </li>
+  <li>
+    <p>tcp:
+In that case, the name is the URI to access the service.
+The framework connect using a URI of type
+ HOST:PORT/API
+API gives the name of the imported api.</p>
+  </li>
+  <li>
+    <p>cloud: [PROPOSAL - NOT IMPLEMENTED]
+The framework connect externally using websock.
+In that case, the name includes data to access the service.
+Example: <code class="highlighter-rouge">&lt;param name="log:https://oic@agl.iot.bzh/cloud/log" value="cloud" /&gt;</code></p>
+  </li>
+</ul>
+
+<h3 id="required-binding-feature-nameurnaglwidgetrequired-binding">required-binding: feature name=”urn:AGL:widget:required-binding”</h3>
+
+<p>List of the bindings required by the widget.</p>
+
+<p>Note: Since AGL 6 (FF - Funky Flounder),
+the binder implements bindings version 3 that allow the declaration
+of 0, 1 or more APIs by one binding. In other words, the equivalency
+one binding = one API is lost. At the same time the framework added
+the ability to use bindings exported by other widgets.</p>
+
+<p>Each required binding must be explicit using a <code class="highlighter-rouge">&lt;param&gt;</code> entry.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-binding"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"libexec/binding-gps.so"</span> <span class="na">value=</span><span class="s">"local"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"extra"</span> <span class="na">value=</span><span class="s">"extern"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/feature&gt;</span>
+</code></pre>
+</div>
+
+<p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"required-binding"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"libexec/binding-gps.so"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"local"</span><span class="w"> </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extra"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extern"</span><span class="w"> </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="required-binding-param-namename-or-path">required-binding: param name=[name or path]</h4>
+
+<p>The name or the path of the required BINDING.</p>
+
+<p>The value describes how to connect to the required binding.
+It is either:</p>
+
+<ul>
+  <li>
+    <p>local:
+The binding is a local shared object.
+In that case, the name is the relative path of the
+shared object to be loaded.</p>
+  </li>
+  <li>
+    <p>extern:
+The binding is external. The name is the exported binding name.
+See provided-binding.</p>
+  </li>
+</ul>
+
+<h3 id="provided-binding-feature-nameurnaglwidgetprovided-binding">provided-binding: feature name=”urn:AGL:widget:provided-binding”</h3>
+
+<p>This feature allows to export a binding to other binders.
+The bindings whose relative name is given as value is exported to
+other binders under the given name.</p>
+
+<p>Each provided binding must be explicit using a <code class="highlighter-rouge">&lt;param&gt;</code> entry.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-binding"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"extra"</span> <span class="na">value=</span><span class="s">"export/binding-gps.so"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/feature&gt;</span>
+</code></pre>
+</div>
+
+<p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"provided-binding"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extra"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"export/binding-gps.so"</span><span class="w"> </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="provided-binding-param-nameexported-name">provided-binding: param name=[exported name]</h4>
+
+<p>Exports a local binding to other applications.</p>
+
+<p>The value must contain the path to the exported binding.</p>
+
+<h3 id="required-permission-feature-nameurnaglwidgetrequired-permission">required-permission: feature name=”urn:AGL:widget:required-permission”</h3>
+
+<p>List of the permissions required by the unit.</p>
+
+<p>Each required permission must be explicit using a <code class="highlighter-rouge">&lt;param&gt;</code> entry.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-permission"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"#target"</span> <span class="na">value=</span><span class="s">"geoloc"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"urn:AGL:permission:real-time"</span> <span class="na">value=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"urn:AGL:permission:syscall:*"</span> <span class="na">value=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/feature&gt;</span>
+</code></pre>
+</div>
+
+<p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"required-permission"</span><span class="err">:</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"urn:AGL:permission:real-time"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"urn:AGL:permission:real-time"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"required"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"urn:AGL:permission:syscall:*"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"urn:AGL:permission:syscall:*"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"required"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="required-permission-param-nametarget">required-permission: param name=”#target”</h4>
+
+<p>OPTIONAL</p>
+
+<p>Declares the name of the unit requiring the listed permissions.
+Only one instance of the param “#target” is allowed.
+When there is not instance of this param, it behave as if
+the target main was specified.</p>
+
+<h4 id="required-permission-param-namerequired-permission-name">required-permission: param name=[required permission name]</h4>
+
+<p>The value is either:</p>
+
+<ul>
+  <li>required: the permission is mandatorily needed except if the feature
+isn’t required (required=”false”) and in that case it is optional.</li>
+  <li>optional: the permission is optional</li>
+</ul>
+
+<h3 id="provided-unit-feature-nameurnaglwidgetprovided-unit">provided-unit: feature name=”urn:AGL:widget:provided-unit”</h3>
+
+<p>This feature is made for declaring new units
+for the widget.
+Using this feature, a software publisher
+can provide more than one application in the same widget.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-unit"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"#target"</span> <span class="na">value=</span><span class="s">"geoloc"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">value=</span><span class="s">"binding of name geoloc"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"content.src"</span> <span class="na">value=</span><span class="s">"index.html"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"content.type"</span> <span class="na">value=</span><span class="s">"application/vnd.agl.service"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/feature&gt;</span>
+</code></pre>
+</div>
+
+<p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"#target"</span><span class="p">:</span><span class="s2">"geoloc"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"binding of name geoloc"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"content"</span><span class="p">:{</span><span class="w">
+        </span><span class="nt">"src"</span><span class="p">:</span><span class="s2">"index.html"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"application\/vnd.agl.service"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="provided-unit-param-nametarget">provided-unit: param name=”#target”</h4>
+
+<p>REQUIRED</p>
+
+<p>Declares the name of the unit. The default unit, the unit
+of the main of the widget, has the name “main”.
+The value given here must be unique within the widget file.
+It will be used in other places of the widget config.xml file to
+designate the unit.</p>
+
+<p>Only one instance of the param “#target” is allowed.
+The value can’t be “main”.</p>
+
+<h4 id="provided-unit-param-namecontenttype">provided-unit: param name=”content.type”</h4>
+
+<p>REQUIRED</p>
+
+<p>The mimetype of the provided unit.</p>
+
+<h4 id="provided-unit-param-namecontentsrc">provided-unit: param name=”content.src”</h4>
+
+<p>A path to the source</p>
+
+<h4 id="other-parameters">other parameters</h4>
+
+<p>The items that can be set for the main unit
+can also be set using the params if needed.</p>
+
+<ul>
+  <li>description</li>
+  <li>name.content</li>
+  <li>name.short</li>
+  <li>…</li>
+</ul>
+
+<h3 id="provided-api-feature-nameurnaglwidgetprovided-api">provided-api: feature name=”urn:AGL:widget:provided-api”</h3>
+
+<p>Use this feature for exporting one or more API of a unit
+to other widgets of the platform.</p>
+
+<p>This feature is an important feature of the framework.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-api"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"#target"</span> <span class="na">value=</span><span class="s">"geoloc"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"geoloc"</span> <span class="na">value=</span><span class="s">"auto"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"moonloc"</span> <span class="na">value=</span><span class="s">"auto"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/feature&gt;</span>
+</code></pre>
+</div>
+
+<p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">      </span><span class="s2">"provided-api"</span><span class="err">:</span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"geoloc"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"auto"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"moonloc"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"auto"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="provided-api-param-nametarget">provided-api: param name=”#target”</h4>
+
+<p>OPTIONAL</p>
+
+<p>Declares the name of the unit exporting the listed apis.
+Only one instance of the param “#target” is allowed.
+When there is not instance of this param, it behave as if
+the target main was specified.</p>
+
+<h4 id="provided-api-param-namename-of-exported-api">provided-api: param name=[name of exported api]</h4>
+
+<p>The name give the name of the api that is exported.</p>
+
+<p>The value is one of the following values:</p>
+
+<ul>
+  <li>
+    <p>ws:
+export the api using UNIX websocket</p>
+  </li>
+  <li>
+    <p>dbus: [OBSOLETE, shouldn’t be used currently]
+export the API using dbus</p>
+  </li>
+  <li>
+    <p>auto:
+export the api using the default method(s).</p>
+  </li>
+  <li>
+    <p>tcp:
+In that case, the name is the URI used for exposing the service.
+The URI is of type
+ HOST:PORT/API
+API gives the name of the exported api.</p>
+  </li>
+</ul>
+
+<h3 id="file-properties-feature-nameurnaglwidgetfile-properties">file-properties: feature name=”urn:AGL:widget:file-properties”</h3>
+
+<p>Use this feature for setting properties to files of the widget.
+At this time, this feature only allows to set executable flag
+for making companion program executable explicitly.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:file-properties"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"flite"</span> <span class="na">value=</span><span class="s">"executable"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"jtalk"</span> <span class="na">value=</span><span class="s">"executable"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/feature&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="file-properties-param-namepath">file-properties: param name=”path”</h4>
+
+<p>The name is the relative path of the file whose property
+must be set.</p>
+
+<p>The value must be “executable” to make the file executable.</p>
+
+<h2 id="known-content-types">Known content types</h2>
+
+<p>The configuration file <strong><em>/etc/afm/afm-unit.conf</em></strong> defines
+how to create systemd units for widgets.</p>
+
+<p>Known types for the type of content are:</p>
+
+<ul>
+  <li>
+    <p><strong><em>text/html</em></strong>:
+HTML application,
+content.src designates the home page of the application</p>
+  </li>
+  <li>
+    <p><strong><em>application/vnd.agl.native</em></strong>
+AGL compatible native,
+content.src designates the relative path of the binary.</p>
+  </li>
+  <li>
+    <p><strong><em>application/vnd.agl.service</em></strong>:
+AGL service, content.src is not used.</p>
+  </li>
+  <li>
+    <p><strong><em>application/x-executable</em></strong>:
+Native application,
+content.src designates the relative path of the binary.
+For such application, only security setup is made.</p>
+  </li>
+</ul>
+
+<p>Adding more types is easy, it just need to edit the configuration
+file <strong><em>afm-unit.conf</em></strong>.</p>
+
+<h3 id="older-content-type-currently-not-supported-at-the-moment">Older content type currently not supported at the moment</h3>
+
+<p>This types were defined previously when the framework was not
+leveraging systemd.
+The transition to systemd let these types out at the moment.</p>
+
+<ul>
+  <li><strong><em>application/vnd.agl.url</em></strong></li>
+  <li><strong><em>text/vnd.qt.qml</em></strong>, <strong><em>application/vnd.agl.qml</em></strong></li>
+  <li><strong><em>application/vnd.agl.qml.hybrid</em></strong></li>
+  <li><strong><em>application/vnd.agl.html.hybrid</em></strong></li>
+</ul>
+
+<!-- pagebreak -->
+
+<h2 id="the-configuration-file-afm-unitconf">The configuration file afm-unit.conf</h2>
+
+<p>The integration of the framework with systemd
+mainly consists of creating the systemd unit
+files corresponding to the need and requirements
+of the installed widgets.</p>
+
+<p>This configuration file named <code class="highlighter-rouge">afm-unit.conf</code> installed
+on the system with the path <code class="highlighter-rouge">/etc/afm/afm-unit.conf</code>
+describes how to generate all units from the <em>config.xml</em>
+configuration files of widgets.
+The description uses an extended version of the templating
+formalism of <a href="http://mustache.github.io/mustache.5.html" title="mustache - Logic-less templates">mustache</a> to describes all the units.</p>
+
+<p>Let present how it works using the following diagram that
+describes graphically the workflow of creating the unit
+files for systemd <code class="highlighter-rouge">afm-unit.conf</code> from the configuration
+file of the widget <code class="highlighter-rouge">config.xml</code>:</p>
+
+<p><img src="pictures/make-units.svg" alt="make-units" /></p>
+
+<p>In a first step, and because <a href="http://mustache.github.io/mustache.5.html" title="mustache - Logic-less templates">mustache</a> is intended
+to work on JSON representations, the configuration file is
+translated to an internal JSON representation.
+This representation is shown along the examples of the documentation
+of the config files of widgets.</p>
+
+<p>In a second step, the mustache template <code class="highlighter-rouge">afm-unit.conf</code>
+is instantiated using the C library <a href="https://gitlab.com/jobol/mustach" title="basic C implementation of mustache">mustach</a> that follows
+the rules of <a href="http://mustache.github.io/mustache.5.html" title="mustache - Logic-less templates">mustache</a> and with all its available
+extensions:</p>
+
+<ul>
+  <li>use of colon (:) for explicit substitution</li>
+  <li>test of values with = or =!</li>
+</ul>
+
+<p>In a third step, the result of instantiating <code class="highlighter-rouge">afm-unit.conf</code>
+for the widget is split in units.
+To achieve that goal, the lines containing specific directives are searched.
+Any directive occupy one full line.
+The directives are:</p>
+
+<ul>
+  <li>%nl
+Produce an empty line at the end</li>
+  <li>%begin systemd-unit</li>
+  <li>%end systemd-unit
+Delimit the produced unit, its begin and its end</li>
+  <li>%systemd-unit user</li>
+  <li>%systemd-unit system
+Tells the kind of unit (user/system)</li>
+  <li>%systemd-unit service NAME</li>
+  <li>%systemd-unit socket NAME
+Gives the name and type (service or socket) of the unit.
+The extension is automatically computed from the type
+and must not be set in the name.</li>
+  <li>%systemd-unit wanted-by NAME
+Tells to install a link to the unit in the wants of NAME</li>
+</ul>
+
+<p>Then the computed units are then written to the filesystem
+and inserted in systemd.</p>
+
+<p>The generated unit files will contain variables for internal
+use of the framework.
+These variables are starting with <code class="highlighter-rouge">X-AFM-</code>.
+The variables starting with <code class="highlighter-rouge">X-AFM-</code> but not with <code class="highlighter-rouge">X-AFM--</code> are
+the public variables.
+These variables will be returned by the
+framework as the details of an application (see <strong>afm-util detail …</strong>).</p>
+
+<p>Variables starting with <code class="highlighter-rouge">X-AFM--</code> are private to the framework.
+By example, the variable  <code class="highlighter-rouge">X-AFM--http-port</code> is used to
+record the allocated port for applications.</p>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-12-18 00:04:47 +0000</small>
+		
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-main/plain/docs/2.2-config.xml.md?h=master">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

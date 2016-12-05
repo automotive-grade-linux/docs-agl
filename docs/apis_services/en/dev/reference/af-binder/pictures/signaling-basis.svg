@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="46cm" height="30cm" viewBox="152 40 918 592" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="792.796" y1="114.769" x2="197.12" y2="115.607"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="776.804,119.791 792.796,114.769 792.796,114.769 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="494.958" y="125.188">request-data</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="153" y="43" width="67.35" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="153" y="43" width="67.35" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="186.675" y="64.9">
+      <tspan x="186.675" y="64.9">client 1</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="163" y1="67.9" x2="210.35" y2="67.9"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="305.5" y="43.7" width="67.35" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="305.5" y="43.7" width="67.35" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="339.175" y="65.6">
+      <tspan x="339.175" y="65.6">client 2</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="315.5" y1="68.6" x2="362.85" y2="68.6"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="502" y="42" width="97.25" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="502" y="42" width="97.25" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="550.625" y="63.9">
+      <tspan x="550.625" y="63.9">: framework</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="512" y1="66.9" x2="589.25" y2="66.9"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="746" y="43" width="118.7" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="746" y="43" width="118.7" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="805.35" y="64.9">
+      <tspan x="805.35" y="64.9">signaling agent</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="756" y1="67.9" x2="854.7" y2="67.9"/>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="186.675" y1="79" x2="187" y2="629"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="339.175" y1="79.7" x2="338.826" y2="630.701"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="550.625" y1="78" x2="550.326" y2="628.401"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="805.35" y1="79" x2="802.826" y2="629.101"/>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="789.968" y1="260.433" x2="349.441" y2="261.423"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="773.979,265.468 789.968,260.433 789.968,260.433 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="569.704" y="270.928">request-data</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="567" y1="143.067" x2="803" y2="144"/>
+    <polygon style="fill: #000000" points="567.02,138.067 551,143.004 566.98,148.067 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="567.02,138.067 551,143.004 566.98,148.067 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="676.5" y="153.5">afb_daemon_make_event</text>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="735.935" y="141.063">
+    <tspan x="735.935" y="141.063"></tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="569.412" y1="179.822" x2="805.412" y2="180.755"/>
+    <polygon style="fill: #000000" points="569.431,174.822 553.412,179.759 569.392,184.822 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="569.431,174.822 553.412,179.759 569.392,184.822 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="678.912" y="190.255">afb_req_subscribe</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="197.12" y1="216.016" x2="792.796" y2="215.178"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="213.113,210.994 197.12,216.016 197.12,216.016 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="494.958" y="225.597">reply of request-data</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="566.583" y1="297.202" x2="802.583" y2="298.135"/>
+    <polygon style="fill: #000000" points="566.603,292.202 550.583,297.139 566.563,302.202 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="566.603,292.202 550.583,297.139 566.563,302.202 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="676.083" y="307.635">afb_req_subscribe</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="349.441" y1="337.639" x2="789.968" y2="336.649"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="365.429,332.603 349.441,337.639 349.441,337.639 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="569.704" y="347.144">reply of request-data</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1006.34" y="41.2295" width="62.15" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1006.34" y="41.2295" width="62.15" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1037.42" y="63.1295">
+      <tspan x="1037.42" y="63.1295">device</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="1016.34" y1="66.1295" x2="1058.49" y2="66.1295"/>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="1037.42" y1="77.2295" x2="1037.16" y2="628.967"/>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1020.16" y1="131.163" x2="808.06" y2="131.163"/>
+    <polygon style="fill: #000000" points="1020.16,136.163 1036.16,131.163 1020.16,126.163 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1020.16,136.163 1036.16,131.163 1020.16,126.163 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="922.611" y="141.163">setup</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="813.303" y1="380.216" x2="1037.15" y2="380.064"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="829.299,375.206 813.303,380.216 813.303,380.216 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="925.228" y="390.14">&lt;&lt; wake up &gt;&gt;</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="558.037" y1="408.076" x2="803.998" y2="409.858"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.073,403.192 558.037,408.076 558.037,408.076 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="681.017" y="418.967">afb_event_push</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="188.634" y1="429.562" x2="549.439" y2="429.657"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="204.636,424.567 188.634,429.562 188.634,429.562 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="369.037" y="439.61">&lt;&lt; event &gt;&gt;</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="337.127" y1="463.504" x2="549.734" y2="462.689"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="353.108,458.442 337.127,463.504 337.127,463.504 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="443.43" y="473.096">&lt;&lt; event &gt;&gt;</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="787.847" y1="483.303" x2="558.037" y2="484.293"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="771.868,488.371 787.847,483.303 787.847,483.303 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="672.942" y="493.798">reply of afb_event_push</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="171.664" y="115.607" width="25.4558" height="100.409"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="171.664" y="115.607" width="25.4558" height="100.409"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="792.796" y="114.769" width="25.4558" height="100.409"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="792.796" y="114.769" width="25.4558" height="100.409"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="323.985" y="261.423" width="25.4558" height="76.2161"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="323.985" y="261.423" width="25.4558" height="76.2161"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="789.968" y="260.433" width="25.4558" height="76.2161"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="789.968" y="260.433" width="25.4558" height="76.2161"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="787.847" y="380.216" width="25.4558" height="103.086"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="787.847" y="380.216" width="25.4558" height="103.086"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="532.581" y="408.076" width="25.4558" height="76.2161"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="532.581" y="408.076" width="25.4558" height="76.2161"/>
+  </g>
+</svg>

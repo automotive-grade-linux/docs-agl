@@ -1,0 +1,3060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                README  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                        </li>
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Yocto layers
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/AGL.html">
+                AGL Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl.html">
+                meta-agl
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl-demo.html">
+                meta-agl-demo
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl-devel.html">
+                meta-agl-devel
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Host Configuration
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/1_Prerequisites.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/2_AGL_Application_Framework.html">
+                AGL Application Framework
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/3_Binding_Build_Example.html">
+                Binding Build Example
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/4_AGL_XDS.html">
+                AGL XDS
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/5_Candevstudio.html">
+                CanDevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Development Kit: build AGL image
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html">
+                Deploy image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html">
+                Setting up your operating system
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html">
+                Inside the container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html">
+                SDK compilation and installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Development Kit: build AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html">
+                Initialize SDK environment
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html">
+                Trying out template
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html">
+                Developing with container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html">
+                Use CMake templates to develop an app
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                X(cross) Development System: User's Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/0_Abstract.html">
+                Getting Started
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Installing xds-server
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1_install-xds-server.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1-1_install-xds-server-docker.html">
+                Based on Docker container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1-2_install-xds-server-vm.html">
+                Based on Virtual Machine appliance
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1-3_install-xds-server-native.html">
+                Native installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/2_install-client.html">
+                Installing xds client tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/3_install-sdks.html">
+                Installing AGL SDKs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Create your first AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4_build-first-app.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-1_build-first-app-setup.html">
+                Setup
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-2_build-first-app-cmd.html">
+                Build using command line tool
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-3_build-first-app-dashboard.html">
+                Build using XDS Dashboard
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-4_build-first-app-ide.html">
+                Build using a source code editor / IDE
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Debug your first AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5_debug-first-app.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-1_debug-first-app-config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-2_debug-first-app-cmd.html">
+                xds-gdb from command line
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-3_debug-first-app-ide.html">
+                xds-gdb within an IDE
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                X(cross) Development System: Internals
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_Prerequisites.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-server
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/3_how-to-run.html">
+                How to run
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/5_test.html">
+                Test
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-agent
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/3_start.html">
+                Start
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-cli
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/3_commands.html">
+                CLI Commands
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-gdb
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/3_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Guides
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf">
+                AppFW - Privileges Management
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Controller Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/ctrler/controller.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/ctrler/controllerConfig.html">
+                Binding Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/ctrler/Usage.html">
+                Usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/ctrler/configSample.html">
+                Configuration Sample
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Continuous Integration - Automated Testing (CIAT)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Training
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf">
+                How to write tests (overview slides)
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/CIAT/training/Hands_on_lab_documentation.pdf">
+                How to write tests (detailed)
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/AGL.html">
+        AGL Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl.html">
+        meta-agl
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl-demo.html">
+        meta-agl-demo
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl-devel.html">
+        meta-agl-devel
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/1_Prerequisites.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/2_AGL_Application_Framework.html">
+        AGL Application Framework
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/3_Binding_Build_Example.html">
+        Binding Build Example
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/4_AGL_XDS.html">
+        AGL XDS
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/5_Candevstudio.html">
+        CanDevStudio
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html">
+        Deploy image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html">
+        Setting up your operating system
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html">
+        Inside the container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html">
+        SDK compilation and installation
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html">
+        Initialize SDK environment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html">
+        Trying out template
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html">
+        Developing with container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html">
+        Use CMake templates to develop an app
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/0_Abstract.html">
+        Getting Started
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1_install-xds-server.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1-1_install-xds-server-docker.html">
+        Based on Docker container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1-2_install-xds-server-vm.html">
+        Based on Virtual Machine appliance
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1-3_install-xds-server-native.html">
+        Native installation
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/2_install-client.html">
+        Installing xds client tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/3_install-sdks.html">
+        Installing AGL SDKs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4_build-first-app.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-1_build-first-app-setup.html">
+        Setup
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-2_build-first-app-cmd.html">
+        Build using command line tool
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-3_build-first-app-dashboard.html">
+        Build using XDS Dashboard
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-4_build-first-app-ide.html">
+        Build using a source code editor / IDE
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5_debug-first-app.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-1_debug-first-app-config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-2_debug-first-app-cmd.html">
+        xds-gdb from command line
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-3_debug-first-app-ide.html">
+        xds-gdb within an IDE
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_Prerequisites.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/3_how-to-run.html">
+        How to run
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/5_test.html">
+        Test
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/3_start.html">
+        Start
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/3_commands.html">
+        CLI Commands
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/3_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf">
+        AppFW - Privileges Management
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/ctrler/controller.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/ctrler/controllerConfig.html">
+        Binding Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/ctrler/Usage.html">
+        Usage
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/ctrler/configSample.html">
+        Configuration Sample
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf">
+        How to write tests (overview slides)
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/CIAT/training/Hands_on_lab_documentation.pdf">
+        How to write tests (detailed)
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/devguides/fetched_files.yml -->
+
+<h1 id="agl-cmake-template">AGL CMake template</h1>
+
+<p>Files used to build an application, or binding, project with the
+AGL Application Framework.</p>
+
+<p>To build your AGL project using these templates, you have to install
+them within your project and adjust compilation option in <code class="highlighter-rouge">config.cmake</code>.
+For technical reasons, you also have to specify <strong>cmake</strong> target in
+sub CMakeLists.txt installed. Make a global search to find source files
+isn’t recommended now to handle project build especially in a multi-users
+project because CMake will not be aware of new or removed source files.</p>
+
+<p>You’ll find usage samples here:</p>
+
+<ul>
+  <li><a href="https://github.com/iotbzh/helloworld-service">helloworld-service</a></li>
+  <li><a href="https://gerrit.automotivelinux.org/gerrit/apps/low-level-can-service">low-level-can-service</a></li>
+  <li><a href="https://github.com/iotbzh/high-level-viwi-service">high-level-viwi-service</a></li>
+  <li><a href="https://github.com/iotbzh/audio-binding">audio-binding</a></li>
+  <li><a href="https://github.com/iotbzh/unicens2-binding">unicens2-binding</a></li>
+</ul>
+
+<h2 id="quickstart">Quickstart</h2>
+
+<h3 id="initialization">Initialization</h3>
+
+<p>To use these templates files on your project just install the reference files using
+<strong>git submodule</strong> then use <code class="highlighter-rouge">config.cmake</code> file to configure your project specificities :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git submodule add https://gerrit.automotivelinux.org/gerrit/p/apps/app-templates.git conf.d/app-templates
+mkdir conf.d/cmake
+cp conf.d/app-templates/samples.d/config.cmake.sample conf.d/cmake/config.cmake
+</code></pre>
+</div>
+
+<p>Edit the copied config.cmake file to fit your needs.</p>
+
+<p>Now, create your top CMakeLists.txt file which include <code class="highlighter-rouge">config.cmake</code> file.</p>
+
+<p>An example is available in <strong>app-templates</strong> submodule that you can copy and
+use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cp conf.d/app-templates/samples.d/CMakeLists.txt.sample CMakeLists.txt
+</code></pre>
+</div>
+
+<h3 id="create-your-cmake-targets">Create your CMake targets</h3>
+
+<p>For each target part of your project, you need to use <strong><em>PROJECT_TARGET_ADD</em></strong>
+to include this target to your project.</p>
+
+<p>Using it, make available the cmake variable <strong><em>TARGET_NAME</em></strong> until the next
+<strong><em>PROJECT_TARGET_ADD</em></strong> is invoked with a new target name.</p>
+
+<p>So, typical usage defining a target is:</p>
+
+<pre><code class="language-cmake">PROJECT_TARGET_ADD(SuperExampleName) --&gt; Adding target to your project
+
+add_executable/add_library(${TARGET_NAME}.... --&gt; defining your target sources
+
+SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES.... --&gt; fit target properties
+for macros usage
+</code></pre>
+
+<h3 id="targets-properties">Targets PROPERTIES</h3>
+
+<p>You should set properties on your targets that will be used to package your
+apps in a widget file that could be installed on an AGL system.</p>
+
+<p>Specify what is the type of your targets that you want to be included in the
+widget package with the property <strong>LABELS</strong>:</p>
+
+<p>Choose between:</p>
+
+<ul>
+  <li><strong>BINDING</strong>: Shared library that be loaded by the AGL Application Framework</li>
+  <li><strong>BINDINGV2</strong>: Shared library that be loaded by the AGL Application Framework
+ This has to be accompagnied with a JSON file named like the
+ <em>${OUTPUT_NAME}-apidef</em> of the target that describes the API with OpenAPI
+ syntax (e.g: <em>mybinding-apidef</em>).
+ Or Alternatively, you can choose the name, without the extension, using macro
+ <strong>set_openapi_filename</strong>. If you use C++, you have to set <strong>PROJECT_LANGUAGES</strong>
+ to <em>CXX</em>.</li>
+  <li><strong>BINDINGV3</strong>: Shared library that be loaded by the AGL Application Framework
+ This has to be accompagnied with a JSON file named like the
+ <em>${OUTPUT_NAME}-apidef</em> of the target that describes the API with OpenAPI
+ syntax (e.g: <em>mybinding-apidef</em>).
+ Or Alternatively, you can choose the name, without the extension, using macro
+ <strong>set_openapi_filename</strong>. If you use C++, you have to set <strong>PROJECT_LANGUAGES</strong>
+ to <em>CXX</em>.</li>
+  <li><strong>PLUGIN</strong>: Shared library are meant to be used as a binding plugin. Binding
+ would load it as a plugin to extend its functionalities. It should be named
+ with a special extension that you choose with SUFFIX cmake target property or
+ it’d be <strong>.ctlso</strong> by default.</li>
+  <li><strong>HTDOCS</strong>: Root directory of a web app. This target has to build its
+ directory and puts its files in the ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}</li>
+  <li><strong>DATA</strong>: Resources used by your application. This target has to build its
+ directory and puts its files in the ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}</li>
+  <li><strong>EXECUTABLE</strong>: Entry point of your application executed by the AGL
+ Application Framework</li>
+  <li><strong>LIBRARY</strong>: An external 3rd party library bundled with the binding for its
+ own purpose because platform doesn’t provide it.</li>
+  <li><strong>BINDING-CONFIG</strong>: Any files used as configuration by your binding.</li>
+</ul>
+
+<blockquote>
+  <p><strong>TIP</strong> you should use the prefix <em>afb-</em> with your <strong>BINDING* targets which
+stand for **Application Framework Binding</strong>.</p>
+</blockquote>
+
+<pre><code class="language-cmake">SET_TARGET_PROPERTIES(${TARGET_NAME}
+	PREFIX "afb-"
+	LABELS "BINDINGV3"
+	OUTPUT_NAME "file_output_name")
+</code></pre>
+
+<blockquote>
+  <p><strong>NOTE</strong>: You doesn’t need to specify an <strong>INSTALL</strong> command for these
+targets. This is already handle by template and will be installed in the
+following path : <strong>${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}</strong></p>
+</blockquote>
+
+<h2 id="more-details-typical-project-architecture">More details: Typical project architecture</h2>
+
+<p>A typical project architecture would be :</p>
+
+<pre><code class="language-tree">&lt;project-root-path&gt;
+│
+├── conf.d/
+│   ├── autobuild/
+│   │   ├── agl
+│   │   │   └── autobuild
+│   │   ├── linux
+│   │   │   └── autobuild
+│   │   └── windows
+│   │       └── autobuild
+│   ├── app-templates/
+│   │   ├── README.md
+│   │   ├── cmake/
+│   │   │   ├── export.map
+│   │   │   └── macros.cmake
+│   │   ├── samples.d/
+│   │   │   ├── CMakeLists.txt.sample
+│   │   │   ├── config.cmake.sample
+│   │   │   ├── config.xml.in.sample
+│   │   │   └── xds-config.env.sample
+│   │   ├── template.d/
+│   │   │   ├── autobuild/
+│   │   │   │   ├── agl
+│   │   │   │   │   └── autobuild.in
+│   │   │   │   ├── linux
+│   │   │   │   │   └── autobuild.in
+│   │   │   │   └── windows
+│   │   │   │       └── autobuild.in
+│   │   │   ├── config.xml.in
+│   │   │   ├── deb-config.dsc.in
+│   │   │   ├── deb-config.install.in
+│   │   │   ├── debian.changelog.in
+│   │   │   ├── debian.compat.in
+│   │   │   ├── debian.rules.in
+│   │   │   ├── gdb-on-target.ini.in
+│   │   │   ├── install-wgt-on-target.sh.in
+│   │   │   ├── start-on-target.sh.in
+│   │   │   ├── rpm-config.spec.in
+│   │   │   └── xds-project-target.conf.in
+│   │   └── wgt/
+│   │       ├── icon-default.png
+│   │       ├── icon-html5.png
+│   │       ├── icon-native.png
+│   │       ├── icon-qml.png
+│   │       └── icon-service.png
+│   ├── packaging/
+│   │   ├── config.spec
+│   │   └── config.deb
+│   ├── cmake
+│   │   └── config.cmake
+│   └── wgt
+│      └── config.xml.in
+├── &lt;libs&gt;
+├── &lt;target&gt;
+│   └── &lt;files&gt;
+├── &lt;target&gt;
+│   └── &lt;file&gt;
+└── &lt;target&gt;
+    └── &lt;files&gt;
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Parent</th>
+      <th>Description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&lt;root-path&gt;</td>
+      <td>-</td>
+      <td>Path to your project. Hold master CMakeLists.txt and general files of your projects.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>conf.d</td>
+      <td>&lt;root-path&gt;</td>
+      <td>Holds needed files to build, install, debug, package an AGL app project</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>app-templates</td>
+      <td>conf.d</td>
+      <td>Git submodule to app-templates AGL repository which provides CMake helpers macros library, and build scripts. config.cmake is a copy of config.cmake.sample configured for the projects. SHOULD NOT BE MODIFIED MANUALLY !</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>autobuild</td>
+      <td>conf.d</td>
+      <td>Scripts generated from app-templates to build packages the same way for various platforms.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>cmake</td>
+      <td>conf.d</td>
+      <td>Contains at least config.cmake file modified from the sample provided in app-templates submodule.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>wgt</td>
+      <td>conf.d</td>
+      <td>Contains at least config.xml.in template file modified from the sample provided in app-templates submodule for the needs of project (See config.xml.in.sample file for more details).</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>packaging</td>
+      <td>conf.d</td>
+      <td>Contains output files used to build packages.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>&lt;libs&gt;</td>
+      <td>&lt;root-path&gt;</td>
+      <td>External dependencies libraries. This isn’t to be used to include header file but build and link statically specifics libraries.</td>
+      <td>Library sources files. Can be a decompressed library archive file or project fork.</td>
+    </tr>
+    <tr>
+      <td>&lt;target&gt;</td>
+      <td>&lt;root-path&gt;</td>
+      <td>A target to build, typically library, executable, etc.</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="update-app-templates-submodule">Update app-templates submodule</h3>
+
+<p>You may have some news bug fixes or features available from app-templates
+repository that you want. To update your submodule proceed like the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git submodule update --remote
+git commit -s conf.d/app-templates
+</code></pre>
+</div>
+
+<p>This will update the submodule to the HEAD of master branch repository.</p>
+
+<p>You could just want to update at a specified repository tag or branch or commit
+, here are the method to do so:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>conf.d/app-templates
+<span class="c"># Choose one of the following depending what you want</span>
+git checkout &lt;tag_name&gt;
+git checkout --detach &lt;branch_name&gt;
+git checkout --detach &lt;commit_id&gt;
+<span class="c"># Then commit</span>
+<span class="nb">cd</span> ../..
+git commit -s conf.d/app-templates
+</code></pre>
+</div>
+
+<h3 id="build-a-widget">Build a widget</h3>
+
+<h2 id="configxmlin-file">config.xml.in file</h2>
+
+<p>To build a widget you need a <em>config.xml</em> file describing what is your apps and
+how Application Framework would launch it. This repo provide a simple default
+file <em>config.xml.in</em> that should work for simple application without
+interactions with others bindings.</p>
+
+<p>It is recommended that you use the sample one which is more complete. You can
+find it at the same location under the name <em>config.xml.in.sample</em> (stunning
+isn’t it). Just copy the sample file to your <em>conf.d/wgt</em> directory and name it
+<em>config.xml.in</em>, then edit it to fit your needs.</p>
+
+<blockquote>
+  <p><strong><em>CAUTION</em></strong> : The default file is only meant to be use for a
+simple widget app, more complicated ones which needed to export
+their api, or ship several app in one widget need to use the provided
+<em>config.xml.in.sample</em> which had all new Application Framework
+features explained and examples.</p>
+</blockquote>
+
+<h2 id="using-cmake-template-macros">Using cmake template macros</h2>
+
+<p>To leverage all cmake templates features, you have to specify <strong><em>properties</em></strong>
+on your targets. Some macros will not works without specifying which is the
+target type.</p>
+
+<p>As the type is not always specified for some custom targets, like an <strong><em>HTML5</em></strong>
+application, macros make the difference using <strong><em>LABELS</em></strong> property.</p>
+
+<p>Choose between:</p>
+
+<ul>
+  <li><strong>BINDING</strong>: Shared library that be loaded by the AGL Application Framework</li>
+  <li><strong>BINDINGV2</strong>: Shared library that be loaded by the AGL Application Framework
+ This has to be accompagnied with a JSON file named like the
+ <em>${OUTPUT_NAME}-apidef</em> of the target that describe the API with OpenAPI
+ syntax (e.g: <em>mybinding-apidef</em>).
+ Or Alternatively, you can choose the name, without the extension, using macro
+ <strong>set_openapi_filename</strong>. If you use C++, you have to set <strong>PROJECT_LANGUAGES</strong>
+ to <em>CXX</em>.</li>
+  <li><strong>BINDINGV3</strong>: Shared library that be loaded by the AGL Application Framework
+ This has to be accompagnied with a JSON file named like the
+ <em>${OUTPUT_NAME}-apidef</em> of the target that describe the API with OpenAPI
+ syntax (e.g: <em>mybinding-apidef</em>).
+ Or Alternatively, you can choose the name, without the extension, using macro
+ <strong>set_openapi_filename</strong>. If you use C++, you have to set <strong>PROJECT_LANGUAGES</strong>
+ to <em>CXX</em>.</li>
+  <li><strong>PLUGIN</strong>: Shared library are meant to be used as a binding plugin. A binding
+ would load it as a plugin to extend its functionnalities. It should be named
+ with a special extension that you choose with SUFFIX cmake target property or
+ it’d be <strong>.ctlso</strong> by default.</li>
+  <li><strong>HTDOCS</strong>: Root directory of a web app. This target has to build its
+ directory and puts its files in the ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}</li>
+  <li><strong>DATA</strong>: Resources used by your application. This target has to build its
+ directory and puts its files in the ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}</li>
+  <li><strong>EXECUTABLE</strong>: Entry point of your application executed by the AGL
+ Application Framework</li>
+  <li><strong>LIBRARY</strong>: An external 3rd party library bundled with the binding for its
+ own purpose because platform doesn’t provide it.</li>
+  <li><strong>BINDING-CONFIG</strong>: Any files used as configuration by your binding.</li>
+</ul>
+
+<p>Optional <strong>LABELS</strong> are available to define which resources type your test
+materials are:</p>
+
+<ul>
+  <li><strong>TEST-CONFIG</strong>: JSON configuration files that will be used by the afb-test
+ binding to know how to execute tests.</li>
+  <li><strong>TEST-DATA</strong>: Resources used to test your binding. It is at least your test
+ plan and also could be fixtures and any files needed by your tests. These files
+ will appear in a separate test widget.</li>
+  <li><strong>TEST-PLUGIN</strong>: Shared library meant to be used as a binding
+ plugin. Binding would load it as a plugin to extend its functionalities. It
+ should be named with a special extension that you choose with SUFFIX cmake
+ target property or it’d be <strong>.ctlso</strong> by default.</li>
+  <li><strong>TEST-HTDOCS</strong>: Root directory of a web app. This target has to build its
+ directory and put its files in the ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}</li>
+  <li><strong>TEST-EXECUTABLE</strong>: Entry point of your application executed by the AGL
+ Application Framework</li>
+  <li><strong>TEST-LIBRARY</strong>: An external 3rd party library bundled with the binding for its
+ own use in case the platform doesn’t provide it.</li>
+</ul>
+
+<p>Here is a mapping between LABELS and directories where files will be placed in
+the widget:</p>
+
+<ul>
+  <li><strong>EXECUTABLE</strong> : &lt;wgtrootdir&gt;/bin</li>
+  <li><strong>BINDING-CONFIG</strong> : &lt;wgtrootdir&gt;/etc</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>BINDING</strong></td>
+          <td><strong>BINDINGV2</strong></td>
+          <td><strong>BINDINGV3</strong></td>
+          <td><strong>LIBRARY</strong> : &lt;wgtrootdir&gt;/lib</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>PLUGIN</strong> : &lt;wgtrootdir&gt;/lib/plugins</li>
+  <li><strong>HTDOCS</strong> : &lt;wgtrootdir&gt;/htdocs</li>
+  <li><strong>BINDING-DATA</strong> : &lt;wgtrootdir&gt;/var</li>
+  <li><strong>DATA</strong> : &lt;wgtrootdir&gt;/var</li>
+</ul>
+
+<p>And about test dedicated <strong>LABELS</strong>:</p>
+
+<ul>
+  <li><strong>TEST-EXECUTABLE</strong> : &lt;wgtrootdir&gt;/bin</li>
+  <li><strong>TEST-CONFIG</strong> : &lt;TESTwgtrootdir&gt;/etc</li>
+  <li><strong>TEST-PLUGIN</strong> : &lt;wgtrootdir&gt;/lib/plugins</li>
+  <li><strong>TEST-HTDOCS</strong> : &lt;wgtrootdir&gt;/htdocs</li>
+  <li><strong>TEST-DATA</strong> : &lt;TESTwgtrootdir&gt;/var</li>
+</ul>
+
+<blockquote>
+  <p><strong>TIP</strong> you should use the prefix <em>afb-</em> with your <strong>BINDING* targets which
+stand for **Application Framework Binding</strong>.</p>
+</blockquote>
+
+<p>Example:</p>
+
+<pre><code class="language-cmake">SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES
+		LABELS "HTDOCS"
+		OUTPUT_NAME dist.prod
+	)
+</code></pre>
+
+<blockquote>
+  <p><strong>NOTE</strong>: You doesn’t need to specify an <strong>INSTALL</strong> command for these
+targets. This is already handle by template and will be installed in the
+following path : <strong>${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}</strong></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>NOTE</strong>: if you want to set and use <code class="highlighter-rouge">rpath</code> with your target you should use
+and set the target property <code class="highlighter-rouge">INSTALL_RPATH</code>.</p>
+</blockquote>
+
+<h2 id="add-external-3rd-party-library">Add external 3rd party library</h2>
+
+<h3 id="build-link-and-ship-external-library-with-the-project">Build, link and ship external library with the project</h3>
+
+<p>You could need to include an external library that isn’t shipped in the
+platform. Then you have to bundle the required library in the <code class="highlighter-rouge">lib</code> widget
+directory.</p>
+
+<p>Templates includes some facilities to help you to do so. Classic way to do so
+is to declare as many CMake ExternalProject as library you need.</p>
+
+<p>An ExternalProject is a special CMake module that let you define how to:
+download, update, patch, configure, build and install an external project. It
+doesn’t have to be a CMake project and custom step could be added for special
+needs using ExternalProject step. More informations on CMake <a href="https://cmake.org/cmake/help/v3.5/module/ExternalProject.html?highlight=externalproject">ExternalProject
+documentation site</a>.</p>
+
+<p>Example to include <code class="highlighter-rouge">mxml</code> library for <a href="https://github.com/iotbzh/unicens2-binding">unicens2-binding</a>
+project:</p>
+
+<pre><code class="language-cmake">set(MXML external-mxml)
+set(MXML_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/mxml)
+ExternalProject_Add(${MXML}
+    GIT_REPOSITORY https://github.com/michaelrsweet/mxml.git
+    GIT_TAG release-2.10
+    SOURCE_DIR ${MXML_SOURCE_DIR}
+    CONFIGURE_COMMAND ./configure --build x86_64 --host aarch64
+    BUILD_COMMAND make libmxml.so.1.5
+    BUILD_IN_SOURCE 1
+    INSTALL_COMMAND ""
+)
+
+PROJECT_TARGET_ADD(mxml)
+
+add_library(${TARGET_NAME} SHARED IMPORTED GLOBAL)
+
+SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES
+    LABELS LIBRARY
+    IMPORTED_LOCATION ${MXML_SOURCE_DIR}/libmxml.so.1
+    INTERFACE_INCLUDE_DIRECTORIES ${MXML_SOURCE_DIR}
+)
+
+add_dependencies(${TARGET_NAME} ${MXML})
+</code></pre>
+
+<p>Here we define an external project that drive the build of the library then we
+define new CMake target of type <strong>IMPORTED</strong>. Meaning that this target hasn’t
+been built using CMake but is available at the location defined in the target
+property <em>IMPORTED_LOCATION</em>.</p>
+
+<p>You could want to build the library as <em>SHARED</em> or <em>STATIC</em> depending on your needs
+and goals. Then you only have to modify the external project configure step and change
+filename used by <strong>IMPORTED</strong> library target defined after external project.</p>
+
+<p>Then target <em>LABELS</em> property is set to <strong>LIBRARY</strong> to ship it in the widget.</p>
+
+<p>Unicens project also need some header from this library, so we use the target
+property <em>INTERFACE_INCLUDE_DIRECTORIES</em>. Setting that when another target link
+to that imported target, it can access to the include directories.</p>
+
+<p>We bound the target to the external project using a CMake dependency at last.</p>
+
+<p>Then this target could be use like any other CMake target and be linked etc.</p>
+
+<h3 id="only-link-and-ship-external-library-with-the-project">Only link and ship external library with the project</h3>
+
+<p>If you already have a binary version of the library that you want to use and you
+can’t or don’t want to build the library then you only have to add an <strong>IMPORTED</strong>
+library target.</p>
+
+<p>So, taking the above example, <code class="highlighter-rouge">mxml</code> library inclusion would be:</p>
+
+<pre><code class="language-cmake">PROJECT_TARGET_ADD(mxml)
+
+add_library(${TARGET_NAME} SHARED IMPORTED GLOBAL)
+
+SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES
+    LABELS LIBRARY
+    IMPORTED_LOCATION /path/to/library/libmxml.so.1
+    INTERFACE_INCLUDE_DIRECTORIES /path/to/mxml/include/dir
+)
+</code></pre>
+
+<p>Finally, you can link any other lib or executable target with this imported
+library like any other target.</p>
+
+<h2 id="macro-reference">Macro reference</h2>
+
+<h3 id="projecttargetadd">PROJECT_TARGET_ADD</h3>
+
+<p>Typical usage would be to add the target to your project using macro
+<code class="highlighter-rouge">PROJECT_TARGET_ADD</code> with the name of your target as parameter.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-cmake">PROJECT_TARGET_ADD(low-can-demo)
+</code></pre>
+
+<blockquote>
+  <p><strong><em>NOTE</em></strong>: This will make available the variable <code class="highlighter-rouge">${TARGET_NAME}</code>
+set with the specificied name. This variable will change at the next call
+to this macros.</p>
+</blockquote>
+
+<h3 id="projectsubdirsadd">project_subdirs_add</h3>
+
+<p>This macro will search in all subfolder any <code class="highlighter-rouge">CMakeLists.txt</code> file. If found then
+it will be added to your project. This could be use in an hybrid application by
+example where the binding lay in a sub directory.</p>
+
+<p>Usage :</p>
+
+<pre><code class="language-cmake">project_subdirs_add()
+</code></pre>
+
+<p>You also can specify a globbing pattern as argument to filter which folders
+will be looked for.</p>
+
+<p>To filter all directories that begin with a number followed by a dash the
+anything:</p>
+
+<pre><code class="language-cmake">project_subdirs_add("[0-9]-*")
+</code></pre>
+
+<h3 id="setopenapifilename">set_openapi_filename</h3>
+
+<p>Used with a target labelized <strong>BINDINGV2</strong> to define the file name, and
+possibly a relative path with the current <em>CMakeLists.txt</em>.</p>
+
+<p>If you don’t use that macro to specify the name of your definition file
+then the default one will be used, <em>${OUTPUT_NAME}-apidef</em> with
+<strong>OUTPUT_NAME</strong> as the <a href="https://cmake.org/cmake/help/v3.6/prop_tgt/OUTPUT_NAME.html" title="OUTPUT_NAME property documentation">target property</a>.</p>
+
+<blockquote>
+  <p><strong>CAUTION</strong> you must only specify the name <strong>WITHOUT</strong> the extension.</p>
+</blockquote>
+
+<pre><code class="language-cmake">set_openapi_filename('binding/mybinding_definition')
+</code></pre>
+
+<h3 id="addinputfiles">add_input_files</h3>
+
+<p>Create custom target dedicated for HTML5 and data resource files. This macro
+provides syntax and schema verification for different languages which are
+about now: LUA, JSON and XML.</p>
+
+<p>You could change the tools used to check files with the following variables:</p>
+
+<ul>
+  <li>XML_CHECKER: set to use <strong>xmllint</strong> provided with major linux distribution.</li>
+  <li>LUA_CHECKER: set to use <strong>luac</strong> provided with major linux distribution.</li>
+  <li>JSON_CHECKER: no tools found at the moment.</li>
+</ul>
+
+<pre><code class="language-cmake">add_input_file("${MY_FILES_LIST}")
+</code></pre>
+
+<blockquote>
+  <p><strong>NOTE</strong>: an issue at the check step on a file will stop at the build step.</p>
+</blockquote>
+
+<h2 id="advanced-build-customization">Advanced build customization</h2>
+
+<h3 id="including-additional-cmake-files">Including additional cmake files</h3>
+
+<h4 id="machine-and-system-custom-cmake-files">Machine and system custom cmake files</h4>
+
+<p>Advanced tuning is possible using additional cmake files that are included
+automatically from some specifics locations. They are included in that order:</p>
+
+<ul>
+  <li>Project CMake files normally located in _<project-root-path>/conf.d/app-templates/cmake/cmake.d_</project-root-path></li>
+  <li>Home CMake files located in <em>$HOME/.config/app-templates/cmake.d</em></li>
+  <li>System CMake files located in <em>/etc/app-templates/cmake.d</em></li>
+</ul>
+
+<p>CMake files has to be named using the following convention: <code class="highlighter-rouge">XX-common*.cmake</code>
+or <code class="highlighter-rouge">XX-${PROJECT_NAME}*.cmake</code>, where <code class="highlighter-rouge">XX</code> are numbers, <code class="highlighter-rouge">*</code> file name
+(ie. <code class="highlighter-rouge">99-common-my_customs.cmake</code>).</p>
+
+<blockquote>
+  <p><strong>NOTE</strong> You need to specify after numbers that indicate include order, to
+which project that file applies, if it applies to all project then use keyword
+<code class="highlighter-rouge">common</code>.</p>
+</blockquote>
+
+<p>So, saying that you should be aware that every normal cmake variables used at
+project level could be overwritten by home or system located cmake files if
+variables got the same name. Exceptions are cached variables set using
+<strong>CACHE</strong> keyword:</p>
+
+<p>Example:</p>
+
+<pre><code class="language-cmake">set(VARIABLE_NAME 'value string random' CACHE STRING 'docstring')
+</code></pre>
+
+<h4 id="os-custom-cmake-files">OS custom cmake files</h4>
+
+<p>This is meant to personalize the project depending on the OS your are using.
+At the end of config.cmake, common.cmake will include lot of cmake file to
+customize project build depending on your platform. It will detect your OS
+deducing it from file <em>/etc/os-release</em> now as default in almost all Linux
+distribution.</p>
+
+<p>So you can use the value of field <strong>ID_LIKE</strong> or <strong>ID</strong> if the
+first one doesn’t exists and add a cmake file for that distribution in your
+<em>conf.d/cmake/</em> directory or relatively to your <em>app-templates</em> submodule path
+<em>app-templates/../cmake/</em></p>
+
+<p>Those files has to be named use the following scheme <em>XX-${OSRELEASE}*.cmake</em>
+where <em>XX</em> are numbers, ${OSRELEASE} the <strong>ID_LIKE</strong> or <strong>ID</strong> field from
+<em>/etc/os-release</em> file. You can also define default OS configuration file
+to use as fallback is none specific OS configuration is available using the
+scheme <em>XX-default*.cmake</em>. Then is you need by example a module that isn’t
+named the same in one distro only, you only has to define a specific file to
+handle that case then for all the other case put the configuration in the
+default file.</p>
+
+<h3 id="include-customs-templated-scripts">Include customs templated scripts</h3>
+
+<p>As well as for additional cmake files you can include your own templated
+scripts that will be passed to cmake command <code class="highlighter-rouge">configure_file</code>.</p>
+
+<p>Just create your own script to the following directories:</p>
+
+<ul>
+  <li>Home location in <em>$HOME/.config/app-templates/scripts</em></li>
+  <li>System location in <em>/etc/app-templates/scripts</em></li>
+</ul>
+
+<p>Scripts only needs to use the extension <code class="highlighter-rouge">.in</code> to be parsed and configured by
+CMake command.</p>
+
+<h2 id="autobuild-script-usage">Autobuild script usage</h2>
+
+<h3 id="generation">Generation</h3>
+
+<p>To be integrated in the Yocto build workflow you have to generate <code class="highlighter-rouge">autobuild</code>
+scripts using <em>autobuild</em> target.</p>
+
+<p>To generate those scripts proceeds:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p build
+<span class="nb">cd </span>build
+cmake .. <span class="o">&amp;&amp;</span> make autobuild
+</code></pre>
+</div>
+
+<p>You should see <em>conf.d/autobuild/agl/autobuild</em> file now.</p>
+
+<h3 id="available-targets">Available targets</h3>
+
+<p>Here are the available targets available from <em>autobuild</em> scripts:</p>
+
+<ul>
+  <li><strong>clean</strong> : clean build directory from object file and targets results.</li>
+  <li><strong>distclean</strong> : delete build directory</li>
+  <li><strong>configure</strong> : generate project Makefile from CMakeLists.txt files.</li>
+  <li><strong>build</strong> : compile all project targets.</li>
+  <li><strong>package</strong> : build and output a wgt package.</li>
+</ul>
+
+<p>You can specify variables that modify the behavior of compilation using
+the following variables:</p>
+
+<ul>
+  <li><strong>CONFIGURE_ARGS</strong> : Variable used at <strong>configure</strong> time.</li>
+  <li><strong>BUILD_ARGS</strong> : Variable used at <strong>build</strong> time.</li>
+  <li><strong>DEST</strong> : Directory where to output <strong><em>wgt</em></strong> file.</li>
+</ul>
+
+<p>Variable as to be in CMake format. (ie: BUILD_ARGS=”-DC_FLAGS=’-g -O2’”)</p>
+
+<p>Usage example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>./conf.d/autobuild/wgt/autobuild package <span class="nv">DEST</span><span class="o">=</span>/tmp
+</code></pre>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-11-07 03:40:33 +0000</small>
+		
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-templates/plain/README.md?h=master">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

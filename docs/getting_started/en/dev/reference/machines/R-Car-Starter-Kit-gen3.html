@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Build for R Car Starter Kit gen3 board  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/getting_started/en/dev/reference/machines/R-Car-Starter-Kit-gen3.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Getting Started
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/source-code.html">
+                Download AGL Source Code
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/customize_bitbake_conf.html">
+                Customize the AGL build
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/machines/intel.html">
+                Build for Intel
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/machines/qemu.html">
+                Build for Qemu
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/getting_started/en/dev/reference/machines/R-Car-Starter-Kit-gen3.html">
+                Build for R Car Starter Kit gen3 board
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/machines/raspberrypi.html">
+                Build for Raspberry PI 2/3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/homescreen/index.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Troubleshooting
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/troubleshooting.html">
+                Generic issues
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/footers/intel-footer.html">
+                Intel Boards
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/footers/raspberrypi-footer.html">
+                Raspberry PI
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                SDK
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/setup-sdk-environment.html">
+                SDK Quick Setup
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/source-code.html">
+        Download AGL Source Code
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/customize_bitbake_conf.html">
+        Customize the AGL build
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/machines/intel.html">
+        Build for Intel
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/machines/qemu.html">
+        Build for Qemu
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/machines/R-Car-Starter-Kit-gen3.html">
+        Build for R Car Starter Kit gen3 board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/machines/raspberrypi.html">
+        Build for Raspberry PI 2/3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/index.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/troubleshooting.html">
+        Generic issues
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/footers/intel-footer.html">
+        Intel Boards
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/footers/raspberrypi-footer.html">
+        Raspberry PI
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/setup-sdk-environment.html">
+        SDK Quick Setup
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href="https://github.com/automotive-grade-linux/docs-agl/edit/master/docs/getting-started/machines/R-Car-Starter-Kit-gen3.md"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/getting_started/fetched_files.yml -->
+
+<h1 id="agl-kickstart-on-renesas-r-car-starter-kit-gen3-h3ulcb-m3ulcb-salvator-xoptional">AGL Kickstart on Renesas R-Car Starter Kit Gen3 (h3ulcb, m3ulcb, salvator-x(optional))</h1>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>At this step, you are assumed to have downloaded the <a href="/docs/getting_started/en/dev/reference/source-code.html">AGL source code</a>.</li>
+</ul>
+
+<p>See the related paragraph if not done yet.</p>
+
+<ul>
+  <li>For creating the microSD card, you will need <strong>bmaptool</strong></li>
+</ul>
+
+<p>There are pre-built packages (.deb or .rpm) for the supported host OSes, available at <a href="https://build.opensuse.org/package/show/isv:LinuxAutomotive:AGL_Master/bmap-tools">this location</a></p>
+
+<h2 id="hardware">Hardware</h2>
+
+<p>Here is a non exhaustive list of hardware parts that could be used to setup the R-Car Starter Kit Gen3 board development environment:</p>
+
+<ul>
+  <li>Starter Kit Gen3 board with its 5V power supply</li>
+  <li>micro USB-A cable for serial console (optional if using ethernet and ssh connection)</li>
+  <li>USB 2.0 Hub (optional)</li>
+  <li>Ethernet cable (optional if using serial console)</li>
+  <li>HDMI type D (Micro connector) cable and associated display</li>
+  <li>micro-SD Card (at least 4GB) and recommend to use class 10 type.</li>
+  <li>USB touch screen device like the GeChic 1502i/1503i (optional)</li>
+</ul>
+
+<p>For more information and latest news, please check :</p>
+
+<ul>
+  <li><a href="http://elinux.org/R-Car/Boards/H3SK">elinux page for h3ulcb</a></li>
+  <li><a href="http://elinux.org/R-Car/Boards/M3SK">elinux page for m3ulcb</a></li>
+  <li><a href="https://elinux.org/R-Car/Boards/Salvator-X">elinux page for salvator-x</a></li>
+</ul>
+
+<p>Infotainment Carrier Board :</p>
+
+<ul>
+  <li><a href="https://elinux.org/R-Car/Boards/Kingfisher">elinux page for Kingfisher</a></li>
+</ul>
+
+<p><strong>Note</strong>:That the Salvator-X has NDA restrictions, so less documentation is available both here and elsewhere.</p>
+
+<p>The following documents may also be helpful:</p>
+
+<ul>
+  <li><a href="http://elinux.org/R-Car/Boards/Yocto-Gen3">Yocto-Gen3 on elinux</a></li>
+</ul>
+
+<h2 id="bsp-version-of-r-car-starter-kit-gen3">BSP Version of R-Car Starter Kit Gen3</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">AGL Version</th>
+      <th style="text-align: center">Renesas version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">AGL master</td>
+      <td style="text-align: center">3.9.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">AGL 6.0.0</td>
+      <td style="text-align: center">3.7.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">AGL 5.0.x, 5.1.0</td>
+      <td style="text-align: center">2.23.1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">AGL 4.0.x</td>
+      <td style="text-align: center">2.19.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="building-the-agl-demo-platform-for-r-car-starter-kit-gen3">Building the AGL Demo Platform for R-Car Starter Kit Gen3</h2>
+
+<p>Before setting up the build environment, you need to download the proprietary drivers.</p>
+
+<ul>
+  <li>The version of the drivers you need can be displayed this way:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>grep -rn ZIP_.<span class="o">=</span> <span class="nv">$AGL_TOP</span>/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
+</code></pre>
+</div>
+
+<ul>
+  <li>Download Renesas graphics drivers with a “click through” license from <a href="https://www.renesas.com/en-us/solutions/automotive/rcar-download/rcar-demoboard-2.html">Renesas website</a>
+    <ul>
+      <li>Under the Target hardware: <strong>R-Car H3/M3</strong> section.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Note</strong>:</p>
+
+<ul>
+  <li>You have to register with a free account on MyRenesas and accept the license conditions before downloading the drivers.
+ The operation is fast and simple nevertheless mandatory to access evaluation of non open-source drivers for free.
+ Once you registered, you can download two zip files.</li>
+  <li>It is recommended to store these drivers into your download directory (usually $HOME/Downloads, pointed by $XDG_DOWNLOAD_DIR in some OS).
+    <ul>
+      <li>To avoid any errors, check that $XDG_DOWNLOAD_DIR is set to the directory where the drivers are stored, if not, set it using ‘export’ command</li>
+    </ul>
+  </li>
+  <li>Be sure to have the need rights for these files using :</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>chmod a+r <span class="nv">$XDG_DOWNLOAD_DIR</span>/<span class="k">*</span>.zip
+</code></pre>
+</div>
+
+<ul>
+  <li>Check that the needed drivers files are found using :</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ls -1 <span class="nv">$XDG_DOWNLOAD_DIR</span>
+<span class="o">[</span>master]
+-rw-r--r--. 1 1664 agl-sdk 5.0M Jun 28 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180627.zip
+-rw-r--r--. 1 1664 agl-sdk 3,1M Jun 28 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180627.zip
+
+<span class="o">[</span>Flounder]
+-rw-r--r--. 1 1664 agl-sdk 4.9M Apr 24 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip
+-rw-r--r--. 1 1664 agl-sdk 3,0M Apr 24 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip
+
+<span class="o">[</span>Eel]
+-rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
+-rw-r--r--. 1 1664 agl-sdk 3,0M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+</code></pre>
+</div>
+
+<h3 id="setting-up-the-build-environment">Setting up the build environment</h3>
+
+<p>Define the type of R-Car Starter Kit board as a variable:</p>
+
+<ul>
+  <li>for machine <strong>h3ulcb</strong> (Starter Kit Premier/H3) :</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">MACHINE</span><span class="o">=</span>h3ulcb
+</code></pre>
+</div>
+
+<ul>
+  <li>for machine <strong>m3ulcb</strong> (Starter Kit Pro/M3):</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">MACHINE</span><span class="o">=</span>m3ulcb
+</code></pre>
+</div>
+
+<ul>
+  <li>for machine <strong>h3-salvator-x</strong>:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">MACHINE</span><span class="o">=</span>h3-salvator-x
+</code></pre>
+</div>
+
+<p>Now, init your build environment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$AGL_TOP</span>
+<span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m <span class="nv">$MACHINE</span> -b build agl-devel agl-demo agl-netboot agl-appfw-smack agl-localdev
+</code></pre>
+</div>
+
+<p><strong>IMPORTANT NOTE</strong>: Read the log to be sure you had no error during your setup.</p>
+
+<p>In case of missing graphics drivers, you could notice an error message as follow:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>snip]
+--- fragment /home/working/workspace_agl_master/meta-agl/templates/machine/h3ulcb/50_setup.sh
+/home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
+The graphics and multimedia acceleration packages <span class="k">for
+</span>the R-Car Gen3 board can be downloaded from:
+ https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
+
+These 2 files from there should be store <span class="k">in </span>your<span class="s1">'/home/devel/Downloads'</span> directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+/home/working/workspace_agl_master/build_gen3
+--- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
+--- end of setup script
+OK
+Generating setup file: /home/working/workspace_agl_master/build_gen3/agl-init-build-env ... OK
+------------ aglsetup.sh: Done
+<span class="o">[</span>snip]
+</code></pre>
+</div>
+
+<p>If you encounter this issue, or any other unwanted behavior, you can fix the error mentioned and then clean up by removing the “$AGL_TOP/build” directory then re-launch the procedure again.</p>
+
+<p>In any case, you can find out more information for the reason of the error in this file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>snip]
+
+~/workspace_agl/build/conf <span class="nv">$ </span>cat setup.log
+--- beginning of setup script
+--- fragment /home/thierry/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
+--- fragment /home/thierry/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
+~/workspace_agl ~/workspace_agl/build
+ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
+ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
+The graphics and multimedia acceleration packages <span class="k">for
+</span>the R-Car Gen3 board BSP can be downloaded from:
+&lt;https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html&gt;
+
+These 2 files from there should be stored <span class="k">in </span>your
+<span class="s1">'/home/thierry/Downloads'</span> directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip
+ERROR: Script /home/thierry/workspace_agl/build/conf/setup.sh failed
+<span class="o">[</span>snip]
+</code></pre>
+</div>
+
+<p>After this command, the working directory is changed to $AGL_TOP/build.</p>
+
+<p>If you do not want do this, another option is to add the ‘<strong>-f</strong>’ option to agl_setup.sh.</p>
+
+<p>Users may want to check that the board is correctly selected in the environment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>grep -w -e <span class="s2">"^MACHINE ="</span> <span class="nv">$AGL_TOP</span>/build/conf/local.conf
+  MACHINE <span class="o">=</span> <span class="s2">"h3ulcb"</span>
+or
+  MACHINE <span class="o">=</span> <span class="s2">"m3ulcb"</span>
+or
+  MACHINE <span class="o">=</span> <span class="s2">"h3-salvator-x"</span>
+</code></pre>
+</div>
+
+<p>Configure for Release or Development:</p>
+
+<ul>
+  <li>development images contain extra tools for developer convenience, in particular:
+    <ul>
+      <li>a debugger (gdb)</li>
+      <li>some tweaks, including a disabled root password</li>
+      <li>a SFTP server</li>
+      <li>the TCF Agent for easier application deployment and remote debugging</li>
+      <li>some extra system tools (usb, bluetooth …)</li>
+      <li>…</li>
+    </ul>
+  </li>
+</ul>
+
+<p>We explicitely activate these debug facilities by specifying the “agl-devel agl-netboot” feature.</p>
+
+<h3 id="build-your-image">Build your image</h3>
+
+<p>The process to build an image is simple:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bitbake agl-demo-platform
+</code></pre>
+</div>
+
+<p>You may need to install rpcgen to run this command.</p>
+
+<p>When finished (it may take few hours), you should get the final result:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ls -l <span class="nv">$AGL_TOP</span>/build/tmp/deploy/images/<span class="nv">$MACHINE</span>
+</code></pre>
+</div>
+
+<p><strong>Note</strong>:</p>
+
+<p>In case of failure of the build it is safe to first check that the Linux distribution chosen for your host has been validated for the current version of Yocto used by AGL.</p>
+
+<h2 id="booting-agl-image-on-r-car-starter-kit-gen3-boards-using-a-microsd-card">Booting AGL Image on R-Car Starter Kit Gen3 boards using a microSD card</h2>
+
+<p>To boot the board using a micro-SD card, there are two operations that must be done prior to first initial boot:</p>
+
+<ul>
+  <li>Update all firmware on the device.</li>
+  <li>Set up the board to boot on the SD-card.</li>
+</ul>
+
+<p>For each subsequent build you only need to rewrite the SD-card with the new image.</p>
+
+<h3 id="firmware-update">Firmware Update</h3>
+
+<p>This proceedure is done in two steps. The ‘Sample Loader and MiniMonitor update’ step only needs to be done once per device. The ‘Firmware stack update’ step is mandatory only if you use AGl Eel (version 5.0) or later.</p>
+
+<h4 id="sample-loader-and-minimonitor-update">Sample Loader and MiniMonitor update</h4>
+
+<p>Follow the documentation on the <a href="http://elinux.org/R-Car/Boards/Kingfisher#How_to_update_of_Sample_Loader_and_MiniMonitor">eLinux.org wiki</a> to update to at least version 3.02. This is mandatory to run AGL.</p>
+
+<h4 id="firmware-stack-update">Firmware stack update</h4>
+
+<p>As an AArch64 platform, both <strong>h3ulcb</strong> and <strong>m3ulcb</strong> have a firmware stack divided in : <strong>ARM Trusted Firmware</strong>, <strong>OP-Tee</strong> and <strong>U-Boot</strong>.</p>
+
+<p>If you use AGl Eel (version 5.0) or later, you must update the firmware using the following links to eLinux.org wiki: <strong><a href="https://elinux.org/R-Car/Boards/H3SK#Flashing_firmware">h3ulcb</a></strong> or <strong><a href="https://elinux.org/R-Car/Boards/M3SK#Flashing_firmware">m3ulcb</a></strong>.</p>
+
+<p>The files listed in the eLinux.org wiki table will be found in the directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">*</span><span class="se">\$</span>AGL_TOP/build/tmp/deploy/images/<span class="nv">$MACHINE</span><span class="k">*</span>
+</code></pre>
+</div>
+
+<p>The Salvator-X firmware update process is not documented on eLinux.</p>
+
+<h3 id="prepare-the-sd-card-on-the-host">Prepare the SD-card on the host</h3>
+
+<p>Plug the microSD card and get its associated device by either running <em><code class="highlighter-rouge">dmesg | tail -15</code></em> or <em><code class="highlighter-rouge">lsblk</code></em>, for example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dmesg | tail -15
+
+  <span class="o">[</span> 1971.462160] sd 6:0:0:0: <span class="o">[</span>sdc] Mode Sense: 03 00 00 00
+  <span class="o">[</span> 1971.462277] sd 6:0:0:0: <span class="o">[</span>sdc] No Caching mode page found
+  <span class="o">[</span> 1971.462278] sd 6:0:0:0: <span class="o">[</span>sdc] Assuming drive cache: write through
+  <span class="o">[</span> 1971.463870]  sdc: sdc1 sdc2
+</code></pre>
+</div>
+
+<p>Here, the SD-card is attached to the device /dev/sdc.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>lsblk
+
+  NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+  sda      8:0    0 167,7G  0 disk
+  ├─sda1   8:1    0   512M  0 part /boot/efi
+  ├─sda2   8:2    0 159,3G  0 part /
+  └─sda3   8:3    0   7,9G  0 part <span class="o">[</span>SWAP]
+  sdb      8:16   0 931,5G  0 disk
+  └─sdb1   8:17   0 931,5G  0 part /media/storage
+  sdc      8:32   1  14,9G  0 disk
+  ├─sdc1   8:33   1    40M  0 part
+  └─sdc2   8:34   1   788M  0 part
+</code></pre>
+</div>
+
+<p><strong>IMPORTANT NOTE</strong>: This is a critical operation, each computer is different and removable devices can change from time to time:
+so you should repeat this operation each time you insert the microSD card to confirm the device name.</p>
+
+<p>In the example above, we see:</p>
+
+<ul>
+  <li>the first SATA drive as ‘sda’.</li>
+  <li>‘sdc’ corresponds to the microSD card, and is also marked as removable device by <em>lsblk</em> which is a good confirmation.</li>
+  <li>Your desktop system probably offers a choice to mount the SD-card automatically in some directory.</li>
+  <li>In the next sample code, we’ll suppose that the SD-card mount directory is stored in the variable $SDCARD.</li>
+  <li>For example, if the microSD card is associated with device <em>sdc</em>:</li>
+</ul>
+
+<p>Go to your build directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$AGL_TOP</span>/build/tmp/deploy/images/<span class="nv">$MACHINE</span>
+</code></pre>
+</div>
+
+<p>You can use bmaptool to copy the <strong>.wic.xz</strong> file to the storage device, discovered in the previous step:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bmaptool copy ./agl-demo-platform-<span class="nv">$MACHINE</span>.wic.xz <span class="nv">$SDCARD</span>
+</code></pre>
+</div>
+
+<p>Or you can be uncompressed and written to the device:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  sudo umount /dev/sdc
+  xzcat ./agl-demo-platform-<span class="nv">$MACHINE</span>.wic.xz | sudo dd <span class="nv">of</span><span class="o">=</span><span class="nv">$SDCARD</span> <span class="nv">bs</span><span class="o">=</span>4M
+  sync
+</code></pre>
+</div>
+
+<h3 id="booting-the-board">Booting the board</h3>
+
+<ul>
+  <li>Turn the board off using the power switch.</li>
+  <li>Insert the microSD-card.</li>
+  <li>Verify that you have plugged in, at least :
+    <ul>
+      <li>An external monitor on HDMI port</li>
+      <li>An input device (keyboard, mouse, touchscreen…) on USB port.</li>
+    </ul>
+  </li>
+  <li>Turn the board on using the power switch.
+ After a few seconds, you’ll see the AGL splash screen on the display and you’ll be able to log in on the console terminal or in the graphic screen.</li>
+</ul>
+
+<h2 id="serial-console-setup">Serial Console Setup</h2>
+
+<h3 id="install-a-serial-client-on-your-computer">Install a serial client on your computer</h3>
+
+<p>This can be “screen”, “picocom”, “minicom”.
+The lighter of the 3 is “picocom” (it has less dependencies).</p>
+
+<h3 id="plug-a-usb-cable-from-your-computer-to-the-serial-cp2102-usb-port-micro-usb-a">Plug a USB cable from your computer to the serial CP2102 USB port (micro USB-A)</h3>
+
+<p>With “dmesg” you can check the device created for the serial link.
+Usually, it’s /dev/ttyUSB0 but the number may vary depending on other USB serial ports connected to the host.
+To get it, you must switch the board on.
+For example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dmesg | tail
+<span class="o">[</span>2097783.287091] usb 2-1.5.3: new full-speed USB device number 24 using ehci-pci
+<span class="o">[</span>2097783.385857] usb 2-1.5.3: New USB device found, <span class="nv">idVendor</span><span class="o">=</span>0403, <span class="nv">idProduct</span><span class="o">=</span>6001
+<span class="o">[</span>2097783.385862] usb 2-1.5.3: New USB device strings: <span class="nv">Mfr</span><span class="o">=</span>1, <span class="nv">Product</span><span class="o">=</span>2, <span class="nv">SerialNumber</span><span class="o">=</span>3
+<span class="o">[</span>2097783.385864] usb 2-1.5.3: Product: FT232R USB UART
+<span class="o">[</span>2097783.385866] usb 2-1.5.3: Manufacturer: FTDI
+<span class="o">[</span>2097783.385867] usb 2-1.5.3: SerialNumber: AK04WWCE
+<span class="o">[</span>2097783.388288] ftdi_sio 2-1.5.3:1.0: FTDI USB Serial Device converter detected
+<span class="o">[</span>2097783.388330] usb 2-1.5.3: Detected FT232RL
+<span class="o">[</span>2097783.388658] usb 2-1.5.3: FTDI USB Serial Device converter now attached to ttyUSB0
+</code></pre>
+</div>
+
+<p>The link is attached to the device /dev/ttyUSB0.
+It is time to launch your serial client.
+Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>picocom -b 115200 /dev/ttyUSB0
+</code></pre>
+</div>
+
+<p>or</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>minicom -b 115200 -D /dev/ttyUSB0
+</code></pre>
+</div>
+
+<p>or</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>screen /dev/ttyUSB0 115200
+</code></pre>
+</div>
+
+<h3 id="power-on-the-board-to-see-a-shell-on-the-console">Power on the board to see a shell on the console</h3>
+
+<ul>
+  <li>For machine h3ulcb:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>NOTICE:  BL2: R-Car Gen3 Initial Program Loader<span class="o">(</span>CA57<span class="o">)</span> Rev.1.0.7
+NOTICE:  BL2: PRR is R-Car H3 ES1.1
+NOTICE:  BL2: LCM state is CM
+NOTICE:  BL2: DDR1600<span class="o">(</span>rev.0.15<span class="o">)</span>
+NOTICE:  BL2: DRAM Split is 4ch
+NOTICE:  BL2: QoS is Gfx Oriented<span class="o">(</span>rev.0.30<span class="o">)</span>
+NOTICE:  BL2: AVS setting succeeded. <span class="nv">DVFS_SetVID</span><span class="o">=</span>0x52
+NOTICE:  BL2: Lossy Decomp areas
+NOTICE:       Entry 0: DCMPAREACRAx:0x80000540 DCMPAREACRBx:0x570
+NOTICE:       Entry 1: DCMPAREACRAx:0x40000000 DCMPAREACRBx:0x0
+NOTICE:       Entry 2: DCMPAREACRAx:0x20000000 DCMPAREACRBx:0x0
+NOTICE:  BL2: v1.1<span class="o">(</span>release<span class="o">)</span>:41099f4
+NOTICE:  BL2: Built : 19:20:52, Jun  9 2016
+NOTICE:  BL2: Normal boot
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0xe63150c8 <span class="nv">src</span><span class="o">=</span>0x8180000 <span class="nv">len</span><span class="o">=</span>36<span class="o">(</span>0x24<span class="o">)</span>
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x43f00000 <span class="nv">src</span><span class="o">=</span>0x8180400 <span class="nv">len</span><span class="o">=</span>3072<span class="o">(</span>0xc00<span class="o">)</span>
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x44000000 <span class="nv">src</span><span class="o">=</span>0x81c0000 <span class="nv">len</span><span class="o">=</span>65536<span class="o">(</span>0x10000<span class="o">)</span>
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x44100000 <span class="nv">src</span><span class="o">=</span>0x8200000 <span class="nv">len</span><span class="o">=</span>524288<span class="o">(</span>0x80000<span class="o">)</span>
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x49000000 <span class="nv">src</span><span class="o">=</span>0x8640000 <span class="nv">len</span><span class="o">=</span>1048576<span class="o">(</span>0x100000<span class="o">)</span>
+
+
+U-Boot 2015.04 <span class="o">(</span>Jun 09 2016 - 19:21:52<span class="o">)</span>
+
+CPU: Renesas Electronics R8A7795 rev 1.1
+Board: H3ULCB
+I2C:   ready
+DRAM:  3.9 GiB
+MMC:   sh-sdhi: 0, sh-sdhi: 1
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Board Net Initialization Failed
+No ethernet found.
+Hit any key to stop autoboot:  0
+<span class="o">=</span>&gt;
+</code></pre>
+</div>
+
+<ul>
+  <li>For machine m3ulcb:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.14
+NOTICE:  BL2: PRR is R-Car M3 Ver1.0
+NOTICE:  BL2: Board is Starter Kit Rev1.0
+NOTICE:  BL2: Boot device is HyperFlash(80MHz)
+NOTICE:  BL2: LCM state is CM
+NOTICE:  BL2: AVS setting succeeded. DVFS_SetVID=0x52
+NOTICE:  BL2: DDR1600(rev.0.22)NOTICE:  [COLD_BOOT]NOTICE:  ..0
+NOTICE:  BL2: DRAM Split is 2ch
+NOTICE:  BL2: QoS is default setting(rev.0.17)
+NOTICE:  BL2: Lossy Decomp areas
+NOTICE:       Entry 0: DCMPAREACRAx:0x80000540 DCMPAREACRBx:0x570
+NOTICE:       Entry 1: DCMPAREACRAx:0x40000000 DCMPAREACRBx:0x0
+NOTICE:       Entry 2: DCMPAREACRAx:0x20000000 DCMPAREACRBx:0x0
+NOTICE:  BL2: v1.3(release):4eef9a2
+NOTICE:  BL2: Built : 00:25:19, Aug 25 2017
+NOTICE:  BL2: Normal boot
+NOTICE:  BL2: dst=0xe631e188 src=0x8180000 len=512(0x200)
+NOTICE:  BL2: dst=0x43f00000 src=0x8180400 len=6144(0x1800)
+NOTICE:  BL2: dst=0x44000000 src=0x81c0000 len=65536(0x10000)
+NOTICE:  BL2: dst=0x44100000 src=0x8200000 len=524288(0x80000)
+NOTICE:  BL2: dst=0x50000000 src=0x8640000 len=1048576(0x100000)
+
+
+U-Boot 2015.04-dirty (Aug 25 2017 - 10:55:49)
+
+CPU: Renesas Electronics R8A7796 rev 1.0
+Board: M3ULCB
+I2C:   ready
+DRAM:  1.9 GiB
+MMC:   sh-sdhi: 0, sh-sdhi: 1
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ravb
+Hit any key to stop autoboot:  0
+=&gt;
+</code></pre>
+</div>
+
+<h3 id="configure-u-boot-parameters">Configure U-boot parameters</h3>
+
+<p>Follow the steps below to configure the boot from microSD card and to set screen resolution:</p>
+
+<ul>
+  <li>Turn the board on using the power switch.</li>
+  <li>Hit any key to stop autoboot (warning you have only few seconds).</li>
+  <li>Type <strong>printenv</strong> to check if you have correct parameters for booting your board:
+    <ul>
+      <li>
+        <p>Example for a h3ulcb:</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>=&gt; printenv
+baudrate=115200
+bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
+bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
+bootdelay=3
+fdt_high=0xffffffffffffffff
+initrd_high=0xffffffffffffffff
+load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
+stderr=serial
+stdin=serial
+stdout=serial
+ver=U-Boot 2015.04 (Jun 09 2016 - 19:21:52)
+
+Environment size: 648/131068 bytes
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>Example for a m3ulcb:</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>=&gt; printenv
+baudrate=115200
+bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
+bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
+bootdelay=3
+fdt_high=0xffffffffffffffff
+filesize=cdeb
+initrd_high=0xffffffffffffffff
+load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
+stderr=serial
+stdin=serial
+stdout=serial
+ver=U-Boot 2015.04 (Nov 30 2016 - 18:25:18)
+
+Environment size: 557/131068 bytes
+</code></pre>
+        </div>
+
+        <ul>
+          <li>To boot on a sd card, it is recommended to set your environment using these commands :</li>
+        </ul>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>setenv bootargs console=ttySC0,115200 ignore_loglevel vmalloc=384M video=HDMI-A-1:1920x1080-32@60 root=/dev/mmcblk1p1 rw rootfstype=ext4 rootwait rootdelay=2
+setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
+setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
+</code></pre>
+        </div>
+
+        <ul>
+          <li>For machine h3ulcb (BSP &gt;= 2.19):</li>
+        </ul>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
+</code></pre>
+        </div>
+
+        <ul>
+          <li>For machine h3ulcb (BSP &lt; 2.19):</li>
+        </ul>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+</code></pre>
+        </div>
+
+        <ul>
+          <li>For machine m3ulcb:</li>
+        </ul>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+</code></pre>
+        </div>
+
+        <ul>
+          <li>For machine m3ulcb with a kingfisher board:</li>
+        </ul>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb-kf.dtb
+</code></pre>
+        </div>
+
+        <ul>
+          <li>For machine h3ulcb with a kingfisher board:</li>
+        </ul>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb-kf.dtb
+</code></pre>
+        </div>
+
+        <ul>
+          <li>Finally save boot environment:</li>
+        </ul>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>saveenv
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Now you can boot:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>run bootcmd
+</code></pre>
+</div>
+
+<h3 id="console-boot">Console boot</h3>
+
+<p>After booting, you should see the wayland display on the external monitor and a login prompt on the console, such as:</p>
+
+<ul>
+  <li>For machine h3ulcb:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Automotive Grade Linux <span class="k">${</span><span class="nv">AGL_VERSION</span><span class="k">}</span> h3ulcb ttySC0
+
+h3ulcb login: root
+</code></pre>
+</div>
+
+<ul>
+  <li>For machine m3ulcb:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Automotive Grade Linux <span class="k">${</span><span class="nv">AGL_VERSION</span><span class="k">}</span> m3ulcb ttySC0
+
+m3ulcb login: root
+</code></pre>
+</div>
+
+<p>Logging in on the console is easy:</p>
+
+<ul>
+  <li>login is ‘root’</li>
+  <li>password is empty (not asked)</li>
+</ul>
+
+<h3 id="network-access">Network access</h3>
+
+<p>If the board is connected to a local network using ethernet and if a DHCP server is able to distribute IP addresses,
+you can then determine the Gen3 board IP address and log in using ssh:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>m3ulcb login: root
+Last login: Tue Dec  6 09:55:15 UTC 2016 on tty2
+<span class="gp">root@m3ulcb:~# </span>ip -4 a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+3: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 10.0.0.27/24 brd 10.0.0.255 scope global eth0
+       valid_lft forever preferred_lft forever
+root@m3ulcb:~#
+</code></pre>
+</div>
+
+<p>Here, IP address is 10.0.0.27. Logging in using SSH is easy:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh root@10.0.0.27
+Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
+<span class="gp">root@m3ulcb:~# </span>cat /etc/os-release
+<span class="nv">ID</span><span class="o">=</span><span class="s2">"poky-agl"</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">"Automotive Grade Linux"</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="s2">"3.0.0+snapshot-20161202 (chinook)"</span>
+<span class="nv">VERSION_ID</span><span class="o">=</span><span class="s2">"3.0.0-snapshot-20161202"</span>
+<span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">"Automotive Grade Linux 3.0.0+snapshot-20161202 (chinook)"</span>
+</code></pre>
+</div>
+
+<h2 id="more-documentation">More Documentation</h2>
+
+<p>Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside a ready-to-use Docker container:</p>
+
+<ul>
+  <li><a href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf">AGL-Devkit-Build-your-1st-AGL-Application.pdf</a>
+ Generic guide on how to build various application types (HTML5, native, Qt, QML, …) for AGL.</li>
+  <li><a href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf">AGL-Devkit-HowTo_bake_a_service.pdf</a>
+ Generic guide on how to add a new service in the BSP.</li>
+  <li><a href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf">AGL-Kickstart-on-Renesas-Porter-Board.pdf</a></li>
+  <li><a href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf">AGL-Devkit-Image-and-SDK-for-Porter.pdf</a></li>
+  <li><a href="http://docs.automotivelinux.org">AGL Developer Website</a></li>
+</ul>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-12-18 00:04:52 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-agl/master/docs/getting-started/machines/R-Car-Starter-Kit-gen3.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

@@ -1,0 +1,3567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Functions of class afb_api  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-api.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/0-introduction.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/1-afm-daemons.html">
+                The afm daemons
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2-widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.1-widgets.html">
+                Overview of widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.2-config.xml.html">
+                Widget configuration file
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/3-permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/4-quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework Binder
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Binder daemon vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-binding-writing.html">
+                How to write a binding ?
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Binder references
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/types-and-globals.html">
+                Types and globals
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/macro-log.html">
+                Macros for logging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-api.html">
+                Functions of class afb_api
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-req.html">
+                Functions of class afb_req
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-event.html">
+                Functions of class afb_event
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-daemon.html">
+                Functions of class afb_daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-service.html">
+                Functions of class afb_service
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+                Binder events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+                Binder Application writing guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Annexes
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-migration-to-binding-v3.html">
+                Migration to bindings v3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/protocol-x-afb-ws-json1.html">
+                WebSocket protocol x-afb-ws-json1
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-desktop-package.html">
+                Installing the binder on a desktop
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-options.html">
+                Options of afb-daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-debugging.html">
+                Debugging binder and bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+                LEGACY Migration from v1 to v2
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-binding-v2-references.html">
+                LEGACY Binding V2 references
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/REVISIONS.html">
+                Document revision
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Test Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/Installation.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/write-the-tests.html">
+                Write the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/the-test-widget.html">
+                The test widget
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/launch-the-tests.html">
+                Launch the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/tests-examples.html">
+                Tests examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                References
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-test-functions.html">
+                Binding Test Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-assert-functions.html">
+                Binding Assert Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/test-framework-functions.html">
+                Test Framework Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                LuaUnit Assertion Functions
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/general-assertions.html">
+                General Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/value-assertions.html">
+                Value Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/scientific-assertions.html">
+                Scientific Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/string-assertions.html">
+                String Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/error-assertions.html">
+                Error Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/type-assertions.html">
+                Type Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/table-assertions.html">
+                Table Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Low level CAN service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-installation-guide.html">
+                Installation Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-usage-guide.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                High level ViWi service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-install-usage-guide.html">
+                Installation and Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Signal Composer service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-configuration.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-plugins.html">
+                Plugins
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-api.html">
+                Signal Composer API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                CanDevStudio Quickstart
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/1_Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+                Bringing up a CAN device using socketcan backend
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/3_Add_CAN_Device.html">
+                Add a CAN device in CANdevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+                Configure a CanRawSender node
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/5_Using_CanRawView.html">
+                Using CanRawView
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/bluez-alsa.html">
+                bluez-alsa
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/pulseaudio-module-4a.html">
+                Pulseaudio - 4A Integration Module
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                4a Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/README.html">
+                Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/concepts.html">
+                Concepts
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/components.html">
+                Components
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                high-level-api
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/README.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/kickstart.html">
+                Kickstart
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/reference.html">
+                Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Tips And Tricks
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+                Adjust volumes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+                4a-tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+                Devices
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+                HALs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HMI Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+                Home Screen Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_2-WindowManager-Guide.html">
+                Window Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_3-SoundManager-Guide.html">
+                Sound Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen (old)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/homescreen/homescreen_api.html">
+                HomeScreen API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/0-introduction.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/1-afm-daemons.html">
+        The afm daemons
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2-widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.1-widgets.html">
+        Overview of widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.2-config.xml.html">
+        Widget configuration file
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/3-permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/4-quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Binder daemon vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-binding-writing.html">
+        How to write a binding ?
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/types-and-globals.html">
+        Types and globals
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/macro-log.html">
+        Macros for logging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/af-binder/reference-v3/func-api.html">
+        Functions of class afb_api
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-req.html">
+        Functions of class afb_req
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-event.html">
+        Functions of class afb_event
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-daemon.html">
+        Functions of class afb_daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-service.html">
+        Functions of class afb_service
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-events-guide.html">
+        Binder events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-application-writing.html">
+        Binder Application writing guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-migration-to-binding-v3.html">
+        Migration to bindings v3
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/protocol-x-afb-ws-json1.html">
+        WebSocket protocol x-afb-ws-json1
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-desktop-package.html">
+        Installing the binder on a desktop
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-options.html">
+        Options of afb-daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-debugging.html">
+        Debugging binder and bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+        LEGACY Migration from v1 to v2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-binding-v2-references.html">
+        LEGACY Binding V2 references
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/REVISIONS.html">
+        Document revision
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/Installation.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/write-the-tests.html">
+        Write the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/the-test-widget.html">
+        The test widget
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/launch-the-tests.html">
+        Launch the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/tests-examples.html">
+        Tests examples
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-test-functions.html">
+        Binding Test Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-assert-functions.html">
+        Binding Assert Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/test-framework-functions.html">
+        Test Framework Functions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/general-assertions.html">
+        General Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/value-assertions.html">
+        Value Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/scientific-assertions.html">
+        Scientific Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/string-assertions.html">
+        String Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/error-assertions.html">
+        Error Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/type-assertions.html">
+        Type Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/table-assertions.html">
+        Table Assertions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/architecture.html">
+        Signaling Architecture
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-installation-guide.html">
+        Installation Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-usage-guide.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-install-usage-guide.html">
+        Installation and Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-configuration.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-plugins.html">
+        Plugins
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-api.html">
+        Signal Composer API
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/1_Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+        Bringing up a CAN device using socketcan backend
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/3_Add_CAN_Device.html">
+        Add a CAN device in CANdevStudio
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+        Configure a CanRawSender node
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/5_Using_CanRawView.html">
+        Using CanRawView
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/bluez-alsa.html">
+        bluez-alsa
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/pulseaudio-module-4a.html">
+        Pulseaudio - 4A Integration Module
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/README.html">
+        Architecture
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/concepts.html">
+        Concepts
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/components.html">
+        Components
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/README.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/kickstart.html">
+        Kickstart
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/reference.html">
+        Reference
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+        Adjust volumes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+        4a-tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/Devices.html">
+        Devices
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/HALs.html">
+        HALs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_1-HomeScreen-Guide.html">
+        Home Screen Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_2-WindowManager-Guide.html">
+        Window Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_3-SoundManager-Guide.html">
+        Sound Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/apis_services/fetched_files.yml -->
+
+<h1 id="functions-of-class-afbapi">Functions of class <strong>afb_api</strong></h1>
+
+<h2 id="general-functions">General functions</h2>
+
+<h3 id="afbapiname">afb_api_name</h3>
+
+<pre><code class="language-C">/**
+ * Get the name of the 'api'.
+ *
+ * @param api the api whose name is to be returned
+ *
+ * @return the name of the api.
+ *
+ * The returned value must not be changed nor freed.
+ */
+const char *afb_api_name(
+			afb_api_t api);
+</code></pre>
+
+<h3 id="afbapigetuserdata">afb_api_get_userdata</h3>
+
+<pre><code class="language-C">/**
+ * Get the "userdata" pointer of the 'api'
+ *
+ * @param api the api whose user's data is to be returned
+ *
+ * @return the user's data  pointer of the api.
+ *
+ * @see afb_api_set_userdata
+ */
+void *afb_api_get_userdata(
+			afb_api_t api);
+</code></pre>
+
+<h3 id="afbapisetuserdata">afb_api_set_userdata</h3>
+
+<pre><code class="language-C">/**
+ * Set the "userdata" pointer of the 'api' to 'value'
+ *
+ * @param api   the api whose user's data is to be set
+ * @param value the data to set
+ *
+ * @see afb_api_get_userdata
+ */
+void afb_api_set_userdata(
+			afb_api_t api,
+			void *value);
+</code></pre>
+
+<h3 id="afbapirequireapi">afb_api_require_api</h3>
+
+<pre><code class="language-C">/**
+ * Check that it requires the API of 'name'.
+ * If 'initialized' is not zero it requests the API to be
+ * initialized, implying its initialization if needed.
+ *
+ * Calling this function is only allowed within init.
+ *
+ * A single request allows to require multiple apis.
+ *
+ * @param api the api that requires the other api by its name
+ * @param name a space separated list of required api names
+ * @param initialized if zero, the api is just required to exist. If not zero,
+ * the api is required to exist and to be initialized at return of the call
+ * (initializing it if needed and possible as a side effect of the call).
+ *
+ * @return 0 in case of success or -1 in case of error with errno set appropriately.
+ */
+int afb_api_require_api(
+			afb_api_t api,
+			const char *name,
+			int initialized);
+</code></pre>
+
+<h2 id="verbosity-functions">Verbosity functions</h2>
+
+<h3 id="afbapiwantsloglevel">afb_api_wants_log_level</h3>
+
+<pre><code class="language-C">/**
+ * Is the log message of 'level (as defined for syslog) required for the api?
+ *
+ * @param api   the api to check
+ * @param level the level to check as defined for syslog:
+ *
+ *      EMERGENCY         0        System is unusable
+ *      ALERT             1        Action must be taken immediately
+ *      CRITICAL          2        Critical conditions
+ *      ERROR             3        Error conditions
+ *      WARNING           4        Warning conditions
+ *      NOTICE            5        Normal but significant condition
+ *      INFO              6        Informational
+ *      DEBUG             7        Debug-level messages
+ *
+ * @return 0 if not required or a value not null if required
+ *
+ * @see syslog
+ */
+int afb_api_wants_log_level(
+			afb_api_t api,
+			int level);
+</code></pre>
+
+<h3 id="afbapivverbose">afb_api_vverbose</h3>
+
+<pre><code class="language-C">/**
+ * Send to the journal with the logging 'level' a message described
+ * by 'fmt' applied to the va-list 'args'.
+ *
+ * 'file', 'line' and 'func' are indicators of code position in source files
+ * (see macros __FILE__, __LINE__ and __func__).
+ *
+ * 'level' is defined by syslog standard:
+ *
+ *      EMERGENCY         0        System is unusable
+ *      ALERT             1        Action must be taken immediately
+ *      CRITICAL          2        Critical conditions
+ *      ERROR             3        Error conditions
+ *      WARNING           4        Warning conditions
+ *      NOTICE            5        Normal but significant condition
+ *      INFO              6        Informational
+ *      DEBUG             7        Debug-level messages
+ *
+ * @param api the api that collects the logging message
+ * @param level the level of the message
+ * @param file the source file that logs the messages or NULL
+ * @param line the line in the source file that logs the message
+ * @param func the name of the function in the source file that logs
+ * @param fmt the format of the message as in printf
+ * @param args the arguments to the format string of the message as a va_list
+ *
+ * @see syslog
+ * @see printf
+ */
+void afb_api_vverbose(
+			afb_api_t api,
+			int level,
+			const char *file,
+			int line,
+			const char *func,
+			const char *fmt,
+			va_list args);
+</code></pre>
+
+<h3 id="afbapiverbose">afb_api_verbose</h3>
+
+<pre><code class="language-C">/**
+ * Send to the journal with the log 'level' a message described
+ * by 'fmt' and following parameters.
+ *
+ * 'file', 'line' and 'func' are indicators of position of the code in source files
+ * (see macros __FILE__, __LINE__ and __func__).
+ *
+ * 'level' is defined by syslog standard:
+ *      EMERGENCY         0        System is unusable
+ *      ALERT             1        Action must be taken immediately
+ *      CRITICAL          2        Critical conditions
+ *      ERROR             3        Error conditions
+ *      WARNING           4        Warning conditions
+ *      NOTICE            5        Normal but significant condition
+ *      INFO              6        Informational
+ *      DEBUG             7        Debug-level messages
+ *
+ * @param api the api that collects the logging message
+ * @param level the level of the message
+ * @param file the source file that logs the messages or NULL
+ * @param line the line in the source file that logs the message
+ * @param func the name of the function in the source file that logs
+ * @param fmt the format of the message as in printf
+ * @param ... the arguments to the format string of the message
+ *
+ * @see syslog
+ * @see printf
+ */
+void afb_api_verbose(
+			afb_api_t api,
+			int level,
+			const char *file,
+			int line,
+			const char *func,
+			const char *fmt,
+			...);
+</code></pre>
+
+<h2 id="data-retrieval-functions">Data retrieval functions</h2>
+
+<h3 id="afbapirootdirgetfd">afb_api_rootdir_get_fd</h3>
+
+<pre><code class="language-C">/**
+ * Get the root directory file descriptor. This file descriptor can
+ * be used with functions 'openat', 'fstatat', ...
+ *
+ * CAUTION, manipulate this descriptor with care, in particular, don't close
+ * it.
+ *
+ * This can be used to get the path of the root directory using:
+ *
+ * char buffer[MAX_PATH], proc[100];
+ * int dirfd = afb_api_rootdir_get_fd(api);
+ * snprintf(proc, sizeof proc, "/proc/self/fd/%d", dirfd);
+ * readlink(proc, buffer, sizeof buffer);
+ *
+ * But note that within AGL this is the value given by the environment variable
+ * AFM_APP_INSTALL_DIR.
+ *
+ * @param api the api that uses the directory file descriptor
+ *
+ * @return the file descriptor of the root directory.
+ *
+ * @see afb_api_rootdir_open_locale
+ */
+int afb_api_rootdir_get_fd(
+			afb_api_t api);
+</code></pre>
+
+<h3 id="afbapirootdiropenlocale">afb_api_rootdir_open_locale</h3>
+
+<pre><code class="language-C">/**
+ * Opens 'filename' within the root directory with 'flags' (see function openat)
+ * using the 'locale' definition (example: "jp,en-US") that can be NULL.
+ *
+ * The filename must be relative to the root of the bindings.
+ *
+ * The opening mode must be for read or write but not for O_CREAT.
+ *
+ * The definition of locales and of how files are searched can be checked
+ * here: https://www.w3.org/TR/widgets/#folder-based-localization
+ * and https://tools.ietf.org/html/rfc7231#section-5.3.5
+ *
+ * @param api the api that queries the file
+ * @param filename the relative path to the file to open
+ * @param flags the flags for opening as for C function 'open'
+ * @param locale string indicating how to search content, can be NULL
+ *
+ * @return the file descriptor or -1 in case of error and errno is set with the
+ * error indication.
+ *
+ * @see open
+ * @see afb_api_rootdir_get_fd
+ */
+int afb_api_rootdir_open_locale(
+			afb_api_t api,
+			const char *filename,
+			int flags,
+			const char *locale);
+</code></pre>
+
+<h3 id="afbapisettings">afb_api_settings</h3>
+
+<pre><code class="language-C">/**
+ * Settings of the api.
+ *
+ * Get the settings of the API. The settings are recorded
+ * as a JSON object. The returned object should not be modified.
+ * It MUST NOT be released using json_object_put.
+ *
+ * @param api the api whose settings are required
+ *
+ * @returns The setting object.
+ */
+struct json_object *afb_api_settings(
+			struct afb_api_x3 *api);
+</code></pre>
+
+<h2 id="calls-and-job-functions">Calls and job functions</h2>
+
+<h3 id="afbapicall">afb_api_call</h3>
+
+<pre><code class="language-C">/**
+ * Calls the 'verb' of the 'apiname' with the arguments 'args' and 'verb' in the name of the binding 'api'.
+ * The result of the call is delivered to the 'callback' function with the 'callback_closure'.
+ *
+ * For convenience, the function calls 'json_object_put' for 'args'.
+ * Thus, in the case where 'args' should remain available after
+ * the function returns, the function 'json_object_get' shall be used.
+ *
+ * The 'callback' receives 5 arguments:
+ *  1. 'closure' the user defined closure pointer 'closure',
+ *  2. 'object'  a JSON object returned (can be NULL)
+ *  3. 'error'   a string not NULL in case of error but NULL on success
+ *  4. 'info'    a string handling some info (can be NULL)
+ *  5. 'api'     the api
+ *
+ * @param api      The api that makes the call
+ * @param apiname  The api name of the method to call
+ * @param verb     The verb name of the method to call
+ * @param args     The arguments to pass to the method
+ * @param callback The to call on completion
+ * @param closure  The closure to pass to the callback
+ *
+ *
+ * @see afb_req_subcall
+ * @see afb_req_subcall_sync
+ * @see afb_api_call_sync
+ */
+void afb_api_call(
+			afb_api_t api,
+			const char *apiname,
+			const char *verb,
+			struct json_object *args,
+			void (*callback)(
+					void *closure,
+					struct json_object *object,
+					const char *error,
+					const char * info,
+					afb_api_t api),
+			void *closure);
+</code></pre>
+
+<h3 id="afbapicallsync">afb_api_call_sync</h3>
+
+<pre><code class="language-C">/**
+ * Calls the 'verb' of the 'apiname' with the arguments 'args' and 'verb' in the name of the binding 'api'.
+ * 'result' will receive the response.
+ *
+ * For convenience, the function calls 'json_object_put' for 'args'.
+ * Thus, in the case where 'args' should remain available after
+ * the function returns, the function 'json_object_get' shall be used.
+ *
+ * @param api      The api that makes the call
+ * @param apiname  The api name of the method to call
+ * @param verb     The verb name of the method to call
+ * @param args     The arguments to pass to the method
+ * @param object   Where to store the returned object - should call json_object_put on it - can be NULL
+ * @param error    Where to store the copied returned error - should call free on it - can be NULL
+ * @param info     Where to store the copied returned info - should call free on it - can be NULL
+ *
+ * @returns 0 in case of success or a negative value in case of error.
+ *
+ * @see afb_req_subcall
+ * @see afb_req_subcall_sync
+ * @see afb_api_call
+ */
+int afb_api_call_sync(
+			afb_api_t api,
+			const char *apiname,
+			const char *verb,
+			struct json_object *args,
+			struct json_object **object,
+			char **error,
+			char **info);
+</code></pre>
+
+<h3 id="afbapiqueuejob">afb_api_queue_job</h3>
+
+<pre><code class="language-C">/**
+ * Queue the job defined by 'callback' and 'argument' for being executed asynchronously
+ * in this thread (later) or in an other thread.
+ *
+ * If 'group' is not NULL, the jobs queued with a same value (as the pointer value 'group')
+ * are executed in sequence in the order of there submission.
+ *
+ * If 'timeout' is not 0, it represent the maximum execution time for the job in seconds.
+ * At first, the job is called with 0 as signum and the given argument.
+ *
+ * The job is executed with the monitoring of its time and some signals like SIGSEGV and
+ * SIGFPE. When a such signal is catched, the job is terminated and reexecuted but with
+ * signum being the signal number (SIGALRM when timeout expired).
+ *
+ * When executed, the callback function receives 2 arguments:
+ *
+ *  - int signum: the signal catched if any or zero at the beginning
+ *  - void *arg: the parameter 'argument'
+ *
+ * A typical implementation of the job callback is:
+ *
+ * void my_job_cb(int signum, void *arg)
+ * {
+ *	struct myarg_t *myarg = arg;
+ *	if (signum)
+ *		AFB_API_ERROR(myarg-&gt;api, "job interrupted with signal %s", strsignal(signum));
+ *	else
+ *		really_do_my_job(myarg);
+ * }
+ *
+ * @param api the api that queue the job
+ * @param callback the job as a callback function
+ * @param argument the argument to pass to the queued job
+ * @param group the group of the job, NULL if no group
+ * @param timeout the timeout of execution of the job
+ *
+ * @return 0 in case of success or -1 in case of error with errno set appropriately.
+ */
+int afb_api_queue_job(
+			afb_api_t api,
+			void (*callback)(int signum, void *arg),
+			void *argument,
+			void *group,
+			int timeout);
+</code></pre>
+
+<h2 id="event-functions">Event functions</h2>
+
+<h3 id="afbapibroadcastevent">afb_api_broadcast_event</h3>
+
+<pre><code class="language-C">/**
+ * Broadcasts widely the event of 'name' with the data 'object'.
+ * 'object' can be NULL.
+ *
+ * For convenience, the function calls 'json_object_put' for 'object'.
+ * Thus, in the case where 'object' should remain available after
+ * the function returns, the function 'json_object_get' shall be used.
+ *
+ * Calling this function is only forbidden during preinit.
+ *
+ * The event sent as the name API/name where API is the name of the
+ * api.
+ *
+ * @param api the api that broadcast the event
+ * @param name the event name suffix
+ * @param object the object that comes with the event
+ *
+ * @return the count of clients that received the event.
+ */
+int afb_api_broadcast_event(
+			afb_api_t api,
+			const char *name,
+			struct json_object *object);
+</code></pre>
+
+<h3 id="afbapimakeevent">afb_api_make_event</h3>
+
+<pre><code class="language-C">/**
+ * Creates an event of 'name' and returns it.
+ *
+ * Calling this function is only forbidden during preinit.
+ *
+ * See afb_event_is_valid to check if there is an error.
+ *
+ * The event created as the name API/name where API is the name of the
+ * api.
+ *
+ * @param api the api that creates the event
+ * @param name the event name suffix
+ *
+ * @return the created event. Use the function afb_event_is_valid to check
+ * whether the event is valid (created) or not (error as reported by errno).
+ *
+ * @see afb_event_is_valid
+ */
+afb_event_t afb_api_make_event(
+			afb_api_t api,
+			const char *name);
+</code></pre>
+
+<h3 id="afbapieventhandleradd">afb_api_event_handler_add</h3>
+
+<pre><code class="language-C">/**
+ * Add a specific event handler for the api
+ *
+ * The handler callback is called when an event matching the given pattern
+ * is received (it is received if broadcasted or after subscription through
+ * a call or a subcall).
+ *
+ * The handler callback receive 4 arguments:
+ *
+ *  - the closure given here
+ *  - the event full name
+ *  - the companion JSON object of the event
+ *  - the api that subscribed the event
+ *
+ * @param api the api that creates the handler
+ * @param pattern the global pattern of the event to handle
+ * @param callback the handler callback function
+ * @param closure the closure of the handler
+ *
+ * @return 0 in case of success or -1 on failure with errno set
+ *
+ * @see afb_api_on_event
+ * @see afb_api_event_handler_del
+ */
+int afb_api_event_handler_add(
+			afb_api_t api,
+			const char *pattern,
+			void (*callback)(
+					void *,
+					const char*,
+					struct json_object*,
+					afb_api_t),
+			void *closure);
+</code></pre>
+
+<h3 id="afbapieventhandlerdel">afb_api_event_handler_del</h3>
+
+<pre><code class="language-C">/**
+ * Delete a specific event handler for the api
+ *
+ * @param api the api that the handler belongs to
+ * @param pattern the global pattern of the handler to remove
+ * @param closure if not NULL it will receive the closure set to the handler
+ *
+ * @return 0 in case of success or -1 on failure with errno set
+ *
+ * @see afb_api_on_event
+ * @see afb_api_event_handler_add
+ */
+int afb_api_event_handler_del(
+			afb_api_t api,
+			const char *pattern,
+			void **closure);
+
+</code></pre>
+
+<h2 id="systemd-functions">Systemd functions</h2>
+
+<h3 id="afbapigeteventloop">afb_api_get_event_loop</h3>
+
+<pre><code class="language-C">/**
+ * Retrieves the common systemd's event loop of AFB
+ *
+ * @param api the api that uses the event loop
+ *
+ * @return the systemd event loop if active, NULL otherwise
+ *
+ * @see afb_api_get_user_bus
+ * @see afb_api_get_system_bus
+ */
+struct sd_event *afb_api_get_event_loop(
+			afb_api_t api);
+</code></pre>
+
+<h3 id="afbapigetuserbus">afb_api_get_user_bus</h3>
+
+<pre><code class="language-C">/**
+ * Retrieves the common systemd's user/session d-bus of AFB
+ *
+ * @param api the api that uses the user dbus
+ *
+ * @return the systemd user connection to dbus if active, NULL otherwise
+ *
+ * @see afb_api_get_event_loop
+ * @see afb_api_get_system_bus
+ */
+struct sd_bus *afb_api_get_user_bus(
+			afb_api_t api);
+</code></pre>
+
+<h3 id="afbapigetsystembus">afb_api_get_system_bus</h3>
+
+<pre><code class="language-C">/**
+ * Retrieves the common systemd's system d-bus of AFB
+ *
+ * @param api the api that uses the system dbus
+ *
+ * @return the systemd system connection to dbus if active, NULL otherwise
+ *
+ * @see afb_api_get_event_loop
+ * @see afb_api_get_user_bus
+ */
+struct sd_bus *afb_api_get_system_bus(
+			afb_api_t api);
+</code></pre>
+
+<h2 id="dynamic-api-functions">Dynamic api functions</h2>
+
+<h3 id="afbapinewapi">afb_api_new_api</h3>
+
+<pre><code class="language-C">/**
+ * Creates a new api of name 'apiname' briefly described by 'info' (that can
+ * be NULL).
+ *
+ * When the pre-initialization function is given, it is a function that
+ * receives 2 parameters:
+ *
+ *  - the closure as given in the call
+ *  - the created api that can be initialised
+ *
+ * This pre-initialization function must return a negative value to abort
+ * the creation of the api. Otherwise, it returns a non-negative value to
+ * continue.
+ *
+ * @param api the api that creates the other one
+ * @param apiname the name of the new api
+ * @param info the brief description of the new api (can be NULL)
+ * @param noconcurrency zero or not zero whether the new api is reentrant or not
+ * @param preinit the pre-initialization function if any (can be NULL)
+ * @param closure the closure for the pre-initialization preinit
+ *
+ * @return the created api in case of success or NULL on error
+ *
+ * @see afb_api_delete_api
+ */
+afb_api_t afb_api_new_api(
+			afb_api_t api,
+			const char *apiname,
+			const char *info,
+			int noconcurrency,
+			int (*preinit)(void*, afb_api_t ),
+			void *closure);
+</code></pre>
+
+<h3 id="afbapisetverbsv2">afb_api_set_verbs_v2</h3>
+
+<pre><code class="language-C">/**
+ * @deprecated use @ref afb_api_set_verbs_v3 instead
+ *
+ * Set the verbs of the 'api' using description of verbs of the api v2
+ *
+ * @param api the api that will get the verbs
+ * @param verbs the array of verbs to add terminated with an item with name=NULL
+ *
+ * @return 0 in case of success or -1 on failure with errno set
+ *
+ * @see afb_verb_v2
+ * @see afb_api_add_verb
+ * @see afb_api_set_verbs_v3
+ */
+int afb_api_set_verbs_v2(
+			afb_api_t api,
+			const struct afb_verb_v2 *verbs);
+</code></pre>
+
+<h3 id="afbapisetverbsv3">afb_api_set_verbs_v3</h3>
+
+<pre><code class="language-C">/**
+ * Set the verbs of the 'api' using description of verbs of the api v2
+ *
+ * @param api the api that will get the verbs
+ * @param verbs the array of verbs to add terminated with an item with name=NULL
+ *
+ * @return 0 in case of success or -1 on failure with errno set
+ *
+ * @see afb_verb_v3
+ * @see afb_api_add_verb
+ * @see afb_api_del_verb
+ */
+int afb_api_set_verbs_v3(
+			afb_api_t api,
+			const struct afb_verb_v3 *verbs);
+</code></pre>
+
+<h3 id="afbapiaddverb">afb_api_add_verb</h3>
+
+<pre><code class="language-C">/**
+ * Add one verb to the dynamic set of the api
+ *
+ * @param api the api to change
+ * @param verb name of the verb
+ * @param info brief description of the verb, can be NULL
+ * @param callback callback function implementing the verb
+ * @param vcbdata data for the verb callback, available through req
+ * @param auth required authorization, can be NULL
+ * @param session authorization and session requirements of the verb
+ * @param glob is the verb glob name
+ *
+ * @return 0 in case of success or -1 on failure with errno set
+ *
+ * @see afb_verb_v3
+ * @see afb_api_del_verb
+ * @see afb_api_set_verbs_v3
+ * @see fnmatch for matching names using glob
+ */
+int afb_api_add_verb(
+			afb_api_t api,
+			const char *verb,
+			const char *info,
+			void (*callback)(struct afb_req_x2 *req),
+			void *vcbdata,
+			const struct afb_auth *auth,
+			uint32_t session,
+			int glob);
+</code></pre>
+
+<h3 id="afbapidelverb">afb_api_del_verb</h3>
+
+<pre><code class="language-C">/**
+ * Delete one verb from the dynamic set of the api
+ *
+ * @param api the api to change
+ * @param verb name of the verb to delete
+ * @param vcbdata if not NULL will receive the vcbdata of the deleted verb
+ *
+ * @return 0 in case of success or -1 on failure with errno set
+ *
+ * @see afb_api_add_verb
+ */
+int afb_api_del_verb(
+			afb_api_t api,
+			const char *verb,
+			void **vcbdata);
+</code></pre>
+
+<h3 id="afbapionevent">afb_api_on_event</h3>
+
+<pre><code class="language-C">/**
+ * Set the callback 'onevent' to process events in the name of the 'api'.
+ *
+ * This setting can be done statically using the global variable
+ * @ref afbBindingV3.
+ *
+ * This function replace any previously global event callback set.
+ *
+ * When an event is received, the callback 'onevent' is called with 3 parameters
+ *
+ *  - the api that recorded the event handler
+ *  - the full name of the event
+ *  - the companion JSON object of the event
+ *
+ * @param api the api that wants to process events
+ * @param onevent the callback function that will process events (can be NULL
+ *        to remove event callback)
+ *
+ * @return 0 in case of success or -1 on failure with errno set
+ *
+ * @see afbBindingV3
+ * @see afb_binding_v3
+ * @see afb_api_event_handler_add
+ * @see afb_api_event_handler_del
+ */
+int afb_api_on_event(
+			afb_api_t api,
+			void (*onevent)(
+					afb_api_t api,
+					const char *event,
+					struct json_object *object));
+</code></pre>
+
+<h3 id="afbapioninit">afb_api_on_init</h3>
+
+<pre><code class="language-C">/**
+ * Set the callback 'oninit' to process initialization of the 'api'.
+ *
+ * This setting can be done statically using the global variable
+ * @ref afbBindingV3
+ *
+ * This function replace any previously initialization callback set.
+ *
+ * This function is only valid during the pre-initialization stage.
+ *
+ * The callback initialization function will receive one argument: the api
+ * to initialize.
+ *
+ * @param api the api that wants to process events
+ * @param oninit the callback function that initialize the api
+ *
+ * @return 0 in case of success or -1 on failure with errno set
+ *
+ * @see afbBindingV3
+ * @see afb_binding_v3
+ */
+int afb_api_on_init(
+			afb_api_t api,
+			int (*oninit)(afb_api_t api));
+</code></pre>
+
+<h3 id="afbapiprovideclass">afb_api_provide_class</h3>
+
+<pre><code class="language-C">/**
+ * Tells that the api provides a class of features. Classes are intended to
+ * allow ordering of initializations: apis that provides a given class are
+ * initialized before apis requiring it.
+ *
+ * This function is only valid during the pre-initialization stage.
+ *
+ * @param api  the api that provides the classes
+ * @param name a space separated list of the names of the provided classes
+ *
+ * @returns 0 in case of success or a negative value in case of error.
+ *
+ * @see afb_api_require_class
+ */
+int afb_api_provide_class(
+			afb_api_t api,
+			const char *name);
+</code></pre>
+
+<h3 id="afbapirequireclass">afb_api_require_class</h3>
+
+<pre><code class="language-C">/**
+ * Tells that the api requires a set of class features. Classes are intended to
+ * allow ordering of initializations: apis that provides a given class are
+ * initialized before apis requiring it.
+ *
+ * This function is only valid during the pre-initialization stage.
+ *
+ * @param api  the api that requires the classes
+ * @param name a space separated list of the names of the required classes
+ *
+ * @returns 0 in case of success or a negative value in case of error.
+ *
+ * @see afb_api_provide_class
+ */
+int afb_api_require_class(
+			afb_api_t api,
+			const char *name);
+</code></pre>
+
+<h3 id="afbapiseal">afb_api_seal</h3>
+
+<pre><code class="language-C">/**
+ * Seal the api. After a call to this function the api can not be modified
+ * anymore.
+ *
+ * @param api the api to be sealed
+ */
+void afb_api_seal(
+			afb_api_t api);
+</code></pre>
+
+<h3 id="afbapideleteapi">afb_api_delete_api</h3>
+
+<pre><code class="language-C">/**
+ * Delete the given api.
+ *
+ * It is of the responsibility of the caller to don't used the deleted api
+ * anymore after this function returned.
+ *
+ * @param api the api to delete
+ *
+ * @returns 0 in case of success or a negative value in case of error.
+ *
+ * @see afb_api_new_api
+ */
+int afb_api_delete_api(
+			afb_api_t api);
+</code></pre>
+
+<h3 id="afbapiaddalias">afb_api_add_alias</h3>
+
+<pre><code class="language-C">/**
+ * Create an aliased name 'as_name' for the api 'name'.
+ * Calling this function is only allowed within preinit.
+ *
+ * @param api the api that requires the aliasing
+ * @param name the api to alias
+ * @param as_name the aliased name of the aliased api
+ *
+ * @return 0 in case of success or -1 in case of error with errno set appropriately.
+ */
+int afb_api_add_alias(
+			afb_api_t api,
+			const char *name,
+			const char *as_name);
+</code></pre>
+
+<h2 id="legacy-functions">Legacy functions</h2>
+
+<p>The function for legacy calls are still provided for some time because
+adaptation of existing code to the new call functions require a small amount
+of work.</p>
+
+<h3 id="afbapicalllegacy">afb_api_call_legacy</h3>
+
+<pre><code class="language-C">/**
+ * @deprecated try to use @ref afb_api_call instead
+ *
+ * Calls the 'verb' of the 'apiname' with the arguments 'args' and 'verb'
+ * in the name of the binding.
+ * The result of the call is delivered to the 'callback' function
+ * with the 'callback_closure'.
+ *
+ * For convenience, the function calls 'json_object_put' for 'args'.
+ * Thus, in the case where 'args' should remain available after
+ * the function returns, the function 'json_object_get' shall be used.
+ *
+ * The 'callback' receives 3 arguments:
+ *  1. 'closure' the user defined closure pointer 'closure',
+ *  2. 'status' a status being 0 on success or negative when an error occurred,
+ *  2. 'result' the resulting data as a JSON object.
+ *
+ * @param api      The api
+ * @param apiname  The api name of the method to call
+ * @param verb     The verb name of the method to call
+ * @param args     The arguments to pass to the method
+ * @param callback The to call on completion
+ * @param closure  The closure to pass to the callback
+ *
+ * @see also 'afb_api_call'
+ * @see also 'afb_api_call_sync'
+ * @see also 'afb_api_call_sync_legacy'
+ * @see also 'afb_req_subcall'
+ * @see also 'afb_req_subcall_sync'
+ */
+void afb_api_call_legacy(
+			afb_api_t api,
+			const char *apiname,
+			const char *verb,
+			struct json_object *args,
+			void (*callback)(
+					void *closure,
+					int status,
+					struct json_object *result,
+					afb_api_t api),
+			void *closure);
+</code></pre>
+
+<h3 id="afbapicallsynclegacy">afb_api_call_sync_legacy</h3>
+
+<pre><code class="language-C">/**
+ * @deprecated try to use @ref afb_api_call_sync instead
+ *
+ * Calls the 'verb' of the 'apiname' with the arguments 'args' and 'verb'
+ * in the name of the binding.
+ * 'result' will receive the response.
+ *
+ * For convenience, the function calls 'json_object_put' for 'args'.
+ * Thus, in the case where 'args' should remain available after
+ * the function returns, the function 'json_object_get' shall be used.
+ *
+ * @param api      The api
+ * @param apiname  The api name of the method to call
+ * @param verb     The verb name of the method to call
+ * @param args     The arguments to pass to the method
+ * @param result   Where to store the result - should call json_object_put on it -
+ *
+ * @returns 0 in case of success or a negative value in case of error.
+ *
+ * @see also 'afb_api_call'
+ * @see also 'afb_api_call_sync'
+ * @see also 'afb_api_call_legacy'
+ * @see also 'afb_req_subcall'
+ * @see also 'afb_req_subcall_sync'
+ */
+int afb_api_call_sync_legacy(
+			afb_api_t api,
+			const char *apiname,
+			const char *verb,
+			struct json_object *args,
+			struct json_object **result);
+</code></pre>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-12-18 00:04:55 +0000</small>
+		
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-binder/plain/docs/reference-v3/func-api.md?h=master">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

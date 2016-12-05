@@ -17,18 +17,18 @@
         
     </title>
 
-    <link rel="SHORTCUT ICON" href="/docs-agl//favicon.ico"/>
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
 
     
 
     
     
 
-    <link rel="canonical" href="https://automotive-grade-linux.github.io/docs-agl/docs-agl//docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
 
@@ -41,21 +41,21 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script defer type="text/javascript">
+    <!-- <script defer type="text/javascript">
         var disqus_developer = ; // this would set it to developer mode
-    </script>
+    </script>-->
 
     <!-- JS -->
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/jquery-2.1.1.min.js"></script>
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/bootstrap.min.js"></script>
-<!--    <script defer type="text/javascript" src="/docs-agl//static/js/lib/ZeroClipboard.js"></script>-->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '', 'auto');
+    ga('create', '{}', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -67,7 +67,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/docs-agl//"><img id="logo_top" src="/docs-agl//static/img/branding/agl_title_793x211.png"/></a>
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -79,33 +79,33 @@
                 <div class="nav_bar_left">
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/docs-agl/docs/getting_started/en/dev/">Getting Started</a>
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
                         </li>
                                                 
                         <li >
-                            <a href="/docs-agl/docs/architecture/en/dev/">Architecture Guides</a>
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/hardware/en/dev/">Hardware Support</a>
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/devguides/en/dev/">Developer Guides</a>
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
                         </li>
                         
                         <li >
-                            <a href="/docs-agl/docs/apis_services/en/dev/">APIs & Services</a>
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
                         </li>
 					</ul>
 				</div>
                 <div class="nav_bar_right">
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/docs-agl//techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                            <a href="/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
                         </li>
                         <li >
-                            <a href="/docs-agl//contribute">Contribute</a>
+                            <a href="/contribute">Contribute</a>
                         </li>
                         <li>
                             <form class="navbar-form navbar-right" id="header-search-form" role="search">
@@ -159,7 +159,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/overview.html">
                 Overview
             </a>
             
@@ -174,8 +174,8 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
-                System Daemon
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/afm-daemons.html">
+                Application Framework Daemon
             </a>
             
         
@@ -189,37 +189,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-user-daemon.html">
-                User Daemon
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/quick-tutorial.html">
-                Quick Tutorial
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/widgets.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/widgets.html">
                 Widgets
             </a>
             
@@ -234,8 +204,8 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/writing-config.xml.html">
-                Writing config.xml
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/config.xml.html">
+                Widget Configuration File
             </a>
             
         
@@ -249,7 +219,37 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
                 Binder overview
             </a>
             
@@ -264,7 +264,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
                 Writing Applications
             </a>
             
@@ -279,7 +279,24 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
+            <a class="this-page" href="/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
+                Bindings Examples
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
                 Writing Bindings
             </a>
             
@@ -294,7 +311,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
                 Events guide
             </a>
             
@@ -309,22 +326,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
-                Vocabulary
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-tests-overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-tests-overview.html">
                 Tests overview
             </a>
             
@@ -339,8 +341,8 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
-                Bindings Examples
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Vocabulary
             </a>
             
         
@@ -354,22 +356,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/FAQ.html">
-                FAQ
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/resources.html">
                 Resources
             </a>
             
@@ -403,8 +390,8 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/architecture.html">
-                Signaling Architecture (proposal)
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture
             </a>
             
         
@@ -418,7 +405,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
                 Developer Guidelines
             </a>
             
@@ -433,7 +420,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
                 CAN Signaling Benchmark
             </a>
             
@@ -448,7 +435,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/resources.html">
                 Resources
             </a>
             
@@ -482,8 +469,42 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/audio/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/resources.html">
                 Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/homescreen/homescreen_api.html">
+                HomeScreen API
             </a>
             
         
@@ -512,7 +533,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            
+                            Table of Contents
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -533,26 +554,8 @@
 
 
 <li>
-    <a class="" href="reference/af-main/afm-system-daemon.html">
-        System Daemon
-    </a>
-</li>
-
-
-
-
-<li>
-    <a class="" href="reference/af-main/afm-user-daemon.html">
-        User Daemon
-    </a>
-</li>
-
-
-
-
-<li>
-    <a class="" href="reference/af-main/quick-tutorial.html">
-        Quick Tutorial
+    <a class="" href="reference/af-main/afm-daemons.html">
+        Application Framework Daemon
     </a>
 </li>
 
@@ -569,8 +572,26 @@
 
 
 <li>
-    <a class="" href="reference/af-main/writing-config.xml.html">
-        Writing config.xml
+    <a class="" href="reference/af-main/config.xml.html">
+        Widget Configuration File
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/quick-tutorial.html">
+        Quick Tutorial
     </a>
 </li>
 
@@ -596,6 +617,15 @@
 
 
 <li>
+    <a class="this-page" href="reference/af-binder/afb-bindings-overview.html">
+        Bindings Examples
+    </a>
+</li>
+
+
+
+
+<li>
     <a class="" href="reference/af-binder/afb-bindings-writing.html">
         Writing Bindings
     </a>
@@ -614,15 +644,6 @@
 
 
 <li>
-    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
-        Vocabulary
-    </a>
-</li>
-
-
-
-
-<li>
     <a class="" href="reference/af-binder/afb-tests-overview.html">
         Tests overview
     </a>
@@ -632,17 +653,8 @@
 
 
 <li>
-    <a class="" href="reference/af-binder/afb-bindings-overview.html">
-        Bindings Examples
-    </a>
-</li>
-
-
-
-
-<li>
-    <a class="" href="reference/af-binder/FAQ.html">
-        FAQ
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Vocabulary
     </a>
 </li>
 
@@ -667,7 +679,7 @@
 
 <li>
     <a class="" href="reference/signaling/architecture.html">
-        Signaling Architecture (proposal)
+        Signaling Architecture
     </a>
 </li>
 
@@ -720,12 +732,28 @@
 
 
 
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
                         </ul>
                     </div>
 
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
 
                     
                     
@@ -773,8 +801,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         Draft version of documentation under development may change!
-                        <a href="/docs-agl//docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
-                            
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
                         </a>
                     </div>
                 
@@ -784,182 +812,92 @@
 
 
                 <div id="page-toc-source">
-                    <!-- WARNING: This file is generated by fetch_docs.js using /home/dl9pf/user/git/LF/AGL/WRITE/docs-agl/webdocs-agl/site/_tocs/apis_services/fetched_files.yml -->
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/contain/tocs/apis_services/fetched_files.yml -->
 
-<h1 id="overview-of-bindings-shipped-with-afb-daemon">Overview of bindings shipped with AFB-Daemon</h1>
-
-<h2 id="list-of-bindings">List of bindings</h2>
-
-<p>Here are the bindings shipped in the source tree:</p>
-
-<ul>
-  <li>Hello World</li>
-  <li>Authentication</li>
-  <li>Tic Tac Toe</li>
-  <li>Audio <em>(2 backends: ALSA/PulseAudio)</em></li>
-  <li>Radio <em>(1 backend: RTLSDR RTL2832U)</em></li>
-  <li>Media <em>(1 backend: Rygel UPnP)</em></li>
-</ul>
-
-<p>All bindings may not be built, depending on the development libraries present on the system at build time.</p>
-
-<h2 id="detail-of-bindings">Detail of bindings</h2>
-
-<h3 id="hello-world">Hello World</h3>
-
-<p>A sample Hello World binding for demonstration and learning purposes.</p>
-
-<p>This binding provides a few unauthenticated requests, all beginning with “ping”, to demonstrate basic binder capabilities.</p>
-
-<p><strong>Verbs</strong>:</p>
-
-<ul>
-  <li><em>ping:</em> returns a success response</li>
-  <li><em>pingfail:</em> returns a failure response</li>
-  <li><em>pingnull:</em> returns a success response, with an empty JSON response field</li>
-  <li><em>pingbug:</em> does a memory violation (intercepted by the binder)</li>
-  <li><em>pingJson:</em> returns a success response, with a complex JSON response field</li>
-  <li><em>pingevent:</em> broadcasts a global event</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="authentication">Authentication</h3>
-
-<p>An sample Authentication binding for demonstration purposes.</p>
-
-<p>This binding provides a few requests to demonstrate the binder’s token-based security mechanism.</p>
-
-<p>Calling “<em>connect</em>” with a security token will initiate a session, calling “<em>refresh</em>” will issue a new token and invalidate the previous one, calling “<em>logout</em>” will invalidate all tokens and close the session.</p>
-
-<p><strong>Verbs</strong>:</p>
-
-<ul>
-  <li><em>ping:</em> returns a success response</li>
-  <li><em>connect:</em> creates a session and returns a new token</li>
-  <li><em>refresh:</em> returns a new token</li>
-  <li><em>check:</em> verifies the passed token is valid</li>
-  <li><em>logout:</em> closes the session</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="tic-tac-toe">Tic Tac Toe</h3>
-
-<p>A sample Tic Tac Toe game binding.</p>
-
-<p>This binding provides an interactive Tic Tac Toe game where the binder returns the grid as a JSON response.</p>
-
-<p><strong>Verbs</strong>:</p>
-
-<ul>
-  <li><em>new:</em> starts a new game</li>
-  <li><em>play:</em> asks the server to play</li>
-  <li><em>move:</em> gives a client move</li>
-  <li><em>board:</em> gets the current board state, as a JSON structure</li>
-  <li><em>level</em>: sets the server level</li>
-  <li><em>join</em>: joins an existing board</li>
-  <li><em>undo</em>: undo the last move</li>
-  <li><em>wait</em>: wait for a move</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="audio">Audio</h3>
-
-<p>A sample Audio binding with 2 backends:</p>
-
-<ul>
-  <li>ALSA (mandatory)</li>
-  <li>PulseAudio (optional)</li>
-</ul>
-
-<p>This binding is able to initialize a specific soundcard, define volume levels, channels (mono/stereo…), mute sound, and play a 22,050 Hz PCM stream.</p>
-
-<p><strong>Verbs</strong>:</p>
-
-<ul>
-  <li><em>ping:</em> returns a success response</li>
-  <li><em>init:</em> initializes backend, on the “default” sound card</li>
-  <li><em>volume:</em> gets or sets volume, in % (0-100)</li>
-  <li><em>channels:</em> gets or sets channels count (1-8)</li>
-  <li><em>mute:</em> gets or sets the mute status (on-off)</li>
-  <li><em>play</em>: gets or sets the playing status (on-off)</li>
-</ul>
-
-<p><em>(if PulseAudio development libraries are not found at build time, only ALSA will be available)</em></p>
-
-<p><em>(if a PulseAudio server is not found at runtime, the binding will dynamically fall back to ALSA)</em></p>
-
-<p><em>(a specifc backend can be forced by using this syntax before running afb-daemon : <strong>$ export AFB_AUDIO_OUTPUT=Alsa</strong>)</em></p>
-
-<p><br /></p>
-
-<h3 id="radio">Radio</h3>
-
-<p>A sample AM/FM Radio binding with 1 backend:</p>
-
-<ul>
-  <li>RTLSDR - Realtek RTL2832U dongles (mandatory)</li>
-</ul>
-
-<p>This binding is able to initialize specific RTL2832U dongles, switch between AM/FM modes, define frequency, mute sound, and play sound (if combining with the <strong>audio</strong> binding).</p>
-
-<p><strong>Verbs</strong>:</p>
-
-<ul>
-  <li><em>ping:</em> returns a success response</li>
-  <li><em>init:</em> initializes backend, looking for plugged-in devices</li>
-  <li><em>power:</em> sets device power status (on-off)</li>
-  <li><em>mode:</em> sets device reception mode (AM-FM)</li>
-  <li><em>freq:</em> sets device frequency (in Hz)</li>
-  <li><em>mute</em>: sets device mute status (on-off)</li>
-  <li><em>play</em>: sets device playing status (on-off)</li>
-</ul>
-
-<p><em>(if rtlsdr development libraries are not found at build time, this binding will not be built)</em></p>
-
-<p><br /></p>
-
-<h3 id="media">Media</h3>
-
-<p>A sample Media Server binding with 1 backend:</p>
-
-<ul>
-  <li>Rygel</li>
-</ul>
-
-<p>This binding is able to detect a local Rygel UPnP media server, list audio files, select an audio file for playback, play/pause/seek in this file, upload an audio file to the server.</p>
-
-<p><strong>Verbs</strong>:</p>
-
-<ul>
-  <li><em>ping:</em> returns a success response</li>
-  <li><em>init:</em> initializes backend, looking for an active local UPnP server</li>
-  <li><em>list:</em> returns list of audio files, as a JSON structure</li>
-  <li><em>select:</em> select an audio files, by index number (001-…)</li>
-  <li><em>play:</em> plays the currently selected audio file</li>
-  <li><em>stop:</em> stops the currently selected audio file</li>
-  <li><em>pause:</em> pauses the currently selected audio file</li>
-  <li><em>seek:</em> seeks in the currently selected audio file, in seconds</li>
-  <li><em>upload:</em> uploads an audio file, with a POST request</li>
-</ul>
-
-<p><em>(if GUPnP/GSSDP development libraries are not fund at build time, this binding will not be built)</em></p>
-
-<p><br /></p>
-
-<hr />
-<p><br /></p>
-
-<p>Sample command-line applications: <em>afb-client-demo</em> (built by default)</p>
-
-<p>Sample HTML5 applications: 
-<strong>test/*.html</strong>, 
-<strong><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-demo.git;a=tree">afb-client</a></strong>, 
-<strong><a href="https://github.com/iotbzh/afb-radio">afb-radio</a></strong></p>
-
-<p>Sample Qt/QML applications: <em>test/token-websock.qml</em></p>
+<?xml version="1.0" encoding="utf-8"?>
+<p>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd”&gt;</p>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 2.12.2, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 2.12.2 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="generator" content="gitweb/2.12.2 git/2.12.2" />
+<meta name="robots" content="index, nofollow" />
+<title>gerrit.automotivelinux Code Review - src/app-framework-binder.git/blob_plain - doc/afb-bindings-overview.md</title>
+<link rel="stylesheet" type="text/css" href="gitweb-default.css" />
+<link rel="stylesheet" type="text/css" href="gitweb-site.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/png" />
+</head>
+<body>
+<div>
+  <div style="background:url(/gerrit/static/LF_Collab_header_gray_stripe.png); width:100%; height:30px; background-repeat:repeat; overflow:hidden;"><img src="/gerrit/static/LF_Collab_header_gray.png" />
+  </div>
+  <div class="header">
+    <table style="width:100%; padding: 0px;">
+      <tr>
+        <td><a href="http://www.automotivelinux.org"><img src="/gerrit/static/logo_automotivelinux.png" /></a></td>
+        <td style="vertical-align:bottom; padding:10px 0px;">
+          <div class="horizontal">
+            <ul>
+              <li><a href="https://identity.linuxfoundation.org/">Account signup</a> | </li>
+              <li><a href="https://wiki.automotivelinux.org/">Wiki</a> | </li>
+              <li><a href="https://jira.automotivelinux.org/">Jira</a> | </li>
+              <li><a href="https://doors.automotivelinux.org/">Doors</a> | </li>
+              <li><a href="https://gerrit.automotivelinux.org/">Gerrit</a> | </li>
+              <li><a href="https://build.automotivelinux.org/">Jenkins</a> | </li>
+              <li><a href="https://lists.linuxfoundation.org/">Mailing lists</a> | </li>
+              <li><a href="https://ask.automotivelinux.org/">Forums (Askbot)</a> | </li>
+              <li><a href="/gerrit/static/signoffrules.txt">Sign-off Rules</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="page_header">
+<a title="git homepage" href="http://git-scm.com/"><img class="logo" height="27" src="gitweb-logo.png" alt="git" width="72" /></a><a href="/gerrit/">Code Review</a> / <a href="/gerrit/gitweb?a=project_list;pf=src">src</a> / <a href="/gerrit/gitweb?p=src/app-framework-binder.git;a=summary">app-framework-binder.git</a> / blob_plain
+</div>
+<form method="get" action="/gerrit/gitweb" enctype="multipart/form-data"><div class="search">
+<input name="p" type="hidden" value="src/app-framework-binder.git" />
+<input name="a" type="hidden" value="search" />
+<input name="h" type="hidden" value="master" />
+<select name="st">
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/gerrit/gitweb?p=src/app-framework-binder.git;a=search_help">?</a> search:
+<input type="text" name="s" />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_body">
+<br /><br />
+404 - Cannot find file
+<br />
+</div>
+<div class="page_footer">
+<div class="page_footer_text">Application Framework binder daemon, maintained by iot.bzh team</div>
+<a class="rss_logo" title="history of doc/afb-bindings-overview.md RSS feed" href="/gerrit/gitweb?p=src/app-framework-binder.git;a=rss;f=doc/afb-bindings-overview.md">RSS</a>
+<a class="rss_logo" title="history of doc/afb-bindings-overview.md Atom feed" href="/gerrit/gitweb?p=src/app-framework-binder.git;a=atom;f=doc/afb-bindings-overview.md">Atom</a>
+</div>
+<div style="position:relative; overflow:hidden;">
+  <div style="background:url(/gerrit/static/LF_Collab_footer_gray_stripe.png); width:100%; height:80px; background-repeat:repeat;"><img src="/gerrit/static/LF_Collab_footer_gray.png" /></div>
+  <p style="position:absolute; top: 4px; left: 10px; font-family:helvetica,arial; font-size:11px; color:#393939; line-height: 16px; margin-top:12px;">&#169;2017 Automotive Grade Linux, a Linux Foundation Collaborative Project. All Rights Reserved.
+  Linux Foundation is a registered trademark of The Linux Foundation.<br />
+  Linux is a registered trademark of Linus Torvalds.
+  </p>
+</div>
+<script type="text/javascript" src="gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>
 
 
 
@@ -1023,7 +961,7 @@
         <h1>Contribute</h1>
         <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
         <p>Report bugs, improve the docs, or contribute to the code.</p>
-        <a href="/docs-agl//contribute" class="btn btn-lg btn-primary">
+        <a href="/contribute" class="btn btn-lg btn-primary">
             Learn More
         </a>
         <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
@@ -1040,7 +978,7 @@
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2016-12-01 23:48:54 +0100</small>
+		<small class="stats">Page rendered at:  2017-06-22 00:05:56 +0000</small>
 		
 		<br/><small class="stats"><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;a=blob_plain;f=doc/afb-bindings-overview.md;hb=master">Link to source document</small>
 		
@@ -1054,10 +992,10 @@
     </div>
 </div>
 
-<script defer type="text/javascript" src="/docs-agl//static/js/lib/toc.min.js"></script>
-<script defer type="text/javascript" src="/docs-agl//static/js/docs.js"></script>
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
 
-    <script defer type="text/javascript" src="/docs-agl//static/js/twitter.js"></script>
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
     
 
 
@@ -1065,23 +1003,13 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: '40ffa808affb354450e0c0ddabe94aa9',
-        indexName: 'iot',
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
         inputSelector: '#header-search-field',
     });
 </script>
 
             
-    
-        <script defer src="/docs-agl//static/js/lib/raphael-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/underscore-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/sequence-diagram-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/flowchart-latest.js"></script>
-    
-        <script defer src="/docs-agl//static/js/process-uml.js"></script>
     
 
 </body>

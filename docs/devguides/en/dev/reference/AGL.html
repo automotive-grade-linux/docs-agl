@@ -17,18 +17,18 @@
         
     </title>
 
-    <link rel="SHORTCUT ICON" href="/docs-agl//favicon.ico"/>
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
 
     
 
     
     
 
-    <link rel="canonical" href="https://automotive-grade-linux.github.io/docs-agl/docs-agl//docs/devguides/en/dev/reference/AGL.html">
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/AGL.html">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
 
@@ -41,21 +41,21 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script defer type="text/javascript">
+    <!-- <script defer type="text/javascript">
         var disqus_developer = ; // this would set it to developer mode
-    </script>
+    </script>-->
 
     <!-- JS -->
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/jquery-2.1.1.min.js"></script>
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/bootstrap.min.js"></script>
-<!--    <script defer type="text/javascript" src="/docs-agl//static/js/lib/ZeroClipboard.js"></script>-->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '', 'auto');
+    ga('create', '{}', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -67,7 +67,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/docs-agl//"><img id="logo_top" src="/docs-agl//static/img/branding/agl_title_793x211.png"/></a>
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -79,33 +79,31 @@
                 <div class="nav_bar_left">
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/docs-agl/docs/getting_started/en/dev/">Getting Started</a>
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
                         </li>
                                                 
                         <li >
-                            <a href="/docs-agl/docs/architecture/en/dev/">Architecture Guides</a>
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/hardware/en/dev/">Hardware Support</a>
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/devguides/en/dev/">Developer Guides</a>
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
                         </li>
                         
                         <li >
-                            <a href="/docs-agl/docs/apis_services/en/dev/">APIs & Services</a>
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
                         </li>
 					</ul>
 				</div>
                 <div class="nav_bar_right">
                     <ul class="nav navbar-nav">
+
                         <li >
-                            <a href="/docs-agl//techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
-                        </li>
-                        <li >
-                            <a href="/docs-agl//contribute">Contribute</a>
+                            <a href="/contribute">Contribute</a>
                         </li>
                         <li>
                             <form class="navbar-form navbar-right" id="header-search-form" role="search">
@@ -159,14 +157,16 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/AGL.html">
+            <a class="this-page" href="/docs/devguides/en/dev/reference/AGL.html">
                 AGL Overview
             </a>
+            
+                <span class="entry-highlight"></span>
             
         
 
         
-        
+        <div id="page-toc" class="page-toc"></div>
 
         
     </li>
@@ -174,7 +174,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/meta-agl.html">
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl.html">
                 meta-agl
             </a>
             
@@ -189,7 +189,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/meta-agl-demo.html">
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl-demo.html">
                 meta-agl-demo
             </a>
             
@@ -204,8 +204,42 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/meta-agl-devel.html">
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl-devel.html">
                 meta-agl-devel
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Host Configuration
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/0_Abstract.html">
+                Abstract
             </a>
             
         
@@ -219,14 +253,924 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/meta-sota.html">
-                meta-sota
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/1_Prerequisites.html">
+                Prerequisites
             </a>
             
         
 
         
         
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/2_AGL_Application_Framework.html">
+                AGL Application Framework
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/3_Binding_Build_Example.html">
+                Binding Build Example
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/4_AGL_XDS.html">
+                AGL XDS
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/host-configuration/docs/5_Candevstudio.html">
+                CanDevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Usage of CMake Afb Template module
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/cmakeafbtemplates/0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/cmakeafbtemplates/1_Quickstart.html">
+                Quickstart
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/cmakeafbtemplates/2_project_architecture.html">
+                Project architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/cmakeafbtemplates/3_advanced_usage.html">
+                Advanced usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/cmakeafbtemplates/4_advanced_customization.html">
+                Advanced customization
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/cmakeafbtemplates/5_autobuild.html">
+                The autobuild script
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                X(cross) Development System: User's Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/0_Abstract.html">
+                Getting Started
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Installing xds-server
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1_install-xds-server.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1-1_install-xds-server-docker.html">
+                Based on Docker container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1-2_install-xds-server-vm.html">
+                Based on Virtual Machine appliance
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1-3_install-xds-server-native.html">
+                Native installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/2_install-client.html">
+                Installing xds client tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/3_install-sdks.html">
+                Installing AGL SDKs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Create your first AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4_build-first-app.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-1_build-first-app-setup.html">
+                Setup
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-2_build-first-app-cmd.html">
+                Build using command line tool
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-3_build-first-app-dashboard.html">
+                Build using XDS Dashboard
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-4_build-first-app-ide.html">
+                Build using a source code editor / IDE
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Debug your first AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5_debug-first-app.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-1_debug-first-app-config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-2_debug-first-app-cmd.html">
+                xds-gdb from command line
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-3_debug-first-app-ide.html">
+                xds-gdb within an IDE
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                X(cross) Development System: Internals
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_Prerequisites.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-server
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/3_how-to-run.html">
+                How to run
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/5_test.html">
+                Test
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-agent
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/3_start.html">
+                Start
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-cli
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/3_commands.html">
+                CLI Commands
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-gdb
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/3_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
 
         
     </li>
@@ -253,67 +1197,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf">
-                Kickstart on Renesas Porter board
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf">
-                Devkit - Image and SDK for Porter board
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf">
-                Devkit - Build your 1st AGL Application
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/iotbzh2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf">
-                Devkit - Howto bake a service
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/devguides/en/dev/reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf">
+            <a class="" href="/docs/devguides/en/dev/reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf">
                 AppFW - Privileges Management
             </a>
             
@@ -321,6 +1205,153 @@
 
         
         
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Controller Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/ctrler/controller.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/ctrler/controllerConfig.html">
+                Binding Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/ctrler/Usage.html">
+                Usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/ctrler/configSample.html">
+                Configuration Sample
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Continuous Integration - Automated Testing (CIAT)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Training
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf">
+                How to write tests (overview slides)
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/CIAT/training/Hands_on_lab_documentation.pdf">
+                How to write tests (detailed)
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
 
         
     </li>
@@ -343,7 +1374,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            
+                            Table of Contents
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -355,7 +1386,7 @@
 
 
 <li>
-    <a class="" href="reference/AGL.html">
+    <a class="this-page" href="reference/AGL.html">
         AGL Overview
     </a>
 </li>
@@ -390,9 +1421,61 @@
 
 
 
+
+
+
+
+
+
+
 <li>
-    <a class="" href="reference/meta-sota.html">
-        meta-sota
+    <a class="" href="reference/host-configuration/docs/0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/1_Prerequisites.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/2_AGL_Application_Framework.html">
+        AGL Application Framework
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/3_Binding_Build_Example.html">
+        Binding Build Example
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/4_AGL_XDS.html">
+        AGL XDS
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/host-configuration/docs/5_Candevstudio.html">
+        CanDevStudio
     </a>
 </li>
 
@@ -407,8 +1490,8 @@
 
 
 <li>
-    <a class="" href="reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf">
-        Kickstart on Renesas Porter board
+    <a class="" href="reference/cmakeafbtemplates/0_Abstract.html">
+        Abstract
     </a>
 </li>
 
@@ -416,8 +1499,8 @@
 
 
 <li>
-    <a class="" href="reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf">
-        Devkit - Image and SDK for Porter board
+    <a class="" href="reference/cmakeafbtemplates/1_Quickstart.html">
+        Quickstart
     </a>
 </li>
 
@@ -425,8 +1508,8 @@
 
 
 <li>
-    <a class="" href="reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf">
-        Devkit - Build your 1st AGL Application
+    <a class="" href="reference/cmakeafbtemplates/2_project_architecture.html">
+        Project architecture
     </a>
 </li>
 
@@ -434,10 +1517,440 @@
 
 
 <li>
-    <a class="" href="reference/iotbzh2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf">
-        Devkit - Howto bake a service
+    <a class="" href="reference/cmakeafbtemplates/3_advanced_usage.html">
+        Advanced usage
     </a>
 </li>
+
+
+
+
+<li>
+    <a class="" href="reference/cmakeafbtemplates/4_advanced_customization.html">
+        Advanced customization
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/cmakeafbtemplates/5_autobuild.html">
+        The autobuild script
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/0_Abstract.html">
+        Getting Started
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1_install-xds-server.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1-1_install-xds-server-docker.html">
+        Based on Docker container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1-2_install-xds-server-vm.html">
+        Based on Virtual Machine appliance
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1-3_install-xds-server-native.html">
+        Native installation
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/2_install-client.html">
+        Installing xds client tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/3_install-sdks.html">
+        Installing AGL SDKs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4_build-first-app.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-1_build-first-app-setup.html">
+        Setup
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-2_build-first-app-cmd.html">
+        Build using command line tool
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-3_build-first-app-dashboard.html">
+        Build using XDS Dashboard
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-4_build-first-app-ide.html">
+        Build using a source code editor / IDE
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5_debug-first-app.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-1_debug-first-app-config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-2_debug-first-app-cmd.html">
+        xds-gdb from command line
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-3_debug-first-app-ide.html">
+        xds-gdb within an IDE
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_Prerequisites.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/3_how-to-run.html">
+        How to run
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/5_test.html">
+        Test
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/3_start.html">
+        Start
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/3_commands.html">
+        CLI Commands
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/3_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -454,30 +1967,110 @@
 
 
 
+
+
+
+
+<li>
+    <a class="" href="reference/ctrler/controller.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/ctrler/controllerConfig.html">
+        Binding Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/ctrler/Usage.html">
+        Usage
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/ctrler/configSample.html">
+        Configuration Sample
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf">
+        How to write tests (overview slides)
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/CIAT/training/Hands_on_lab_documentation.pdf">
+        How to write tests (detailed)
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
                         </ul>
                     </div>
 
+                    <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
 
                     
                     
+                    -->
 
                     <!-- Language dropdown -->
+                    <!--
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             
                             <span class="caret"></span>
                         </button>
 
-                        <!-- List all languages -->
+                        <!-- List all languages - ->
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                             
                         </ul>
                     </div>
+                    -->
 
                     <!-- Version dropdown -->
+                    <!--
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             dev
@@ -486,11 +2079,13 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="versionDropdown">
 
-                            <!-- List versions available in this language -->
+                            <!-- List versions available in this language - ->
                             
                         </ul>
                     </div>
+                    -->
                 </div>
+                
 
                 
                 
@@ -500,29 +2095,31 @@
                 
 
                 <!-- Show warnings for special versions -->
-                <!-- dev warning -->
+                <!-- dev warning
                 
                     <div class="alert docs-alert alert-info" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                         Draft version of documentation under development may change!
-                        <a href="/docs-agl//docs/devguides/en/dev/reference/AGL.html">
-                            
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
                         </a>
                     </div>
                 
+                -->
+
+                <!-- outdated warning
                 
-                <!-- outdated warning -->
-                
+                -->
 
 
                 <div id="page-toc-source">
-                    <!-- WARNING: This file is generated by fetch_docs.js using /home/dl9pf/user/git/LF/AGL/WRITE/docs-agl/webdocs-agl/site/_tocs/devguides/fetched_files.yml -->
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/devguides/fetched_files.yml -->
 
 <h1 id="readme-aglmd-the-automotive-grade-linux-distribution">?README-AGL.md: The Automotive Grade Linux Distribution</h1>
 
-<p>AGL is creating an automotive specific Linux distribution (AGL UCB)
+<p><a href="https://www.automotivelinux.org/">AGL</a> is creating an automotive specific Linux distribution (AGL UCB)
 that unifies the software that has been written in a number of places already,
 such as GENIVI and Tizen IVI.</p>
 
@@ -547,671 +2144,11 @@ For information abount Getting started with AGL
 For information about contributing to the AGL Distro
     <a href="https://wiki.automotivelinux.org/agl-distro/contributing">here</a></p>
 
-<h2 id="quick-start-guide">Quick start guide</h2>
-
-<p>The latest version is available at <a href="https://wiki.automotivelinux.org/agl-distro/source-code">AGL wiki</a> for the following targets:</p>
-<ul>
-  <li><a href="https://wiki.automotivelinux.org/agl-distro/source-code">QEMU</a></li>
-  <li><a href="https://wiki.automotivelinux.org/start/building_for_the_renesas_r-car_m2">Renesas Porter board</a></li>
-  <li><a href="https://wiki.automotivelinux.org/agl-distro/agl-raspberrypi">Raspberry Pi 2/3</a></li>
-</ul>
-
-<p>To build an image from ‘meta-agl’</p>
-
-<ol>
-  <li>Prepare repo:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ mkdir ~/bin
- $ export PATH=~/bin:$PATH
- $ curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
- $ chmod a+x ~/bin/repo
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Get all layers:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
- $ repo sync
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Check available targets and extensions, select target machine:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ source meta-agl/scripts/aglsetup.sh -h
- $ source meta-agl/scripts/aglsetup.sh -m porter
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Build agl-image-ivi
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ bitbake agl-image-ivi
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-</ol>
-
-<p>To build the agl-demo-platform (as demo’ed @ALS) replace 3. and 4. with:</p>
-<ol>
-  <li>Check available targets and extensions, select target machine:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ source meta-agl/scripts/aglsetup.sh -h
- $ source meta-agl/scripts/aglsetup.sh -m porter agl-demo [agl-appfw-smack] [agl-devel] [agl-netboot]
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Build agl-demo-platform
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ bitbake agl-demo-platform Note: this uses more layers and not only meta-agl
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-</ol>
-
-<h2 id="agl-layers-and-dependencies">AGL Layers and dependencies:</h2>
-<p>Check the README.md of the respective layers:</p>
-<ul>
-  <li>meta-agl              (= core, no UI)</li>
-  <li>meta-agl-demo    (= reference UI)</li>
-  <li>meta-agl-extra     (= extra components)</li>
-</ul>
-
-<p>In addition, the reference hardware (Renesas R-Car Gen2 / porter) has this dependency:</p>
-
-<p>URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-renesas</p>
-<blockquote>
-  <p>branch:   agl-1.0-bsp-1.8.0
-tested revision: 82611ccadef36ab0b8a6fd6fb1cf055e115f1ef5</p>
-</blockquote>
-
-<h2 id="supported-machines">Supported Machines</h2>
-
-<p>Reference hardware:</p>
+<p>For more documentation about AGL:</p>
 
 <ul>
-  <li>QEMU (x86-64) - emulated machine: qemux86-64</li>
-  <li>Renesas R-Car Gen2 (R-Car M2) - machine: porter</li>
+  <li><a href="http://docs.automotivelinux.org">docs.automotivelinux.org</a></li>
 </ul>
-
-<p>Community contributed hardware:</p>
-
-<ul>
-  <li>See: https://wiki.automotivelinux.org/agl-distro#supported_hardware</li>
-</ul>
-
-<h2 id="supported-target-of-bitbake">Supported Target of bitbake</h2>
-
-<p>meta-agl:</p>
-
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">agl-image-ivi</code> The baseline image of AGL Distributions (console only)</p>
-  </li>
-  <li><code class="highlighter-rouge">agl-image-minimal</code> For internal use to develop distribution (experimental)</li>
-  <li><code class="highlighter-rouge">agl-image-weston</code>  For internal use to develop distribution (experimental)</li>
-</ul>
-
-<p>meta-agl-demo:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">agl-demo-platform</code> The demo/reference image (with graphical UI)</li>
-</ul>
-
-<p>Run this command for a full list of machines, features and targets:
-     &gt;       $ source ./meta-agl/scripts/aglsetup.sh -h</p>
-
-<h2 id="supposed-directory-tree-of-layers-to-build">Supposed Directory Tree of Layers to build</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> &gt;      $ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
- &gt;      $ repo sync
- &gt;      $ tree -L 1
-.
-|-- meta-agl
-|-- meta-agl-demo
-|-- meta-agl-devel
-|-- meta-agl-extra
-|-- meta-amb
-|-- meta-fsl-arm
-|-- meta-fsl-arm-extra
-|-- meta-intel
-|-- meta-intel-iot-security
-|-- meta-openembedded
-|-- meta-qcom
-|-- meta-qt5
-|-- meta-raspberrypi
-|-- meta-renesas
-|-- meta-rust
-|-- meta-security-isafw
-|-- meta-ti
-`-- poky
-18 directories, 0 files
-</code></pre>
-</div>
-
-<h2 id="build-a-qemu-image">Build a QEMU image</h2>
-
-<p>You can build a QEMU image using the following steps:</p>
-
-<p>(latest version here: https://wiki.automotivelinux.org/agl-distro/source-code)
-To build an image from ‘meta-agl’</p>
-
-<ol>
-  <li>Prepare repo:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ mkdir ~/bin
- $ export PATH=~/bin:$PATH
- $ curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
- $ chmod a+x ~/bin/repo
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Get all layers:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
- $ repo sync
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Check available targets and extensions, select target machine:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ source meta-agl/scripts/aglsetup.sh -h
- $ source meta-agl/scripts/aglsetup.sh -m qemux86-64
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-</ol>
-
-<p>Alternatively, to enable the reference UI feature (‘agl-demo’):
-     &gt;      $ source meta-agl/scripts/aglsetup.sh -m qemux86-64 agl-demo</p>
-
-<p>Alternatively, to also enable also the security framework (‘agl-appfw-smack’):
-     &gt;      $ source meta-agl/scripts/aglsetup.sh -m qemux86-64 agl-demo agl agl-appfw-smack</p>
-
-<p>Alternatively, to also enable debugging tools (‘agl-devel’) and the network-boot (nbd) capabilities (‘agl-netboot’):
-     &gt;      $ source meta-agl/scripts/aglsetup.sh -m qemux86-64 agl-demo agl agl-appfw-smack agl-devel agl-netboot</p>
-
-<ol>
-  <li>Build agl-image-ivi
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ bitbake agl-image-ivi
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-</ol>
-
-<p>or alternatively, if you enabled the ‘agl-demo’ feature:
-     &gt;      $ bitbake agl-demo-platform</p>
-
-<ul>
-  <li>If you want to run QEMU directly as VM in Virtual Box or your other favorite VM software then add this line to your “conf/local.conf” file.
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> IMAGE_FSTYPES += "vmdk"
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-</ul>
-
-<ol>
-  <li>Run in the emulator
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ runqemu agl-image-ivi qemux86-64
- or
- $ runqemu agl-demo-platform qemux86-64
-</code></pre>
-      </div>
-    </blockquote>
-
-    <p>For a large screen:</p>
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ runqemu agl-image-ivi qemux86-64 bootparams="uvesafb.mode_option=1280x720-32"
-</code></pre>
-      </div>
-    </blockquote>
-
-    <p>To extend the amount of memory, add to runqemu:
-  qemuparams=”-m 512”</p>
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ runqemu agl-image-ivi qemux86-64 qemuparame="-m 512" bootparams="uvesafb.mode_option=1280x720-32"
-</code></pre>
-      </div>
-    </blockquote>
-
-    <p>To separate console from VGA screen (to avoid corrupt screen while booting),
-add to runqemu:
-  serial</p>
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ runqemu agl-image-ivi qemux86-64 bootparams="uvesafb.mode_option=1280x720-32" serial
-</code></pre>
-      </div>
-    </blockquote>
-
-    <p><strong>Or use the virtual disk in Virtual Box from this location:</strong></p>
-    <blockquote>
-      <p>tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.vmdk</p>
-    </blockquote>
-  </li>
-  <li>Some weston samples are available from weston terminal (click top left icon).
-   Check the folder <code class="highlighter-rouge">/opt/AGL/ALS2016</code>.</li>
-</ol>
-
-<h2 id="build-a-r-car-m2-porter-image">Build a R-Car M2 (porter) image</h2>
-
-<h3 id="software-setup">Software setup</h3>
-
-<p>NOTE: You will need to download the matching binary driver package from renesas.
-      As of this writing, the version from 20151228.
-      The main URL to retrieve these is:</p>
-
-<ul>
-  <li>
-    <p>https://www.renesas.com/en-eu/solutions/automotive/rcar-demoboard.html</p>
-
-    <p>As of this writing, the necessary libary and driver packages linked to
- by above site are:</p>
-    <ul>
-      <li>The subpage for the library is:
-        <ul>
-          <li>https://www.renesas.com/en-eu/software/D3017410.html (registration/login required)</li>
-        </ul>
-      </li>
-      <li>The sub-page for the driver is:
-        <ul>
-          <li>https://www.renesas.com/en-eu/media/secret/solutions/automotive/rcar-demoboard/R-Car_Series_Evaluation_Software_Package_of_Linux_Drivers-20151228.zip</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p>!!! The files need to be in <code class="highlighter-rouge">${HOME}/Downloads</code> ( <code class="highlighter-rouge">$XDG_DOWNLOAD_DIR</code> ) !!!</p>
-  </li>
-</ul>
-
-<h4 id="getting-source-code-and-build-image">Getting Source Code and Build image</h4>
-
-<p>(latest version here: https://wiki.automotivelinux.org/agl-distro/source-code)
-To build an image from ‘meta-agl’ only:</p>
-
-<ol>
-  <li>Prepare repo:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ mkdir ~/bin
- $ export PATH=~/bin:$PATH
- $ curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
- $ chmod a+x ~/bin/repo
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Get all layers:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
- $ repo sync
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Check available targets and extensions, select target machine:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ source meta-agl/scripts/aglsetup.sh -h
- $ source meta-agl/scripts/aglsetup.sh -m porter
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-</ol>
-
-<p>Alternatively, to enable the reference UI:
-     &gt;      $ source meta-agl/scripts/aglsetup.sh -m porter agl-demo</p>
-
-<p>Alternatively, to also enable also the security framework:
-     &gt;      $ source meta-agl/scripts/aglsetup.sh -m porter agl-demo agl agl-appfw-smack</p>
-
-<p>Alternatively, to also enable debugging tools and the network-boot (nbd) capabilities:
-     &gt;      $ source meta-agl/scripts/aglsetup.sh -m porter agl-demo agl agl-appfw-smack agl-devel agl-netboot</p>
-
-<ol>
-  <li>(optional) edit conf/local.conf   )* see below
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code>   $ vi conf/local.conf
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Build agl-image-ivi
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code>   $ bitbake agl-image-ivi
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-</ol>
-
-<p>or alternatively, if you enabled the ‘agl-demo’ feature:
-     &gt;      $ bitbake agl-demo-platform</p>
-
-<p>)* :</p>
-
-<p>4 .  Optional edits to conf/local.conf</p>
-
-<ul>
-  <li>
-    <p>If you want to use multimedia accelerations, uncomment
-manually 4 <code class="highlighter-rouge">IMAGE_INSTALL_append_porter</code> in conf/local.conf.</p>
-
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code>#IMAGE_INSTALL_append_porter = " \
-#    gstreamer1.0-plugins-bad-waylandsink \
-#    "
-#IMAGE_INSTALL_append_porter = " \
-#    gstreamer1.0-plugins-base-videorate \
-...
-#"
-#IMAGE_INSTALL_append_porter = " \
-#    libegl libegl-dev libgbm-dev \
-...
-#    "
-#IMAGE_INSTALL_append_porter = " \
-#    packagegroup-rcar-gen2-multimedia \
-...
-#    "
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-  <li>Also it is needed to uncomment this:
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code>#MACHINE_FEATURES_append = " multimedia"
-</code></pre>
-      </div>
-    </blockquote>
-
-    <p>This <code class="highlighter-rouge">multimedia</code> MACHINE_FEATURES enables the meta-renesas’s specific multimedia configuration.
- The version of GStreamer1.0 which AGL distro will use is changed
- to 1.2.3 (meta-renesas prefers it) over 1.4.1 (meta-agl default)
- by this switch.</p>
-  </li>
-  <li>If you want to install various Qt5 examples, add below
- configuration to your local.conf.
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code> IMAGE_INSTALL_append = " \
-       packagegroup-agl-demo-qt-examples \
-   "
-   PACKAGECONFIG_append_pn-qtbase = " examples"
-</code></pre>
-      </div>
-
-      <p>IMPORTANT NOTE:
-       To run examples with wayland-egl plugin,
-       use <code class="highlighter-rouge">LD_PRELOAD=/usr/lib/libEGL.so &lt;command&gt;</code>.
-       If not, programs should not launch by error,
-       ‘EGL not available’.</p>
-    </blockquote>
-  </li>
-</ul>
-
-<h3 id="deployment-sdcard">Deployment (SDCARD)</h3>
-
-<h4 id="instructions-on-the-host">Instructions on the host</h4>
-
-<ol>
-  <li>
-    <p>Format SD-Card and then, create single EXT4 partition on it.</p>
-  </li>
-  <li>
-    <p>Mount the SD-Card, for example <code class="highlighter-rouge">/media/$SDCARD_LABEL</code>.</p>
-  </li>
-  <li>Copy AGL root file system onto the SD-Card
-    <ol>
-      <li>Go to build directory
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ cd $AGL_TOP/build/tmp/deploy/images/porter
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-      <li>Extract the root file system into the SD-Card
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo tar --extract --numeric-owner --preserve-permissions --preserve-order \
-           --totals --directory=/media/$SDCARD_LABEL --file=agl-image-ivi-porter.tar.bz2
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-      <li>Copy kernel and DTB into the <code class="highlighter-rouge">/boot</code> of the SD-Card
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo cp uImage uImage-r8a7791-porter.dtb /media/$SDCARD_LABEL/boot
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-    </ol>
-  </li>
-  <li>After the copy finished, unmount SD-Card and insert it into the SD-Card slot of the porter board.</li>
-</ol>
-
-<h4 id="instructions-on-the-target">Instructions on the target</h4>
-
-<p>NOTE: There is details about porter board <a href="http://elinux.org/R-Car/Boards/Porter">here</a>.</p>
-
-<p>NOTE: To boot weston on porter board, we need keyboard and mouse. (USB2.0 can be use for this)</p>
-
-<h5 id="change-u-boot-parameters-to-boot-from-sd-card">Change U-Boot parameters to boot from SD card</h5>
-
-<ol>
-  <li>Power up the board and, using your preferred terminal emulator, stop the board’s autoboot by hitting any key.</li>
-</ol>
-
-<p>``Debug serial settings are 38400 8N1. Any standard terminal emulator program can be used.**</p>
-
-<ol>
-  <li>Set the follow environment variables and save them
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code>=&gt; setenv bootargs_console console=ttySC6,${baudrate}
-=&gt; setenv bootargs_video vmalloc=384M video=HDMI-A-1:1024x768-32@60
-=&gt; setenv bootcmd_sd 'ext4load mmc 0:1 0x40007fc0 boot/uImage;ext4load mmc 0:1 0x40f00000 boot/uImage-r8a7791-porter.dtb'
-=&gt; setenv bootcmd 'setenv bootargs ${bootargs_console} ${bootargs_video} root=/dev/mmcblk0p1 rw rootfstype=ext3;run bootcmd_sd;bootm 0x40007fc0 - 0x40f00000'
-=&gt; saveenv
-</code></pre>
-      </div>
-    </blockquote>
-  </li>
-</ol>
-
-<h5 id="boot-from-sd-card">Boot from SD card</h5>
-
-<ol>
-  <li>
-    <p>After board reset, U-Boot is started and after a countdown, …
-Linux boot message should be displayed. Please wait a moment.</p>
-  </li>
-  <li>
-    <p>Then weston is booted automatically, and weston-terminal appears.</p>
-  </li>
-  <li>
-    <p>Have fun! :)</p>
-  </li>
-  <li>
-    <p>(Optional) This is how to test and play multimedia contents with acceleration.</p>
-
-    <ol>
-      <li>
-        <p>Boot porter without mouse and keyboard, it avoid to boot weston automatically.
-For now, when running weston, V4L2 deosn’t work correctly, so we have to
-stop weston first (GST plugin <code class="highlighter-rouge">waylandsink</code> also doesn’t work correctly for now).</p>
-      </li>
-      <li>
-        <p>Execute these instructions</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code> # Set the mixer &gt;     $ export LD_LIBRARY_PATH="/lib:/usr/lib:/usr/local/lib:"^
-
- # Set the mixer &gt;     $ amixer set "LINEOUT Mixer DACL" on &gt;     $ amixer set "DVC Out" 10 &gt; &gt;     $ modprobe -a mmngr mmngrbuf s3ctl uvcs_cmn vspm fdpm &gt; &gt;     $ media-ctl -d /dev/media0 -r &gt;     $ media-ctl -d /dev/media0 -l '"vsp1.2 rpf.0":1 -&gt; "vsp1.2 uds.0":0 [1]' &gt;     $ media-ctl -d /dev/media0 -l '"vsp1.2 uds.0":1 -&gt; "vsp1.2 wpf.0":0 [1]' &gt;     $ media-ctl -d /dev/media0 -l '"vsp1.2 wpf.0":1 -&gt; "vsp1.2 lif":0 [1]' &gt;     $ media-ctl -d /dev/media0 -V '"vsp1.2 rpf.0":0 [fmt:AYUV32/1920x1080]' &gt;     $ media-ctl -d /dev/media0 -V '"vsp1.2 rpf.0":1 [fmt:AYUV32/1920x1080]' &gt;     $ media-ctl -d /dev/media0 -V '"vsp1.2 uds.0":0 [fmt:AYUV32/1920x1080]' &gt;     $ media-ctl -d /dev/media0 -V '"vsp1.2 uds.0":1 [fmt:AYUV32/640x480]' &gt;     $ media-ctl -d /dev/media0 -V '"vsp1.2 wpf.0":0 [fmt:AYUV32/640x480]' &gt;     $ media-ctl -d /dev/media0 -V '"vsp1.2 wpf.0":1 [fmt:ARGB32/640x480]' &gt;     $ media-ctl -d /dev/media0 -V '"vsp1.2 lif":0 [fmt:ARGB32/640x480]' &gt; &gt;                 # in case R-Car M2 (HDMI - DU1 - vspd0) &gt;                 $ modetest -M rcar-du -s 10@8:1280x720@AR24 -d -P '8@19:640x480+100+200@XR24' &amp;
-</code></pre>
-        </div>
-      </li>
-    </ol>
-  </li>
-</ol>
-
-<p>After these command, Test pattern will show on display connected to porter’s HDMI port.</p>
-
-<p>Then, you can play H264(MP4) movie like this:</p>
-
-<blockquote>
-  <div class="highlighter-rouge"><pre class="highlight"><code>$ gst-launch-1.0 filesrc location=./sample.mp4  ! qtdemux name=d d. ! \
-       queue ! omxh264dec no-copy=true ! v4l2sink device=/dev/video1 \
-       io-mode=userptr d. ! queue ! faad ! alsasink device=hw:0,0
-</code></pre>
-  </div>
-</blockquote>
-
-<h3 id="deployment-tftpnfs">Deployment (TFTP/NFS)</h3>
-
-<p>NOTE: These instructions are based on Embedded Linux Wiki, <a href="http://www.elinux.org/R-Car/Boards/Yocto#Loading_kernel_via_TFTP_and_rootfs_via_NFS">here</a>. And a Debian (wheezy, ip: 192.168.30.70) is used as the host for this instructions.</p>
-
-<h4 id="instructions-on-the-host-1">Instructions on the host</h4>
-<ol>
-  <li>Setup a TFTP server
-    <ol>
-      <li>Install necessary packages
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install tftp tftpd-hpa
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-      <li>Go to build directory, and copy kernel and DTB into TFTP server root (default server dir: /srv/tftp)
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$cd  $AGL_TOP/build/tmp/deploy/images/porter
-$ sudo cp uImage uImage-r8a7791-porter.dtb /srv/tftp
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-      <li>Verify TFTP server is working
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ ls uImage
- ls: cannot access uImage: No such file or directory
-</code></pre>
-          </div>
-        </blockquote>
-
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ cd /tmp/
-$ tftp 192.168.30.70
-tftp&gt; get uImage
-Received 3583604 bytes in 0.2 seconds
-tftp&gt; q
-$ ls uImage
-uImage
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-    </ol>
-  </li>
-  <li>set NFS server
-    <ol>
-      <li>Install necessary packages
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install nfs-kernel-server nfs-common
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-      <li>Go to build directory, and extract the root file system into a dedicated directory (here we use /nfs/porter)
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ cd $AGL_TOP/build/tmp/deploy/images/porter
-$ sudo mkdir -p /nfs/porter
- $ sudo tar --extract --numeric-owner --preserve-permissions --preserve-order \
-  --totals --directory=/nfs/porter --file=agl-demo-platform-porter.tar.bz2
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-      <li>Edit /etc/exports
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vi /etc/exports    Add
-
-/nfs/porter	*(rw,no_subtree_check,sync,no_root_squash,no_all_squash)
-</code></pre>
-          </div>
-
-          <p>Save the file and exit.</p>
-        </blockquote>
-      </li>
-      <li>Restart nfs service
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo service nfs-kernel-server restart
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-      <li>Verify NFS server is working
-        <blockquote>
-          <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo mount -t nfs 192.168.30.70:/nfs/porter /tmp/
-$ ls /tmp
-bin  boot  dev  etc  home  lib  media  mnt  proc  run  sbin  sys  tmp  usr  var
-</code></pre>
-          </div>
-        </blockquote>
-      </li>
-    </ol>
-  </li>
-</ol>
-
-<h4 id="instructions-on-the-target-board">Instructions on the target board</h4>
-
-<p>NOTE: There is details about porter board <a href="http://elinux.org/R-Car/Boards/Porter">here</a>.</p>
-
-<p>NOTE: To boot weston on porter board, we need keyboard and mouse. (USB2.0 can be use for this)</p>
-
-<h5 id="change-u-boot-parameters-to-boot-from-tftpnfs">Change U-Boot parameters to boot from TFTP/NFS</h5>
-
-<ol>
-  <li>Power up the board and, using your preferred terminal emulator, stop the board’s autoboot by hitting any key.</li>
-</ol>
-
-<blockquote>
-  <p>Debug serial settings are 38400 8N1. Any standard terminal emulator program can be used.</p>
-</blockquote>
-
-<ol>
-  <li>Set the follow environment variables and save them
-    <blockquote>
-      <div class="highlighter-rouge"><pre class="highlight"><code>=&gt; setenv ipaddr &lt;board-ip&gt;
-=&gt; setenv serverip &lt;host-ip&gt;
-=&gt; setenv bootargs_console console=ttySC6,${baudrate}
-=&gt; setenv bootargs_video vmalloc=384M video=HDMI-A-1:1024x768-32@60
-=&gt; setenv bootcmd_net 'tftp 0x40007fc0 uImage; tftp 0x40f00000 uImage-r8a7791-porter.dtb'
-=&gt; setenv bootcmd 'setenv bootargs ${bootargs_console} ${bootargs_video} ip=${ipaddr} root=/dev/nfs nfsroot=${serverip}:/nfs/porter,vers=3;run bootcmd_net;bootm 0x40007fc0 - 0x40f00000'
-=&gt; saveenv
-</code></pre>
-      </div>
-    </blockquote>
-
-    <p>Replace <board-ip> with a proper IP address for the board, like 192.168.30.60.
- Replace <host-ip> with the IP address of the host, here we use 192.168.30.70.</host-ip></board-ip></p>
-  </li>
-</ol>
-
-<h5 id="boot-from-tftpnfs">Boot from TFTP/NFS</h5>
-
-<ol>
-  <li>After board reset, U-Boot is started and after a countdown, …
-Linux boot message should be displayed. Please wait a moment.</li>
-  <li>Then weston is booted automatically, and weston-terminal appears.</li>
-  <li>Have fun! :)</li>
-</ol>
-
 
 
 
@@ -1275,7 +2212,7 @@ Linux boot message should be displayed. Please wait a moment.</li>
         <h1>Contribute</h1>
         <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
         <p>Report bugs, improve the docs, or contribute to the code.</p>
-        <a href="/docs-agl//contribute" class="btn btn-lg btn-primary">
+        <a href="/contribute" class="btn btn-lg btn-primary">
             Learn More
         </a>
         <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
@@ -1284,7 +2221,7 @@ Linux boot message should be displayed. Please wait a moment.</li>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2016 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -1292,9 +2229,9 @@ Linux boot message should be displayed. Please wait a moment.</li>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2016-12-01 23:48:54 +0100</small>
+		<small class="stats">Page rendered at:  2018-12-18 00:04:51 +0000</small>
 		
-		<br/><small class="stats"><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git;a=blob_plain;f=README-AGL.md;hb=master">Link to source document</small>
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/AGL/meta-agl/plain/README-AGL.md?h=master">Link to source document</small>
 		
 	</div>
 </div>
@@ -1306,10 +2243,10 @@ Linux boot message should be displayed. Please wait a moment.</li>
     </div>
 </div>
 
-<script defer type="text/javascript" src="/docs-agl//static/js/lib/toc.min.js"></script>
-<script defer type="text/javascript" src="/docs-agl//static/js/docs.js"></script>
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
 
-    <script defer type="text/javascript" src="/docs-agl//static/js/twitter.js"></script>
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
     
 
 
@@ -1317,23 +2254,13 @@ Linux boot message should be displayed. Please wait a moment.</li>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: '40ffa808affb354450e0c0ddabe94aa9',
-        indexName: 'iot',
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
         inputSelector: '#header-search-field',
     });
 </script>
 
             
-    
-        <script defer src="/docs-agl//static/js/lib/raphael-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/underscore-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/sequence-diagram-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/flowchart-latest.js"></script>
-    
-        <script defer src="/docs-agl//static/js/process-uml.js"></script>
     
 
 </body>

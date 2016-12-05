@@ -17,18 +17,18 @@
         
     </title>
 
-    <link rel="SHORTCUT ICON" href="/docs-agl//favicon.ico"/>
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
 
     
 
     
     
 
-    <link rel="canonical" href="https://automotive-grade-linux.github.io/docs-agl/docs-agl//docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
 
@@ -41,21 +41,21 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script defer type="text/javascript">
+    <!-- <script defer type="text/javascript">
         var disqus_developer = ; // this would set it to developer mode
-    </script>
+    </script>-->
 
     <!-- JS -->
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/jquery-2.1.1.min.js"></script>
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/bootstrap.min.js"></script>
-<!--    <script defer type="text/javascript" src="/docs-agl//static/js/lib/ZeroClipboard.js"></script>-->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '', 'auto');
+    ga('create', '{}', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -67,7 +67,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/docs-agl//"><img id="logo_top" src="/docs-agl//static/img/branding/agl_title_793x211.png"/></a>
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -79,33 +79,33 @@
                 <div class="nav_bar_left">
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/docs-agl/docs/getting_started/en/dev/">Getting Started</a>
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
                         </li>
                                                 
                         <li >
-                            <a href="/docs-agl/docs/architecture/en/dev/">Architecture Guides</a>
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/hardware/en/dev/">Hardware Support</a>
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/devguides/en/dev/">Developer Guides</a>
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
                         </li>
                         
                         <li >
-                            <a href="/docs-agl/docs/apis_services/en/dev/">APIs & Services</a>
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
                         </li>
 					</ul>
 				</div>
                 <div class="nav_bar_right">
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/docs-agl//techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                            <a href="/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
                         </li>
                         <li >
-                            <a href="/docs-agl//contribute">Contribute</a>
+                            <a href="/contribute">Contribute</a>
                         </li>
                         <li>
                             <form class="navbar-form navbar-right" id="header-search-form" role="search">
@@ -159,7 +159,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/overview.html">
                 Overview
             </a>
             
@@ -174,8 +174,8 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
-                System Daemon
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/afm-daemons.html">
+                Application Framework Daemon
             </a>
             
         
@@ -189,37 +189,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-user-daemon.html">
-                User Daemon
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/quick-tutorial.html">
-                Quick Tutorial
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/widgets.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/widgets.html">
                 Widgets
             </a>
             
@@ -234,8 +204,8 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/writing-config.xml.html">
-                Writing config.xml
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/config.xml.html">
+                Widget Configuration File
             </a>
             
         
@@ -249,7 +219,37 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
                 Binder overview
             </a>
             
@@ -264,7 +264,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
                 Writing Applications
             </a>
             
@@ -279,67 +279,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
-                Writing Bindings
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
-                Events guide
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
-                Vocabulary
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-tests-overview.html">
-                Tests overview
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
                 Bindings Examples
             </a>
             
@@ -354,8 +294,25 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/FAQ.html">
-                FAQ
+            <a class="this-page" href="/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
+                Writing Bindings
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+                Events guide
             </a>
             
         
@@ -369,7 +326,37 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-tests-overview.html">
+                Tests overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/resources.html">
                 Resources
             </a>
             
@@ -403,8 +390,8 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/architecture.html">
-                Signaling Architecture (proposal)
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture
             </a>
             
         
@@ -418,7 +405,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
                 Developer Guidelines
             </a>
             
@@ -433,7 +420,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
                 CAN Signaling Benchmark
             </a>
             
@@ -448,7 +435,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/resources.html">
                 Resources
             </a>
             
@@ -482,8 +469,42 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/audio/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/resources.html">
                 Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/homescreen/homescreen_api.html">
+                HomeScreen API
             </a>
             
         
@@ -512,7 +533,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            
+                            Table of Contents
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -533,26 +554,8 @@
 
 
 <li>
-    <a class="" href="reference/af-main/afm-system-daemon.html">
-        System Daemon
-    </a>
-</li>
-
-
-
-
-<li>
-    <a class="" href="reference/af-main/afm-user-daemon.html">
-        User Daemon
-    </a>
-</li>
-
-
-
-
-<li>
-    <a class="" href="reference/af-main/quick-tutorial.html">
-        Quick Tutorial
+    <a class="" href="reference/af-main/afm-daemons.html">
+        Application Framework Daemon
     </a>
 </li>
 
@@ -569,8 +572,26 @@
 
 
 <li>
-    <a class="" href="reference/af-main/writing-config.xml.html">
-        Writing config.xml
+    <a class="" href="reference/af-main/config.xml.html">
+        Widget Configuration File
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/quick-tutorial.html">
+        Quick Tutorial
     </a>
 </li>
 
@@ -596,7 +617,16 @@
 
 
 <li>
-    <a class="" href="reference/af-binder/afb-bindings-writing.html">
+    <a class="" href="reference/af-binder/afb-bindings-overview.html">
+        Bindings Examples
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/af-binder/afb-bindings-writing.html">
         Writing Bindings
     </a>
 </li>
@@ -614,15 +644,6 @@
 
 
 <li>
-    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
-        Vocabulary
-    </a>
-</li>
-
-
-
-
-<li>
     <a class="" href="reference/af-binder/afb-tests-overview.html">
         Tests overview
     </a>
@@ -632,17 +653,8 @@
 
 
 <li>
-    <a class="" href="reference/af-binder/afb-bindings-overview.html">
-        Bindings Examples
-    </a>
-</li>
-
-
-
-
-<li>
-    <a class="" href="reference/af-binder/FAQ.html">
-        FAQ
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Vocabulary
     </a>
 </li>
 
@@ -667,7 +679,7 @@
 
 <li>
     <a class="" href="reference/signaling/architecture.html">
-        Signaling Architecture (proposal)
+        Signaling Architecture
     </a>
 </li>
 
@@ -720,12 +732,28 @@
 
 
 
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
                         </ul>
                     </div>
 
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
 
                     
                     
@@ -773,8 +801,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         Draft version of documentation under development may change!
-                        <a href="/docs-agl//docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
-                            
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
                         </a>
                     </div>
                 
@@ -784,1474 +812,92 @@
 
 
                 <div id="page-toc-source">
-                    <!-- WARNING: This file is generated by fetch_docs.js using /home/dl9pf/user/git/LF/AGL/WRITE/docs-agl/webdocs-agl/site/_tocs/apis_services/fetched_files.yml -->
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/contain/tocs/apis_services/fetched_files.yml -->
 
-<h1 id="howto-write-a-binding-for-afb-daemon">HOWTO WRITE a BINDING for AFB-DAEMON</h1>
-
-<h2 id="summary">Summary</h2>
-
-<p>Afb-daemon binders serve files through HTTP protocol
-and offers to developers the capability to expose application API methods through
-HTTP or WebSocket protocol.</p>
-
-<p>Binder bindings are used to add API to afb-daemon.
-This part describes how to write a binding for afb-daemon.</p>
-
-<p>Excepting this summary, this document target developers.</p>
-
-<p>Before moving further through an example, here after
-a short overview of binder bindings fundamentals.</p>
-
-<h3 id="nature-of-a-binding">Nature of a binding</h3>
-
-<p>A binding is an independent piece of software. A binding is self contain and exposes application logic as sharable library.
-A binding is intended to be dynamically loaded by afb-daemon to expose application API.</p>
-
-<p>Technically, a binder binding does not reference and is not linked with any afb-daemon library.</p>
-
-<h3 id="class-of-bindings">Class of bindings</h3>
-
-<p>Application binder supports two kinds of bindings: application bindings and service bindings.
-Technically both class of binding are equivalent are use the same coding convention. Only sharing mode and security context diverge.</p>
-
-<h4 id="application-bindings">Application-bindings</h4>
-
-<p>Application-bindings implements the glue in between application’s UI and services. Every AGL application
-has a corresponding binder that typically activates one or many bindings to interface the application logic with lower platform services.
-When an application is started by the AGL application framework, a dedicate binder is started that loads/activates application binding(s). 
-API expose by application-binding are executed within corresponding application security context.</p>
-
-<p>Application bindings generally handle a unique context for a unique client. As the application framework start
-a dedicated instance of afb_daemon for each AGL application, if a given binding is used within multiple application each of those
-application get a new and private instance of eventually “shared” binding.</p>
-
-<h4 id="service-bindings">Service-bindings</h4>
-
-<p>Service-bindings enable API activation within corresponding service security context and not within calling application context. 
-Service-bindings are intended to run as a unique instance. Service-bindings can be shared in between multiple clients.</p>
-
-<p>Service-bindings can either be stateless or manage client context. When managing context each client get a private context.</p>
-
-<p>Sharing may either be global to the platform (ie: GPS service) or dedicated to a given user (ie: user preferences)</p>
-
-<h3 id="live-cycle-of-bindings-within-afb-daemon">Live cycle of bindings within afb-daemon</h3>
-
-<p>Application and service bindings are loaded and activated each time a new afb-daemon is started.</p>
-
-<p>At launch time, every loaded binding initialise itself.
-If a single binding initialisation fail corresponding instance of afb-daemon self aborts.</p>
-
-<p>Conversely, when a binding initialisation succeeds, it should register 
-its unique name as well as the list of verbs attached to the methods it exposes.</p>
-
-<p>When initialised, on request from application clients to the right API/verb, binding methods
-are activated by the afb-daemon attached to the application or service.</p>
-
-<p>At exit time, no special action is enforced by afb-daemon. When a specific actions is required at afb-daemon stop,
-developers should use ‘atexit/on_exit’ during binding initialisation sequence to register a custom exit function.</p>
-
-<h3 id="binding-contend">Binding Contend</h3>
-
-<p>Afb-daemon’s binding register two classes of objects: names and functions.</p>
-
-<p>Bindings declare categories of names:</p>
-<ul>
-  <li>A unique binding name to access all API expose by this binding,</li>
-  <li>One name for each methods/verbs provided by this binding.</li>
-</ul>
-
-<p>Bindings declare two categories of functions:</p>
-<ul>
-  <li>function use for the initialisation</li>
-  <li>functions implementing exposed API methods</li>
-</ul>
-
-<p>Afb-daemon parses URI requests to extract the API(binding name) and the VERB(method to activate).
-As an example, URI <strong>foo/bar</strong> translates to binding named <strong>foo</strong> and method named <strong>bar</strong>.
-To serve such a request, afb-daemon looks for an active binding named <strong>foo</strong> and then within this binding for a method named <strong>bar</strong>.
-When find afb-daemon calls corresponding method with attached parameter if any.</p>
-
-<p>Afb-daemon ignores letter case when parsing URI. Thus <strong>TicTacToe/Board</strong> and <strong>tictactoe/board</strong> are equivalent.</p>
-
-<h4 id="the-name-of-the-binding">The name of the binding</h4>
-
-<p>The name of a given binding is also known as the name
-of the API prefix that defines the binding.</p>
-
-<p>The name of a binding SHOULD be unique within a given afb-daemon instance.</p>
-
-<p>For example, when a client of afb-daemon calls a URI named <strong>foo/bar</strong>. Afb-daemon
-extracts the prefix <strong>foo</strong> and the suffix <strong>bar</strong>. <strong>foo</strong> must match a binding name and <strong>bar</strong> a VERB attached to some method.</p>
-
-<h4 id="names-of-methods">Names of methods</h4>
-
-<p>Each binding exposes a set of methods that can be called
-by the clients of a given afb-daemon.</p>
-
-<p>VERB’s name attached to a given binding (API) MUST be unique within a binding.</p>
-
-<p>Bindings static declaration link VERBS to corresponding methods. 
-When clients emit requests on a given API/VERB corresponding method is called by afb-daemon.</p>
-
-<h4 id="initialisation-function">Initialisation function</h4>
-
-<p>Binding’s initialisation function serves several purposes.</p>
-
-<ol>
-  <li>
-    <p>It allows afb-daemon to control binding version depending on initialisation function name.
-As today, the only supported initialisation function is <strong>afbBindingV1Register</strong>. This identifies
-version “one” of bindings.</p>
-  </li>
-  <li>
-    <p>It allows bindings to initialise itself.</p>
-  </li>
-  <li>
-    <p>It enables names declarations: descriptions, requirements and implementations of exposed API/VERB.</p>
-  </li>
-</ol>
-
-<h4 id="functions-instantiation-of-apiverbs">Functions instantiation of API/VERBs</h4>
-
-<p>When an API/VERB is called, afb-daemon constructs a request object. Then it 
-passes this request object to the implementation function corresponding to requested method, this
-within attached API binding.</p>
-
-<p>An implementation function receives a request object that
-is used to: get arguments of the request, send
-answer, store session data.</p>
-
-<p>A binding MUST set an answer to every received requests.</p>
-
-<p>Nevertheless it is not mandatory to set the answer
-before returning from API/VERB implementing function.
-This behaviour is important for asynchronous actions.</p>
-
-<p>API/VERB implementation that set an answer before returning are called <em>synchronous implementations</em>.
-Those that do not systematically set an answer before returning are called <em>asynchronous implementations</em>.</p>
-
-<p>Asynchronous implementations typically launch asynchronous actions. They record some context at
-request time and provide answer to the request only at completion of asynchronous actions.</p>
-
-<h2 id="the-tic-tac-toe-example">The Tic-Tac-Toe example</h2>
-
-<p>This part explains how to write an afb-binding.
-For the sake of being practical it uses many
-examples based on tic-tac-toe.
-This binding example is in <em>bindings/samples/tic-tac-toe.c</em>.</p>
-
-<p>This binding is named <strong><em>tictactoe</em></strong>.</p>
-
-<h2 id="dependencies-when-compiling">Dependencies when compiling</h2>
-
-<p>Afb-daemon provides a configuration file for <em>pkg-config</em>.
-Typing the command</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>pkg-config --cflags afb-daemon
-</code></pre>
+<?xml version="1.0" encoding="utf-8"?>
+<p>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd”&gt;</p>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 2.12.2, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 2.12.2 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="generator" content="gitweb/2.12.2 git/2.12.2" />
+<meta name="robots" content="index, nofollow" />
+<title>gerrit.automotivelinux Code Review - src/app-framework-binder.git/blob_plain - doc/afb-bindings-writing.md</title>
+<link rel="stylesheet" type="text/css" href="gitweb-default.css" />
+<link rel="stylesheet" type="text/css" href="gitweb-site.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/png" />
+</head>
+<body>
+<div>
+  <div style="background:url(/gerrit/static/LF_Collab_header_gray_stripe.png); width:100%; height:30px; background-repeat:repeat; overflow:hidden;"><img src="/gerrit/static/LF_Collab_header_gray.png" />
+  </div>
+  <div class="header">
+    <table style="width:100%; padding: 0px;">
+      <tr>
+        <td><a href="http://www.automotivelinux.org"><img src="/gerrit/static/logo_automotivelinux.png" /></a></td>
+        <td style="vertical-align:bottom; padding:10px 0px;">
+          <div class="horizontal">
+            <ul>
+              <li><a href="https://identity.linuxfoundation.org/">Account signup</a> | </li>
+              <li><a href="https://wiki.automotivelinux.org/">Wiki</a> | </li>
+              <li><a href="https://jira.automotivelinux.org/">Jira</a> | </li>
+              <li><a href="https://doors.automotivelinux.org/">Doors</a> | </li>
+              <li><a href="https://gerrit.automotivelinux.org/">Gerrit</a> | </li>
+              <li><a href="https://build.automotivelinux.org/">Jenkins</a> | </li>
+              <li><a href="https://lists.linuxfoundation.org/">Mailing lists</a> | </li>
+              <li><a href="https://ask.automotivelinux.org/">Forums (Askbot)</a> | </li>
+              <li><a href="/gerrit/static/signoffrules.txt">Sign-off Rules</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
-
-<p>Print flags use for compilation:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ pkg-config --cflags afb-daemon
--I/opt/local/include -I/usr/include/json-c 
-</code></pre>
+<div class="page_header">
+<a title="git homepage" href="http://git-scm.com/"><img class="logo" height="27" src="gitweb-logo.png" alt="git" width="72" /></a><a href="/gerrit/">Code Review</a> / <a href="/gerrit/gitweb?a=project_list;pf=src">src</a> / <a href="/gerrit/gitweb?p=src/app-framework-binder.git;a=summary">app-framework-binder.git</a> / blob_plain
 </div>
-
-<p>For linking, you should use</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ pkg-config --libs afb-daemon
--ljson-c
-</code></pre>
+<form method="get" action="/gerrit/gitweb" enctype="multipart/form-data"><div class="search">
+<input name="p" type="hidden" value="src/app-framework-binder.git" />
+<input name="a" type="hidden" value="search" />
+<input name="h" type="hidden" value="master" />
+<select name="st">
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/gerrit/gitweb?p=src/app-framework-binder.git;a=search_help">?</a> search:
+<input type="text" name="s" />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_body">
+<br /><br />
+404 - Cannot find file
+<br />
 </div>
-
-<p>Afb-daemon automatically includes dependency to json-c.
-This is activated through <strong>Requires</strong> keyword in pkg-config.
-While almost every binding replies on <strong>json-c</strong> this is not a must have dependency.</p>
-
-<p>Internally, afb-daemon relies on <strong>libsystemd</strong> for its event loop, as well 
-as for its binding to D-Bus.
-Bindings developers are encouraged to leverage <strong>libsystemd</strong> when possible.
-Nevertheless there is no hard dependency to <strong>libsystemd</strong> if ever
-you rather not use it, feel free to do so.</p>
-
-<blockquote>
-  <p>Afb-daemon binding are fully self contain. They do not enforce dependency on any libraries from the application framework.
-Afb-daemon dependencies requirer to run AGL bindings are given at runtime through pointers leveraging read-only
-memory feature.</p>
-</blockquote>
-
-<h2 id="header-files-to-include">Header files to include</h2>
-
-<p>Binding <em>tictactoe</em> has following includes:</p>
-
-<pre><code class="language-C">#define _GNU_SOURCE
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-#include &lt;json-c/json.h&gt;
-#include &lt;afb/afb-binding.h&gt;
-</code></pre>
-
-<p>Header <em>afb/afb-binding.h</em> is the only hard dependency, it includes all features
-that a binding MUST HAVE. Outside of includes used to support application logic,
-common external headers used within bindings are:</p>
-
-<ul>
-  <li><em>json-c/json.h</em>: should be include to handle json objects;</li>
-  <li><em>systemd/sd-event.h</em>: should be include to access event main loop;</li>
-  <li><em>systemd/sd-bus.h</em>: should be include for dbus connections.</li>
-</ul>
-
-<p>The <em>tictactoe</em> binding does not leverage systemd features, also only json.h
-is used on top of mandatory afb/afb-binding.h.</p>
-
-<p>When including <em>afb/afb-binding.h</em>, the macro <strong>_GNU_SOURCE</strong> MUST be
-defined.</p>
-
-<h2 id="choosing-names">Choosing names</h2>
-
-<p>Designers of bindings should define a unique name for every API binding
-as well as for methods VERBs. They should also define names for request
-arguments passed as name/value pair in URI.</p>
-
-<p>While forging names, designers should respect few rules to
-ensure that created names are valid and easy to use across platforms.</p>
-
-<p>All names and strings are UTF-8 encoded.</p>
-
-<h3 id="names-for-api-binding">Names for API (binding)</h3>
-
-<p>Binding API name are checked.
-All characters are authorised except:</p>
-
-<ul>
-  <li>the control characters (\u0000 .. \u001f)</li>
-  <li>the characters of the set { ‘ ‘, ‘”’, ‘#’, ‘%’, ‘&amp;’,
-‘'’, ‘/’, ‘?’, ‘`’, ‘\x7f’ }</li>
-</ul>
-
-<p>In other words the set of forbidden characters is
-{ \u0000..\u0020, \u0022, \u0023, \u0025..\u0027,
-  \u002f, \u003f, \u0060, \u007f }.</p>
-
-<p>Afb-daemon makes no distinction between lower case
-and upper case when searching for API/VERB.</p>
-
-<h3 id="names-for-methods">Names for methods</h3>
-
-<p>The names of methods VERBs are totally free and not checked.</p>
-
-<p>However, the validity rules for method’s VERB name are the
-same as for Binding API name except that the dot(.) character
-is forbidden.</p>
-
-<p>Afb-daemon makes no case distinction when searching for an API by name.</p>
-
-<h3 id="names-for-arguments">Names for arguments</h3>
-
-<p>Argument’s name are not restricted and can be everything you wish.</p>
-
-<blockquote>
-  <p>Warning arguments search is case sensitive and “index” and “Index”
-are not two different arguments.</p>
-</blockquote>
-
-<h3 id="forging-names-widely-available">Forging names widely available</h3>
-
-<p>The key names of javascript object can be almost
-anything using the arrayed notation:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>object[key] = value
-</code></pre>
+<div class="page_footer">
+<div class="page_footer_text">Application Framework binder daemon, maintained by iot.bzh team</div>
+<a class="rss_logo" title="history of doc/afb-bindings-writing.md RSS feed" href="/gerrit/gitweb?p=src/app-framework-binder.git;a=rss;f=doc/afb-bindings-writing.md">RSS</a>
+<a class="rss_logo" title="history of doc/afb-bindings-writing.md Atom feed" href="/gerrit/gitweb?p=src/app-framework-binder.git;a=atom;f=doc/afb-bindings-writing.md">Atom</a>
 </div>
-
-<p>Nevertheless this is not the case with javascript dot notation:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>object.key = value
-</code></pre>
+<div style="position:relative; overflow:hidden;">
+  <div style="background:url(/gerrit/static/LF_Collab_footer_gray_stripe.png); width:100%; height:80px; background-repeat:repeat;"><img src="/gerrit/static/LF_Collab_footer_gray.png" /></div>
+  <p style="position:absolute; top: 4px; left: 10px; font-family:helvetica,arial; font-size:11px; color:#393939; line-height: 16px; margin-top:12px;">&#169;2017 Automotive Grade Linux, a Linux Foundation Collaborative Project. All Rights Reserved.
+  Linux Foundation is a registered trademark of The Linux Foundation.<br />
+  Linux is a registered trademark of Linus Torvalds.
+  </p>
 </div>
-
-<p>Using the dot notation, the key must be a valid javascript
-identifier and dash(-) as well as few other reserved characters cannot be used.</p>
-
-<p>For this reason, we advise developper to chose name compatible with both javascript and HTML notation.</p>
-
-<p>It is a good practice, even for arguments not to rely on case sensitivity.
-This may reduce headache strength at debug time, especially with interpreted language like
-javascript that may not warn you that a variable was not defined.</p>
-
-<h2 id="writing-a-synchronous-method-implementation">Writing a synchronous method implementation</h2>
-
-<p>The method <strong>tictactoe/board</strong> is a synchronous implementation.
-Here is its listing:</p>
-
-<pre><code class="language-C">/*
- * get the board
- */
-static void board(struct afb_req req)
-{
-	struct board *board;
-	struct json_object *description;
-
-	/* retrieves the context for the session */
-	board = board_of_req(req);
-	INFO(afbitf, "method 'board' called for boardid %d", board-&gt;id);
-
-	/* describe the board */
-	description = describe(board);
-
-	/* send the board's description */
-	afb_req_success(req, description, NULL);
-}
-</code></pre>
-
-<p>This example shows many aspects of a synchronous
-method implementation. Let summarise it:</p>
-
-<ol>
-  <li>
-    <p>The function <strong>board_of_req</strong> retrieves the context stored
-for the binding: the board.</p>
-  </li>
-  <li>
-    <p>The macro <strong>INFO</strong> sends a message of kind <em>INFO</em>
-to the logging system. The global variable named <strong>afbitf</strong>
-used represents the interface to afb-daemon.</p>
-  </li>
-  <li>
-    <p>The function <strong>describe</strong> creates a json_object representing
-the board.</p>
-  </li>
-  <li>
-    <p>The function <strong>afb_req_success</strong> sends the reply, attaching to
-it the object <em>description</em>.</p>
-  </li>
-</ol>
-
-<h3 id="the-incoming-request">The incoming request</h3>
-
-<p>For any implementation, the request is received by a structure of type
-<strong>struct afb_req</strong>.</p>
-
-<blockquote>
-  <p>Note that this is a PLAIN structure, not a pointer to a structure.</p>
-</blockquote>
-
-<p>The definition of <strong>struct afb_req</strong> is:</p>
-
-<pre><code class="language-C">/*
- * Describes the request by bindings from afb-daemon
- */
-struct afb_req {
-	const struct afb_req_itf *itf;	/* the interfacing functions */
-	void *closure;			/* the closure for functions */
+<script type="text/javascript" src="gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
 };
-</code></pre>
-
-<p>It contains two pointers: first one <em>itf</em>, points to functions used
-to handle internal request. Second one <em>closure</em> point onto function closure.</p>
-
-<blockquote>
-  <p>The structure must never be used directly.
-Instead developer should use the intended functions provided
-by afb-daemon as described here after.</p>
-</blockquote>
-
-<p><em>req</em> is used to get arguments of the request, to send
-answer, to store session data.</p>
-
-<p>This object and its interface is defined and documented
-in the file names <em>afb/afb-req-itf.h</em></p>
-
-<p>The above example uses twice <em>req</em> object request.</p>
-
-<p>The first time, to retrieve the board attached to the session of the request.</p>
-
-<p>The second time, to send the reply: an object that describes the current board.</p>
-
-<h3 id="associating-a-client-context-to-a-session">Associating a client context to a session</h3>
-
-<p>When <em>tic-tac-toe</em> binding receives a request, it musts get
-the board describing the game associated to the session.</p>
-
-<p>For a binding, having data associated to a session is common.
-This data is called “binding context” for the session.
-Within <em>tic-tac-toe</em> binding the context is the board.</p>
-
-<p>Requests <em>afb_req</em> offer four functions for storing and retrieving session associated context.</p>
-
-<p>These functions are:</p>
-
-<ul>
-  <li>
-    <p><strong>afb_req_context_get</strong>:
-retrieves context data stored for current binding.</p>
-  </li>
-  <li>
-    <p><strong>afb_req_context_set</strong>:
-store context data of current binding.</p>
-  </li>
-  <li>
-    <p><strong>afb_req_context</strong>:
-if exist retrieves context data of current binding.
-if context does not yet exist, creates a new context and store it.</p>
-  </li>
-  <li>
-    <p><strong>afb_req_context_clear</strong>:
-reset the stored context data.</p>
-  </li>
-</ul>
-
-<p>The binding <em>tictactoe</em> use a convenient function to retrieve
-its context: the board. This function is <em>board_of_req</em>:</p>
-
-<pre><code class="language-C">/*
- * retrieves the board of the request
- */
-static inline struct board *board_of_req(struct afb_req req)
-{
-	return afb_req_context(req, (void*)get_new_board, (void*)release_board);
-}
-</code></pre>
-
-<p>The function <strong>afb_req_context</strong> ensures an existing context
-for the session of the request.
-Its two last arguments are functions to allocate and free context. 
-Note function type casts to avoid compilation warnings.</p>
-
-<p>Here is the definition of the function <strong>afb_req_context</strong></p>
-
-<pre><code class="language-C">/*
- * Gets the pointer stored by the binding for the session of 'req'.
- * If the stored pointer is NULL, indicating that no pointer was
- * already stored, afb_req_context creates a new context by calling
- * the function 'create_context' and stores it with the freeing function
- * 'free_context'.
- */
-static inline void *afb_req_context(struct afb_req req, void *(*create_context)(), void (*free_context)(void*))
-{
-	void *result = afb_req_context_get(req);
-	if (result == NULL) {
-		result = create_context();
-		afb_req_context_set(req, result, free_context);
-	}
-	return result;
-}
-</code></pre>
-
-<p>The second argument if the function that creates the context.
-For binding <em>tic-tac-toe</em> (function <strong>get_new_board</strong>).
-The function <strong>get_new_board</strong> creates a new board and set usage its count to 1.
-The boards are checking usage count to free resources when not used.</p>
-
-<p>The third argument is a function that frees context resources.
-For binding <em>tic-tac-toe</em> (function <strong>release_board</strong>).
-The function <strong>release_board</strong> decrease usage count of the board passed in argument.
-When usage count falls to zero, data board are freed.</p>
-
-<p>Definition of other functions dealing with contexts:</p>
-
-<pre><code class="language-C">/*
- * Gets the pointer stored by the binding for the session of 'req'.
- * When the binding has not yet recorded a pointer, NULL is returned.
- */
-void *afb_req_context_get(struct afb_req req);
-
-/*
- * Stores for the binding the pointer 'context' to the session of 'req'.
- * The function 'free_context' will be called when the session is closed
- * or if binding stores an other pointer.
- */
-void afb_req_context_set(struct afb_req req, void *context, void (*free_context)(void*));
-
-/*
- * Frees the pointer stored by the binding for the session of 'req'
- * and sets it to NULL.
- *
- * Shortcut for: afb_req_context_set(req, NULL, NULL)
- */
-static inline void afb_req_context_clear(struct afb_req req)
-{
-	afb_req_context_set(req, NULL, NULL);
-}
-</code></pre>
-
-<h3 id="sending-reply-to-a-request">Sending reply to a request</h3>
-
-<p>Two kinds of replies: successful or failure.</p>
-
-<blockquote>
-  <p>Sending a reply to a request MUST be done once and only once.</p>
-</blockquote>
-
-<p>It exists two functions for “success” replies: <strong>afb_req_success</strong> and <strong>afb_req_success_f</strong>.</p>
-
-<pre><code class="language-C">/*
- * Sends a reply of kind success to the request 'req'.
- * The status of the reply is automatically set to "success".
- * Its send the object 'obj' (can be NULL) with an
- * informationnal comment 'info (can also be NULL).
- *
- * For convenience, the function calls 'json_object_put' for 'obj'.
- * Thus, in the case where 'obj' should remain available after
- * the function returns, the function 'json_object_get' shall be used.
- */
-void afb_req_success(struct afb_req req, struct json_object *obj, const char *info);
-
-/*
- * Same as 'afb_req_success' but the 'info' is a formatting
- * string followed by arguments.
- *
- * For convenience, the function calls 'json_object_put' for 'obj'.
- * Thus, in the case where 'obj' should remain available after
- * the function returns, the function 'json_object_get' shall be used.
- */
-void afb_req_success_f(struct afb_req req, struct json_object *obj, const char *info, ...);
-</code></pre>
-
-<p>It exists two functions for “failure” replies: <strong>afb_req_fail</strong> and <strong>afb_req_fail_f</strong>.</p>
-
-<pre><code class="language-C">/*
- * Sends a reply of kind failure to the request 'req'.
- * The status of the reply is set to 'status' and an
- * informational comment 'info' (can also be NULL) can be added.
- *
- * Note that calling afb_req_fail("success", info) is equivalent
- * to call afb_req_success(NULL, info). Thus even if possible it
- * is strongly recommended to NEVER use "success" for status.
- *
- * For convenience, the function calls 'json_object_put' for 'obj'.
- * Thus, in the case where 'obj' should remain available after
- * the function returns, the function 'json_object_get' shall be used.
- */
-void afb_req_fail(struct afb_req req, const char *status, const char *info);
-
-/*
- * Same as 'afb_req_fail' but the 'info' is a formatting
- * string followed by arguments.
- *
- * For convenience, the function calls 'json_object_put' for 'obj'.
- * Thus, in the case where 'obj' should remain available after
- * the function returns, the function 'json_object_get' shall be used.
- */
-void afb_req_fail_f(struct afb_req req, const char *status, const char *info, ...);
-</code></pre>
-
-<blockquote>
-  <p>For convenience, these functions automatically call <strong>json_object_put</strong> to release <strong>obj</strong>.
-Because <strong>obj</strong> usage count is null after being passed to a reply function, it SHOULD not be used anymore.
-If exceptionally <strong>obj</strong> needs to remain usable after reply function then using <strong>json_object_get</strong> on <strong>obj</strong>
-to increase usage count and cancels the effect the <strong>json_object_put</strong> is possible.</p>
-</blockquote>
-
-<h2 id="getting-argument-of-invocation">Getting argument of invocation</h2>
-
-<p>Many methods expect arguments. Afb-daemon’s bindings
-retrieve arguments by name and not by position.</p>
-
-<p>Arguments are passed by requests through either HTTP
-or WebSockets.</p>
-
-<p>For example, the method <strong>join</strong> of binding <strong>tic-tac-toe</strong>
-expects one argument: the <em>boardid</em> to join. Here is an extract:</p>
-
-<pre><code class="language-C">/*
- * Join a board
- */
-static void join(struct afb_req req)
-{
-	struct board *board, *new_board;
-	const char *id;
-
-	/* retrieves the context for the session */
-	board = board_of_req(req);
-	INFO(afbitf, "method 'join' called for boardid %d", board-&gt;id);
-
-	/* retrieves the argument */
-	id = afb_req_value(req, "boardid");
-	if (id == NULL)
-		goto bad_request;
-	...
-</code></pre>
-
-<p>The function <strong>afb_req_value</strong> searches in the request <em>req</em>
-for argument name passed in the second argument. When argument name
-is not passed, <strong>afb_req_value</strong> returns NULL.</p>
-
-<blockquote>
-  <p>The search is case sensitive and <em>boardid</em> is not equivalent to <em>BoardId</em>.
-Nevertheless having argument names that only differ by name case is not a good idea.</p>
-</blockquote>
-
-<h3 id="basic-functions-for-querying-arguments">Basic functions for querying arguments</h3>
-
-<p>The function <strong>afb_req_value</strong> is defined here after:</p>
-
-<pre><code class="language-C">/*
- * Gets from the request 'req' the string value of the argument of 'name'.
- * Returns NULL if when there is no argument of 'name'.
- * Returns the value of the argument of 'name' otherwise.
- *
- * Shortcut for: afb_req_get(req, name).value
- */
-static inline const char *afb_req_value(struct afb_req req, const char *name)
-{
-	return afb_req_get(req, name).value;
-}
-</code></pre>
-
-<p>It is defined as a shortcut to call the function <strong>afb_req_get</strong>.
-That function is defined here after:</p>
-
-<pre><code class="language-C">/*
- * Gets from the request 'req' the argument of 'name'.
- * Returns a PLAIN structure of type 'struct afb_arg'.
- * When the argument of 'name' is not found, all fields of result are set to NULL.
- * When the argument of 'name' is found, the fields are filled,
- * in particular, the field 'result.name' is set to 'name'.
- *
- * There is a special name value: the empty string.
- * The argument of name "" is defined only if the request was made using
- * an HTTP POST of Content-Type "application/json". In that case, the
- * argument of name "" receives the value of the body of the HTTP request.
- */
-struct afb_arg afb_req_get(struct afb_req req, const char *name);
-</code></pre>
-
-<p>That function takes 2 parameters: the request and the name
-of the argument to retrieve. It returns a PLAIN structure of
-type <strong>struct afb_arg</strong>.</p>
-
-<p>There is a special name that is defined when the request is
-of type HTTP/POST with a Content-Type being application/json.
-This name is <strong>”“</strong> (the empty string). In that case, the value
-of this argument of empty name is the string received as a body
-of the post and is supposed to be a JSON string.</p>
-
-<p>The definition of <strong>struct afb_arg</strong> is:</p>
-
-<pre><code class="language-C">/*
- * Describes an argument (or parameter) of a request
- */
-struct afb_arg {
-	const char *name;	/* name of the argument or NULL if invalid */
-	const char *value;	/* string representation of the value of the argument */
-				/* original filename of the argument if path != NULL */
-	const char *path;	/* if not NULL, path of the received file for the argument */
-				/* when the request is finalized this file is removed */
-};
-</code></pre>
-
-<p>The structure returns the data arguments that are known for the
-request. This data include a field named <strong>path</strong>. This <strong>path</strong>
-can be accessed using the function <strong>afb_req_path</strong> defined here after:</p>
-
-<pre><code class="language-C">/*
- * Gets from the request 'req' the path for file attached to the argument of 'name'.
- * Returns NULL if when there is no argument of 'name' or when there is no file.
- * Returns the path of the argument of 'name' otherwise.
- *
- * Shortcut for: afb_req_get(req, name).path
- */
-static inline const char *afb_req_path(struct afb_req req, const char *name)
-{
-	return afb_req_get(req, name).path;
-}
-</code></pre>
-
-<p>The path is only defined for HTTP/POST requests that send file.</p>
-
-<h3 id="arguments-for-received-files">Arguments for received files</h3>
-
-<p>As it is explained above, clients can send files using HTTP/POST requests.</p>
-
-<p>Received files are attached to “file” argument name. For example, the
-following HTTP fragment (from test/sample-post.html)
-will send an HTTP/POST request to the method
-<strong>post/upload-image</strong> with 2 arguments named <em>file</em> and
-<em>hidden</em>.</p>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;h2&gt;</span>Sample Post File<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;form</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"file"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"hidden"</span> <span class="na">value=</span><span class="s">"bollobollo"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;br&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">formmethod=</span><span class="s">"POST"</span> <span class="na">formaction=</span><span class="s">"api/post/upload-image"</span><span class="nt">&gt;</span>Post File<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-</code></pre>
-</div>
-
-<p>Argument named <strong>file</strong> should have both its value and path defined.</p>
-
-<p>The value is the name of the file as it was set by the HTTP client.
-Generally it is the filename on client side.</p>
-
-<p>The path is the effective path of saved file on the temporary local storage
-area of the application. This is a randomly generated and unique filename. 
-It is not linked with the original filename as used on client side.</p>
-
-<p>After success the binding can use the uploaded file directly from local storage path with no restriction:
-read, write, remove, copy, rename…
-Nevertheless when request reply is set and query terminated, the uploaded temporary file at
-path is destroyed.</p>
-
-<h3 id="arguments-as-a-json-object">Arguments as a JSON object</h3>
-
-<p>Bindings may also request every arguments of a given call as one single object.
-This feature is provided by the function <strong>afb_req_json</strong> defined here after:</p>
-
-<pre><code class="language-C">/*
- * Gets from the request 'req' the json object hashing the arguments.
- * The returned object must not be released using 'json_object_put'.
- */
-struct json_object *afb_req_json(struct afb_req req);
-</code></pre>
-
-<p>It returns a json object. This object depends on how the request was built:</p>
-
-<ul>
-  <li>
-    <p>For HTTP requests, this json object uses key names mapped on argument name. 
-Values are either string for common arguments or object ie: { “file”: “…”, “path”: “…” }</p>
-  </li>
-  <li>
-    <p>For WebSockets requests, returned directly the object as provided by the client.</p>
-  </li>
-</ul>
-
-<blockquote>
-  <p>In fact, for Websockets requests, the function <strong>afb_req_value</strong>
-can be seen as a shortcut to
-<strong><em>json_object_get_string(json_object_object_get(afb_req_json(req), name))</em></strong></p>
-</blockquote>
-
-<h2 id="initialisation-of-the-binding-and-declaration-of-methods">Initialisation of the binding and declaration of methods</h2>
-
-<p>To be active, binding’s methods should be declared to
-afb-daemon. Furthermore, the binding itself must be recorded.</p>
-
-<p>The registration mechanism is very basic: when afb-need starts,
-it loads all bindings listed in: command line or configuration file.</p>
-
-<p>Loading a binding follows the following steps:</p>
-
-<ol>
-  <li>
-    <p>Afb-daemon loads the binding with <em>dlopen</em>.</p>
-  </li>
-  <li>
-    <p>Afb-daemon searches for a symbol named <strong>afbBindingV1Register</strong> using <em>dlsym</em>.
-This symbol is assumed to be the exported initialisation function of the binding.</p>
-  </li>
-  <li>
-    <p>Afb-daemon builds an interface object for the binding.</p>
-  </li>
-  <li>
-    <p>Afb-daemon calls the found function <strong>afbBindingV1Register</strong> with interface pointer
-as parameter.</p>
-  </li>
-  <li>
-    <p>Function <strong>afbBindingV1Register</strong> setups the binding and initialises it.</p>
-  </li>
-  <li>
-    <p>Function <strong>afbBindingV1Register</strong> returns the pointer to a structure
-describing the binding: version, name (prefix or API name), and list of methods.</p>
-  </li>
-  <li>
-    <p>Afb-daemon checks that the returned version and name can be managed.
-If so, binding and its methods are register to become usable as soon as
-afb-daemon initialisation is finished.</p>
-  </li>
-</ol>
-
-<p>Here after the code used for <strong>afbBindingV1Register</strong> from binding <em>tic-tac-toe</em>:</p>
-
-<pre><code class="language-C">/*
- * activation function for registering the binding called by afb-daemon
- */
-const struct afb_binding *afbBindingV1Register(const struct afb_binding_interface *itf)
-{
-   afbitf = itf;         // records the interface for accessing afb-daemon
-   return &amp;binding_description;  // returns the description of the binding
-}
-</code></pre>
-
-<p>It is a very minimal initialisation function because <em>tic-tac-toe</em> binding doesn’t
-have any application related initialisation step. It merely record daemon’s interface
-and returns its description.</p>
-
-<p>The variable <strong>afbitf</strong> is a binding global variable. It keeps the
-interface to afb-daemon that should be used for logging and pushing events.
-Here is its declaration:</p>
-
-<pre><code class="language-C">/*
- * the interface to afb-daemon
- */
-const struct afb_binding_interface *afbitf;
-</code></pre>
-
-<p>The description of the binding is defined here after.</p>
-
-<pre><code class="language-C">/*
- * array of the methods exported to afb-daemon
- */
-static const struct afb_verb_desc_v1 binding_methods[] = {
-   /* VERB'S NAME     SESSION MANAGEMENT          FUNCTION TO CALL  SHORT DESCRIPTION */
-   { .name= "new",   .session= AFB_SESSION_NONE, .callback= new,   .info= "Starts a new game" },
-   { .name= "play",  .session= AFB_SESSION_NONE, .callback= play,  .info= "Asks the server to play" },
-   { .name= "move",  .session= AFB_SESSION_NONE, .callback= move,  .info= "Tells the client move" },
-   { .name= "board", .session= AFB_SESSION_NONE, .callback= board, .info= "Get the current board" },
-   { .name= "level", .session= AFB_SESSION_NONE, .callback= level, .info= "Set the server level" },
-   { .name= "join",  .session= AFB_SESSION_CHECK,.callback= join,  .info= "Join a board" },
-   { .name= "undo",  .session= AFB_SESSION_NONE, .callback= undo,  .info= "Undo the last move" },
-   { .name= "wait",  .session= AFB_SESSION_NONE, .callback= wait,  .info= "Wait for a change" },
-   { .name= NULL } /* marker for end of the array */
-};
-
-/*
- * description of the binding for afb-daemon
- */
-static const struct afb_binding binding_description =
-{
-   /* description conforms to VERSION 1 */
-   .type= AFB_BINDING_VERSION_1,
-   .v1= {				/* fills the v1 field of the union when AFB_BINDING_VERSION_1 */
-      .prefix= "tictactoe",		/* the API name (or binding name or prefix) */
-      .info= "Sample tac-tac-toe game",	/* short description of of the binding */
-      .methods = binding_methods		/* the array describing the methods of the API */
-   }
-};
-</code></pre>
-
-<p>The structure <strong>binding_description</strong> describes the binding.
-It declares the type and version of the binding, its name, a short description
-and its methods list.</p>
-
-<p>The list of methods is an array of structures describing the methods and terminated by a NULL marker.</p>
-
-<p>In version one of afb-damon binding, a method description contains 4 fields:</p>
-
-<ul>
-  <li>
-    <p>the name of the method,</p>
-  </li>
-  <li>
-    <p>the session management flags,</p>
-  </li>
-  <li>
-    <p>the implementation function to be call for the method,</p>
-  </li>
-  <li>
-    <p>a short description.</p>
-  </li>
-</ul>
-
-<p>The structure describing methods is defined as follows:</p>
-
-<pre><code class="language-C">/*
- * Description of one method of the API provided by the binding
- * This enumeration is valid for bindings of type 1
- */
-struct afb_verb_desc_v1
-{
-       const char *name;                       /* name of the method */
-       enum AFB_session_v1 session;            /* authorisation and session requirements of the method */
-       void (*callback)(struct afb_req req);   /* callback function implementing the method */
-       const char *info;                       /* textual description of the method */
-};
-</code></pre>
-
-<p>For technical reasons, the enumeration <strong>enum AFB_session_v1</strong> is not exactly an
-enumeration but the wrapper of constant definitions that can be mixed using bitwise or
-(the C operator |).</p>
-
-<p>The constants that can bit mixed are:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Constant name</th>
-      <th>Meaning</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>AFB_SESSION_CREATE</strong></td>
-      <td>Equals to AFB_SESSION_LOA_EQ_0</td>
-      <td>AFB_SESSION_RENEW</td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_CLOSE</strong></td>
-      <td>Closes the session after the reply and set the LOA to 0</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_RENEW</strong></td>
-      <td>Refreshes the token of authentification</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_CHECK</strong></td>
-      <td>Just requires the token authentification</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_LE_0</strong></td>
-      <td>Requires the current LOA to be lesser then or equal to 0</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_LE_1</strong></td>
-      <td>Requires the current LOA to be lesser then or equal to 1</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_LE_2</strong></td>
-      <td>Requires the current LOA to be lesser then or equal to 2</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_LE_3</strong></td>
-      <td>Requires the current LOA to be lesser then or equal to 3</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_GE_0</strong></td>
-      <td>Requires the current LOA to be greater then or equal to 0</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_GE_1</strong></td>
-      <td>Requires the current LOA to be greater then or equal to 1</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_GE_2</strong></td>
-      <td>Requires the current LOA to be greater then or equal to 2</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_GE_3</strong></td>
-      <td>Requires the current LOA to be greater then or equal to 3</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_EQ_0</strong></td>
-      <td>Requires the current LOA to be equal to 0</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_EQ_1</strong></td>
-      <td>Requires the current LOA to be equal to 1</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_EQ_2</strong></td>
-      <td>Requires the current LOA to be equal to 2</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>AFB_SESSION_LOA_EQ_3</strong></td>
-      <td>Requires the current LOA to be equal to 3</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>If any of this flag is set, afb-daemon requires an authentication token
-as if <strong>AFB_SESSION_CHECK</strong> flag was also set.</p>
-
-<p>The special value <strong>AFB_SESSION_NONE</strong> is zero and can be used to bypass token check.</p>
-
-<blockquote>
-  <p>Note that <strong>AFB_SESSION_CREATE</strong> and <strong>AFB_SESSION_CLOSE</strong> might be removed in later versions.</p>
-</blockquote>
-
-<h2 id="sending-messages-to-the-log-system">Sending messages to the log system</h2>
-
-<p>Afb-daemon provides 4 levels of verbosity and 5 methods for logging messages.</p>
-
-<p>The verbosity is managed. Options allow the change the verbosity of afb-daemon
-and the verbosity of the bindings can be set binding by binding.</p>
-
-<p>The methods for logging messages are defined as macros that test the
-verbosity level and that call the real logging function only if the
-message must be output. This avoid evaluation of arguments of the
-formatting messages if the message must not be output.</p>
-
-<h3 id="verbs-for-logging-messages">Verbs for logging messages</h3>
-
-<p>The 5 logging methods are:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Macro</th>
-      <th style="text-align: center">Verbosity</th>
-      <th>Meaning</th>
-      <th style="text-align: center">syslog level</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ERROR</td>
-      <td style="text-align: center">0</td>
-      <td>Error conditions</td>
-      <td style="text-align: center">3</td>
-    </tr>
-    <tr>
-      <td>WARNING</td>
-      <td style="text-align: center">1</td>
-      <td>Warning conditions</td>
-      <td style="text-align: center">4</td>
-    </tr>
-    <tr>
-      <td>NOTICE</td>
-      <td style="text-align: center">1</td>
-      <td>Normal but significant condition</td>
-      <td style="text-align: center">5</td>
-    </tr>
-    <tr>
-      <td>INFO</td>
-      <td style="text-align: center">2</td>
-      <td>Informational</td>
-      <td style="text-align: center">6</td>
-    </tr>
-    <tr>
-      <td>DEBUG</td>
-      <td style="text-align: center">3</td>
-      <td>Debug-level messages</td>
-      <td style="text-align: center">7</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>You can note that the 2 methods <strong>WARNING</strong> and <strong>INFO</strong> have the same level
-of verbosity. But they don’t have the same <em>syslog level</em>. It means that
-they are output with a different level on the logging system.</p>
-
-<p>All of these methods have the same signature:</p>
-
-<pre><code class="language-C">void ERROR(const struct afb_binding_interface *afbitf, const char *message, ...);
-</code></pre>
-
-<p>The first argument <strong>afbitf</strong> is the interface to afb daemon that the
-binding received at initialisation time when <strong>afbBindingV1Register</strong> is called.</p>
-
-<p>The second argument <strong>message</strong> is a formatting string compatible with printf/sprintf.</p>
-
-<p>The remaining arguments are arguments of the formating message like with printf.</p>
-
-<h3 id="managing-verbosity">Managing verbosity</h3>
-
-<p>Depending on the level of verbosity, the messages are output or not.
-The following table explains what messages will be output depending
-ont the verbosity level.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Level of verbosity</th>
-      <th>Outputed macro</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">0</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">1</td>
-      <td>ERROR + WARNING + NOTICE</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">2</td>
-      <td>ERROR + WARNING + NOTICE + INFO</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">3</td>
-      <td>ERROR + WARNING + NOTICE + INFO + DEBUG</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="output-format-and-destination">Output format and destination</h3>
-
-<p>The syslog level is used for forging a prefix to the message.
-The prefixes are:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">syslog level</th>
-      <th>prefix</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">0</td>
-      <td>&lt;0&gt; EMERGENCY</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">1</td>
-      <td>&lt;1&gt; ALERT</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">2</td>
-      <td>&lt;2&gt; CRITICAL</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">3</td>
-      <td>&lt;3&gt; ERROR</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">4</td>
-      <td>&lt;4&gt; WARNING</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">5</td>
-      <td>&lt;5&gt; NOTICE</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">6</td>
-      <td>&lt;6&gt; INFO</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">7</td>
-      <td>&lt;7&gt; DEBUG</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The message is pushed to standard error.
-The final destination of the message depends on how systemd service
-was configured through its variable <strong>StandardError</strong>. It can be
-journal, syslog or kmsg. (See man sd-daemon).</p>
-
-<h2 id="sending-events">Sending events</h2>
-
-<p>Since version 0.5, bindings can broadcast events to any potential listener.
-As today only unattended even are supported. Targeted events are expected for next
-coming version.</p>
-
-<p>The binding <em>tic-tac-toe</em> broadcasts events when the board changes.
-This is done in the function <strong>changed</strong>:</p>
-
-<pre><code class="language-C">/*
- * signals a change of the board
- */
-static void changed(struct board *board, const char *reason)
-{
-	...
-	struct json_object *description;
-
-	/* get the description */
-	description = describe(board);
-
-	...
-
-	afb_daemon_broadcast_event(afbitf-&gt;daemon, reason, description);
-}
-</code></pre>
-
-<p>The description of the changed board is pushed via the daemon interface.</p>
-
-<p>Within binding <em>tic-tac-toe</em>, <em>reason</em> indicates the origin of
-the change. In function <strong>afb_daemon_broadcast_event</strong> the second
-parameter is the name of broadcasted event. The third argument is the
-object that is transmitted with the event.</p>
-
-<p>Function <strong>afb_daemon_broadcast_event</strong> is defined here after:</p>
-
-<pre><code class="language-C">/*
- * Broadcasts widely the event of 'name' with the data 'object'.
- * 'object' can be NULL.
- * 'daemon' MUST be the daemon given in interface when activating the binding.
- *
- * For convenience, the function calls 'json_object_put' for 'object'.
- * Thus, in the case where 'object' should remain available after
- * the function returns, the function 'json_object_get' shall be used.
- */
-void afb_daemon_broadcast_event(struct afb_daemon daemon, const char *name, struct json_object *object);
-</code></pre>
-
-<blockquote>
-  <p>Be aware, as with reply functions <strong>object</strong> is automatically released using
-<strong>json_object_put</strong> when using this function. Call <strong>json_object_get</strong> before
-calling <strong>afb_daemon_broadcast_event</strong> to keep <strong>object</strong> available
-after function returns.</p>
-</blockquote>
-
-<p>Event name received by listeners is prefixed with binding name.
-So when a change occurs after a move, the reason is <strong>move</strong> and every clients
-receive an event <strong>tictactoe/move</strong>.</p>
-
-<blockquote>
-  <p>Note that nothing is said about case sensitivity of event names.
-However, the event is always prefixed with the name that the binding
-declared, with the same case, followed with a slash /.
-Thus it is safe to compare event using a case sensitive comparison.</p>
-</blockquote>
-
-<h2 id="writing-an-asynchronous-method-implementation">Writing an asynchronous method implementation</h2>
-
-<p>The <em>tic-tac-toe</em> example allows two clients or more to share the same board.
-This is implemented by the method <strong>join</strong> that illustrated partly how to
-retrieve arguments.</p>
-
-<p>When two or more clients are sharing a same board, one of them can wait
-until the state of the board changes, but this could also be implemented using
-events because an even is generated each time the board changes.</p>
-
-<p>In this case, the reply to the wait is sent only when the board changes.
-See the diagram below:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>CLIENT A       CLIENT B         TIC-TAC-TOE
-   |              |                  |
-   +--------------|-----------------&gt;| wait . . . . . . . .
-   |              |                  |                     .
-   :              :                  :                      .
-   :              :                  :                      .
-   |              |                  |                      .
-   |              +-----------------&gt;| move . . .           .
-   |              |                  |          V           .
-   |              |&lt;-----------------+ success of move      .
-   |              |                  |                    .
-   |&lt;-------------|------------------+ success of wait  &lt;
-</code></pre>
-</div>
-
-<p>Here, this is an invocation of the binding by an other client that
-unblock the suspended <em>wait</em> call.
-Nevertheless in most case this should be a timer, a hardware event, a sync with
-a concurrent process or thread, …</p>
-
-<p>Common case of an asynchronous implementation.</p>
-
-<p>Here is the listing of the function <strong>wait</strong>:</p>
-
-<pre><code class="language-C">static void wait(struct afb_req req)
-{
-	struct board *board;
-	struct waiter *waiter;
-
-	/* retrieves the context for the session */
-	board = board_of_req(req);
-	INFO(afbitf, "method 'wait' called for boardid %d", board-&gt;id);
-
-	/* creates the waiter and enqueues it */
-	waiter = calloc(1, sizeof *waiter);
-	waiter-&gt;req = req;
-	waiter-&gt;next = board-&gt;waiters;
-	afb_req_addref(req);
-	board-&gt;waiters = waiter;
-}
-</code></pre>
-
-<p>After retrieving the board, the function adds a new waiter to
-waiters list and returns without setting a reply.</p>
-
-<p>Before returning, it increases <strong>req</strong> request’s reference count using <strong>afb_req_addref</strong> function.</p>
-
-<blockquote>
-  <p>When a method returns without setting a reply,
-it <strong>MUST</strong> increment request’s reference count
-using <strong>afb_req_addref</strong>. If unpredictable behaviour may pop up.</p>
-</blockquote>
-
-<p>Later, when a board changes, it calls <em>tic-tac-toe</em> <strong>changed</strong> function
-with reason of change in parameter.</p>
-
-<p>Here is the full listing of the function <strong>changed</strong>:</p>
-
-<pre><code class="language-C">/*
- * signals a change of the board
- */
-static void changed(struct board *board, const char *reason)
-{
-	struct waiter *waiter, *next;
-	struct json_object *description;
-
-	/* get the description */
-	description = describe(board);
-
-	waiter = board-&gt;waiters;
-	board-&gt;waiters = NULL;
-	while (waiter != NULL) {
-		next = waiter-&gt;next;
-		afb_req_success(waiter-&gt;req, json_object_get(description), reason);
-		afb_req_unref(waiter-&gt;req);
-		free(waiter);
-		waiter = next;
-	}
-
-	afb_event_sender_push(afb_daemon_get_event_sender(afbitf-&gt;daemon), reason, description);
-}
-</code></pre>
-
-<p>The list of waiters is walked and a reply is sent to each waiter.
-After sending the reply, the reference count of the request
-is decremented using <strong>afb_req_unref</strong> to allow resources to be freed.</p>
-
-<blockquote>
-  <p>The reference count <strong>MUST</strong> be decremented using <strong>afb_req_unref</strong> to free
-resources and avoid memory leaks.
-This usage count decrement should happen <strong>AFTER</strong> setting reply or 
-bad things may happen.</p>
-</blockquote>
-
-<h2 id="how-to-build-a-binding">How to build a binding</h2>
-
-<p>Afb-daemon provides a <em>pkg-config</em> configuration file that can be
-queried by providing <strong>afb-daemon</strong> in command line arguments.
-This configuration file provides data that should be used
-for bindings compilation. Examples:</p>
-
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>pkg-config --cflags afb-daemon
-<span class="gp">$ </span>pkg-config --libs afb-daemon
-</code></pre>
-</div>
-
-<h3 id="example-for-cmake-meta-build-system">Example for cmake meta build system</h3>
-
-<p>This example is the extract for building the binding <em>afm-main</em> using <em>CMAKE</em>.</p>
-
-<div class="language-cmake highlighter-rouge"><pre class="highlight"><code><span class="nf">pkg_check_modules</span><span class="p">(</span>afb afb-daemon<span class="p">)</span>
-<span class="nb">if</span><span class="p">(</span>afb_FOUND<span class="p">)</span>
-	<span class="nb">message</span><span class="p">(</span>STATUS <span class="s2">"Creation afm-main-binding for AFB-DAEMON"</span><span class="p">)</span>
-	<span class="nb">add_library</span><span class="p">(</span>afm-main-binding MODULE afm-main-binding.c<span class="p">)</span>
-	<span class="nb">target_compile_options</span><span class="p">(</span>afm-main-binding PRIVATE <span class="si">${</span><span class="nv">afb_CFLAGS</span><span class="si">}</span><span class="p">)</span>
-	<span class="nb">target_include_directories</span><span class="p">(</span>afm-main-binding PRIVATE <span class="si">${</span><span class="nv">afb_INCLUDE_DIRS</span><span class="si">}</span><span class="p">)</span>
-	<span class="nb">target_link_libraries</span><span class="p">(</span>afm-main-binding utils <span class="si">${</span><span class="nv">afb_LIBRARIES</span><span class="si">}</span><span class="p">)</span>
-	<span class="nb">set_target_properties</span><span class="p">(</span>afm-main-binding PROPERTIES
-		PREFIX <span class="s2">""</span>
-		LINK_FLAGS <span class="s2">"-Wl,--version-script=</span><span class="si">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="si">}</span><span class="s2">/afm-main-binding.export-map"</span>
-	<span class="p">)</span>
-	<span class="nb">install</span><span class="p">(</span>TARGETS afm-main-binding LIBRARY DESTINATION <span class="si">${</span><span class="nv">binding_dir</span><span class="si">}</span><span class="p">)</span>
-<span class="nb">else</span><span class="p">()</span>
-	<span class="nb">message</span><span class="p">(</span>STATUS <span class="s2">"Not creating the binding for AFB-DAEMON"</span><span class="p">)</span>
-<span class="nb">endif</span><span class="p">()</span>
-</code></pre>
-</div>
-
-<p>Let now describe some of these lines.</p>
-
-<div class="language-cmake highlighter-rouge"><pre class="highlight"><code><span class="nf">pkg_check_modules</span><span class="p">(</span>afb afb-daemon<span class="p">)</span>
-</code></pre>
-</div>
-
-<p>This first lines searches to the <em>pkg-config</em> configuration file for
-<strong>afb-daemon</strong>. Resulting data are stored in the following variables:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Variable</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>afb_FOUND</td>
-      <td>Set to 1 if afb-daemon binding development files exist</td>
-    </tr>
-    <tr>
-      <td>afb_LIBRARIES</td>
-      <td>Only the libraries (w/o the ‘-l’) for compiling afb-daemon bindings</td>
-    </tr>
-    <tr>
-      <td>afb_LIBRARY_DIRS</td>
-      <td>The paths of the libraries (w/o the ‘-L’) for compiling afb-daemon bindings</td>
-    </tr>
-    <tr>
-      <td>afb_LDFLAGS</td>
-      <td>All required linker flags for compiling afb-daemon bindings</td>
-    </tr>
-    <tr>
-      <td>afb_INCLUDE_DIRS</td>
-      <td>The ‘-I’ preprocessor flags (w/o the ‘-I’) for compiling afb-daemon bindings</td>
-    </tr>
-    <tr>
-      <td>afb_CFLAGS</td>
-      <td>All required cflags for compiling afb-daemon bindings</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>If development files are found, the binding can be added to the set of
-target to build.</p>
-
-<div class="language-cmake highlighter-rouge"><pre class="highlight"><code><span class="nb">add_library</span><span class="p">(</span>afm-main-binding MODULE afm-main-binding.c<span class="p">)</span>
-</code></pre>
-</div>
-
-<p>This line asks to create a shared library having a single
-source file named afm-main-binding.c to be compiled.
-The default name of the created shared object is
-<strong>libafm-main-binding.so</strong>.</p>
-
-<div class="language-cmake highlighter-rouge"><pre class="highlight"><code><span class="nb">set_target_properties</span><span class="p">(</span>afm-main-binding PROPERTIES
-	PREFIX <span class="s2">""</span>
-	LINK_FLAGS <span class="s2">"-Wl,--version-script=</span><span class="si">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="si">}</span><span class="s2">/afm-main-binding.export-map"</span>
-<span class="p">)</span>
-</code></pre>
-</div>
-
-<p>This lines are doing two things:</p>
-
-<ol>
-  <li>
-    <p>It renames the built library from <strong>libafm-main-binding.so</strong> to <strong>afm-main-binding.so</strong>
-by removing the implicitly added prefix <em>lib</em>. This step is not mandatory
-because afb-daemon doesn’t check names of files at load time.
-The only filename convention used by afb-daemon relates to <strong>.so</strong> termination.
-*.so pattern is used when afb-daemon automatically discovers binding from a directory hierarchy.</p>
-  </li>
-  <li>
-    <p>It applies a version script at link time to only export the reserved name
-<strong>afbBindingV1Register</strong> for registration entry point. By default, when building 
-a shared library linker exports all the public symbols (C functions that are not <strong>static</strong>).</p>
-  </li>
-</ol>
-
-<p>Next line are:</p>
-
-<div class="language-cmake highlighter-rouge"><pre class="highlight"><code><span class="nb">target_include_directories</span><span class="p">(</span>afm-main-binding PRIVATE <span class="si">${</span><span class="nv">afb_INCLUDE_DIRS</span><span class="si">}</span><span class="p">)</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span>afm-main-binding utils <span class="si">${</span><span class="nv">afb_LIBRARIES</span><span class="si">}</span><span class="p">)</span>
-</code></pre>
-</div>
-
-<p>As you can see it uses the variables computed by <strong><em>pkg_check_modules(afb afb-daemon)</em></strong>
-to configure the compiler and the linker.</p>
-
-<h3 id="exporting-the-function-afbbindingv1register">Exporting the function afbBindingV1Register</h3>
-
-<p>The function <strong>afbBindingV1Register</strong> MUST be exported. This can be achieved
-using a version script at link time. Here after is a version script used for
-<em>tic-tac-toe</em> (bindings/samples/export.map).</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="err">global:</span><span class="w"> </span><span class="err">afbBindingV1Register;</span><span class="w"> </span><span class="err">local:</span><span class="w"> </span><span class="err">*;</span><span class="w"> </span><span class="p">}</span><span class="err">;</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>This sample <a href="https://sourceware.org/binutils/docs-2.26/ld/VERSION.html#VERSION">version script</a>
-exports as global the symbol <em>afbBindingV1Register</em> and hides any
-other symbols.</p>
-
-<p>This version script is added to the link options using the
-option <strong>–version-script=export.map</strong> is given directly to the
-linker or using the option <strong>-Wl,–version-script=export.map</strong>
-when the option is given to the C compiler.</p>
-
-<h3 id="building-within-yocto">Building within yocto</h3>
-
-<p>Adding a dependency to afb-daemon is enough. See below:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>DEPENDS += " afb-daemon "
-</code></pre>
-</div>
-
+</script>
+</body>
+</html>
 
 
 
@@ -2315,7 +961,7 @@ when the option is given to the C compiler.</p>
         <h1>Contribute</h1>
         <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
         <p>Report bugs, improve the docs, or contribute to the code.</p>
-        <a href="/docs-agl//contribute" class="btn btn-lg btn-primary">
+        <a href="/contribute" class="btn btn-lg btn-primary">
             Learn More
         </a>
         <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
@@ -2332,7 +978,7 @@ when the option is given to the C compiler.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2016-12-01 23:48:54 +0100</small>
+		<small class="stats">Page rendered at:  2017-06-22 00:05:56 +0000</small>
 		
 		<br/><small class="stats"><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;a=blob_plain;f=doc/afb-bindings-writing.md;hb=master">Link to source document</small>
 		
@@ -2346,10 +992,10 @@ when the option is given to the C compiler.</p>
     </div>
 </div>
 
-<script defer type="text/javascript" src="/docs-agl//static/js/lib/toc.min.js"></script>
-<script defer type="text/javascript" src="/docs-agl//static/js/docs.js"></script>
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
 
-    <script defer type="text/javascript" src="/docs-agl//static/js/twitter.js"></script>
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
     
 
 
@@ -2357,23 +1003,13 @@ when the option is given to the C compiler.</p>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: '40ffa808affb354450e0c0ddabe94aa9',
-        indexName: 'iot',
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
         inputSelector: '#header-search-field',
     });
 </script>
 
             
-    
-        <script defer src="/docs-agl//static/js/lib/raphael-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/underscore-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/sequence-diagram-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/flowchart-latest.js"></script>
-    
-        <script defer src="/docs-agl//static/js/process-uml.js"></script>
     
 
 </body>

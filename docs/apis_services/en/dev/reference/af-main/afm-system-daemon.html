@@ -17,18 +17,18 @@
         
     </title>
 
-    <link rel="SHORTCUT ICON" href="/docs-agl//favicon.ico"/>
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
 
     
 
     
     
 
-    <link rel="canonical" href="https://automotive-grade-linux.github.io/docs-agl/docs-agl//docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="/docs-agl//static/styles/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
 
@@ -41,21 +41,21 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script defer type="text/javascript">
+    <!-- <script defer type="text/javascript">
         var disqus_developer = ; // this would set it to developer mode
-    </script>
+    </script>-->
 
     <!-- JS -->
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/jquery-2.1.1.min.js"></script>
-    <script defer type="text/javascript" src="/docs-agl//static/js/lib/bootstrap.min.js"></script>
-<!--    <script defer type="text/javascript" src="/docs-agl//static/js/lib/ZeroClipboard.js"></script>-->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '', 'auto');
+    ga('create', '{}', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -67,7 +67,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/docs-agl//"><img id="logo_top" src="/docs-agl//static/img/branding/agl_title_793x211.png"/></a>
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -79,33 +79,33 @@
                 <div class="nav_bar_left">
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/docs-agl/docs/getting_started/en/dev/">Getting Started</a>
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
                         </li>
                                                 
                         <li >
-                            <a href="/docs-agl/docs/architecture/en/dev/">Architecture Guides</a>
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/hardware/en/dev/">Hardware Support</a>
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
                         </li>
 
                         <li >
-                            <a href="/docs-agl/docs/devguides/en/dev/">Developer Guides</a>
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
                         </li>
                         
                         <li >
-                            <a href="/docs-agl/docs/apis_services/en/dev/">APIs & Services</a>
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
                         </li>
 					</ul>
 				</div>
                 <div class="nav_bar_right">
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/docs-agl//techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                            <a href="/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
                         </li>
                         <li >
-                            <a href="/docs-agl//contribute">Contribute</a>
+                            <a href="/contribute">Contribute</a>
                         </li>
                         <li>
                             <form class="navbar-form navbar-right" id="header-search-form" role="search">
@@ -159,7 +159,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/overview.html">
                 Overview
             </a>
             
@@ -174,14 +174,16 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
+            <a class="this-page" href="/docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
                 System Daemon
             </a>
+            
+                <span class="entry-highlight"></span>
             
         
 
         
-        
+        <div id="page-toc" class="page-toc"></div>
 
         
     </li>
@@ -189,7 +191,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/afm-user-daemon.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/afm-user-daemon.html">
                 User Daemon
             </a>
             
@@ -204,7 +206,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/quick-tutorial.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/quick-tutorial.html">
                 Quick Tutorial
             </a>
             
@@ -219,7 +221,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/widgets.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/widgets.html">
                 Widgets
             </a>
             
@@ -234,7 +236,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-main/writing-config.xml.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/writing-config.xml.html">
                 Writing config.xml
             </a>
             
@@ -249,7 +251,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
                 Binder overview
             </a>
             
@@ -264,7 +266,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
                 Writing Applications
             </a>
             
@@ -279,7 +281,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-bindings-writing.html">
                 Writing Bindings
             </a>
             
@@ -294,7 +296,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
                 Events guide
             </a>
             
@@ -309,7 +311,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
                 Vocabulary
             </a>
             
@@ -324,7 +326,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-tests-overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-tests-overview.html">
                 Tests overview
             </a>
             
@@ -339,7 +341,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-bindings-overview.html">
                 Bindings Examples
             </a>
             
@@ -354,7 +356,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/FAQ.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/FAQ.html">
                 FAQ
             </a>
             
@@ -369,7 +371,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/af-binder/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/resources.html">
                 Resources
             </a>
             
@@ -403,7 +405,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/architecture.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/architecture.html">
                 Signaling Architecture (proposal)
             </a>
             
@@ -418,7 +420,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
                 Developer Guidelines
             </a>
             
@@ -433,7 +435,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
                 CAN Signaling Benchmark
             </a>
             
@@ -448,7 +450,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/signaling/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/resources.html">
                 Resources
             </a>
             
@@ -482,7 +484,7 @@
 
     <li>
         
-            <a class="" href="/docs-agl/docs/apis_services/en/dev/reference/audio/resources.html">
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/resources.html">
                 Resources
             </a>
             
@@ -512,7 +514,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            
+                            Table of Contents
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -533,7 +535,7 @@
 
 
 <li>
-    <a class="" href="reference/af-main/afm-system-daemon.html">
+    <a class="this-page" href="reference/af-main/afm-system-daemon.html">
         System Daemon
     </a>
 </li>
@@ -725,7 +727,7 @@
 
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
 
                     
                     
@@ -773,8 +775,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         Draft version of documentation under development may change!
-                        <a href="/docs-agl//docs/apis_services/en/dev/reference/af-main/afm-system-daemon.html">
-                            
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
                         </a>
                     </div>
                 
@@ -784,229 +786,92 @@
 
 
                 <div id="page-toc-source">
-                    <!-- WARNING: This file is generated by fetch_docs.js using /home/dl9pf/user/git/LF/AGL/WRITE/docs-agl/webdocs-agl/site/_tocs/apis_services/fetched_files.yml -->
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/site/_tocs/apis_services/fetched_files.yml -->
 
-<h1 id="the-afm-system-daemon">The afm-system-daemon</h1>
-
-<h2 id="foreword">Foreword</h2>
-
-<p>This document describes application framework system daemon fundamentals. 
-FCF (Fully Conform to Specification) implementation is still under development.
-It may happen that current implementation somehow diverges with specifications.</p>
-
-<h2 id="introduction">Introduction</h2>
-
-<p>The daemon <strong>afm-system-daemon</strong> is in charge of installing
-applications on AGL system. Its main tasks are:</p>
-
-<ul>
-  <li>
-    <p>installs applications and setup security framework
-for newly installed application.</p>
-  </li>
-  <li>
-    <p>uninstall applications</p>
-  </li>
-</ul>
-
-<p>The <strong>afm-system-daemon</strong> takes its orders from system
-instance of D-Bus.</p>
-
-<p>The figure below summarizes the situation of <strong>afm-system-daemon</strong> in the system.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>+------------------------------------------------------------+
-|                          User                              |
-|                                                            |
-|     +-------------------------------------------------+    |
-|     |                                                 |    |
-|     |                  afm-user-daemon                |    |
-|     |                                                 |    |
-|     +----------+----------------------+----------+----+    |
-|                |                      |          :         |
-|                |                      |          :         |
-:================|======================|==========:=========:
-|                |                      |          :         |
-|     +----------+----------+     +-----+-----+    :         |
-|     |   D-Bus   system    +-----+  CYNARA   |    :         |
-|     +----------+----------+     +-----+-----+    :         |
-|                |                      |          :         |
-|     +----------+---------+    +-------+----------+----+    |
-|     | afm-system-daemon  +----+   SECURITY-MANAGER    |    |
-|     +--------------------+    +-----------------------+    |
-|                                                            |
-|                          System                            |
-+------------------------------------------------------------+
-</code></pre>
+<?xml version="1.0" encoding="utf-8"?>
+<p>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd”&gt;</p>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 2.10.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 2.10.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="generator" content="gitweb/2.10.1 git/2.10.1" />
+<meta name="robots" content="index, nofollow" />
+<title>gerrit.automotivelinux Code Review - src/app-framework-main.git/blob_plain - docs/afm-system-daemon.md</title>
+<link rel="stylesheet" type="text/css" href="gitweb-default.css" />
+<link rel="stylesheet" type="text/css" href="gitweb-site.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/png" />
+</head>
+<body>
+<div>
+  <div style="background:url(/gerrit/static/LF_Collab_header_gray_stripe.png); width:100%; height:30px; background-repeat:repeat; overflow:hidden;"><img src="/gerrit/static/LF_Collab_header_gray.png" />
+  </div>
+  <div class="header">
+    <table style="width:100%; padding: 0px;">
+      <tr>
+        <td><a href="http://www.automotivelinux.org"><img src="/gerrit/static/logo_automotivelinux.png" /></a></td>
+        <td style="vertical-align:bottom; padding:10px 0px;">
+          <div class="horizontal">
+            <ul>
+              <li><a href="https://dev.automotivelinux.org/">Account signup</a> | </li>
+              <li><a href="https://wiki.automotivelinux.org/">Wiki</a> | </li>
+              <li><a href="https://jira.automotivelinux.org/">Jira</a> | </li>
+              <li><a href="https://doors.automotivelinux.org/">Doors</a> | </li>
+              <li><a href="https://gerrit.automotivelinux.org/">Gerrit</a> | </li>
+              <li><a href="https://build.automotivelinux.org/">Jenkins</a> | </li>
+              <li><a href="https://lists.linuxfoundation.org/">Mailing lists</a> | </li>
+              <li><a href="https://ask.automotivelinux.org/">Forums (Askbot)</a> | </li>
+              <li><a href="/gerrit/static/signoffrules.txt">Sign-off Rules</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
-
-<h2 id="starting-afm-system-daemon">Starting <strong>afm-system-daemon</strong></h2>
-
-<p><strong>afm-system-daemon</strong> is launched as a <strong>systemd</strong> service
-attached to system. Normally, the service file is
-located at /lib/systemd/system/afm-system-daemon.service.</p>
-
-<p>The options for launching <strong>afm-system-daemon</strong> are:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>-r
---root directory
-
-     Set the root application directory.
-
-     Note that the default root directory is defined
-     to be /usr/share/afm/applications (may change).
-
--d
---daemon
-
-     Daemonizes the process. It is not needed by sytemd.
-
--q
---quiet
-
-     Reduces the verbosity (can be repeated).
-
--v
---verbose
-
-     Increases the verbosity (can be repeated).
-
--h
---help
-
-     Prints a short help.
-</code></pre>
+<div class="page_header">
+<a title="git homepage" href="http://git-scm.com/"><img class="logo" height="27" src="gitweb-logo.png" alt="git" width="72" /></a><a href="/gerrit/">Code Review</a> / <a href="/gerrit/gitweb?a=project_list;pf=src">src</a> / <a href="/gerrit/gitweb?p=src/app-framework-main.git;a=summary">app-framework-main.git</a> / blob_plain
 </div>
-
-<h2 id="the-d-bus-interface">The D-Bus interface</h2>
-
-<h3 id="overview-of-the-dbus-interface">Overview of the dbus interface</h3>
-
-<p><strong><em>afm-system-daemon</em></strong> takes its orders from the session instance
-of D-Bus. The use of D-Bus is great because it allows to implement
-discovery and signaling.</p>
-
-<p>The <strong>afm-system-daemon</strong> is listening with the destination name
-<strong><em>org.AGL.afm.system</em></strong> at the object of path <strong><em>/org/AGL/afm/system</em></strong>
-on the interface <strong><em>org.AGL.afm.system</em></strong> for the below detailed
-members <strong><em>install</em></strong> and <strong><em>uninstall</em></strong>.</p>
-
-<p>D-Bus is mainly used for signaling and discovery. Its optimized
-typed protocol is not used except for transmitting only one string
-in both directions.</p>
-
-<p>The client and the service are using JSON serialization to
-exchange data.</p>
-
-<p>The D-Bus interface is defined by:</p>
-
-<ul>
-  <li>
-    <p>DESTINATION: <strong>org.AGL.afm.system</strong></p>
-  </li>
-  <li>
-    <p>PATH: <strong>/org/AGL/afm/system</strong></p>
-  </li>
-  <li>
-    <p>INTERFACE: <strong>org.AGL.afm.system</strong></p>
-  </li>
-</ul>
-
-<p>The signature of any member of the interface is <strong><em>string -&gt; string</em></strong>
-for <strong><em>JSON -&gt; JSON</em></strong>.</p>
-
-<p>This is the normal case. In case of error, the current implementation
-returns a dbus error that is a string.</p>
-
-<p>Here is an example using <em>dbus-send</em> to query data on
-installed applications.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>dbus-send --session --print-reply \
-    --dest=org.AGL.afm.system \
-    /org/AGL/afm/system \
-    org.AGL.afm.system.install 'string:"/tmp/appli.wgt"'
-</code></pre>
+<form method="get" action="/gerrit/gitweb" enctype="multipart/form-data"><div class="search">
+<input name="p" type="hidden" value="src/app-framework-main.git" />
+<input name="a" type="hidden" value="search" />
+<input name="h" type="hidden" value="master" />
+<select name="st">
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/gerrit/gitweb?p=src/app-framework-main.git;a=search_help">?</a> search:
+<input type="text" name="s" />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_body">
+<br /><br />
+404 - Cannot find file
+<br />
 </div>
-
-<h3 id="the-protocol-over-d-bus">The protocol over D-Bus</h3>
-
-<hr />
-
-<h4 id="method-orgaglafmsysteminstall">Method org.AGL.afm.system.install</h4>
-
-<p><strong>Description</strong>: Install an application from a widget file.</p>
-
-<p>When an application with the same <em>id</em> and <em>version</em> already exists. Outside of
-using <em>force=true</em> the application is not reinstalled.</p>
-
-<p>Applications are installed the subdirectories of applications common directory.
-If <em>root</em> is specified, the application is installed under the
-sub-directories of the <em>root</em> defined.</p>
-
-<p>Note that this methods is a simple accessor method of
-<strong><em>org.AGL.afm.system.install</em></strong> from <strong><em>afm-system-daemon</em></strong>.</p>
-
-<p>After the installation and before returning to the sender,
-<strong><em>afm-system-daemon</em></strong> sends a signal <strong><em>org.AGL.afm.system.changed</em></strong>.</p>
-
-<p><strong>Input</strong>: The <em>path</em> of the widget file to install and, optionally,
-a flag to <em>force</em> reinstallation, and, optionally, a <em>root</em> directory.</p>
-
-<p>Either just a string being the absolute path of the widget file:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>"/a/path/driving/to/the/widget"
-</code></pre>
+<div class="page_footer">
+<div class="page_footer_text">Application Framework main service, maintained by iot.bzh team</div>
+<a class="rss_logo" title="history of docs/afm-system-daemon.md RSS feed" href="/gerrit/gitweb?p=src/app-framework-main.git;a=rss;f=docs/afm-system-daemon.md">RSS</a>
+<a class="rss_logo" title="history of docs/afm-system-daemon.md Atom feed" href="/gerrit/gitweb?p=src/app-framework-main.git;a=atom;f=docs/afm-system-daemon.md">Atom</a>
 </div>
-
-<p>Or an object:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"wgt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/widget"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"force"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<div style="position:relative; overflow:hidden;">
+  <div style="background:url(/gerrit/static/LF_Collab_footer_gray_stripe.png); width:100%; height:80px; background-repeat:repeat;"><img src="/gerrit/static/LF_Collab_footer_gray.png" /></div>
+  <p style="position:absolute; top: 4px; left: 10px; font-family:helvetica,arial; font-size:11px; color:#393939; line-height: 16px; margin-top:12px;">&#169;2015 Automotive Grade Linux, a Linux Foundation Collaborative Project. All Rights Reserved.
+  Linux Foundation is a registered trademark of The Linux Foundation.<br />
+  Linux is a registered trademark of Linus Torvalds.
+  </p>
 </div>
-
-<p>“wgt” and “root” must be absolute paths.</p>
-
-<p><strong>output</strong>: An object with the field “added” being the string for
-the id of the added application.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"added"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-
-<hr />
-
-<h4 id="method-orgaglafmsystemuninstall">Method org.AGL.afm.system.uninstall</h4>
-
-<p><strong>Description</strong>: Uninstall an application from its id.</p>
-
-<p>Note that this methods is a simple method accessor of 
-<strong><em>org.AGL.afm.system.uninstall</em></strong> from <strong><em>afm-system-daemon</em></strong>.</p>
-
-<p>After the uninstallation and before returning to the sender,
-<strong><em>afm-system-daemon</em></strong> sends a signal <strong><em>org.AGL.afm.system.changed</em></strong>.</p>
-
-<p><strong>Input</strong>: the <em>id</em> of the application and optionally the application <em>root</em> path.</p>
-
-<p>Either a string:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>"appli@x.y"
-</code></pre>
-</div>
-
-<p>Or an object:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appli@x.y"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-
-<p><strong>output</strong>: the value ‘true’.</p>
-
+<script type="text/javascript" src="gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>
 
 
 
@@ -1070,7 +935,7 @@ the id of the added application.</p>
         <h1>Contribute</h1>
         <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
         <p>Report bugs, improve the docs, or contribute to the code.</p>
-        <a href="/docs-agl//contribute" class="btn btn-lg btn-primary">
+        <a href="/contribute" class="btn btn-lg btn-primary">
             Learn More
         </a>
         <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
@@ -1087,7 +952,7 @@ the id of the added application.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2016-12-01 23:48:54 +0100</small>
+		<small class="stats">Page rendered at:  2016-12-06 12:31:24 +0000</small>
 		
 		<br/><small class="stats"><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-main.git;a=blob_plain;f=docs/afm-system-daemon.md;hb=master">Link to source document</small>
 		
@@ -1101,10 +966,10 @@ the id of the added application.</p>
     </div>
 </div>
 
-<script defer type="text/javascript" src="/docs-agl//static/js/lib/toc.min.js"></script>
-<script defer type="text/javascript" src="/docs-agl//static/js/docs.js"></script>
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
 
-    <script defer type="text/javascript" src="/docs-agl//static/js/twitter.js"></script>
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
     
 
 
@@ -1112,23 +977,13 @@ the id of the added application.</p>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: '40ffa808affb354450e0c0ddabe94aa9',
-        indexName: 'iot',
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
         inputSelector: '#header-search-field',
     });
 </script>
 
             
-    
-        <script defer src="/docs-agl//static/js/lib/raphael-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/underscore-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/sequence-diagram-min.js"></script>
-    
-        <script defer src="/docs-agl//static/js/lib/flowchart-latest.js"></script>
-    
-        <script defer src="/docs-agl//static/js/process-uml.js"></script>
     
 
 </body>

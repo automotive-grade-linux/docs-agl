@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                xds-gdb  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/xds-gdb.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                        </li>
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Yocto layers
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/AGL.html">
+                AGL Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl.html">
+                meta-agl
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl-demo.html">
+                meta-agl-demo
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl-devel.html">
+                meta-agl-devel
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Development Kit: build AGL image
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html">
+                Deploy image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html">
+                Setting up your operating system
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_3-Install-agl-for-porter.html">
+                Install Docker image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html">
+                Inside the container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_5-Build-image-Porter.html">
+                Build image for Porter
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.html">
+                Porter image deployment
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html">
+                SDK compilation and installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Development Kit: build AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html">
+                Initialize SDK environment
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html">
+                Trying out template
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html">
+                Developing with container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html">
+                Use CMake templates to develop an app
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS : X(cross) Development System Agent
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds-server.html">
+                xds-server
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds-agent.html">
+                xds-agent
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds-exec.html">
+                xds-exec
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/devguides/en/dev/reference/xds-gdb.html">
+                xds-gdb
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Guides
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf">
+                AppFW - Privileges Management
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/AGL.html">
+        AGL Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl.html">
+        meta-agl
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl-demo.html">
+        meta-agl-demo
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl-devel.html">
+        meta-agl-devel
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html">
+        Deploy image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html">
+        Setting up your operating system
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_3-Install-agl-for-porter.html">
+        Install Docker image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html">
+        Inside the container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_5-Build-image-Porter.html">
+        Build image for Porter
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.html">
+        Porter image deployment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html">
+        SDK compilation and installation
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html">
+        Initialize SDK environment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html">
+        Trying out template
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html">
+        Developing with container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html">
+        Use CMake templates to develop an app
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds-server.html">
+        xds-server
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds-agent.html">
+        xds-agent
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds-exec.html">
+        xds-exec
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/xds-gdb.html">
+        xds-gdb
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf">
+        AppFW - Privileges Management
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning -->
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                
+                <!-- outdated warning -->
+                
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/devguides/fetched_files.yml -->
+
+<h1 id="xds-gdb-wrapper-on-gdb-for-xds">xds-gdb: wrapper on gdb for XDS</h1>
+
+<p><code class="highlighter-rouge">xds-gdb</code> is a wrapper on gdb debugger for X(cross) Development System.</p>
+
+<p>This tool allows you to debug an application built with an xds-server without the
+need to install gdb or any cross tool.</p>
+
+<p>Two debugging models are supported:</p>
+
+<ol>
+  <li>XDS remote debugging requiring an XDS server and allowing cross debug your
+  application.</li>
+  <li>native debugging</li>
+</ol>
+
+<p>By default XDS remote debug is used and you need to define <code class="highlighter-rouge">XDS_NATIVE_GDB</code>
+variable to use native gdb debug mode instead.</p>
+
+<blockquote>
+  <p><strong>SEE ALSO</strong>: <a href="https://github.com/iotbzh/xds-server">xds-server</a>, a web server
+used to remotely cross build applications.<br />
+<strong>SEE ALSO</strong>: <a href="https://github.com/iotbzh/xds-exec">xds-exec</a>,
+wrappers on <code class="highlighter-rouge">exec</code> command that allows to cross build your application through <code class="highlighter-rouge">xds-server</code>.</p>
+</blockquote>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h2 id="installing-xds-gdb">Installing xds-gdb</h2>
+
+<p>Download latest <code class="highlighter-rouge">xds-gdb</code> release on <a href="https://github.com/iotbzh/xds-gdb/releases">https://github.com/iotbzh/xds-gdb/releases</a>.</p>
+
+<p>Extract the tarball anywhere you want, for example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p ~/opt/bin
+unzip -j <span class="nv">$DOWNLOAD_DIR</span>/xds-gdb_linux-amd64-v1.0.0.zip xds-gdb/xds-gdb ~/opt/bin
+</code></pre>
+</div>
+
+<h2 id="configuration">Configuration</h2>
+
+<p><code class="highlighter-rouge">xds-gdb</code> configuration is defined by variables (see listed below).<br />
+ These variables may be set using :</p>
+
+<ul>
+  <li>environment variables (inherited),</li>
+  <li>or a config file set with <code class="highlighter-rouge">XDS_CONFIG</code> environment variable, for example:
+<code class="highlighter-rouge">XDS_CONFIG=/tmp/my_xds_gdb_config.env xds-gdb</code></li>
+  <li>or by setting variables within a gdb ini file (see details below),</li>
+  <li>or a “user” config file located in following directory (first found is taken):
+    <ol>
+      <li>$(CURRENT_DIRECTORY)/.xds-gdb.env</li>
+      <li>$(CURRENT_DIRECTORY)/../xds-gdb.env</li>
+      <li>$(CURRENT_DIRECTORY)/target/xds-gdb.env</li>
+      <li>$(HOME)/.config/xds/xds-gdb.env</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="configuration-variables">Configuration Variables</h3>
+
+<p><code class="highlighter-rouge">XDS_CONFIG</code> :<br />
+ Config file defining <code class="highlighter-rouge">XDS_xxx</code> configuration variables. Variables of this file
+ will overwrite inherited environment variables. Variables definition may be 
+ prefixed or not by “export” keyword.<br />
+ Here is an example of</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cat <span class="nv">$HOME</span>/myProject/xds-gdb.env
+
+<span class="nb">export </span><span class="nv">XDS_SERVER_URL</span><span class="o">=</span>http://xds-docker:8000
+<span class="nb">export </span><span class="nv">XDS_PROJECT_ID</span><span class="o">=</span>IW7B4EE-DBY4Z74_myProject
+<span class="nb">export </span><span class="nv">XDS_SDK_ID</span><span class="o">=</span>poky-agl_aarch64_3.99.1+snapshot
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">XDS_LOGLEVEL</code> :<br />
+Set logging level (supported levels: panic, fatal, error, warn, info, debug)</p>
+
+<p><code class="highlighter-rouge">XDS_LOGFILE</code> :<br />
+Set logging file, default <code class="highlighter-rouge">/tmp/xds-gdb.log</code>.</p>
+
+<p><code class="highlighter-rouge">XDS_NATIVE_GDB</code> :<br />
+Use native gdb mode instead of remote XDS server mode.</p>
+
+<p><code class="highlighter-rouge">XDS_PROJECT_ID</code> : <em>(mandatory with XDS server mode)</em><br />
+Project ID you want to build</p>
+
+<p><code class="highlighter-rouge">XDS_RPATH</code> :<br />
+Relative path into project</p>
+
+<p><code class="highlighter-rouge">XDS_SDK_ID</code> : <em>(mandatory with XDS server mode)</em><br />
+Cross Sdk ID to use to build project</p>
+
+<p><code class="highlighter-rouge">XDS_SERVER_URL</code> :  <em>(mandatory with XDS server mode)</em><br />
+Remote XDS server url</p>
+
+<h3 id="configuration-variables-set-within-gdb-init-command-file">Configuration variables set within gdb init command file</h3>
+
+<p>Above <code class="highlighter-rouge">XDS_xxx</code> variables may also be defined within gdb init command file 
+(see –command or -x option of genuine Gdb).<br />
+You must respect the following syntax: commented line including <code class="highlighter-rouge">:XDS-ENV:</code> tag</p>
+
+<p>Example of gdb init file where we define project and sdk ID:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>     <span class="c"># :XDS-ENV: XDS_PROJECT_ID=IW7B4EE-DBY4Z74_myProject</span>
+     <span class="c"># :XDS-ENV: XDS_SDK_ID=poky-agl_aarch64_3.99.1+snapshot</span>
+</code></pre>
+</div>
+
+<h2 id="using-xds-gdb-from-command-line">Using xds-gdb from command line</h2>
+
+<h3 id="xds-remote-debugging-mode">XDS remote debugging mode</h3>
+
+<p>First the project you want to debug must be declared on an xds-server and this
+project may also has been built using this xds-server (see <a href="https://github.com/iotbzh/xds-server">xds-server</a> for more details).</p>
+
+<p>So to debug it you need to know the xds-server url (eg. <a href="http://xds-docker:8000">http://xds-docker:8000</a>),
+you also need the project and sdk unique id. You can find these IDs in project 
+page of XDS dashboard or you can get them from command line using the <code class="highlighter-rouge">--list</code> 
+option.<br />
+This option lists all existing projects ID:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nv">XDS_SERVER_URL</span><span class="o">=</span>http://xds-docker:8000 xds-gdb --list
+</code></pre>
+</div>
+
+<p>Now to refer your project, just set <code class="highlighter-rouge">XDS_PROJECT_ID</code> and <code class="highlighter-rouge">XDS_SDK_ID</code> variables.</p>
+
+<p>You are now ready to use <code class="highlighter-rouge">xds-gdb</code> to for example cross debug your project.
+Here is an example to build and debug a project based on CMakefile and
+<a href="https://git.automotivelinux.org/apps/app-templates/">AGL app-templates</a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Go into your project directory (for example helloworld-service)</span>
+git clone https://github.com/iotbzh/helloworld-service.git
+<span class="nb">cd </span>helloworld-service
+
+<span class="c"># Declare your project on xds-server</span>
+<span class="c"># &lt;for now, you can only do this step using xds HTML dashboard (see xds-server doc)&gt;</span>
+
+<span class="c"># Define XDS config</span>
+cat <span class="sh">&lt;&lt;EOF &gt;./xds-config.env
+XDS_SERVER_URL=http://xds-docker:8000
+XDS_PROJECT_ID=IW7B4EE-DBY4Z74_myProject
+XDS_SDK_ID=poky-agl_aarch64_3.99.1+snapshot
+EOF
+
+</span><span class="c"># Tell to xds-exec and xds-gdb which is your config file </span>
+<span class="nb">export </span><span class="nv">XDS_CONFIG</span><span class="o">=</span>../xds-config.env
+
+<span class="c"># Create a new build directory</span>
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build
+
+<span class="c"># Start remote cross build</span>
+xds-exec -- cmake ..
+xds-exec -- make 
+xds-exec -- make remote-target-populate
+
+<span class="c"># Start debugging</span>
+xds-gdb -x target/gdb-on-root@myTarget.ini
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>Notes</strong> : <a href="https://github.com/iotbzh/helloworld-service">Helloworld-service project</a>
+is an AGL project based on app-templates that can be build and debug using XDS.</p>
+</blockquote>
+
+<h3 id="native-debugging">Native debugging</h3>
+
+<p>To enable native debugging mode, you need to define <code class="highlighter-rouge">XDS_NATIVE_GDB</code> variable.</p>
+
+<h2 id="using-xds-gdb-within-an-ide">Using xds-gdb within an IDE</h2>
+
+<h3 id="netbeans">Netbeans</h3>
+
+<p><strong>Netbeans 8.x :</strong>
+Open menu Tools -&gt; Options<br />
+Then open C/C++ tab, in “Build Tools” sub-tab, click on “Add” button:
+<img src="./docs/images/nb_newtool.jpg" alt="Add new tool panel" /></p>
+
+<p>Then, you should set <em>Debugger Command</em> to point to xds-gdb</p>
+
+<p><img src="./docs/images/nb_xds_options.jpg" alt="Add new tool panel" /></p>
+
+<h3 id="others-ide">Others IDE</h3>
+
+<p><em>Coming soon…</em></p>
+
+<h2 id="how-to-build-xds-gdb-from-scratch">How to build xds-gdb from scratch</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>You must install and setup <a href="https://golang.org/doc/install">Go</a> version 1.7 or
+ higher to compile this tool.</p>
+
+<h3 id="building">Building</h3>
+
+<p>Clone this repo into your <code class="highlighter-rouge">$GOPATH/src/github.com/iotbzh</code> and use delivered Makefile:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="nb">export </span><span class="nv">GOPATH</span><span class="o">=</span><span class="k">$(</span>realpath ~/workspace_go<span class="k">)</span>
+ mkdir -p <span class="nv">$GOPATH</span>/src/github.com/iotbzh
+ <span class="nb">cd</span> <span class="nv">$GOPATH</span>/src/github.com/iotbzh
+ git clone https://github.com/iotbzh/xds-gdb.git
+ <span class="nb">cd </span>xds-gdb
+ make
+</code></pre>
+</div>
+
+<h2 id="debug">Debug</h2>
+
+<p>Visual Studio Code launcher settings can be found into <code class="highlighter-rouge">.vscode/launch.json</code>.</p>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2016 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2017-09-21 00:02:36 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/xds-gdb/master/README.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

@@ -1,0 +1,3317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                LEGACY Migration from v1 to v2  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/0-introduction.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/1-afm-daemons.html">
+                The afm daemons
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2-widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.1-widgets.html">
+                Overview of widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.2-config.xml.html">
+                Widget configuration file
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/3-permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/4-quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework Binder
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Binder daemon vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-binding-writing.html">
+                How to write a binding ?
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Binder references
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/types-and-globals.html">
+                Types and globals
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/macro-log.html">
+                Macros for logging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-api.html">
+                Functions of class afb_api
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-req.html">
+                Functions of class afb_req
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-event.html">
+                Functions of class afb_event
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-daemon.html">
+                Functions of class afb_daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-service.html">
+                Functions of class afb_service
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+                Binder events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+                Binder Application writing guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Annexes
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-migration-to-binding-v3.html">
+                Migration to bindings v3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/protocol-x-afb-ws-json1.html">
+                WebSocket protocol x-afb-ws-json1
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-desktop-package.html">
+                Installing the binder on a desktop
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-options.html">
+                Options of afb-daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-debugging.html">
+                Debugging binder and bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+                LEGACY Migration from v1 to v2
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-binding-v2-references.html">
+                LEGACY Binding V2 references
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/REVISIONS.html">
+                Document revision
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Test Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/Installation.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/write-the-tests.html">
+                Write the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/the-test-widget.html">
+                The test widget
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/launch-the-tests.html">
+                Launch the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/tests-examples.html">
+                Tests examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                References
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-test-functions.html">
+                Binding Test Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-assert-functions.html">
+                Binding Assert Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/test-framework-functions.html">
+                Test Framework Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                LuaUnit Assertion Functions
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/general-assertions.html">
+                General Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/value-assertions.html">
+                Value Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/scientific-assertions.html">
+                Scientific Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/string-assertions.html">
+                String Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/error-assertions.html">
+                Error Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/type-assertions.html">
+                Type Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/table-assertions.html">
+                Table Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Low level CAN service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-installation-guide.html">
+                Installation Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-usage-guide.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                High level ViWi service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-install-usage-guide.html">
+                Installation and Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Signal Composer service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-configuration.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-plugins.html">
+                Plugins
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-api.html">
+                Signal Composer API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                CanDevStudio Quickstart
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/1_Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+                Bringing up a CAN device using socketcan backend
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/3_Add_CAN_Device.html">
+                Add a CAN device in CANdevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+                Configure a CanRawSender node
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/5_Using_CanRawView.html">
+                Using CanRawView
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/bluez-alsa.html">
+                bluez-alsa
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/pulseaudio-module-4a.html">
+                Pulseaudio - 4A Integration Module
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                4a Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/README.html">
+                Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/concepts.html">
+                Concepts
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/components.html">
+                Components
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                high-level-api
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/README.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/kickstart.html">
+                Kickstart
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/reference.html">
+                Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Tips And Tricks
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+                Adjust volumes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+                4a-tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+                Devices
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+                HALs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HMI Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+                Home Screen Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_2-WindowManager-Guide.html">
+                Window Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_3-SoundManager-Guide.html">
+                Sound Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen (old)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/homescreen/homescreen_api.html">
+                HomeScreen API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/0-introduction.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/1-afm-daemons.html">
+        The afm daemons
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2-widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.1-widgets.html">
+        Overview of widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.2-config.xml.html">
+        Widget configuration file
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/3-permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/4-quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Binder daemon vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-binding-writing.html">
+        How to write a binding ?
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/types-and-globals.html">
+        Types and globals
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/macro-log.html">
+        Macros for logging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-api.html">
+        Functions of class afb_api
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-req.html">
+        Functions of class afb_req
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-event.html">
+        Functions of class afb_event
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-daemon.html">
+        Functions of class afb_daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-service.html">
+        Functions of class afb_service
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-events-guide.html">
+        Binder events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-application-writing.html">
+        Binder Application writing guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-migration-to-binding-v3.html">
+        Migration to bindings v3
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/protocol-x-afb-ws-json1.html">
+        WebSocket protocol x-afb-ws-json1
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-desktop-package.html">
+        Installing the binder on a desktop
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-options.html">
+        Options of afb-daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-debugging.html">
+        Debugging binder and bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+        LEGACY Migration from v1 to v2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-binding-v2-references.html">
+        LEGACY Binding V2 references
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/REVISIONS.html">
+        Document revision
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/Installation.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/write-the-tests.html">
+        Write the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/the-test-widget.html">
+        The test widget
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/launch-the-tests.html">
+        Launch the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/tests-examples.html">
+        Tests examples
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-test-functions.html">
+        Binding Test Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-assert-functions.html">
+        Binding Assert Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/test-framework-functions.html">
+        Test Framework Functions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/general-assertions.html">
+        General Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/value-assertions.html">
+        Value Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/scientific-assertions.html">
+        Scientific Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/string-assertions.html">
+        String Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/error-assertions.html">
+        Error Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/type-assertions.html">
+        Type Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/table-assertions.html">
+        Table Assertions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/architecture.html">
+        Signaling Architecture
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-installation-guide.html">
+        Installation Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-usage-guide.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-install-usage-guide.html">
+        Installation and Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-configuration.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-plugins.html">
+        Plugins
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-api.html">
+        Signal Composer API
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/1_Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+        Bringing up a CAN device using socketcan backend
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/3_Add_CAN_Device.html">
+        Add a CAN device in CANdevStudio
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+        Configure a CanRawSender node
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/5_Using_CanRawView.html">
+        Using CanRawView
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/bluez-alsa.html">
+        bluez-alsa
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/pulseaudio-module-4a.html">
+        Pulseaudio - 4A Integration Module
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/README.html">
+        Architecture
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/concepts.html">
+        Concepts
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/components.html">
+        Components
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/README.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/kickstart.html">
+        Kickstart
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/reference.html">
+        Reference
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+        Adjust volumes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+        4a-tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/Devices.html">
+        Devices
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/HALs.html">
+        HALs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_1-HomeScreen-Guide.html">
+        Home Screen Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_2-WindowManager-Guide.html">
+        Window Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_3-SoundManager-Guide.html">
+        Sound Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/apis_services/fetched_files.yml -->
+
+<h1 id="legacy-migration-from-binding-v1-to-binding-v2">[LEGACY] Migration from binding V1 to binding V2</h1>
+
+<blockquote>
+  <p>LEGACY!!! IT IS NOT EXPECTED THAT YOU STILL NEED THIS GUIDE.</p>
+
+  <p>THIS GUIDE WILL BE REMOVED IN A NEAR FUTURE</p>
+</blockquote>
+
+<p>The <strong><em>binding</em></strong> interface evolved from version 1 to version 2
+for the following reasons:</p>
+
+<ul>
+  <li>integration of the security requirements within the bindings</li>
+  <li>simplification of the API (after developer feedbacks)</li>
+  <li>removal of obscure features, cleanup</li>
+</ul>
+
+<p>The <strong><em>binder</em></strong> can run <strong><em>bindings</em></strong> v1 and/or v2 in any combination.<br />
+Thus moving from v1 to v2 is not enforced, there is no real need.</p>
+
+<p>More, it is possible to write a dual <strong><em>binding</em></strong>:</p>
+
+<ul>
+  <li>a <strong><em>binding</em></strong> that implements the version 1 and the version 2.</li>
+</ul>
+
+<p>However, IT IS HIGHLY RECOMMENDED TO SWITCH TO ONLY VERSION 2:</p>
+
+<ul>
+  <li>any new development SHOULD start using <strong><em>binding</em></strong> V2</li>
+  <li>existing <strong><em>bindings</em></strong> SHOULD migrate to the version 2</li>
+</ul>
+
+<p>This guide covers the migration of bindings from version 1 to version 2.</p>
+
+<p>It also explains some of the rationale taken when migrating from version 1 to version 2.</p>
+
+<p>In the future, if <strong><em>binding</em></strong> api evolves to fresh versions (3, 4, …)
+it might be necessarily to write bindings implementing more than
+just one version.<br />
+For example:</p>
+
+<ul>
+  <li>a <strong><em>binding</em></strong> being v2 AND v3 will resolve the issue of running on older and newer version of AGL.</li>
+</ul>
+
+<p>This should always be possible even if more complicated.</p>
+
+<h2 id="important-things-to-known-when-migrating">Important things to known when migrating</h2>
+
+<p>One of the most important change when migrating from v1 to v2 is
+that many functions use an hidden <em>common</em> variable.<br />
+This affects the functions of the following classes:</p>
+
+<ul>
+  <li>functions of class <strong>daemon</strong>:
+    <ul>
+      <li>functions starting with <strong>afb_daemon_…</strong></li>
+      <li>functions for logging: <strong>ERROR</strong>, <strong>WARNING</strong>, <strong>NOTICE</strong>, <strong>INFO</strong>, <strong>DEBUG</strong></li>
+    </ul>
+  </li>
+  <li>functions of class <strong>service</strong>:
+    <ul>
+      <li>functions starting with <strong>afb_service_…</strong></li>
+    </ul>
+  </li>
+  <li>callback functions:
+    <ul>
+      <li>the register function (that is removed)</li>
+      <li>the service init function</li>
+      <li>the onevent function</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For these functions, the first parameter is now implicit.</p>
+
+<p>Let takes an example.<br />
+For <strong><em>binding</em></strong> v1 you had to write:</p>
+
+<pre><code class="language-C">        afb_daemon_broadcast_event(afbitf-&gt;daemon, reason, description);
+</code></pre>
+
+<p>For <strong><em>binding</em></strong> v2, you simply write:</p>
+
+<pre><code class="language-C">        afb_daemon_broadcast_event(reason, description);
+</code></pre>
+
+<p>This simplification is possible because the header files included for the bindings
+now provide a common variable for storing the <strong>daemon</strong> and <strong>service</strong> data.</p>
+
+<p>As a programmer, you shouldn’t care much about that hidden variable.<br />
+It simplifies the job, that’s all and that is the reason of the change.</p>
+
+<p>An other important difference is between the version 1 and the version 2 is
+on how the <strong><em>binding</em></strong>’s <strong>API</strong> is documented.<br />
+The version 2 emphasis the <strong>OpenAPI v3</strong> description of the <strong>API</strong>.<br />
+For this reason, to avoid duplication of descriptions, only one description is expected:</p>
+
+<ul>
+  <li>The <strong>OpenAPI</strong> one.</li>
+</ul>
+
+<h2 id="task-list-for-the-migration">Task list for the migration</h2>
+
+<p>This task list is:</p>
+
+<ol>
+  <li>Enforce use of binding v2 by setting <strong>AFB_BINDING_VERSION</strong></li>
+  <li>Rewrite the main structure and the list of exported verbs</li>
+  <li>Adapt the init and callback functions</li>
+  <li>Removes the first parameter of functions of classes <strong>daemon</strong> and <strong>service</strong></li>
+  <li>Consider where to emit logs for requests</li>
+  <li>Take care of store/unstore changes</li>
+  <li>Consider use of synchronous (sub)call requests</li>
+  <li>Optionally, removes explicit struct</li>
+</ol>
+
+<p>The remaining chapters explain these task with more details.</p>
+
+<h2 id="enforce-use-of-binding-v2-by-setting-afbbindingversion">Enforce use of binding v2 by setting AFB_BINDING_VERSION</h2>
+
+<p>By defining <strong>AFB_BINDING_VERSION</strong> to <strong>2</strong> you switch to version 2.<br />
+This is done as below.</p>
+
+<pre><code class="language-C">#define AFB_BINDING_VERSION 2
+#include &lt;afb/afb-binding.h&gt;
+</code></pre>
+
+<p>After that you will get many errors when compiling.</p>
+
+<h2 id="rewrite-the-main-structures-and-the-list-of-exported-verbs">Rewrite the main structures and the list of exported verbs</h2>
+
+<p>The structures describing the <strong>*binding</strong> changed from version 1 to version 2.</p>
+
+<p>The structure for describing verbs changed to include security
+requirements.</p>
+
+<p>In version 1 it was:</p>
+
+<pre><code class="language-C">struct afb_verb_desc_v1
+{
+       const char *name;                       /* name of the verb */
+       enum afb_session_flags_v1 session;      /* authorization and session requirements of the verb */
+       void (*callback)(struct afb_req req);   /* callback function implementing the verb */
+       const char *info;                       /* textual description of the verb */
+};
+</code></pre>
+
+<p>In version 2 it becomes:</p>
+
+<pre><code class="language-C">struct afb_verb_v2
+{
+        const char *verb;                       /* name of the verb */
+        void (*callback)(struct afb_req req);   /* callback function implementing the verb */
+        const struct afb_auth *auth;            /* required authorization */
+        uint32_t session;                       /* authorization and session requirements of the verb */
+};
+
+</code></pre>
+
+<p>The migration of instances of that structure requires the following actions:</p>
+
+<ul>
+  <li>rename field <strong>name</strong> to <strong>verb</strong></li>
+  <li>remove field <strong>info</strong></li>
+  <li>adapt field <strong>session</strong> if needed</li>
+  <li>set field <strong>auth</strong> to NULL</li>
+</ul>
+
+<p>Example:</p>
+
+<pre><code class="language-C"> { .name= "new",   .session= AFB_SESSION_NONE, .callback= new,   .info= "Starts a new game" }
+</code></pre>
+
+<p>Becomes</p>
+
+<pre><code class="language-C"> { .verb = "new",   .session = AFB_SESSION_NONE, .callback = new, .auth = NULL }
+</code></pre>
+
+<p>The field <strong>auth</strong> can be set to a value describing the requested
+authorization.</p>
+
+<p>The main describing structure also changed.</p>
+
+<p>In version 1 it was:</p>
+
+<pre><code class="language-C">struct afb_binding_desc_v1
+{
+       const char *info;                       /* textual information about the binding */
+       const char *prefix;                     /* required prefix name for the binding */
+       const struct afb_verb_desc_v1 *verbs;   /* array of descriptions of verbs terminated by a NULL name */
+};
+</code></pre>
+
+<p>In version 2 it becomes:</p>
+
+<pre><code class="language-C">struct afb_binding_v2
+{
+        const char *api;                        /* api name for the binding */
+        const char *specification;              /* textual specification of the binding */
+        const struct afb_verb_v2 *verbs;        /* array of descriptions of verbs terminated by a NULL name */
+        int (*preinit)();                       /* callback at load of the binding */
+        int (*init)();                          /* callback for starting the service */
+        void (*onevent)(const char *event, struct json_object *object); /* callback for handling events */
+        unsigned noconcurrency: 1;              /* avoids concurrent requests to verbs */
+};
+</code></pre>
+
+<p>The migration of instances of that structure requires the following actions:</p>
+
+<ul>
+  <li>declare, explore, name the structure as <code class="highlighter-rouge">const struct afb_binding_v2 afbBindingV2</code></li>
+  <li>rename the field <strong>prefix</strong> to <strong>api</strong></li>
+  <li>remove the field <strong>info</strong></li>
+  <li>setup the fields <strong>preinit</strong>, <strong>init</strong>, <strong>onevent</strong> according to the next section</li>
+  <li>set the field <strong>noconcurrency</strong> to the right value:
+    <ul>
+      <li>to 1 if you want to avoid concurrent calls to verbs.</li>
+      <li>to 0 if you allow concurrent calls to verbs.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Example:</p>
+
+<pre><code class="language-C">static const struct afb_binding plugin_desc = {
+        .type = AFB_BINDING_VERSION_1,
+        .v1 = {
+                .info = "Minimal Hello World Sample",
+                .prefix = "hello",
+                .verbs = verbs
+        }
+</code></pre>
+
+<p>Becomes:</p>
+
+<pre><code class="language-C">const struct afb_binding_v2 afbBindingV2 = {
+        .api = "hello",
+        .specification = NULL,
+        .verbs = verbs,
+        .preinit = preinit,
+        .init = init
+};
+</code></pre>
+
+<p>The <strong>binder</strong> now relies only on the exported names
+to deduce the type of the binding.<br />
+This make the main structure more simple.</p>
+
+<h2 id="adapt-the-init-and-callback-functions">Adapt the init and callback functions</h2>
+
+<p>The <strong><em>bindings</em></strong> version 1 defined 3 exported functions:</p>
+
+<ul>
+  <li><strong>afbBindingV1Register</strong></li>
+  <li><strong>afbBindingV1ServiceInit</strong></li>
+  <li><strong>afbBindingV1ServiceEvent</strong></li>
+</ul>
+
+<p>These function should not be exported any more and there definition changed.</p>
+
+<p>The function <strong>afbBindingV1Register</strong> is no more used to describe the binding.<br />
+When a binding has to take actions when it is loaded, it must set the field
+<strong>preinit</strong> of the structure <strong>afbBindingV2</strong>.<br />
+This field, this preinit, might be used to check features at load.<br />
+When it returns a negative number, the <strong><em>binder</em></strong> stops before initializing any <strong><em>binding</em></strong>.</p>
+
+<p>The function <strong>afbBindingV1ServiceInit</strong> is replaced by the field <strong>init</strong>
+of the structure <strong>afbBindingV2</strong>.<br />
+The init function should return 0 in case of success or a negative error code
+in case of problem.<br />
+It is called during initialization of services.</p>
+
+<p>The function <strong>afbBindingV1ServiceEvent</strong>is replaced by the field <strong>onevent</strong>
+of the structure <strong>afbBindingV2</strong>.</p>
+
+<p>The two functions <strong>afbBindingV1Register</strong> and <strong>afbBindingV1ServiceInit</strong>,
+were taking as parameter the <strong><em>binder</em></strong> interface and the service interface respectively.<br />
+These interfaces are now managed hiddenly for the <strong>binding</strong> by the <strong>binder</strong>.<br />
+So the variable that <strong><em>bindings</em></strong> version used to store the <strong><em>binder</em></strong> interface
+and the service interface are no more needed and can be removed.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-C">const struct afb_binding_interface *interface;
+struct afb_service service;
+
+static const struct afb_binding plugin_desc = {
+        .type = AFB_BINDING_VERSION_1,
+        .v1 = {
+                .info = "Minimal Hello World Sample",
+                .prefix = "hello",
+                .verbs = verbs
+        }
+}
+
+const struct afb_binding *afbBindingV1Register (const struct afb_binding_interface *itf)
+{
+        interface = itf;
+        NOTICE(interface, "binding register");
+        return &amp;plugin_desc;
+}
+
+int afbBindingV1ServiceInit(struct afb_service svc)
+{
+        service = svc;
+        NOTICE(interface, "binding init");
+        return 0;
+}
+
+void afbBindingV1ServiceEvent(const char *event, struct json_object *object)
+{
+        NOTICE(interface, "onevent %s", event);
+}
+</code></pre>
+
+<p>Becomes:</p>
+
+<pre><code class="language-C">static int preinit()
+{
+        AFB_NOTICE("binding preinit (was register)");
+        return 0;
+}
+
+static int init()
+{
+        AFB_NOTICE("binding init");
+        return 0;
+}
+
+static void onevent(const char *event, struct json_object *object)
+{
+        AFB_NOTICE("onevent %s", event);
+}
+
+const struct afb_binding_v2 afbBindingV2 = {
+        .api = "hello",
+        .specification = NULL,
+        .verbs = verbs,
+        .preinit = preinit,
+        .init = init,
+        .onevent = onevent
+};
+</code></pre>
+
+<p>The two functions <strong>afbBindingV1Register</strong> and <strong>afbBindingV1ServiceInit</strong>,
+were taking as parameter the <strong><em>binder</em></strong> interface and the service interface respectively.<br />
+These interfaces are now managed hiddenly for the <strong>binding</strong> by the <strong>binder</strong>.<br />
+So the variable that <strong><em>bindings</em></strong> version used to store the <strong><em>binder</em></strong> interface
+and the service interface are no more needed and can be removed.</p>
+
+<p>On the above example the following lines were removed:</p>
+
+<pre><code class="language-C">const struct afb_binding_interface *interface;
+struct afb_service service;
+
+        interface = itf;
+
+        service = svc;
+</code></pre>
+
+<h2 id="removes-the-first-parameter-of-functions-of-classes-daemon-and-service">Removes the first parameter of functions of classes <strong>daemon</strong> and <strong>service</strong></h2>
+
+<p>As explained before, many functions loose there first
+arguments, this are the functions of the following classes:</p>
+
+<ul>
+  <li>functions of class <strong>daemon</strong>:
+    <ul>
+      <li>functions starting with <strong>afb_daemon_…</strong></li>
+      <li>functions for logging: <strong>ERROR</strong>, <strong>WARNING</strong>, <strong>NOTICE</strong>, <strong>INFO</strong>, <strong>DEBUG</strong></li>
+    </ul>
+  </li>
+  <li>functions of class <strong>service</strong>:
+    <ul>
+      <li>functions starting with <strong>afb_service_…</strong></li>
+    </ul>
+  </li>
+  <li>callback functions:
+    <ul>
+      <li>the register function (that is removed)</li>
+      <li>the service init function</li>
+      <li>the onevent function</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For these functions, the first parameter is now implicit.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-C">        afb_daemon_broadcast_event(afbitf-&gt;daemon, reason, description);
+</code></pre>
+
+<p>Becomes:</p>
+
+<pre><code class="language-C">        afb_daemon_broadcast_event(reason, description);
+</code></pre>
+
+<p>Also, to avoid possible conflicts, we introduced prefixed logging functions:<br />
+the macros</p>
+
+<ul>
+  <li><strong>ERROR</strong></li>
+  <li><strong>WARNING</strong></li>
+  <li><strong>NOTICE</strong></li>
+  <li><strong>INFO</strong></li>
+  <li><strong>DEBUG</strong></li>
+</ul>
+
+<p>have now a prefixed version:</p>
+
+<ul>
+  <li><strong>AFB_ERROR</strong></li>
+  <li><strong>AFB_WARNING</strong></li>
+  <li><strong>AFB_NOTICE</strong></li>
+  <li><strong>AFB_INFO</strong></li>
+  <li><strong>AFB_DEBUG</strong></li>
+</ul>
+
+<p>It is now recommended to use the prefixed version.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-C">        NOTICE(interface, "hello plugin comes to live");
+</code></pre>
+
+<p>Become:</p>
+
+<pre><code class="language-C">        NOTICE("hello plugin comes to live");
+</code></pre>
+
+<p>or, better:</p>
+
+<pre><code class="language-C">        AFB_NOTICE("hello plugin comes to live");
+</code></pre>
+
+<p>To remove definition of the un-prefixed versions of logging macros:</p>
+
+<ul>
+  <li><strong>ERROR</strong></li>
+  <li><strong>WARNING</strong></li>
+  <li><strong>NOTICE</strong></li>
+  <li><strong>INFO</strong></li>
+  <li><strong>DEBUG</strong></li>
+</ul>
+
+<p>and just define</p>
+
+<ul>
+  <li><strong>AFB_BINDING_PRAGMA_NO_VERBOSE_UNPREFIX</strong></li>
+</ul>
+
+<p>before to include <strong>afb/afb-binding.h</strong>.</p>
+
+<pre><code class="language-C">#define AFB_BINDING_PRAGMA_NO_VERBOSE_UNPREFIX
+#define AFB_BINDING_VERSION 2
+#include &lt;afb/afb-binding.h&gt;
+</code></pre>
+
+<h2 id="consider-where-to-emit-logs-for-requests">Consider where to emit logs for requests</h2>
+
+<p>The <strong><em>bindings</em></strong> v2 now allows to emit log messages associated to <strong><em>requests</em></strong>.<br />
+This feature is valuable when debugging because it allows to return
+side information associated to a <strong><em>request</em></strong>.</p>
+
+<p>The defined macros for logging to requests are:</p>
+
+<ul>
+  <li><strong>AFB_REQ_ERROR</strong></li>
+  <li><strong>AFB_REQ_WARNING</strong></li>
+  <li><strong>AFB_REQ_NOTICE</strong></li>
+  <li><strong>AFB_REQ_INFO</strong></li>
+  <li><strong>AFB_REQ_DEBUG</strong></li>
+</ul>
+
+<p>We encourage the use of these new logging facilities everywhere it makes sense.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-C">        INFO(afbitf, "method 'new' called for boardid %d", board-&gt;id);
+</code></pre>
+
+<p>Might become:</p>
+
+<pre><code class="language-C">        AFB_REQ_INFO(req, "method 'new' called for boardid %d", board-&gt;id);
+</code></pre>
+
+<h2 id="take-care-of-storeunstore-change">Take care of store/unstore change</h2>
+
+<p>For efficiency, the version 2 redefined how storing/un-storing of
+requests works.<br />
+Storing request is needed for asynchronous handling of requests.</p>
+
+<p>For <strong><em>bindings</em></strong> version, the signature of the functions were:</p>
+
+<pre><code class="language-C">struct afb_req *afb_req_store(struct afb_req req);
+struct afb_req afb_req_unstore(struct afb_req *req);
+</code></pre>
+
+<p>For version 2 it becomes</p>
+
+<pre><code class="language-C">struct afb_stored_req *afb_req_store(struct afb_req req);
+struct afb_req afb_req_unstore(struct afb_stored_req *sreq);
+</code></pre>
+
+<p>Where the structure <code class="highlighter-rouge">struct afb_stored_req</code> is opaque.</p>
+
+<p>It should require few code change.</p>
+
+<p>Also check the following chapter that explain that asynchronous (sub)calls
+can be replaced by synchronous one, avoiding the need to store/unstore
+requests.</p>
+
+<h2 id="consider-use-of-synchronous-subcall-requests">Consider use of synchronous (sub)call requests</h2>
+
+<p><strong><em>Bindings</em></strong> can emit requests for themselves (calls) or for
+their clients (subcalls).<br />
+With <strong><em>bindings</em></strong> version 2 comes also synchronous requests for both cases.</p>
+
+<p>So when migrating to bindings version 2, a developer can consider
+to replace the asynchronous requests (with asynchronous call back)
+by synchronous ones.</p>
+
+<p>See functions <strong><em>afb_service_call_sync</em></strong> and <strong><em>afb_req_subcall_sync</em></strong>.</p>
+
+<h2 id="optionally-removes-explicit-struct">Optionally, removes explicit struct</h2>
+
+<p>The new definitions now includes <strong>typedefs</strong> for common
+structures, as shown on below sample:</p>
+
+<pre><code class="language-C">typedef struct afb_daemon               afb_daemon;
+typedef struct afb_event                afb_event;
+typedef struct afb_arg                  afb_arg;
+typedef struct afb_req                  afb_req;
+typedef struct afb_service              afb_service;
+</code></pre>
+
+<p>So you can remove the keyword <strong>struct</strong> if it bores you.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-C">static void verb(struct afb_req req)
+{
+        ...
+}
+</code></pre>
+
+<p>Might become:</p>
+
+<pre><code class="language-C">static void verb(afb_req req)
+{
+        ...
+}
+</code></pre>
+
+<h2 id="example-of-migration">Example of migration</h2>
+
+<p>The first <strong><em>binding</em></strong> that migrated from v1 to v2 was the sample <strong>HelloWorld</strong>.<br />
+Here is shown the differences between the version 1 and the version 2.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/bindings/samples/HelloWorld.c b/bindings/samples/HelloWorld.c
+index c6fa779..505aee3 100644
+</span><span class="gd">--- a/bindings/samples/HelloWorld.c
+</span><span class="gi">+++ b/bindings/samples/HelloWorld.c
+</span><span class="gu">@@ -21,9 +21,9 @@
+</span>
+ #include &lt;json-c/json.h&gt;
+
+<span class="gi">+#define AFB_BINDING_VERSION 2
+</span> #include &lt;afb/afb-binding.h&gt;
+
+<span class="gd">-const struct afb_binding_interface *interface;
+</span> static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+ struct event
+<span class="gu">@@ -79,7 +80,7 @@ static int event_add(const char *tag, const char *name)
+</span>         strcpy(e-&gt;tag, tag);
+
+         /* make the event */
+<span class="gd">-    e-&gt;event = afb_daemon_make_event(interface-&gt;daemon, name);
+</span><span class="gi">+    e-&gt;event = afb_daemon_make_event(name);
+</span>         if (!e-&gt;event.closure) { free(e); return -1; }
+
+         /* link */
+<span class="gu">@@ -140,7 +141,7 @@ static void pingBug (struct afb_req request)
+</span> static void pingEvent(struct afb_req request)
+ {
+         json_object *query = afb_req_json(request);
+<span class="gd">-    afb_daemon_broadcast_event(interface-&gt;daemon, "event", json_object_get(query));
+</span><span class="gi">+    afb_daemon_broadcast_event("event", json_object_get(query));
+</span>         ping(request, json_object_get(query), "event");
+ }
+
+<span class="gu">@@ -288,38 +289,43 @@ static void exitnow (struct afb_req request)
+</span>         exit(0);
+ }
+
+<span class="gi">+static int preinit()
++{
++    AFB_NOTICE("hello binding comes to live");
++    return 0;
++}
++
++static int init()
++{
++    AFB_NOTICE("hello binding starting");
++    return 0;
++}
++
+</span> // NOTE: this sample does not use session to keep test a basic as possible
+ //       in real application most APIs should be protected with AFB_SESSION_CHECK
+<span class="gd">-static const struct afb_verb_desc_v1 verbs[]= {
+-  {"ping"     , AFB_SESSION_NONE, pingSample  , "Ping Application Framework"},
+-  {"pingfail" , AFB_SESSION_NONE, pingFail    , "Fails"},
+-  {"pingnull" , AFB_SESSION_NONE, pingNull    , "Return NULL"},
+-  {"pingbug"  , AFB_SESSION_NONE, pingBug     , "Do a Memory Violation"},
+-  {"pingJson" , AFB_SESSION_NONE, pingJson    , "Return a JSON object"},
+-  {"pingevent", AFB_SESSION_NONE, pingEvent   , "Send an event"},
+-  {"subcall",   AFB_SESSION_NONE, subcall     , "Call api/verb(args)"},
+-  {"subcallsync",   AFB_SESSION_NONE, subcallsync     , "Call api/verb(args)"},
+-  {"eventadd",  AFB_SESSION_NONE, eventadd    , "adds the event of 'name' for the 'tag'"},
+-  {"eventdel",  AFB_SESSION_NONE, eventdel    , "deletes the event of 'tag'"},
+-  {"eventsub",  AFB_SESSION_NONE, eventsub    , "subscribes to the event of 'tag'"},
+-  {"eventunsub",AFB_SESSION_NONE, eventunsub  , "unsubscribes to the event of 'tag'"},
+-  {"eventpush", AFB_SESSION_NONE, eventpush   , "pushs the event of 'tag' with the 'data'"},
+-  {"exit",      AFB_SESSION_NONE, exitnow     , "exits from afb-daemon"},
+-  {NULL}
+</span><span class="gi">+static const struct afb_verb_v2 verbs[]= {
++  { "ping"     ,    pingSample , NULL, AFB_SESSION_NONE },
++  { "pingfail" ,    pingFail   , NULL, AFB_SESSION_NONE },
++  { "pingnull" ,    pingNull   , NULL, AFB_SESSION_NONE },
++  { "pingbug"  ,    pingBug    , NULL, AFB_SESSION_NONE },
++  { "pingJson" ,    pingJson   , NULL, AFB_SESSION_NONE },
++  { "pingevent",    pingEvent  , NULL, AFB_SESSION_NONE },
++  { "subcall",      subcall    , NULL, AFB_SESSION_NONE },
++  { "subcallsync",  subcallsync, NULL, AFB_SESSION_NONE },
++  { "eventadd",     eventadd   , NULL, AFB_SESSION_NONE },
++  { "eventdel",     eventdel   , NULL, AFB_SESSION_NONE },
++  { "eventsub",     eventsub   , NULL, AFB_SESSION_NONE },
++  { "eventunsub",   eventunsub , NULL, AFB_SESSION_NONE },
++  { "eventpush",    eventpush  , NULL, AFB_SESSION_NONE },
++  { "exit",         exitnow    , NULL, AFB_SESSION_NONE },
++  { NULL}
+</span> };
+
+<span class="gd">-static const struct afb_binding plugin_desc = {
+-    .type = AFB_BINDING_VERSION_1,
+-    .v1 = {
+-        .info = "Minimal Hello World Sample",
+-        .prefix = "hello",
+-        .verbs = verbs
+-    }
+</span><span class="gi">+const struct afb_binding_v2 afbBindingV2 = {
++    .api = "hello",
++    .specification = NULL,
++    .verbs = verbs,
++    .preinit = preinit,
++    .init = init
+</span> };
+
+<span class="gd">-const struct afb_binding *afbBindingV1Register (const struct afb_binding_interface *itf)
+-{
+-    interface = itf;
+-    NOTICE(interface, "hello plugin comes to live");
+-    return &amp;plugin_desc;
+-}
+</span></code></pre>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-12-18 00:04:54 +0000</small>
+		
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-binder/plain/docs/legacy/afb-migration-v1-to-v2.md?h=master">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

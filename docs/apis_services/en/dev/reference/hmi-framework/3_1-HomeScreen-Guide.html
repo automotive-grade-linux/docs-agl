@@ -1,0 +1,3197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Home Screen Developper Guide  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/0-introduction.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/1-afm-daemons.html">
+                The afm daemons
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2-widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.1-widgets.html">
+                Overview of widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.2-config.xml.html">
+                Widget configuration file
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/3-permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/4-quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework Binder
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Binder daemon vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-binding-writing.html">
+                How to write a binding ?
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Binder references
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/types-and-globals.html">
+                Types and globals
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/macro-log.html">
+                Macros for logging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-api.html">
+                Functions of class afb_api
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-req.html">
+                Functions of class afb_req
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-event.html">
+                Functions of class afb_event
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-daemon.html">
+                Functions of class afb_daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-service.html">
+                Functions of class afb_service
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+                Binder events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+                Binder Application writing guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Annexes
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-migration-to-binding-v3.html">
+                Migration to bindings v3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/protocol-x-afb-ws-json1.html">
+                WebSocket protocol x-afb-ws-json1
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-desktop-package.html">
+                Installing the binder on a desktop
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-options.html">
+                Options of afb-daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-debugging.html">
+                Debugging binder and bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+                LEGACY Migration from v1 to v2
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-binding-v2-references.html">
+                LEGACY Binding V2 references
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/REVISIONS.html">
+                Document revision
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Test Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/Installation.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/write-the-tests.html">
+                Write the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/the-test-widget.html">
+                The test widget
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/launch-the-tests.html">
+                Launch the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/tests-examples.html">
+                Tests examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                References
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-test-functions.html">
+                Binding Test Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-assert-functions.html">
+                Binding Assert Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/test-framework-functions.html">
+                Test Framework Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                LuaUnit Assertion Functions
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/general-assertions.html">
+                General Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/value-assertions.html">
+                Value Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/scientific-assertions.html">
+                Scientific Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/string-assertions.html">
+                String Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/error-assertions.html">
+                Error Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/type-assertions.html">
+                Type Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/table-assertions.html">
+                Table Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Low level CAN service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-installation-guide.html">
+                Installation Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-usage-guide.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                High level ViWi service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-install-usage-guide.html">
+                Installation and Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Signal Composer service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-configuration.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-plugins.html">
+                Plugins
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-api.html">
+                Signal Composer API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                CanDevStudio Quickstart
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/1_Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+                Bringing up a CAN device using socketcan backend
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/3_Add_CAN_Device.html">
+                Add a CAN device in CANdevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+                Configure a CanRawSender node
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/5_Using_CanRawView.html">
+                Using CanRawView
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/bluez-alsa.html">
+                bluez-alsa
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/pulseaudio-module-4a.html">
+                Pulseaudio - 4A Integration Module
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                4a Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/README.html">
+                Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/concepts.html">
+                Concepts
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/components.html">
+                Components
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                high-level-api
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/README.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/kickstart.html">
+                Kickstart
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/reference.html">
+                Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Tips And Tricks
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+                Adjust volumes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+                4a-tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+                Devices
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+                HALs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HMI Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/apis_services/en/dev/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+                Home Screen Developper Guide
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_2-WindowManager-Guide.html">
+                Window Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_3-SoundManager-Guide.html">
+                Sound Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen (old)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/homescreen/homescreen_api.html">
+                HomeScreen API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/0-introduction.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/1-afm-daemons.html">
+        The afm daemons
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2-widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.1-widgets.html">
+        Overview of widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.2-config.xml.html">
+        Widget configuration file
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/3-permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/4-quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Binder daemon vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-binding-writing.html">
+        How to write a binding ?
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/types-and-globals.html">
+        Types and globals
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/macro-log.html">
+        Macros for logging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-api.html">
+        Functions of class afb_api
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-req.html">
+        Functions of class afb_req
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-event.html">
+        Functions of class afb_event
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-daemon.html">
+        Functions of class afb_daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-service.html">
+        Functions of class afb_service
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-events-guide.html">
+        Binder events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-application-writing.html">
+        Binder Application writing guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-migration-to-binding-v3.html">
+        Migration to bindings v3
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/protocol-x-afb-ws-json1.html">
+        WebSocket protocol x-afb-ws-json1
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-desktop-package.html">
+        Installing the binder on a desktop
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-options.html">
+        Options of afb-daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-debugging.html">
+        Debugging binder and bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+        LEGACY Migration from v1 to v2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-binding-v2-references.html">
+        LEGACY Binding V2 references
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/REVISIONS.html">
+        Document revision
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/Installation.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/write-the-tests.html">
+        Write the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/the-test-widget.html">
+        The test widget
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/launch-the-tests.html">
+        Launch the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/tests-examples.html">
+        Tests examples
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-test-functions.html">
+        Binding Test Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-assert-functions.html">
+        Binding Assert Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/test-framework-functions.html">
+        Test Framework Functions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/general-assertions.html">
+        General Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/value-assertions.html">
+        Value Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/scientific-assertions.html">
+        Scientific Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/string-assertions.html">
+        String Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/error-assertions.html">
+        Error Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/type-assertions.html">
+        Type Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/table-assertions.html">
+        Table Assertions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/architecture.html">
+        Signaling Architecture
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-installation-guide.html">
+        Installation Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-usage-guide.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-install-usage-guide.html">
+        Installation and Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-configuration.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-plugins.html">
+        Plugins
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-api.html">
+        Signal Composer API
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/1_Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+        Bringing up a CAN device using socketcan backend
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/3_Add_CAN_Device.html">
+        Add a CAN device in CANdevStudio
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+        Configure a CanRawSender node
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/5_Using_CanRawView.html">
+        Using CanRawView
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/bluez-alsa.html">
+        bluez-alsa
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/pulseaudio-module-4a.html">
+        Pulseaudio - 4A Integration Module
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/README.html">
+        Architecture
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/concepts.html">
+        Concepts
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/components.html">
+        Components
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/README.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/kickstart.html">
+        Kickstart
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/reference.html">
+        Reference
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+        Adjust volumes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+        4a-tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/Devices.html">
+        Devices
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/HALs.html">
+        HALs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="this-page" href="reference/hmi-framework/3_1-HomeScreen-Guide.html">
+        Home Screen Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_2-WindowManager-Guide.html">
+        Window Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_3-SoundManager-Guide.html">
+        Sound Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/apis_services/fetched_files.yml -->
+
+<h1 id="homescreen-gui-application--homescreen-service-guide"><strong>HomeScreen GUI Application / HomeScreen Service Guide</strong></h1>
+<div align="right">Revision: 0.1</div>
+<div align="right">TOYOTA MOTOR CORPORATION</div>
+<div align="right">Advanced Driver Information Technology</div>
+<div align="right">21th/Nov/2018</div>
+
+<hr />
+
+<div id="Table\ of\ content"></div>
+
+<h2 id="table-of-content">Table of content</h2>
+<ul>
+  <li><a href="#Target\ reader\ of\ this\ document">Target reader of this document</a></li>
+  <li><a href="#Overview">Overview</a></li>
+  <li><a href="#Getting\ Start">Getting Start</a>
+    <ul>
+      <li><a href="#Supported\ environment">Supported environment</a></li>
+      <li><a href="#Build">Build</a></li>
+      <li><a href="#Configuring">Configuring</a></li>
+      <li><a href="#How\ to\ call\ HomeScreen\ APIs\ from\ your\ Application?">How to call HomeScreen APIs from your Application?</a></li>
+    </ul>
+  </li>
+  <li><a href="#Supported\ usecase">Supported usecase</a></li>
+  <li><a href="#Software\ Architecture">Software Architecture</a></li>
+  <li><a href="#API\ reference">API reference</a></li>
+  <li><a href="#Sequence">Sequence</a>
+    <ul>
+      <li><a href="###Initialize\ Sequence">Initialize</a></li>
+      <li><a href="###Tap\ Shortcut\ Sequence">Tap Shortcut(deprecated)</a></li>
+      <li><a href="###ShowWindow\ Sequence">ShowWindow</a></li>
+      <li><a href="###On\ Screen\ Message\ /\ Reply\ Sequence">On Screen Message / Reply Sequence(deprecated)</a></li>
+      <li><a href="###ShowOnscreen\ Sequence">ShowOnscreen</a></li>
+      <li><a href="###ShowNotification\ Sequence">ShowNotification</a></li>
+      <li><a href="###ShowInformation\ Sequence">ShowInformation</a></li>
+    </ul>
+  </li>
+  <li><a href="#Sample\ code">Sample code</a></li>
+  <li><a href="#Limitation">Limitation</a></li>
+  <li><a href="#Next\ Plan">Next Plan</a></li>
+  <li><a href="#Appendix">Appendix</a></li>
+</ul>
+
+<hr />
+
+<div id="Target\ reader\ of\ this\ document"></div>
+
+<h2 id="target-reader-of-this-document">Target reader of this document</h2>
+<p>Application developer whose software uses HomeScreen.</p>
+
+<hr />
+
+<div id="Overview"></div>
+
+<h2 id="overview">Overview</h2>
+<p>HomeScreen is built with a GUI application created with Qt(referred as HomeScreenGUI), and a service running on afb-daemon (referred as HomeScreenBinder).
+HomeScreen can start/switch applications run in AGL, also displays information such as onscreen messages.</p>
+
+<p>You can find these projects in AGL gerrit.</p>
+
+<p>homescreen(HomeScreenGUI):
+    https://gerrit.automotivelinux.org/gerrit/#/admin/projects/apps/homescreen
+launcher(LauncherGUI)
+    https://gerrit.automotivelinux.org/gerrit/#/admin/projects/apps/launcher
+agl-service-homescreen(HomeScreenBinder’s binding library):
+    https://gerrit.automotivelinux.org/gerrit/#/admin/projects/apps/agl-service-homescreen
+libhomescreen(library for application to communication with HomeScreenBinder):
+    https://gerrit.automotivelinux.org/gerrit/#/admin/projects/src/libhomescreen
+libqthomescreen(library for qt application to communication with HomeScreenBinder based on libhomescreen)
+    https://gerrit.automotivelinux.org/gerrit/#/admin/projects/src/libqthomescreen</p>
+
+<p>Also HomeScreenGUI is using libwindowmanager.</p>
+
+<div id="Getting\ Start"></div>
+
+<h2 id="getting-start">Getting Start</h2>
+
+<div id="Supported\ environment"></div>
+
+<h3 id="supported-environment">Supported environment</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Item</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">AGL version</td>
+      <td style="text-align: left">Electric Eel</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Hardware</td>
+      <td style="text-align: left">Renesas R-Car Starter Kit Pro(M3)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="Build"></div>
+
+<h3 id="build">Build</h3>
+
+<p><strong>Download recipe</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir WORK
+$ cd WORK
+$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+$ repo sync
+
+</code></pre>
+</div>
+
+<p>Then you can find the following recipes.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">meta-agl-demo/recipes-demo-hmi/homescreen</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">meta-agl-devel/meta-hmi-framework/recipes-demo-hmi/launcher</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">meta-agl-demo/recipes-demo-hmi/agl-service-homescreen</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">meta-agl-demo/recipes-demo-hmi/libhomescreen</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">meta-agl-devel/meta-hmi-framework/recipes-demo-hmi/qlibhomescreen</code></p>
+  </li>
+</ul>
+
+<p><strong>Bitbake</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo agl-devel agl-appfw-smack agl-hmi-framework
+$ bitbake agl-demo-platform
+</code></pre>
+</div>
+
+<hr />
+
+<div id="Configuring"></div>
+
+<h3 id="configuring">Configuring</h3>
+<p>To use HomeScreen API, an application shall paste the following configuration definition into “config.xml” of application.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;feature name="urn:AGL:widget:required-api"&gt;
+	&lt;param name="homescreen" value="ws" /&gt;
+    &lt;param name="windowmanager" value="ws" /&gt;
+&lt;/feature&gt;
+</code></pre>
+</div>
+
+<hr />
+
+<div id="How\ to\ call\ HomeScreen\ APIs\ from\ your\ Application?"></div>
+
+<h3 id="how-to-call-homescreen-apis-from-your-application">How to call HomeScreen APIs from your Application?</h3>
+<p>HomeScreen provides a library which is called “libhomescreen”.
+This library treats “json format” as API calling.
+For example, if an application wants to call “showWIndow()” API, the you should implement as below.</p>
+
+<p>At first the application should create the instance of libhomescreen.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>LibHomeScreen* libhs;
+libhs = new LibHomeScreen();
+libhs-&gt;init(port, token);
+</code></pre>
+</div>
+
+<p>The port and token is provided by Application Framework</p>
+
+<p>Execute the “showWindow()” function.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>libhs-&gt;showWindow("application_id", "display_area");
+</code></pre>
+</div>
+
+<p>Regarding the detail of showWindow() API, please refer <a href="#HomeScreen\ API">this</a> section.
+The first parameter is the appid of application which want to display,liked “dashboard”.
+And the second parameter corresponds to display_area which defined by windowmanager,usually “normal”,
+so in this case “showWindow” the two parameters are proper string.</p>
+
+<p>See also our <a href="#Sample\ code">Sample code</a>.</p>
+
+<p><br /></p>
+
+<hr />
+
+<div id="Supported\ usecase"></div>
+
+<h2 id="supported-usecase">Supported usecase</h2>
+<ol>
+  <li>HomeScreenGUI sending showWindow event to applications
+    <ul>
+      <li>Applications using libhomescreen to subscribe the showWindow event,
+  HomeScreenGUI will send showWindow event to applications.</li>
+    </ul>
+  </li>
+  <li>Display OnScreen messages(deprecated)
+    <ul>
+      <li>Applications sending OnScreen messages to homescreen-service, and OnScreenAPP
+  will get these message and display.</li>
+    </ul>
+  </li>
+  <li>Get OnSreen Reply event(deprecated)
+    <ul>
+      <li>When OnScreen messages is displaying, OnScreenAPP will send a reply event to applications.</li>
+    </ul>
+  </li>
+  <li>Display OnScreen by showWindow
+    <ul>
+      <li>When application who want to show OnScreen,it can call “showWindow”,then OnScreenApp will
+  display request OnScreen.</li>
+    </ul>
+  </li>
+  <li>Hide OnScreen by hideWindow
+    <ul>
+      <li>When application who want to hide OnScreen which is displaying,it can call “hideWindow”,then OnScreenApp
+  will hide OnScreen.</li>
+    </ul>
+  </li>
+  <li>Send OnScreen Reply by replyShowWindow
+    <ul>
+      <li>When user touch the button of OnScreen, OnScreenApp can call “relplyShowWindow” to send reply information
+  back to application.</li>
+    </ul>
+  </li>
+  <li>Show Notification on HomeScreenGUI
+    <ul>
+      <li>When application who want to display a notification,it can call “showNotification”,then HomeScreenGUI will
+  display the notification contents on the screen top area.</li>
+    </ul>
+  </li>
+  <li>Show Information on HomeScreenGUI
+    <ul>
+      <li>When application who want to display a information,it can call “showInformation”,then HomeScreenGUI will
+  display the information contents on the screen bottom area.</li>
+      <li>
+        <ul>
+          <li>*</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<div id="Software\ Architecture"></div>
+
+<h2 id="software-architecture">Software Architecture</h2>
+<p>The architecture of HomeScreen is shown below.
+HomeScreen is the service designed to be used by multiple applications.
+Therefore HomeScreen framework consists on two binder layers. Please refer the following figure.
+The upper binder is for application side security context for applications. The lower binder is for servide side security context.
+Usually application side binder has some business logic for each application, so the number of binders depend on the number of applications which use HomeScreen.
+On the other hand, regarding lower binder there is only one module in the system. This binder receives all messages from multiple applications (in detail, it comes from upper layer binder).</p>
+
+<p>The communication protocols between libhomescreen and upper binder, upper binder and lower binder, lower binder (homescreen-binding) are WebSocket.</p>
+
+<p><img src="parts/software-stack.png" alt="software-stack.png" /></p>
+
+<hr />
+
+<div id="API%20reference"></div>
+
+<h2 id="api-reference">API reference</h2>
+<p>“libhomescreen” and “agl-service-homescreen” provides several kinds of APIs.</p>
+
+<div id="Home\ Screen\ Specific\ API"></div>
+
+<h3 id="homescreen-specific-api">HomeScreen Specific API</h3>
+
+<ul>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a724bd949c4154fad041f96a15ef0f5dc">LibHomeScreen ()</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a6a57b573cc767725762ba9beab032220">init (const int port, const std::string &amp;token)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a6ca8ff4a2aa019a735afaff713e0ef44">tapShortcut(const char *application_id)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#ac336482036a72b51a822725f1929523c">onScreenMessage(const char *display_message)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a6c065f41f2c5d1f58d2763bfb4da9c37">onScreenReply(const char *reply_message)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a2789e8a5372202cc36f48e71dbb9b7cf">registerCallback (void(<em>event_cb)(const std::string &amp;event, struct json_object *event_contents), void(</em>reply_cb)(struct json_object <em>reply_contents), void(</em>hangup_cb)(void)=nullptr)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#ab1b0e08bf35415de9064afed899e9f85">set_event_handler(enum EventType et, handler_func f)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a527b49dcfe581be6275d0eb2236ba37f">call (const string&amp; verb, struct json_object* arg)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#ab5e8e8ab7d53e0f114e9e907fcbb7643">call (const char* verb, struct json_object* arg)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#aa4c189807b75d070f567967f0d690738">subscribe (const string&amp; event_name)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#aac03a45cbd453ba69ddb00c1016930a6">unsubscribe (const string&amp; event_name)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a69fc770cb3f94d30a10c2c8c81eb892f">showWindow (const char* application_id, json_object* json)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a4dbaea6c7b310e8ce7207155ff11b32a">hideWindow (const char* application_id)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a6310b129fc85ef0623e2e2063950cc4b">replyShowWindow (const char* application_id, json_object* json)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#a93ad567ed597a80a344ba82457c2bd7f">showNotification (json_object* json)</a></li>
+  <li><a href="api-ref/html/de/dd0/class_lib_home_screen.html#ada999aeb0444c964428bdf1ee236727f">showInformation (json_object* json)</a></li>
+</ul>
+
+<hr />
+
+<div id="Sequence"></div>
+
+<h2 id="sequence">Sequence</h2>
+
+<div id="InitializeSequence"></div>
+
+<h3 id="initialize-sequence">Initialize Sequence</h3>
+<p><img src="parts/initialize-set-event-handler.svg" alt="initialize-set-event-handler" /></p>
+
+<div id="TapShortcutSequence"></div>
+
+<h3 id="tap-shortcut-sequence">Tap Shortcut Sequence</h3>
+<p><img src="parts/tap_shortcut.svg" alt="tap_shortcut.svg" /></p>
+
+<div id="ShowWindowSequence"></div>
+
+<h3 id="showwindow-sequence">ShowWindow Sequence</h3>
+<p><img src="parts/showWindow.svg" alt="showWindow.svg" /></p>
+
+<div id="OnScreenMessageSequence"></div>
+
+<h3 id="on-screen-message--reply-sequence">On Screen Message / Reply Sequence</h3>
+<p><img src="parts/on_screen_message.svg" alt="on_screen_message.svg" /></p>
+
+<div id="ShowOnscreenSequence"></div>
+
+<h3 id="showonscreen-sequence">ShowOnScreen Sequence</h3>
+<p><img src="parts/showOnScreen.svg" alt="showOnScreen.svg" /></p>
+
+<div id="ShowNotificationSequence"></div>
+
+<h3 id="shownotification-sequence">ShowNotification Sequence</h3>
+<p><img src="parts/showNotification.svg" alt="showNotification.svg" /></p>
+
+<div id="ShowInformationSequence"></div>
+
+<h3 id="showinformation-sequence">ShowInformation Sequence</h3>
+<p><img src="parts/showInformation.svg" alt="showInformation.svg" /></p>
+
+<div id="Sample\ code"></div>
+
+<h1 id="sample-code">Sample code</h1>
+<p>You can find sample implementation of HomeScreen as below.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">libhomescreen/sample/simple-egl</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">libhomescreen/sample/template</code></p>
+  </li>
+</ul>
+
+<h1 id="limitation">Limitation</h1>
+<p>Now OnScreenApp is developing,approximately it will finished at GG.</p>
+
+<h1 id="next-plan">Next Plan</h1>
+<p>None.</p>
+
+<h1 id="appendix">Appendix</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@startuml
+
+title Application initialization phase
+
+entity App
+entity HomeScreenBinder
+entity HomeScreenGUI
+
+App-&gt;HomeScreenBinder: init(port, token)
+App-&gt;HomeScreenBinder: set_event_handler()
+
+note over HomeScreenBinder
+    setup event handler the App wishes to receive
+    ・LibHomeScreen::Event_ShowWindow
+    ・LibHomeScreen::Event_HideWindow
+    ・LibHomeScreen::Event_ReplyShowWindow
+end note
+
+@enduml
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@startuml
+title Application Callback Event TapShortcut phase
+entity App
+entity HomeScreenBinder
+entity HomeScreenGUI
+App-&gt;HomeScreenBinder: set_event_handler()
+
+note over App
+    LibHomeScreen::Event_TapShortcut
+end note
+
+HomeScreenGUI-&gt;HomeScreenBinder: tapShortcut(application_id)
+HomeScreenBinder-&gt;App: event_handler(application_id)
+@enduml
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@startuml
+
+title Application callback event showWindow phase
+
+actor user
+entity "homescreen-service" as hss
+entity launcher
+entity App
+entity windowmanager as wm
+
+user--&gt;launcher: tap app's icon
+launcher-&gt;hss: showWindow()
+note over hss,App
+{"application_id":"tapped application id", "parameter":{"area":"display area", ...}}
+end note
+hss-&gt;App: push showWindow event
+App-&gt;wm: activateWindow("application_name","display area")
+wm--&gt;App: push syncDraw event
+App-&gt;App: display
+
+@enduml
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@startuml
+title Application Callback Event On Screen Message / Reply phase
+entity App
+entity HomeScreenBinder
+entity HomeScreenGUI
+
+HomeScreenGUI-&gt;HomeScreenBinder: set_event_handler()
+
+note over HomeScreenGUI
+    LibHomeScreen::Event_OnScreenMessage
+end note
+
+
+App-&gt;HomeScreenBinder: set_event_handler()
+
+note over App
+    LibHomeScreen::Event_OnScreenReply
+end note
+
+App-&gt;HomeScreenBinder: onScreenMessage(display_message)
+HomeScreenBinder-&gt;HomeScreenGUI: event_handler(display_message)
+HomeScreenGUI-&gt;HomeScreenBinder: onScreenReply(reply_message)
+HomeScreenBinder-&gt;App: event_handler(reply_message)
+@enduml
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@startuml
+
+title show/hide onscreen phase
+
+actor user
+entity "homescreen-service" as hss
+entity App
+entity onscreenapp
+entity windowmanager as wm
+
+== show onscreen ==
+user-&gt;App: the operation request onscreen
+App-&gt;hss: showWindow()
+note over App,hss
+{"application_id":"onscreenapp", 
+"parameter":{"area":"display area", "file":"qml file path", 
+"data":{"the datas to onscreen qml"}}}
+end note
+
+hss-&gt;onscreenapp: push showWindow event
+note over hss,onscreenapp
+{"application_id":"onscreenapp", 
+"parameter":{"area":"display area", "file":"qml file path", 
+"data":{"the datas to onscreen qml"},
+&lt;font color=red &gt;"replyto":"caller application id"
+}}
+end note
+
+onscreenapp-&gt;onscreenapp: get and save parameters
+onscreenapp-&gt;wm: activateWindow("onscreeapp", "display area")
+alt can show
+wm--&gt;onscreenapp: push syncDraw event
+onscreenapp-&gt;wm: endDraw("onscreeapp")
+onscreenapp-&gt;onscreenapp: load and display qml file
+else can't show
+note over onscreenapp,wm
+do nothing
+end note
+end
+
+== hide onscreen ==
+
+user-&gt;onscreenapp: tap onscreen's button
+onscreenapp-&gt;hss: replyShowWindow()
+note over onscreenapp,hss
+{"application_id":"the application id who called onscreenapp", 
+"parameter": {"buttonName": "VOLUME_UP", "buttonPressMode": "shortPress", "buttonPressState": "release"}}
+end note
+hss-&gt;App: push replyShowWindow event
+App-&gt;App: call reply function
+App-&gt;hss: hideWindow("onscreenapp")
+hss-&gt;onscreenapp: push hideWindow event
+note over hss,onscreenapp
+{"application_id":"request hideWindow application id"}
+end note
+onscreenapp-&gt;wm: deactivateWindow("onscreenapp");
+onscreenapp-&gt;onscreenapp: hide window
+
+@enduml
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@startuml
+
+title show notification on HomeScreen top area
+
+entity "homescreen-service" as hss
+entity homescreen
+entity App
+
+App-&gt;hss: showNotification()
+note over App,hss
+{"icon":"display icon", "text":"display text"}
+end note
+hss-&gt; homescreen: push showNotification event
+note over hss,homescreen
+{"application_id":"request application id", 
+"parameter":{"icon":"display icon", "text":"display text"}}
+end note
+
+homescreen-&gt;homescreen: display notification message 3s
+
+@enduml
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@startuml
+
+title show information on HomeScreen bottom area
+
+entity "homescreen-service" as hss
+entity homescreen
+entity App
+
+App-&gt;hss: showInformation()
+note over hss
+{"info":"display information"}
+end note
+hss-&gt; homescreen: push showInformation event
+
+homescreen-&gt;homescreen: display information message 3s
+
+@enduml
+</code></pre>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-12-18 00:04:48 +0000</small>
+		
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-homescreen/plain/doc/ApplicationGuide.md?h=master">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

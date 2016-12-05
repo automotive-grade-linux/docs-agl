@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                1 6 Porter image deployment  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                        </li>
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Yocto layers
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/AGL.html">
+                AGL Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl.html">
+                meta-agl
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl-demo.html">
+                meta-agl-demo
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/meta-agl-devel.html">
+                meta-agl-devel
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Development Kit: build AGL image
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html">
+                Deploy image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html">
+                Setting up your operating system
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_3-Install-agl-for-porter.html">
+                Install Docker image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html">
+                Inside the container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_5-Build-image-Porter.html">
+                Build image for Porter
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.html">
+                Porter image deployment
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html">
+                SDK compilation and installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Development Kit: build AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html">
+                Initialize SDK environment
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html">
+                Trying out template
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html">
+                Developing with container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html">
+                Use CMake templates to develop an app
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                X(cross) Development System: User's Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/0_Abstract.html">
+                Getting Started
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/1_install-client.html">
+                Installing xds client tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Installing xds-server
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/2_install-xds-server.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/2-1_install-xds-server-docker.html">
+                Based on Docker container
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/2-2_install-xds-server-vm.html">
+                Based on Virtual Machine appliance
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/2-3_install-xds-server-native.html">
+                Native installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/3_install-sdks.html">
+                Installing AGL SDKs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Create your first AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4_build-first-app.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-1_build-first-app-setup.html">
+                Setup
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-2_build-first-app-cmd.html">
+                Build using command line tool
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-3_build-first-app-dashboard.html">
+                Build using XDS Dashboard
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/4-4_build-first-app-ide.html">
+                Build using a source code editor / IDE
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Debug your first AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5_debug-first-app.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-1_debug-first-app-config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-2_debug-first-app-cmd.html">
+                xds-gdb from command line
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-1/5-3_debug-first-app-ide.html">
+                xds-gdb within an IDE
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                X(cross) Development System: Internals
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_Prerequisites.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-server
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/1_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/2_how-to-run.html">
+                How to run
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/3_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/1_xds-server/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-agent
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/1_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/2_start.html">
+                Start
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/3_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/2_xds-agent/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-cli
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/1_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/2_commands.html">
+                CLI Commands
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/3_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/3_xds-cli/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-gdb
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/1_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/2_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/xds/part-2/4_xds-gdb/3_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Guides
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/devguides/en/dev/reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf">
+                AppFW - Privileges Management
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/AGL.html">
+        AGL Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl.html">
+        meta-agl
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl-demo.html">
+        meta-agl-demo
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/meta-agl-devel.html">
+        meta-agl-devel
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html">
+        Deploy image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html">
+        Setting up your operating system
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_3-Install-agl-for-porter.html">
+        Install Docker image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html">
+        Inside the container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_5-Build-image-Porter.html">
+        Build image for Porter
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.html">
+        Porter image deployment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html">
+        SDK compilation and installation
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html">
+        Initialize SDK environment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html">
+        Trying out template
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html">
+        Developing with container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html">
+        Use CMake templates to develop an app
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/0_Abstract.html">
+        Getting Started
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/1_install-client.html">
+        Installing xds client tools
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/2_install-xds-server.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/2-1_install-xds-server-docker.html">
+        Based on Docker container
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/2-2_install-xds-server-vm.html">
+        Based on Virtual Machine appliance
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/2-3_install-xds-server-native.html">
+        Native installation
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/3_install-sdks.html">
+        Installing AGL SDKs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4_build-first-app.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-1_build-first-app-setup.html">
+        Setup
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-2_build-first-app-cmd.html">
+        Build using command line tool
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-3_build-first-app-dashboard.html">
+        Build using XDS Dashboard
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/4-4_build-first-app-ide.html">
+        Build using a source code editor / IDE
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5_debug-first-app.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-1_debug-first-app-config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-2_debug-first-app-cmd.html">
+        xds-gdb from command line
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-1/5-3_debug-first-app-ide.html">
+        xds-gdb within an IDE
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_Prerequisites.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/1_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/2_how-to-run.html">
+        How to run
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/3_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/1_xds-server/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/1_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/2_start.html">
+        Start
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/3_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/2_xds-agent/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/1_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/2_commands.html">
+        CLI Commands
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/3_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/3_xds-cli/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/1_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/2_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/xds/part-2/4_xds-gdb/3_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf">
+        AppFW - Privileges Management
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/devguides/fetched_files.yml -->
+
+<h1 id="porter-image-deployment-on-target">Porter image deployment on target</h1>
+
+<p>Once the Porter image has been built with Yocto, we can deploy it on an
+empty SD card to prepare its use on the target.</p>
+
+<h2 id="sd-card-image-creation">SD card image creation</h2>
+
+<p>First, we need to generate an SD card disk image file. For this purpose,
+a helper script is provided within the container. Here below is the way
+to use it.</p>
+
+<h3 id="linux-mac-os-x-">Linux, Mac OS X ©</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> /xdt/build
+mksdcard /xdt/build/tmp/deploy/images/porter/agl-demo-platform-porter-20XXYYZZxxyyzz.rootfs.tar.bz2 /home/devel/mirror
+</code></pre>
+</div>
+
+<h3 id="windows-">Windows ©</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> /xdt/build
+sudo dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/sprs.img <span class="nv">bs</span><span class="o">=</span>1 <span class="nv">count</span><span class="o">=</span>1 <span class="nv">seek</span><span class="o">=</span>4G
+sudo mkfs.ext4 /sprs.img
+sudo mkdir /tmp/sprs
+sudo mount /sprs.img /tmp/sprs
+sudo mksdcard /xdt/build/tmp/deploy/images/porter/agl-demo-platform-porter-20XXYYZZxxyyzz.rootfs.tar.bz2
+/tmp/sprs/sdcard.img
+xz -dc /tmp/sprs/sdcard.img.xz &gt; <span class="nv">$XDT_WORKSPACE</span>/agl-demo-platform-porter-sdcard.img
+</code></pre>
+</div>
+
+<p>You should get the following prompt during the <code class="highlighter-rouge">mksdcard</code> step:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Creating the image agl-demo-platform-porter-sdcard.img ...
+0+0 records <span class="k">in
+</span>0+0 records out
+0 bytes <span class="o">(</span>0 B<span class="o">)</span> copied, 6.9187e-05 s, 0.0 kB/s
+mke2fs 1.42.12 <span class="o">(</span>29-Aug-2014<span class="o">)</span>
+Discarding device blocks: <span class="k">done
+</span>Creating filesystem with 524287 4k blocks and 131072 inodes
+Filesystem UUID: 5307e815-9acd-480b-90fb-b246dcfb28d8
+Superblock backups stored on blocks:
+    32768, 98304, 163840, 229376, 294912
+
+Allocating group tables: <span class="k">done
+</span>Writing inode tables: <span class="k">done
+</span>Creating journal <span class="o">(</span>8192 blocks<span class="o">)</span>: <span class="k">done
+</span>Writing superblocks and filesystem accounting information: <span class="k">done
+
+</span>Extracting image tarball...
+<span class="k">done
+
+</span>Image agl-demo-platform-porter-sdcard.img created!
+
+Set the following uboot environment
+setenv bootargs_console <span class="s1">'console=ttySC6,38400 ignore_loglevel'</span>
+setenv bootargs_video <span class="s1">'vmalloc=384M video=HDMI-A-1:1920x1080-32@60'</span>
+setenv bootargs_root <span class="s1">'root=/dev/mmcblk0p1 rootdelay=3 rw rootfstype=ext3 rootwait'</span>
+setenv bootmmc <span class="s1">'1:1'</span>
+setenv bootcmd_sd <span class="s1">'ext4load mmc ${bootmmc} 0x40007fc0 boot/uImage+dtb'</span>
+setenv bootcmd <span class="s1">'setenv bootargs ${bootargs_console} ${bootargs_video} ${bootargs_root}; run bootcmd_sd; bootm 0x40007fc0'</span>
+saveenv
+
+NB: replace bootmmc value <span class="s1">'1:1'</span> with <span class="s1">'0:1'</span> or <span class="s1">'2:1'</span> to access the good slot
+ use <span class="s1">'ext4ls mmc XXX:1'</span> to <span class="nb">test </span>access
+
+<span class="gp">$ </span>ls -lh <span class="nv">$XDT_WORKSPACE</span>
+-rw-r--r-- 1 devel devel 2.0G Feb 15 14:13 agl-demo-platform-porter-sdcard.img
+
+</code></pre>
+</div>
+
+<p>After the disk image is created, we can copy it on the SD card itself
+using an SD card adapter. To do so, we need to gain access to the SD
+card image file from our host machine.</p>
+
+<p>If you already share a directory between your host machine and the
+container (as described in section <a href="#anchor-setup-persist-wks">Set up a persistent workspace</a>),
+this state is already reached and you go directly on sections relating the SD
+card image installation.</p>
+
+<p>Otherwise, you need to copy the SD card image file out of the container
+and into your host machine using SSH protocol:</p>
+
+<ul>
+  <li>On Linux and Mac OS X hosts, you can use the <code class="highlighter-rouge">scp</code> command, which is part of
+ the OpenSSH project,</li>
+  <li>On Windows hosts, you can use the
+ <a href="http://the.earth.li/~sgtatham/putty/latest/x86/pscp.exe"><code class="highlighter-rouge">pscp.exe</code></a>
+ binary, which is part of the <a href="http://www.putty.org/">PuTTY project</a>.</li>
+</ul>
+
+<h2 id="deployment-from-a-linux-or-mac-os-x-host">Deployment from a Linux or Mac OS X host</h2>
+
+<p>Now that the SD card image is ready, the last step required is to
+“flash” it onto the SD card itself.</p>
+
+<p>First, you need an SD card adapter connected to your host machine.
+Depending on your adapter type and OS, the relevant block device can
+change. Mostly, you can expect:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">/dev/sdX</code> block device; usually for external USB adapters on
+ Linux hosts.</li>
+  <li><code class="highlighter-rouge">/dev/mmcblkN</code>: when using a laptop internal adapter on Linux
+ hosts.</li>
+  <li><code class="highlighter-rouge">/dev/diskN</code>: on Mac OS X hosts.</li>
+</ul>
+
+<h3 id="linux">Linux</h3>
+
+<p>If you do not know which block device you should use, you can check the
+kernel logs using the following command to figure out what is the
+associated block devices:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>dmesg | grep mmcblk
+<span class="gp">$ </span>dmesg | grep sd
+<span class="o">[</span>...snip...]
+<span class="o">[</span>1131831.853434] sd 6:0:0:0: <span class="o">[</span>sdb] 31268864 512-byte logical blocks: <span class="o">(</span>16.0 GB/14.9 GiB<span class="o">)</span>
+<span class="o">[</span>1131831.853758] sd 6:0:0:0: <span class="o">[</span>sdb] Write Protect is on
+<span class="o">[</span>1131831.853763] sd 6:0:0:0: <span class="o">[</span>sdb] Mode Sense: 4b 00 80 08
+<span class="o">[</span>1131831.854152] sd 6:0:0:0: <span class="o">[</span>sdb] No Caching mode page found
+<span class="o">[</span>1131831.854157] sd 6:0:0:0: <span class="o">[</span>sdb] Assuming drive cache: write through
+<span class="o">[</span>1131831.855174] sd 6:0:0:0: <span class="o">[</span>sdb] No Caching mode page found
+<span class="o">[</span>1131831.855179] sd 6:0:0:0: <span class="o">[</span>sdb] Assuming drive cache: write through
+<span class="o">[</span>...snip...]
+<span class="err">$</span>
+</code></pre>
+</div>
+
+<p>In this example, no <code class="highlighter-rouge">mmcblk</code> device where found, but a 16.0GB disk was
+listed and can be accessed on <strong><code class="highlighter-rouge">/dev/sdb</code></strong> which in our case is the
+physical SD card capacity.</p>
+
+<p>The command <code class="highlighter-rouge">lsblk</code> is also a good solution to explore block devices:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>lsblk
+NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda 8:0 0 931.5G 0 disk
+|--sda1 8:1 0 8G 0 part /
+|--sda2 8:2 0 16G 0 part <span class="o">[</span>SWAP]
+|--sda3 8:3 0 907.5G 0 part
+ |--vg0-usr 254:0 0 32G 0 lvm /usr
+ |--vg0-data 254:1 0 200G 0 lvm /data
+ |--vg0-home 254:2 0 100G 0 lvm /home
+ |--vg0-var 254:3 0 8G 0 lvm /var
+ |--vg0-docker 254:4 0 100G 0 lvm /docker
+sdb 8:16 0 223.6G 0 disk
+|--sdb1 8:17 0 223.6G 0 part /ssd
+sdc 8:32 1 3.7G 0 disk                  &lt;-- SD card plugged into USB card reader
+|--sdc1 8:33 1 2G 0 part                &lt;--
+sr0 11:0 1 1024M 0 rom
+</code></pre>
+</div>
+
+<p>In this example, the 4GB device <code class="highlighter-rouge">/dev/sdc</code> is listed as removable
+(column RM) and corresponds to a SD Card plugged into an USB card
+reader.</p>
+
+<p>Finally, as we know the block device which corresponds to our SD card,
+we can raw-copy the image on it using the following command <strong>**from your
+host terminal**</strong> : (replace <code class="highlighter-rouge">/dev/sdZ</code> by the appropriate device)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>xzcat ~/mirror/agl-demo-platform-porter-20XXYYZZxxyyzz.raw.xz | sudo dd <span class="nv">of</span><span class="o">=</span>/dev/sdZ <span class="nv">bs</span><span class="o">=</span>1M
+2048+0 records <span class="k">in
+</span>2048+0 records out
+2147483648 bytes <span class="o">(</span>2.0 GB<span class="o">)</span> copied, 69 s, 39.2 MB/s
+<span class="gp">$ </span>sync
+</code></pre>
+</div>
+
+<p>This will take few minutes to copy and sync. You should not remove the
+card from its slot until both commands succeed.</p>
+
+<p>Once it is finished, you can unplug the card and insert it in the
+micro-SD card slot on the Porter board, and perform a power cycle to
+start your new image on the target.</p>
+
+<p><strong>**NB:**</strong> The output format is also suitable to <code class="highlighter-rouge">bmaptool</code> utility (source
+code available here: <a href="https://github.com/01org/bmap-tools">https://github.com/01org/bmap-tools</a>:
+this significantly speeds up the copy as only relevant data are written on
+the Sdcard (filesystem “holes” are not written). It’s also supporting
+direct access to URLs pointing to compressed images.</p>
+
+<h3 id="mac-os-x-">Mac OS X ©</h3>
+
+<p>If you do not know which block device you should use, you can use the
+<code class="highlighter-rouge">diskutil</code> tool to list them:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>diskutil list
+<span class="o">[</span>...snip...]
+
+/dev/disk2
+<span class="c">#:   TYPE                  NAME   SIZE       IDENTIFIER</span>
+0: Fdisk_partition_scheme          7.9 GB    disk2
+1: Linux                           7.9 GB    disk2s1
+<span class="o">[</span>...snip...]
+<span class="err">$</span>
+</code></pre>
+</div>
+
+<p>In this example, we have a 8.0GB disk which can be accessed on
+<strong><code class="highlighter-rouge">/dev/disk2</code></strong> which in our case is the physical SD card capacity.</p>
+
+<p>Finally, as we know the block device which accesses our SD card, we can
+raw-copy the image on it using the following command <strong>from your host
+terminal</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>xzcat ~/mirror/agl-demo-platform-porter-20XXYYZZxxyyzz.raw.xz | sudo dd <span class="nv">of</span><span class="o">=</span>/dev/disk2 <span class="nv">bs</span><span class="o">=</span>1M
+2048+0 records <span class="k">in
+</span>2048+0 records out
+2147483648 bytes <span class="o">(</span>2.0 GB<span class="o">)</span> copied, 69 s, 39.2 MB/s
+<span class="gp">$ </span>sync
+</code></pre>
+</div>
+
+<p>This will take few minutes to copy and sync. You should not remove the
+card from its slot until both commands succeed.</p>
+
+<p>Once it is finished, you can unplug the card and insert it in the
+micro-SD card slot on the Porter board, and perform a power cycle to
+start your new image on the target.</p>
+
+<h2 id="deployment-from-a-windows-host">Deployment from a Windows host</h2>
+
+<p>Now that the SD card image is ready, the last step required is to “flash” it
+onto the SD card itself.</p>
+
+<p>First, you need an SD card adapter connected to your host machine.</p>
+
+<p>We will then use the <code class="highlighter-rouge">Win32DiskImager</code> program which we will download at
+this URL:</p>
+
+<p><a href="http://sourceforge.net/projects/win32diskimager/">http://sourceforge.net/projects/win32diskimager/</a></p>
+
+<p>and by clicking on this button:
+<img src="pictures/windows_win32diskimager_1.png" alt="" /></p>
+
+<p>We will then install it:</p>
+
+<p><img src="pictures/windows_win32diskimager_2.png" alt="" />{style width:48%; float:left; margin-right:0.3em}
+<img src="pictures/windows_win32diskimager_3.png" alt="" />{style width:48%; float:right}</p>
+
+<p>And then start it with its icon:
+<img src="pictures/windows_win32diskimager_4.png" alt="" /></p>
+
+<p>We can then click on the “blue folder” button to select our .img file
+(uncompress the XZ image first using utilities like 7zip for example).</p>
+
+<p><strong>After having verified that the drive letter on the
+right matches our SD card reader</strong>, we click on the “<strong>Write</strong>” button
+to start the flashing process.</p>
+
+<p><img src="pictures/windows_win32diskimager_5.png" alt="" /></p>
+
+<p>This will take few minutes to copy and sync. You should not remove the
+card from its slot until both commands succeed.</p>
+
+<p>Once it is finished, you can unplug the card and insert it in the
+micro-SD card slot on the Porter board, and perform a power cycle to
+start your new image on the target.</p>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-06-01 00:02:37 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/agl-documentation/master/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

@@ -1,0 +1,3731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Window Manager Developper Guide  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/hmi-framework/3_2-WindowManager-Guide.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/0-introduction.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/1-afm-daemons.html">
+                The afm daemons
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2-widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.1-widgets.html">
+                Overview of widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/2.2-config.xml.html">
+                Widget configuration file
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/3-permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-main/4-quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework Binder
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-vocabulary.html">
+                Binder daemon vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-binding-writing.html">
+                How to write a binding ?
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Binder references
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/types-and-globals.html">
+                Types and globals
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/macro-log.html">
+                Macros for logging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-api.html">
+                Functions of class afb_api
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-req.html">
+                Functions of class afb_req
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-event.html">
+                Functions of class afb_event
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-daemon.html">
+                Functions of class afb_daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/reference-v3/func-service.html">
+                Functions of class afb_service
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-events-guide.html">
+                Binder events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-application-writing.html">
+                Binder Application writing guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Annexes
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-migration-to-binding-v3.html">
+                Migration to bindings v3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/protocol-x-afb-ws-json1.html">
+                WebSocket protocol x-afb-ws-json1
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-desktop-package.html">
+                Installing the binder on a desktop
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-options.html">
+                Options of afb-daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/afb-daemon-debugging.html">
+                Debugging binder and bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+                LEGACY Migration from v1 to v2
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/legacy/afb-binding-v2-references.html">
+                LEGACY Binding V2 references
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/af-binder/REVISIONS.html">
+                Document revision
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Test Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/Installation.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/write-the-tests.html">
+                Write the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/the-test-widget.html">
+                The test widget
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/launch-the-tests.html">
+                Launch the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/tests-examples.html">
+                Tests examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                References
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-test-functions.html">
+                Binding Test Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/binding-assert-functions.html">
+                Binding Assert Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/test-framework-functions.html">
+                Test Framework Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                LuaUnit Assertion Functions
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/general-assertions.html">
+                General Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/value-assertions.html">
+                Value Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/scientific-assertions.html">
+                Scientific Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/string-assertions.html">
+                String Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/error-assertions.html">
+                Error Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/type-assertions.html">
+                Type Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/afb-test/table-assertions.html">
+                Table Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/architecture.html">
+                Signaling Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Low level CAN service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-installation-guide.html">
+                Installation Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/low-can-usage-guide.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                High level ViWi service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/high-viwi-install-usage-guide.html">
+                Installation and Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Signal Composer service Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-configuration.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-plugins.html">
+                Plugins
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/signal-composer-api.html">
+                Signal Composer API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                CanDevStudio Quickstart
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/1_Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+                Bringing up a CAN device using socketcan backend
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/3_Add_CAN_Device.html">
+                Add a CAN device in CANdevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+                Configure a CanRawSender node
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/candevstudio/docs/5_Using_CanRawView.html">
+                Using CanRawView
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/signaling/resources.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/bluez-alsa.html">
+                bluez-alsa
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/pulseaudio-module-4a.html">
+                Pulseaudio - 4A Integration Module
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                4a Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/README.html">
+                Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/concepts.html">
+                Concepts
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/4a-framework/components.html">
+                Components
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                high-level-api
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/README.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/kickstart.html">
+                Kickstart
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/reference.html">
+                Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Tips And Tricks
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+                Adjust volumes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+                4a-tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+                Devices
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+                HALs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HMI Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+                Home Screen Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/apis_services/en/dev/reference/hmi-framework/3_2-WindowManager-Guide.html">
+                Window Manager Developper Guide
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/hmi-framework/3_3-SoundManager-Guide.html">
+                Sound Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen (old)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/apis_services/en/dev/reference/homescreen/homescreen_api.html">
+                HomeScreen API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/0-introduction.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/1-afm-daemons.html">
+        The afm daemons
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2-widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.1-widgets.html">
+        Overview of widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/2.2-config.xml.html">
+        Widget configuration file
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/3-permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-main/4-quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-vocabulary.html">
+        Binder daemon vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-binding-writing.html">
+        How to write a binding ?
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/types-and-globals.html">
+        Types and globals
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/macro-log.html">
+        Macros for logging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-api.html">
+        Functions of class afb_api
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-req.html">
+        Functions of class afb_req
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-event.html">
+        Functions of class afb_event
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-daemon.html">
+        Functions of class afb_daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/reference-v3/func-service.html">
+        Functions of class afb_service
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-events-guide.html">
+        Binder events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-application-writing.html">
+        Binder Application writing guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-migration-to-binding-v3.html">
+        Migration to bindings v3
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/protocol-x-afb-ws-json1.html">
+        WebSocket protocol x-afb-ws-json1
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-desktop-package.html">
+        Installing the binder on a desktop
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-options.html">
+        Options of afb-daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/afb-daemon-debugging.html">
+        Debugging binder and bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+        LEGACY Migration from v1 to v2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/legacy/afb-binding-v2-references.html">
+        LEGACY Binding V2 references
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/af-binder/REVISIONS.html">
+        Document revision
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/Installation.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/write-the-tests.html">
+        Write the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/the-test-widget.html">
+        The test widget
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/launch-the-tests.html">
+        Launch the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/tests-examples.html">
+        Tests examples
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-test-functions.html">
+        Binding Test Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/binding-assert-functions.html">
+        Binding Assert Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/test-framework-functions.html">
+        Test Framework Functions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/general-assertions.html">
+        General Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/value-assertions.html">
+        Value Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/scientific-assertions.html">
+        Scientific Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/string-assertions.html">
+        String Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/error-assertions.html">
+        Error Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/type-assertions.html">
+        Type Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-test/table-assertions.html">
+        Table Assertions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/architecture.html">
+        Signaling Architecture
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-installation-guide.html">
+        Installation Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/low-can-usage-guide.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/high-viwi-install-usage-guide.html">
+        Installation and Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-configuration.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-plugins.html">
+        Plugins
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/signal-composer-api.html">
+        Signal Composer API
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/1_Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/2_can_device_socketcan_backend.html">
+        Bringing up a CAN device using socketcan backend
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/3_Add_CAN_Device.html">
+        Add a CAN device in CANdevStudio
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/4_Configure_CanRawSender_Node.html">
+        Configure a CanRawSender node
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/candevstudio/docs/5_Using_CanRawView.html">
+        Using CanRawView
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/signaling/resources.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/bluez-alsa.html">
+        bluez-alsa
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/pulseaudio-module-4a.html">
+        Pulseaudio - 4A Integration Module
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/README.html">
+        Architecture
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/concepts.html">
+        Concepts
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/4a-framework/components.html">
+        Components
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/README.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/kickstart.html">
+        Kickstart
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/reference.html">
+        Reference
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+        Adjust volumes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+        4a-tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/Devices.html">
+        Devices
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/audio/high-level-api/TipsAndTricks/HALs.html">
+        HALs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_1-HomeScreen-Guide.html">
+        Home Screen Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/hmi-framework/3_2-WindowManager-Guide.html">
+        Window Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/hmi-framework/3_3-SoundManager-Guide.html">
+        Sound Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/apis_services/fetched_files.yml -->
+
+<h1 id="window-manager-application-guide"><strong>Window Manager Application Guide</strong></h1>
+
+<div align="right">Revision: 0.7</div>
+<div align="right">TOYOTA MOTOR CORPORATION</div>
+<div align="right">12th/Oct/2018</div>
+
+<hr />
+
+<div id="Table\ of\ content"></div>
+
+<h1 id="table-of-content">Table of content</h1>
+
+<ul>
+  <li><a href="#Target\ reader\ of\ this\ document">Target reader of this document</a></li>
+  <li><a href="#Overview">Overview</a>
+    <ul>
+      <li><a href="#Supported\ usecase">Supported usecase</a></li>
+    </ul>
+  </li>
+  <li><a href="#Getting\ Started">Getting Started</a>
+    <ul>
+      <li><a href="#Build">Build</a></li>
+      <li><a href="#Install">Install</a></li>
+      <li><a href="#Bitbake">Bitbake</a></li>
+      <li><a href="#Enable\ to\ call\ Window\ Manager">Enable to call Window Manager</a></li>
+    </ul>
+  </li>
+  <li><a href="#Software\ Architecture">Software Architecture</a></li>
+  <li><a href="#Sequence">Sequence</a></li>
+  <li><a href="#API\ reference">API reference</a>
+    <ul>
+      <li><a href="#Request\ to\ Window\ Manager">Request to Window Manager</a></li>
+      <li><a href="#Event\ from\ Window\ Manager">Event from Window Manager</a></li>
+      <li><a href="#Client\ library">Client Library</a></li>
+    </ul>
+  </li>
+  <li><a href="#Sample\ code">Sample code</a></li>
+  <li><a href="#Policy\ Manager">Policy Manager</a>
+    <ul>
+      <li><a href="#Enabling\ split">Enabling split</a></li>
+    </ul>
+  </li>
+  <li><a href="#Release\ Note">Release Note</a></li>
+</ul>
+
+<hr />
+
+<div id="Target\ reader\ of\ this\ document"></div>
+
+<h2 id="target-reader-of-this-document">Target reader of this document</h2>
+
+<p>This document is intended for developers and system integrators who
+need to know, how Window manager works and how it is to be used.</p>
+
+<h3 id="scope-of-this-document">Scope of this Document</h3>
+
+<p>This document covers Window manager that was implemented for TMC and
+delivered to the Automotive Grade Linux (AGL) project. It includes its
+implementation details, concepts of operation, configuration and usage.</p>
+
+<p>It does not include</p>
+
+<ul>
+  <li>
+    <p>document of the underlying architecture, see
+<a href="https://wiki.automotivelinux.org/hmiframework">HMI-Framework</a>.</p>
+  </li>
+  <li>
+    <p>document of the AGL application framework and its technologies,
+see <a href="https://wiki.automotivelinux.org/agl-distro/app-framework">AGL Application
+  Framework</a>.</p>
+  </li>
+  <li>
+    <p>document of HomeScreen, see
+<a href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/hmi-framework/3_1-HomeScreen-Guide.html">HomeScreen</a>.</p>
+  </li>
+</ul>
+
+<p>It is highly recommended to have a good understanding of these documents
+and projects before using Window manager.</p>
+
+<hr />
+
+<div id="Overview"></div>
+
+<h1 id="overview">Overview</h1>
+
+<p>Window Manager is the service process which provides <strong>window management based on policy</strong>.
+And implements a layout switching of applications on
+multiple layers and with different layer layouts.
+Window Manager is based on ivi layer management from GENIVI and AGL application framework.</p>
+
+<p>Window Manager consists of</p>
+
+<ul>
+  <li>afb-binder</li>
+  <li>service binding library</li>
+  <li>shared library for policy management</li>
+  <li>configuration files</li>
+</ul>
+
+<p>In order to understand Window Manager, the below figure shows the one of typical usecases.
+In this example, there are two mode for window management.</p>
+
+<ol>
+  <li>Window Management in <code class="highlighter-rouge">Car Stops</code></li>
+  <li>Window Management in <code class="highlighter-rouge">Car Runs</code></li>
+</ol>
+
+<p><img src="parts/state_change_example.png" alt="Figure: Typical usecase" /></p>
+
+<p>The important points are:</p>
+
+<ul>
+  <li>
+    <p><strong>Window transition should be done by Window Manager</strong><br />
+ Window Manager switch application displayed on top layer by user operation(touch shortcut button).
+ In this example, when an user touches <code class="highlighter-rouge">navigation</code> shortcut button, Window Manager displays <code class="highlighter-rouge">navigation</code> and hide <code class="highlighter-rouge">launcher</code>. Next, when an user touches <code class="highlighter-rouge">videoplayer</code> shortcut button, Window Manager divides a screen into two parts and display two applications.</p>
+  </li>
+  <li>
+    <p><strong>There is a priority <code class="highlighter-rouge">role</code> for each application.</strong><br />
+ Window Manager realizes state transition change based on the policy which consists of <code class="highlighter-rouge">role</code>.
+ According to the state transition table, it controls the visibility of application window, layout change, and so on.
+ The reasons why this is necessary are</p>
+
+    <ul>
+      <li>to support user driving</li>
+      <li>not to disturb a driver concerns on driving for safety</li>
+    </ul>
+
+    <p>In this example, for safety, when the car starts running, Window Manager set up the role <code class="highlighter-rouge">videoplayer</code>
+to be masked and uncontrollable by user not to disturb driver concerns.
+And, for supporting driving, set up <code class="highlighter-rouge">navigation</code> role to be displayed 3 seconds after the car ran.<br />
+In <code class="highlighter-rouge">Car Run</code> state, the user can’t switch to other application from Navigation application until car stops.</p>
+  </li>
+</ul>
+
+<div id="Supported\ usecase"></div>
+
+<h2 id="supported-usecase">Supported usecase</h2>
+
+<ol>
+  <li>Window Management
+    <ul>
+      <li>When an user chooses a different application, Window Manager changes the layout and then displays the application.</li>
+      <li>When an user chooses a different application, Window Manager changes the layout and then hides the displayed application.</li>
+    </ul>
+  </li>
+  <li>Policy Management
+    <ul>
+      <li>Window Manager changes layout according to policy table based on <code class="highlighter-rouge">role</code>.</li>
+    </ul>
+  </li>
+  <li>Define Layout by <code class="highlighter-rouge">area</code> configuration
+    <ul>
+      <li>Window Manager realizes the abstracted <code class="highlighter-rouge">area</code> and can resize the window by using it. User can easily edit this configuration.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<div id="Getting\ Started"></div>
+
+<h1 id="getting-started">Getting Started</h1>
+
+<div id="Build"></div>
+
+<h2 id="build">Build</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://gerrit.automotivelinux.org/gerrit/apps/agl-service-windowmanager
+<span class="nb">cd </span>agl-service-windowmanager
+mkdir build
+<span class="nb">cd </span>build
+<span class="nb">source</span> &lt;your SDK path&gt; // normally this is /opt/agl-sdk/environment
+cmake ..
+make
+make package
+</code></pre>
+</div>
+
+<p>The widget package is populated in the ‘package’ directory.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ls package/
+root  windowmanager-service.wgt
+</code></pre>
+</div>
+
+<div id="Install"></div>
+
+<h2 id="install">Install</h2>
+
+<p>Copy windowmanager-service.wgt to the file system then execute the following command.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>afm-util install windowmanager-service.wgt
+</code></pre>
+</div>
+
+<div id="Bitbake"></div>
+
+<h2 id="bitbake">Bitbake</h2>
+
+<p>You can make Window Manager object files with the following two stage operations.</p>
+
+<h3 id="download-recipe">Download recipe</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir WORK
+<span class="nb">cd </span>WORK
+repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo sync
+</code></pre>
+</div>
+
+<h3 id="execute-bitbake">Execute Bitbake</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo hmi-framework
+bitbake agl-demo-platform
+</code></pre>
+</div>
+
+<hr />
+
+<div id="Enable\ to\ call\ Window\ Manager"></div>
+
+<h2 id="enable-to-call-window-manager">Enable to call Window Manager</h2>
+
+<p>To call Window Manager, it is important to enable the permission from security framework.<br />
+To use Window Manager API, an application or a service shall add the following configuration definition into “config.xml” of your application.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-api"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"windowmanager"</span> <span class="na">value=</span><span class="s">"ws"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/feature&gt;</span>
+</code></pre>
+</div>
+
+<p>To call Window Manager function easily, Window Manager provides a library which is called “libwindowmanager”.
+This library provides a function style API calling interface.<br />
+So you can include the libwindowmanager.hpp header file, and can link against this library.
+Please also refer to the sample application.</p>
+
+<p>See also our <a href="#Sample\ code">Sample code</a>.</p>
+
+<hr />
+
+<div id="Software\ Architecture"></div>
+
+<h1 id="software-architecture">Software Architecture</h1>
+
+<p>The static relationship with other components is shown below.
+The actual logic of Window Manager is the binding in Binder(afb-daemon).
+Window Manager is based on AGL application framework,
+so the IPC via websocket is protected by AGL application framework.</p>
+
+<p>The upper binder is for the application side security context.<br />
+The lower binder is the Window Manager for the server side security context.
+Usually an application side binder has some business logic for each application, so the number of binders depend on the number of applications which use Window Manager.<br />
+On the other hand, regarding lower binder there is only one module in the system. This binder receives messages from multiple applications.</p>
+
+<p>An application can use libwindowmanager.so to call Window Manager API simply.</p>
+
+<p>Window Manager is based on the GENIVI layer management system.</p>
+
+<p><img src="parts/wm_software-stack.png" alt="wm_software-stack.png" /></p>
+
+<h2 id="layers">Layers</h2>
+
+<p>Layers are entities that means the application stack group defined in <code class="highlighter-rouge">layers.json</code>.
+This doesn’t mean layer ID defined in GENIVI ivi layer.
+The layer ID is used for application itself in Window Manager.
+Currently, application can’t have multiple surfaces in Window Manager.</p>
+
+<div id="Layers"></div>
+
+<h2 id="surfaces">Surfaces</h2>
+
+<p>Surfaces are <em>placed</em> on layers . The surface
+will then be resized to dimensions, according to the name of <code class="highlighter-rouge">areas.db</code>
+application requests by <code class="highlighter-rouge">activateWindow</code> or policy management.
+As default, <code class="highlighter-rouge">normal.full</code> is set by libwindowmanager for native application.</p>
+
+<div id="Configuration"></div>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The window manager is configured with the <em>layers.json</em>, <em>areas.db</em>, <em>roles.db</em> configuration
+files. By default they are searched in <code class="highlighter-rouge">${AFM_APP_INSTALL_DIR}/etc/</code>.</p>
+
+<p>Sample configurations are provided with the window manager
+implementation, these samples are installed to ${AFM_APP_INSTALL_DIR}/etc/ .</p>
+
+<p>This configuration is supposed to be configured by policy designer which means OEM or Tier1.</p>
+
+<h3 id="layersjson">layers.json</h3>
+
+<p><code class="highlighter-rouge">layers.json</code> has three roles.<br />
+First, to create application containers <code class="highlighter-rouge">Layer</code>.<br />
+Second, to set id range for applications.<br />
+Third, to attach application to <code class="highlighter-rouge">Layer</code> according to the role application requests.</p>
+
+<p>The sample configuration is here</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface ID to Layer ID mapping"</span><span class="p">,</span><span class="w">
+
+   </span><span class="nt">"main_surface"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"surface_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HomeScreen"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This surface should never be made invisible (The HomeScreen)"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+
+   </span><span class="nt">"mappings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BackGroundLayer"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BackGroundLayer"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single BackGround layer map for the map, radio, music and video"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"homescreen"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FarHomeScreen"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FarHomeScreen is the part of HomeScreen. The z order of this layer is lower than NearHomeScreen"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"music|video|browser|radio|phone|map|hvac|settings|dashboard|poi|mixer|sdl|launcher|fallback"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apps"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Range of IDs that will always be placed on layer 1001"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^on_screen.*"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OnScreen"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Range of IDs that will always be placed on the OnScreen layer, that gets a very high 'dummy' id of 9999"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Each mapping defines the following items to map corresponding surfaces
+to a layer.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">role</code> defines what kind of ability the application has. And the application will be attached to <code class="highlighter-rouge">Layer</code> according to the <code class="highlighter-rouge">role</code>.
+  A regular expression that application drawing names
+  are matched against. If applications match this regular expression,
+  the surface will be visible on this layer.</p>
+  </li>
+  <li><code class="highlighter-rouge">name</code> is just a name definition for <code class="highlighter-rouge">Layer</code>, it has no
+  functional use apart from identifying a layer with a name.</li>
+  <li><code class="highlighter-rouge">layer_id</code> is the id used in GENIVI IVI layer management control.</li>
+</ul>
+
+<p><code class="highlighter-rouge">Layer</code> stacks from beginning to end.<br />
+The above <code class="highlighter-rouge">Layer</code> example image is below.</p>
+
+<p><img src="parts/wm_layer_stack.png" alt="wm_layer_stack.png" /></p>
+
+<p>Note:
+“fallback” role is the special role. This role is set if the role application requests doesn’t exist
+in <code class="highlighter-rouge">layers.json</code>. Then, Window Manager will accept any applications.
+If the “fallback” is not set in layers.json, window manager blocks the application displaying in such case.
+In such a situation, you have to add your role(application name) at “role” in layers.json.</p>
+
+<p>Note:
+<code class="highlighter-rouge">BackGroundLayer</code> name of <code class="highlighter-rouge">Layer</code> is exception for work around. This layer is fallback layer not to stop event loop of application when it becomes invisible.
+The problem is issued in <a href="https://jira.automotivelinux.org/browse/SPEC-1484">https://jira.automotivelinux.org/browse/SPEC-1484</a>.</p>
+
+<div id="Configuration\ Items"></div>
+
+<h3 id="areasdb">areas.db</h3>
+
+<p>Area means abstract expressions of 2-dimensional size and position.<br />
+areas.db defines the area which an application is set.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fullscreen"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal.full"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">1488</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"split.main"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">744</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"split.sub"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">962</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">744</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>The image of the above setting is described below.<br />
+<img src="parts/wm_area.png" alt="wm_area.png" /></p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">name</code> is an abstract data of rectangle.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">rect</code> has 4 arguments. <code class="highlighter-rouge">x</code>, <code class="highlighter-rouge">y</code> means the offset from (0, 0) of screen.<code class="highlighter-rouge">w</code> means the width of the area, and <code class="highlighter-rouge">h</code> means the height of the area. The dimensions can be specified relative to the screen dimensions.</p>
+  </li>
+</ul>
+
+<p>The dimensions can be specified absolute to the screen dimensions. But if <code class="highlighter-rouge">fullscreen</code> is not suitable to screen dimensions, Window Manager scales the area automatically.</p>
+
+<p>Note:<br />
+<code class="highlighter-rouge">fullscreen</code> must be set because this is the base size of scaling in Window Manger.</p>
+
+<p>Note:<br />
+The direction of the coordinates depends on <code class="highlighter-rouge">transform</code> in weston.ini.
+Currently, agl-demo-platform set <code class="highlighter-rouge">transform=270</code>.
+This suppose to use screen vertically.</p>
+
+<h3 id="rolesdb">roles.db</h3>
+
+<hr />
+
+<div id="Sequence"></div>
+
+<h1 id="sequence">Sequence</h1>
+
+<p>To understand the sequence between application and window manager, refer to the <a href="https://wiki.automotivelinux.org/hmiframework">spec document</a>.</p>
+
+<p>The typical sequence to render your application, follow the sequence below.</p>
+
+<ol>
+  <li>Register your role (and request surfaceID)</li>
+</ol>
+
+<p><img src="parts/request_role.png" alt="request_role.png" /></p>
+
+<p>The above sequence is the initialization phase of your application to use Window Manager.
+An Application has to register your <code class="highlighter-rouge">role</code> to Window Manager. For ivi-shell application, Window Manager generates surfaceID to input it into the function
+to create surface.<br />
+And also it is important for synchronization to get <code class="highlighter-rouge">syncDraw</code> event for receiving the request for resize and redraw, and notifying Window Manager of <code class="highlighter-rouge">endDraw</code>, so register callback function with setEventHandler for <code class="highlighter-rouge">syncDraw</code>.</p>
+
+<p><a href="#requestSurface">requestSurface</a><br />
+<a href="#wm_subscribe">setEventHandler</a></p>
+
+<p>setEventHandler is API of libwindowmanager. This calls wm_subscribe internally.</p>
+
+<ol>
+  <li>Display your window</li>
+</ol>
+
+<p><img src="parts/hmi_framework_designed_seq_toyota.png" alt="hmi_framework_designed_seq_toyota.png" /></p>
+
+<p>To display your window, your application has to request <code class="highlighter-rouge">activateWindow</code> with <code class="highlighter-rouge">role</code> and <code class="highlighter-rouge">area</code> to Window Manager.
+Window Manager checks the app should be visible on the <code class="highlighter-rouge">area</code> according to the policy table using <code class="highlighter-rouge">role</code> .
+If it is accepted, afb_req_success will be returned, and next Window Manager
+will push the event <code class="highlighter-rouge">syncDraw</code> to applications which will be displayed.
+If it is denied, afb_req_fail will be returned.<br />
+In this sample sequence, <code class="highlighter-rouge">syncDraw</code> is emitted to the apps who requested only,
+but this shall be emitted to other applications whose size shall be changed.</p>
+
+<p><a href="#activateWindow">activateWindow</a><br />
+<a href="#syncDraw">syncDraw</a><br />
+<a href="#endDraw">endDraw</a><br />
+<a href="#flushDraw">flushDraw</a></p>
+
+<ol>
+  <li>Activate OnScreen Window</li>
+</ol>
+
+<p><img src="parts/deactivate_window.png" alt="deactivate_window.png" /></p>
+
+<p><a href="#deactivateWindow">deactivateWindow</a><br />
+<a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps%2Fonscreenapp.git;a=summary">See sample code for more detail about OnScreen Window.</a></p>
+
+<p>The above sequence shows the sample of OnScreen Window.
+If the role is high priority than NormapApp, Window Manager rejects NormalApp
+request when OnScreenApp is displayed.</p>
+
+<p>Note : Above repository is currently empty, so please refer to the sandbox branch.</p>
+
+<hr />
+
+<div id="API\ reference"></div>
+
+<h1 id="api-reference">API reference</h1>
+
+<h2 id="request-to-window-manager">Request to Window Manager</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Use</th>
+      <th style="text-align: center">verb</th>
+      <th style="text-align: center">version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Initialize</td>
+      <td style="text-align: center">requestSurface</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">wm_subscribe</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">requestSurfaceXDG</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Activate/Deactivate</td>
+      <td style="text-align: center">activateWindow</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">deactivateWindow</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">endDraw</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Get Infomation</td>
+      <td style="text-align: center">getDisplayInfo</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note: We created this table from 0.7</p>
+
+<p>The data of IPC via websocket consists of JSON.
+This section describes the verb of API and key.
+Normally, the body of requesting API will be here.</p>
+
+<div id="Request\ to\ Widnow \Manager"></div>
+
+<h2 id="initialize">Initialize</h2>
+
+<div id="requestSurface"></div>
+
+<h3 id="requestsurface"><em>requestSurface</em></h3>
+
+<p>Register your role to Window Manager and get surfaceID for ivi-shell.
+The role is used for policy management.<br />
+SurfaceID is supposed to be set to the API  <code class="highlighter-rouge">ivi_application_surface_create</code> of ivi-application protocol or set it to environment variable <code class="highlighter-rouge">QT_IVI_SURFACE_ID</code> if your app is Qt and integrate ivi-shell.</p>
+
+<ul>
+  <li>verb : “requestSurface”</li>
+  <li>argument : {“drawing_name”:”your role”}</li>
+</ul>
+
+<p>the value must be selected in layers.json.</p>
+
+<p>argument example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="requestsurfacexdg"><em>requestSurfaceXDG</em></h3>
+
+<p>This API is for XDGLauncher, so it is not necessary for normal application.
+XDGLauncher is created for XDG application for desktop app without editing for HMI-Framework.
+Please see the repository in detail.
+<a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=staging%2Fxdg-launcher.git;a=summary">https://gerrit.automotivelinux.org/gerrit/gitweb?p=staging%2Fxdg-launcher.git;a=summary</a></p>
+
+<div id="wm_subscribe"></div>
+
+<h3 id="wmsubscribe"><em>wm_subscribe</em></h3>
+
+<p>Subscribe the Window Manager’s event.
+Application must subscribe <code class="highlighter-rouge">syncDraw</code> event.</p>
+
+<ul>
+  <li>verb : “wm_subscribe”</li>
+  <li>argument : {“event” : <em>event number</em>}</li>
+</ul>
+
+<p>argument example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>The event is abstracted with a number (enumeration).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Number</th>
+      <th style="text-align: center">Event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">“active”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">“inactive”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">“visible”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">“invisible”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">“syncDraw”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">“flushDraw”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">“screenUpdated”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="activatedeactivate">Activate/Deactivate</h2>
+
+<div id="activateWindow"></div>
+
+<h3 id="activatewindow"><em>activateWindow</em></h3>
+
+<p>Request to display your application with <code class="highlighter-rouge">role</code> on the <code class="highlighter-rouge">area</code> to Window Manager.
+Window Manager checks the app should be visible on the <code class="highlighter-rouge">area</code> and change layout according to the policy table using <code class="highlighter-rouge">role</code> .
+If it is accepted, afb_req_success will be returned, and next Window Manager
+will push the event <code class="highlighter-rouge">syncDraw</code> to applications which will be displayed.
+If it is denied, afb_req_fail will be returned.</p>
+
+<ul>
+  <li>verb : “activateWindow”</li>
+  <li>argument : {“drawing_name” : “your role”, “drawing_area” : “your area”}</li>
+</ul>
+
+<p>the value must be selected among layers.json.</p>
+
+<p>argument example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"drawing_area"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"normal.full"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<div id="deactivateWindow"></div>
+
+<h3 id="deactivatewindow"><em>deactivateWindow</em></h3>
+
+<p>Request to hide your application to Window Manager.
+This verb is supposed to be used by high priority application which
+are for example popup application or system UI application such like alert.
+If Window Manager set the priority of popup high in the policy, Window Manager may not hide the popup even if normal applications
+send <code class="highlighter-rouge">activateWindow</code> until popup application send <code class="highlighter-rouge">deactivateWindow</code> . This behavior depends on the policy table.<br />
+After this request, Window Manager checks which app should be visible
+and change layout according to the policy table.</p>
+
+<ul>
+  <li>verb : “deactivateWindow”</li>
+  <li>argument : None</li>
+</ul>
+
+<div id="endDraw"></div>
+
+<h3 id="enddraw"><em>endDraw</em></h3>
+
+<p>Notify Window Manager of application finishes drawing.
+This function must be sent in event <code class="highlighter-rouge">syncDraw</code>.
+Otherwise, Window Manager will roll back to previous state and reject your request <code class="highlighter-rouge">activateWindow</code> .</p>
+
+<ul>
+  <li>verb : “endDraw”</li>
+  <li>argument : {“drawing_name” : “your role”}</li>
+</ul>
+
+<p>argument example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h2 id="get-information">Get Information</h2>
+
+<h3 id="getdisplayinfo"><em>getDisplayInfo</em></h3>
+
+<p>Get screen information such as resolution.</p>
+
+<ul>
+  <li>verb : “getDisplayInfo”</li>
+  <li>argument : None</li>
+</ul>
+
+<p>Return : The screen information will return.<br />
+Return example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"response"</span><span class="p">:{</span><span class="w">
+        </span><span class="nt">"width_pixel"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"height_pixel"</span><span class="p">:</span><span class="mi">1920</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"width_mm"</span><span class="p">:</span><span class="mi">320</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"height_mm"</span><span class="p">:</span><span class="mi">520</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"scale"</span><span class="p">:</span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"jtype"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"request"</span><span class="p">:{</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"info"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"05ae219a-0e56-4f46-af9f-3186a18cb110"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Note :<br />
+“width_mm”, “height_mm” is from output which is one of the wayland object.
+These items lack reliability, so recommend not to use.</p>
+
+<div id="Event\ from\ Window \Manager"></div>
+
+<h2 id="event-from-window-manager">Event from Window Manager</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Number</th>
+      <th style="text-align: center">Event</th>
+      <th style="text-align: center">version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">“active”</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">“inactive”</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">“visible”</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">“invisible”</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">“syncDraw”</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">“flushDraw”</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">“screenUpdated”</td>
+      <td style="text-align: center">from 0.7</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Events also consists of JSON.
+The data of event is contained in <code class="highlighter-rouge">data</code> such like</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/active"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"date"</span><span class="p">:{</span><span class="w">
+        </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"navigation"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>“event” is the event name.
+“data” is the data object from Window Manager and contains
+the message of event.
+This section describes “event” and the contents of “data”.</p>
+
+<h3 id="active">active</h3>
+
+<p>This event means when the application becomes active state.</p>
+
+<p>example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/active"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="inactive">inactive</h3>
+
+<p>This event means when the application becomes inactive state.</p>
+
+<p>example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/inactive"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="visible">visible</h3>
+
+<p>This event is issued when the application is visible state.</p>
+
+<p>example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/visible"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="invisible">invisible</h3>
+
+<p>This event is issued when the application is invisible state.</p>
+
+<p>example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/invisible"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<div id="syncDraw"></div>
+
+<h3 id="syncdraw">syncDraw</h3>
+
+<p>This event is issued by Window Manager state change operation in policy to the following cases.</p>
+
+<ul>
+  <li>Your app requested <code class="highlighter-rouge">activateWindow</code> then your application will be resized or visible.</li>
+  <li>Other app requested <code class="highlighter-rouge">activateWindow</code> then your application will be resized or visible.</li>
+  <li>Window Manager change layout due to vehicle condition.</li>
+</ul>
+
+<p>This event is the requests from Window Manager to</p>
+
+<ul>
+  <li>request your app to callback <code class="highlighter-rouge">endDraw</code> to Window Manager.</li>
+  <li>request your app to resize and redraw according to “drawing_area”.</li>
+</ul>
+
+<p>This is the abstract word then the real size is given in “drawing_rect”.</p>
+
+<p>example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/syncDraw"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drawing_area"</span><span class="p">:</span><span class="s2">"normal.full"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drawing_rect"</span><span class="p">:{</span><span class="w">
+      </span><span class="nt">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"y"</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"width"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"height"</span><span class="p">:</span><span class="mi">1488</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>An application which gets this event must send <code class="highlighter-rouge">endDraw</code>.
+For details, please see the sequence.</p>
+
+<div id="flushDraw"></div>
+
+<h3 id="flushdraw">flushDraw</h3>
+
+<p>This event is issued after Window Manager receives all <code class="highlighter-rouge">endDraw</code> from applications who recieved <code class="highlighter-rouge">syncDraw</code> .<br />
+After this event, Window Manager expects applications to update its surface.</p>
+
+<p>example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/flushDraw"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="screenupdated">screenUpdated</h3>
+
+<p>This event is issued after the visible application changes as a state transition change. This contains resized applications and visible applications. This event is issued to all subscriber.<br />
+Typical usecase is only for HomeScreen. If HomeScreen has an animation until the started application is visible such as progress bar, this signal may become a switch to stop the animation.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/screenUpdated"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"ids"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"mediaplayer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"navi"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>“ids” is the application_id described in config.xml of application.</p>
+
+<div id="Client library"></div>
+
+<h2 id="client-library">Client library</h2>
+
+<p>A client library implementation that internally uses the <em>libafbwsc</em>, is
+provided in the <code class="highlighter-rouge">libwindowmanager</code>.
+This library is for C++ native application.</p>
+
+<p>Regarding more detail, please refer to <a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=src%2Flibwindowmanager.git;a=summary">https://gerrit.automotivelinux.org/gerrit/gitweb?p=src%2Flibwindowmanager.git;a=summary</a></p>
+
+<hr />
+
+<div id="Sample\ Code"></div>
+
+<h1 id="sample-code">Sample code</h1>
+
+<p>In order to enable application to activate application(render on layer),
+above described steps need to be implemented.</p>
+
+<p>As a minimal example the usage and initialization can look like the
+following.</p>
+
+<p>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/src/libhomescreen</code><br />
+Path: <code class="highlighter-rouge">sample/simple-egl/main.c</code><br />
+Typical implementation of C++ application.</p>
+
+<p>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/apps/radio</code><br />
+Typical implementation of Qt application.</p>
+
+<p>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/apps/videoplayer</code><br />
+This is the good example to write more simply for Qt application using QtAGLExtra.</p>
+
+<div id="Policy Manager"></div>
+
+<h1 id="policy-manager">Policy Manager</h1>
+
+<h2 id="concepts">Concepts</h2>
+
+<p>Policy Manager decides next layout by using input event data and current state
+based on the policy table.</p>
+
+<p>And PolicyManager is plugin for WindowManager.
+Therefore the OEMs can replace it.</p>
+
+<div id="Enabling\ split"></div>
+
+<h2 id="enabling-split">Enabling split</h2>
+
+<p>Window Manager supports split layout to change policy and <code class="highlighter-rouge">areas.db</code>.
+This section describes how to play split layout.<br />
+The sample image is here.</p>
+
+<p><img src="parts/example_split.png" alt="example_split.png" /></p>
+
+<p>To play the split layout,</p>
+
+<ol>
+  <li>Edit in <code class="highlighter-rouge">policy_manager/CMakeLists.txt</code> as follows:<br />
+  #set(STM_DIR stub)<br />
+  set(STM_DIR zipc)<br />
+  This results in using source code generated by ZIPC.</li>
+  <li>Set bool value “ON” to TRY_SPLIT_LAYOUT at line 28 in policy_manager/CMakeLists.txt as follows:
+  set(TRY_SPLIT_LAYOUT ON CACHE BOOL “Enable to show split layout”)</li>
+  <li>compile</li>
+  <li>copy window manager to your board</li>
+  <li>re-install windowmanager and reboot</li>
+</ol>
+
+<p>As a result, if application requests <code class="highlighter-rouge">navi</code> with <code class="highlighter-rouge">activateWindow</code> when current layout is <code class="highlighter-rouge">video</code> or <code class="highlighter-rouge">mediaplayer</code>, Window Manager change layout to split window. The reverse is true.</p>
+
+<p>Note:<br />
+Currently, the policy manager force application change the size even if the application which has the role doesn’t have the split design.<br />
+In that case, the view of application may be ugly.<br />
+Window Manager supposes that applications may have multi designs according to system design by OEM.
+For example, if OEM sets 2 pattern layout for <code class="highlighter-rouge">navi</code>, the application which requests <code class="highlighter-rouge">navi</code> should have 2 pattern designs.</p>
+
+<hr />
+
+<div id="Release\ Note"></div>
+
+<h1 id="release-note">Release Note</h1>
+
+<h2 id="version-07">version: 0.7</h2>
+
+<h3 id="new-feature">New Feature</h3>
+
+<ul>
+  <li>Add Policy Manager</li>
+</ul>
+
+<h3 id="limitation">Limitation</h3>
+
+<ul>
+  <li>
+    <p>Only single-surface Qt applications are support through the
+libwindowmanager library. This is a limitation of how Qt creates surface
+IDs for the ivi-application interface.</p>
+  </li>
+  <li>Currenly, Window Manager supports only one screen. Dual display is not supported.</li>
+  <li>As implemented in sample code, Qt application has to wait requesting <code class="highlighter-rouge">activateWindow</code> until <code class="highlighter-rouge">frameSwapped</code> is emitted.</li>
+  <li>Qt application conceals, wayland and openGL processes, so it is difficult to call <code class="highlighter-rouge">swapBuffer</code> after <code class="highlighter-rouge">flushDraw</code> event described in the architecture document. But no problem if you use toolkit such as Qt, because it is automatically processed between applications and compositor(weston).</li>
+  <li>Editing ZIPC is difficult for open source developer due to licence.</li>
+</ul>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-12-18 00:04:48 +0000</small>
+		
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-windowmanager/plain/doc/ApplicationGuide.md?h=master">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

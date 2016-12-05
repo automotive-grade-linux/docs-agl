@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Threat Analysis  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/architecture/en/dev/reference/security/03-threat-analysis.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
+                        </li>
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Specifications
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/AGL_Specifications/agl_spec_v1.0_final.pdf">
+                Automotive Grade Linux Requirements Specifications
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Security Blueprint
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/01-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/02-adversaries.html">
+                Adversaries
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/03-threat-analysis.htm">
+                
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/04-security-concepts.html">
+                Security Concepts
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/05-platform-security.html">
+                Platform Security
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/06-application-security.html">
+                Application Security
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/07-system-hardening.html">
+                System Hardening
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Upgraded Security Blueprint 2017
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/README.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-1 Hardware
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-1/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-2 Secure Boot
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-2/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-2/1-Image.html">
+                Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-2/2-Communication-modes.html">
+                Communication modes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-2/3-Consoles.html">
+                Consoles
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-3 Hypervisor
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-3/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-4 Kernel
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-4/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-4/1-General.html">
+                General
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-4/2-Memory.html">
+                Memory
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-4/3-Consoles.html">
+                Consoles
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-4/4-Debug.html">
+                Debug
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-4/5-FileSystems.html">
+                File Systems
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-5 Platform
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-5/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-5/1-MAC.html">
+                Mandatory Access Control
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-5/2-SystemD.html">
+                SystemD
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-5/3-SystemBus.html">
+                SystemBus
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-5/4-Services.html">
+                System services and daemons
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-5/5-AppFw.html">
+                Application Framework
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-5/6-Utilities.html">
+                Utilities
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-5/7-Users.html">
+                Users
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-6 Application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-6/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-6/1-Installation.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-6/2-PrivilegeManagement.html">
+                Privilege management
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-6/3-Signature.html">
+                Signature
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-6/4-Services.html">
+                Services
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-7 Connectivity
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-7/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-7/1-BusAndConnectors.html">
+                Bus and connectors
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-7/2-Wireless.html">
+                Wireless
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-7/3-Cloud.html">
+                Cloud
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-8 Update
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-8/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-8/1-FOTA.html">
+                FOTA
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-8/2-SOTA.html">
+                SOTA
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Part-9 Secure development
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/part-9/0_Abstract.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Annexes
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/annexes/0_Abstract.html">
+                Annexes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/annexes/ConfigNotes.html">
+                Config notes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/architecture/en/dev/reference/security/annexes/todoNotes.html">
+                Todo notes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/AGL_Specifications/agl_spec_v1.0_final.pdf">
+        Automotive Grade Linux Requirements Specifications
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/01-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/02-adversaries.html">
+        Adversaries
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/03-threat-analysis.htm">
+        
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/04-security-concepts.html">
+        Security Concepts
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/05-platform-security.html">
+        Platform Security
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/06-application-security.html">
+        Application Security
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/07-system-hardening.html">
+        System Hardening
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/README.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-1/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-2/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-2/1-Image.html">
+        Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-2/2-Communication-modes.html">
+        Communication modes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-2/3-Consoles.html">
+        Consoles
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-3/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-4/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-4/1-General.html">
+        General
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-4/2-Memory.html">
+        Memory
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-4/3-Consoles.html">
+        Consoles
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-4/4-Debug.html">
+        Debug
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-4/5-FileSystems.html">
+        File Systems
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-5/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-5/1-MAC.html">
+        Mandatory Access Control
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-5/2-SystemD.html">
+        SystemD
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-5/3-SystemBus.html">
+        SystemBus
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-5/4-Services.html">
+        System services and daemons
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-5/5-AppFw.html">
+        Application Framework
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-5/6-Utilities.html">
+        Utilities
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-5/7-Users.html">
+        Users
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-6/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-6/1-Installation.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-6/2-PrivilegeManagement.html">
+        Privilege management
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-6/3-Signature.html">
+        Signature
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-6/4-Services.html">
+        Services
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-7/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-7/1-BusAndConnectors.html">
+        Bus and connectors
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-7/2-Wireless.html">
+        Wireless
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-7/3-Cloud.html">
+        Cloud
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-8/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-8/1-FOTA.html">
+        FOTA
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-8/2-SOTA.html">
+        SOTA
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/part-9/0_Abstract.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/security/annexes/0_Abstract.html">
+        Annexes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/annexes/ConfigNotes.html">
+        Config notes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/security/annexes/todoNotes.html">
+        Todo notes
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href="https://github.com/automotive-grade-linux/docs-agl/edit/master/docs/sec-blueprint/03-threat-analysis.md"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/architecture/fetched_files.yml -->
+
+<p><strong>Table of Content</strong></p>
+
+<ol id="markdown-toc">
+  <li><a href="#attack-goals" id="markdown-toc-attack-goals">Attack Goals</a></li>
+  <li><a href="#assets-and-security-categorization" id="markdown-toc-assets-and-security-categorization">Assets and Security Categorization</a></li>
+  <li><a href="#kernel-version" id="markdown-toc-kernel-version">Kernel Version</a></li>
+  <li><a href="#kernel-build-configuration" id="markdown-toc-kernel-build-configuration">Kernel Build Configuration</a></li>
+  <li><a href="#discretionary-access-control" id="markdown-toc-discretionary-access-control">Discretionary Access Control</a></li>
+  <li><a href="#mandatory-access-control" id="markdown-toc-mandatory-access-control">Mandatory Access Control</a></li>
+  <li><a href="#application-types" id="markdown-toc-application-types">Application Types</a></li>
+  <li><a href="#application-framework" id="markdown-toc-application-framework">Application Framework</a>    <ol>
+      <li><a href="#attack-vectors" id="markdown-toc-attack-vectors">Attack Vectors</a></li>
+      <li><a href="#vulnerable-resources" id="markdown-toc-vulnerable-resources">Vulnerable Resources</a></li>
+    </ol>
+  </li>
+  <li><a href="#cynara" id="markdown-toc-cynara">Cynara</a></li>
+  <li><a href="#smack" id="markdown-toc-smack">SMACK</a></li>
+  <li><a href="#attacks-from-the-cloud" id="markdown-toc-attacks-from-the-cloud">Attacks from the Cloud</a>    <ol>
+      <li><a href="#ota-updates" id="markdown-toc-ota-updates">OTA Updates</a></li>
+      <li><a href="#man-at-the-end-mate-attacks" id="markdown-toc-man-at-the-end-mate-attacks">Man-at-the-end (MATE) Attacks</a></li>
+    </ol>
+  </li>
+  <li><a href="#malicious-physical-attacks" id="markdown-toc-malicious-physical-attacks">Malicious Physical Attacks</a>    <ol>
+      <li><a href="#can--usb-devices" id="markdown-toc-can--usb-devices">CAN &amp; USB devices</a></li>
+    </ol>
+  </li>
+</ol>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>The Automotive Grade Linux (AGL) platform has set out to be an open source solution for automotive applications. With an open system come many avenues of attack by the spectrum of attackers, from hobbyists to university students to well-funded hacking organizations. AGL introduces an application framework and has adopted the Cynara system from Tizen, which uses SMACK as its kernel-level underpinnings.</p>
+
+<p>This document first looks at attack goals and how the intruder may get to these goals. Then attacks on specific assets of the system are considered. Further, the analysis looks at the attack surface and possible branches into these assets. As these avenues are analyzed, we discuss mitigations individually and broader approaches, such as defense-in-depth which resists an attacker’s ability to attain their goals by deploying <em>overlapping</em> defenses.</p>
+
+<p>This threat analysis was written from an investigation of the following sources of information:</p>
+
+<ul>
+  <li>AGL on-line documentation.</li>
+  <li>The AGL source code-base, Charming Chinook Release, made available on Jan 6, 2017.</li>
+  <li>Tizen documentation, on-which the security features of AGL have been based.</li>
+</ul>
+
+<h2 id="attack-goals">Attack Goals</h2>
+
+<p>In today’s connected vehicle, more and more functionality is moving to software control, meaning that the threat of attack becomes greater and greater. We see car features like navigation and summoning, car access/engine start, and motor/ECU upgrades all controlled through software and connections to the cloud. The risk of attack is high because there are high value targets in play.</p>
+
+<p>Here, we outline some of the major threats categories along with some sample attackers, example attacks, and a relative importance. These threat categories are intended to be general examples. There can be many nuances to threat types. Additionally, there can be many <em>sub</em>-attacks that eventually lead to these higher level attack goals.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Threat Category</th>
+      <th>Sample Attacker</th>
+      <th>Example Attacks</th>
+      <th>Relative Importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vehicle theft</td>
+      <td>Individual, organized criminals</td>
+      <td>Send the car to an unplanned destination, get a key for the car, gain control of the unlock mechanism</td>
+      <td>Reduced likelihood of future vehicle purchases (Profit Later), bad press (Brand Integrity)</td>
+    </tr>
+    <tr>
+      <td>Reduced vehicle functionality</td>
+      <td>Terrorist groups, disgruntled employees</td>
+      <td>Lock the driver out of the car, cause the car to crash, block access to infotainment system</td>
+      <td>Inability sell paid-for apps and content (Profit Now), bad press (Brand Integrity), possible loss of life (Physical Injury)</td>
+    </tr>
+    <tr>
+      <td>Vehicle hacking</td>
+      <td>Vehicle owner, competitor</td>
+      <td>Get content without paying, modify DRM licenses, unlock of after-market features, theft of IP</td>
+      <td>Loss of sales for content and features (Profit Now), lawsuits from content owners (Profit Later), loss of competitive advantage (Profit Later)</td>
+    </tr>
+    <tr>
+      <td>Sensitive asset theft</td>
+      <td>Organized criminals, blackmailers</td>
+      <td>Steal credit card numbers, health information, camera data, steal bandwidth</td>
+      <td>Bad press (Brand Integrity), lawsuits from vehicle owners (Profit Later)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="assets-and-security-categorization">Assets and Security Categorization</h2>
+
+<p>This section outlines some of the assets that are likely to be found in the vehicle and their relative sensitivity from an attack point of view. Additionally, the final column on the right lists some of the recommended protection types that can be applied to these types of assets (Note that the empty cells refer to the cells above them). A good protection approach will give priority to the most sensitive assets, using a defense-in-depth approach to cover these assets. Less sensitive assets are treated at a lower priority, typically protected with fewer protection techniques. A more fine-grained prioritziation of the the assets in a concrete vehicle network can be achived with detailed threat analysis which considers the topology of the vehicle network and access-controls that are in-place. e.g. the EVITA framework for attack trees.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Asset Category</th>
+      <th>Examples</th>
+      <th>Sensitivity</th>
+      <th>Recommended Protection Types</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Software</td>
+      <td>ECU software, infotainment software, OS images</td>
+      <td>Critical</td>
+      <td>Key Management, Mutual Asymmetric Authentication, HSM and WhiteBox Encryption, Message Integrity Checks, Hardening/SW Protection, Program Transforms/ Obfuscation, Integrity Verification, Secure OS</td>
+    </tr>
+    <tr>
+      <td>Car Access</td>
+      <td>Biometric data, car keys</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment Data</td>
+      <td>Credit cards, User profile critical data</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Recordings</td>
+      <td>Internal camera recording, internal audio recording, external camera recording</td>
+      <td>High</td>
+      <td>Encryption, Message Integrity Checks, Hardening/SW Protection, Program Transforms / Obfuscation</td>
+    </tr>
+    <tr>
+      <td>User Profile</td>
+      <td>Usernames and passwords, customization, calendar, contacts</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>GPS coordinates, vehicle usage data</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Purchased Content</td>
+      <td>Video, audio, licenses</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Teleconference</td>
+      <td>Chat, audio, video</td>
+      <td>Medium</td>
+      <td>SW Protection, Program Transforms / Obfuscation, Authenticated encryption for transmission</td>
+    </tr>
+    <tr>
+      <td>Vehicle data</td>
+      <td>Vehicle info, sensor data</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Navigation data</td>
+      <td>Static and dynamic maps</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3rd party data</td>
+      <td>Home automation commands, cloud game data</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="execution-environment">Execution Environment</h1>
+
+<p>The execution environment used for AGL leverages a Linux kernel combined with an application framework. The foundation of the environment is a pre-configured Linux kernel which will inherit any existing vulnerabilities associated with the kernel. The following are, therefore, important to the system:</p>
+
+<h2 id="kernel-version">Kernel Version</h2>
+
+<p>The choice of kernel version for the AGL system is essential to its security. Depending on the type of board and eventual production system, different kernel versions are used. For example, one of the systems under study uses the Linux kernel version 3.10, while another uses the Linux kernel version 4.4. For the Linux kernel version 3.10.31, there are <a href="https://www.cvedetails.com/version/194332/Linux-Linux-Kernel-3.10.31.html">25 known vulnerabilities</a>. These vulnerabilities would allow an attacker to gain privileges, bypass access restrictions, allow memory to be corrupted, or cause denial of service. In contrast, the Linux kernel version of 4.4 has <a href="https://www.cvedetails.com/version/190796/Linux-Linux-Kernel-4.4.html">many fewer known vulnerabilities</a>. For this reason, we would in general recommend the later kernel version as a basis for the platform.</p>
+
+<p>Note that, although there are fewer <em>known</em> vulnerabilities in the most recent kernel versions there may be many unknown vulnerabilities underlying. A rule of thumb is to update the kernel as much as possible to avoid the problems you do know, but you should not be complacent in the trust that you place in it. A defense-in-depth approach would then apply.</p>
+
+<p>If there are constraints and dependencies in upgrading to a newer kernel version (e.g. device drivers, board support providers) and you are forced to an older Linux kernel version, there need to be additional provisions made to reduce the risk of kernel exploits, which can include memory monitoring, watch-dog services, and system call hooking. In this case, further defense-in-depth techniques may be required to mitigate the risk of attacks to known vulnerabilities, which can also include runtime integrity verfication of components that are vulnerable to tampering.</p>
+
+<h2 id="kernel-build-configuration">Kernel Build Configuration</h2>
+
+<p>The kernel build configuration is extremely important for determining the level of access to services and to reduce the breadth of the attack surface. Linux contains a great and flexible number of capabilities and this is only controlled through the build configuration. For example, the <em>CONFIG_MODULES</em> parameter allows kernel modules to be loaded at runtime extending the capabilities of the kernel. This capability needs to be either inhibited or controlled at runtime through other configuration parameters. For example, <em>CONFIG_MODULE_SIG_FORCE=y</em> ensures that only signed modules are loaded. There is a very large number of kernel configuration parameters, and these are discussed in detail in <a href="http://docs.automotivelinux.org/docs/architecture/en/dev/reference/security/08-Hardening.html">the hardening guide of the AGL security blueprint</a></p>
+
+<h2 id="discretionary-access-control">Discretionary Access Control</h2>
+
+<p>Discretionary Access Control (DAC) is the traditional Linux method of separating users and groups from one another. In a shared environment where multiple users have access to a computer or network, Unix IDs have offered a way to contain access within privilege areas for individuals, or shared among the group or system. The Android system took this one step further, assigning new user IDs for each App. This was never the original intention of Linux UIDs, but was able to provide Android’s initial security element - the ability to <em>sandbox</em> applications.</p>
+
+<p>Although AGL mentions use of DAC for security isolation, the weight of the security responsibility lies in the Mandatory Access Control (MAC) and Cynara. Furthermore, there are system services with unique UIDs; however, the system does not go to the extreme of Android, where every application has its own UID. All sandboxing (app isolation) in AGL is handled in the MAC contexts.</p>
+
+<h2 id="mandatory-access-control">Mandatory Access Control</h2>
+
+<p>Mandatory Access Control (MAC) is an extension to DAC, whereby extended attributes (xattr) are associated with the filesystem. In the case of AGL, the <code class="highlighter-rouge">smackfs</code> filesystem allows files and directories to be associated with a SMACK label, providing the ability of further discrimination on access control. A SMACK label is a simple null terminated character string with a maximum of 255 bytes. While it doesn’t offer the richness of an SELinux label, which provides a user, role, type, and level, the simplicity of a single value makes the overall design far less complex. There is arguably less chance of the security author making mistakes in the policies set forth.</p>
+
+<h2 id="application-types">Application Types</h2>
+
+<p>AGL provides a framework for applications to be written in different forms:</p>
+
+<ul>
+  <li>Web application: HTML5 + JavaScript</li>
+  <li>Qt application: in a QML file</li>
+  <li>Native application: in C</li>
+</ul>
+
+<p>While there is no harm in providing multiple types of applications, from a security perspective this does increase the attack surface for an intruder. The application framework consists of a number of utilities and daemons which provide context for the applications. Isolation is provided through SMACK labels.</p>
+
+<h1 id="application-security-model">Application Security Model</h1>
+
+<p>The AGL application framework consists of several interworking parts:</p>
+
+<ul>
+  <li>SMACK - Simplified Mandatory Access Control Kernel, the kernel level LSM (Linux Security Module) that performs extended access control of the system</li>
+  <li>Cynara - the native gatekeeper daemon used for policy handling, updating to the database and policy checking.</li>
+  <li>Security Manager - a master service, through which all security events are intended to take place.</li>
+  <li>Several native application framework utilities: afm-main-binding, afm-user-daemon, afm-system-daemon</li>
+</ul>
+
+<h2 id="application-framework">Application Framework</h2>
+
+<p>The <a href="http://iot.bzh/download/public/2016/appfw/02_Documentation-AppFW-Core-2.0.pdf">AGL app framework</a>, provides the management around installation, starting/stopping, bindings to D-Bus, and communications to Cynara and the Security Manager. Installation of applications flows through the <code class="highlighter-rouge">afm_system_daemon</code> and the <code class="highlighter-rouge">security_manager</code>. The Security Manager retains information in an SQLite database and also sets SMACK policies. The Security Manager also has the definition of an API for external entities.</p>
+
+<p>The Security Manager communicates policy information to cynara, which retains information in its own database in the format of a text file with comma-separated values (CSV). There are provisions to retain a copy of the CSV text file when the file is being updated.</p>
+
+<p>Runtime checking occurs through Cynara. Each application that is added to the framework has its own instantiation of a SMACK context and D-bus bindings. The <code class="highlighter-rouge">afb_daemon</code> and Binder form a web-service that is communicated to through http or a websocket from the application-proper. This http or websocket interface uses a standard unique web token for API communication.</p>
+
+<p><img src="App-flow.png" alt="App Framework Flow" /></p>
+
+<h3 id="attack-vectors">Attack Vectors</h3>
+
+<p>The following attack vectors are not completely independent. While attackers may have varying levels of access to an AGL system, experience has shown that a typical attack can start with direct access to a system, find the vulnerabilities, then proceed to automate the attack such that it can be invoked from less accessible standpoint (e.g. remotely). Therefore, it is important to assess all threat levels, and protect the system appropriately understanding that direct access attacks are the door-way into remote attacks.</p>
+
+<h4 id="remote-attacks">Remote Attacks</h4>
+
+<p>The local web server interface used for applications is the first point of attack, as web service APIs are well understood and easily intercepted. The local web server could potentially be exploited by redirecting web requests through the local service and exploiting the APIs. While there is the use of a security token on the web service API, this is weak textual matching at best. This will not be difficult to spoof. It is well known that <a href="http://nordicapis.com/why-api-keys-are-not-enough/">API Keys do not provide any real security</a>.</p>
+
+<p>It is likely that the architectural inclusion of an http / web-service interface provided the most flexibility for applications to be written natively or in HTML5; however, this flexibility may trade-off with security concerns. For example, if a native application were linked directly to the underlying framework services, there would be fewer concerns over remote attacks coming through the web-service interface.</p>
+
+<p>Leaving the interface as designed, mitigations to attacks could include further securing the interface layer with cryptographic protocols: e.g. encrypted information passing, key exchange (e.g. Elliptic-Curve Diffie-Hellman).</p>
+
+<h4 id="user-level-native-attacks">User-level Native Attacks</h4>
+
+<ul>
+  <li>Modifying the CSV data-base</li>
+  <li>Modifying the SQLite DB</li>
+  <li>Tampering with the user-level binaries</li>
+  <li>Tampering with the user daemons</li>
+  <li>Spoofing the D-bus Interface</li>
+  <li>Adding executables/libraries</li>
+</ul>
+
+<p>With direct access to the device, there are many security concerns on the native level. For example, as Cynara uses a text file data-base with comma-separated values (CSV), an attacker could simply modify the data-base to escalate privileges of an application. Once a single application has all the privileges possible on the system, exploits can come through in this manner. Similarly the SQLite database used by the Security Manager is not much different than a simple text file. There are many tools available to add, remove, modify entries in an SQLite data-base.</p>
+
+<p>On the next level, a common point of attack is to modify binaries or daemons for exploiting functionality. There are many Linux tools available to aid in this regard, including: <a href="https://www.hex-rays.com/products/ida/index.shtml">IDA Pro</a>, and <a href="https://rada.re/r/">radare2</a>. With the ability to modify binaries, an attacker can do any number of activities including: removing calls to security checks, redirecting control to bypass verification functionality, ignoring security policy handling, escalating privileges, etc.</p>
+
+<p>Additionally, another attack vector would be to spoof the D-bus interface. D-bus is a message passing system built upon Inter-Process Communication (IPC), where structured messages are passed based upon a protocol. The interface is generic and well documented; and therefore, modifying or adding binaries/libraries to spoof this interface is a relatively straight-forward process. Once the interface has been spoofed, the attacker can issue any number of commands that lead into control of low-level functionality.</p>
+
+<p>Protecting a system from native attacks requires a methodical approach. First, the system should reject processes that are not sanctioned to run. Signature-level verification at installation time will help in this regard, but run-time integrity verification is much better. Signatures need to originate from authorized parties, which is discussed further in a later section on the Application Store.</p>
+
+<p>On the next level, executables should not be allowed to do things where they have not been granted permission. DAC and SMACK policies can help in this regard. On the other hand, there remain concerns with memory accesses, system calls, and other process activity that may go undetected. For this reason, a secure environment which monitors all activity can give indication of all unauthorized activity on the system.</p>
+
+<p>Finally, it is very difficult to catch attacks of direct tampering in a system. These types of attacks require a defense-in-depth approach, where complementary software protection and hardening techniques are needed. Tamper-resistance and anti-reverse-engineering technologies include program transformations/obfuscation, integrity verification, and white-box cryptography. If applied in a mutually-dependent fashion and considering performance/security tradeoffs, the approach can provide an effective barrier to direct attacks to the system. Furthermore, the use of threat monitoring provides a valuable telemetry/analytics capability and the ability to react and renew a system under attack.</p>
+
+<h4 id="root-level-native-attacks">Root-level Native Attacks</h4>
+
+<ul>
+  <li>Tampering the system daemon</li>
+  <li>Tampering Cynara</li>
+  <li>Tampering the security manager</li>
+  <li>Disabling SMACK</li>
+  <li>Tampering the kernel</li>
+</ul>
+
+<p>Once root-level access (i.e. su) has been achieved on the device, there are many ways to compromise the system. The system daemon, Cynara, and the security manager are vulnerable to tampering attacks. For example, an executable can be modified in memory to jam a branch, jump to an address, or disregard a check. This can be as simple as replacing a branch instruction with a NOP, changing a memory value, or using a debugger (e.g. gdb, IDA) to change an instruction. Tampering these executables would mean that policies can be ignored and verification checks can be bypassed.</p>
+
+<p>Without going so far as to tamper an executable, the SMACK system is also vulnerable to attack. For example, if the kernel is stopped and restarted with the <em>security=none</em> flag, then SMACK is not enabled. Furthermore, systemd starts the loading of SMACK rules during start-up. If this start-up process is interfered with, then SMACK will not run. Alternatively, new policies can be added with smackload allowing unforseen privileges to alternative applications/executables.</p>
+
+<p>Another intrusion on the kernel level is to rebuild the kernel (as it is open-source) and replace it with a copy that has SMACK disabled, or even just the SMACK filesystem (smackfs) disabled. Without the extended label attributes, the SMACK system is disabled.</p>
+
+<p>Root-level access to the device has ultimate power, where the entire system can be compromised. More so, a system with this level access allows an attacker to craft a simpler <em>point-attack</em> which can operate on a level requiring fewer privileges (e.g. remote access, user-level access).</p>
+
+<h3 id="vulnerable-resources">Vulnerable Resources</h3>
+
+<h4 id="resource-afm-user-daemon">Resource: <code class="highlighter-rouge">afm-user-daemon</code></h4>
+
+<p>The <code class="highlighter-rouge">afm-user-daemon</code> is in charge of handling applications on behalf of a user. Its main tasks are:</p>
+
+<ul>
+  <li>Enumerate applications that the end user can run and keep this list available on demand</li>
+  <li>Start applications on behalf of the end user, set user running environment, set user security context</li>
+  <li>List current runnable or running applications</li>
+  <li>Stop (aka pause), continue (aka resume), terminate a running instance of a given application</li>
+  <li>Transfer requests for installation/uninstallation of applications to the corresponding system daemon afm-system-daemon</li>
+</ul>
+
+<p>The afm-user-daemon launches applications. It builds a secure environment for the application before starting it within that environment. Different kinds of applications can be launched, based on a configuration file that describes how to launch an application of a given kind within a given launching mode: local or remote. Launching an application locally means that the application and its binder are launched together. Launching an application remotely translates in only launching the application binder.</p>
+
+<p>The UI by itself has to be activated remotely by a request (i.e. HTML5 homescreen in a browser). Once launched, running instances of the application receive a runid that identifies them. afm-user-daemon manages the list of applications that it has launched. When owning the right permissions, a client can get the list of running instances and details about a specific running instance. It can also terminate, stop or continue a given application. If the client owns the right permissions, afm-user-daemon delegates the task of installing and uninstalling applications to afm-system-daemon.</p>
+
+<p>afm-user-daemon is launched as a systemd service attached to a user session. Normally, the service file is located at /usr/lib/systemd/user/afm-user-daemon.service.</p>
+
+<p>Attacker goals:</p>
+
+<ul>
+  <li>Disable <code class="highlighter-rouge">afm-user-daemon</code></li>
+  <li>Tamper with the afm-user-daemon configuration
+    <ul>
+      <li>/usr/lib/systemd/user/afm-user-daemon.service</li>
+      <li>Application(widget) config.xml file</li>
+      <li>/etc/afm/afm-launch.conf (launcher configuration)</li>
+    </ul>
+  </li>
+  <li>Escalate user privileges to gain more access with  afm-user-daemon</li>
+  <li>Install malicious application (widget)</li>
+  <li>Tamper with afm-user-daemon on disk or in memory</li>
+</ul>
+
+<h4 id="resource-afm-system-daemon">Resource: <code class="highlighter-rouge">afm-system-daemon</code></h4>
+
+<p>The <code class="highlighter-rouge">afm-system-daemon</code> is in charge of installing applications on the AGL system. Its main tasks are:</p>
+
+<ul>
+  <li>Install applications and setup security framework for newly installed applications</li>
+  <li>Uninstall applications</li>
+</ul>
+
+<p><code class="highlighter-rouge">afm-system-daemon</code> is launched as a systemd service attached to system. Normally, the service file is located at /lib/systemd/system/afm-systemdaemon.service.</p>
+
+<p>Attacker goals:</p>
+
+<ul>
+  <li>Disable afm-system-daemon</li>
+  <li>Tamper with the afm-system-daemon configuration</li>
+  <li>Tamper afm-system-daemon on disk or in memory</li>
+</ul>
+
+<h4 id="resource-afb-daemon">Resource <code class="highlighter-rouge">afb-daemon</code></h4>
+
+<p><code class="highlighter-rouge">afb-binder</code> is in charge of serving resources and features through an HTTP interface. <code class="highlighter-rouge">afb-daemon</code> is in charge of binding one instance of an application to the AGL framework and AGL system. The application and its companion binder run in a secured and isolated environment set for them. Applications are intended to access to AGL system through the binder. afb-daemon binders serve files through HTTP protocol and offers developers the capability to expose application API methods through HTTP or WebSocket protocol.</p>
+
+<p>Binder bindings are used to add APIs to afb-daemon. The user can write a binding for afb-daemon. The binder afb-daemon serves multiple purposes:</p>
+
+<ol>
+  <li>It acts as a gateway for the application to access the system;</li>
+  <li>It acts as an HTTP server for serving files to HTML5 applications;</li>
+  <li>It allows HTML5 applications to have native extensions subject to security enforcement for accessing hardware resources or for speeding up parts of algorithm.</li>
+</ol>
+
+<p>Attacker goals:</p>
+
+<ul>
+  <li>Break from isolation</li>
+  <li>Disable afb-daemon</li>
+  <li>Tamper afb-demon on disk or in memory</li>
+  <li>Tamper capabilities by creating/installing  custom bindings for afb-daemon</li>
+</ul>
+
+<h2 id="cynara">Cynara</h2>
+
+<p><a href="https://wiki.tizen.org/Security:Cynara">Cynara</a> was adopted from the Tizen security framework and consists of several parts:</p>
+
+<ul>
+  <li>Cynara - a daemon for controlling policies and responding to access control requests</li>
+  <li>Database - a spot to hold policies</li>
+  <li>Libraries - several static and dynamic libraries for communicating with Cynara</li>
+</ul>
+
+<p>The daemon communicates to the libraries over Unix domain sockets. The database storage format is a <a href="https://wiki.tizen.org/Security:Cynara:Storage">series of CSV-like files with an index file</a>.</p>
+
+<p>There are several ways that an attacker can manipulate policies of the Cynara system:</p>
+
+<ul>
+  <li>Disable Cynara by killing the process</li>
+  <li>Tamper with the Cynara binary on-disk or in-memory</li>
+  <li>Corrupt the database controlled by Cynara</li>
+  <li>Tamper with the database controlled by Cynara</li>
+  <li>Highjack the communication between Cynara and the database</li>
+</ul>
+
+<p>The text-based database is the weakest part of the system and although there are some consistency mechanisms in place (i.e. the backup guard), these mechanisms are weak at best and can be countered by an attacker very easily.</p>
+
+<h2 id="smack">SMACK</h2>
+
+<p>Linux Security Modules (LSM) is a framework in the linux kernel which provides the ability to implement Mandatory Access Control (MAC) with different models. The SMACK model is a simplified mandatory access control, starting with character-based labels on files and directories. There are 4 major components to the system:</p>
+
+<ol>
+  <li>The LSM kernel module.</li>
+  <li>The <code class="highlighter-rouge">smackfs</code> filesystem.</li>
+  <li>Basic utilites for policy management and checking</li>
+  <li>The policy/configuration data</li>
+</ol>
+
+<p>As with any mandatory access system, the policy management needs to be carefully separated from the checking, as the management utilities can become a convenient point of attack. Dynamic additions to the policy system need to be carefully verified, as the ability to update the policies is often needed, but introduces a possible threat. Finally, even if the policy management is well secured, the policy checking and failure response to that checking is also of vital importance to the smooth operation of the system.</p>
+
+<p>While MAC is a certainly a step up in security when compared to DAC, there are still many ways to compromise a SMACK-enabled Linux system. Some of these ways are as follows:</p>
+
+<ul>
+  <li>Disabling SMACK at invocation of the kernel (with command-line: security=none).</li>
+  <li>Disabling SMACK in the kernel build and redeploying the kernel.</li>
+  <li>Changing a SMACK attribute of a file or directory at install time.</li>
+  <li>Tamperig with a process with the <code class="highlighter-rouge">CAP_MAC_ADMIN</code> privilege.</li>
+  <li>Setting/Re-setting the SMACK label of a file.</li>
+  <li>Tampering with the default domains (i.e. /etc/smack/accesses.d/default-access-domains).</li>
+  <li>Disabling or tampering with the SMACK filesystem (i.e. /smackfs).</li>
+  <li>Adding policies with smackload (adding the utility if not present).</li>
+  <li>Changing labels with chsmack (adding the utility if not present).</li>
+</ul>
+
+<h1 id="application-store">Application Store</h1>
+
+<p>Although the Tizen system has defined a <a href="https://wiki.tizen.org/Security/Tizen_3.X_Overview#Application_Singing_and_Certificates">system of App signing and signing flow</a> to avoid the spread of unauthorized Apps that might contain malware. At this point, it is unclear how much of this flow AGL will adopt; however, judging from the experience, it is an essential topic. For example, the Google Play Store controls the authorization of Apps through signing, and still, there are <a href="http://www.eweek.com/mobile/researchers-find-132-malware-infected-android-apps-on-google-play">many accounts of Apps containing malware on the store</a>.</p>
+
+<p>Tizen defines 5 levels of certificates and signing at each level, including an author, testing distributor, public level store distributor, partner level store distributor, and platform level store distributor. AGL may define a different number of third parties, but at a minimum an author and store distributor should be defined.</p>
+
+<p><img src="App_signing_flow.png" alt="App Signing Flow" /></p>
+
+<p>Once the number of signatures has been established, verification of those signatures needs to be done at a minimum at installation time on the AGL device. It is important to ensure the robustness/integrity of the public key used for signature verification. If the public key is modified, then this compromised key can be used to verify an attacker’s private key signature.</p>
+
+<p>Further to this, installation-time verification is limited. Attacks can happen to apps in-memory at runtime. Any modifications made after installation will be missed by installation-time verification. Integrity verification that runs during execution makes for a more complete security story.</p>
+
+<h1 id="external-threats">External Threats</h1>
+
+<h2 id="attacks-from-the-cloud">Attacks from the Cloud</h2>
+
+<h3 id="ota-updates">OTA Updates</h3>
+
+<p>Updates of software over-the-air are one of the most common points where an attacker will penetrate. An OTA update mechanism is one of the highest threats in the system. If an attacker is able to install his own application or firmware on the system, he can get the same level of access that the original application or firmware had. From that point, the intruder can get unfettered access to the rest of the system, which might include making modifications, downloading other pieces of software, and stealing assets.</p>
+
+<h4 id="man-in-the-middle-mitm">Man-in-the-middle (MITM)</h4>
+
+<p>The man-in-the-middle attack is the most classic example of an attack, where an adversary inserts himself between two communicating entities and grabs whatever is being communicated. In the case of OTA attacks, the connection in the network may be intercepted:</p>
+
+<ul>
+  <li>On the internet, before the cloud backend.</li>
+  <li>At the base station, 3G,4G,5G connection to the internet.</li>
+  <li>At the receiving antenna, connection to the car.</li>
+  <li>Between the receiving antenna and the gateway router (if present), connection within the car.</li>
+  <li>Between the gateway router and the target component (IVI, In-Vehicle Infotainment unit).</li>
+</ul>
+
+<p>There are many ways to mount a MITM attack. For example, proxy tools like Burp Proxy can be used to intercept web traffic as a man-in-the-middle. Under the guise of being a testing tool, the proxy server is often used in attack scenarios. It runs on a variety of platforms.</p>
+
+<p>As another example, false base station attacks are known to be fairly easy to set-up. The problem is apparently fairly prevalent in countries like China and in the UK. These fake base stations are sometimes just eavesdropping on the communication, but others have the potential to do serious harm.</p>
+
+<p>Defenses against MITM attacks include encrypted and signed data pipes. Furthermore, architects and developers are also recommended to encrypt and sign the payloads that are being passed over these pipes, to defend against perusal of the data.</p>
+
+<h3 id="man-at-the-end-mate-attacks">Man-at-the-end (MATE) Attacks</h3>
+
+<p>The man-at-the-end attack is when an intruder analyzes the end-point of the communication when software is accessing the data communication. This is a more severe attack type where the attacker can:</p>
+
+<ul>
+  <li>
+    <p>Steal keys.</p>
+
+    <p>For example, a simple debugging session in running software could reveal a key used in memory.</p>
+  </li>
+  <li>
+    <p>Tamper software.</p>
+
+    <p>For example, replacing just one function call in software with a NOP (i.e. no operation) can drastically change the behavior of the program.</p>
+  </li>
+  <li>
+    <p>Jam branches of control.</p>
+
+    <p>For example, making a program take one branch of control rather than the intended branch can mean the difference between an authorized and a non-authorized installation.</p>
+  </li>
+  <li>
+    <p>Modify important data.</p>
+
+    <p>For example, if the data changed is a key or data leading to a control path, then this attack can be severe.</p>
+
+    <p>In the case of OTA updates, MATE attacks are particularly problematic for the system. One of the consequences of MATE attacks can be installed software that allows installation of any other software. For example, an attacker might install remote access software to control any part of the system.</p>
+  </li>
+</ul>
+
+<h2 id="malicious-physical-attacks">Malicious Physical Attacks</h2>
+
+<h3 id="can--usb-devices">CAN &amp; USB devices</h3>
+
+<p>On just about every vehicle, ECUs (Electronic Control Units) communicate over a CAN (Controller Area Network) bus, which is a two-wire bus using hardware arbitration for messages sent on the shared medium. This is essentially a <em>trusted</em> network where all traffic is visible to all controllers and any controller can send any message.</p>
+
+<p>A malicious ECU on the CAN bus can easily inject messages destined for any other device, including things like the instrument cluster and the head unit. There are common ways for hardware to do USB to CAN and open source software to send and receive messages. For example, there is a driver included in the Linux kernel that can be used to send/receive CAN signals. A malicious device on the CAN bus can cause a great number of harmful things to happen to the system, including: sending bogus information to other devices, sending unintended commands to ECUs, causing DOS (Denial Of Service) on the CAN bus, etc.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>The Automotive Grade Linux (AGL) initiative builds upon open-source software including Linux and Tizen to offer a flexible application framework. However, the security provisions of the app framework, Cynara, and the security manager only go so far in keeping the biggest threats at bay. As experience has shown, providing a constrained app (like that in the Android Open Source Platform) and store development flow, signature verification, DAC sandboxing, and MAC (SMACK) controls over the platform can have a certain amount of success with the security of the system. However, the openness of the system invites many researchers, hobbyists and hackers and financially motivated attackers to compromise the system for their own gains.</p>
+
+<p>As AGL arrives on modern automobiles, this is inevitably inviting many capable actors to modify, attack, and compromise these well thought-out systems and their applications. With concerns like safety and security, the auto industry cannot afford to go the way of consumer devices like phones and tablets where security problems are encountered on a frequent basis. It is imperative to use a layered approach and defense-in-depth to protect the system from inevitable attack.</p>
+
+<p>This document has described both general attack goals and specific threats to the AGL system. While those may think that a remote attack is the biggest concern, the reader should be aware that an open-source software system invites people to first research direct attacks before crafting remote attacks. Don’t underestimate the creative ability for hackers to find the weakest link in a product. This has been shown time and time again in open products.</p>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-07-11 00:07:34 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-agl/master/docs/sec-blueprint/03-threat-analysis.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

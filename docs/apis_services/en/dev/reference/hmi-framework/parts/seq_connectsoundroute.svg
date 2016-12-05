@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1126px" preserveAspectRatio="none" style="width:1371px;height:1126px;background:#EEEBDC;" version="1.1" viewBox="0 0 1371 1126" width="1371px" zoomAndPan="magnify"><defs><filter height="300%" id="f1jw437lb3978k" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#EEEBDC" height="1104.0859" style="stroke: #DEB887; stroke-width: 1.0;" width="142" x="475.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="113" x="490" y="15.1387">CommandPlugIn</text><rect fill="#EEEBDC" height="1104.0859" style="stroke: #DEB887; stroke-width: 1.0;" width="427" x="619.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="169" x="748.5" y="15.1387">Audio Manager Daemon</text><rect fill="#EEEBDC" height="1104.0859" style="stroke: #DEB887; stroke-width: 1.0;" width="128" x="1048.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="99" x="1063" y="15.1387">RoutingPlugIn</text><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="40.5" y="232.5"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="40.5" y="925.5547"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="88.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="284.5" y="174.2344"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="199.6641" style="stroke: #404040; stroke-width: 1.0;" width="10" x="284.5" y="896.4219"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="58.5313" style="stroke: #404040; stroke-width: 1.0;" width="10" x="541.5" y="129.9688"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="39.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="541.5" y="1042.8203"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="349.8594" style="stroke: #404040; stroke-width: 1.0;" width="10" x="837.5" y="129.9688"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="402.8594" style="stroke: #404040; stroke-width: 1.0;" width="10" x="837.5" y="679.2266"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="53.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="969.5" y="640.0938"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="73.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1107.5" y="406.5625"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="112.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1107.5" y="580.9609"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="247.4609" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1107.5" y="722.2266"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="97.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1107.5" y="998.6875"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1236.5" y="435.6953"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="131.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1236.5" y="479.8281"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="28" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1241.5" y="516.8281"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="45" x2="45" y1="83.9688" y2="1114.0859"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="289" x2="289" y1="83.9688" y2="1114.0859"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="546.5" x2="546.5" y1="83.9688" y2="1114.0859"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="700.5" x2="700.5" y1="83.9688" y2="1114.0859"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="842.5" x2="842.5" y1="83.9688" y2="1114.0859"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="974.5" x2="974.5" y1="83.9688" y2="1114.0859"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1112.5" x2="1112.5" y1="83.9688" y2="1114.0859"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1241.5" x2="1241.5" y1="83.9688" y2="1114.0859"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="8" y="81.1387">Application</text><ellipse cx="45.5" cy="13" fill="#FFFACD" filter="url(#f1jw437lb3978k)" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M45.5,21 L45.5,48 M32.5,29 L58.5,29 M45.5,48 L32.5,63 M45.5,48 L58.5,63 " fill="#FFFACD" filter="url(#f1jw437lb3978k)" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="109" x="233" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="240" y="69.1387">SoundManager</text><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="130" x="479.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="116" x="486.5" y="69.1387">IAmCommandSend</text><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="151" x="623.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="137" x="630.5" y="69.1387">IAmCommandReceiver</text><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="104" x="788.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="90" x="795.5" y="69.1387">AudioManager</text><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="132" x="906.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="118" x="913.5" y="69.1387">IAmRoutingReceive</text><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="116" x="1052.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="102" x="1059.5" y="69.1387">IAmRoutingSend</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="1195.5" y="81.1387">Audio Domain</text><ellipse cx="1241.5" cy="13" fill="#FFFACD" filter="url(#f1jw437lb3978k)" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M1241.5,21 L1241.5,48 M1228.5,29 L1254.5,29 M1241.5,48 L1228.5,63 M1241.5,48 L1254.5,63 " fill="#FFFACD" filter="url(#f1jw437lb3978k)" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="40.5" y="232.5"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="40.5" y="925.5547"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="88.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="284.5" y="174.2344"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="199.6641" style="stroke: #404040; stroke-width: 1.0;" width="10" x="284.5" y="896.4219"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="58.5313" style="stroke: #404040; stroke-width: 1.0;" width="10" x="541.5" y="129.9688"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="39.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="541.5" y="1042.8203"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="349.8594" style="stroke: #404040; stroke-width: 1.0;" width="10" x="837.5" y="129.9688"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="402.8594" style="stroke: #404040; stroke-width: 1.0;" width="10" x="837.5" y="679.2266"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="53.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="969.5" y="640.0938"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="73.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1107.5" y="406.5625"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="112.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1107.5" y="580.9609"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="247.4609" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1107.5" y="722.2266"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="97.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1107.5" y="998.6875"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1236.5" y="435.6953"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="131.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1236.5" y="479.8281"/><rect fill="#00FF00" filter="url(#f1jw437lb3978k)" height="28" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1241.5" y="516.8281"/><polygon fill="#000000" points="562.5,125.9688,552.5,129.9688,562.5,133.9688,558.5,129.9688" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="556.5" x2="836.5" y1="129.9688" y2="129.9688"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="214" x="568.5" y="110.0356">cbMainConnectionStateChanged(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="116" x="592.5" y="125.1685">CS_CONNECTING)</text><polygon fill="#000000" points="305.5,170.2344,295.5,174.2344,305.5,178.2344,301.5,174.2344" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="299.5" x2="540.5" y1="174.2344" y2="174.2344"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="228" x="311.5" y="154.3013">signal("MmainConnectionChanged (</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="116" x="331.5" y="169.4341">CS_CONECTING)")</text><polygon fill="#000000" points="825.5,184.5,835.5,188.5,825.5,192.5,829.5,188.5" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="546.5" x2="831.5" y1="188.5" y2="188.5"/><polygon fill="#000000" points="61.5,228.5,51.5,232.5,61.5,236.5,57.5,232.5" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="55.5" x2="283.5" y1="232.5" y2="232.5"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="215" x="67.5" y="212.5669">event [mainConnectionChanged (</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="111" x="87.5" y="227.6997">CS_CONECTING)]</text><polygon fill="#FBFB77" filter="url(#f1jw437lb3978k)" points="979,275.7656,979,375.7656,1303,375.7656,1303,285.7656,1293,275.7656,979,275.7656" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="1293" x2="1293" y1="275.7656" y2="285.7656"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="1303" x2="1293" y1="285.7656" y2="285.7656"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="252" x="985" y="292.8325">Audio Manager Policy decides this main</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="223" x="985" y="307.9653">connection have to be established.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="287" x="985" y="323.0981">At the beginning of sequence Audio Manager</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="300" x="985" y="338.231">should inform cbMainConnectionStateChanged</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="303" x="985" y="353.3638">(CS_CONNECTING) to indicated pre-information</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="111" x="985" y="368.4966">of establishment.</text><polygon fill="#000000" points="1095.5,402.5625,1105.5,406.5625,1095.5,410.5625,1099.5,406.5625" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="847.5" x2="1101.5" y1="406.5625" y2="406.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="854.5" y="401.6294">asyncConnect()</text><polygon fill="#000000" points="1224.5,431.6953,1234.5,435.6953,1224.5,439.6953,1228.5,435.6953" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1117.5" x2="1230.5" y1="435.6953" y2="435.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="1124.5" y="430.7622">asyncConnect()</text><polygon fill="#000000" points="853.5,475.8281,843.5,479.8281,853.5,483.8281,849.5,479.8281" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="847.5" x2="1111.5" y1="479.8281" y2="479.8281"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1251.5" x2="1293.5" y1="508.9609" y2="508.9609"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1293.5" x2="1293.5" y1="508.9609" y2="521.9609"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1252.5" x2="1293.5" y1="521.9609" y2="521.9609"/><polygon fill="#000000" points="1262.5,517.9609,1252.5,521.9609,1262.5,525.9609,1258.5,521.9609" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="101" x="1258.5" y="503.895">setAudioMode()</text><polygon fill="#000000" points="1128.5,576.9609,1118.5,580.9609,1128.5,584.9609,1124.5,580.9609" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1122.5" x2="1235.5" y1="580.9609" y2="580.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="85" x="1134.5" y="576.0278">ackConnect()</text><polygon fill="#000000" points="990.5,636.0938,980.5,640.0938,990.5,644.0938,986.5,640.0938" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="984.5" x2="1106.5" y1="640.0938" y2="640.0938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="85" x="996.5" y="635.1606">ackConnect()</text><polygon fill="#000000" points="858.5,675.2266,848.5,679.2266,858.5,683.2266,854.5,679.2266" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="852.5" x2="968.5" y1="679.2266" y2="679.2266"/><polygon fill="#000000" points="1100.5,689.2266,1110.5,693.2266,1100.5,697.2266,1104.5,693.2266" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="974.5" x2="1106.5" y1="693.2266" y2="693.2266"/><polygon fill="#000000" points="1095.5,718.2266,1105.5,722.2266,1095.5,726.2266,1099.5,722.2266" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="847.5" x2="1101.5" y1="722.2266" y2="722.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="854.5" y="717.2935">asyncConnect()</text><polygon fill="#FBFB77" filter="url(#f1jw437lb3978k)" points="335,735.3594,335,866.3594,692,866.3594,692,745.3594,682,735.3594,335,735.3594" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="682" x2="682" y1="735.3594" y2="745.3594"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="692" x2="682" y1="745.3594" y2="745.3594"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="288" x="341" y="752.4263">Audio Manager have to know that Application</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="295" x="341" y="767.5591">certainly start preparing sound route, and wait</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="285" x="341" y="782.6919">proceeding until Application return feedback.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="333" x="341" y="797.8247">Main reason is to make sure that entire sound route</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="313" x="341" y="812.9575">is established before connection state transite to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="336" x="341" y="828.0903">next phase. Otherwise it is possible for Application to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="333" x="341" y="843.2231">face the problem that ALSA virtual device cannot be</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="270" x="341" y="858.356">opened after connection state is changed.</text><polygon fill="#000000" points="305.5,892.4219,295.5,896.4219,305.5,900.4219,301.5,896.4219" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="299.5" x2="1106.5" y1="896.4219" y2="896.4219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="311.5" y="891.4888">asyncConnect()</text><polygon fill="#000000" points="61.5,921.5547,51.5,925.5547,61.5,929.5547,57.5,925.5547" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="55.5" x2="283.5" y1="925.5547" y2="925.5547"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="140" x="67.5" y="920.6216">event [asyncConnect]</text><polygon fill="#000000" points="858.5,965.6875,848.5,969.6875,858.5,973.6875,854.5,969.6875" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="852.5" x2="1111.5" y1="969.6875" y2="969.6875"/><polygon fill="#000000" points="1095.5,994.6875,1105.5,998.6875,1095.5,1002.6875,1099.5,998.6875" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="294.5" x2="1101.5" y1="998.6875" y2="998.6875"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="85" x="301.5" y="993.7544">ackConnect()</text><polygon fill="#000000" points="562.5,1038.8203,552.5,1042.8203,562.5,1046.8203,558.5,1042.8203" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="556.5" x2="836.5" y1="1042.8203" y2="1042.8203"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="214" x="568.5" y="1022.8872">cbMainConnectionStateChanged(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="112" x="584.5" y="1038.02">CS_SUSPENDED)</text><polygon fill="#000000" points="830.5,1078.0859,840.5,1082.0859,830.5,1086.0859,834.5,1082.0859" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="546.5" x2="836.5" y1="1082.0859" y2="1082.0859"/><polygon fill="#000000" points="300.5,1092.0859,290.5,1096.0859,300.5,1100.0859,296.5,1096.0859" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="294.5" x2="1111.5" y1="1096.0859" y2="1096.0859"/><!--
+@startuml
+hide footbox
+
+'skinparam defaultFontSize 10
+skinparam backgroundColor #EEEBDC
+skinparam sequenceGroupHeaderFontSize 12
+
+skinparam sequence {
+    ArrowColor black
+
+    ActorBorderColor black
+
+    LifeLineBorderColor #404040
+    LifeLineBackgroundColor #404040
+	
+    ParticipantBorderColor black
+    ParticipantBackgroundColor #00FF00
+    ParticipantFontSize 12
+    ParticipantFontColor black
+
+    ActorBackgroundColor #FFFACD
+    ActorFontColor black
+    ActorFontSize 12
+
+
+    BoxBorderColor #deb887
+    BoxFontSize 12
+    TitleFontSize 20
+}
+
+
+actor Application as AP
+participant SoundManager as SM
+box "CommandPlugIn" #EEEBDC
+    participant IAmCommandSend as CS
+end box
+box "Audio Manager Daemon" #EEEBDC
+    participant IAmCommandReceiver as CR
+    participant AudioManager as AM
+    participant IAmRoutingReceive as RR
+end box
+box "RoutingPlugIn" #EEEBDC
+    participant IAmRoutingSend as RS
+end box
+actor "Audio Domain" as AD
+
+AM -> CS : cbMainConnectionStateChanged(\n      CS_CONNECTING)
+activate AM #00FF00
+activate CS #00FF00
+
+CS -> SM : signal("MmainConnectionChanged (\n     CS_CONECTING)")
+activate SM #00FF00
+CS - -> AM
+deactivate CS
+SM -> AP : event [mainConnectionChanged (\n     CS_CONECTING)]
+activate AP #00FF00
+deactivate SM
+
+deactivate AP
+
+
+note right of RR
+    Audio Manager Policy decides this main
+    connection have to be established.
+    At the beginning of sequence Audio Manager
+    should inform cbMainConnectionStateChanged
+    (CS_CONNECTING) to indicated pre-information
+    of establishment.
+end note
+
+AM -> RS : asyncConnect()
+activate RS #00FF00
+
+RS-> AD : asyncConnect()
+
+activate AD #00FF00
+deactivate AD
+RS - -> AM
+deactivate RS
+deactivate AM
+
+activate AD #00FF00
+AD -> AD : setAudioMode()
+activate AD #00FF00
+deactivate AD
+AD -> RS : ackConnect()
+activate RS #00FF00
+deactivate AD
+
+RS -> RR : ackConnect()
+activate RR #00FF00
+|||
+RR -> AM
+activate AM #00FF00
+
+RR - -> RS
+deactivate RR
+deactivate RS
+
+AM -> RS : asyncConnect()
+activate RS #00FF00
+
+note left of CR
+    Audio Manager have to know that Application
+    certainly start preparing sound route, and wait
+    proceeding until Application return feedback.
+    Main reason is to make sure that entire sound route
+    is established before connection state transite to
+    next phase. Otherwise it is possible for Application to
+    face the problem that ALSA virtual device cannot be
+    opened after connection state is changed.
+end note
+
+RS -> SM : asyncConnect()
+activate SM #00FF00
+SM -> AP : event [asyncConnect]
+activate AP #00FF00
+deactivate AP
+RS - -> AM
+deactivate RS
+SM -> RS : ackConnect()
+activate RS #00FF00
+
+AM -> CS : cbMainConnectionStateChanged(\n    CS_SUSPENDED)
+activate CS #00FF00
+|||
+CS - -> AM
+deactivate CS
+deactivate AM
+RS- ->SM
+deactivate RS
+deactivate SM
+@enduml
+
+PlantUML version 1.2017.16beta5(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.7.0_25-b15
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

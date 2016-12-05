@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1957px" preserveAspectRatio="none" style="width:1380px;height:1957px;background:#EEEBDC;" version="1.1" viewBox="0 0 1380 1957" width="1380px" zoomAndPan="magnify"><defs><filter height="300%" id="f65nhzdhunqvj" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#EEEBDC" height="1935.9844" style="stroke: #DEB887; stroke-width: 1.0;" width="142" x="296.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="113" x="311" y="15.1387">CommandPlugIn</text><rect fill="#EEEBDC" height="1935.9844" style="stroke: #DEB887; stroke-width: 1.0;" width="428" x="440.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="169" x="570" y="15.1387">Audio Manager Daemon</text><rect fill="#EEEBDC" height="1935.9844" style="stroke: #DEB887; stroke-width: 1.0;" width="128" x="990.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="99" x="1005" y="15.1387">RoutingPlugIn</text><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="114.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="55.5" y="593.2422"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="55.5" y="973.8438"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="55.5" y="1418.4141"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="151.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="204.5" y="333.0078"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="114.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="204.5" y="593.2422"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="73.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="204.5" y="930.7109"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="73.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="204.5" y="1375.2813"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="362.5" y="901.5781"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="362.5" y="1346.1484"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="206.2031"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="401.2734"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="279.2031" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="665.6406"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="226.2031" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="1163.2109"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="121.9375" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="1607.7813"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="1883.9844"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="108.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="167.0703"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="108.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="362.1406"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="28.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="651.5078"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="39.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="776.4453"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="42.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1135.0781"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="39.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1221.0156"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="42.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1579.6484"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="39.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1690.5859"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="58.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1869.8516"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="151.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="137.9375"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="151.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="333.0078"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="85.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="622.375"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="71.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="1105.9453"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="71.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="1550.5156"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="87.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="1840.7188"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="151.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1307.5" y="137.9375"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="763.9063" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1307.5" y="1105.9453"/><rect fill="#EEEBDC" filter="url(#f65nhzdhunqvj)" height="391.3047" style="stroke: #000000; stroke-width: 2.0;" width="1225.5" x="143" y="100.9688"/><rect fill="#EEEBDC" height="195.0703" style="stroke: none; stroke-width: 1.0;" width="1225.5" x="143" y="297.2031"/><rect fill="#EEEBDC" filter="url(#f65nhzdhunqvj)" height="292.3047" style="stroke: #000000; stroke-width: 2.0;" width="1111.5" x="13" y="556.2734"/><rect fill="#EEEBDC" height="107.9375" style="stroke: none; stroke-width: 1.0;" width="1111.5" x="13" y="740.6406"/><rect fill="#EEEBDC" filter="url(#f65nhzdhunqvj)" height="224.1719" style="stroke: #000000; stroke-width: 2.0;" width="769" x="599.5" y="1068.9766"/><rect fill="#EEEBDC" height="107.9375" style="stroke: none; stroke-width: 1.0;" width="769" x="599.5" y="1185.2109"/><rect fill="#EEEBDC" filter="url(#f65nhzdhunqvj)" height="249.1719" style="stroke: #000000; stroke-width: 2.0;" width="769" x="599.5" y="1513.5469"/><rect fill="#EEEBDC" height="107.9375" style="stroke: none; stroke-width: 1.0;" width="769" x="599.5" y="1654.7813"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="60" x2="60" y1="83.9688" y2="1945.9844"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="209" x2="209" y1="83.9688" y2="1945.9844"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="367.5" x2="367.5" y1="83.9688" y2="1945.9844"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="521.5" x2="521.5" y1="83.9688" y2="1945.9844"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="663.5" x2="663.5" y1="83.9688" y2="1945.9844"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="796.5" x2="796.5" y1="83.9688" y2="1945.9844"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1054.5" x2="1054.5" y1="83.9688" y2="1945.9844"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1312.5" x2="1312.5" y1="83.9688" y2="1945.9844"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="23" y="81.1387">Application</text><ellipse cx="60.5" cy="13" fill="#FFFACD" filter="url(#f65nhzdhunqvj)" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M60.5,21 L60.5,48 M47.5,29 L73.5,29 M60.5,48 L47.5,63 M60.5,48 L73.5,63 " fill="#FFFACD" filter="url(#f65nhzdhunqvj)" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="109" x="153" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="160" y="69.1387">SoundManager</text><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="130" x="300.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="116" x="307.5" y="69.1387">IAmCommandSend</text><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="151" x="444.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="137" x="451.5" y="69.1387">IAmCommandReceiver</text><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="104" x="609.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="90" x="616.5" y="69.1387">AudioManager</text><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="132" x="728.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="118" x="735.5" y="69.1387">IAmRoutingReceive</text><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="116" x="994.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="102" x="1001.5" y="69.1387">IAmRoutingSend</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="1266.5" y="81.1387">Audio Domain</text><ellipse cx="1312.5" cy="13" fill="#FFFACD" filter="url(#f65nhzdhunqvj)" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M1312.5,21 L1312.5,48 M1299.5,29 L1325.5,29 M1312.5,48 L1299.5,63 M1312.5,48 L1325.5,63 " fill="#FFFACD" filter="url(#f65nhzdhunqvj)" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="114.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="55.5" y="593.2422"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="55.5" y="973.8438"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="55.5" y="1418.4141"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="151.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="204.5" y="333.0078"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="114.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="204.5" y="593.2422"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="73.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="204.5" y="930.7109"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="73.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="204.5" y="1375.2813"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="362.5" y="901.5781"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="362.5" y="1346.1484"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="206.2031"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="401.2734"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="279.2031" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="665.6406"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="226.2031" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="1163.2109"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="121.9375" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="1607.7813"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="1883.9844"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="108.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="167.0703"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="108.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="362.1406"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="28.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="651.5078"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="39.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="776.4453"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="42.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1135.0781"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="39.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1221.0156"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="42.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1579.6484"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="39.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1690.5859"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="58.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="791.5" y="1869.8516"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="151.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="137.9375"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="151.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="333.0078"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="85.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="622.375"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="71.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="1105.9453"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="71.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="1550.5156"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="87.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1049.5" y="1840.7188"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="151.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1307.5" y="137.9375"/><rect fill="#00FF00" filter="url(#f65nhzdhunqvj)" height="763.9063" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1307.5" y="1105.9453"/><rect fill="none" height="391.3047" style="stroke: #000000; stroke-width: 2.0;" width="1225.5" x="143" y="100.9688"/><polygon fill="#EEEEEE" points="143,100.9688,207,100.9688,207,105.9688,197,115.9688,143,115.9688,143,100.9688" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="19" x="158" y="113.1074">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="196" x="222" y="113.1792">[Domain Type = DSP/Amplifier]</text><polygon fill="#000000" points="1070.5,133.9375,1060.5,137.9375,1070.5,141.9375,1066.5,137.9375" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1064.5" x2="1306.5" y1="137.9375" y2="137.9375"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="1076.5" y="133.0044">registerDomain()</text><polygon fill="#000000" points="812.5,163.0703,802.5,167.0703,812.5,171.0703,808.5,167.0703" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="806.5" x2="1048.5" y1="167.0703" y2="167.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="818.5" y="162.1372">registerDomain()</text><polygon fill="#000000" points="679.5,202.2031,669.5,206.2031,679.5,210.2031,675.5,206.2031" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="673.5" x2="790.5" y1="206.2031" y2="206.2031"/><polygon fill="#000000" points="1037.5,271.2031,1047.5,275.2031,1037.5,279.2031,1041.5,275.2031" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="796.5" x2="1043.5" y1="275.2031" y2="275.2031"/><polygon fill="#000000" points="1300.5,285.2031,1310.5,289.2031,1300.5,293.2031,1304.5,289.2031" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="1054.5" x2="1306.5" y1="289.2031" y2="289.2031"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="143" x2="1368.5" y1="298.2031" y2="298.2031"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="206" x="148" y="308.4136">[Domain Type = SoundManager]</text><polygon fill="#000000" points="1037.5,329.0078,1047.5,333.0078,1037.5,337.0078,1041.5,333.0078" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="214.5" x2="1043.5" y1="333.0078" y2="333.0078"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="221.5" y="328.0747">registerDomain()</text><polygon fill="#000000" points="812.5,358.1406,802.5,362.1406,812.5,366.1406,808.5,362.1406" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="806.5" x2="1048.5" y1="362.1406" y2="362.1406"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="818.5" y="357.2075">registerDomain()</text><polygon fill="#000000" points="679.5,397.2734,669.5,401.2734,679.5,405.2734,675.5,401.2734" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="673.5" x2="790.5" y1="401.2734" y2="401.2734"/><polygon fill="#000000" points="1037.5,466.2734,1047.5,470.2734,1037.5,474.2734,1041.5,470.2734" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="796.5" x2="1043.5" y1="470.2734" y2="470.2734"/><polygon fill="#000000" points="220.5,480.2734,210.5,484.2734,220.5,488.2734,216.5,484.2734" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="214.5" x2="1053.5" y1="484.2734" y2="484.2734"/><rect fill="none" height="292.3047" style="stroke: #000000; stroke-width: 2.0;" width="1111.5" x="13" y="556.2734"/><polygon fill="#EEEEEE" points="13,556.2734,77,556.2734,77,561.2734,67,571.2734,13,571.2734,13,556.2734" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="19" x="28" y="568.4121">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="169" x="92" y="568.4839">[Register Type = Dynamic]</text><polygon fill="#000000" points="192.5,589.2422,202.5,593.2422,192.5,597.2422,196.5,593.2422" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="65.5" x2="198.5" y1="593.2422" y2="593.2422"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="72.5" y="588.3091">registerSource()</text><polygon fill="#000000" points="1037.5,618.375,1047.5,622.375,1037.5,626.375,1041.5,622.375" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="214.5" x2="1043.5" y1="622.375" y2="622.375"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="221.5" y="617.4419">registerSource()</text><polygon fill="#000000" points="812.5,647.5078,802.5,651.5078,812.5,655.5078,808.5,651.5078" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="806.5" x2="1048.5" y1="651.5078" y2="651.5078"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="818.5" y="646.5747">registerSource()</text><polygon fill="#000000" points="679.5,661.6406,669.5,665.6406,679.5,669.6406,675.5,665.6406" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="673.5" x2="790.5" y1="665.6406" y2="665.6406"/><polygon fill="#000000" points="1037.5,675.6406,1047.5,679.6406,1037.5,683.6406,1041.5,679.6406" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="796.5" x2="1043.5" y1="679.6406" y2="679.6406"/><polygon fill="#000000" points="225.5,689.6406,215.5,693.6406,225.5,697.6406,221.5,693.6406" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="219.5" x2="1048.5" y1="693.6406" y2="693.6406"/><polygon fill="#000000" points="71.5,703.6406,61.5,707.6406,71.5,711.6406,67.5,707.6406" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="65.5" x2="208.5" y1="707.6406" y2="707.6406"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="1124.5" y1="741.6406" y2="741.6406"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="152" x="18" y="751.8511">[Register Type = Static]</text><polygon fill="#000000" points="779.5,772.4453,789.5,776.4453,779.5,780.4453,783.5,776.4453" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668.5" x2="785.5" y1="776.4453" y2="776.4453"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="675.5" y="771.5122">registerSource</text><polygon fill="#000000" points="679.5,811.5781,669.5,815.5781,679.5,819.5781,675.5,815.5781" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="673.5" x2="795.5" y1="815.5781" y2="815.5781"/><polygon fill="#000000" points="383.5,897.5781,373.5,901.5781,383.5,905.5781,379.5,901.5781" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="377.5" x2="657.5" y1="901.5781" y2="901.5781"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="97" x="389.5" y="896.645">cbNewSource()</text><polygon fill="#000000" points="225.5,926.7109,215.5,930.7109,225.5,934.7109,221.5,930.7109" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="219.5" x2="361.5" y1="930.7109" y2="930.7109"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="129" x="231.5" y="925.7778">signal("NewSource")</text><polygon fill="#000000" points="651.5,940.8438,661.5,944.8438,651.5,948.8438,655.5,944.8438" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="367.5" x2="657.5" y1="944.8438" y2="944.8438"/><polygon fill="#000000" points="76.5,969.8438,66.5,973.8438,76.5,977.8438,72.5,973.8438" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="70.5" x2="203.5" y1="973.8438" y2="973.8438"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="120" x="82.5" y="968.9106">event [newSource]</text><rect fill="none" height="224.1719" style="stroke: #000000; stroke-width: 2.0;" width="769" x="599.5" y="1068.9766"/><polygon fill="#EEEEEE" points="599.5,1068.9766,663.5,1068.9766,663.5,1073.9766,653.5,1083.9766,599.5,1083.9766,599.5,1068.9766" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="19" x="614.5" y="1081.1152">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="169" x="678.5" y="1081.187">[Register Type = Dynamic]</text><polygon fill="#000000" points="1070.5,1101.9453,1060.5,1105.9453,1070.5,1109.9453,1066.5,1105.9453" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1064.5" x2="1306.5" y1="1105.9453" y2="1105.9453"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="86" x="1076.5" y="1101.0122">registerSink()</text><polygon fill="#000000" points="812.5,1131.0781,802.5,1135.0781,812.5,1139.0781,808.5,1135.0781" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="806.5" x2="1048.5" y1="1135.0781" y2="1135.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="86" x="818.5" y="1130.145">registerSink()</text><polygon fill="#000000" points="1295.5,1145.2109,1305.5,1149.2109,1295.5,1153.2109,1299.5,1149.2109" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="1059.5" x2="1301.5" y1="1149.2109" y2="1149.2109"/><polygon fill="#000000" points="679.5,1159.2109,669.5,1163.2109,679.5,1167.2109,675.5,1163.2109" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="673.5" x2="790.5" y1="1163.2109" y2="1163.2109"/><polygon fill="#000000" points="1042.5,1173.2109,1052.5,1177.2109,1042.5,1181.2109,1046.5,1177.2109" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="796.5" x2="1048.5" y1="1177.2109" y2="1177.2109"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="599.5" x2="1368.5" y1="1186.2109" y2="1186.2109"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="152" x="604.5" y="1196.4214">[Register Type = Static]</text><polygon fill="#000000" points="779.5,1217.0156,789.5,1221.0156,779.5,1225.0156,783.5,1221.0156" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668.5" x2="785.5" y1="1221.0156" y2="1221.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="76" x="675.5" y="1216.0825">registerSink</text><polygon fill="#000000" points="679.5,1256.1484,669.5,1260.1484,679.5,1264.1484,675.5,1260.1484" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="673.5" x2="795.5" y1="1260.1484" y2="1260.1484"/><polygon fill="#000000" points="383.5,1342.1484,373.5,1346.1484,383.5,1350.1484,379.5,1346.1484" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="377.5" x2="657.5" y1="1346.1484" y2="1346.1484"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="79" x="389.5" y="1341.2153">cbNewSink()</text><polygon fill="#000000" points="225.5,1371.2813,215.5,1375.2813,225.5,1379.2813,221.5,1375.2813" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="219.5" x2="361.5" y1="1375.2813" y2="1375.2813"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="111" x="231.5" y="1370.3481">signal("NewSink")</text><polygon fill="#000000" points="651.5,1385.4141,661.5,1389.4141,651.5,1393.4141,655.5,1389.4141" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="367.5" x2="657.5" y1="1389.4141" y2="1389.4141"/><polygon fill="#000000" points="76.5,1414.4141,66.5,1418.4141,76.5,1422.4141,72.5,1418.4141" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="70.5" x2="203.5" y1="1418.4141" y2="1418.4141"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="102" x="82.5" y="1413.481">event [newSink]</text><rect fill="none" height="249.1719" style="stroke: #000000; stroke-width: 2.0;" width="769" x="599.5" y="1513.5469"/><polygon fill="#EEEEEE" points="599.5,1513.5469,663.5,1513.5469,663.5,1518.5469,653.5,1528.5469,599.5,1528.5469,599.5,1513.5469" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="19" x="614.5" y="1525.6855">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="169" x="678.5" y="1525.7573">[Register Type = Dynamic]</text><polygon fill="#000000" points="1070.5,1546.5156,1060.5,1550.5156,1070.5,1554.5156,1066.5,1550.5156" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1064.5" x2="1306.5" y1="1550.5156" y2="1550.5156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="1076.5" y="1545.5825">registerGateway()</text><polygon fill="#000000" points="812.5,1575.6484,802.5,1579.6484,812.5,1583.6484,808.5,1579.6484" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="806.5" x2="1048.5" y1="1579.6484" y2="1579.6484"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="818.5" y="1574.7153">registerGateway()</text><polygon fill="#000000" points="1295.5,1589.7813,1305.5,1593.7813,1295.5,1597.7813,1299.5,1593.7813" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="1059.5" x2="1301.5" y1="1593.7813" y2="1593.7813"/><polygon fill="#000000" points="679.5,1603.7813,669.5,1607.7813,679.5,1611.7813,675.5,1607.7813" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="673.5" x2="790.5" y1="1607.7813" y2="1607.7813"/><polygon fill="#000000" points="1042.5,1617.7813,1052.5,1621.7813,1042.5,1625.7813,1046.5,1621.7813" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="796.5" x2="1048.5" y1="1621.7813" y2="1621.7813"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="599.5" x2="1368.5" y1="1655.7813" y2="1655.7813"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="152" x="604.5" y="1665.9917">[Register Type = Static]</text><polygon fill="#000000" points="779.5,1686.5859,789.5,1690.5859,779.5,1694.5859,783.5,1690.5859" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668.5" x2="785.5" y1="1690.5859" y2="1690.5859"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="675.5" y="1685.6528">registerGateway</text><polygon fill="#000000" points="674.5,1725.7188,664.5,1729.7188,674.5,1733.7188,670.5,1729.7188" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="668.5" x2="795.5" y1="1729.7188" y2="1729.7188"/><polygon fill="#000000" points="1070.5,1836.7188,1060.5,1840.7188,1070.5,1844.7188,1066.5,1840.7188" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1064.5" x2="1306.5" y1="1840.7188" y2="1840.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="229" x="1076.5" y="1835.7856">hookDomainRegistrationCompelte()</text><polygon fill="#000000" points="812.5,1865.8516,802.5,1869.8516,812.5,1873.8516,808.5,1869.8516" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="806.5" x2="1048.5" y1="1869.8516" y2="1869.8516"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="229" x="818.5" y="1864.9185">hookDomainRegistrationCompelte()</text><polygon fill="#000000" points="679.5,1879.9844,669.5,1883.9844,679.5,1887.9844,675.5,1883.9844" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="673.5" x2="790.5" y1="1883.9844" y2="1883.9844"/><polygon fill="#000000" points="1042.5,1923.9844,1052.5,1927.9844,1042.5,1931.9844,1046.5,1927.9844" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="796.5" x2="1048.5" y1="1927.9844" y2="1927.9844"/><!--
+@startuml
+hide footbox
+
+'skinparam defaultFontSize 10
+skinparam backgroundColor #EEEBDC
+skinparam sequenceGroupHeaderFontSize 12
+
+skinparam sequence {
+    ArrowColor black
+
+    ActorBorderColor black
+
+    LifeLineBorderColor #404040
+    LifeLineBackgroundColor #404040
+	
+    ParticipantBorderColor black
+    ParticipantBackgroundColor #00FF00
+    ParticipantFontSize 12
+    ParticipantFontColor black
+
+    ActorBackgroundColor #FFFACD
+    ActorFontColor black
+    ActorFontSize 12
+
+
+    BoxBorderColor #deb887
+    BoxFontSize 12
+    TitleFontSize 20
+}
+
+
+actor Application as AP
+participant SoundManager as SM
+box "CommandPlugIn" #EEEBDC
+    participant IAmCommandSend as CS
+end box
+box "Audio Manager Daemon" #EEEBDC
+    participant IAmCommandReceiver as CR
+    participant AudioManager as AM
+    participant IAmRoutingReceive as RR
+end box
+box "RoutingPlugIn" #EEEBDC
+    participant IAmRoutingSend as RS
+end box
+actor "Audio Domain" as AD
+
+alt Domain Type = DSP/Amplifier
+    RS <- AD : registerDomain()
+    activate AD #00FF00
+    
+    activate RS #00FF00
+    RR <- RS : registerDomain()
+
+    activate RR #00FF00
+    |||
+    AM <- RR
+    activate AM #00ff00
+    deactivate AM
+    |||
+    RR - -> RS
+    deactivate RR
+
+    RS - -> AD
+    deactivate RS
+
+    deactivate AD
+else Domain Type = SoundManager
+    RS <- SM : registerDomain()
+    activate SM #00FF00
+    activate RS #00FF00
+    
+    RR <- RS : registerDomain()
+
+    activate RR #00FF00
+    |||
+    AM <- RR
+    activate AM #00ff00
+    deactivate AM
+    |||
+    RR - -> RS
+    deactivate RR
+
+    RS - -> SM
+    deactivate RS
+    deactivate SM
+end
+|||
+|||
+alt Register Type = Dynamic
+    SM <- AP : registerSource()
+    activate AP #00FF00
+
+    activate SM #00FF00
+    RS <- SM : registerSource()
+
+    activate RS #00FF00
+    RS -> RR : registerSource()
+    activate RR #00FF00
+
+    RR -> AM
+    activate AM #00FF00
+    RR - -> RS
+    deactivate RR
+
+    RS - -> SM
+    SM - -> AP
+    deactivate RS
+    deactivate SM
+    deactivate AP
+    |||
+
+else Register Type = Static
+    AM -> RR : registerSource
+    activate RR #00FF00
+    |||
+    RR - -> AM
+    deactivate RR
+    |||
+end
+|||
+AM -> CS : cbNewSource()
+activate CS #00FF00
+CS -> SM : signal("NewSource")
+activate SM #00FF00
+
+CS - -> AM
+deactivate CS
+deactivate AM
+
+SM -> AP : event [newSource]
+activate AP #00FF00
+deactivate SM
+
+deactivate AP
+|||
+|||
+alt Register Type = Dynamic
+    RS <- AD : registerSink()
+    activate AD #00FF00
+
+    activate RS #00FF00
+    RR <- RS : registerSink()
+    activate RR #00FF00
+
+    RS - -> AD
+'    deactivate AD
+
+    RR -> AM
+    activate AM #00FF00
+    RR - -> RS
+    deactivate RS
+    deactivate RR
+
+
+else Register Type = Static
+    AM -> RR : registerSink
+    activate RR #00FF00
+    |||
+    RR - -> AM
+    deactivate RR
+    |||
+end
+|||
+AM -> CS : cbNewSink()
+
+activate CS #00FF00
+CS -> SM : signal("NewSink")
+activate SM #00FF00
+
+CS - -> AM
+deactivate CS
+deactivate AM
+
+SM -> AP : event [newSink]
+activate AP #00FF00
+deactivate SM
+deactivate AP
+|||
+|||
+alt Register Type = Dynamic
+    RS <- AD : registerGateway()
+'    activate AD #00FF00
+
+    activate RS #00FF00
+    RR <- RS : registerGateway()
+    activate RR #00FF00
+
+    RS - -> AD
+'    deactivate AD
+
+    RR -> AM
+    activate AM #00FF00
+    RR - -> RS
+    deactivate RS
+    deactivate RR
+    |||
+else Register Type = Static
+    AM -> RR : registerGateway
+    activate RR #00FF00
+    |||
+    RR - -> AM
+    deactivate RR
+    deactivate AM
+    |||
+end
+
+|||
+|||
+AD -> RS : hookDomainRegistrationCompelte()
+'activate AD #00FF00
+activate RS #00FF00
+RS -> RR : hookDomainRegistrationCompelte()
+deactivate AD
+activate RR #00FF00
+RR -> AM
+activate AM #00FF00
+deactivate AM
+
+RR - -> RS
+deactivate RR
+deactivate RS
+deactivate AD
+@enduml
+
+PlantUML version 1.2017.18beta10(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.7.0_25-b15
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

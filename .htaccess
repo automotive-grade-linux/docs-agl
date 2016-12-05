@@ -14,7 +14,7 @@
 ###############################################################################
 
 # set error pages
-ErrorDocument 404 /docs-agl//404.html
+ErrorDocument 404 /404.html
 
 # turn off automatic directory indices
 Options -Indexes
@@ -47,7 +47,7 @@ RewriteEngine on
 # 302 (temporary):
 #     *.md -> *.html
 RewriteRule ^(.*?)\.md$ $1.html
-#RewriteRule ^.*docs/(.*?)\.md$ /docs-agl//docs/$1.html [R=302]
+#RewriteRule ^.*docs/(.*?)\.md$ /docs/$1.html [R=302]
 
 # 302 (temporary):
 #
@@ -56,21 +56,21 @@ RewriteRule ^(.*?)\.md$ $1.html
 #     docs/*/       -> docs/*/latest/
 #     docs/*/latest -> docs/*/latest/
 #
-RewriteRule ^.*docs/$ /docs-agl//docs/en/latest/ [R=302,L]
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)$ /docs-agl//docs/$1/latest/ [R=302,L]
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/$ /docs-agl//docs/$1/latest/ [R=302,L]
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/latest$ /docs-agl//docs/$1/latest/ [R=302,L]
+RewriteRule ^.*docs/$ /docs/en/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)$ /docs/$1/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/$ /docs/$1/latest/ [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/latest$ /docs/$1/latest/ [R=302,L]
 
 # 302 (temporary):
 #
 #     docs/*/XX/* -> docs/*/YY/*
 #
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/master/(.*)$ /docs-agl//docs/$1/dev/$2 [R=302,L]
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/1.0/(.*)$ /docs-agl//docs/$1/1.x/$2 [R=302,L]
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=302,L]
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.1/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=302,L]
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.2/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=302,L]
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.3/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/master/(.*)$ /docs/$1/dev/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/1.0/(.*)$ /docs/$1/1.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0/(.*)$ /docs/$1/2.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.1/(.*)$ /docs/$1/2.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.2/(.*)$ /docs/$1/2.x/$2 [R=302,L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.3/(.*)$ /docs/$1/2.x/$2 [R=302,L]
 
 
 # 302 (temporary):
@@ -116,4 +116,4 @@ RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/2.0.3/(.*)$ /docs-agl//docs/$1/2.x/$2 [R=30
 #       "/latest/" to be in the URI in order to activate. Placing this rule
 #       before them will rewrite "/latest/" to the latest version and redirects
 #       for "/latest/some/path.html" will never activate.
-RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/latest/(.*)$ /docs-agl//docs/$1/2.x/$2 [L]
+RewriteRule ^.*docs/(\w\w(?:-\w\w)?)/latest/(.*)$ /docs/$1/2.x/$2 [L]

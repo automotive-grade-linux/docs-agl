@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                SDK Quick Setup  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/getting_started/en/dev/reference/setup-sdk-environment.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    <header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/getting_started/en/dev/">Getting Started</a>
+                        </li>
+                                                
+                        <li >
+                            <a href="/docs/architecture/en/dev/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/hardware/en/dev/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/devguides/en/dev/">Developer Guides</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/docs/apis_services/en/dev/">APIs & Services</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'dev' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Getting Started
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/source-code.html">
+                Download AGL Source Code
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/customize_bitbake_conf.html">
+                Customize the AGL build
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/machines/intel.html">
+                Build for Intel
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/machines/qemu.html">
+                Build for Qemu
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/machines/R-Car-Starter-Kit-gen3.html">
+                Build for R Car Starter Kit gen3 board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/machines/raspberrypi.html">
+                Build for Raspberry PI 2/3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/homescreen/index.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Troubleshooting
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/troubleshooting.html">
+                Generic issues
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/footers/intel-footer.html">
+                Intel Boards
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/getting_started/en/dev/reference/footers/raspberrypi-footer.html">
+                Raspberry PI
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                SDK
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/getting_started/en/dev/reference/setup-sdk-environment.html">
+                SDK Quick Setup
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/source-code.html">
+        Download AGL Source Code
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/customize_bitbake_conf.html">
+        Customize the AGL build
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/machines/intel.html">
+        Build for Intel
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/machines/qemu.html">
+        Build for Qemu
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/machines/R-Car-Starter-Kit-gen3.html">
+        Build for R Car Starter Kit gen3 board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/machines/raspberrypi.html">
+        Build for Raspberry PI 2/3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/index.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/troubleshooting.html">
+        Generic issues
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/footers/intel-footer.html">
+        Intel Boards
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/footers/raspberrypi-footer.html">
+        Raspberry PI
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="this-page" href="reference/setup-sdk-environment.html">
+        SDK Quick Setup
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href="https://github.com/automotive-grade-linux/docs-agl/edit/master/docs/getting-started/setup-sdk-environment.md"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages - ->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+                        </ul>
+                    </div>
+                    -->
+
+                    <!-- Version dropdown -->
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            dev
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language - ->
+                            
+                        </ul>
+                    </div>
+                    -->
+                </div>
+                
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- dev warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        Draft version of documentation under development may change!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/sandbox-doc-update/webdocs-agl/content/tocs/getting_started/fetched_files.yml -->
+
+<h1 id="agl-sdk-quick-setup">AGL SDK Quick Setup</h1>
+
+<p>This tutorial explains how to quickly setup an environment suitable to building and packaging AGL Applications using the SDK and a Docker container.</p>
+
+<p>The current tutorial has been tested on Linux, but may work with a few adjustments for Windows or MacOS.</p>
+
+<h2 id="step-1-install-docker">Step 1: install Docker</h2>
+
+<p>First install docker on your host, if not already done.
+General instructions for Linux are available on the <a href="https://docs.docker.com/engine/installation/linux/">Docker Site</a>.</p>
+
+<p>Add yourself to the docker group.</p>
+
+<h2 id="step-2-setup-persistent-workspace">Step 2: setup persistent workspace</h2>
+
+<p>Docker images are pre-configured to use a particular uid:gid to enable the use
+of OpenEmbedded build system. They provide a dedicated user account <em>devel</em>
+which belong to uid=1664(devel) gid=1664(devel). (Note: password is <em>devel</em>)</p>
+
+<p>The script ‘create_container’ presented below instantiates a new container
+and shares some volumes with the host:</p>
+
+<ul>
+  <li>/xdt (the build directory inside the container) is stored in ~/ssd/xdt_$ID (specific to instance ID)</li>
+  <li>/home/devel/mirror is stored in ~/ssd/localmirror_$ID (specific to instance ID)</li>
+  <li>/home/devel/share =&gt; points to  ~/devel/docker/share (shared by all containers)</li>
+</ul>
+
+<p>Those shared volumes with the host needs the proper permissions to be accessible
+from the contained environment.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir ~/ssd ~/devel
+chmod a+w ~/ssd ~/devel
+</code></pre>
+</div>
+
+<p><strong>Note</strong>:</p>
+
+<ul>
+  <li>To gain access from your host on files created within the container, your
+ host account requires to be added to group id 1664.</li>
+</ul>
+
+<h2 id="step-3-install-the-generic-agl-worker-docker-image">Step 3: install the “Generic AGL Worker” Docker Image</h2>
+
+<h3 id="get-docker-image">Get docker image</h3>
+
+<h4 id="pre-built-image">Pre-built image</h4>
+
+<p>A pre-built image is available on automotivelinux download public site and can be used directly.</p>
+
+<p>First, download and load the image in your local Docker instance:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget -O - https://download.automotivelinux.org/AGL/snapshots/sdk/docker/docker_agl_worker-latest.tar.xz | docker load;
+docker images;
+      REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
+      docker.automotivelinux.org/agl/worker-generic   5.99-95             6fcc19b4e0d7        2 weeks ago         1.56GB
+      jenkins                                 latest              55720d63e328        5 weeks ago         711.9 MB
+      hello-world                             latest              c54a2cc56cbb        5 months ago        1.848 kB
+</code></pre>
+</div>
+
+<p>Identify the IMAGE_ID you just loaded. In the example above, this is 6fcc19b4e0d7</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">IMAGE_ID</span><span class="o">=</span>6fcc19b4e0d7
+</code></pre>
+</div>
+
+<h4 id="rebuilt-image">Rebuilt image</h4>
+
+<p>The Docker image for AGL Worker can be rebuilt using the scripts published here <a href="https://git.automotivelinux.org/AGL/docker-worker-generator/">docker-worker-generator</a>.</p>
+
+<h3 id="start-image">Start image</h3>
+
+<p>Then, use the ‘create_container’ script to start a new, fresh container based on the AGL Worker image:</p>
+
+<p><strong>Note</strong>:</p>
+
+<ul>
+  <li>The password for the id ‘devel’ inside the docker image is ‘devel’.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://git.automotivelinux.org/AGL/docker-worker-generator;
+<span class="nb">cd </span>docker-worker-generator;
+./contrib/create_container 0 <span class="nv">$IMAGE_ID</span>;
+docker ps;
+    CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
+    4fb7c550ad75        6fcc19b4e0d7   <span class="s2">"/usr/bin/wait_for_ne"</span>   33 hours ago        Up 33 hours         0.0.0.0:2222-&gt;22/tcp, 0.0.0.0:69-&gt;69/udp, 0.0.0.0:8000-&gt;8000/tcp, 0.0.0.0:10809-&gt;10809/tcp   agl-worker-odin-0-sdx
+</code></pre>
+</div>
+
+<h2 id="step-4-install-the-agl-sdk-for-your-target">Step 4: install the AGL SDK for your target</h2>
+
+<p>Here, we assume that we just built an image ‘agl-demo-platform-crosssdk’ using the Yocto build procedure documented in the <a href="../">Getting Started</a> section of the documentation.</p>
+
+<p>So we can copy such file to the shared volume.</p>
+
+<p>For example, we could have built the SDK from another worker container listening with SSH on port 2223:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>create_container 1;
+ssh -p 2223 devel@mybuilder.local;
+... <span class="o">[</span> prepare build environment <span class="o">]</span> ...
+bitbake agl-demo-platform-crosssdk;
+... <span class="o">[</span> build happens <span class="k">in</span> /xdt/build <span class="o">]</span> ...
+cp /xdt/build/tmp/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-cortexa15hf-neon-toolchain-3.0.0+snapshot.sh ~/share;
+</code></pre>
+</div>
+
+<p>then login to the first “SDK Container” and install the SDK:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh -p 2222 devel@mysdk.local;
+install_sdk ~/share/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-cortexa15hf-neon-toolchain-3.0.0+snapshot.sh;
+</code></pre>
+</div>
+
+<h2 id="step-5-build-your-application">Step 5: build your application</h2>
+
+<p>First, you must source the SDK environment you wish to use (you MUST repeat this step each time you open a new shell):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source</span> /xdt/sdk/environment-setup-&lt;your_target&gt;
+</code></pre>
+</div>
+
+<p>You’re then ready to go: get the sources, run the builds …</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone &lt;your repo <span class="k">for </span>your app&gt;;
+<span class="nb">cd</span> &lt;your app&gt;;
+cmake; make; make package;
+</code></pre>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/contact">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2018-12-18 00:04:59 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-agl/master/docs/getting-started/setup-sdk-environment.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>agl-service-homescreen - Applications need a new binding to communicate with homescreen</title>
+<meta name='generator' content='cgit v1.1'/>
+<meta name='robots' content='noindex, nofollow'/>
+<link rel='stylesheet' type='text/css' href='/cgit-data/cgit.css'/>
+<link rel='shortcut icon' href='/favicon.ico'/>
+<link rel='alternate' title='Atom feed' href='http://git.automotivelinux.org/apps/agl-service-homescreen/atom/?h=master' type='application/atom+xml'/>
+<link rel='vcs-git' href='https://git.automotivelinux.org/apps/agl-service-homescreen' title='agl-service-homescreen Git repository'/>
+<link rel='vcs-git' href='https://gerrit.automotivelinux.org/gerrit/apps/agl-service-homescreen' title='agl-service-homescreen Git repository'/>
+</head>
+<body>
+    <div id="lfcollabprojects-header">
+      <div class="gray-diagonal">
+        <div class="header-inner">
+          <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+        </div>
+      </div>
+    </div>
+<div id='cgit'><table id='header'>
+<tr>
+<td class='logo' rowspan='2'><a href='/'><img src='/cgit-data/cgit.png' alt='cgit logo'/></a></td>
+<td class='main'><a href='/'>index</a> : <a title='agl-service-homescreen' href='/apps/agl-service-homescreen/'>agl-service-homescreen</a></td><td class='form'><form method='get'>
+<select name='h' onchange='this.form.submit();'>
+<option value='eel'>eel</option>
+<option value='flounder'>flounder</option>
+<option value='master' selected='selected'>master</option>
+<option value='sandbox/wangzhiqiang/app_manager'>sandbox/wangzhiqiang/app_manager</option>
+<option value='sandbox/wangzhiqiang/ces_2019'>sandbox/wangzhiqiang/ces_2019</option>
+<option value='sandbox/wangzhiqiang/new_verbs'>sandbox/wangzhiqiang/new_verbs</option>
+<option value='sandbox/wangzhiqiang/ons_dev'>sandbox/wangzhiqiang/ons_dev</option>
+<option value='sandbox/wangzhiqiang/private_event'>sandbox/wangzhiqiang/private_event</option>
+<option value='sandbox/zheng_wenlong/ces2019'>sandbox/zheng_wenlong/ces2019</option>
+</select> <input type='submit' value='switch'/></form></td></tr>
+<tr><td class='sub'>Applications need a new binding to communicate with homescreen</td><td class='sub right'>Grokmirror</td></tr></table>
+<table class='tabs'><tr><td>
+<a href='/apps/agl-service-homescreen/about/'>about</a><a href='/apps/agl-service-homescreen/'>summary</a><a href='/apps/agl-service-homescreen/refs/'>refs</a><a href='/apps/agl-service-homescreen/log/'>log</a><a href='/apps/agl-service-homescreen/tree/'>tree</a><a href='/apps/agl-service-homescreen/commit/'>commit</a><a href='/apps/agl-service-homescreen/diff/'>diff</a><a href='/apps/agl-service-homescreen/stats/'>stats</a></td><td class='form'><form class='right' method='get' action='/apps/agl-service-homescreen/log/'>
+<select name='qt'>
+<option value='grep'>log msg</option>
+<option value='author'>author</option>
+<option value='committer'>committer</option>
+<option value='range'>range</option>
+</select>
+<input class='txt' type='text' size='10' name='q' value=''/>
+<input type='submit' value='search'/>
+</form>
+</td></tr></table>
+<div class='content'><div class='error'>Not found</div>
+</div> <!-- class=content -->
+    <div id="lfcollabprojects-footer">
+      <div class="gray-diagonal">
+        <div class="footer-inner">
+	<p>Copyright &copy; 2015 The Linux Foundation. All rights reserved.</p>
+	<p>Linux Foundation, Linux Standard Base, LSB, LSB Certified, IAccessible2, MeeGo are registered trademarks of the Linux Foundation.</p>
+	<p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark">trademark</a> of Linus Torvalds. Please see our <a href="https://www.linuxfoundation.org/privacy">privacy policy</a>.</p>
+        </div>
+      </div>
+    </div>
+</div> <!-- id=cgit -->
+</body>
+</html>

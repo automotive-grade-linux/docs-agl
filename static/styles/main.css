@@ -6292,7 +6292,7 @@ html {
   min-height: 500px;
   height: 70%;
   background-color: rgba(0, 0, 0, 0.8);
-  background-image: url("/docs-agl//static/img/branding/agl_background.jpg");
+  background-image: url("/static/img/branding/agl_background.jpg");
   background-size: cover;
   position: relative;
   color: white; }
@@ -6406,13 +6406,13 @@ html {
     height: 45px;
     background-size: 135px 45px; } }
 #sprite_shared_code {
-  background: url("/docs-agl//static/img/value-prop-sprite.svg") 0px 0; }
+  background: url("/static/img/value-prop-sprite.svg") 0px 0; }
 
 #sprite_offline {
-  background: url("/docs-agl//static/img/value-prop-sprite.svg") 50% 0; }
+  background: url("/static/img/value-prop-sprite.svg") 50% 0; }
 
 #sprite_apis {
-  background: url("/docs-agl//static/img/value-prop-sprite.svg") 100% 0; }
+  background: url("/static/img/value-prop-sprite.svg") 100% 0; }
 
 .navbar-brand {
   padding: 0;
@@ -6933,7 +6933,7 @@ hr.results-divider-line {
   display: inline-block; }
 
 .results-supported-platforms > li > div {
-  background-image: url("/docs-agl//static/img/platform-logos-all-sprite.svg");
+  background-image: url("/static/img/platform-logos-all-sprite.svg");
   width: 50px;
   height: 50px;
   display: inline-block;
@@ -7005,7 +7005,7 @@ hr.results-divider-line {
     height: 30px;
     background-color: #ffffff; }
   .docs mark.logo {
-    background-image: url("/docs-agl//static/img/platform-logos-all-sprite.svg");
+    background-image: url("/static/img/platform-logos-all-sprite.svg");
     width: 35px;
     background-size: 385px 35px; }
   .docs mark.android {
@@ -7280,7 +7280,7 @@ html[lang="ru"] .docs #old-home ul li {
 .contribute-help .report-bug-icon {
   height: 1em;
   width: 1em;
-  background-image: url("/docs-agl//static/img/bug_icon.svg");
+  background-image: url("/static/img/bug_icon.svg");
   background-size: 2em 1em;
   display: inline-block; }
 .contribute-help a:hover .report-bug-icon {
@@ -7331,7 +7331,7 @@ html[lang="ru"] .docs #old-home ul li {
     -moz-transition: background 0.25s linear;
     transition: background 0.25s linear;
     width: 36px;
-    background: url("/docs-agl//static/img/sprite.png") no-repeat;
+    background: url("/static/img/sprite.png") no-repeat;
     background-position: 3px -127px;
     background-color: #4cc2e4;
     height: 36px; }
@@ -7421,7 +7421,7 @@ html[lang="ru"] .docs #old-home ul li {
       max-width: 100%; }
 .artwork .button {
   display: block;
-  background: "/docs-agl//static/img/sprite.png" no-repeat;
+  background: "/static/img/sprite.png" no-repeat;
   background-color: #4cc2e4;
   background-position: 100% -171px;
   width: 310px;
@@ -7442,3 +7442,71 @@ html[lang="ru"] .docs #old-home ul li {
   text-decoration: none; }
 .artwork .button a:hover {
   color: #4cc2e4; }
+
+/* section-note blocks */
+div.section-note {
+  background: #FCF8E3 none repeat scroll 0% 0%;
+  color: #4e4e4e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #DDD;
+  border-color: #FAEBCC;
+  page-break-inside: avoid; }
+
+div.section-note table {
+  background: white; }
+
+div.section-note p {
+  padding-bottom: 0;
+  margin-bottom: 0; }
+
+/* section-warning blocks */
+div.section-warning {
+  background: #FD9595 none repeat scroll 0% 0%;
+  color: #4e4e4e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #DDD;
+  border-color: #FF6B6B;
+  page-break-inside: avoid; }
+
+div.section-warning table {
+  background: white; }
+
+div.section-warning p {
+  padding-bottom: 0;
+  margin-bottom: 0; }
+
+/* section-config blocks */
+div.section-config {
+  background: #d2e2ee none repeat scroll 0% 0%;
+  color: #4e4e4e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #DDD;
+  border-color: #b5c5d1;
+  page-break-inside: avoid; }
+
+div.section-config table {
+  background: white; }
+
+div.section-config p {
+  padding-bottom: 0;
+  margin-bottom: 0; }
+
+/* section-todo blocks */
+div.section-todo {
+  background: #d3eed2 none repeat scroll 0% 0%;
+  color: #4e4e4e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #DDD;
+  border-color: #b1d5b0;
+  page-break-inside: avoid; }
+
+div.section-todo table {
+  background: white; }
+
+div.section-todo p {
+  padding-bottom: 0;
+  margin-bottom: 0; }
