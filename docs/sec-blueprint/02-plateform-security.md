@@ -62,26 +62,48 @@ can access the file. By default a process will execute with its file
 access Smack label but that can be overwritten by an execution Smack
 label.
 
-The system is split in 3 domains : ***(to be updated with latest model)***
+The system is split in 3 domains : 
 
--   **Floor**, which includes the base services and associated data and
-    libraries of the OS which are unchanged during the execution of
-    the OS.
--   **System**; which includes the basic services of the OS and the data
-    that they maintain. Those data are expected to change during the
-    execution of the OS.
--   **User**, which includes code providing services to the user and
-    their associated data.
+-   **Floor**, which includes the base services and associated data and libraries of the OS which are unchanged during the execution of the OS. Outside of development mode, installation and upgrade software, no one is allowed to write in Floor files and directories.
+-   **System**; which includes a reduced set of  core services of the OS and the data that they maintain. Those data are expected to change during the execution of the OS.
+-   **Apps, Services and User**, which includes code providing services to the system and user and their associated data. Per concept all code running in this domain are under strict control and isolation by the Cynara and Smacks rules.
 
-**Note: ** Smack label names must be less 254 Char long. In order to be
-able to use Smack label on Netlabel CISCO (IPv4) a schema creating label
-of less than 23 Char will be required.
 
-So please note that the name given in this table are for clarification
-kept in their long form, but are likely going to be shorten in a real
-implementation.
+**Floor Domain**
 
-***WIP table of smack label required***
+-------------------------------------------------------------------------------------------------------------------------
+|Label|   Name |   File     | Process                             | Comment                                              |
+|:-:|:-------|:-------------|:------------------------------------|:-----------------------------------------------------|
+| |
+| -   | Floor  | r-x for all  | Only kernel and<br>internal kernel thread <br>|  --                                              |
+| ^   | Hat    | --- for all  | rx on all domains                 | only for privileged system Services (today only systemd-journal) useful for backup or virus scan. No file with that label should exist except debug log.  |
+| *   | Star   | rwx for all  | None                                | used for device files or /tmp Access restriction managed via DAC. Individual files remain protected by their Smack label.  |
+
+
+**System Domain**
+
+-------------------------------------------------------------------------------------------------------------------------
+|Label|   Name |   File     | Process                             | Comment                                              |
+|:--|:-------|:-------------|:------------------------------------|:-----------------------------------------------------|
+| |
+|System|System|none|Privileged<br>processes|Process should only write on file with transmute attribute.|
+|System::run|Run|rwxatl for User and System label|None|files are created with directory label<br>from user and system domain (transmute)<br>Lock is implicit with w.|
+|System::shared|Shared|rwxatl for system domain<br>r-x for User label|None|files are created with directory label from system domain (transmute)<br>User domain has lock privilege|
+|System::Log|Log|rwa for System label<br>xa for user label|None|Some limitation may impose to add w to enable append.|
+|System::Sub|SubSystem|SubSystem Config files|SubSystem only|Isolation of risky SubSystem**|
+
+*\*Runtime:  IoT-OS AppFW always starts a new instance of the runtime for each application (no shared process model is allowed and change the runtime process label to the App Smack label)<br>
+\*\* unconfined mode is reserved for future evolution.*
+
+**Apps, services and User Domain**
+-------------------------------------------------------------------------------------------------------------------------
+|Label|   Name |   File     | Process                             | Comment                                              |
+|:--|:-------|:-------------|:------------------------------------|:-----------------------------------------------------|
+| |
+|App::$AppID|AppID|rwx (for files created by the App).<br>rx for files installed by AppFW|$App runtime<br>executing $App|One Label per App.<br>A data Dir is created by the AppFW in rwx.<br>Older releases still use User::App::$AppID |
+|User::Home|Home|rwx-t from System label<br>r-x-l from App|None|AppFW needs to create Dir in /home/$USER/App-Shared at 1st launch if not present/ with label<br>app-data access="User::App-Shared"<br>without transmute.|
+|App-Shared|Shared|rwxat from System and User domains label of $User|None|Shared space between all App running for a given user.<br>Older releases may still use User::App-Shared|
+
 
 ## Secured transport for Binder implementation
 
