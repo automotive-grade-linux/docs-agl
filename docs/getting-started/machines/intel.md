@@ -143,8 +143,8 @@ sudo or root password.
 ### Check the device name where the media can be accessed with the command
 
 ```bash
-  lsblk\
-  # Note that you want the name of the raw device not of a partition on the media \
+  lsblk
+  # Note that you want the name of the raw device not of a partition on the media
   #(eg. /dev/sdc or /dev/mmcblk0)
 ```
 ### Download the script mkefi-agl.sh 
@@ -162,8 +162,8 @@ This script is present in the directory meta-agl/scripts from blowfish 2.0.4, al
 
 ```bash
   sudo sh mkefi-agl.sh MyAglImage.hdd /dev/sdX
+  #/dev/sdX is common for USB stick, /dev/mmcblk0 for lpatop integrated SD card reader
 ```
-/dev/sdX is common for USB stick, /dev/mmcblk0 for lpatop integrated SD card reader
 
 ## Boot the image on the target device
 
@@ -183,5 +183,4 @@ By default the serial console is configured and activated at the rate of 115200 
 
 ## How to create your 1st AGL application
 
-[ Apps development documentation
-link](agl-distro:developer_resources_intel_apps "wikilink")
+[ Developing Apps for AGL](https://wiki.automotivelinux.org/agl-distro/developer_resources_intel_apps)
