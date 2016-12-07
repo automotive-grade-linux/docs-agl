@@ -44,7 +44,7 @@ source meta-agl/scripts/aglsetup.sh -m porter -b build agl-devel agl-demo agl-ne
 ```
 
 #### Note:
-* **IMPORTANT** read the log to be sure to have any error during yourr setup.
+* **IMPORTANT** read the log to be sure to have any error during your setup.
 In case the graphical drivers were not found, you could notice an error message as follow:
 
 ```
@@ -138,7 +138,7 @@ lsblk
   └─sdc2   8:34   1   788M  0 part
 ```
 #### Note:
-* **WARNING** This is a critical operation, each computor is different and device can change during time, so do this operation each time you incert the microSD card.
+* **WARNING** This is a critical operation, each computer is different and device can change during time, so do this operation each time you incert the microSD card.
 * In the **example** above, we see the first SATA drive as 'sda'.
 * In the **example** above, 'sdc' corresponds to the microSD card.*
 
