@@ -162,7 +162,7 @@ This script is present in the directory meta-agl/scripts from blowfish 2.0.4, al
 
 ```bash
   sudo sh mkefi-agl.sh MyAglImage.hdd /dev/sdX
-  #/dev/sdX is common for USB stick, /dev/mmcblk0 for lpatop integrated SD card reader
+  #/dev/sdX is common for USB stick, /dev/mmcblk0 for laptop integrated SD card reader
 ```
 
 ## Boot the image on the target device
