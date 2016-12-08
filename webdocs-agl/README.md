@@ -49,6 +49,19 @@ Alternatively, a Makefile can be used and defines the most common operations:
 
 - register at https://community.algolia.com/docsearch/ and update your apikey into conf/_config.yml
 
+## trick
+
+- For the moment you can only build source documentation from github (automotive-grade-linux/docs-agl).  
+So if you want to test localy your modification before a "pull request", just change github path with:
+
+```
+export MY_GITHUB_ACCOUNT=XXX
+find ../ -name fetched_files.yml -exec sed -i "s@automotive-grade-linux/docs-agl@$MY_GITHUB_ACCOUNT/docs-agl@g" {} \;
+make clean;
+make fetch;
+make build;
+make serve;
+```
 
 ## bugs
 
