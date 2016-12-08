@@ -42,6 +42,7 @@ children:
     name: Getting Started
     children:
         - url: reference/source-code.html
+        - url: reference/machines/intel.html
         - url: reference/machines/qemu.html
         - url: reference/machines/porter.html
         - url: reference/machines/raspberrypi.html
