@@ -41,19 +41,18 @@ children:
 -
     name: AGL Specifications
     children:
-        - url: reference/specs/01-overview.html
-        - url: reference/specs/02-architecture.html
-        - url: reference/specs/03-homescreen.html
-        - url: reference/specs/04-app-fw.html
+        - url: reference/specs/overview.html
+        - url: reference/specs/architecture.html
+        - url: reference/specs/homescreen.html
+        - url: reference/specs/app-fw.html
 -
     name: Security Blueprint
     children:
-        - url: reference/security/01-overview.html
-        - url: reference/security/02-plateform-security.html
-        - url: reference/security/03-security-concepts.html
-        - url: reference/security/04-adversaries.html
-        - url: reference/security/05-threat-analysis.html
-        - url: reference/security/06-attack-surfaces.html
-
-
- 
+        - url: reference/security/overview.html
+        - url: reference/security/threat-analysis.html
+        - url: reference/security/attack-surfaces.html
+        - url: reference/security/adversaries.html
+        - url: reference/security/security-concepts.html
+        - url: reference/security/plateform-security.html
+        - url: reference/security/applications-security.html
+        - url: reference/security/harden-configurations.html

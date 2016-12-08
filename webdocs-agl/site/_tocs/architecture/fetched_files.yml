@@ -89,13 +89,17 @@ repositories:
     documents:
         - source: 01-overview.md
           label: Overview
-        - source: 02-plateform-security.md
-          label: Platform Security
-        - source: 03-security-concepts.md
-          label: Security Concepts
+        - source: 02-threat-analysis.md
+          label: Threat Analysis
+        - source: 03-attack-surfaces.md
+          label: Attack Surfaces
         - source: 04-adversaries.md
           label: Adversaries
-        - source: 05-threat-analysis.md
-          label: Threat Analysis
-        - source: 06-attack-surfaces.md
-          label: Attack Surfaces
+        - source: 05-security-concepts.md
+          label: Security Concepts
+        - source: 06-plateform-security.md
+          label: Platform Security
+        - source: 07-application-security.md
+          label: Application Security
+        - source: 08-Hardening.md
+          label: Harden Configurations
