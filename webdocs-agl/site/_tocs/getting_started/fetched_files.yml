@@ -67,4 +67,6 @@ repositories:
       label: Raspberry PI
     - source: images/RaspberryPi2-ModelB-debug-serial-cable.jpg
       destination: footers/images/RaspberryPi2-ModelB-debug-serial-cable.jpg
-
+    - source: setup-sdk-environment.md
+      label: SDK Quick Setup
+    

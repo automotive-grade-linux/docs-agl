@@ -53,4 +53,8 @@ children:
         - url: reference/troubleshooting.html
         - url: reference/footers/porter-footer.html
         - url: reference/footers/raspberrypi-footer.html
+-
+    name: SDK
+    children:
+        - url: reference/setup-sdk-environment.html
 
