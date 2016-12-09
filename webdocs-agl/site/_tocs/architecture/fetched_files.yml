@@ -45,43 +45,10 @@ git_commit : "master"
 
 repositories:   
 -
-    git_name : automotive-grade-linux/docs-agl
-    git_commit: sandbox/sdesneux/aglspecs1.0
-    src_prefix : docs/agl-specs-v1.0
-    dst_prefix: specs
+    url_fetch:  https://www.automotivelinux.org/sites/cpstandard/files/pages/files/%source%
+    dst_prefix: AGL_Specifications
     documents:
-        - source: 01-overview.md
-          label: Overview
-        - source: 02-architecture.md
-          label: Architecture
-        - source: 03-homescreen.md
-          label: Homescreen
-        - source: 04-app-fw.md
-          label: Application Framework
-        - source: media/AGL module_decomposition_diagram v1.0-rc1.pdf.png
-        - source: media/Image 10.png
-        - source: media/Image 14.png
-        - source: media/Image 15.png
-        - source: media/Image 16.png
-        - source: media/Image 17.png
-        - source: media/Image 21.png
-        - source: media/Image 22.png
-        - source: media/Image 23.png
-        - source: media/Image 24.png
-        - source: media/Image 25.png
-        - source: media/Image 26.png
-        - source: media/Image 27.png
-        - source: media/Image 28.png
-        - source: media/Image 29.png
-        - source: media/Image 30.png
-        - source: media/Image 39.png
-        - source: media/Image 40.png
-        - source: media/Image 41.png
-        - source: media/Image 60.png
-        - source: media/Image 8.png
-        - source: media/Image 9.png
-        - source: media/picture95.png
-        - source: media/Smartlink State Diagram.png
+        - source: agl_spec_v1_280515.pdf
 -
     git_name : automotive-grade-linux/docs-agl
     src_prefix : docs/sec-blueprint
