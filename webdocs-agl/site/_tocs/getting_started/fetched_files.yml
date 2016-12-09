@@ -49,7 +49,7 @@ repositories:
     documents  :
     - source: source-code.md
       label: Download AGL Source Code
-    - source: machine/intel.md
+    - source: machines/intel.md
       label: Build for Intel
     - source: machines/qemu.md
       label: Build for Qemu

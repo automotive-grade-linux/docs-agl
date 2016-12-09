@@ -49,16 +49,10 @@ repositories:
     documents:
         - source: overview.md
           label: Overview
-        - source: afm-system-daemon.md
-          label: System Daemon
-        - source: afm-user-daemon.md
-          label: User Daemon
         - source: quick-tutorial.md
           label: Quick Tutorial
         - source: widgets.md
           label: Widgets
-        - source: writing-config.xml.md
-          label: Writing config.xml
 -
     git_name : src/app-framework-binder
     git_commit: master
@@ -73,7 +67,6 @@ repositories:
           label: Writing Bindings
         - source: afb-events-guide.md
           label: Events guide
-        - source: signaling-basis.svg
         - source: afb-daemon-vocabulary.md
           label: Vocabulary
         - source: afb-tests-overview.md
