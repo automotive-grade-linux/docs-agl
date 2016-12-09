@@ -55,6 +55,8 @@ repositories:
       label: Build for Qemu
     - source: machines/porter.md
       label: Build for Renesas Porter board
+    - source: machines/R-Car-Starter-Kit-gen3.md
+      label: Build for R Car Starter Kit gen3 board
     - source: machines/raspberrypi.md
       label: Build for Raspberry PI 2/3
     - source: troubleshooting.md

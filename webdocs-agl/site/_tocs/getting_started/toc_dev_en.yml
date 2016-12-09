@@ -45,6 +45,7 @@ children:
         - url: reference/machines/intel.html
         - url: reference/machines/qemu.html
         - url: reference/machines/porter.html
+        - url: reference/machines/R-Car-Starter-Kit-gen3.html
         - url: reference/machines/raspberrypi.html
 -
     name: Troubleshooting
