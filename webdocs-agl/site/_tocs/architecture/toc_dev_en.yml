@@ -41,18 +41,17 @@ children:
 -
     name: AGL Specifications
     children:
-        - url: reference/specs/overview.html
-        - url: reference/specs/architecture.html
-        - url: reference/specs/homescreen.html
-        - url: reference/specs/app-fw.html
+        - 
+            name: Automotive Grade Linux Requirements Specifications
+            url: reference/AGL_Specifications/agl_spec_v1_280515.pdf
 -
     name: Security Blueprint
     children:
-        - url: reference/security/overview.html
-        - url: reference/security/threat-analysis.html
-        - url: reference/security/attack-surfaces.html
-        - url: reference/security/adversaries.html
-        - url: reference/security/security-concepts.html
-        - url: reference/security/plateform-security.html
-        - url: reference/security/applications-security.html
-        - url: reference/security/harden-configurations.html
+        - url: reference/security/01-overview.html
+        - url: reference/security/02-threat-analysis.html
+        - url: reference/security/03-attack-surfaces.html
+        - url: reference/security/04-adversaries.html
+        - url: reference/security/05-security-concepts.html
+        - url: reference/security/06-plateform-security.html
+        - url: reference/security/07-application-security.html
+        - url: reference/security/08-Hardening.html

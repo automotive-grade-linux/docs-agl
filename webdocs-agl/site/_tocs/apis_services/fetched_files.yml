@@ -49,10 +49,17 @@ repositories:
     documents:
         - source: overview.md
           label: Overview
+        - source: pictures/AppFW-APP_install_sequences.svg
+        - source: pictures/Security_model_history.svg
         - source: quick-tutorial.md
           label: Quick Tutorial
         - source: widgets.md
           label: Widgets
+        - source: afm-daemons.md
+          label: Application Framework Daemon
+        - source: pictures/afm-daemons.svg
+        - source: application-framework.md
+          label: Application Framework
 -
     git_name : src/app-framework-binder
     git_commit: master
@@ -67,6 +74,7 @@ repositories:
           label: Writing Bindings
         - source: afb-events-guide.md
           label: Events guide
+        - source: pictures/signaling-basis.svg
         - source: afb-daemon-vocabulary.md
           label: Vocabulary
         - source: afb-tests-overview.md
