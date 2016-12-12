@@ -68,10 +68,13 @@ repositories:
     documents:
         - source: afb-overview.md
           label: Binder overview
+        - source: pictures/AFB_overview.svg
+        - source: pictures/AFB_for_services.svg
         - source: afb-application-writing.md
           label: Writing Applications
         - source: afb-bindings-writing.md
           label: Writing Bindings
+        - source: pictures/tic-tac-toe.svg
         - source: afb-events-guide.md
           label: Events guide
         - source: pictures/signaling-basis.svg
