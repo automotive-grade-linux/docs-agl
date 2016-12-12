@@ -14,26 +14,28 @@ layout: techdoc
 {:toc}
 
 ## Platform Definition
-The platform includes a set of HW supporting an AGL Linux distribution and AGL compliant Application and Services.
+The platform includes a set of HW supporting an AGL Linux distribution and AGL compliant Application and Services.  
 On the HW side this will include :
- - a SoC
+ - A SoC
  - RAM, ROM and Storage
  - Peripherial
+
 The AGL SW platform includes all the SW required after the initial boot loader in order to support AGL compliant applications and services :
  - Linux BPS configured for the reference boards
  - Set of drivers for the common peripherials available on the reference boards (they may not all be Open Source)
  - Application Framework
  - Windows/layer management to allow Application to gracefully share the displays
  - Sound resource manager to allow Application to gracefully share the displays
- - an atomic update system support / as read only and MAC (Smack)
- - set of building and debug tools (based on yocto project)
+ - An atomic update system support / as read only and MAC (Smack)
+ - Set of building and debug tools (based on yocto project)
 
 ## Secure boot
-The secure boot is tighly linked to the SoC and will vary from SoC to SoC.
+The secure boot is tighly linked to the SoC and will vary from SoC to SoC.  
 AGL does not provide the secure boot but AGL platform is designed to be able to operate with a secure boot.
 
 ## Certificate and Key Management
-The default Key management provided by AGL is SoC independant and use leyrings. Thismodel is less secured than a SoC HW integrated model and we advise AGL adopters to activate HW support from their selected SoC as much as possible.
+The default Key management provided by AGL is SoC independant and use leyrings.  
+This model is less secured than a SoC HW integrated model and we advise AGL adopters to activate HW support from their selected SoC as much as possible.  
 The activation of HW support for Key management if left to the integrator.
 
 ## Madatory Access Control configuration
@@ -49,24 +51,28 @@ Security manager).
 
 https://wiki.tizen.org/wiki/Security/Overview\#Implementation\_in\_Tizen\_3.0\_2015.Q2
 
-*You will notice that the Smack initial configuration described bellow,
+** You will notice that the Smack initial configuration described bellow,
 even if not obvious to read, represents a manageable complexity which
-should be understood in no more than a few hours.***  
-**
+should be understood in no more than a few hours.**
 
 This initial Smack schema tries to clearly keep the differentiation
 between the execution Smack label of a Process and the Smack label of a
-file. The first one defines which file a process can access and how
-files will be created by the process. The second defines which process
-can access the file. By default a process will execute with its file
+file.  
+The first one defines which file a process can access and how
+files will be created by the process.  
+The second defines which process can access the file.  
+By default a process will execute with its file
 access Smack label but that can be overwritten by an execution Smack
 label.
 
 The system is split in 3 domains : 
 
--   **Floor**, which includes the base services and associated data and libraries of the OS which are unchanged during the execution of the OS. Outside of development mode, installation and upgrade software, no one is allowed to write in Floor files and directories.
--   **System**; which includes a reduced set of  core services of the OS and the data that they maintain. Those data are expected to change during the execution of the OS.
--   **Apps, Services and User**, which includes code providing services to the system and user and their associated data. Per concept all code running in this domain are under strict control and isolation by the Cynara and Smacks rules.
+-   **Floor**, which includes the base services and associated data and libraries of the OS which are unchanged during the execution of the OS.  
+Outside of development mode, installation and upgrade software, no one is allowed to write in Floor files and directories.
+-   **System**; which includes a reduced set of  core services of the OS and the data that they maintain.  
+Those data are expected to change during the execution of the OS.
+-   **Apps, Services and User**, which includes code providing services to the system and user and their associated data.  
+Per concept all code running in this domain are under strict control and isolation by the Cynara and Smacks rules.
 
 
 **Floor Domain**
@@ -92,8 +98,8 @@ The system is split in 3 domains :
 |System::Log|Log|rwa for System label<br>xa for user label|None|Some limitation may impose to add w to enable append.|
 |System::Sub|SubSystem|SubSystem Config files|SubSystem only|Isolation of risky SubSystem**|
 
-*\*Runtime:  IoT-OS AppFW always starts a new instance of the runtime for each application (no shared process model is allowed and change the runtime process label to the App Smack label)<br>
-\*\* unconfined mode is reserved for future evolution.*
+* Runtime:  IoT-OS AppFW always starts a new instance of the runtime for each application (no shared process model is allowed and change the runtime process label to the App Smack label)
+* Unconfined mode is reserved for future evolution.
 
 **Apps, services and User Domain**
 -------------------------------------------------------------------------------------------------------------------------
@@ -110,8 +116,8 @@ The system is split in 3 domains :
 ## Resource Management
 
 ## Trust Zone and Trusted Execution
-Trusted zone and Trusted execution are services provided by the SoC vendors and services offered can varie even within the same familly of SoC depending of their configuration.
-AGL platform does not provide any Trusted Zone or Tusted Execution direct support as these are specific to each indivual SoC but on the other side the AGL platform is architectured to ease the use of HW helpers.
+Trusted zone and Trusted execution are services provided by the SoC vendors and services offered can varie even within the same familly of SoC depending of their configuration.  
+AGL platform does not provide any Trusted Zone or Tusted Execution direct support as these are specific to each indivual SoC but on the other side the AGL platform is architectured to ease the use of HW helpers.  
 In particular AGL advise whenever possible to take profit of HW helpers available to store critical data in the secure zone and to execute critical validatin code (in particular signature check) in trusted execution mode.
 
 ## Critical Resource Protection
@@ -122,7 +128,8 @@ AGL platform provides by default a software update module which is capable to re
  - support read only / file system
  - support integrity enforcement such as IMA and EVM.
  - 
-Any update software respecting these requirement can be used. AGL advise strongly to only use solutions that enable a strong verification of the validity and integrity of the download update or upgrade what ever is the selected solution.
+Any update software respecting these requirement can be used.  
+AGL advise strongly to only use solutions that enable a strong verification of the validity and integrity of the download update or upgrade what ever is the selected solution.
 
 ## cloud service infrastructure
 
