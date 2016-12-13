@@ -24,7 +24,7 @@ The following documents may also be helpful:
 Before setting up the build environment, you need to download the proprietary drivers.
 
 * Download Renesas graphics drivers with a "click through" license from Renesas website [Link][rcar demoboard]
- * Under the Target hardware: **R-Car H3/M3** section.
+    * Under the Target hardware: **R-Car H3/M3** section.
 
 #### Note:
 
@@ -33,6 +33,7 @@ The operation is fast and simple but nevertheless mandatory to access evaluation
 Once you registered, you can download two zip files.
 * The files must be stored into your download directory (usually $HOME/Downloads, pointed by $XDG_DOWNLOAD_DIR).
 Here after is an example of the typical files downloaded at the time of writing:
+
 ```
 chmod a+r $XDG_DOWNLOAD_DIR/*.zip
 ls -l $XDG_DOWNLOAD_DIR
@@ -86,6 +87,7 @@ Generating setup file: /home/working/workspace_agl_master/build_gen3/agl-init-bu
 ------------ aglsetup.sh: Done
 [snip]
 ```
+
 If you encounter this issue, or any other unwanted behavior, you can fix the error mentioned and then clean up by removing the “$AGL_TOP/build” directory then re-launch the procedure again.
 
 After this command, the working directory is changed to $AGL_TOP/build.
@@ -99,12 +101,13 @@ or
   MACHINE = "m3ulcb"
 ```
 
-Configure for Release or Development: development images contain extra tools for developer convenience, in particular:
+Configure for Release or Development:  
+* development images contain extra tools for developer convenience, in particular:
     * a debugger (gdb)
     * some tweaks, including a disabled root password
     * a SFTP server
     * the TCF Agent for easier application deployment and remote debugging
-	* some extra system tools (usb, bluetooth ...)
+    * some extra system tools (usb, bluetooth ...)
     * ...  
 
 We explicitely activate these debug facilities by specifying the “agl-devel agl-netboot” feature.
@@ -137,7 +140,7 @@ Then, for each build, the SD-card is merely rewritten and used to boot the confi
 
 ## Prepare the SD-card on the host
 
-Plug the microSD card and get its associated device by either running *dmesg | tail -15* or *lsblk*, for example:
+Plug the microSD card and get its associated device by either running *`dmesg | tail -15`* or *`lsblk`*, for example:
 
 ```
 dmesg | tail -15
@@ -165,7 +168,7 @@ lsblk
   └─sdc2   8:34   1   788M  0 part
 ```
 
-** IMPORTANT NOTE **: This is a critical operation, each computer is different and removable devices can change from time to time: so you should repeat this operation each time you insert the microSD card to confirm the device name.
+**IMPORTANT NOTE**: This is a critical operation, each computer is different and removable devices can change from time to time: so you should repeat this operation each time you insert the microSD card to confirm the device name.
 
 In the example above, we see:
 * the first SATA drive as 'sda'.
@@ -205,6 +208,7 @@ sudo fdisk /dev/sdc
   Calling ioctl() to re-read partition table.
   Syncing disks.
 ```
+
 * Initialize the ext4 partition using “mke2fs”; for example, if the microSD card is associated with *sdc*:
 
 ```
@@ -248,7 +252,7 @@ Make sure the filesystem is empty:
 sudo rm -rf ${SDCARD:-bad_dir}/*
 ```
 
-** IMPORTANT NOTE **: Verify that **tar** version is 1.28 or newer: this is required to create extended attributes correctly on the SD-card, and in particular SMACK labels used to enforce security. Check with the following command:
+**IMPORTANT NOTE**: Verify that **tar** version is 1.28 or newer: this is required to create extended attributes correctly on the SD-card, and in particular SMACK labels used to enforce security. Check with the following command:
 
 ```
 tar --version
@@ -442,6 +446,7 @@ Hit any key to stop autoboot:  0
 * Hit any key to stop autoboot (warning you have only few seconds).
 * Check if you have correct parameters for booting your board:
     * For machine m3ulcb:
+    
     ```
 => print
 	baudrate=115200
@@ -461,6 +466,7 @@ Hit any key to stop autoboot:  0
     ```
 
     * For machine h3ulcb:
+    
     ```
 => printenv
 	baudrate=115200
@@ -481,23 +487,30 @@ Hit any key to stop autoboot:  0
     ```
 
     * If not, copy line by line:
+    
     ```
 setenv bootargs console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait rw rootfstype=ext4
 setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
 setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
     ```
+    
     * For machine h3ulcb:
+    
     ```
 setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
     ```
+    
     * For machine m3ulcb:
+    
     ```
 setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
     ```
-	* Finally save boot environment:
-	```
+    
+    * Finally save boot environment:
+    
+    ```
 saveenv
-	```
+    ```
 
 * Now you can boot:
 
@@ -540,6 +553,7 @@ setenv bootmmc '1:1'
 setenv bootcmd_sd 'ext4load mmc ${bootmmc} 0x40007fc0 boot/uImage+dtb'
 setenv bootcmd 'setenv bootargs ${bootargs_console} ${bootargs_video} ${bootargs_root}; run bootcmd_sd; bootm 0x40007fc0'
 ```
+
 **WARNINGS:**
 If no display shows up when booting, e.g. for a non-full HD screen, replace  **1920x1080** value in the **bootargs_video** variable with lower screen resolution such as **1024x768**.  
   Unfortunately at the moment, there is no universally supported setting.
@@ -604,6 +618,7 @@ root@m3ulcb:~#
 ```
 
 Here, IP address is 10.0.0.27. Logging in using SSH is easy:
+
 ```
 $ ssh root@10.0.0.27
 Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
