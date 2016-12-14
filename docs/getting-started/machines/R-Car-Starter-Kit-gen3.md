@@ -343,19 +343,19 @@ It is time to launch your serial client.
 Example:
 
 ```
-picocom -b 38400 /dev/ttyUSB0
+picocom -b 115200 /dev/ttyUSB0
 ```
 
 or
 
 ```
-minicom -b 38400 -D /dev/ttyUSB0
+minicom -b 115200 -D /dev/ttyUSB0
 ```
 
 or
 
 ```
-screen /dev/ttyUSB0 38400
+screen /dev/ttyUSB0 115200
 ```
 
 ## Power on the board to see a shell on the console
