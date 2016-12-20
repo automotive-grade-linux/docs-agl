@@ -22,7 +22,7 @@ The very first step is to ensure that your system can run the build system of th
 **Important**: it only runs on Linux
  * if your system is Windows© or iOS© you should use a virtualization solution  (Virtualbox, VMWare ...) to run a Linux VM on your system.
 
-For AGL 2.1, Yocto Project 2.1, known as krogoth, has been selected for the BSP and build system.
+For AGL 2.1, Yocto Project 2.1, known as krogoth, has been selected for the BSP and build system.  
 This will change in the future but as of today [jul-2016] it is currently strongly recommended to use 2.0.
 
 Reference data for configuring your system can be found in the Yocto documentation [Here][yocto ref Manual]
@@ -42,27 +42,36 @@ Here after an extract of this documentation for most common Linux distributions:
 
 ### Ubuntu and Debian
 The essential and graphical support packages you need for a supported Ubuntu or Debian distribution are shown in the following command:
+
 ```
 sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat libsdl1.2-dev xterm cpio curl
 ```
+
 #### Note:
 * Also note that for this tutorial, the utility 'curl' has been added to the list of packages to install.
 
 ### Fedora
 The essential and graphical packages you need for a supported Fedora distribution are shown in the following command:
+
 ```
 sudo yum install gawk make wget tar bzip2 gzip python unzip perl patch \
      diffutils diffstat git cpp gcc gcc-c++ glibc-devel texinfo chrpath \
      ccache perl-Data-Dumper perl-Text-ParseWords perl-Thread-Queue socat \
      SDL-devel xterm curl
 ```
+
 ### OpenSUSE
 The essential and graphical packages you need for a supported OpenSUSE distribution are shown in the following command:
+
+```
 sudo zypper install python gcc gcc-c++ git chrpath make wget python-xml \
      diffstat texinfo python-curses patch socat libSDL-devel xterm curl
+```
+
 ### CentOS
 The essential and graphical packages you need for a supported CentOS distribution are shown in the following command:
+
 ```
 sudo yum install gawk make wget tar bzip2 gzip python unzip perl patch \
      diffutils diffstat git cpp gcc gcc-c++ glibc-devel texinfo chrpath \
@@ -70,26 +79,30 @@ sudo yum install gawk make wget tar bzip2 gzip python unzip perl patch \
 ```
 
 # Download AGL Source Code
-The AGL source code and Yocto layers are maintained on the AGL Gerrit server.
+The AGL source code and Yocto layers are maintained on the AGL Gerrit server.  
 For information on how to create accounts for gerrit see [Getting Started with AGL][Getting Started with AGL].
 
 ## Setting up the build environment
-In the following, your top level directory is noted as “AGL_TOP”.
+In the following, your top level directory is noted as “AGL_TOP”.  
 For example, we will set AGL_TOP to point to a directory “$HOME/workspace_agl”:
+
 ```
 export AGL_TOP=$HOME/workspace_agl
 mkdir -p $AGL_TOP
 ```
+
 ## Prepare Repo Tool
-AGL Uses the 'repo' tool for managing repositories.
-You need to setup layers of AGL.
+AGL Uses the 'repo' tool for managing repositories.  
+You need to setup layers of AGL.  
 You can use the commands below to prepare Repo:
+
 ```
 mkdir ~/bin
 export PATH=~/bin:$PATH
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 ```
+
 #### Note:
 * More information about the tool 'repo' [Here][repo info]
 
@@ -98,6 +111,7 @@ You can choose your source release
 
 ### Download Latest Stable Release
 To download all layers for the for the latest stable release, Blowfish 2.0.3:
+
 ```
 cd $AGL_TOP
 repo init -b blowfish -m default_blowfish_2.0.3.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
@@ -106,13 +120,16 @@ repo sync
 
 ### Download Latest on Blowfish Branch
 To download all layers on the current release branch which may be in the midst of testing or changes prior to the next stable release:
+
 ```
 cd $AGL_TOP
 repo init -b blowfish -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
+
 ### Download Master Branch
 To download all code from master:
+
 ```
 cd $AGL_TOP
 repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
@@ -120,12 +137,14 @@ repo sync
 ```
 
 ## Set up Build Environment Info
-AGL has created a set up script for defining the target build and desired optional features.
+AGL has created a set up script for defining the target build and desired optional features.  
 To get a complete list of the options available run.
+
 ```
 cd $AGL_TOP
 source meta-agl/scripts/aglsetup.sh -h
 ```
+
 Once you run aglsetup.sh with your desired paramaters, you can build any target desired.
 
 ## Features supported by aglsetup
