@@ -7,10 +7,10 @@ The standard Yocto process is made of the following steps:
 * Downloading the proprietary drivers and installing them in the build environment (if needed).
 * Build the image.
 * Boot using SD-CARD.
- * Create an SD-CARD.
- * Configure to boot on SD-CARD.
- * Copy the image to the SD-CARD.
- * Boot the board on it.
+    * Create an SD-CARD.
+    * Configure to boot on SD-CARD.
+    * Copy the image to the SD-CARD.
+    * Boot the board on it.
 
 For convenience, the resulting development images are made available [Here][AGL snapshots master latest]
 
@@ -23,7 +23,6 @@ The very first step is to ensure that your system can run the build system of th
  * if your system is Windows© or iOS© you should use a virtualization solution  (Virtualbox, VMWare ...) to run a Linux VM on your system.
 
 For AGL 2.1, Yocto Project 2.1, known as krogoth, has been selected for the BSP and build system.  
-This will change in the future but as of today [jul-2016] it is currently strongly recommended to use 2.0.
 
 Reference data for configuring your system can be found in the Yocto documentation [Here][yocto ref Manual]
 
@@ -31,10 +30,10 @@ Reference data for configuring your system can be found in the Yocto documentati
 
 Here after an extract of this documentation for most common Linux distributions:
 * The build system should be able to run on any modern distributions that has the following versions for:
- * Python
- * Git 1.7.8 or greater
- * tar 1.24 or greater
- * GCC, …
+    * Python
+    * Git 1.7.8 or greater
+    * tar 1.24 or greater
+    * GCC, …
 
 #### Note:
 * Python 2.7.3 or greater excluding Python 3.x, which is not supported.
@@ -97,7 +96,7 @@ You need to setup layers of AGL.
 You can use the commands below to prepare Repo:
 
 ```
-mkdir ~/bin
+mkdir -p ~/bin
 export PATH=~/bin:$PATH
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
@@ -149,11 +148,16 @@ Once you run aglsetup.sh with your desired paramaters, you can build any target 
 
 ## Features supported by aglsetup
 
-Here is the list of features for AGL 2.0 that can be specified in the aglsetup.sh command line:
+Here is the list of features for AGL 2.1 that can be specified in the aglsetup.sh command line:
 
 * in **meta-agl**
+    * **agl-archiver**:
     * **agl-devel**: activate development options (empty root password, debugger, strace, valgrind …)
+    * **agl-isafw**:
     * **agl-netboot**: enable network boot support through TFTP and NBD (see meta-netboot layer)
+* in **meta-agl-devel**
+    * **agl-oem-extra-libs**:
+    * **agl-renesas-kernel**:
 * in **meta-agl-extra**
     * **agl-appfw-smack**: enables IoT.bzh Application Framework + SMACK + Cynara
     * **agl-demo**: enable layer meta-agl-demo and meta-qt5 - required to build     * agl-demo-platform
