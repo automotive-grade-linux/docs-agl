@@ -2,12 +2,36 @@
 This tutorial explains how to quickly setup an environment suitable to building and packaging AGL Applications using the SDK and a Docker container.
 The current tutorial has been tested on Linux, but may work with a few adjustments for Windows or MacOS.
 
-## Step 1: Install Docker
+## Step 1: install Docker
 
 First install docker on your host, if not already done.
 General instructions for Linux are available on the [Docker Site](https://docs.docker.com/engine/installation/linux/).
 
-## Step 2: install the "Generic AGL Worker" Docker Image
+## Step 2: setup persistent workspace
+
+Docker images are pre-configured to use a particular uid:gid to enable the use
+of OpenEmbedded build system. They provide a dedicated user account *devel*
+which belong to uid=1664(devel) gid=1664(devel). (Note: password is *devel*)
+
+The script 'create_container' presented below instantiates a new container
+and shares some volumes with the host:
+* /xdt (the build directory inside the container) is stored in ~/ssd/xdt_$ID (specific to instance ID)
+* /home/devel/mirror is stored in ~/ssd/localmirror_$ID (specific to instance ID)
+* /home/devel/share => points to  ~/devel/docker/share (shared by all containers)
+
+Those shared volumes with the host needs the proper permissions to be accessible
+from the contained environment.
+
+```bash
+mkdir ~/ssd ~/devel
+chmod a+w ~/ssd ~/devel
+```
+
+**Note**:  
+ * To gain access from your host on files created within the container, your
+   host account requires to be added to group id 1664.
+
+## Step 3: install the "Generic AGL Worker" Docker Image
 ### Get docker image
 #### Pre-built image
 
@@ -40,15 +64,8 @@ docker ps;
 	4fb7c550ad75        docker.automotivelinux.org/agl/worker:2.1   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
 ```
 
-**Note**  
-That the script 'create_container' will instantiate a new container and will share some volumes with the host:
-* /xdt (the build directory inside the container) is stored in ~/ssd/xdt_$ID (specific to instance ID)
-* /home/devel/mirror is stored in ~/ssd/localmirror_$ID (specific to instance ID)
-* /home/devel/share => points to  ~/devel/docker/share (shared by all containers)
 
-
-
-## Step 3: install the AGL SDK for your target
+## Step 4: install the AGL SDK for your target
 
 Here, we assume that we just built an image 'agl-demo-platform-crosssdk' using the Yocto build procedure documented in the [Getting Started](../) section of the documentation.
 
@@ -72,7 +89,7 @@ ssh -p 2222 devel@mysdk.local;
 install_sdk ~/share/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-cortexa15hf-neon-toolchain-3.0.0+snapshot.sh;
 ```
 
-## Step 4: build your application
+## Step 5: build your application
 
 You're ready to go: get the sources, run the builds ...
 
