@@ -3,7 +3,7 @@
 Here is a non exhaustive list of hardware parts that could be used to setup the R-Car Starter Kit Gen3 board development environment:
 
 * Starter Kit Gen3 board with its power supply
-* mini USB-A cable for serial console
+* micro USB-A cable for serial console
 * USB 2.0 Hub
 * Ethernet cable
 * HDMI type D (Micro connector) cable and associated display
@@ -320,7 +320,7 @@ After a few seconds, you'll see the AGL splash screen on the display and you'll 
 This can be “screen”, “picocom”, “minicom”.  
 The lighter of the 3 is “picocom” (it has less dependencies).  
 
-## Plug a USB cable from your computer to the serial CP2102 USB port (mini USB-A).
+## Plug a USB cable from your computer to the serial CP2102 USB port (micro USB-A).
 
 With “dmesg” you can check the device created for the serial link. Usually, it's /dev/ttyUSB0 but the number may vary depending on other USB serial ports connected to the host. To get it, you must switch the board on.  
 For example:
