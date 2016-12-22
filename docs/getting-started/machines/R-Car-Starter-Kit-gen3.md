@@ -282,12 +282,12 @@ sudo $TAR --extract --numeric-owner --preserve-permissions --preserve-order --to
 Copy Kernel Image and Device Tree Blob file into the **boot** directory:
 * For machine h3ulcb:
 ```
-sudo cp Image-r8a7795-h3ulcb.dtb /tmp/agl/boot/
+sudo cp Image-r8a7795-h3ulcb.dtb $SDCARD/boot/
 ```
 
 * For machine m3ulcb:
 ```
-sudo cp Image-r8a7796-m3ulcb.dtb /tmp/agl/boot/
+sudo cp Image-r8a7796-m3ulcb.dtb $SDCARD/boot/
 ```
 
 Ensure the changes have been written to the disk:
