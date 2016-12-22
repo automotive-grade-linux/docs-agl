@@ -109,20 +109,20 @@ chmod a+x ~/bin/repo
 You can choose your source release
 
 ### Download Latest Stable Release
-To download all layers for the for the latest stable release, Blowfish 2.0.3:
+To download all layers for the for the latest stable release, Chinook 2.99.1:
 
 ```
 cd $AGL_TOP
-repo init -b blowfish -m default_blowfish_2.0.3.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b chinook -m chinook_2.99.1.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
-### Download Latest on Blowfish Branch
+### Download Latest on Chinook Branch
 To download all layers on the current release branch which may be in the midst of testing or changes prior to the next stable release:
 
 ```
 cd $AGL_TOP
-repo init -b blowfish -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b chinook -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
