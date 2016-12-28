@@ -442,11 +442,13 @@ Hit any key to stop autoboot:  0
 
 ## Configure U-boot parameters
 
+Follow the steps below to configure the boot from microSD card and to set screen resolution:
+
 * Turn the board on using the power switch.
 * Hit any key to stop autoboot (warning you have only few seconds).
-* Check if you have correct parameters for booting your board:
+* Type **print** to check if you have correct parameters for booting your board:
     * For machine m3ulcb:
-    
+
     ```
 => print
 	baudrate=115200
@@ -516,63 +518,6 @@ saveenv
 
 ```
 run bootcmd
-```
-
-### U-Boot screen configuration
-
-Follow the steps below to configure the boot from microSD card and to set screen resolution:
-
-* Power up the board
-* Using your preferred terminal emulator, type a character to abort the boot and enter the U-boot menu
-* Type **print** to check the environment:
-
-```
-print
-```
-
-* Verify that the ethaddr environment variable is set to the same MAC address value shown on the label on top of the RJ45 Ethernet connector.
-* If not, set it using the following command:
-
-```
-setenv ethaddr <MAC address>
-```
-
-For example:
-
-```
-setenv ethaddr 2e:09:0a:00:75:b5
-```
-
-* Set the follow environment variables:
-
-```
-setenv bootargs_console 'console=ttySC6,38400 ignore_loglevel'
-setenv bootargs_video 'vmalloc=384M video=HDMI-A-1:1920x1080-32@60'
-setenv bootargs_root 'root=/dev/mmcblk0p1 rootdelay=3 rw rootfstype=ext4 rootwait'
-setenv bootmmc '1:1'
-setenv bootcmd_sd 'ext4load mmc ${bootmmc} 0x40007fc0 boot/uImage+dtb'
-setenv bootcmd 'setenv bootargs ${bootargs_console} ${bootargs_video} ${bootargs_root}; run bootcmd_sd; bootm 0x40007fc0'
-```
-
-**WARNINGS:**
-If no display shows up when booting, e.g. for a non-full HD screen, replace  **1920x1080** value in the **bootargs_video** variable with lower screen resolution such as **1024x768**.  
-  Unfortunately at the moment, there is no universally supported setting.
-
-For Renesas h3ulcb use screen resolution **1024x768** and set **bootmmc** to **2:1**.
-
-* Save the environment variables:
-
-```
-saveenv
-  Saving Environment to SPI Flash...
-  SF: Detected S25FL512S with page size 256 KiB, total 64 MiB
-  Erasing SPI flash...Writing to SPI flash...done
-```
-
-* Reboot:
-
-```
-reset
 ```
 
 ## Console boot
