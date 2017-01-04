@@ -38,7 +38,7 @@
 ##############################################################################################################
 
 url_fetch  : "GERRIT_FETCH"
-git_commit: master
+git_commit: "AGL_GERRIT_BRANCH"
 repositories:   
 -
     git_name: AGL/meta-agl

@@ -37,9 +37,9 @@
 # ------------------------------------
 ##############################################################################################################
 
-url_fetch  : "GITHUB_FETCH"
-url_edit   : "GITHUB_EDIT"
-git_commit : "master"
+url_fetch  : "AGL_GITHUB_FETCH"
+url_edit   : "AGL_GITHUB_EDIT"
+git_commit : "AGL_GITHUB_BRANCH"
 #git_commit : # default defined in _tocs/xxxx/latest.yml
 #dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
 
@@ -50,7 +50,7 @@ repositories:
     documents:
         - source: agl_spec_v1_280515.pdf
 -
-    git_name : automotive-grade-linux/docs-agl
+    git_name : "%project_source%/docs-agl"
     src_prefix : docs/sec-blueprint
     dst_prefix: security
     documents:
