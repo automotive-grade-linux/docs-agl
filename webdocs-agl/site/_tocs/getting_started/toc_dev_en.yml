@@ -48,6 +48,10 @@ children:
         - url: reference/machines/R-Car-Starter-Kit-gen3.html
         - url: reference/machines/raspberrypi.html
 -
+    name: HomeScreen
+    children:
+        - url: reference/homescreen/index.html
+-
     name: Troubleshooting
     children:
         - url: reference/troubleshooting.html
