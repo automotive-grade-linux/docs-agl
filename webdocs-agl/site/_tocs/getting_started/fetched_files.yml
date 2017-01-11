@@ -70,11 +70,6 @@ repositories:
     - source: setup-sdk-environment.md
       label: SDK Quick Setup
 -
-url_fetch  : "GERRIT_FETCH"
-git_commit : "master"
-
-repositories:
--
     git_name   : staging/HomeScreen
     git_commit : master
     src_prefix : HomeScreen/docs
