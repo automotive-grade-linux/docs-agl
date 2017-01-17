@@ -69,14 +69,10 @@ repositories:
       destination: footers/images/RaspberryPi2-ModelB-debug-serial-cable.jpg
     - source: setup-sdk-environment.md
       label: SDK Quick Setup
-
-url_fetch  : "GERRIT_FETCH"
-git_commit : "master"
-
-repositories:
 -
-    git_name   : staging/HomeScreen
+    url_fetch  : GERRIT_FETCH
     git_commit : master
+    git_name   : staging/HomeScreen
     src_prefix : HomeScreen/docs
     dst_prefix : homescreen
     documents:
