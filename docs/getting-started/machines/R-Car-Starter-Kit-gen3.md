@@ -450,7 +450,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     * For machine m3ulcb:
 
     ```
-=> print
+=> printenv
 	baudrate=115200
 	bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait rw rootfstype=ext4
 	bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
