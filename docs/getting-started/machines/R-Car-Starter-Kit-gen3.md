@@ -38,8 +38,8 @@ Here after is an example of the typical files downloaded at the time of writing:
 chmod a+r $XDG_DOWNLOAD_DIR/*.zip
 ls -l $XDG_DOWNLOAD_DIR
 total 8220
--rw-r--r-- 1 XXX XXX    4619114 14 sept. 05:02 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20160906.tar.gz
--rw-r--r-- 1 XXX XXX    4619796 10 oct.  23:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20160906.zip
+-rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20160906.zip
+-rw-r--r--. 1 1664 agl-sdk 2.5M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20160906.zip
 ```
 
 ## Setting up the build environment:
@@ -450,7 +450,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     * For machine m3ulcb:
 
     ```
-=> print
+=> printenv
 	baudrate=115200
 	bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait rw rootfstype=ext4
 	bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
