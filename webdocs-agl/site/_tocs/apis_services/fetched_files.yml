@@ -132,4 +132,31 @@ repositories:
         - source: index.md
           destination: resources.md
           label: Resources
+-
+    url_fetch  : GERRIT_FETCH
+    git_commit : master
+    git_name   : apps/homescreen
+    src_prefix : homescreen/docs
+    dst_prefix : homescreen
+    documents:
+        - source: homescreen_api.md
+          label: HomeScreen API
+        - source: pictures/api_getAllSurfacesOfProcess.png
+          destination: pictures/api_getAllSurfacesOfProcess.png
+        - source: pictures/api_getSurfaceStatus_1.png
+          destination: pictures/api_getSurfaceStatus_1.png
+        - source: pictures/api_getSurfaceStatus_2.png
+          destination: pictures/api_getSurfaceStatus_2.png
+        - source: pictures/api_getSurfaceStatus_3.png
+          destination: pictures/api_getSurfaceStatus_3.png
+        - source: pictures/api_hardKeyPressed.png
+          destination: pictures/api_hardKeyPressed.png
+        - source: pictures/api_renderSurfaceToArea.png
+          destination: pictures/api_renderSurfaceToArea.png
+        - source: pictures/api_renderSurfaceToAreaAllowed.png
+          destination: pictures/api_renderSurfaceToAreaAllowed.png
+        - source: pictures/api_requestSurfaceIdToFullScreen.png
+          destination: pictures/api_requestSurfaceIdToFullScreen.png
+        - source: pictures/api_surfaceVisibilityChanged.png
+          destination: pictures/api_surfaceVisibilityChanged.png
 
