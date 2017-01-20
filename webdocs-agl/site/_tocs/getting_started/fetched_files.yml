@@ -72,8 +72,8 @@ repositories:
 -
     url_fetch  : GERRIT_FETCH
     git_commit : master
-    git_name   : staging/HomeScreen
-    src_prefix : HomeScreen/docs
+    git_name   : apps/homescreen
+    src_prefix : homescreen/docs
     dst_prefix : homescreen
     documents:
         - source: index.md
