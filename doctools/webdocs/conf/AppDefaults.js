@@ -83,7 +83,12 @@ config = {
 
 	GITHUB_FETCH: "https://raw.githubusercontent.com/%repo%/%commit%/%source%",
 	GITHUB_EDIT : "https://github.com/%repo%/edit/%commit%/%source%",
-    
+
+	AGL_GITHUB_FETCH: "https://raw.githubusercontent.com/%repo%/%commit%/%source%",
+	AGL_GITHUB_EDIT : "https://github.com/%repo%/edit/%commit%/%source%",
+	AGL_GITHUB_BRANCH : "master",
+	AGL_SRC : "automotive-grade-linux",
+
     CMD_JEKYLL  : "jekyll",
     
     ENDTAG : ""

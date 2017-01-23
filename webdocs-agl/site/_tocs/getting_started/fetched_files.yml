@@ -37,14 +37,14 @@
 # ------------------------------------
 ##############################################################################################################
 
-url_fetch  : "GITHUB_FETCH"
-url_edit   : "GITHUB_EDIT"
-git_commit : "master"
+url_fetch  : "AGL_GITHUB_FETCH"
+url_edit   : "AGL_GITHUB_EDIT"
+git_commit : "AGL_GITHUB_BRANCH"
 #dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
 
 repositories:    
 - 
-    git_name   : automotive-grade-linux/docs-agl
+    git_name   : "%project_source%/docs-agl"
     src_prefix : docs/getting-started
     documents  :
     - source: source-code.md
@@ -72,7 +72,7 @@ repositories:
 -
     url_fetch  : GERRIT_FETCH
     git_name   : staging/HomeScreen
-    git_commit : master
+    git_commit : AGL_GERRIT_BRANCH
     src_prefix : HomeScreen/docs
     dst_prefix : homescreen
     documents:

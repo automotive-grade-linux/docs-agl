@@ -38,7 +38,7 @@
 ##############################################################################################################
 
 url_fetch  : "GERRIT_FETCH"
-git_commit : "master"
+git_commit : "AGL_GERRIT_BRANCH"
 
 repositories:   
 -
@@ -86,10 +86,10 @@ repositories:
           label: Bindings Examples
         - source: FAQ.md
 -
-    url_fetch: GITHUB_FETCH
-    url_edit: GITHUB_EDIT
-    git_name: automotive-grade-linux/docs-agl
-    git_commit: master
+    url_fetch: AGL_GITHUB_FETCH
+    url_edit: AGL_GITHUB_EDIT
+    git_name: "%project_source%/docs-agl"
+    git_commit: "AGL_GITHUB_BRANCH"
     src_prefix: docs/app-framework
     dst_prefix: af-binder
     documents:
@@ -97,10 +97,10 @@ repositories:
           destination: resources.md
           label: Resources
 -
-    url_fetch: GITHUB_FETCH
-    url_edit: GITHUB_EDIT
-    git_name: automotive-grade-linux/docs-agl
-    git_commit: master
+    url_fetch: AGL_GITHUB_FETCH
+    url_edit: AGL_GITHUB_EDIT
+    git_name: "%project_source%/docs-agl"
+    git_commit: "AGL_GITHUB_BRANCH"
     src_prefix: docs/signaling
     dst_prefix: signaling
     documents:
@@ -122,10 +122,10 @@ repositories:
         - source: signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf
         - source: signaling/AGL-Message-Signaling-Developer-Guidelines.pdf
 -
-    url_fetch: GITHUB_FETCH
-    url_edit: GITHUB_EDIT
-    git_name: automotive-grade-linux/docs-agl
-    git_commit: master
+    url_fetch: AGL_GITHUB_FETCH
+    url_edit: AGL_GITHUB_EDIT
+    git_name: "%project_source%/docs-agl"
+    git_commit: "AGL_GITHUB_BRANCH"
     src_prefix: docs/audio
     dst_prefix: audio
     documents:

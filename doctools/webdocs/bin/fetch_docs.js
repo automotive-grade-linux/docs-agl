@@ -43,16 +43,16 @@ function mkdirp (p) {
 }
 
 function isTextFile(p) {
-	var ext=path.extname(p);
-	// some extensions are not really extensions if they are too long.
-	// for example, for 'README.proprietary', we should consider that the extension is empty
-	if (ext.length>4) ext="";
+    var ext=path.extname(p);
+    // some extensions are not really extensions if they are too long.
+    // for example, for 'README.proprietary', we should consider that the extension is empty
+    if (ext.length>4) ext="";
 
-	return (0
-		|| (ext==".md")
-		|| (ext==".txt")
-		|| (ext=="")
-	);
+    return (0
+        || (ext==".md")
+        || (ext==".txt")
+        || (ext=="")
+    );
 }
 
 function getFrontMatter(text) {
@@ -68,9 +68,50 @@ function setFrontMatter(text, frontMatter, options) {
     return helpers.setFrontMatterString(text, frontMatterString);
 }
 
-function downloadEntry(argv, repo, document) {
-    
 
+function localCopy (argv, repo, document) {
+    var srcURI = repo.url_fetch.replace ("%source%", path.join (repo.src_prefix, document.source));
+    if (!document.destination) document.destination= path.join (repo.destination, document.source);
+    else document.destination = path.join(repo.destination, document.destination);
+    
+    var outFileDir  = path.dirname(document.destination);
+    // create directory for the file if it doesn't exist
+    if (!fs.existsSync(outFileDir)) fse.mkdirsSync(outFileDir);
+
+    if (path.extname(srcURI)===".md"){
+        // open the file for writing
+        var outFile = fs.createWriteStream(document.destination);
+        var editURI  = repo.url_edit.replace  ("%source%", path.join (repo.src_prefix, document.source));
+        // start a default front master
+        var newFrontMatter = {
+            edit_link: document.edit  || editURI || "",
+            title:     document.title || document.label,
+            origin_url: srcURI
+        };
+        var fileContents = '';
+        var fileContents = fs.readFileSync(srcURI, 'utf8');
+
+        // merge new front matter and file's own front matter (if it had any)
+        //
+        // NOTE:
+        //      newFrontMatter's properties should override those of fileFrontMatter
+        var fileFrontMatter   = getFrontMatter(fileContents);
+        var mergedFrontMatter = helpers.mergeObjects(fileFrontMatter, newFrontMatter);
+
+        // add a warning and set the merged file matter in the file
+        var contentsOnly = helpers.stripFrontMatter(fileContents);
+        contentsOnly     = repo.warning + contentsOnly;
+
+        var augmentedContents = setFrontMatter(contentsOnly, mergedFrontMatter);
+
+        // write out the file
+        outFile.end(augmentedContents);
+    } else {
+        fse.copy(srcURI, document.destination);
+    }
+}
+
+function downloadEntry(argv, repo, document) {
     if (!document.destination) document.destination= path.join (repo.destination, document.source);
     else document.destination = path.join(repo.destination, document.destination);
     var outFileDir  = path.dirname(document.destination);
@@ -90,7 +131,7 @@ function downloadEntry(argv, repo, document) {
     var newFrontMatter = {
         edit_link: document.edit  || editURI || "",
         title:     document.title || document.label,
-		origin_url: fetchURI
+        origin_url: fetchURI
     };
     
     // create directory for the file if it doesn't exist
@@ -103,16 +144,16 @@ function downloadEntry(argv, repo, document) {
     if (argv.verbose) console.log ("      < src=%s", fetchURI);
     
     // open an HTTP request for the file
-	var protocol;
-	if (fetchURI.startsWith("http:")) {
-		protocol=require("http");
-	}
-	else if (fetchURI.startsWith("https:")) {
-		protocol=require("https");
-	}
-	else {
-		console.error("ERROR: " + fetchURI + ": protocol not recognized");
-	}
+    var protocol;
+    if (fetchURI.startsWith("http:")) {
+        protocol=require("http");
+    }
+    else if (fetchURI.startsWith("https:")) {
+        protocol=require("https");
+    }
+    else {
+        console.error("ERROR: " + fetchURI + ": protocol not recognized");
+    }
     var request= protocol.get(fetchURI, function (response) {
 
         if (argv.verbose) console.log ("      > dst=%s", document.destination);
@@ -124,10 +165,10 @@ function downloadEntry(argv, repo, document) {
 
         // read in the response
         var fileContents = '';
-		if (isTextFile(document.source))
-			response.setEncoding('utf8');
-		else
-			response.setEncoding('binary');
+        if (isTextFile(document.source))
+            response.setEncoding('utf8');
+        else
+            response.setEncoding('binary');
 
         response.on('data', function (data) {
             fileContents += data;
@@ -136,37 +177,36 @@ function downloadEntry(argv, repo, document) {
         // process the response when it finishes
         response.on('end', function () {
             
-			if (isTextFile(document.source)) {
-				// merge new front matter and file's own front matter (if it had any)
-				//
-				// NOTE:
-				//      newFrontMatter's properties should override those of fileFrontMatter
-				var fileFrontMatter   = getFrontMatter(fileContents);
-				var mergedFrontMatter = helpers.mergeObjects(fileFrontMatter, newFrontMatter);
-				
+            if (isTextFile(document.source)) {
+                // merge new front matter and file's own front matter (if it had any)
+                //
+                // NOTE:
+                //      newFrontMatter's properties should override those of fileFrontMatter
+                var fileFrontMatter   = getFrontMatter(fileContents);
+                var mergedFrontMatter = helpers.mergeObjects(fileFrontMatter, newFrontMatter);
 
-				// add a warning and set the merged file matter in the file
-				var contentsOnly = helpers.stripFrontMatter(fileContents);
-				contentsOnly     = repo.warning + contentsOnly;
+                // add a warning and set the merged file matter in the file
+                var contentsOnly = helpers.stripFrontMatter(fileContents);
+                contentsOnly     = repo.warning + contentsOnly;
 
-				var augmentedContents = setFrontMatter(contentsOnly, mergedFrontMatter);
+                var augmentedContents = setFrontMatter(contentsOnly, mergedFrontMatter);
 
-				// write out the file
-				outFile.end(augmentedContents);
-			}
-			else {
-				// write out the file with frontmatter (not a markdown file)
-				outFile.end(fileContents,'binary');
-			}
+                // write out the file
+                outFile.end(augmentedContents);
+            }
+            else {
+                // write out the file with frontmatter (not a markdown file)
+                outFile.end(fileContents,'binary');
+            }
 
-			outFile.on('finish', function() {
-				getCount --;
-						
-				if (getCount === 0) {
-					if (argv.verbose) console.log ("  + Fetch done");
-					if (doneCB) doneCB();
-				}
-			});
+            outFile.on('finish', function() {
+                getCount --;
+
+                if (getCount === 0) {
+                    if (argv.verbose) console.log ("  + Fetch done");
+                    if (doneCB) doneCB();
+                }
+            });
         });
         
     }); // http request
@@ -179,7 +219,6 @@ function downloadEntry(argv, repo, document) {
 
 // main
 function FetchFiles (argv, item, fetchconf, version) {
-    
     var targetVersion  = config.VERSION_TAGDEV;
     var targetLanguage = config.LANG_DEFAULT;
     var destination    = path.join (config.DOCS_DIR, item, targetLanguage, targetVersion, config.FETCH_DIR);
@@ -203,13 +242,12 @@ function FetchFiles (argv, item, fetchconf, version) {
             process.exit(1);
         }
     }
-    
 
     if (argv.verbose) {
         console.log ("  + FetchConfig = [%s]", fetchconf);
         console.log ("    + Destination = [%s]", destination);
     }
-	if (!fs.existsSync(destination)) fse.mkdirsSync(destination);
+    if (!fs.existsSync(destination)) fse.mkdirsSync(destination);
     
     var global = {
         url_fetch  : tocConfig.url_fetch,
@@ -219,10 +257,9 @@ function FetchFiles (argv, item, fetchconf, version) {
         src_prefix : tocConfig.src_prefix || ""
     };
 
-       
     if (!tocConfig.repositories) {
-		console.log ("    * WARNING: no repositories defined in %s",fetchconf);
-		return;
+        console.log ("    * WARNING: no repositories defined in %s",fetchconf);
+        return;
     }
       
     for  (var idx in tocConfig.repositories) {
@@ -232,23 +269,39 @@ function FetchFiles (argv, item, fetchconf, version) {
         if (repository.dst_prefix) repodest= path.join (destination, repository.dst_prefix || "");
         else repodest=global.destination;
 
+        var git_name_src ;
+
+        if (repository.git_name)
+        {
+            git_name_src=repository.git_name.replace ("%project_source%" , config.AGL_SRC);
+        }
         var repo= {
             url_fetch  : repository.url_fetch  || global.url_fetch,
             url_edit   : repository.url_edit   || global.url_edit,
             git_commit : repository.git_commit || global.git_commit,
             src_prefix : repository.src_prefix || global.src_prefix,
-            git_name   : repository.git_name,
+            git_name   : git_name_src,
             destination: repodest,
             warning    : util.format ("<!-- WARNING: This file is generated by %s using %s -->\n\n", path.basename(__filename),fetchconf)
         };
-        
-        // get url from config is default formating present in config       
-        if (config[repo.url_fetch]) repo.url_fetch = config[repo.url_fetch];
+
+        var do_local_copy;
+
+        if ( repo.url_fetch === "AGL_GITHUB_FETCH" && argv.localFetch===true){
+            repo.url_fetch= path.join (path.dirname(path.dirname(config.SITE_DIR)), "%source%");
+            do_local_copy=true;
+        } else {
+            // get url from config is default formating present in config
+            if (config[repo.url_fetch]) repo.url_fetch = config[repo.url_fetch];
+            do_local_copy=false;
+        }
         
         if (config[repo.url_edit])  repo.url_edit  = config[repo.url_edit];
+        if (config[repo.git_name])  repo.git_name  = config[repo.git_name];
         repo.url_fetch= repo.url_fetch.replace ("%repo%"  , repo.git_name);
+        if (config[repo.git_commit])  repo.git_commit  = config[repo.git_commit];
         repo.url_fetch= repo.url_fetch.replace ("%commit%", repo.git_commit);
-        
+
         if (repo.url_edit) {
             repo.url_edit= repo.url_edit.replace ("%repo%"  , repo.git_name);
             repo.url_edit= repo.url_edit.replace ("%commit%", repo.git_commit);
@@ -269,20 +322,23 @@ function FetchFiles (argv, item, fetchconf, version) {
             }
         }
 
-        
         for  (var jdx in repository.documents) {
             var document = repository.documents[jdx];
-            if (argv.dumponly) {
-               console.log ("      + label=%s src=%s dst=%s", document.label, document.src, document.dst);                
-            } else {
-               downloadEntry (argv, repo, document);
+            if (do_local_copy===true) {
+                 localCopy (argv, repo, document);
             }
-        }; 
+            else {
+                if (argv.dumponly) {
+                   console.log ("      + label=%s src=%s dst=%s", document.label, document.src, document.dst);
+                } else {
+                   downloadEntry (argv, repo, document);
+                }
+            }
+        };
     };
 }
 
 function main (conf, argv, nextRequest) {
-
     config    = conf;  // make config global 
     getCount  = 0;     // Global writable active Streams
     errorCount=0;
@@ -291,7 +347,6 @@ function main (conf, argv, nextRequest) {
     // open destination _default.yml file
     var destdir = path.join (config.DATA_DIR, "tocs");
     if(!fs.existsSync(destdir)) fse.mkdirsSync(destdir);
-
 
     var tocs = fs.readdirSync(config.TOCS_DIR);
     for (var item in tocs) {
@@ -305,7 +360,7 @@ function main (conf, argv, nextRequest) {
             console.log ("HOOP: Ignore toc=[%s/%s] not readable", tocs[item], config.FETCH_CONFIG);
         }
     }
-            
+
     if (argv.verbose) console.log ("  + fetch_docs in progress count=%d", getCount);
     return true; // do not run nextRequest imediatly
 }

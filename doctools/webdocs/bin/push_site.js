@@ -29,8 +29,10 @@ function main (config, argv) {
         console.log ("Hoop: RSYNC_CMD not defined in AppDefaults.js");
         process.exit();
     }
-    
-
+    if (fs.existsSync(path.join (path.dirname(config.SITE_DIR), ".LocalFetch.ts"))) {
+        console.log ("Hoop: The files were fetch localy, please clean and fetch your files from upstream before push");
+        process.exit();
+    }
     // exec command within target build site
     var command= config.RSYNC_CMD[0];
     var optAtgs=[];
