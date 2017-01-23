@@ -166,6 +166,14 @@ Here is the list of features for AGL 2.1 that can be specified in the aglsetup.s
 
 For newer features or to get more details on a given feature, take a look at the configuration files stored for each feature and/or each machine in meta-agl/templates and meta-agl-extra/templates.
 
+## Images supported by AGL
+* **agl-image-minimal**: An AGL small image just capable of allowing a device to boot.
+* **agl-image-ivi**: A basic system of AGL distribution of IVI profile.
+* **agl-demo-platform**: AGL Demo Platform image currently contains a simple HMI and demos.
+* **agl-demo-platform-html5**: Provides an option to load alternative HTML5 HMI through openivi-html5 (maintained by Leon Anavi).
+
+![image](./images/AGL_images.svg "CLoud & Multi-ECU Architecture")
+
 [AGL snapshots master latest]: https://download.automotivelinux.org/AGL/snapshots/master/latest/
 [yocto ref Manual]: http://www.yoctoproject.org/docs/2.0/ref-manual/ref-manual.html#detailed-supported-distros
 [Getting Started with AGL]: https://wiki.automotivelinux.org/start/getting-started
