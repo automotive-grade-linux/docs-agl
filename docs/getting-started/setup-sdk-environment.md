@@ -7,6 +7,19 @@ The current tutorial has been tested on Linux, but may work with a few adjustmen
 First install docker on your host, if not already done.
 General instructions for Linux are available on the [Docker Site](https://docs.docker.com/engine/installation/linux/).
 
+Make sure your user is part of docker group. Example :
+
+```bash
+$ groups
+yourUser wheel agl-sdk docker
+```
+
+If not, please add it with:
+
+```bash
+$ sudo gpasswd -a yourUser docker
+```
+
 ## Step 2: setup persistent workspace
 
 Docker images are pre-configured to use a particular uid:gid to enable the use
@@ -40,10 +53,10 @@ A pre-built image is available on [IoT.bzh](http://iot.bzh) public site and can 
 First, download and load the image in your local Docker instance:
 
 ```bash
-wget -O - http://iot.bzh/download/public/2016/docker/docker_agl_worker-2.1.tar.xz | docker load;
+wget -O - http://iot.bzh/download/public/2016/docker/docker_agl_worker-3.0.tar.xz | docker load;
 docker images;
       REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
-      docker.automotivelinux.org/agl/worker   2.1                 42009148bc03        6 days ago          926.9 MB
+      docker.automotivelinux.org/agl/worker   3.0                 42009148bc03        6 days ago          926.9 MB
       jenkins                                 latest              55720d63e328        5 weeks ago         711.9 MB
       hello-world                             latest              c54a2cc56cbb        5 months ago        1.848 kB
 ```
@@ -58,10 +71,10 @@ Then, use the 'create_container' script to start a new, fresh container based on
 ```bash
 git clone https://github.com/iotbzh/agl-docker-worker;
 cd agl-docker-worker;
-./create_container 0;
+./contrib/create_container 0;
 docker ps;
 	CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
-	4fb7c550ad75        docker.automotivelinux.org/agl/worker:2.1   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
+	4fb7c550ad75        docker.automotivelinux.org/agl/worker:3.0   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
 ```
 
 
@@ -74,7 +87,7 @@ So we can copy such file to the shared volume.
 For example, we could have built the SDK from another worker container listening with SSH on port 2223:
 
 ```bash
-create_container 1;
+./contrib/create_container 1;
 ssh -p 2223 devel@mybuilder.local;
 ... [ prepare build environment ] ...
 bitbake agl-demo-platform-crosssdk;
