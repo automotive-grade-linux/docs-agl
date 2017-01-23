@@ -40,10 +40,10 @@ A pre-built image is available on [IoT.bzh](http://iot.bzh) public site and can 
 First, download and load the image in your local Docker instance:
 
 ```bash
-wget -O - http://iot.bzh/download/public/2016/docker/docker_agl_worker-2.1.tar.xz | docker load;
+wget -O - http://iot.bzh/download/public/2016/docker/docker_agl_worker-3.0.tar.xz | sudo docker load;
 docker images;
       REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
-      docker.automotivelinux.org/agl/worker   2.1                 42009148bc03        6 days ago          926.9 MB
+      docker.automotivelinux.org/agl/worker   3.0                 42009148bc03        6 days ago          926.9 MB
       jenkins                                 latest              55720d63e328        5 weeks ago         711.9 MB
       hello-world                             latest              c54a2cc56cbb        5 months ago        1.848 kB
 ```
@@ -58,7 +58,7 @@ Then, use the 'create_container' script to start a new, fresh container based on
 ```bash
 git clone https://github.com/iotbzh/agl-docker-worker;
 cd agl-docker-worker;
-./create_container 0;
+./contrib/create_container 0;
 docker ps;
 	CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
 	4fb7c550ad75        docker.automotivelinux.org/agl/worker:2.1   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
