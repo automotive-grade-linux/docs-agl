@@ -68,5 +68,9 @@ children:
     name: Audio Framework
     children:
         - url: reference/audio/resources.html
+-
+    name: HomeScreen
+    children:
+        - url: reference/homescreen/homescreen_api.html
 
  
