@@ -106,7 +106,7 @@ repositories:
     documents:
         - source: architecture.md
           destination: architecture.md
-          label: Signaling Architecture (proposal)
+          label: Signaling Architecture
         - source: index.md
           destination: resources.md
           label: Resources
