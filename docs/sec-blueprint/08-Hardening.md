@@ -424,17 +424,6 @@ Kernel Hardening
 
 ```bash
   CONFIG_SWAP=n
-```
-
-### Disable namespace support
-
-  Do not allow namespace support to prevent duplicates of dev nodes,
-  pids and mount points.  
-  This may be used in virtualization and container solutions like LXC, so in some cases it cannot be disabled.
-
-```bash
-  CONFIG_NAMESPACES=n
-```
 
 ### Disable NFS file system
 
@@ -550,19 +539,6 @@ Kernel Hardening
     of the following kind (e.g. console=ttyS0 console=tty0) on the kernel
     command line. All of the console=&lt;interface&gt; statements should be
     stripped and removed from the kernel command line.
-
--   The following lines from /etc/inittab should be removed for the
-    serial console:
-
-    S0:12345:respawn:/sbin/getty 115200 ttyS0
-
-    ttyS0::askfirst:-/bin/sh
-
-    Failing to do so will result in the System V init process trying to
-    infinitely open a tty port and spawn a login shell on the serial
-    console, which will result in the following repetitive output:
-
-    INIT: Id “S0” respawning too fast: disabled for 5 minutes
 
 -   The telnet server shall be disabled.
 
@@ -863,7 +839,6 @@ Kernel Hardening
 
 |  Kernel Configuration                 | Kernel Version |
 |---------------------------------------|----------------|
-|  CONFIG\_CHECKPOINT\_RESTORE=n        |3.3+            |
 |  CONFIG\_UNIX\_DIAG=n                 |3.3+            |
 |  CROSS\_MEMORY\_ATTACH=n              |3.5+            |
 |  CONFIG\_PANIC\_ON\_OOPS=y            |3.5+            |
@@ -995,18 +970,6 @@ Kernel Hardening
   BPF_JIT=n
 ```
 
-### Disable checkpoint/restore
-
-  The checkpoint/restore service can take a process, freeze it and
-  migrate it.  
-  This results in providing more info than a core dump.  
-  This configuration is supported in Linux 3.3 and greater and thus should
-  only be disabled for such versions.
-
-```bash
-  CONFIG_CHECKPOINT_RESTORE=n
-```
-
 ### Enable Enforced Module Signing
 
   This configuration is supported in Linux 3.7 and greater and thus
@@ -1119,7 +1082,6 @@ respective environment.
 |  Dropbear         |  Remove “dropbear” from ‘/etc/init.d/rcs’ |  EXCLUDE               |  EXCLUDE                     |
 |  SSH              |  NA                                       |  EXCLUDE               |  EXCLUDE                     |
 |  Editors (vi)     |  /bin/vi                                  |  INCLUDE               |  EXCLUDE                     |
-|  Netstat          |  /bin/netstat                             |  INCLUDE               |  EXCLUDE                     |
 |  Dmesg            |  /bin/dmesg                               |  INCLUDE               |  EXCLUDE                     |
 |  UART             |  /proc/tty/driver/                        |  INCLUDE               |  EXCLUDE                     |
 |  Hexdump          |  /bin/hexdump                             |  INCLUDE               |  EXCLUDE                     |
@@ -1265,71 +1227,6 @@ Network Hardening
   SYN requests with the appropriate SYN+ACK reply, but it does not store
   the connection in its backlog queue.
 
-### Enable Iptables (firewall)
-
-  Iptables is used to set up, maintain, and inspect the tables of IPv4
-  packet filter rules in the Linux kernel. Iptables rules should be set
-  in such a way that it allows packets from authorized peer only.
- 
-  Following are the rules recommended until new features are implemented
-  on the STB. The rules are to be in the following sequence as iptables
-  works based on the sequencing of the rules.
- 
-  1\) Allow only incoming UDP/TCP DNS packets only. These rules are only
-  applicable if the device needs to resolve DNS. If the device does not
-  need to resolve DNS then remove these.
-```
-  iptables -A INPUT -p udp --sport 53 -j ACCEPT 
-  iptables -A INPUT -p udp --dport 53 -j ACCEPT 
-  iptables -A INPUT -p tcp --sport 53 -j ACCEPT 
-  iptables -A INPUT -p tcp --dport 53 -j ACCEPT
-```
-
-  2\) Allow only outgoing UDP/TCP DNS only
-
-```
-  Iptables -A OUTPUT -p udp --sport 53 -j ACCEPT 
-  iptables -A OUTPUT -p udp --dport 53 -j ACCEPT 
-  iptables -A OUTPUT -p udp --sport 53 -j ACCEPT 
-  iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
-```
- 
-  3\) Allow output UDP connection only for the audience measurement system
-```
-  iptables -I OUTPUT -p udp –sport 46251 -j ACCEPT
-```
- 
-  4\) Drop all ICMP
-
-```
-  iptables -A INPUT -p ICMP –icmp-type <all> -j DROP
-```
- 
-  5\) Drop all forwarding packet
-
-```
-  iptables -P FORWARD DROP
-```
- 
-  6\) Drop all the TCP connections where SYN flag is unset and state is
-  NEW.
-```
-  iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP
-```
- 
-  7\) Drop all the remaining TCP or UDP packets unknown to the STB
-
-```
-  iptables -A INPUT -j DROP 
-  iptables -A OUTPUT -j DROP
-```
- 
-  8\) Drop all broadcast or multicast packets
-
-```
-  iptables -A INPUT -m pkttype --pkt-type broadcast -j DROP
-  iptables -A INPUT -m pkttype --pkt-type multicast -j DROP
-```
 
 Validation
 ==========
