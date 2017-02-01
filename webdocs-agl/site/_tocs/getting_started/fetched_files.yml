@@ -73,9 +73,9 @@ repositories:
       label: SDK Quick Setup
 -
     url_fetch  : GERRIT_FETCH
-    git_name   : staging/HomeScreen
+    git_name   : apps/homescreen
     git_commit : AGL_GERRIT_BRANCH
-    src_prefix : HomeScreen/docs
+    src_prefix : homescreen/docs
     dst_prefix : homescreen
     documents:
         - source: index.md
