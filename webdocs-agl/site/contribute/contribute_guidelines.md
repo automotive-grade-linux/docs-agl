@@ -259,7 +259,7 @@ Push to personal branch:
 
 The documentation is written using Markdown format.
 
-The developpers site is generated using  [Jekyll](https://jekyllrb.com) which in turn uses [Kramdown](http://kramdown.gettalong.org/) to generate HTML. Kramdown is compatible with most extensions introduced by [PHP Markdown Extra](http://michelf.com/projects/php-markdown/extra/)
+The developers site is generated using  [Jekyll](https://jekyllrb.com) which in turn uses [Kramdown](http://kramdown.gettalong.org/) to generate HTML. Kramdown is compatible with most extensions introduced by [PHP Markdown Extra](http://michelf.com/projects/php-markdown/extra/)
 
 Here a the reference guides for Markdown syntax:
 
