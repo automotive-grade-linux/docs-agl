@@ -40,3 +40,31 @@ CXXFLAGS_append = " -D_GLIBCXX_USE_CXX11_ABI=0"
 BUILD_CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0"
 TARGET_CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0" CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0"
 ```
+
+## Disabling Homescreen in AGL 3.0.x CC release
+
+**Problem**: new installed applications are not available on Homescreen and even if started manually through afm-util, the application starts but no surface appears.
+
+**Answer**: this is due to IVI-Shell integration with Qt and Homescreen.
+
+To disable IVI-Shell and revert to the "plain old" weston desktop, you can follow the 4 steps below:
+
+1. modify */etc/xdg/weston/weston.ini* and comment the line mentioning IVI-shell. For example on Porter board:
+
+           [core]
+           backend=drm-backend.so
+           #shell=ivi-shell.so
+           ...
+2. modify */usr/lib/systemd/user/afm-user-daemon.service* and comment the line specifying QT Wayland backend:
+
+           ...
+           #Environment=QT_WAYLAND_SHELL_INTEGRATION=ivi-shell
+           ...
+3. disable Homescreen services:
+
+           # systemctl disable HomeScreenAppFrameworkBinderAGL.service
+           # systemctl disable HomeScreen.service
+           # systemctl disable InputEventManager.service
+           # systemctl disable WindowManager.service
+4. Reboot your target and you should then be able to start apps on the standard weston screen using afm-util
+
