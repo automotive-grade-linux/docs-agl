@@ -91,7 +91,13 @@ install_sdk ~/share/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-cortexa15hf
 
 ## Step 5: build your application
 
-You're ready to go: get the sources, run the builds ...
+First, you must source the SDK environment you wish to use (you MUST repeat this step each time you open a new shell):
+
+```bash
+source /xdt/sdk/environment-setup-<your_target>
+```
+
+You're then ready to go: get the sources, run the builds ...
 
 ```bash
 git clone <your repo for your app>;
