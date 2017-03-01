@@ -5,17 +5,19 @@ This documentation is aiming at people who want to run Automotive Grade
 Linux (AGL) on an Intel Hardware (HW).  
 While the reference HW used by AGL project is the Open Source Minnowboard.  
 This documentation [MinnowBoard wiki](http://wiki.minnowboard.org/MinnowBoard\_Wiki\_Home) 
-can be used to enable most of 64 bits Intel Architecture (IA) using UEFI as boot loader.  
+can be used to enable most of 64 bits Intel Architecture (IA) using UEFI as boot loader.<br>
+In addition to the MinnowBoard, support for the the [Joule Developer Kit](https://software.intel.com/en-us/iot/hardware/joule/dev-kit) has been added. 
 You need to run the 64 bits version of the UEFI boot.
-Minnowbaord Max and Turbo are both 64 bits capable.
+Minnowbaord Max and Turbo has well as the Joule are both 64 bits capable.
 
 **Note** :  
  * This page is more focused on please willing to create bespoke AGL image and BSP.  
 If you are more interested by Apps creation, please visit [ Developing Apps for AGL](https://wiki.automotivelinux.org/agl-distro/developer_resources_intel_apps)
 
-UEFI has evolved a lot recently and you likely want to check that your HW firmware is up-to-date, this is particularly important for the Minnowboard.
+UEFI has evolved a lot recently and you likely want to check that your HW firmware is up-to-date, this is mandatory for the Minnowboard and the Joule.
 
-[`https://firmware.intel.com/projects/minnowboard-max`](https://firmware.intel.com/projects/minnowboard-max)
+[`https://firmware.intel.com/projects/minnowboard-max`](https://firmware.intel.com/projects/minnowboard-max)<br>
+[`https://software.intel.com/en-us/flashing-the-bios-on-joule`](https://software.intel.com/en-us/flashing-the-bios-on-joule)
 
 ## Where to find an AGL bootable image
 
@@ -40,27 +42,18 @@ To install the repo tool.
   chmod a+x ~/bin/repo;
 ```
 
-#### Configuring for the current *(older)* stable (blowfish\_2.0.4) (BB)
+#### Configuring for the current *(older)* stable (Charming Chinook 3.0.x) ()
 
 ```bash
-  cd AGL-2.0.4;
-  repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo -b blowfish -m default_blowfish_2.0.4.xml
+  cd AGL-3.0.x;
+  repo init -b chinook -m default.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 ```
-#### Configuring for master (CC)
+#### Configuring for master (DD)
 
 ```bash
   cd AGL-master;
   repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo;
 ```
-
-#### Only for developer working on virtualisation
-**Note :**:  
-This is WIP and most likely to fail most of the time)
-```bash
-  cd AGL-master-next;
-  repo init -b morty -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo;
-```
-
 Once that you repo is initialised either with the stable or WIP, you need to sync the repo to fetch the various git trees.
 
 #### Downloading the configured AGL source code
@@ -77,19 +70,21 @@ When running the command:
   source meta-agl/scripts/aglsetup.sh -h
 ```
 
-You will notice the Intel entry
+You will notice the Intel entries
 
 ```bash
   intel-corei7-64
+  joule
 ```
-Simply select that entry to replace porter in the -m option.
+Simply select that entry to replace porter in the -m option.<br>
 
 ```bash
   source meta-agl/scripts/aglsetup.sh \
   -m intel-corei7-64 \
   -b build \
-  agl-devel agl-demo agl-appfw-smack agl-netboot
+  agl-devel agl-demo agl-appfw-smack agl-netboot<br>
 ```
+**Note:** use Note: "-m joule" when building for a Joule developer Kit target.
 
 Start the build **This can take several hours depending of your CPU and
 internet connection and will required several GB on /tmp as well as on your build directory**
