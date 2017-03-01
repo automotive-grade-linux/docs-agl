@@ -64,6 +64,8 @@ repositories:
     - source: troubleshooting.md
       label: Generic issues
     - source: footers/porter-footer.md
+      label: Intel Boards
+    - source: footers/intel-footer.md
       label: Porter board
     - source: footers/raspberrypi-footer.md
       label: Raspberry PI
