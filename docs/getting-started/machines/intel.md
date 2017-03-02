@@ -4,7 +4,7 @@
 This documentation is aiming at people who want to run Automotive Grade
 Linux (AGL) on an Intel Hardware (HW).  
 While the reference HW used by AGL project is the Open Source Minnowboard.  
-This documentation [MinnowBoard wiki](http://wiki.minnowboard.org/MinnowBoard\_Wiki\_Home) 
+This documentation [MinnowBoard wiki](https://minnowboard.org/) 
 can be used to enable most of 64 bits Intel Architecture (IA) using UEFI as boot loader.<br>
 In addition to the MinnowBoard, support for the the [Joule Developer Kit](https://software.intel.com/en-us/iot/hardware/joule/dev-kit) has been added. 
 You need to run the 64 bits version of the UEFI boot.
@@ -42,7 +42,7 @@ To install the repo tool.
   chmod a+x ~/bin/repo;
 ```
 
-#### Configuring for the current *(older)* stable (Charming Chinook 3.0.x) ()
+#### Configuring for the current *(older)* stable (Charming Chinook 3.0.x)
 
 ```bash
   cd AGL-3.0.x;
@@ -84,7 +84,7 @@ Simply select that entry to replace porter in the -m option.<br>
   -b build \
   agl-devel agl-demo agl-appfw-smack agl-netboot<br>
 ```
-**Note:** use Note: "-m joule" when building for a Joule developer Kit target.
+**Note:** use the option "-m joule" when building for a Joule developer Kit target.
 
 Start the build **This can take several hours depending of your CPU and
 internet connection and will required several GB on /tmp as well as on your build directory**
