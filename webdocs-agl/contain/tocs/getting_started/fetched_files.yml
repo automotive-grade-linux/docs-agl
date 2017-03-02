@@ -63,9 +63,9 @@ repositories:
       label: Build for Raspberry PI 2/3
     - source: troubleshooting.md
       label: Generic issues
-    - source: footers/porter-footer.md
-      label: Intel Boards
     - source: footers/intel-footer.md
+      label: Intel Boards
+    - source: footers/porter-footer.md
       label: Porter board
     - source: footers/raspberrypi-footer.md
       label: Raspberry PI
