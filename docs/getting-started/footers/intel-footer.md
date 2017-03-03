@@ -21,6 +21,7 @@ You may have to change the configuration in your boot loader which is located in
 
 On the Minnowboard the serial cable is a FTDI serial cable. The wiring can be found [here](http://wiki.minnowboard.org/MinnowBoard_MAX_HW_Setup).<br>
 On the Joule the serial connection is done via the micro USB cable which is not provided in the Developer kit. Details can be found [here](https://software.intel.com/en-us/node/667851).<br>
+Interface speed is 115200 bps, 8 bits, no parity, no flow control
 
 ## Which port name is used to define the connected display(s)
 
