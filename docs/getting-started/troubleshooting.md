@@ -2,7 +2,7 @@
 
 ## Extended attributes MUST be copied
 
-***IMPORTANT, The extended attribute set during image construction MUST be copied to the SD card.***
+**IMPORTANT, The extended attribute set during image construction MUST be copied to the SD card.**
 
 When using tar to create the SDcard, it is a common error to not copy the extended attributes. Find below instruction for using tar.
 
@@ -49,22 +49,31 @@ TARGET_CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0" CXXFLAGS_re
 
 To disable IVI-Shell and revert to the "plain old" weston desktop, you can follow the 4 steps below:
 
-1. modify */etc/xdg/weston/weston.ini* and comment the line mentioning IVI-shell. For example on Porter board:
+* Modify */etc/xdg/weston/weston.ini* and comment the line mentioning IVI-shell. For example on Porter board:
 
+```
            [core]
            backend=drm-backend.so
            #shell=ivi-shell.so
            ...
-2. modify */usr/lib/systemd/user/afm-user-daemon.service* and comment the line specifying QT Wayland backend:
+```
 
+* modify */usr/lib/systemd/user/afm-user-daemon.service* and comment the line specifying QT Wayland backend:
+
+```
            ...
            #Environment=QT_WAYLAND_SHELL_INTEGRATION=ivi-shell
            ...
-3. disable Homescreen services:
+```
 
+* disable Homescreen services:
+
+```
            # systemctl disable HomeScreenAppFrameworkBinderAGL.service
            # systemctl disable HomeScreen.service
            # systemctl disable InputEventManager.service
            # systemctl disable WindowManager.service
-4. Reboot your target and you should then be able to start apps on the standard weston screen using afm-util
+```
+
+* Reboot your target and you should then be able to start apps on the standard weston screen using afm-util
 
