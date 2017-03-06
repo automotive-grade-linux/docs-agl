@@ -148,7 +148,7 @@ cd $AGL_TOP
 source meta-agl/scripts/aglsetup.sh -h
 ```
 
-Once you run aglsetup.sh with your desired paramaters, you can build any target desired.
+Once you run aglsetup.sh with your desired parameters, you can build any target desired.
 
 ## Features supported by aglsetup
 
