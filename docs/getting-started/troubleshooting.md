@@ -40,6 +40,18 @@ CXXFLAGS_append = " -D_GLIBCXX_USE_CXX11_ABI=0"
 BUILD_CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0"
 TARGET_CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0" CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0"
 ```
+## Screen orientation for Splash and in Weston
+Depending of your scren mounting the default orientation of the UI an/or splash screen might be incorrect.
+To change the orientation of the splash screen patch 
+```
+File: /etc/systemd/system/sysinit.target.wants/psplash-start.service
+Line:  ExecStart=/usr/bin/psplash -n -a 90
+```
+To change the orientation of the UI in Weston patch
+```
+File: /etc/xdg/weston/weston.ini
+Line: transform=90
+```
 
 ## Disabling Homescreen in AGL 3.0.x CC release
 
