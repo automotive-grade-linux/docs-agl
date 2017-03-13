@@ -8,6 +8,14 @@ Multiple options are avaiable but dd and tar can very easily let you down due to
 The script [mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh) has been done to help you.<br>
 The option -h will print the help and the option -v will detailled the operation and ease any debug.<br>
 
+## Selecting the SD or USB to boot.
+When booting a Minnowboard or a Joule you can change the default boot device by hitting F2 during initial UEFI boot.
+It's easier to acheive it in the right time with a USB keyboard than via serial link. It's also preferable to use F9 and to change the boot order once for all.<br>
+Please note: You can only change the boot order, when a valid device is inserted in the corresponding port (USB or SD).
+
+The Minnow, Joule, many laptops and NUCs will not accept to boot with some USB3 stick. If you have some trouble to get your USB3 stick detected during boot, swap it for a USB2. In anycase working with SD card is faster to flash and to boot. SD should be prefered.<br>
+The Joule seems to refuse to boot with my SD-HC-I type cards while I had no problem with the Minnow. If you work with a Joule, use regular SD-HC (mode 4 and 10 work fine)
+
 
 ## Serial debug Port
 
