@@ -10,7 +10,9 @@ The option -h will print the help and the option -v will detailled the operation
 
 ## Selecting the SD or USB to boot.
 When booting a Minnowboard or a Joule you can change the default boot device by hitting F2 during initial UEFI boot.
-It's easier to acheive it in the right time with a USB keyboard than via serial link. It's also preferable to use F9 and to change the boot order once for all.<br>
+It's easier to acheive it in the right time with a USB keyboard than via serial link.
+During boot USB hub are not supported, you need to connect the keyboard directly in the USB socket.<br>
+It's also preferable to use F9 and to change the boot order once for all.<br>
 Please note: You can only change the boot order, when a valid device is inserted in the corresponding port (USB or SD).
 
 The Minnow, Joule, many laptops and NUCs will not accept to boot with some USB3 stick. If you have some trouble to get your USB3 stick detected during boot, swap it for a USB2. In anycase working with SD card is faster to flash and to boot. SD should be prefered.<br>
