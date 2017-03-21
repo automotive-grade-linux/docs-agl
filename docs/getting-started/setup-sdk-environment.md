@@ -35,12 +35,12 @@ chmod a+w ~/ssd ~/devel
 ### Get docker image
 #### Pre-built image
 
-A pre-built image is available on [IoT.bzh](http://iot.bzh) public site and can be used directly.
+A pre-built image is available on automotivelinux download public site and can be used directly.
 
 First, download and load the image in your local Docker instance:
 
 ```bash
-wget -O - http://iot.bzh/download/public/2016/docker/docker_agl_worker-3.0.tar.xz | sudo docker load;
+wget -O - https://download.automotivelinux.org/AGL/snapshots/sdk/docker/docker_agl_worker-3.0.tar.xz | sudo docker load;
 docker images;
       REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
       docker.automotivelinux.org/agl/worker   3.0                 42009148bc03        6 days ago          926.9 MB
@@ -61,7 +61,7 @@ cd agl-docker-worker;
 ./contrib/create_container 0;
 docker ps;
 	CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
-	4fb7c550ad75        docker.automotivelinux.org/agl/worker:2.1   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
+	4fb7c550ad75        docker.automotivelinux.org/agl/worker:3.0   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
 ```
 
 
