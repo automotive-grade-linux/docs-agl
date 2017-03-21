@@ -48,7 +48,7 @@ docker images;
       hello-world                             latest              c54a2cc56cbb        5 months ago        1.848 kB
 ```
 #### Rebuilt image
-The Docker image for AGL Worker can be rebuilt using the scripts published here [agl-docker-worker](https://github.com/iotbzh/agl-docker-worker).
+The Docker image for AGL Worker can be rebuilt using the scripts published here [docker-worker-generator](https://git.automotivelinux.org/AGL/docker-worker-generator/).
 
 ### Start image
 Then, use the 'create_container' script to start a new, fresh container based on the AGL Worker image:
@@ -56,8 +56,8 @@ Then, use the 'create_container' script to start a new, fresh container based on
  * The password for the id 'devel' inside the docker image is 'devel'.
 
 ```bash
-git clone https://github.com/iotbzh/agl-docker-worker;
-cd agl-docker-worker;
+git clone https://git.automotivelinux.org/AGL/docker-worker-generator;
+cd docker-worker-generator;
 ./contrib/create_container 0;
 docker ps;
 	CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
