@@ -1,4 +1,4 @@
-# AGL Kickstart on Renesas R-Car Starter Kit Gen3 (h3ulcb, m3ulcb)
+# AGL Kickstart on Renesas R-Car Starter Kit Gen3 V2.16 (h3ulcb, m3ulcb)
 
 Here is a non exhaustive list of hardware parts that could be used to setup the R-Car Starter Kit Gen3 board development environment:
 
@@ -23,9 +23,9 @@ The following documents may also be helpful:
 
 Before setting up the build environment, you need to download the proprietary drivers.
 
-* Download Renesas graphics drivers with a "click through" license from Renesas website [Link][rcar demoboard]
+* Download Renesas graphics drivers with a "click through" license from Renesas website [Link][rcar Linux] and [Link][rcar Linux Drivers]
     * Under the Target hardware: **R-Car H3/M3** section.
-
+    
 #### Note:
 
 * You have to register with a free account on MyRenesas and accept the license conditions before downloading them the drivers.  
@@ -36,10 +36,10 @@ Here after is an example of the typical files downloaded at the time of writing:
 
 ```
 chmod a+r $XDG_DOWNLOAD_DIR/*.zip
-ls -l $XDG_DOWNLOAD_DIR
+ls -1 $XDG_DOWNLOAD_DIR
 total 8220
--rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20160906.zip
--rw-r--r--. 1 1664 agl-sdk 2.5M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20160906.zip
+-rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20170125.zip
+-rw-r--r--. 1 1664 agl-sdk 2.5M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170125.zip
 ```
 
 ## Setting up the build environment:
@@ -73,12 +73,14 @@ In case of missing graphics drivers, you could notice an error message as follow
 [snip]
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/machine/h3ulcb/50_setup.sh
 /home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
-The graphics and multimedia acceleration packages for the R-Car Gen3 board can be download from :
-  <http://www.renesas.com/secret/r_car_download/rcar_demoboard.jsp>
+The graphics and multimedia acceleration packages for 
+the R-Car Gen3 board can be downloaded from:
+ https://www.renesas.com/en-us/software/D6000821.html
+ https://www.renesas.com/en-us/software/D6000822.html
 
-These 2 files from there should be store in your'/home/ronan/Téléchargements' directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20160906.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20160906.zip
+These 2 files from there should be store in your'/home/devel/Téléchargements' directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20170125.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170125.zip
 /home/working/workspace_agl_master/build_gen3
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
 --- end of setup script
@@ -168,7 +170,8 @@ lsblk
   └─sdc2   8:34   1   788M  0 part
 ```
 
-**IMPORTANT NOTE**: This is a critical operation, each computer is different and removable devices can change from time to time: so you should repeat this operation each time you insert the microSD card to confirm the device name.
+**IMPORTANT NOTE**: This is a critical operation, each computer is different and removable devices can change from time to time: 
+so you should repeat this operation each time you insert the microSD card to confirm the device name.
 
 In the example above, we see:
 * the first SATA drive as 'sda'.
@@ -322,7 +325,9 @@ The lighter of the 3 is “picocom” (it has less dependencies).
 
 ## Plug a USB cable from your computer to the serial CP2102 USB port (micro USB-A).
 
-With “dmesg” you can check the device created for the serial link. Usually, it's /dev/ttyUSB0 but the number may vary depending on other USB serial ports connected to the host. To get it, you must switch the board on.  
+With “dmesg” you can check the device created for the serial link. 
+Usually, it's /dev/ttyUSB0 but the number may vary depending on other USB serial ports connected to the host. 
+To get it, you must switch the board on. 
 For example:
 
 ```
@@ -590,7 +595,8 @@ Generic guide on how to add a new service in the BSP.
 [R-car m3ulcb]: http://elinux.org/R-Car/Boards/M3SK
 [R-car h3ulcb]: http://elinux.org/R-Car/Boards/H3SK
 [R-car yocto]: http://elinux.org/R-Car/Boards/Yocto-Gen3
-[rcar demoboard]: https://www.renesas.com/en-eu/solutions/automotive/rcar-demoboard.html
+[rcar Linux]: https://www.renesas.com/en-us/software/D6000821.html
+[rcar Linux Drivers]: https://www.renesas.com/en-us/software/D6000822.html
 [Iot.bzh AGL-Kickstart-on-Renesas-Porter-Board]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
 [Iot.bzh AGL-Devkit-Image-and-SDK-for-Porter]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf
 [Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf
