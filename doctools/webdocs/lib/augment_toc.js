@@ -67,11 +67,10 @@ function augmentEntry(originalEntry, prefix) {
 }
 
 function decideOnName(originalEntry, frontMatter) {
-
-    // raise a warning for old-style ToC entry names
-    if (originalEntry.name && verbose === true) {
-        console.warn("'name' property will be ignored");
-    }
+	
+	// if name is specified, precedence is higher
+	if (originalEntry.name)
+		return originalEntry.name;
 
 	if (!frontMatter)
 		return originalEntry.name;
