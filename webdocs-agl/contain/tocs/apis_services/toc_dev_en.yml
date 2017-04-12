@@ -42,19 +42,20 @@ children:
     name: Application Framework
     children:
         - url: reference/af-main/overview.html
-        - url: reference/af-main/quick-tutorial.html
-        - url: reference/af-main/widgets.html
         - url: reference/af-main/afm-daemons.html
-        - url: reference/af-main/application-framework.html
+        - url: reference/af-main/widgets.html
+        - url: reference/af-main/config.xml.html
+        - url: reference/af-main/permissions.html
+        - url: reference/af-main/quick-tutorial.html
         - url: reference/af-binder/afb-overview.html
         - url: reference/af-binder/afb-application-writing.html
+        - url: reference/af-binder/afb-bindings-overview.html
         - url: reference/af-binder/afb-bindings-writing.html
         - url: reference/af-binder/afb-events-guide.html
-        - url: reference/af-binder/afb-daemon-vocabulary.html
         - url: reference/af-binder/afb-tests-overview.html
-        - url: reference/af-binder/afb-bindings-overview.html
-        - url: reference/af-binder/FAQ.html
+        - url: reference/af-binder/afb-daemon-vocabulary.html
         - url: reference/af-binder/resources.html
+
 -
     name: Message Signaling
     children:

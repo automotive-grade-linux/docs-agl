@@ -49,17 +49,21 @@ repositories:
     documents:
         - source: overview.md
           label: Overview
-        - source: pictures/AppFW-APP_install_sequences.svg
-        - source: pictures/Security_model_history.svg
-        - source: quick-tutorial.md
-          label: Quick Tutorial
-        - source: widgets.md
-          label: Widgets
         - source: afm-daemons.md
           label: Application Framework Daemon
+        - source: widgets.md
+          label: Widgets
+        - source: config.xml.md
+          label: Widget Configuration File
+        - source: permissions.md
+          label: Permissions
+        - source: quick-tutorial.md
+          label: Quick Tutorial
         - source: pictures/afm-daemons.svg
-        - source: application-framework.md
-          label: Application Framework
+        - source: pictures/AppFW-APP_install_sequences.svg
+        - source: pictures/Security_model_history.svg
+        - source: pictures/triskel_iot_bzh.svg
+
 -
     git_name : src/app-framework-binder
     git_commit: master
@@ -68,23 +72,25 @@ repositories:
     documents:
         - source: afb-overview.md
           label: Binder overview
-        - source: pictures/AFB_overview.svg
-        - source: pictures/AFB_for_services.svg
         - source: afb-application-writing.md
           label: Writing Applications
-        - source: afb-bindings-writing.md
-          label: Writing Bindings
-        - source: pictures/tic-tac-toe.svg
-        - source: afb-events-guide.md
-          label: Events guide
-        - source: pictures/signaling-basis.svg
-        - source: afb-daemon-vocabulary.md
-          label: Vocabulary
-        - source: afb-tests-overview.md
-          label: Tests overview
         - source: afb-bindings-overview.md
           label: Bindings Examples
-        - source: FAQ.md
+        - source: afb-bindings-writing.md
+          label: Writing Bindings
+        - source: afb-events-guide.md
+          label: Events guide
+        - source: afb-tests-overview.md
+          label: Tests overview
+        - source: afb-daemon-vocabulary.md
+          label: Vocabulary
+
+        - source: pictures/AFB_overview.svg
+        - source: pictures/AFB_for_services.svg
+        - source: pictures/signaling-basis.svg
+        - source: pictures/tic-tac-toe.svg
+        - source: pictures/triskel_iot_bzh.svg
+
 -
     url_fetch: AGL_GITHUB_FETCH
     url_edit: AGL_GITHUB_EDIT
