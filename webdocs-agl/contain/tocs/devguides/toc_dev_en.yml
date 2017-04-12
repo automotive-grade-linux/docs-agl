@@ -45,19 +45,58 @@ children:
         - url: reference/meta-agl.html
         - url: reference/meta-agl-demo.html
         - url: reference/meta-agl-devel.html
-        - url: reference/meta-sota.html
+        - url: referece/meta-sota.html
+-
+    name: "Development Kit: build AGL image"
+    children:
+        - 
+            name: Abstract
+            url: reference/sdk-devkit/docs/part-1/1_0_Abstract.html
+        - 
+            name: Deploy image
+            url: reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html
+        - 
+            name: Setting up your operating system
+            url: reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html
+        - 
+            name: Install Docker image
+            url: reference/sdk-devkit/docs/part-1/1_3-Install-agl-for-porter.html
+        - 
+            name: Inside the container 
+            url: reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html
+        - 
+            name: Build image for Porter 
+            url: reference/sdk-devkit/docs/part-1/1_5-Build-image-Porter.html
+        - 
+            name: Porter image deployment
+            url: reference/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.html
+        - 
+            name: SDK compilation and installation 
+            url: reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html
+-
+    name: "Development Kit: build AGL application"
+    children:
+        - 
+            name: Abstract
+            url: reference/sdk-devkit/docs/part-2/2_0_Abstract.html
+        - 
+            name: Initialize SDK environment
+            url: reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html
+        - 
+            name: Trying out templates
+            url: reference/sdk-devkit/docs/part-2/2_2-Trying-out-templates.html
+        - 
+            name: Developing with container
+            url: reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html
+        - 
+            name: Creating an hybrid app 
+            url: reference/sdk-devkit/docs/part-2/2_4-Creating-hybrid-app.html
 -
     name: Guides 
     children:
         - 
             name: Kickstart on Renesas Porter board
             url: reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
-        - 
-            name: Devkit - Image and SDK for Porter board
-            url: reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf
-        - 
-            name: Devkit - Build your 1st AGL Application
-            url: reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf
         - 
             name: Devkit - Howto bake a service
             url: reference/iotbzh2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf

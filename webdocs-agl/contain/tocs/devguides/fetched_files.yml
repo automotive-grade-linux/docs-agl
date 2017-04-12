@@ -72,8 +72,56 @@ repositories:
     dst_prefix: iotbzh2016
     documents:
         - source: sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
-        - source: sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf
-        - source: sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf
         - source: bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf
         - source: appfw/03-AGL-AppFW-Privileges-Management.pdf
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: iotbzh/agl-documentation
+    git_commit: "master"
+    documents:
+        - source: sdk-devkit/docs/part-1/1_0_Abstract.md
+        - source: sdk-devkit/docs/part-1/1_1-Deploy_image.md
+        - source: sdk-devkit/docs/part-1/1_2-Setting-up-your_os.md
+        - source: sdk-devkit/docs/part-1/1_3-Install-agl-for-porter.md
+        - source: sdk-devkit/docs/part-1/1_4-Inside-the-container.md
+        - source: sdk-devkit/docs/part-1/1_5-Build-image-Porter.md
+        - source: sdk-devkit/docs/part-1/1_6-Porter-image-deployment.md
+        - source: sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.md
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_macos_1.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_macos_2.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_macos_3.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_macos_4.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_macos_5.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_macos_6.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_windows_1.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_windows_2.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_windows_3.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_windows_4.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_windows_5.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_windows_6.png
+        - source: sdk-devkit/docs/part-1/pictures/docker_install_windows_7.png
+        - source: sdk-devkit/docs/part-1/pictures/renesas_download.jpg
+        - source: sdk-devkit/docs/part-1/pictures/windows_putty_1.png
+        - source: sdk-devkit/docs/part-1/pictures/windows_putty_2.png
+        - source: sdk-devkit/docs/part-1/pictures/windows_win32diskimager_1.png
+        - source: sdk-devkit/docs/part-1/pictures/windows_win32diskimager_2.png
+        - source: sdk-devkit/docs/part-1/pictures/windows_win32diskimager_3.png
+        - source: sdk-devkit/docs/part-1/pictures/windows_win32diskimager_4.png
+        - source: sdk-devkit/docs/part-1/pictures/windows_win32diskimager_5.png
+        - source: sdk-devkit/docs/part-2/2_0_Abstract.md
+        - source: sdk-devkit/docs/part-2/2_1-Init-sdk-env.md
+        - source: sdk-devkit/docs/part-2/2_2-Trying-out-templates.md
+        - source: sdk-devkit/docs/part-2/2_3-Dev-with-container.md
+        - source: sdk-devkit/docs/part-2/2_4-Creating-hybrid-app.md
+        - source: sdk-devkit/docs/part-2/pictures/cpu_hybrid_qml.png
+        - source: sdk-devkit/docs/part-2/pictures/html5_app.png
+        - source: sdk-devkit/docs/part-2/pictures/hybrid_html5_app_on_target.png
+        - source: sdk-devkit/docs/part-2/pictures/hybrid_html5_app.png
+        - source: sdk-devkit/docs/part-2/pictures/hybrid_qml_app.png
+        - source: sdk-devkit/docs/part-2/pictures/mac_x11_logo.png
+        - source: sdk-devkit/docs/part-2/pictures/putty_config.png
+        - source: sdk-devkit/docs/part-2/pictures/qml_app.png
+        - source: sdk-devkit/docs/part-2/pictures/web-runtime_app.png
+        - source: sdk-devkit/docs/part-2/pictures/xming_server.png
+
 
