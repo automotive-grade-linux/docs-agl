@@ -1,7 +1,9 @@
 
 
 # Introduction: Building target AGL image with Yocto project
+
 The standard Yocto process is made of the following steps:
+
 * Setting up your operating system.
 * Setting up the build environment for R-Car BSP.
 * Downloading the proprietary drivers and installing them in the build environment (if needed).
@@ -20,6 +22,7 @@ If you want to bypass the build phase and quick boot the board, you can download
 The very first step is to ensure that your system can run the build system of the Yocto Project.
 
 **Important**: it only runs on Linux
+
  * if your system is Windows© or iOS© you should use a virtualization solution  (Virtualbox, VMWare ...) to run a Linux VM on your system.
 
 For AGL 2.1, Yocto Project 2.1, known as krogoth, has been selected for the BSP and build system.  
@@ -29,6 +32,7 @@ Reference data for configuring your system can be found in the Yocto documentati
 
 
 Here after an extract of this documentation for most common Linux distributions:
+
 * The build system should be able to run on any modern distributions that has the following versions for:
     * Python
     * Git 1.7.8 or greater
@@ -144,7 +148,7 @@ cd $AGL_TOP
 source meta-agl/scripts/aglsetup.sh -h
 ```
 
-Once you run aglsetup.sh with your desired paramaters, you can build any target desired.
+Once you run aglsetup.sh with your desired parameters, you can build any target desired.
 
 ## Features supported by aglsetup
 

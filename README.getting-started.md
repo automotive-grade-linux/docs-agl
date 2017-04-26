@@ -20,3 +20,11 @@ Execute the following command to export a markdown file with instructions for Ra
 ```
 ./doctools/generate-getting-started.sh -m raspberrypi -d html
 ```
+
+# Export Docuwiki
+
+Execute the following command to export a markdown file with instructions for Raspberry Pi to docuwiki syntaxt which is used in the AGL wiki:
+
+```
+./doctools/generate-getting-started.sh -m raspberrypi -d wiki
+```

@@ -53,4 +53,4 @@ It is possible to debug AGL images on Raspberry Pi using 3.3V USB to serial cabl
 sudo screen /dev/ttyUSB0 115200
 ```
 
-Pay attention that the colours of the cable may vary depending on the vendor. If you have USB console cable from Adafruit please have a look [here](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-5-using-a-console-cable/connect-the-lead).
+Pay attention that the colors of the cable may vary depending on the vendor. If you have USB console cable from Adafruit please have a look [here](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-5-using-a-console-cable/connect-the-lead).

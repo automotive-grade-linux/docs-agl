@@ -28,6 +28,8 @@ Follow the steps below to copy the image to microSD card and to boot it on Raspb
 * Output Image location in build machine for Raspberry Pi 3: *tmp/deploy/images/raspberrypi3/agl-demo-platform-raspberrypi3.rpi-sdimg*
 * Unmount the microSD card and after that flash output image to it card with root user:
 
+*Note: the sdimage files can also be named rpi-sdimg-ota in case you have the **"agl-sota"** feature enabled*
+
 ```
 sudo umount [sdcard device]
 sudo dd if=[output image] of=[sdcard device] bs=4M
