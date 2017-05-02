@@ -489,7 +489,7 @@ More documents, provide by [Iot.bzh][Iot.bzh link], are available to guide devel
 Detailed guide on how to build AGL for Renesas boards and using AGL SDK inside a ready-to-use Docker container.
 * [AGL-Devkit-Build-your-1st-AGL-Application.pdf][Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]
 Generic guide on how to build various application types (HTML5, native, Qt, QML, …) for AGL.
-* [AGL-Devkit-HowTo_bake_a_service.pdf][Iot.bzh AGL_Phase2-Devkit-HowTo_bake_a_service]  
+* [AGL-Devkit-HowTo_bake_a_service.pdf][Iot.bzh AGL_Phase2-Devkit-HowTo_bake_a_service]
 Generic guide on how to add a new service in the BSP.
 
 [R-car Porter]: http://elinux.org/R-Car/Boards/Porter
