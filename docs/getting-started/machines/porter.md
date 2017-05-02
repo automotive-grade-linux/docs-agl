@@ -364,7 +364,7 @@ setenv ethaddr 2e:09:0a:00:75:b5
 ```
 setenv bootargs_console 'console=ttySC6,38400 ignore_loglevel'
 setenv bootargs_video 'vmalloc=384M video=HDMI-A-1:1920x1080-32@60'
-setenv bootargs_root 'root=/dev/mmcblk0p1 rootdelay=3 rw rootfstype=ext4 rootwait'
+setenv bootargs_root 'root=/dev/mmcblk0p1 rootdelay=3 ro rootfstype=ext4 rootwait'
 setenv bootmmc '1:1'
 setenv bootcmd_sd 'ext4load mmc ${bootmmc} 0x40007fc0 boot/uImage+dtb'
 setenv bootcmd 'setenv bootargs ${bootargs_console} ${bootargs_video} ${bootargs_root}; run bootcmd_sd; bootm 0x40007fc0'

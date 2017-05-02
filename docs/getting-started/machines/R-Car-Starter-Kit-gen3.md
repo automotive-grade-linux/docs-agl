@@ -457,7 +457,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     ```
 => printenv
 	baudrate=115200
-	bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait rw rootfstype=ext4
+	bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
 	bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
 	bootdelay=3
 	fdt_high=0xffffffffffffffff
@@ -477,7 +477,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     ```
 => printenv
 	baudrate=115200
-	bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait rw rootfstype=ext4
+	bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
 	bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
 	bootdelay=3
 	fdt_high=0xffffffffffffffff
@@ -496,7 +496,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     * If not, copy line by line:
     
     ```
-setenv bootargs console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait rw rootfstype=ext4
+setenv bootargs console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
 setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
 setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
     ```
