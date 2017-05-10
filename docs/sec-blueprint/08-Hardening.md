@@ -58,12 +58,12 @@ attack surfaces used by potential attackers.
 Secure Boot Software Flow Steps
 -------------------------------
 
-1.  After power on, the secure processor will perform the verification
+1.  After power on, the processor will perform the verification
     of the Stage 1 boot image, the stage 2 boot image and the Secure
     loader image.
 
     a.  If any of the images fail the verification process the device
-        will restart.
+        will not boot.
 
 2.  Upon successful verification of all of the boot and loader images,
     the secure process will initiate the Stage 1 boot process.
@@ -91,10 +91,10 @@ Secure Boot Software Flow Steps
     that image
 
     a.  If the kernel image verification fails, the Stage 2 boot loader
-        will initiate a reboot
+        will not boot
 
 8.  The Stage 2 boot loader will load the successfully verified kernel
-    image and boot the linux OS
+    and boot the linux OS
 
 9.  The booted Linux OS will perform the normal Linux init sequence
 
@@ -552,16 +552,7 @@ Kernel Hardening
     init scripts.
 
 -   Root login access through remote access such as SSH shall
-    be disabled.
-
--   In the /etc/ssh/sshd\_config file:
-
-    **PermitRootLogin no**
-
-    Or if running dropbear ssh server, in the /etc/config/dropbear config
-    file:
- 
-    **RootLogin no**
+    be disabled or completely removed
 
 #### Disable *sudo* for other users
 
@@ -846,16 +837,16 @@ Kernel Hardening
 |  CONFIG\_MODULE\_SIG\_FORCE=y         |3.7+            |
 |  CONFIG\_PACKET\_DIAG=n               |3.7+            |
 |  CONFIG\_FW\_LOADER\_USER\_HELPER=n   |3.9+            |
-|  CONFIG\_CC\_STACKPROTECTOR=y         |3.11+ (MIPS)    |
+|  CONFIG\_CC\_STACKPROTECTOR=y         |3.11+           |
 |  CONFIG\_USELIB=n                     |3.15+           |
-|  BPF\_JIT=n                           |3.16+ (MIPS)    |
+|  BPF\_JIT=n                           |3.16+           |
 |  CONFIG\_DEVMEM=n                     |4.0+            |
 
 ### Build with Stack Protection
 
   Similar to the stack protector used for ELF programs in user-space,
   the kernel can protect its internal stacks as well.  
-  This configuration for the MIPS architecture is supported in Linux 3.11 and greater and
+  This configuration is supported in Linux 3.11 and greater and
   thus should only be enabled for such versions.  
   This configuration also
   requires building the kernel with the gcc compiler 4.2 or greater.
@@ -962,7 +953,7 @@ Kernel Hardening
 
   The BPF JIT can be used to create kernel-payloads from firewall table
   rules.  
-  This configuration for the MIPS architecture is supported in
+  This configuration for is supported in
   Linux 3.16 and greater and thus should only be disabled for such
   versions.
 
@@ -1059,9 +1050,9 @@ resolved, but this shouldn't be an issue for daemons.
 
   **–static**
 
-Dynamic linking shall not be allowed. This will avoid user from
-replacing a library with malicious library. All libraries should be
-linked statically.
+It is recommended that dynamic linking should not be allowed. This will
+avoid user from replacing a library with malicious library. All libraries
+should be linked statically.
 
 Removal or Non-Inclusion of Utilities
 -------------------------------------
@@ -1080,7 +1071,7 @@ respective environment.
 |  Syslogd(logger)  |  /bin/logger                              |  INCLUDE               |  EXCLUDE                     |
 |  Gdbserver        |  /bin/gdbserver                           |  INCLUDE               |  EXCLUDE                     |
 |  Dropbear         |  Remove “dropbear” from ‘/etc/init.d/rcs’ |  EXCLUDE               |  EXCLUDE                     |
-|  SSH              |  NA                                       |  EXCLUDE               |  EXCLUDE                     |
+|  SSH              |  NA                                       |  INCLUDE               |  EXCLUDE                     |
 |  Editors (vi)     |  /bin/vi                                  |  INCLUDE               |  EXCLUDE                     |
 |  Dmesg            |  /bin/dmesg                               |  INCLUDE               |  EXCLUDE                     |
 |  UART             |  /proc/tty/driver/                        |  INCLUDE               |  EXCLUDE                     |
@@ -1088,7 +1079,7 @@ respective environment.
 |  Dnsdomainname    |  /bin/dnsdomainname                       |  EXCLUDE               |  EXCLUDE                     |
 |  Hostname         |  /bin/hostname                            |  INCLUDE               |  EXCLUDE                     |
 |  Pmap             |  /bin/pmap                                |  INCLUDE               |  EXCLUDE                     |
-|  su               |  /bin/su                                  |  EXCLUDE               |  EXCLUDE                     |
+|  su               |  /bin/su                                  |  INCLUDE               |  EXCLUDE                     |
 |  Which            |  /bin/which                               |  INCLUDE               |  EXCLUDE                     |
 |  Who and whoami   |  /bin/whoami                              |  INCLUDE               |  EXCLUDE                     |
 |  ps               |  /bin/ps                                  |  INCLUDE               |  EXCLUDE                     |
@@ -1117,17 +1108,18 @@ Root Access
 ------------
 
 The main applications, those that provide the principal functionality of
-the embedded device, **should not execute** with root privileges.
+the embedded device, **should not execute** with root identity or any
+capability.
 
-If the main application are allowed to execute at elevated privileges,
+If the main application are allowed to execute at any capability,
 then the entire system is at the mercy of the said application’s good
 behaviour. Problems arise when an application is compromised and able to
 execute commands which could consistently and persistently compromise
 the system by implanting rogue applications.
 
 It is suggested that the middleware and the UI should run in a context
-on a user with lowered privileges and all persistent resources should be
-maintained with such privileges.
+on a user with no capability and all persistent resources should be
+maintained without any capability.
 
 One way to ensure this is by implementing a server-client paradigm.
 Services provided by the system’s drivers can be shared this way. The
