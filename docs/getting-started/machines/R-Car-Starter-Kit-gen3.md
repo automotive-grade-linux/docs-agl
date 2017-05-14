@@ -35,11 +35,12 @@ Once you registered, you can download two zip files.
 Here after is an example of the typical files downloaded at the time of writing:
 
 ```
+test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 chmod a+r $XDG_DOWNLOAD_DIR/*.zip
 ls -1 $XDG_DOWNLOAD_DIR
 total 8220
--rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20170125.zip
--rw-r--r--. 1 1664 agl-sdk 2.5M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170125.zip
+-rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20170427.zip
+-rw-r--r--. 1 1664 agl-sdk 2.7M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170427.zip
 ```
 
 ## Setting up the build environment:
@@ -63,7 +64,7 @@ Now, init your build environment:
 
 ```
 cd $AGL_TOP
-source meta-agl/scripts/aglsetup.sh -m $MACHINE -b build agl-devel agl-demo agl-netboot agl-appfw-smack
+source meta-agl/scripts/aglsetup.sh -m $MACHINE -b build agl-devel agl-demo agl-netboot agl-appfw-smack agl-localdev
 ```
 
 **IMPORTANT NOTE**: Read the log to be sure you had no error during your setup. 
@@ -75,12 +76,11 @@ In case of missing graphics drivers, you could notice an error message as follow
 /home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
 The graphics and multimedia acceleration packages for 
 the R-Car Gen3 board can be downloaded from:
- https://www.renesas.com/en-us/software/D6000821.html
- https://www.renesas.com/en-us/software/D6000822.html
+ http://www.renesas.com/secret/r_car_download/rcar_demoboard.jsp
 
 These 2 files from there should be store in your'/home/devel/Téléchargements' directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20170125.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170125.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20170427.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170427.zip
 /home/working/workspace_agl_master/build_gen3
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
 --- end of setup script
@@ -129,7 +129,7 @@ ls -l $AGL_TOP/build/tmp/deploy/images/$MACHINE
 ```
 
 #### Note
-In case of failure of the build it is safe to first check that the Linux distribution chosen for your host has been validated for version 2.1 of Yocto.
+In case of failure of the build it is safe to first check that the Linux distribution chosen for your host has been validated for version 2.2 of Yocto.
 
 # Booting AGL Image on R-Car Starter Kit Gen3 boards using a microSD card
 
@@ -283,12 +283,20 @@ sudo $TAR --extract --numeric-owner --preserve-permissions --preserve-order --to
 ```
 
 Copy Kernel Image and Device Tree Blob file into the **boot** directory:
-* For machine h3ulcb:
+* For machine h3ulcb (BSP >= 2.19):
+
+```
+sudo cp Image-r8a7795-es1-h3ulcb.dtb $SDCARD/boot/
+```
+
+* For machine h3ulcb (BSP < 2.19):
+
 ```
 sudo cp Image-r8a7795-h3ulcb.dtb $SDCARD/boot/
 ```
 
 * For machine m3ulcb:
+
 ```
 sudo cp Image-r8a7796-m3ulcb.dtb $SDCARD/boot/
 ```
@@ -500,21 +508,27 @@ setenv bootargs console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait rw rootfstype
 setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
 setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
     ```
-    
-    * For machine h3ulcb:
-    
+
+    * For machine h3ulcb (BSP >= 2.19):
+
+    ```
+setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
+    ```
+
+    * For machine h3ulcb (BSP < 2.19):
+
     ```
 setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
     ```
-    
+
     * For machine m3ulcb:
-    
+
     ```
 setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
     ```
-    
+
     * Finally save boot environment:
-    
+
     ```
 saveenv
     ```
