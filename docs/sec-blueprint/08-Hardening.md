@@ -1,3 +1,18 @@
+---
+
+title : System Hardening
+date  : 2017-05-23
+categories: security, hardening, automotive
+tags: security, hardening, architecture, automotive, linux
+layout: techdoc 
+ 
+---
+
+**Table of Content**
+
+1. TOC
+{:toc}
+
 Overview
 ========
 
