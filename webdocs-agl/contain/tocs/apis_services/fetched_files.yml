@@ -47,46 +47,55 @@ repositories:
     src_prefix : docs
     dst_prefix: af-main
     documents:
-        - source: overview.md
-          label: Overview
-        - source: afm-daemons.md
-          label: Application Framework Daemon
-        - source: widgets.md
+        - source: 0-introduction.md
+          label: Introduction
+        - source: 1-afm-daemons.md
+          label: The afm daemons
+        - source: 2-widgets.md
           label: Widgets
-        - source: config.xml.md
-          label: Widget Configuration File
-        - source: permissions.md
+        - source: 2.1-widgets.md
+          label: Overview of widgets
+        - source: 2.2-config.xml.md
+          label: Widget configuration file
+        - source: 3-permissions.md
           label: Permissions
-        - source: quick-tutorial.md
+        - source: 4-quick-tutorial.md
           label: Quick Tutorial
         - source: pictures/afm-daemons.svg
         - source: pictures/AppFW-APP_install_sequences.svg
+        - source: pictures/make-units.svg
         - source: pictures/Security_model_history.svg
         - source: pictures/triskel_iot_bzh.svg
 
 -
     git_name : src/app-framework-binder
     git_commit: master
-    src_prefix : doc
+    src_prefix : docs
     dst_prefix: af-binder
     documents:
         - source: afb-overview.md
-          label: Binder overview
-        - source: afb-application-writing.md
-          label: Writing Applications
-        - source: afb-bindings-overview.md
-          label: Bindings Examples
-        - source: afb-bindings-writing.md
-          label: Writing Bindings
+          label: Binder Overview
+        - source: afb-binding-writing.md
+          label: How to write a binding ?
+        - source: afb-binding-references.md
+          label: Binding references
+        - source: afb-migration-v1-to-v2.md
+          label: Migration from v1 to v2
         - source: afb-events-guide.md
-          label: Events guide
-        - source: afb-tests-overview.md
-          label: Tests overview
+          label: Binder events guide
+        - source: afb-application-writing.md
+          label: Binder Application writing guide
         - source: afb-daemon-vocabulary.md
-          label: Vocabulary
-
-        - source: pictures/AFB_overview.svg
+          label: Binder daemon vocabulary
+        - source: annexes.md
+          label: Annexes
+        - source: afb-desktop-package.md
+          label: Installing the binder on a desktop
+        - source: afb-daemon-options.md
+          label: Options of afb-daemon
         - source: pictures/AFB_for_services.svg
+        - source: pictures/basis.svg
+        - source: pictures/interconnection.svg
         - source: pictures/signaling-basis.svg
         - source: pictures/tic-tac-toe.svg
         - source: pictures/triskel_iot_bzh.svg
