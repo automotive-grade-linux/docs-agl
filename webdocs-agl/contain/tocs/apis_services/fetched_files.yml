@@ -120,14 +120,26 @@ repositories:
         - source: architecture.md
           destination: architecture.md
           label: Signaling Architecture
+        - source: low-level-can-service-guide.md
+          destination: low-level-can-service-guide.md
+          label: Low level CAN service Guide
+        - source: high-level-viwi-service.md
+          destination: high-level-viwi-service.md
+          label: High level ViWi service Guide
         - source: index.md
           destination: resources.md
           label: Resources
         - source: images/agent-arch.svg
         - source: images/agent-sample.svg
         - source: images/cloud-arch.svg
+        - source: images/can-generator.svg
         - source: images/distributed-arch.svg
-        - source: images/signal-agent-arch.svg
+        - source: images/distributed-arch.png
+        - source: images/signal-service-arch.svg
+        - source: images/OpenXC_to_AGL.png
+        - source: images/CAN_level_mapping.png
+        - source: images/CAN_bindings_communication.png
+        - source: images/high-level-arch.png
 -
     url_fetch: http://iot.bzh/download/public/2016/%source%
     dst_prefix: iotbzh2016

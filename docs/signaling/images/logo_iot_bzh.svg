@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="201"
+   height="55"
+   id="svg4035"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logo_iot_bzh.svg"
+   inkscape:export-filename="/shared/Templates/Logo/logo_iot_bzh_100dpi.png"
+   inkscape:export-xdpi="100"
+   inkscape:export-ydpi="100">
+  <defs
+     id="defs4037">
+    <filter
+       id="filter4000"
+       inkscape:label="Drop Shadow"
+       style="color-interpolation-filters:sRGB">
+      <feFlood
+         id="feFlood4002"
+         flood-opacity="0.475"
+         flood-color="rgb(0,0,0)"
+         result="flood" />
+      <feComposite
+         id="feComposite4004"
+         in2="SourceGraphic"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4006"
+         stdDeviation="5"
+         result="blur" />
+      <feOffset
+         id="feOffset4008"
+         dx="8"
+         dy="8"
+         result="offset" />
+      <feComposite
+         id="feComposite4010"
+         in2="offset"
+         in="SourceGraphic"
+         operator="over"
+         result="composite2" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="58.845307"
+     inkscape:cy="11.584152"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1401"
+     inkscape:window-height="901"
+     inkscape:window-x="226"
+     inkscape:window-y="91"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata4040">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-49.874326,-541.49045)">
+    <g
+       id="g3091"
+       transform="matrix(0.33646024,0,0,0.33646024,52.43994,405.25569)"
+       inkscape:export-filename="/home/sdx/Pictures/Logo/logo_iot_bzh_100dpi.png"
+       inkscape:export-xdpi="100.22011"
+       inkscape:export-ydpi="100.22011"
+       style="display:inline;filter:url(#filter4000)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3557-5-3-7-0-7-3"
+         y="519.50671"
+         x="27.886671"
+         style="font-style:normal;font-weight:normal;font-size:97.09867096px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:97.09867096px;line-height:125%;font-family:FreeEuro;-inkscape-font-specification:'FreeEuro Bold';text-align:start;writing-mode:lr-tb;text-anchor:start"
+           y="519.50671"
+           x="27.886671"
+           id="tspan3559-5-4-1-5-0-6"
+           sodipodi:role="line">IOT</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         d="m 286.73007,473.23356 c 28.21686,16.29102 28.75566,58.73779 0.99693,78.53831 -7.67688,5.47598 -8.77935,4.91028 -1.99529,-1.0238 17.47377,-15.28453 17.98492,-42.17775 1.08522,-57.09786 l -3.91266,-3.45435 0.72312,-3.71053 c 0.39771,-2.04076 0.5997,-5.73115 0.44885,-8.20083 -0.33876,-5.54623 0.15803,-6.49185 2.65383,-5.05094 z m -64.76568,11.40332 c 7.06047,-7.74198 18.64659,-14.16089 29.04027,-16.08874 l 6.87489,-1.27521 0.87404,2.89709 c 0.4807,1.59343 0.67439,5.2245 0.43037,8.06906 l -0.44364,5.17195 -6.13887,1.6918 c -10.91241,3.00731 -20.4022,10.85909 -25.4533,21.05979 l -2.41633,4.87984 -2.74281,-0.41238 c -5.14252,-0.77316 -12.72985,-3.97645 -12.79123,-5.40033 -0.092,-2.13451 8.34659,-15.74625 12.76661,-20.59287 z m 33.20546,36.39493 c -28.21687,16.29101 -65.24624,-4.46574 -68.51461,-38.40577 -0.9039,-9.38637 0.13723,-10.0583 1.88428,-1.21608 4.49989,22.77499 27.53453,36.66428 48.90556,29.48876 l 4.94788,-1.66128 2.85184,2.48149 c 1.56852,1.36481 4.66349,3.38493 6.87772,4.48914 4.97257,2.47973 5.54308,3.38282 3.04733,4.82374 z m 22.50729,-61.79039 c 3.17451,9.98553 2.94038,23.22889 -0.58688,33.19399 l -2.33309,6.59143 -2.94597,-0.69161 c -1.6203,-0.38041 -4.86173,-2.02821 -7.2032,-3.6618 l -4.25721,-2.97018 1.60429,-6.16234 c 2.85178,-10.95404 0.79685,-23.09833 -5.51167,-32.57307 l -3.01788,-4.53253 1.72854,-2.16916 c 3.24083,-4.06698 9.80863,-9.03614 11.07242,-8.37738 1.89457,0.98756 9.46336,15.1015 11.45065,21.35265 z m -48.80223,10.31437 c 0,-32.58201 36.49058,-54.27201 67.51771,-40.1325 8.58077,3.9104 8.6421,5.148 0.11108,2.23988 -21.97368,-7.49048 -45.51946,5.51348 -49.99082,27.6091 l -1.03521,5.11561 -3.57498,1.22902 c -1.96621,0.67596 -5.26316,2.34622 -7.32655,3.71171 -4.63379,3.06649 -5.70115,3.10904 -5.70115,0.22718 z m 42.25842,50.3871 c -10.23499,-2.24356 -21.58699,-9.06801 -28.45341,-17.10525 l -4.5418,-5.31622 2.07194,-2.20549 c 1.13957,-1.21302 4.18733,-3.19628 6.77282,-4.40726 l 4.70085,-2.20176 4.53458,4.47053 c 8.06061,7.94674 19.60535,12.23927 30.96496,11.51329 l 5.43422,-0.34731 1.01427,2.58154 c 1.90169,4.84014 2.92124,13.01261 1.71883,13.77769 -1.80254,1.14695 -17.80995,0.64475 -24.21726,-0.75976 z"
+         style="display:inline;fill:#5a2ca0"
+         id="path3415-4-2-2-5-0-3-7-4-4-1-5" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3557-5-3-7-46-7-3-7"
+         y="519.50671"
+         x="317.95816"
+         style="font-style:normal;font-weight:normal;font-size:97.09867096px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:97.09867096px;line-height:125%;font-family:FreeEuro;-inkscape-font-specification:'FreeEuro Bold';text-align:start;writing-mode:lr-tb;text-anchor:start"
+           y="519.50671"
+           x="317.95816"
+           id="tspan3559-5-4-1-90-0-2-9"
+           sodipodi:role="line">BZH</tspan></text>
+    </g>
+    <rect
+       style="display:inline;fill:none;stroke:none"
+       id="rect3098"
+       width="194.18564"
+       height="54.688999"
+       x="251.47862"
+       y="487.87482"
+       inkscape:export-filename="/home/sdx/Pictures/Logo/logo_iot_bzh_100dpi.png"
+       inkscape:export-xdpi="100.22011"
+       inkscape:export-ydpi="100.22011" />
+  </g>
+</svg>
