@@ -58,7 +58,6 @@ children:
         - url: reference/af-binder/afb-events-guide.html
         - url: reference/af-binder/afb-application-writing.html
         - url: reference/af-binder/afb-daemon-vocabulary.html
-        - url: reference/af-binder/annexes.html
         - url: reference/af-binder/afb-desktop-package.html
         - url: reference/af-binder/afb-daemon-options.html
 

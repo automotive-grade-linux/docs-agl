@@ -87,8 +87,6 @@ repositories:
           label: Binder Application writing guide
         - source: afb-daemon-vocabulary.md
           label: Binder daemon vocabulary
-        - source: annexes.md
-          label: Annexes
         - source: afb-desktop-package.md
           label: Installing the binder on a desktop
         - source: afb-daemon-options.md
