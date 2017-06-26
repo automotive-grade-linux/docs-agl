@@ -62,17 +62,9 @@ repositories:
           destination: meta-agl-devel.md
           label: meta-agl-devel
 -
-    git_name: AGL/meta-agl-extra
-    documents:
-        - source: meta-sota/README.md
-          destination: meta-sota.md
-          label: meta-sota
--
     url_fetch: http://iot.bzh/download/public/2016/%source%
     dst_prefix: iotbzh2016
     documents:
-        - source: sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
-        - source: bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf
         - source: appfw/03-AGL-AppFW-Privileges-Management.pdf
 -
     url_fetch: "GITHUB_FETCH"

@@ -45,7 +45,6 @@ children:
         - url: reference/meta-agl.html
         - url: reference/meta-agl-demo.html
         - url: reference/meta-agl-devel.html
-        - url: referece/meta-sota.html
 -
     name: "Development Kit: build AGL image"
     children:
@@ -94,12 +93,6 @@ children:
 -
     name: Guides 
     children:
-        - 
-            name: Kickstart on Renesas Porter board
-            url: reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
-        - 
-            name: Devkit - Howto bake a service
-            url: reference/iotbzh2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf
         -
             name: AppFW - Privileges Management
             url: reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf
