@@ -32,7 +32,7 @@ config = {
     
     SITE_DIR   : SITE_DIR,
     DATA_DIR   : path.join (SITE_DIR, "_data"),
-    TOCS_DIR   : path.join (SITE_DIR,"..","contain", "tocs"),
+    TOCS_DIR   : path.join (SITE_DIR,"..","content", "tocs"),
     DOCS_DIR   : path.join (SITE_DIR, "docs"),
     
     VER_CURRENT       : "xx.x",

@@ -20,7 +20,7 @@ Other configuration files in conf/ starting by an underscore (_) are used by Jek
 ## generate a 1st site from your template
 ```
  ../doctools/webdocs/docbuild --clean  # deleted all generated file if any
- ../doctools/webdocs/docbuild --fetch [--force]  # collect doc from github (fetch list in contain/toc/*/fetch_files.yml)
+ ../doctools/webdocs/docbuild --fetch [--force]  # collect doc from github (fetch list in content/toc/*/fetch_files.yml)
  ../doctools/webdocs/docbuild --build --serve --watch --incremental # build config/tocs, generate html and start a local webserver
 
  xdg-open http://localhost:4000
@@ -44,7 +44,7 @@ Alternatively, a Makefile can be used and defines the most common operations:
 - site/* directories not prefixed with "_" represent en entry within the menu
 - site/_* directories contain template, configuration, options used by Jekyll
 - site/_data is a special directory that hold both static and generated files to adjust page/site values within html pages
-- contain/toc/*/toc_VERSION_LANGUAGE.yml TOC(TableOfContent) and Fetch definitions
+- content/toc/*/toc_VERSION_LANGUAGE.yml TOC(TableOfContent) and Fetch definitions
 - site/_layouts and site/_includes holds page template 
 - site/static holds assets (static images, CSS etc.)
 

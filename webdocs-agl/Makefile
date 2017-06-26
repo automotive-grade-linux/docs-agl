@@ -22,12 +22,12 @@ clean:
 	rm -f $(FETCHTS)
 	rm -f $(LOCALFETCH)
 
-$(LOCALFETCH): $(wildcard contain/toc/*/fetched_files.yml)
+$(LOCALFETCH): $(wildcard content/toc/*/fetched_files.yml)
 	$(DOCBUILD) $(VERBOSE) --localFetch --fetch --force
 	touch $(FETCHTS)
 	touch $@
 
-$(FETCHTS): $(wildcard contain/toc/*/fetched_files.yml)
+$(FETCHTS): $(wildcard content/toc/*/fetched_files.yml)
 	$(DOCBUILD) $(VERBOSE) $(LOCAL_FETCHTS) --fetch --force
 	touch $@
 
