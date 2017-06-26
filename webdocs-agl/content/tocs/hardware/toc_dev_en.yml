@@ -39,8 +39,13 @@ name: Hardware Support
 template: generated_index.html
 children:
 -
-    name: Renesas Boards
+    name: Renesas Gen2 Boards
     children:
-        - url: reference/renesas/gen2.html
-        - url: reference/renesas/proprietary.html
-        - url: reference/renesas/usb-gadget.html
+        - url: reference/renesas-gen2/gen2.html
+        - url: reference/renesas-gen2/proprietary.html
+        - url: reference/renesas-gen2/usb-gadget.html
+-
+    name: Renesas Gen3 Boards
+    children:
+        - url: reference/renesas-gen3/gen3.html
+        - url: reference/renesas-gen3/proprietary.html
