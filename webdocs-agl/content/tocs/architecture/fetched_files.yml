@@ -45,10 +45,10 @@ git_commit : "AGL_GITHUB_BRANCH"
 
 repositories:   
 -
-    url_fetch:  https://www.automotivelinux.org/sites/cpstandard/files/pages/files/%source%
+    url_fetch: https://wiki.automotivelinux.org/_media/%source%
     dst_prefix: AGL_Specifications
     documents:
-        - source: agl_spec_v1_280515.pdf
+        - source: agl_spec_v1.0_final.pdf
 -
     git_name : "%project_source%/docs-agl"
     src_prefix : docs/sec-blueprint

@@ -43,7 +43,7 @@ children:
     children:
         - 
             name: Automotive Grade Linux Requirements Specifications
-            url: reference/AGL_Specifications/agl_spec_v1_280515.pdf
+            url: reference/AGL_Specifications/agl_spec_v1.0_final.pdf
 -
     name: Security Blueprint
     children:
