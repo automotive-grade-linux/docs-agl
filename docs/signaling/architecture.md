@@ -226,20 +226,19 @@ as simple as a signal service. The same remarks apply for automation languages.
 Further investigations leads to some specifications already presents like the
 one from Jaguar Land Rover [[VISS]], for **Vehicule Information Service
 Specification** and another from Volkwagen AG named [[ViWi]], stand for
-**Volkwagen Infotainment Web Interface**. Each ones has their pro and cons.
-Let's see a little comparison:
+**Volkwagen Infotainment Web Interface**. Each ones has their differences and
+provides different approach serving the same goal:
 
-TODO: List of features not pro cons
-|                        VISS                           |                                   ViWi                            |
-|-------------------------------------------------------|-------------------------------------------------------------------|
-| + Filtering on node (not possible on several nodes or branches) |                         | + Describe a protocol                                             |
-| + Access restrictions to signals                                | + Ability to specify custom signals                               |
-| +/- Use high level development languages                        | + RESTful HTTP calls                                              |
-| - One big Server that handle requests                           | + Stateless                                                       |
-| - Filtering                                                     | + Filtering, sorting                                              |
-| - Static signals tree not extensible [[VSS]]                    | -/+ Use JSON objects to communicate                               |
-| - Use of AMB ?                                                  | - Identification of resources may be a bit heavy going using UUID |
-| - Use of Websocket                                              |      |
+|                        VISS                                   |                                   ViWi                          |
+|---------------------------------------------------------------|-----------------------------------------------------------------|
+| Filtering on node (not possible on several nodes or branches) | Describe a protocol                                             |
+| Access restrictions to signals                                | Ability to specify custom signals                               |
+| Use high level development languages                          | RESTful HTTP calls                                              |
+| One big Server that handle requests                           | Stateless                                                       |
+| Filtering                                                     | Filtering, sorting                                              |
+| Static signals tree not extensible [[VSS]]                    | Use JSON objects to communicate                                 |
+| Use of AMB ?                                                  | Identification of resources may be a bit heavy going using UUID |
+| Use of Websocket                                              |      |
 
 About **[[VISS]]** specification, the major problem comes from the fact that
 signals are specified under the [[VSS]], **Vehicle Signal Specification**. So,
