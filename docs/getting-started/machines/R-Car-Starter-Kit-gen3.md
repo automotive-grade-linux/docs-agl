@@ -25,7 +25,7 @@ Before setting up the build environment, you need to download the proprietary dr
 
 * Download Renesas graphics drivers with a "click through" license from Renesas website [Link][rcar Linux Drivers]
     * Under the Target hardware: **R-Car H3/M3** section.
-    
+
 #### Note:
 
 * You have to register with a free account on MyRenesas and accept the license conditions before downloading them the drivers.  
@@ -215,7 +215,7 @@ sudo fdisk /dev/sdc
 * Initialize the ext4 partition using “mke2fs”; for example, if the microSD card is associated with *sdc*:
 
 ```
-sudo mke2fs -t ext4 /dev/sdc1
+sudo mke2fs -t ext4 -O ^64bits /dev/sdc1
 
   mke2fs 1.42.13 (17-May-2015)
   Creating filesystem with 3911168 4k blocks and 979200 inodes
@@ -228,6 +228,9 @@ sudo mke2fs -t ext4 /dev/sdc1
   Creating journal (32768 blocks): done
   Writing superblocks and filesystem accounting information: done
 ```
+
+> **CAUTION**: Gen3 boards don't understand 64bits blocks used when filesystem
+> is formated with *64bits* feature so make sure you don't use it.
 
 ### Copying the built image to the SD-card
 
