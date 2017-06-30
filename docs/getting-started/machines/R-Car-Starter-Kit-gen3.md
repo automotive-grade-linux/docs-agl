@@ -215,7 +215,7 @@ sudo fdisk /dev/sdc
 * Initialize the ext4 partition using “mke2fs”; for example, if the microSD card is associated with *sdc*:
 
 ```
-sudo mke2fs -t ext4 -O ^64bits /dev/sdc1
+sudo mke2fs -t ext4 -O ^64bit /dev/sdc1
 
   mke2fs 1.42.13 (17-May-2015)
   Creating filesystem with 3911168 4k blocks and 979200 inodes
