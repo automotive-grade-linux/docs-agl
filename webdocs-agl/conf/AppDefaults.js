@@ -25,9 +25,9 @@ config = {
     
 //	PUSH_DEST  : "apache@some.sample.server:/srv/www/docs/",
 //	CRAWL_PROD : "http://some.sample.server/",
-	PUSH_DEST  : "apache@www.ovh.iot:/srv/www/iotbzh/webdocs-sample/",
-	CRAWL_DEV  : "http://docs.iot.bzh",
-	CRAWL_PROD : "http://docs.iot.bzh",
+//	PUSH_DEST  : "apache@www.ovh.iot:/srv/www/iotbzh/webdocs-sample/",
+//	CRAWL_DEV  : "http://docs.iot.bzh",
+//	CRAWL_PROD : "http://docs.iot.bzh",
 
 	LANGUAGES: ['en','fr'],
     
