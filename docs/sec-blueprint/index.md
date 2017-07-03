@@ -1,7 +1,7 @@
 ---
 
 title : Security BluePrint Overview
-date  : 2016-07-06
+date  : 2017-07-07
 category: security
 tags: security, architecture, automotive, linux
 layout: techdoc 
@@ -10,12 +10,14 @@ layout: techdoc
 
 ## [Overview](./01-overview.html)
 
-## [Plateform Security](./02-plateform-security.html)
+## [Adversaries](./02-adversaries.html)
 
-## [Security Concepts](./03-security-concepts.html)
+## [Threat Analysis](./03-threat-analysis.html)
 
-## [Adversaries](./04-adversaries.html)
+## [Security Concepts](./04-security-concepts.html)
 
-## [Threat Analysis](./04-threat-analysis.html)
+## [Plateform Security](./05-plateform-security.html)
 
-## [Attack Surfaces](./06-attack-surfaces.html)
+## [Application Security](./06-application-security.html)
+
+## [System Hardening](./07-system-hardening.html)

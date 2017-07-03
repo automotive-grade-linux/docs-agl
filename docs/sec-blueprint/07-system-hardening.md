@@ -17,17 +17,18 @@ layout: techdoc
 
 ## Scope
 
-The information contained in this document is applicable to systems based
-on Automotive Grade Linux.
+This document provides recommended guidelines for adding protection to an
+embedded system. The information contained in this document is applicable
+to systems based on Automotive Grade Linux.
 
 ## Limitations
 
-* This document is based on knowledge and research gained from looking
-  at security desktop and server versions of Linux as well as Android
-  exploits and hardening.
+-   This document is based on knowledge and research gained from looking
+    at security desktop and server versions of Linux as well as Android
+    exploits and hardening.
 
-* Some kernel configuration options can have an impact on performance.  
-  This will be noted where applicable.­
+-   Some kernel configuration options can have an impact on performance.  
+    This will be noted where applicable.­
 
 ## Document Structure
 
@@ -67,27 +68,27 @@ attack surfaces used by potential attackers.
 
 ## Secure Boot Software Flow Steps
 
-1. After power on, the processor will perform the verification
-  of the Stage 1 boot image, the stage 2 boot image and the Secure
-  loader image.
+1.  After power on, the processor will perform the verification
+    of the Stage 1 boot image, the stage 2 boot image and the Secure
+    loader image.
 
-  a.  If any of the images fail the verification process the device
-    will not boot.
+    a.  If any of the images fail the verification process the device
+        will not boot.
 
-1. Upon successful verification of all of the boot and loader images,
+2.  Upon successful verification of all of the boot and loader images,
     the secure process will initiate the Stage 1 boot process.
 
-1. The Stage 1 boot process will perform processor initialization, and
-  then initiate the Stage 2 boot process.
+3.  The Stage 1 boot process will perform processor initialization, and
+    then initiate the Stage 2 boot process.
 
-1. The Stage 2 boot process will initiate the Secure Loader, which will
-  process any customer specific customizations (e.g. front panel
-  of ECU, USB based image updates, etc).
+4.  The Stage 2 boot process will initiate the Secure Loader, which will
+    process any customer specific customizations (e.g. front panel
+    of ECU, USB based image updates, etc).
 
-1. The Secure Loader will check to determine if there are any updates
-  to be processed. If the update settings indicate that an upgrade
-  should occur then the Secure Loader will will determine the correct
-  action based on the nature of the upgrades:
+5.  The Secure Loader will check to determine if there are any updates
+    to be processed. If the update settings indicate that an upgrade
+    should occur then the Secure Loader will will determine the correct
+    action based on the nature of the upgrades:
 
     a.  If the Secure Loader determines that an upgrade was performed
         (or attempted), it will initiate the reboot process.
@@ -95,25 +96,25 @@ attack surfaces used by potential attackers.
     b.  If no upgrades were processed: then the Secure Loader will pass
         control back to the Stage 2 boot process for further processing
 
-1. The Stage 2 boot process will continue with the boot process, by
+6.  The Stage 2 boot process will continue with the boot process, by
     performing a verification of the kernel image prior to the load of
     that image
 
     a.  If the kernel image verification fails, the Stage 2 boot loader
         will not boot
 
-1. The Stage 2 boot loader will load the successfully verified kernel
-  and boot the linux OS
+8.  The Stage 2 boot loader will load the successfully verified kernel
+    and boot the linux OS
 
-1. The booted Linux OS will perform the normal Linux init sequence
+9.  The booted Linux OS will perform the normal Linux init sequence
 
-1. The Linux init process will start the required applications and
-  services as described in the init process and present on the rootfs.
+10. The Linux init process will start the required applications and
+    services as described in the init process and present on the rootfs.
 
-## Requirements
+# Requirements
 
   For the purposes of reference and explanation, we are providing guidance
-  on how to configure an embedded device that runs with a linux 3. 10.17
+  on how to configure an embedded device that runs with a 3.10.17
   Linux kernel, and includes the use of U-Boot as the *Stage 2*
   These requirements must still be met by manufacturers that
   opt to build using an alternative version of the Linux kernel.
@@ -137,7 +138,7 @@ feature is available from U-Boot 2013.07 version.
 
 To enable the secure boot feature, enable the following features:
 
-```bash
+```
 CONFIG_FIT: enables support for Flat Image Tree (FIT) uImage format.
 CONFIG_FIT_SIGNATURE: enables signature verification of FIT images.
 CONFIG_RSA: enables RSA algorithm used for FIT image verifitcation.
@@ -155,7 +156,7 @@ image. It shall use RSA2048 and SHA256 for authentication.
 To disable USB support in U-Boot, following configs shall not be
 defined:
 
-```bash
+```
 CONFIG_CMD_USB: enables basic USB support and the usb command
 CONFIG_USB_UHCI: defines the lowlevel part.
 CONFIG_USB_KEYBOARD: enables the USB Keyboard
@@ -168,7 +169,7 @@ CONFIG_USB_HOST_ETHER: enables USB ethernet adapter support
 Serial console output shall be disabled. To disable console output in
 U-Boot, set the following macros:
 
-```bash
+```
 CONFIG_SILENT_CONSOLE
 CONFIG_SYS_DEVICE_NULLDEV
 CONFIG_SILENT_CONSOLE_UPDATE_ON_RELOC
@@ -178,7 +179,7 @@ and set “***silent”*** environment variable.
 
 For the Secure loader, disable the traces by undefining the below macro
 
-```bash
+```
 INC_DEBUG_PRINT
 ```
 
@@ -214,7 +215,7 @@ default environment variable and not in non-volatile memory.
 
 Remove configuration options related to non-volatile memory such as:
 
-```bash
+```
 #define CONFIG_ENV_IS_IN_MMC
 #define CONFIG_ENV_IS_IN_EEPROM
 #define CONFIG_ENV_IS_IN_FLASH
@@ -231,7 +232,7 @@ Remove configuration options related to non-volatile memory such as:
 
 and include the following definition:
 
-```bash
+```
 #define** CONFIG_ENV_IS_NOWHERE
 ```
 
@@ -270,7 +271,7 @@ and include the following definition:
   applications, the following kernel option should be set in the
   compile-time kernel configuration:
 
-```bash
+```
   CONFIG_DEVKMEM=n
 ```
 
@@ -538,23 +539,28 @@ and include the following definition:
 ```bash
   CONFIG_MODULE_FORCE_LOAD=n
 ```
-
 ### System Services
 
 #### Console & Remote Access
 
-* The kernel console interfaces shall be disabled. Do not pass any statements
-  of the following kind (e.g. console=ttyS0 console=tty0) on the kernel
-  command line. All of the console=&lt;interface&gt; statements should be
-  stripped and removed from the kernel command line.
-* The telnet server shall be disabled.
-* Do not start telnetd in init scripts.
-* Remove telnetd from the root file system.
-* Root login access via the console shall be disabled.
-* Do not run shell or getty on /dev/ttySx or /dev/console from
-  init scripts.
-* Root login access through remote access such as SSH shall
-  be disabled or completely removed
+-   The kernel console interfaces shall be disabled. Do not pass any statements
+    of the following kind (e.g. console=ttyS0 console=tty0) on the kernel
+    command line. All of the console=&lt;interface&gt; statements should be
+    stripped and removed from the kernel command line.
+
+-   The telnet server shall be disabled.
+
+-   Do not start telnetd in init scripts.
+
+-   Remove telnetd from the root file system.
+
+-   Root login access via the console shall be disabled.
+
+-   Do not run shell or getty on /dev/ttySx or /dev/console from
+    init scripts.
+
+-   Root login access through remote access such as SSH shall
+    be disabled or completely removed
 
 #### Disable *sudo* for other users
 
@@ -574,46 +580,46 @@ and include the following definition:
 
 #### User Account Management
 
-All user accounts shall have strong, non-default passwords.  
-A strong password is described to have all of the following attributes:
+  All user accounts shall have strong, non-default passwords. A strong
+  password is described to have all of the following attributes:
 
-* At least one upper-case letter
+-   At least one upper-case letter
 
-* At least one numeric character
+-   At least one numeric character
 
-* At least one lower-case letter
+-   At least one lower-case letter
 
-* Password shall be eight or more characters in length
+-   Password shall be eight or more characters in length
 
-* Shall not use a known, common pattern (e.g. Xxxxxxx\#
-  or Xxxxxxx\#\#)
+-   Shall not use a known, common pattern (e.g. Xxxxxxx\#
+    or Xxxxxxx\#\#)
 
 #### Remove known insecure services
 
   The following legacy services are inherently insecure and should be
   avoided:
  
-* rlogind
+-   rlogind
 
-* rshd
+-   rshd
 
-* rcmd
+-   rcmd
 
-* rexecd
+-   rexecd
 
-* rbootd
+-   rbootd
 
-* rquotad
+-   rquotad
 
-* rstatd
+-   rstatd
 
-* rusersd
+-   rusersd
 
-* rwalld
+-   rwalld
 
-* rhosts
+-   rhosts
 
-* rexd
+-   rexd
  
   These services offer insufficient authentication, no encryption, and
   are not considered secure. They shall be removed along with their
@@ -627,51 +633,51 @@ A strong password is described to have all of the following attributes:
   non-exhaustive sample of commonly used utilities that are part of the
   mtd-utils package:
 
-* flash\_erase
+-   flash\_erase
 
-* flash\_eraseall
+-   flash\_eraseall
 
-* flashcp
+-   flashcp
 
-* flash\_lock
+-   flash\_lock
 
-* flash\_otp\_dump
+-   flash\_otp\_dump
 
-* flash\_otp\_info
+-   flash\_otp\_info
 
-* flash\_unlock
+-   flash\_unlock
 
-* mkfs.jffs2
+-   mkfs.jffs2
 
-* mkfs.ubifs
+-   mkfs.ubifs
 
-* nanddump
+-   nanddump
 
-* nandtest
+-   nandtest
 
-* nandwrite
+-   nandwrite
 
-* ubiattach
+-   ubiattach
 
-* ubicrc32
+-   ubicrc32
 
-* ubidetach
+-   ubidetach
 
-* ubiformat
+-   ubiformat
 
-* ubimkvol
+-   ubimkvol
 
-* ubinfo
+-   ubinfo
 
-* ubinize
+-   ubinize
 
-* ubirename
+-   ubirename
 
-* ubirmvol
+-   ubirmvol
 
-* ubirsvol
+-   ubirsvol
 
-* ubiupdatevol
+-   ubiupdatevol
 
   The mtd-utils package as a whole (including all of its executable
   binaries) shall not be present on the file system. Including these
@@ -708,6 +714,7 @@ A strong password is described to have all of the following attributes:
  
   The following flags shall be used for mounting common filesystems:
 
+  
 |  Partition                   | Notes                                                                                       |
 |------------------------------|---------------------------------------------------------------------------------------------|
 | /boot                        | Use nosuid and nodev and consider using noexec.                                             |
@@ -720,8 +727,9 @@ A strong password is described to have all of the following attributes:
 |                              | Note: if CONFIG\_DEVTMPFS\_MOUNT is set then the kernel will mount /dev and will not apply  |
 |                              | the nosuid, noexec options. Either disable CONFIG\_DEVTMPFS\_MOUNT or add a remount with    |
 |                              | noexec and nosuid options to system startup.                                                |
+  
 
-## Recommendations
+# Recommendations
 
 The following sections detail best practices that should be applied in
 order to secure a device.  
@@ -730,7 +738,7 @@ requirements, they may be upgraded to requirements status in the future.
 In addition, specific operators may change some of these recommendations
 into requirements based on their specific needs and objectives.
 
-### Hardened Boot
+## Hardened Boot
 
 The boot loader consists of the Primary boot loader residing in OTP
 memory, sboot, U-Boot and Secure loader residing in external flash (NAND
@@ -745,7 +753,7 @@ Kernel/system image before passing control to it.
 
 In U-Boot, following commands shall be disabled to avoid memory dumps
 
-```bash
+```
 md : Memory Display command
 
 mm : Memory modify command – auto incrementing address
@@ -787,7 +795,7 @@ if any.
   enabled services should be restricted to only those described in the
   STB’s functional description.
 
-### Remove or Disable Unnecessary Services, Ports, and Devices
+### Remove or Disable Unnecessary Services, Ports, and Devices. 
 
   Services and utilities that do not have a defined purpose on a system
   should be removed. If removal is not possible, but the service or
@@ -877,7 +885,6 @@ if any.
   This configuration is
   supported in Linux 3.5 and greater and thus should only be disabled
   for such versions.
-
 ```bash
   CROSS_MEMORY_ATTACH=n
 ```
@@ -1007,43 +1014,35 @@ applications to avoid stack smashing, buffer overflow attacks.
 
 ### Stack Smashing Attacks
 
-```c
-**-fstack-protector-all**
-```
-
-Emit extra code to check for buffer overflows, such as stack smashing attacks
+  **-fstack-protector-all**
+ 
+  Emit extra code to check for buffer overflows, such as stack smashing
+  attacks
 
 ### Position Independent Executables
 
-```c
-**-pie –fpic**:
-```
-
-Produce a position independent executable on targets which supports it.
+  **-pie –fpic**
+ 
+  Produce a position independent executable on targets which supports
+  it.
 
 ### Detect Buffer Overflows
 
-```c
-**-D\_FORTIFY\_SOURCE=2**:
-```
-
-Helps detect some buffer overflow errors.
+  **-D\_FORTIFY\_SOURCE=2**
+ 
+  Helps detect some buffer overflow errors.
 
 ### Prevent Overwrite Attacks
 
-```c
-**–z,relro**
-```
-
+  **–z,relro**
+ 
   This linking option helps during program load, several ELF memory
   sections need to be written by the linker, but can be turned read-only
   before turning over control to the program. This prevents some Global
   Offset Table GOT overwrite attacks, or in the dtors section of the ELF
   binary.
-
-```c
-**-z,now**
-```
+ 
+  **-z,now**
 
 During program load, all dynamic symbols are resolved, allowing for the
 complete GOT to be marked read-only (due to -z relro above). This
@@ -1053,9 +1052,7 @@ resolved, but this shouldn't be an issue for daemons.
 
 ### Library linking
 
-```c
-**–static**
-```
+  **–static**
 
 It is recommended that dynamic linking should not be allowed. This will
 avoid user from replacing a library with malicious library. All libraries
@@ -1110,7 +1107,7 @@ utilities are not required by the device then those should be removed.
   **sed, awk, cut, df, dmesg, echo, fdisk, grep, mkdir, mount (vfat),
   printf, tail, tee, test (directory), test (file)**
 
-## Root Access 
+## Root Access
 
 The main applications, those that provide the principal functionality of
 the embedded device, **should not execute** with root identity or any
@@ -1133,7 +1130,7 @@ the same resources at the same time.
 
 Root access **should not be allowed** for the following utilities:
 
-```bash
+```
   login
   su
   ssh
@@ -1223,11 +1220,12 @@ environment via sudo.
   SYN requests with the appropriate SYN+ACK reply, but it does not store
   the connection in its backlog queue.
 
-## Validation
 
-### Hardened System
+# Validation
 
-#### Image Security Analysis Framework (ISAFW)
+## Hardened System
+
+### Image Security Analysis Framework (ISAFW)
 
 **meta-security-isafw** is an OE layer that allows enabling the Image
 Security Analysis Framework (isafw) for your image builds.
@@ -1237,12 +1235,12 @@ framework for analysing different security aspects of images
 during the build process.
 
 The isafw project itself can be found at
-    <https://github.com/01org/isafw>
+    https://github.com/01org/isafw
 
 This layer can be added to your builds to produce an analysis report,
 including a kernel config analysis.
 
-#### Usage
+### Usage
 
 In order to enable the isafw during the image build, please add
 the following line to your build/conf/local.conf file:
