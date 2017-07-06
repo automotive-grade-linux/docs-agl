@@ -82,14 +82,14 @@ children:
             name: Initialize SDK environment
             url: reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html
         - 
-            name: Trying out templates
-            url: reference/sdk-devkit/docs/part-2/2_2-Trying-out-templates.html
+            name: Trying out template
+            url: reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html
         - 
             name: Developing with container
             url: reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html
         - 
-            name: Creating an hybrid app 
-            url: reference/sdk-devkit/docs/part-2/2_4-Creating-hybrid-app.html
+            name: Use CMake templates to develop an app
+            url: reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html
 -
     name: "XDS : X(cross) Development System Agent"
     children:

@@ -104,12 +104,7 @@ repositories:
         - source: sdk-devkit/docs/part-2/2_1-Init-sdk-env.md
         - source: sdk-devkit/docs/part-2/2_2-Trying-out-templates.md
         - source: sdk-devkit/docs/part-2/2_3-Dev-with-container.md
-        - source: sdk-devkit/docs/part-2/2_4-Creating-hybrid-app.md
-        - source: sdk-devkit/docs/part-2/pictures/cpu_hybrid_qml.png
-        - source: sdk-devkit/docs/part-2/pictures/html5_app.png
-        - source: sdk-devkit/docs/part-2/pictures/hybrid_html5_app_on_target.png
-        - source: sdk-devkit/docs/part-2/pictures/hybrid_html5_app.png
-        - source: sdk-devkit/docs/part-2/pictures/hybrid_qml_app.png
+        - source: sdk-devkit/docs/part-2/2_4-Use-app-templates.md
         - source: sdk-devkit/docs/part-2/pictures/mac_x11_logo.png
         - source: sdk-devkit/docs/part-2/pictures/putty_config.png
         - source: sdk-devkit/docs/part-2/pictures/qml_app.png
