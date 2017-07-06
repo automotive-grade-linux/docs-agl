@@ -82,7 +82,7 @@ Simply select that entry to replace porter in the -m option.<br>
   source meta-agl/scripts/aglsetup.sh \
   -m intel-corei7-64 \
   -b build \
-  agl-devel agl-demo agl-appfw-smack agl-netboot<br>
+  agl-devel agl-demo agl-appfw-smack agl-netboot
 ```
 **Note:** use the option "-m joule" when building for a Joule developer Kit target.
 
