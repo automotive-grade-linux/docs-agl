@@ -77,6 +77,7 @@ You will notice the Intel entries
   joule
 ```
 Simply select that entry to replace porter in the -m option.<br>
+**Note:** agl-netboot option is required to create the right initramfs even if you do not boot from a network
 
 ```bash
   source meta-agl/scripts/aglsetup.sh \
