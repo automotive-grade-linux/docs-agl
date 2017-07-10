@@ -46,7 +46,7 @@ git clone --recursive https://gerrit.automotivelinux.org/gerrit/apps/low-level-c
 
 ```bash
 export WD=$(pwd)
-git clone --recusive https://github.com/iotbzh/high-level-viwi-service.git
+git clone --recursive https://github.com/iotbzh/high-level-viwi-service.git
 ```
 
 ## Build
