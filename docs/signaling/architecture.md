@@ -12,6 +12,7 @@ layout: techdoc
 **Table of Content**
 
 1. TOC
+
 {:toc}
 
 ## Context
@@ -38,9 +39,9 @@ Our objectives are solving following 3 key issues:
 
 1. reduce as much as possible the amount of exchanged data to the meaningful
  subset really used by applications
-2. offer a high level API that obfuscates low level and proprietary interface to
+1. offer a high level API that obfuscates low level and proprietary interface to
  improve stability in time of the code
-3. hide specificities of low level implementation as well as the chosen
+1. hide specificities of low level implementation as well as the chosen
  deployment distribution model.
 
 To reach first objective, events emission frequency should be controlled at the
@@ -439,13 +440,10 @@ outside world.
 
 ![image](./images/cloud-arch.svg "Cloud & Multi-ECU Architecture")
 
-1. Application requests Virtual Signal exactly like if it was a low level
-   signal
-2. Agent Signal has direct relation to low level signal
-3. Agent needs to proxy to an other service inside the same ECU to access the
-   signal
-4. Signal is not present on current ECU. Request has to be proxied to the
-   outside world
+1. Application requests Virtual Signal exactly like if it was a low level signal
+1. Agent Signal has direct relation to low level signal
+1. Agent needs to proxy to an other service inside the same ECU to access the signal
+1. Signal is not present on current ECU. Request has to be proxied to the outside world
 
 [AppFw]:  http://iot.bzh/download/public/2016/appfw/01_Introduction-to-AppFW-for-AGL-1.0.pdf "Application Framework"
 [APcore]:  http://iot.bzh/download/public/2016/appfw/03_Documentation-AppFW-Core-1.0.pdf "AppFw Core"

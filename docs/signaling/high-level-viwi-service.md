@@ -82,41 +82,41 @@ For instance:
 
 ```json
 {
-	"name": "/car/demoboard/",
-	"properties": {
-		"id": {
-			"type": "string",
-			"description": "identifier"
-		},
-		"uri": {
-			"type": "string",
-			"description": "object uri"
-		},
-		"name": {
-			"type": "string",
-			"description": "name"
-		},
-		"unit": {
-			"type": "string",
-			"description": "units"
-		},
-		"speed": {
-			"type": "double",
-			"description": "vehicle centerpoint speed as shown by the instrument cluster"
-		},
-		"rpm": {
-			"type": "double",
-			"description": "engine rotations per minute"
-		},
-		"level": {
-			"type": "double",
-			"description": "level of tankage"
-		},
-		"load": {
-			"type": "double",
-			"description": "engine load"
-		}
-	}
+    "name": "/car/demoboard/",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "identifier"
+        },
+        "uri": {
+            "type": "string",
+            "description": "object uri"
+        },
+        "name": {
+            "type": "string",
+            "description": "name"
+        },
+        "unit": {
+            "type": "string",
+            "description": "units"
+        },
+        "speed": {
+            "type": "double",
+            "description": "vehicle centerpoint speed as shown by the instrument cluster"
+        },
+        "rpm": {
+            "type": "double",
+            "description": "engine rotations per minute"
+        },
+        "level": {
+            "type": "double",
+            "description": "level of tankage"
+        },
+        "load": {
+            "type": "double",
+            "description": "engine load"
+        }
+    }
 }
 ```
 
@@ -138,24 +138,24 @@ For instance:
 
 ```json
 {
-	"name": "/car/demoboard/",
-	"values": [{
-		"name": "vehicleSpeed",
-		"unit": "km/h",
-		"speed": "${diagnostic_messages.vehicle.speed,1000}"
-	}, {
-		"name": "engineSpeed",
-		"unit": "rpm",
-		"rpm": "${diagnostic_messages.engine.speed,1000}"
-	}, {
-		"name": "fuelLevel",
-		"unit": "litre",
-		"level": "${diagnostic_messages.fuel.level,1000}"
-	}, {
-		"name": "engineLoad",
-		"unit": "Nm",
-		"load": "${diagnostic_messages.engine.load,1000}"
-	}]
+    "name": "/car/demoboard/",
+    "values": [{
+        "name": "vehicleSpeed",
+        "unit": "km/h",
+        "speed": "${diagnostic_messages.vehicle.speed,1000}"
+    }, {
+        "name": "engineSpeed",
+        "unit": "rpm",
+        "rpm": "${diagnostic_messages.engine.speed,1000}"
+    }, {
+        "name": "fuelLevel",
+        "unit": "litre",
+        "level": "${diagnostic_messages.fuel.level,1000}"
+    }, {
+        "name": "engineLoad",
+        "unit": "Nm",
+        "load": "${diagnostic_messages.engine.load,1000}"
+    }]
 }
 ```
 
@@ -185,7 +185,7 @@ On another terminal, connect to the binding using previously installed
 _**AFB Websocket CLI**_ tool:
 
 ```bash
-$ afb-client-demo ws://localhost:1234/api?token=1
+afb-client-demo ws://localhost:1234/api?token=1
 ```
 
 You will be on an interactive session where you can communicate directly with
@@ -197,7 +197,7 @@ _unsubscribe_, which can take a JSON object as an argument.
 To use the _**AFB Websocket CLI**_ tool, a command line will be like the
 following:
 
-```
+```bash
 <api> <verb> <arguments>
 ```
 
@@ -209,7 +209,7 @@ Where:
 
 You can therefore use commands such as:
 
-```
+```json
 high-can subscribe {"name":"/car/doors/","interval":10000}
 high-can unsubscribe {"name":"/car/doors/","interval":10000}
 high-can get {"name":"/car/demoboard/"}
@@ -218,7 +218,7 @@ high-can get {"name":"/car/demoboard/","fields":["fuelLevel","engineLoad"]}
 
 For instance the output of the third command should be:
 
-```
+```json
 high-can get {"name":"/car/demoboard/"}
 ON-REPLY 1:high-can/get: {"response":{"\/car\/demoboard\/2159e2-5b638a-39e242-7a2f5":{"id":"2159e2-5b638a-39e242-7a2f5","name":"vehicleSpeed","speed":0.000000,"unit":"km\/h","uri":"\/car\/demoboard\/2159e2-5b638a-39e242-7a2f5"},"\/car\/demoboard\/22ad2c-5a3c2b-50fabb-324c82":{"id":"22ad2c-5a3c2b-50fabb-324c82","level":0.000000,"name":"fuelLevel","unit":"litre","uri":"\/car\/demoboard\/22ad2c-5a3c2b-50fabb-324c82"},"\/car\/demoboard\/3a3ab9-2bd52c-11d30-689acf":{"id":"3a3ab9-2bd52c-11d30-689acf","name":"engineSpeed","rpm":0.000000,"unit":"rpm","uri":"\/car\/demoboard\/3a3ab9-2bd52c-11d30-689acf"},"\/car\/demoboard\/5ae808-8093cb-99716-30a605":{"id":"5ae808-8093cb-99716-30a605","load":0.000000,"name":"engineLoad","unit":"Nm","uri":"\/car\/demoboard\/5ae808-8093cb-99716-30a605"}},"jtype":"afb-reply","request":{"status":"success","uuid":"44ce03f9-a7ca-49e1-a62a-40c74db0caa0"}}
 ```
@@ -232,5 +232,5 @@ You can find an example of data in high level binding, "samples" directory.
 For instance, on a third terminal:
 
 ```bash
-$ canplayer -I candata
+canplayer -I candata
 ```

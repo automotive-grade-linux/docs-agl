@@ -4,7 +4,7 @@
 
 To build AGL demo platform for Raspberry Pi 3 use machine **raspberrypi3** and feature **agl-demo**:
 
-```
+```bash
 source meta-agl/scripts/aglsetup.sh -m raspberrypi3 agl-demo agl-netboot agl-appfw-smack
 bitbake agl-demo-platform
 ```
@@ -13,7 +13,7 @@ bitbake agl-demo-platform
 
 To build AGL demo platform for Raspberry Pi 2 use machine **raspberrypi2** and feature **agl-demo**:
 
-```
+```bash
 source meta-agl/scripts/aglsetup.sh -m raspberrypi2 agl-demo agl-netboot agl-appfw-smack
 bitbake agl-demo-platform
 ```
@@ -30,11 +30,10 @@ Follow the steps below to copy the image to microSD card and to boot it on Raspb
 
 *Note: the sdimage files can also be named rpi-sdimg-ota in case you have the **"agl-sota"** feature enabled*
 
-```
+```bash
 sudo umount [sdcard device]
 sudo dd if=[output image] of=[sdcard device] bs=4M
 sync
 ```
 
 * Plug your microSD card into Raspberry Pi 2 or 3 and boot the board
-

@@ -11,9 +11,11 @@ layout: techdoc
 **Table of Content**
 
 1. TOC
+
 {:toc}
 
 ## Security Principles
+
 When connecting a car to the internet, not only we create a mobile entry
 point to our private life, we also relocate our entry doors anywhere in
 the world.
@@ -33,23 +35,23 @@ short time following connection..
 which would be deployed in a high risk zone even when designing cars for
 out towns and villages**:
 
--   Physical access to the car should not be a white card to hack
+- Physical access to the car should not be a white card to hack
     the system.  
     Most cars sleep in the streets and public car parks where physical
     accessibility is easy.
--   Known defect should be corrected by SW update in real time, without a return to
+- Known defect should be corrected by SW update in real time, without a return to
     home or garage.
--   A separation of functionalities in isolated domains should allow the
+- A separation of functionalities in isolated domains should allow the
     car to remain safe and operational by limiting the contamination,
     would a malicious SW succeed to pass the protections.
--   Connectivity between the various domains should be restricted to the
+- Connectivity between the various domains should be restricted to the
     minimal set required for their operation.
--   Software loaded in cars and in the cloud should be vetted in
+- Software loaded in cars and in the cloud should be vetted in
     accordance with its capability to access critical resources.  
     The vetting authority must be controllable, enforceable and revocable.
--   Inside each domain, sub domains should be created to limit even
+- Inside each domain, sub domains should be created to limit even
     more, the nuisances capabilities of a successful malicious code.
--   Software or devices not wetted should never be able to access any
+- Software or devices not wetted should never be able to access any
     critical resources.
 
 **The strategy can be summarise as “anything, which is not explicitly
@@ -91,6 +93,7 @@ Linux operating system for the connected car market.
 Non Linux Operating systems which can also be present in a connected car, are not covered by AGL platform security model.
 
 ## Strategy
+
 There is no miracle solution.  
 When deciding which security strategy, you
 will need, first to try to evaluate all the possible attack vectors,
@@ -108,18 +111,18 @@ Would your automotive project requires a more protected HW, you will
 find plenty of literature on that topic.  
 I personally like this relatively old (2004) paper from J Grand as an introduction to the
 domain.  
-http://www.grandideastudio.com/wp-content/uploads/secure\_embed\_paper.pdf
+<http://www.grandideastudio.com/wp-content/uploads/secure\_embed\_paper.pdf>
 
 On the SW side, the most efficient model is to work by layer :
 
--   **be sure that the desired SW is loaded**  
+- **be sure that the desired SW is loaded**  
     On non connected devices, a trusted boot is considered a valid
     enough solution, but Connected Cars requirement to enable
     applications be added after the initial equipment provisioning,
     requires more than a simple trusted boot.  
     A strategy to control the integrity of the software and its
     configuration is required.
--   **Be able to change (upgrade) the software to correct a newly
+- **Be able to change (upgrade) the software to correct a newly
     discovered risk.**  
     Assuming that the system will never be broken is an utopia.  
     The right strategy is to plan how to recover from the discovering of a
@@ -127,7 +130,7 @@ On the SW side, the most efficient model is to work by layer :
     *This upgrade mechanism must be particularly solid has it has to be
     capable of being executed on a compromised system without the
     support of a skilled operator.*
--   **Only select trusted Linux drivers.**  
+- **Only select trusted Linux drivers.**  
     In Linux, drivers are executed with the same privilege level than
     the Kernel itself.  
     I short a malicious or hacked driver is an
@@ -141,8 +144,8 @@ On the SW side, the most efficient model is to work by layer :
     Solutions to reinforce the Linux Kernel integrity during execution,
     can be activated but they are an order of magnitude more complex to
     activate than keeping bespoke logic in user space.  
-    https://www.isoc.org/isoc/conferences/ndss/11/pdf/3\_1.pdf
--   **Isolate the core of the system from the middleware.**  
+    <https://www.isoc.org/isoc/conferences/ndss/11/pdf/3\_1.pdf>
+- **Isolate the core of the system from the middleware.**  
     By default the protection on Unix type systems (and so Linux) is
     done by allocating the user a set of access rights.  
     The side effect is that any code running under a given name can access all the
@@ -152,7 +155,7 @@ On the SW side, the most efficient model is to work by layer :
     privilege (root) we foresee the danger of this traditional
     embedded model.  
     Fortunately Linux provides a Security model called LSM.* (
-    https://en.wikipedia.org/wiki/Linux\_Security\_Modules)  
+    <https://en.wikipedia.org/wiki/Linux\_Security\_Modules>)  
     It allows to create an access strategy which is not controlled by
     the user but rather by the system configuration.  
     Multiple front end are available to control LSM and that will be studied a bit later in
@@ -163,7 +166,7 @@ On the SW side, the most efficient model is to work by layer :
     Other restriction based on the c-groups, the Posix capabilities and
     the Seccomp can used in addition to LSM to further mitigate
     the risks.
--   **Isolate Applications**  
+- **Isolate Applications**  
     IoS and Android phones have initiated the Apps model and nowadays
     launching a product which cannot be extended by Apps (from a closed
     or open Store) after the creation of the device is a risky
@@ -183,30 +186,28 @@ On the SW side, the most efficient model is to work by layer :
     that such App can claim access, with the enforcement of restriction
     in accessing the system resources to those explicitly granted, is a
     far more reliable approach.
--   **Private data protection**  
-    *Cars know a lot about us, from where we go, to who we call, who get
-    in our car (via the phone detection) and hold data that we are not
-    willing to let go in the Open without our explicit consent.*  
-    This creates three main families of requirements :
-
-    -   Requires a safe provisioning of new devices and App in the
-        system (know who is who and who does what. )
-    -   Enforce encryption to any traffic going out.
-    -   Enforce encryption on local storage for personal data to
-        mitigate off line attack risk.
-    -   Enforce isolation of devices own by multiple users that connect
-        to the car.
+- **Private data protection**  
+  *Cars know a lot about us, from where we go, to who we call, who get
+  in our car (via the phone detection) and hold data that we are not
+  willing to let go in the Open without our explicit consent.*  
+  This creates three main families of requirements :
+  - Requires a safe provisioning of new devices and App in the
+  system (know who is who and who does what. )
+  - Enforce encryption to any traffic going out.
+  - Enforce encryption on local storage for personal data to
+  mitigate off line attack risk.
+  - Enforce isolation of devices own by multiple users that connect
+  to the car.
 
 ## Secure Boot
+
 The trusted or secured boot is a facility offered by most Systems on Chip (SoC)
 which enforces :
 
--   booting the system in a known state  
-    (e.g. all the RAM set to "0", all internal peripherals set
-    to silent)
--   providing a validation that the loaded initial code is signed by a
-    valid authority  
-    (in short the SW is really coming from a known valid source).
+- booting the system in a known state  
+  (e.g. all the RAM set to "0", all internal peripherals set to silent)
+- providing a validation that the loaded initial code is signed by a valid authority  
+  (in short the SW is really coming from a known valid source).
 
 As the feature is very closed to the HW, almost as many solutions exist
 than SoC vendors and many of them requires to buy a large volume of SoC
@@ -223,7 +224,7 @@ Once the trusted boot activated, you will have a good confidence
 somewhere)* that the code which will start to run when powering the
 device, is the expected one.
 
-## Read Only root file system.
+## Read Only root file system
 
 In most embedded system the core OS is under control of the device
 manufacturer.  
@@ -239,7 +240,7 @@ to register some network or locale configurations, an overlay can be
 created for some directories.  
 Since Linux 4.0, the kernel supports by default OverlayFS which provides that facility and support the extended
 file attributes required by file base MAC such as SELinux and Smack.  
-https://github.com/torvalds/linux/commit/e9be9d5e76e34872f0c37d72e25bc27fe9e2c54c
+<https://github.com/torvalds/linux/commit/e9be9d5e76e34872f0c37d72e25bc27fe9e2c54c>
 
 ## Code Integrity during execution
 
@@ -249,7 +250,7 @@ We can take profit of this favorable position, to limit the capabilities of a ma
 change our Operating System (OS) after the protected initialisation
 (trusted boot).  
 This can be done *by activating an integrity enforcement such as IMA/EVM on all the core OS.*  
-http://sourceforge.net/p/linux-ima/wiki/Home/
+<http://sourceforge.net/p/linux-ima/wiki/Home/>
 
 In short IMA allows the kernel to check that a file has not been changed
 by validating it against a stored/calculate hash (called label) while
@@ -257,8 +258,8 @@ EVM checks the file attributes (including the extended ones).
 
 Two types of labels are available :
 
--   immutable and signed
--   simple
+- immutable and signed
+- simple
 
 The signed labels are reserved for code or data which are static and
 provide the best level of protection.  
@@ -290,13 +291,13 @@ Connected Cars are comparable to middle volume consumer managed products
 software is entirely provided by the device manufacturer.  
 The main side effects are well known :
 
--   low cost and small CPU
--   high control of the OS and Middleware loaded on the box
--   user, at best, very slow to activate update
--   no visibility by the manufacturer of the external environment where
-    the device is connected.
--   No skilled administrator
--   No recovery console.
+- low cost and small CPU
+- high control of the OS and Middleware loaded on the box
+- user, at best, very slow to activate update
+- no visibility by the manufacturer of the external environment where
+  the device is connected.
+- No skilled administrator
+- No recovery console.
 
 For those reasons, a solution like Smack has been selected by AGL as the
 best suited LSM front end.  
@@ -306,6 +307,7 @@ on keeping good performance on smaller CPUs.
 <https://wiki.tizen.org/wiki/Category:Security>
 
 ## Applications
+
 *Apps are the weak security vector in many modern system.*  
 Car manufacturers need to add bespoke/localised App developers in order to
 make their product commercially attractive.  
@@ -321,10 +323,10 @@ required in order to run on very small CPU.
 **As we cannot fully trust Apps, we have to contain them**.  
 This can be done by :
 
--   Limiting Apps download origin to trusted ones.
--   Restrict Apps privileges, resources and APIs access to what is
-    explicitly authorised
--   Isolate Apps runtime
+- Limiting Apps download origin to trusted ones.
+- Restrict Apps privileges, resources and APIs access to what is
+  explicitly authorised
+- Isolate Apps runtime
 
 Restricting Apps origin to trusted source is quite simple.  
 The simple use of a certificate to validate the App signature is a powerful model
@@ -352,7 +354,7 @@ Manufacturer, Partner and Community stores).
 
 The association between the App and its privileges list must be kept
 safe and available for enforcement in the system.  
-The Samsung originated Open Source project Cynera (https://github.com/Samsung/cynara) provides
+The Samsung originated Open Source project Cynera (<https://github.com/Samsung/cynara>) provides
 such service and is optimised for execution on small SoC.
 
 Isolating the App when running is the most challenging task, it requires
@@ -360,12 +362,12 @@ to let the App access enough of the system to execute its task but no
 more, to mitigate any malicious activity.  
 One model to address this challenge consist in slicing the access to the system :
 
--   CPU, RAM
--   devices
--   network
--   middleware
--   files
--   libraries and system calls.
+- CPU, RAM
+- devices
+- network
+- middleware
+- files
+- libraries and system calls.
 
 CPU and RAM over use can be restricted with a correct C-Group
 configuration.
@@ -378,7 +380,7 @@ nftables.
 Middleware in AGL is access via binders which provides not only an
 isolation via creation of different security context but adds the
 concept of authentication which limit attack through man-in-the-middle
-*https://en.wikipedia.org/wiki/Man-in-the-middle\_attack*.
+*<https://en.wikipedia.org/wiki/Man-in-the-middle\_attack>*.
 
 The control of Libraries and system API usage is far more complex.  
 MAC advanced usages can help in this domain but Seccomp-BPF can go further.  
@@ -388,7 +390,7 @@ solution.
 Seccomp can quickly induce a performance hit and access rules
 must remain simple.  
 The following page provides interserting reports on performance cost of
-that feature. (https://wiki.tizen.org/wiki/Security:Seccomp) for one
+that feature. (<https://wiki.tizen.org/wiki/Security:Seccomp>) for one
 system.
 
 ### Name spaces
@@ -399,7 +401,7 @@ due to their common use as light virtualisation solution in the cloud.
 
 Whichever model of container is referenced, they all use the Linux
 various name spaces
-(http://man7.org/linux/man-pages/man7/namespaces.7.html).  
+(<http://man7.org/linux/man-pages/man7/namespaces.7.html>).  
 The general idea is to share a common kernel and to let each containers run its own
 virtual Linux user space and middleware.  
 With the increased CPU performance and the facility provided by novel filesystem architectures
@@ -411,21 +413,21 @@ cloud or on small embedded system.
 From a security point of view, while containers provides an isolation
 between themselves, it must remain present to the designer that :
 
--   kernel is shared and security weaknesses and zero day defects can be
-    used to cross domains.
--   As each container can provides its own version of the middleware,
-    upgrading the system is not enough to correct known security issues.  
-    Each container must individually be updated.
--   Due to the transparent overlay model sharing files between
-    containers, predicting the actually used disk space is challenging.
--   UX needs to share the same Display and Input what can open back
-    doors in the system.
+- kernel is shared and security weaknesses and zero day defects can be
+  used to cross domains.
+- As each container can provides its own version of the middleware,
+  upgrading the system is not enough to correct known security issues.  
+  Each container must individually be updated.
+- Due to the transparent overlay model sharing files between
+  containers, predicting the actually used disk space is challenging.
+- UX needs to share the same Display and Input what can open back
+  doors in the system.
 
 At least two lines of interest seem to provide a serious value for the
 Automotive domain :
 
--   Isolating subsystem
--   Easing development
+- Isolating subsystem
+- Easing development
 
 The isolation model is very interesting when multiple service providers
 needs to share the same embedded device.  
@@ -444,21 +446,22 @@ environment.
 
 As further reading on similar topic, you can have a look at the Open
 Source Vasum project.  
-https://github.com/Samsung/vasum  
-https://wiki.tizen.org/wiki/Security:Vasum
+<https://github.com/Samsung/vasum>  
+<https://wiki.tizen.org/wiki/Security:Vasum>
 
 ## Process Management
+
 While developers will always have a good reason for delaying the
 activation of the security layers, to succeed, you will need to keep a
 few base concepts enforced:
 
--   Security is invasive. It goes everywhere.
--   Security cannot be apply as a patch at the end of the project.
--   System must be developed with the security 'on' or it will
-    never work.
--   SW must be written secured first time, as late adaptation is
-    too difficult.
+- Security is invasive. It goes everywhere.
+- Security cannot be apply as a patch at the end of the project.
+- System must be developed with the security 'on' or it will
+  never work.
+- SW must be written secured first time, as late adaptation is
+  too difficult.
 - Underestimating the resistance of the developer team is a common
-mistake which can lead to massive over costs and delays.
+  mistake which can lead to massive over costs and delays.
 - Implication of the right expert and management drive from the beginning is a
-requirement that cannot be negotiated.
+  requirement that cannot be negotiated.

@@ -24,17 +24,18 @@ The following documents may also be helpful:
 Before setting up the build environment, you need to download the proprietary drivers.
 
 * Download Renesas graphics drivers with a "click through" license from Renesas website [Link][rcar Linux Drivers]
-    * Under the Target hardware: **R-Car H3/M3** section.
+  * Under the Target hardware: **R-Car H3/M3** section.
 
-#### Note:
+**Note**:
 
 * You have to register with a free account on MyRenesas and accept the license conditions before downloading them the drivers.  
-The operation is fast and simple but nevertheless mandatory to access evaluation of non open-source drivers for free.  
-Once you registered, you can download two zip files.
+ The operation is fast and simple but nevertheless mandatory to access evaluation of non open-source drivers for free.  
+ Once you registered, you can download two zip files.
 * The files must be stored into your download directory (usually $HOME/Downloads, pointed by $XDG_DOWNLOAD_DIR).
+
 Here after is an example of the typical files downloaded at the time of writing:
 
-```
+```bash
 test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 chmod a+r $XDG_DOWNLOAD_DIR/*.zip
 ls -1 $XDG_DOWNLOAD_DIR
@@ -43,26 +44,25 @@ total 8220
 -rw-r--r--. 1 1664 agl-sdk 2.7M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170427.zip
 ```
 
-## Setting up the build environment:
+## Setting up the build environment
 
 Define the type of R-Car Starter Kit board as a variable:
 
 * for machine **h3ulcb** (Starter Kit Premier/H3) :
 
-    ```
+    ```bash
 export MACHINE=h3ulcb
     ```
 
 * for machine **m3ulcb** (Starter Kit Pro/M3):
 
-    ```
+    ```bash
 export MACHINE=m3ulcb
     ```
 
-
 Now, init your build environment:
 
-```
+```bash
 cd $AGL_TOP
 source meta-agl/scripts/aglsetup.sh -m $MACHINE -b build agl-devel agl-demo agl-netboot agl-appfw-smack agl-localdev
 ```
@@ -70,7 +70,7 @@ source meta-agl/scripts/aglsetup.sh -m $MACHINE -b build agl-devel agl-demo agl-
 **IMPORTANT NOTE**: Read the log to be sure you had no error during your setup. 
 In case of missing graphics drivers, you could notice an error message as follow:
 
-```
+```bash
 [snip]
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/machine/h3ulcb/50_setup.sh
 /home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
@@ -96,39 +96,40 @@ After this command, the working directory is changed to $AGL_TOP/build.
 
 Users may want to check that the board is correctly selected in the environment:
 
-```
+```bash
 grep -w -e "^MACHINE =" $AGL_TOP/build/conf/local.conf
   MACHINE = "h3ulcb"
 or
   MACHINE = "m3ulcb"
 ```
 
-Configure for Release or Development:  
+Configure for Release or Development:
+
 * development images contain extra tools for developer convenience, in particular:
-    * a debugger (gdb)
-    * some tweaks, including a disabled root password
-    * a SFTP server
-    * the TCF Agent for easier application deployment and remote debugging
-    * some extra system tools (usb, bluetooth ...)
-    * ...  
+  * a debugger (gdb)
+  * some tweaks, including a disabled root password
+  * a SFTP server
+  * the TCF Agent for easier application deployment and remote debugging
+  * some extra system tools (usb, bluetooth ...)
+  * ...  
 
 We explicitely activate these debug facilities by specifying the “agl-devel agl-netboot” feature.
 
-## Build your image:
+## Build your image
 
 The process to build an image is simple:
 
-```
+```bash
 bitbake agl-demo-platform
 ```
 
 When finished (it may take few hours), you should get the final result:
 
-```
+```bash
 ls -l $AGL_TOP/build/tmp/deploy/images/$MACHINE
 ```
 
-#### Note
+**Note**:
 In case of failure of the build it is safe to first check that the Linux distribution chosen for your host has been validated for version 2.2 of Yocto.
 
 # Booting AGL Image on R-Car Starter Kit Gen3 boards using a microSD card
@@ -144,7 +145,7 @@ Then, for each build, the SD-card is merely rewritten and used to boot the confi
 
 Plug the microSD card and get its associated device by either running *`dmesg | tail -15`* or *`lsblk`*, for example:
 
-```
+```bash
 dmesg | tail -15
 
   [ 1971.462160] sd 6:0:0:0: [sdc] Mode Sense: 03 00 00 00
@@ -155,7 +156,7 @@ dmesg | tail -15
 
 Here, the SD-card is attached to the device /dev/sdc.
 
-```
+```bash
 lsblk
 
   NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
@@ -174,15 +175,16 @@ lsblk
 so you should repeat this operation each time you insert the microSD card to confirm the device name.
 
 In the example above, we see:
+
 * the first SATA drive as 'sda'.
 * 'sdc' corresponds to the microSD card, and is also marked as removable device by *lsblk* which is a good confirmation.
 
 ### Partition and format the SD-card
 
 * Create an EXT4 partition on the SD-card using fdisk and set the MBR.  
-For example, if the microSD card is */dev/sdc*:
+ For example, if the microSD card is */dev/sdc*:
 
-```
+```bash
 sudo fdisk /dev/sdc
 
   Welcome to fdisk (util-linux 2.27.1).
@@ -214,14 +216,14 @@ sudo fdisk /dev/sdc
 
 * Initialize the ext4 partition using “mke2fs”; for example, if the microSD card is associated with *sdc*:
 
-```
+```bash
 sudo mke2fs -t ext4 -O ^64bit /dev/sdc1
 
   mke2fs 1.42.13 (17-May-2015)
   Creating filesystem with 3911168 4k blocks and 979200 inodes
   Filesystem UUID: 690804b9-6c7d-4bbb-b1c1-e9357efabc52
   Superblock backups stored on blocks:
-  	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
+      32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
 
   Allocating group tables: done
   Writing inode tables: done
@@ -240,7 +242,7 @@ Insert the SD-card into your build host:
 * In the next sample code, we'll suppose that the SD-card mount directory is stored in the variable $SDCARD.
 * For example, if the microSD card is associated with device *sdc*:
 
-```
+```bash
 export SDCARD=/tmp/agl
 mkdir -p $SDCARD
 sudo mount /dev/sdc1 $SDCARD
@@ -248,19 +250,19 @@ sudo mount /dev/sdc1 $SDCARD
 
 Go to your build directory:
 
-```
+```bash
 cd $AGL_TOP/build/tmp/deploy/images/$MACHINE
 ```
 
 Make sure the filesystem is empty:
 
-```
+```bash
 sudo rm -rf ${SDCARD:-bad_dir}/*
 ```
 
 **IMPORTANT NOTE**: Verify that **tar** version is 1.28 or newer: this is required to create extended attributes correctly on the SD-card, and in particular SMACK labels used to enforce security. Check with the following command:
 
-```
+```bash
 tar --version
 tar (GNU tar) 1.28
 [snip]
@@ -268,51 +270,56 @@ tar (GNU tar) 1.28
 
 If your distribution is up to date on this dependency, you can use the host tool directly.  
 Let's define a variable for the following steps:
-```
+
+```bash
 TAR=$(which tar)
 ```
+
 Otherwise, a native up-to-date version of tar is also generated while building AGL distribution:
-```
+
+```bash
 TAR=$AGL_TOP/build/tmp/sysroots/x86_64-linux/usr/bin/tar-native/tar
 $TAR --version
 tar (GNU tar) 1.28
 [snip]
 ```
+
 Copy Automotive Grade Linux (AGL) files onto the mircoSD card by extracting the root file system archive:
 
-```
+```bash
 sudo $TAR --extract --numeric-owner --preserve-permissions --preserve-order --totals \
            --xattrs-include='*' --directory=$SDCARD --file=agl-demo-platform-h3ulcb.tar.bz2
 ```
 
 Copy Kernel Image and Device Tree Blob file into the **boot** directory:
+
 * For machine h3ulcb (BSP >= 2.19):
 
-```
+```bash
 sudo cp Image-r8a7795-es1-h3ulcb.dtb $SDCARD/boot/
 ```
 
 * For machine h3ulcb (BSP < 2.19):
 
-```
+```bash
 sudo cp Image-r8a7795-h3ulcb.dtb $SDCARD/boot/
 ```
 
 * For machine m3ulcb:
 
-```
+```bash
 sudo cp Image-r8a7796-m3ulcb.dtb $SDCARD/boot/
 ```
 
 Ensure the changes have been written to the disk:
 
-```
+```bash
 sync
 ```
 
 Unmount the microSD card:
 
-```
+```bash
 sudo umount $SDCARD
 ```
 
@@ -321,27 +328,27 @@ sudo umount $SDCARD
 * Turn the board off using the power switch.  
 * Insert the microSD-card.  
 * Verify that you have plugged in, at least, the following:
-    * External monitor on HDMI port
-    * Input device (keyboard, mouse, touchscreen...) on USB port.
+  * External monitor on HDMI port
+  * Input device (keyboard, mouse, touchscreen...) on USB port.
 
 * Turn the board on using the power switch.  
-After a few seconds, you'll see the AGL splash screen on the display and you'll be able to log in on the console terminal or in the graphic screen.  
+ After a few seconds, you'll see the AGL splash screen on the display and you'll be able to log in on the console terminal or in the graphic screen.  
 
 # Serial Console Setup
 
-## Install a serial client on your computer.  
+## Install a serial client on your computer
 
 This can be “screen”, “picocom”, “minicom”.  
 The lighter of the 3 is “picocom” (it has less dependencies).  
 
-## Plug a USB cable from your computer to the serial CP2102 USB port (micro USB-A).
+## Plug a USB cable from your computer to the serial CP2102 USB port (micro USB-A)
 
 With “dmesg” you can check the device created for the serial link. 
 Usually, it's /dev/ttyUSB0 but the number may vary depending on other USB serial ports connected to the host. 
 To get it, you must switch the board on. 
 For example:
 
-```
+```bash
 dmesg | tail
 [2097783.287091] usb 2-1.5.3: new full-speed USB device number 24 using ehci-pci
 [2097783.385857] usb 2-1.5.3: New USB device found, idVendor=0403, idProduct=6001
@@ -358,19 +365,19 @@ The link is attached to the device /dev/ttyUSB0.
 It is time to launch your serial client.  
 Example:
 
-```
+```bash
 picocom -b 115200 /dev/ttyUSB0
 ```
 
 or
 
-```
+```bash
 minicom -b 115200 -D /dev/ttyUSB0
 ```
 
 or
 
-```
+```bash
 screen /dev/ttyUSB0 115200
 ```
 
@@ -378,7 +385,7 @@ screen /dev/ttyUSB0 115200
 
 * For machine h3ulcb:  
 
-```
+```bash
 NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.7
 NOTICE:  BL2: PRR is R-Car H3 ES1.1
 NOTICE:  BL2: LCM state is CM
@@ -418,7 +425,7 @@ Hit any key to stop autoboot:  0
 
 * For machine m3ulcb:
 
-```
+```bash
 NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.8
 NOTICE:  BL2: PRR is R-Car M3 ES1.0
 NOTICE:  BL2: LCM state is CM
@@ -463,50 +470,50 @@ Follow the steps below to configure the boot from microSD card and to set screen
 * Turn the board on using the power switch.
 * Hit any key to stop autoboot (warning you have only few seconds).
 * Type **print** to check if you have correct parameters for booting your board:
-    * For machine m3ulcb:
+  * For machine m3ulcb:
 
-    ```
+    ```bash
 => printenv
-	baudrate=115200
-	bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
-	bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
-	bootdelay=3
-	fdt_high=0xffffffffffffffff
-	initrd_high=0xffffffffffffffff
-	load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
-	load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
-	stderr=serial
-	stdin=serial
-	stdout=serial
-	ver=U-Boot 2015.04 (Jun 09 2016 - 19:21:52)
+    baudrate=115200
+    bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
+    bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
+    bootdelay=3
+    fdt_high=0xffffffffffffffff
+    initrd_high=0xffffffffffffffff
+    load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+    load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
+    stderr=serial
+    stdin=serial
+    stdout=serial
+    ver=U-Boot 2015.04 (Jun 09 2016 - 19:21:52)
 
-	Environment size: 648/131068 bytes
+    Environment size: 648/131068 bytes
     ```
 
     * For machine h3ulcb:
     
-    ```
+    ```bash
 => printenv
-	baudrate=115200
-	bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
-	bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
-	bootdelay=3
-	fdt_high=0xffffffffffffffff
-	filesize=cdeb
-	initrd_high=0xffffffffffffffff
-	load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
-	load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
-	stderr=serial
-	stdin=serial
-	stdout=serial
-	ver=U-Boot 2015.04 (Nov 30 2016 - 18:25:18)
+    baudrate=115200
+    bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
+    bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
+    bootdelay=3
+    fdt_high=0xffffffffffffffff
+    filesize=cdeb
+    initrd_high=0xffffffffffffffff
+    load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+    load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
+    stderr=serial
+    stdin=serial
+    stdout=serial
+    ver=U-Boot 2015.04 (Nov 30 2016 - 18:25:18)
 
-	Environment size: 557/131068 bytes
+    Environment size: 557/131068 bytes
     ```
 
     * If not, copy line by line:
     
-    ```
+    ```bash
 setenv bootargs console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
 setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
 setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
@@ -514,31 +521,31 @@ setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
 
     * For machine h3ulcb (BSP >= 2.19):
 
-    ```
+    ```bash
 setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
     ```
 
     * For machine h3ulcb (BSP < 2.19):
 
-    ```
+    ```bash
 setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
     ```
 
     * For machine m3ulcb:
 
-    ```
+    ```bash
 setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
     ```
 
     * Finally save boot environment:
 
-    ```
+    ```bash
 saveenv
     ```
 
 * Now you can boot:
 
-```
+```bash
 run bootcmd
 ```
 
@@ -548,7 +555,7 @@ After booting, you should see the wayland display on the external monitor and a 
 
 * For machine h3ulcb:
 
-```
+```bash
 Automotive Grade Linux 3.0.0+snapshot-20161201 h3ulcb ttySC0
 
 h3ulcb login: root
@@ -556,13 +563,14 @@ h3ulcb login: root
 
 * For machine m3ulcb:
 
-```
+```bash
 Automotive Grade Linux 3.0.0+snapshot-20161201 m3ulcb ttySC0
 
 m3ulcb login: root
 ```
 
 Logging in on the console is easy:
+
 * login is 'root'
 * password is empty (not asked)
 
@@ -571,7 +579,7 @@ Logging in on the console is easy:
 If the board is connected to a local network using ethernet and if a DHCP server is able to distribute IP addresses, 
 you can then determine the Gen3 board IP address and log in using ssh:
 
-```
+```bash
 m3ulcb login: root
 Last login: Tue Dec  6 09:55:15 UTC 2016 on tty2
 root@m3ulcb:~# ip -4 a
@@ -586,7 +594,7 @@ root@m3ulcb:~#
 
 Here, IP address is 10.0.0.27. Logging in using SSH is easy:
 
-```
+```bash
 $ ssh root@10.0.0.27
 Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
 root@m3ulcb:~# cat /etc/os-release 
@@ -601,10 +609,10 @@ PRETTY_NAME="Automotive Grade Linux 3.0.0+snapshot-20161202 (chinook)"
 
 Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside a ready-to-use Docker container:
 
-* [AGL-Devkit-Build-your-1st-AGL-Application.pdf][Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]
-Generic guide on how to build various application types (HTML5, native, Qt, QML, …) for AGL.
-* [AGL-Devkit-HowTo_bake_a_service.pdf][Iot.bzh AGL_Phase2-Devkit-HowTo_bake_a_service]
-Generic guide on how to add a new service in the BSP.
+* [AGL-Devkit-Build-your-1st-AGL-Application.pdf][Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]  
+ Generic guide on how to build various application types (HTML5, native, Qt, QML, …) for AGL.
+* [AGL-Devkit-HowTo_bake_a_service.pdf][Iot.bzh AGL_Phase2-Devkit-HowTo_bake_a_service]  
+ Generic guide on how to add a new service in the BSP.
 * [AGL-Kickstart-on-Renesas-Porter-Board.pdf][Iot.bzh AGL-Kickstart-on-Renesas-Porter-Board]
 * [AGL-Devkit-Image-and-SDK-for-Porter.pdf][Iot.bzh AGL-Devkit-Image-and-SDK-for-Porter]
 * [AGL Developer Website](http://docs.automotivelinux.org)

@@ -18,7 +18,7 @@ CAN binding will be separated in two parts:
 
 ![CAN low and high level bindings mapping](images/CAN_level_mapping.png)
 
-- High level: Binding from which others applications will connect to.
+* High level: Binding from which others applications will connect to.
  It provides valuable access to the CAN bus by aggregate signals or providing
  new signals from several originals. For example, a signal exposing whether or
  not a door is open, no matter which one it is. Also, we can imagine an
@@ -27,7 +27,7 @@ CAN binding will be separated in two parts:
  a single event representing that behavior to the application which in turn will
  send a phone message to.
 
-- Low level: Decode messages that transit and send event through **Application
+* Low level: Decode messages that transit and send event through **Application
  Framework** to the subscribers with human readable message. It provides some
  basic access to the bus + some basic mathematical, statistical features
  (last_values, min, max, timestamps, averaging) as well as basic filter to get
@@ -40,13 +40,13 @@ OpenXC inspired [AGL low level CAN binding Generator](http://github.com/iotbzh/c
 
 # Prerequisites
 
-- An AGL system installed with latest Daring Dab version with latest Application
+* An AGL system installed with latest Daring Dab version with latest Application
  framework version >= 0.6.
-- Make sure you built the AGL generator else you will not be able to generate
+* Make sure you built the AGL generator else you will not be able to generate
  custom low-level CAN binding.
 It will produce a _application-generated.cpp_ file to paste in the source,
  _CAN-binder/low-can-binding/binding/_, directory.
-- Make sure you already set up the AGL SDK using the following
+* Make sure you already set up the AGL SDK using the following
  [SDK Quick Setup Guide](http://docs.iot.bzh/docs/getting_started/en/dev/reference/setup-sdk-environment.html).
  Alternatively, please refer to official guides available on [AGL Developer Site](http://docs.automotivelinux.org/docs/devguides/en/dev/#guides).
 
@@ -63,7 +63,7 @@ prepare_meta -f iotbzh -o /xdt -l /home/devel/mirror -p /home/devel/share/propri
 /xdt/build/m3ulcb/agl-init-build-env
 ```
 
-- (Optionnal) An [USB CAN adapter](http://shop.8devices.com/usb2can) connected to
+* (Optionnal) An [USB CAN adapter](http://shop.8devices.com/usb2can) connected to
  connector through the [right cable](http://www.mouser.fr/ProductDetail/EasySync/OBD-M-DB9-F-ES/))
 if you want to connect to a real car through the OBD2 connector.
 
@@ -73,8 +73,8 @@ if you want to connect to a real car through the OBD2 connector.
 
 ### Build requirements
 
-- CMake version 3.3 or later
-- G++, Clang++ or any C++11 compliant compiler.
+* CMake version 3.3 or later
+* G++, Clang++ or any C++11 compliant compiler.
 
 ### Compile
 
@@ -102,7 +102,7 @@ to the right the more it will be accurate.
 Let's take an example, here is an example about standard PID name following this
 convention:
 
-```
+```bash
 engine.load
 engine.coolant.temperature
 fuel.pressure
@@ -136,10 +136,10 @@ engine.torque
 
 You can use some basic decoder provided by default by the binding which are:
 
-- ***decoder_t::noopDecoder*** : Default decoder if not specified, return raw
+* ***decoder_t::noopDecoder*** : Default decoder if not specified, return raw
  value from signal's bitfield.
-- ***decoder_t::booleanDecoder*** : Coerces a numerical value to a boolean.
-- ***decoder_t::stateDecoder***s : Find and return the corresponding string
+* ***decoder_t::booleanDecoder*** : Coerces a numerical value to a boolean.
+* ***decoder_t::stateDecoder***s : Find and return the corresponding string
  state for a CAN signal's raw integer value.
 
 ### Generating JSON from Vector CANoe Database
@@ -152,9 +152,9 @@ be able to use the OpenXC `xml_to_json.py` script to make your JSON for you.
 First, export the Canoe .dbc file as XML - you can do this with Vector CANdb++.
 Next, create a JSON file according to the format defined above, but only define:
 
-- CAN messages.
-- Name of CAN signals within messages and their generic_name.
-- Optionnaly name of diagnostic messages and their name.
+* CAN messages.
+* Name of CAN signals within messages and their generic_name.
+* Optionnaly name of diagnostic messages and their name.
 
 To install the OpenXC utilities and runs `xml_to_json.py` script:
 
@@ -212,9 +212,9 @@ binding.
 
 ### Build requirements
 
-- Kernel >= 4.8
-- CMake version 3.3 or later
-- G++, Clang++ or any C++11 compliant compiler.
+* Kernel >= 4.8
+* CMake version 3.3 or later
+* G++, Clang++ or any C++11 compliant compiler.
 
 ### Compile
 
@@ -254,6 +254,7 @@ On the target, assuming _**wgt**_ file is in the root home directory:
 afm-util install low-can-service.wgt
 { "added": "low-can-service@4.0" }
 ```
+
 # Configure the AGL system
 
 ## Virtual CAN device
@@ -359,7 +360,7 @@ in section `CANbus-mapping`.
 Default binding configuration use a CAN bus named `hs` so you need to map it to
 the real one, here are some examples:
 
-- Using virtual CAN device as described in the previous chapter:
+* Using virtual CAN device as described in the previous chapter:
 
 ```ini
 [CANbus-mapping]
@@ -367,7 +368,7 @@ hs="vcan0"
 ls="vcan1"
 ```
 
-- Using real CAN device, this example assume CAN bus traffic will be on can0.
+* Using real CAN device, this example assume CAN bus traffic will be on can0.
 
 ```ini
 [CANbus-mapping]
@@ -375,7 +376,7 @@ hs="can0"
 ls="can1"
 ```
 
-- On a Rcar Gen3 board there is an embedded CAN device so `can0` already
+* On a Rcar Gen3 board there is an embedded CAN device so `can0` already
  exists. So you might want to use your USB CAN adapter plugged to the OBD2
  connector, in this case use `can1`:
 
@@ -388,7 +389,7 @@ hs="can1"
 > configuration file match those specified in your generated source file with
 > the `CAN-config-generator`.
 
-# Run it, test it, use it !
+# Run it, test it, use it
 
 You can run the binding using **afm-util** tool, here is the classic way to go:
 
@@ -438,7 +439,7 @@ JSON file used to generate cpp file for the binding.
 To use the _**AFB Websocket CLI**_ tool, a command line will be like the
 following :
 
-```
+```xml
 <api> <verb> <arguments>
 ```
 
@@ -515,13 +516,13 @@ It is possible to limits received event notifications into minimum and maximum
 boundaries as well as doing frequency thinning. This is possible using the
 argument filter with one or more of the filters available :
 
-- frequency: specify in Hertz the frequency which will be used to getting
+* frequency: specify in Hertz the frequency which will be used to getting
  notified of new CAN events for the designated signal. If, during the
  blocked time, further changed CAN messages are received, the last valid one
  will be transferred after the lockout with a RX_CHANGED.
-- min: Minimum value that the decoded value needs to be above to get pushed
+* min: Minimum value that the decoded value needs to be above to get pushed
  to the subscribed client(s).
-- max: Maximum value that the decoded value needs to be below to get pushed to
+* max: Maximum value that the decoded value needs to be below to get pushed to
  the subscribed client(s)
 
 Order doesn't matter neither the number of filters chosen, you can use one, two
