@@ -115,5 +115,29 @@ repositories:
         - source: sdk-devkit/docs/part-2/pictures/qml_app.png
         - source: sdk-devkit/docs/part-2/pictures/web-runtime_app.png
         - source: sdk-devkit/docs/part-2/pictures/xming_server.png
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: iotbzh/xds-server
+    git_commit: "master"
+    documents:
+        - source: README.md
+          destination: xds-server.md
+          label: xds-server
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: iotbzh/xds-agent
+    git_commit: "master"
+    documents:
+        - source: README.md
+          destination: xds-agent.md
+          label: xds-agent
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: iotbzh/xds-exec
+    git_commit: "master"
+    documents:
+        - source: README.md
+          destination: xds-exec.md
+          label: xds-exec
 
 

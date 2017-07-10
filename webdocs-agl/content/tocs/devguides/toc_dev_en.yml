@@ -91,6 +91,18 @@ children:
             name: Creating an hybrid app 
             url: reference/sdk-devkit/docs/part-2/2_4-Creating-hybrid-app.html
 -
+    name: "XDS : X(cross) Development System Agent"
+    children:
+        - 
+            name: xds-server
+            url: reference/xds-server/xds-server.md
+        - 
+            name: xds-agent
+            url: reference/xds-agent/xds-agent.md
+        - 
+            name: xds-exec
+            url: reference/xds-exec/xds-exec.md
+- 
     name: Guides 
     children:
         -
