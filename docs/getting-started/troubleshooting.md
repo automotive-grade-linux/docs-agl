@@ -25,8 +25,8 @@ tar (GNU tar) 1.28
 To copy Automotive Grade Linux (AGL) files AND EXTENDED ATRIBUTES onto the SDcard using tar the command is:
 
 ```bash
-tar --extract --numeric-owner --preserve-permissions --preserve-order --totals \
-           --xattrs-include='*' --directory=DESTINATION_DIRECTORY --file=agl-demo-platform.....tar.bz2
+tar --extract --xz --numeric-owner --preserve-permissions --preserve-order --totals \
+           --xattrs-include='*' --directory=DESTINATION_DIRECTORY --file=agl-demo-platform.....tar.xz
 ```
 
 ## meta-rust

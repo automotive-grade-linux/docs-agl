@@ -287,8 +287,8 @@ tar (GNU tar) 1.28
 Copy Automotive Grade Linux (AGL) files onto the mircoSD card by extracting the root file system archive:
 
 ```bash
-sudo $TAR --extract --numeric-owner --preserve-permissions --preserve-order --totals \
-           --xattrs-include='*' --directory=$SDCARD --file=agl-demo-platform-h3ulcb.tar.bz2
+sudo $TAR --extract --xz --numeric-owner --preserve-permissions --preserve-order --totals \
+           --xattrs-include='*' --directory=$SDCARD --file=agl-demo-platform-h3ulcb.tar.xz
 ```
 
 Copy Kernel Image and Device Tree Blob file into the **boot** directory:
