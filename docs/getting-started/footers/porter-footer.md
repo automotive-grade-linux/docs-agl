@@ -5,7 +5,7 @@ If Weston fails to start double check :
 and verify that the output name and screen resolution matches the configured U-Boot environment.  
 For example on Renesas Porter board rev 1.0 with screen resolution 1024x768:
 
-```
+```bash
 [core]
 shell=desktop-shell.so
 backend=drm-backend.so
@@ -21,4 +21,3 @@ mode=1024x768
 #mode=1920x1080
 #mode=173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 ```
-

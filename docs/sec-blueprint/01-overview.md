@@ -11,9 +11,11 @@ layout: techdoc
 **Table of Content**
 
 1. TOC
+
 {:toc}
 
 ## Introduction
+
 ### Abstract
 
 This document describes how it is possible to create reasonably secured connected cars using already available Open Source components.  
@@ -32,7 +34,7 @@ Proven solutions derived from the IT world are for most of them, inapplicable.
 For many people the Cyber Security risk for the Automotive industry is still at best not understood and unfortunately more often, simply ignored.  
 If the Fiat-Chrysler cyber car jacking has forced the industry to open their eyes, it is just a beginning.
 
--   24 Jul 2015 Hacking a radio in a car:  
+- 24 Jul 2015 Hacking a radio in a car:  
     *"… the computer systems built into Fiat Chrysler cars: the flaw can
     be exploited by an attacker to wirelessly take control of the
     engine, brakes and entertainment system ..."  
@@ -40,7 +42,7 @@ If the Fiat-Chrysler cyber car jacking has forced the industry to open their eye
     recalled 1.4 million of the manufacturer's cars after a dangerous
     software flaw was revealed just days ago..."*  
     <http://www.theregister.co.uk/2015/07/24/chrysler_recall_for_wireless_hacking_hole/>
--   One day (likely not that far) we could see car blocked by
+- One day (likely not that far) we could see car blocked by
     ramsomware, or cyber terrorism using cars as weapon if nothing is
     done.  
 
@@ -55,7 +57,8 @@ that tracking a mobile source will be more complex.
 
  <http://www.theregister.co.uk/2016/10/10/iot\_botnet/>
 
-## Scope 
+## Scope
+
 Designing Connected cars without enabling a high level of security is
 not acceptable and will be soon a key market requirement for any
 respectable automotive company.  
@@ -68,19 +71,19 @@ Connected Car.
 
 The assumptions selected are the following:
 
--   Secure boot with Hardware chain of trust.
--   recent LTSI based kernel (4.1.x, 4.9.x, ...)
--   kernel and middleware securely updated once in a while  
-    in the future that rate will increase a lot.
--   Middleware and Application compiled with up-to-date compiler
-    protections activated and checked through a static analysis process.
--   Rootfs (/) in read-only, /home encrypted., integrity protected by
-    IMA/EVM
--   Customisation reduced to Apps vetted by the manufacturer's store
--   24/7 connection to the outside world (sensor and internet).
--   Developer mode not active by default.
--   There is no administrator (only a user) for the product which mostly
-    run non attended.
+- Secure boot with Hardware chain of trust.
+- recent LTSI based kernel (4.1.x, 4.9.x, ...)
+- kernel and middleware securely updated once in a while  
+ in the future that rate will increase a lot.
+- Middleware and Application compiled with up-to-date compiler
+ protections activated and checked through a static analysis process.
+- Rootfs (/) in read-only, /home encrypted., integrity protected by
+ IMA/EVM
+- Customisation reduced to Apps vetted by the manufacturer's store
+- 24/7 connection to the outside world (sensor and internet).
+- Developer mode not active by default.
+- There is no administrator (only a user) for the product which mostly
+ run non attended.
 
 We can see that in such configuration, the base OS (kernel&middleware)
 represents a well guarded entry point for a malicious hacker.  
@@ -130,12 +133,8 @@ Those types of code are normally called from a very
 limited entry points in the system and once again the MAC system is your
 best friend when it comes to restrict activation from valid vector.
 
-
 ## Glossary
 
 DAC Discretionaly Access Control
 MAC Mandatory Access Control
 SoC System on Chip
-
-
-

@@ -1,4 +1,5 @@
 # AGL SDK Quick Setup
+
 This tutorial explains how to quickly setup an environment suitable to building and packaging AGL Applications using the SDK and a Docker container.
 The current tutorial has been tested on Linux, but may work with a few adjustments for Windows or MacOS.
 
@@ -15,6 +16,7 @@ which belong to uid=1664(devel) gid=1664(devel). (Note: password is *devel*)
 
 The script 'create_container' presented below instantiates a new container
 and shares some volumes with the host:
+
 * /xdt (the build directory inside the container) is stored in ~/ssd/xdt_$ID (specific to instance ID)
 * /home/devel/mirror is stored in ~/ssd/localmirror_$ID (specific to instance ID)
 * /home/devel/share => points to  ~/devel/docker/share (shared by all containers)
@@ -27,12 +29,15 @@ mkdir ~/ssd ~/devel
 chmod a+w ~/ssd ~/devel
 ```
 
-**Note**:  
- * To gain access from your host on files created within the container, your
+**Note**:
+
+* To gain access from your host on files created within the container, your
    host account requires to be added to group id 1664.
 
 ## Step 3: install the "Generic AGL Worker" Docker Image
+
 ### Get docker image
+
 #### Pre-built image
 
 A pre-built image is available on automotivelinux download public site and can be used directly.
@@ -47,23 +52,27 @@ docker images;
       jenkins                                 latest              55720d63e328        5 weeks ago         711.9 MB
       hello-world                             latest              c54a2cc56cbb        5 months ago        1.848 kB
 ```
+
 #### Rebuilt image
+
 The Docker image for AGL Worker can be rebuilt using the scripts published here [docker-worker-generator](https://git.automotivelinux.org/AGL/docker-worker-generator/).
 
 ### Start image
+
 Then, use the 'create_container' script to start a new, fresh container based on the AGL Worker image:
-**Note**:  
- * The password for the id 'devel' inside the docker image is 'devel'.
+
+**Note**:
+
+* The password for the id 'devel' inside the docker image is 'devel'.
 
 ```bash
 git clone https://git.automotivelinux.org/AGL/docker-worker-generator;
 cd docker-worker-generator;
 ./contrib/create_container 0;
 docker ps;
-	CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
-	4fb7c550ad75        docker.automotivelinux.org/agl/worker:3.0   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
+    CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
+    4fb7c550ad75        docker.automotivelinux.org/agl/worker:3.0   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
 ```
-
 
 ## Step 4: install the AGL SDK for your target
 

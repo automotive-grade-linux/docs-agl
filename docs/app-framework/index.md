@@ -47,7 +47,6 @@ Some bindings are  available to quickstart new projects:
 
 The list is not exhaustive. ***Please add other bindings here !***
 
-
 ### Demos
 
 * Simple HTML5 Demos apps (ported from Tizen) on [github:iotbzh/afm-widget-examples](https://github.com/iotbzh/afm-widget-examples)
@@ -72,10 +71,7 @@ To get the background and motivation on why Application Framework has been rewri
 * [this discussion](https://lists.linuxfoundation.org/pipermail/automotive-discussions/2016-October/002749.html)
 * [Linux Automotive Security](http://iot.bzh/download/public/2016/security/Linux-Automotive-Security-v10.pdf)
 
-
 ### Comparison/Relationship with Tizen
-
-
 
                               Tizen           AGL
                               ----------------------------------
@@ -88,5 +84,3 @@ To get the background and motivation on why Application Framework has been rewri
     service as App**           No             yes
     Adding API    ***          core           core or App
     Devel model                bespoke        Standard Web
-
-

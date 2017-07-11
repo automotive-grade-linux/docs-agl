@@ -2,7 +2,7 @@
 
 Append to following lines to **conf/local.conf** to include libomxil under a commercial license to your build:
 
-```
+```bash
 # For libomxil
 LICENSE_FLAGS_WHITELIST = "commercial"
 
@@ -13,7 +13,7 @@ IMAGE_INSTALL_append = " libomxil"
 
 If you have Raspberry Pi official 7" touchscreen connected, you can rotate it with these lines in /etc/xdg/weston/weston.ini
 
-```
+```bash
 root@raspberrypi3:/etc/xdg/weston# cat weston.ini
 [core]
 backend=drm-backend.so
@@ -49,7 +49,7 @@ It is possible to debug AGL images on Raspberry Pi using 3.3V USB to serial cabl
 
 * Plug the USB connector of the cable to your computer and use your favorite tool for serial communication, for example on Ubuntu and other Linux distributions you may use screen:
 
-```
+```bash
 sudo screen /dev/ttyUSB0 115200
 ```
 

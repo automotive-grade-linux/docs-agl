@@ -8,14 +8,15 @@ When using tar to create the SDcard, it is a common error to not copy the extend
 
 Verify that **tar** version is 1.28 or newer:
 
-```
+```bash
 tar --version
 tar (GNU tar) 1.28
 [snip]
 ```
 
 If it is not the case, a native up-to-date version of tar is also generated while building AGL distribution:
-```
+
+```bash
 tmp/sysroots/x86_64-linux/usr/bin/tar-native/tar --version
 tar (GNU tar) 1.28
 [snip]
@@ -23,16 +24,17 @@ tar (GNU tar) 1.28
 
 To copy Automotive Grade Linux (AGL) files AND EXTENDED ATRIBUTES onto the SDcard using tar the command is:
 
-```
+```bash
 tar --extract --xz --numeric-owner --preserve-permissions --preserve-order --totals \
            --xattrs-include='*' --directory=DESTINATION_DIRECTORY --file=agl-demo-platform.....tar.xz
 ```
 
 ## meta-rust
+
 Due to a known bug in the upstream of meta-rust the Yocto/OE recipe for rust-cross may fail while building RVI SOTA Client or another application written in the Rust programming language.  
 Until the complete resolution of the issue the workaround is to disable all use of the CXX11 ABI by applying the following lines to **conf/local.conf**:
 
-```
+```bash
 LD_CXXFLAGS_append = " -D_GLIBCXX_USE_CXX11_ABI=0"
 TARGET_CXXFLAGS_append = " -D_GLIBCXX_USE_CXX11_ABI=0"
 CXXFLAGS_append = " -D_GLIBCXX_USE_CXX11_ABI=0"
@@ -40,15 +42,20 @@ CXXFLAGS_append = " -D_GLIBCXX_USE_CXX11_ABI=0"
 BUILD_CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0"
 TARGET_CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0" CXXFLAGS_remove_pn-gcc-runtime = "-D_GLIBCXX_USE_CXX11_ABI=0"
 ```
+
 ## Screen orientation for Splash and in Weston
+
 Depending of your scren mounting the default orientation of the UI an/or splash screen might be incorrect.
-To change the orientation of the splash screen patch 
-```
+To change the orientation of the splash screen patch
+
+```bash
 File: /etc/systemd/system/sysinit.target.wants/psplash-start.service
 Line:  ExecStart=/usr/bin/psplash -n -a 90
 ```
+
 To change the orientation of the UI in Weston patch
-```
+
+```bash
 File: /etc/xdg/weston/weston.ini
 Line: transform=90
 ```
@@ -63,7 +70,7 @@ To disable IVI-Shell and revert to the "plain old" weston desktop, you can follo
 
 * Modify */etc/xdg/weston/weston.ini* and comment the line mentioning IVI-shell. For example on Porter board:
 
-```
+```bash
            [core]
            backend=drm-backend.so
            #shell=ivi-shell.so
@@ -72,7 +79,7 @@ To disable IVI-Shell and revert to the "plain old" weston desktop, you can follo
 
 * modify */usr/lib/systemd/user/afm-user-daemon.service* and comment the line specifying QT Wayland backend:
 
-```
+```bash
            ...
            #Environment=QT_WAYLAND_SHELL_INTEGRATION=ivi-shell
            ...
@@ -80,7 +87,7 @@ To disable IVI-Shell and revert to the "plain old" weston desktop, you can follo
 
 * disable Homescreen services:
 
-```
+```bash
            # systemctl disable HomeScreenAppFrameworkBinderAGL.service
            # systemctl disable HomeScreen.service
            # systemctl disable InputEventManager.service
@@ -88,4 +95,3 @@ To disable IVI-Shell and revert to the "plain old" weston desktop, you can follo
 ```
 
 * Reboot your target and you should then be able to start apps on the standard weston screen using afm-util
-
