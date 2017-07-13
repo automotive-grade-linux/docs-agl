@@ -95,13 +95,13 @@ children:
     children:
         - 
             name: xds-server
-            url: reference/xds-server/xds-server.html
+            url: reference/xds-server.html
         - 
             name: xds-agent
-            url: reference/xds-agent/xds-agent.html
+            url: reference/xds-agent.html
         - 
             name: xds-exec
-            url: reference/xds-exec/xds-exec.html
+            url: reference/xds-exec.html
 - 
     name: Guides 
     children:

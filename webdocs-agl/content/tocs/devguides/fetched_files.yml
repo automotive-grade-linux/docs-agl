@@ -116,7 +116,7 @@ repositories:
     git_commit: "master"
     documents:
         - source: README.md
-          destination: xds-server.md
+          destination: reference/xds-server.md
           label: xds-server
 -
     url_fetch: "GITHUB_FETCH"
@@ -124,7 +124,7 @@ repositories:
     git_commit: "master"
     documents:
         - source: README.md
-          destination: xds-agent.md
+          destination: reference/xds-agent.md
           label: xds-agent
 -
     url_fetch: "GITHUB_FETCH"
@@ -132,7 +132,7 @@ repositories:
     git_commit: "master"
     documents:
         - source: README.md
-          destination: xds-exec.md
+          destination: reference/xds-exec.md
           label: xds-exec
 
 
