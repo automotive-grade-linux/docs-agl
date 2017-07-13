@@ -11,7 +11,6 @@ layout: techdoc
 **Table of Content**
 
 1. TOC
-
 {:toc}
 
 ## Platform Definition
