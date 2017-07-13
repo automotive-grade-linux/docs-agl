@@ -116,15 +116,16 @@ repositories:
     git_commit: "master"
     documents:
         - source: README.md
-          destination: reference/xds-server.md
+          destination: xds-server.md
           label: xds-server
 -
     url_fetch: "GITHUB_FETCH"
     git_name: iotbzh/xds-agent
     git_commit: "master"
     documents:
+        - source: resources/images/download_icon.jpg
         - source: README.md
-          destination: reference/xds-agent.md
+          destination: xds-agent.md
           label: xds-agent
 -
     url_fetch: "GITHUB_FETCH"
@@ -132,7 +133,7 @@ repositories:
     git_commit: "master"
     documents:
         - source: README.md
-          destination: reference/xds-exec.md
+          destination: xds-exec.md
           label: xds-exec
 
 
