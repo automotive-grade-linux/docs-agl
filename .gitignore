@@ -4,3 +4,4 @@ export
 .*.sw*
 .directory
 npm-debug.log
+*.DS_Store
