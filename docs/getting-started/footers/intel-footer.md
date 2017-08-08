@@ -7,7 +7,7 @@ Both the Joule and the Minnowboard require a BIOS upgrade. **Don t loose time tr
 ## Creating a bootable image
 
 Multiple options are avaiable but dd and tar can very easily let you down due to the requirement to pass SMACK labels, create a proper UEFI configuration and a few other tricks.  
-The script [mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh) has been done to help you.  
+The script [mkefi-agl.sh](https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git;a=blob_plain;f=scripts/mkefi-agl.sh;hb=HEAD) has been done to help you.
 The option -h will print the help and the option -v will detailled the operation and ease any debug.  
 
 ## Selecting the SD or USB to boot
