@@ -121,11 +121,11 @@ You can choose your source release
 
 ### Download Latest Stable Release
 
-To download all layers for the for the latest stable release, Chinook 3.0.1:
+To download all layers for the for the latest stable release, Chinook 3.0.4:
 
 ```bash
 cd $AGL_TOP
-repo init -b chinook -m chinook_3.0.1.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b chinook -m chinook_3.0.4.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
