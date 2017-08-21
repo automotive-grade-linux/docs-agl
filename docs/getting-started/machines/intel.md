@@ -1,23 +1,19 @@
-# Running AGL on Intel Minnowboard (and most Intel 64 bits HW)
+# Running AGL on Intel MinnowBoard (and most Intel 64 bits HW)
 
 ## Scope
 
 This documentation is aiming at people who want to run Automotive Grade
-Linux (AGL) on an Intel Hardware (HW).  
-While the reference HW used by AGL project is the Open Source Minnowboard.  
-This documentation [MinnowBoard wiki](https://minnowboard.org/) 
-can be used to enable most of 64 bits Intel Architecture (IA) using UEFI as boot loader.  
-In addition to the MinnowBoard, support for the the [Joule Developer Kit](https://software.intel.com/en-us/iot/hardware/joule/dev-kit) has been added. 
-You need to run the 64 bits version of the UEFI boot.  
-Minnowbaord Max and Turbo has well as the Joule are both 64 bits capable.
+Linux (AGL) on Intel Hardware (HW).
+While the reference HW used by AGL project is the Open Source MinnowBoard, this documentation [MinnowBoard wiki](https://minnowboard.org/) can be used to enable most of 64-bit Intel Architecture (IA) platforms using UEFI as boot loader.  
+In addition to the MinnowBoard, support for the [Joule Developer Kit](https://software.intel.com/en-us/iot/hardware/joule/dev-kit) has been added.
+You need to run the 64-bit version of the UEFI bootloader.
+MinnowBoard Max and Turbot as well as Joule are both 64-bit capable.
 
-**Note**:
+**Note**: This page is more focused on those who want to create bespoke AGL images and BSPs.
 
-* This page is more focused on please willing to create bespoke AGL image and BSP.
+If you are interested in creating ***applications*** to run on AGL, please visit the [Developing Apps for AGL](https://wiki.automotivelinux.org/agl-distro/developer_resources_intel_apps) documentation.
 
-If you are more interested by Apps creation, please visit [ Developing Apps for AGL](<https://wiki.automotivelinux.org/agl-distro/developer>_resources_intel_apps)
-
-UEFI has evolved a lot recently and you likely want to check that your HW firmware is up-to-date, this is mandatory for the Minnowboard and the Joule.
+UEFI has evolved a lot recently and you likely want to check that your HW firmware is up-to-date, this is mandatory for both the MinnowBoard and the Joule.
 
 [`https://firmware.intel.com/projects/minnowboard-max`](https://firmware.intel.com/projects/minnowboard-max)  
 [`https://software.intel.com/en-us/flashing-the-bios-on-joule`](https://software.intel.com/en-us/flashing-the-bios-on-joule)
@@ -26,20 +22,17 @@ UEFI has evolved a lot recently and you likely want to check that your HW firmwa
 
 ### Building an AGL image from scratch using Yocto
 
-**Note**:
+**Note**: an alternative method for building an image is to use the AGL SDK delivered in a Docker container.
 
-* An alternative method for building an image is to use the AGL SDK delivered in a Docker container.
+There is currently no SDK dedicated to IA but the SDK provided for the Porter Board can build an IA image without changes (just `aglsetup.sh` needs to call for Intel).
 
-There is currently no SDK dedicated to IA but the SDK provided for the Porter Board can build an IA image without changes (just aglsetup.sh needs to call for Intel).
-
-see chapter 2 of [Porter QuickStart](http://iot.bzh/download/public/2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf "wikilink").
+See chapter 2 of [Porter QuickStart](http://iot.bzh/download/public/2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf "wikilink").
 
 #### Download AGL source code
 
-Downloading the AGL sources from the various Git repositories is automated with the repo
-tools [to RepoDocumentation](https://source.android.com/source/using-repo.html "wikilink")
+Downloading the AGL sources from the various Git repositories is automated with the `repo` tool. Basic steps to download the AGL source code is described below and for more advanced topics involving the `repo` tool, please refer to the [`repo` documentation](https://source.android.com/source/using-repo.html "wikilink").
 
-To install the repo tool.
+To install the `repo` tool:
 
 ```bash
   mkdir -p ~/bin;
@@ -129,7 +122,7 @@ and download the file:
 
 Depending your target HW you will use an USB stick, an SD card or a HDD/SDD.  
 The creation process remains the same independently of the selected support.  
-It does require to have access to a Linux machine with sudo or root password.
+It does require to have access to a Linux machine with `sudo` or root password.
 
 ### Insert you removable media in the corresponding interface
 
@@ -141,19 +134,19 @@ It does require to have access to a Linux machine with sudo or root password.
   #(eg. /dev/sdc or /dev/mmcblk0)
 ```
 
-### Download the script mkefi-agl.sh
+### Download the script `mkefi-agl.sh`
 
 This script is present in the directory meta-agl/scripts from blowfish 2.0.4, alternatively you can download it from the following Git repo:  
 
 [https://github.com/dominig/mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh)
 
-### check the available option
+### check the available options
 
 ```bash
   sh mkefi-agl.sh -v;
 ```
 
-### create your media with the command ajusted to your configuration
+### create your media with the command adjusted to your configuration
 
 ```bash
   sudo sh mkefi-agl.sh MyAglImage.hdd /dev/sdX
@@ -172,9 +165,7 @@ This script is present in the directory meta-agl/scripts from blowfish 2.0.4, al
 
 1. Let AGL boot
 
-**Note:**:
-
-* Depending on the speed of the removable media, the first boot may not complete, in that case simply reboot the device.
+**Note:**: depending on the speed of the removable media, the first boot may not complete, in that case simply reboot the device.
 
 This is quite common with USB2 sticks.
 
