@@ -142,5 +142,15 @@ repositories:
         - source: README.md
           destination: xds-exec.md
           label: xds-exec
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: iotbzh/xds-gdb
+    git_commit: "master"
+    documents:
+        - source: docs/images/nb_newtool.jpg
+        - source: docs/images/nb_xds_options.jpg
+        - source: README.md
+          destination: xds-gdb.md
+          label: xds-gdb
 
 

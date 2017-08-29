@@ -102,6 +102,9 @@ children:
         - 
             name: xds-exec
             url: reference/xds-exec.html
+        - 
+            name: xds-gdb
+            url: reference/xds-gdb.html
 - 
     name: Guides 
     children:
