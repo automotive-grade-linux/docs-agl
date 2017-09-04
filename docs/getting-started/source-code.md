@@ -121,21 +121,21 @@ You can choose your source release
 
 ### Download Latest Stable Release
 
-To download all layers for the for the latest stable release, Chinook 3.0.4:
+To download all layers for the for the latest stable release, dab 4.0.0:
 
 ```bash
 cd $AGL_TOP
-repo init -b chinook -m chinook_3.0.4.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b dab -m dab_4.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
-### Download Latest on Chinook Branch
+### Download Latest on dab Branch
 
 To download all layers on the current release branch which may be in the midst of testing or changes prior to the next stable release:
 
 ```bash
 cd $AGL_TOP
-repo init -b chinook -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b dab -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
