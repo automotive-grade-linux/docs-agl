@@ -20,6 +20,13 @@ UEFI has evolved a lot recently and you likely want to check that your HW firmwa
 
 ## Where to find an AGL bootable image
 
+### Download a ready made image
+AGL provides ready made images for developers.
+You will find them on [AGL Download web site] (https://download.automotivelinux.org/AGL/release)
+image are located in YourPreferedRelease/intel-corei7-64/deploy/images/intel-corei7-64/
+Create a bootable SD card with the script [mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh)
+check the available options with the -v option. mkefi-agl.sh -v
+
 ### Building an AGL image from scratch using Yocto
 
 **Note**: an alternative method for building an image is to use the AGL SDK delivered in a Docker container.
