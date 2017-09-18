@@ -39,9 +39,8 @@ Here after is an example of the typical files downloaded at the time of writing:
 test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 chmod a+r $XDG_DOWNLOAD_DIR/*.zip
 ls -1 $XDG_DOWNLOAD_DIR
-total 8220
--rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20170427.zip
--rw-r--r--. 1 1664 agl-sdk 2.7M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170427.zip
+-rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
+-rw-r--r--. 1 1664 agl-sdk 3,0M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
 ```
 
 ## Setting up the build environment
@@ -76,11 +75,11 @@ In case of missing graphics drivers, you could notice an error message as follow
 /home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
 The graphics and multimedia acceleration packages for 
 the R-Car Gen3 board can be downloaded from:
- http://www.renesas.com/secret/r_car_download/rcar_demoboard.jsp
+ https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
 
 These 2 files from there should be store in your'/home/devel/Téléchargements' directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20170427.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20170427.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
 /home/working/workspace_agl_master/build_gen3
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
 --- end of setup script
