@@ -1,9 +1,9 @@
 #######################################################################
-# WARNING: 
+# WARNING:
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
-#  - do not forget to run 'docbuild --tocs' after any changes 
+#  - do not forget to run 'docbuild --tocs' after any changes
 #
-# 
+#
 ############################ SYNTAX ###################################
 # GLOBAL OPTIONS:
 #    name: TOC (page) title
@@ -13,7 +13,7 @@
 # TOC Entry:
 #     name: TOC entry (level 1)
 #     children:
-#         - 
+#         -
 #            name: optional name for TOC entry (default: use URL FrontMatter info)
 #            url: <subdir as defined with FETCH_DIR in conf/AppDefaults.js:
 #         -
@@ -48,65 +48,89 @@ children:
 -
     name: "Development Kit: build AGL image"
     children:
-        - 
+        -
             name: Abstract
             url: reference/sdk-devkit/docs/part-1/1_0_Abstract.html
-        - 
+        -
             name: Deploy image
             url: reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html
-        - 
+        -
             name: Setting up your operating system
             url: reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html
-        - 
+        -
             name: Install Docker image
             url: reference/sdk-devkit/docs/part-1/1_3-Install-agl-for-porter.html
-        - 
-            name: Inside the container 
+        -
+            name: Inside the container
             url: reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html
-        - 
-            name: Build image for Porter 
+        -
+            name: Build image for Porter
             url: reference/sdk-devkit/docs/part-1/1_5-Build-image-Porter.html
-        - 
+        -
             name: Porter image deployment
             url: reference/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.html
-        - 
-            name: SDK compilation and installation 
+        -
+            name: SDK compilation and installation
             url: reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html
 -
     name: "Development Kit: build AGL application"
     children:
-        - 
+        -
             name: Abstract
             url: reference/sdk-devkit/docs/part-2/2_0_Abstract.html
-        - 
+        -
             name: Initialize SDK environment
             url: reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html
-        - 
+        -
             name: Trying out template
             url: reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html
-        - 
+        -
             name: Developing with container
             url: reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html
-        - 
+        -
             name: Use CMake templates to develop an app
             url: reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html
 -
-    name: "XDS : X(cross) Development System Agent"
+    name: "X(cross) Development System: User's Guide"
     children:
-        - 
+        -
+            name: Getting Started
+            url: reference/xds/part-1/0_Abstract.html
+        -
+            name: Installing xds client tools
+            url: reference/xds/part-1/1_install-client.html
+        -
+            name: Installing xds-server
+            url: reference/xds/part-1/2_install-xds-server.html
+        -
+            name: Installing AGL SDKs
+            url: reference/xds/part-1/3_install-sdks.html
+        -
+            name: Create your first AGL application
+            url: reference/xds/part-1/4_build-first-app.html
+        -
+            name: Debug your first AGL application
+            url: reference/xds/part-1/5_debug-first-app.html
+-
+    name: "X(cross) Development System: Internals:"
+    children:
+        -
+            name: Abstract
+            url: reference/xds/part-2/0_Abstract.html
+        -
             name: xds-server
-            url: reference/xds-server.html
-        - 
+            url: reference/xds/part-2/1_xds-server.html
+        -
             name: xds-agent
-            url: reference/xds-agent.html
-        - 
+            url: reference/xds/part-2/2_xds-agent.html
+        -
             name: xds-exec
-            url: reference/xds-exec.html
-        - 
+            url: reference/xds/part-2/3_xds-exec.html
+        -
             name: xds-gdb
-            url: reference/xds-gdb.html
-- 
-    name: Guides 
+            url: reference/xds/part-2/4_xds-gdb.html
+-
+    name: Guides
     children:
         -
             name: AppFW - Privileges Management

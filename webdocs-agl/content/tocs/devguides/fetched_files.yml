@@ -119,38 +119,32 @@ repositories:
           destination: 2_4-Use-app-templates.md
 -
     url_fetch: "GITHUB_FETCH"
-    git_name: iotbzh/xds-server
+    git_name: iotbzh/xds-docs
     git_commit: "master"
+    src_prefix: "docs"
+    dst_prefix: "xds"
     documents:
-        - source: README.md
-          destination: xds-server.md
-          label: xds-server
--
-    url_fetch: "GITHUB_FETCH"
-    git_name: iotbzh/xds-agent
-    git_commit: "master"
-    documents:
-        - source: resources/images/download_icon.jpg
-        - source: README.md
-          destination: xds-agent.md
-          label: xds-agent
--
-    url_fetch: "GITHUB_FETCH"
-    git_name: iotbzh/xds-exec
-    git_commit: "master"
-    documents:
-        - source: README.md
-          destination: xds-exec.md
-          label: xds-exec
--
-    url_fetch: "GITHUB_FETCH"
-    git_name: iotbzh/xds-gdb
-    git_commit: "master"
-    documents:
-        - source: docs/images/nb_newtool.jpg
-        - source: docs/images/nb_xds_options.jpg
-        - source: README.md
-          destination: xds-gdb.md
-          label: xds-gdb
-
-
+        - source: part-1/0_Abstract.md
+        - source: part-1/1_install-client.md
+        - source: part-1/2_install-xds-server.md
+        - source: part-1/3_install-sdks.md
+        - source: part-1/4_build-first-app.md
+        - source: part-1/5_debug-first-app.md
+        - source: part-1/pictures/nb_new-project-2.png
+        - source: part-1/pictures/nb_newtool.png
+        - source: part-1/pictures/nb_xds_options.png
+        - source: part-1/pictures/xds-conf.png
+        - source: part-1/pictures/xds-dashboard-icon-2.png
+        - source: part-1/pictures/xds-dashboard-prj-1.png
+        - source: part-1/pictures/nb_new-project-1.png
+        - source: part-1/pictures/nb_new-project-3.png
+        - source: part-1/pictures/nb_project_debug-1.png
+        - source: part-1/pictures/xds-block-diagram.png
+        - source: part-1/pictures/xds-dashboard-icon-1.png
+        - source: part-1/pictures/xds-dashboard-icon-3.png
+        - source: part-1/pictures/xds-dashboard-prj-2.png
+        - source: part-2/0_Abstract.md
+        - source: part-2/1_xds-server.md
+        - source: part-2/2_xds-agent.md
+        - source: part-2/3_xds-exec.md
+        - source: part-2/4_xds-gdb.md
