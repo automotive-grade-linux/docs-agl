@@ -112,7 +112,7 @@ children:
             name: Debug your first AGL application
             url: reference/xds/part-1/5_debug-first-app.html
 -
-    name: "X(cross) Development System: Internals:"
+    name: "X(cross) Development System: Internals"
     children:
         -
             name: Abstract
