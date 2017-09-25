@@ -23,7 +23,8 @@ The following documents may also be helpful:
 
 Before setting up the build environment, you need to download the proprietary drivers.
 
-* Download Renesas graphics drivers with a "click through" license from Renesas website [Link][rcar Linux Drivers]
+* Download Renesas graphics drivers with a "click through" license from [Renesas website][rcar Linux Drivers 2]
+  * If you are building **AGL Daring Dab or older release** download Renesas graphics drivers with a "click through" license from [here][rcar Linux Drivers].
   * Under the Target hardware: **R-Car H3/M3** section.
 
 **Note**:
@@ -620,6 +621,7 @@ Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside 
 [R-car h3ulcb]: http://elinux.org/R-Car/Boards/H3SK
 [R-car yocto]: http://elinux.org/R-Car/Boards/Yocto-Gen3
 [rcar Linux Drivers]: https://www.renesas.com/solutions/automotive/rcar-demoboard.html
+[rcar Linux Drivers 2]: https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
 [Iot.bzh AGL-Kickstart-on-Renesas-Porter-Board]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
 [Iot.bzh AGL-Devkit-Image-and-SDK-for-Porter]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf
 [Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf
