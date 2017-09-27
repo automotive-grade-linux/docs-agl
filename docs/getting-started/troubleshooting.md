@@ -60,7 +60,7 @@ File: /etc/xdg/weston/weston.ini
 Line: transform=90
 ```
 
-## Disabling Homescreen in AGL 3.0.x CC release
+## Disabling Homescreen in AGL 4.0.x DD release
 
 **Problem**: new installed applications are not available on Homescreen and even if started manually through afm-util, the application starts but no surface appears.
 
@@ -77,7 +77,7 @@ To disable IVI-Shell and revert to the "plain old" weston desktop, you can follo
            ...
 ```
 
-* modify */usr/lib/systemd/user/afm-user-daemon.service* and comment the line specifying QT Wayland backend:
+* modify */etc/afm/unit.env.d/qt-for-ivi-shell* and comment the line specifying QT Wayland backend:
 
 ```bash
            ...
@@ -85,13 +85,12 @@ To disable IVI-Shell and revert to the "plain old" weston desktop, you can follo
            ...
 ```
 
+(If you use vi, remove backup files by `rm /etc/afm/unit.env.d/*~`)
+
 * disable Homescreen services:
 
 ```bash
-           # systemctl disable HomeScreenAppFrameworkBinderAGL.service
-           # systemctl disable HomeScreen.service
-           # systemctl disable InputEventManager.service
-           # systemctl disable WindowManager.service
+           # systemctl --user mask HomeScreen.service
 ```
 
 * Reboot your target and you should then be able to start apps on the standard weston screen using afm-util
