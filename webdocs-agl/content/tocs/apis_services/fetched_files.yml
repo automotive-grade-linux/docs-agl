@@ -99,6 +99,39 @@ repositories:
         - source: pictures/triskel_iot_bzh.svg
 
 -
+    git_name : apps/low-level-can-service
+    git_commit: master
+    src_prefix : docs
+    dst_prefix: signaling
+    documents:
+        - source: 1-Architecture.md
+          destination: low-can-architecture.md
+          label: Architecture presentation
+        - source: 2-Installation.md
+          destination: low-can-installation-guide.md
+          label: Installation Guide
+        - source: 3-Usage.md
+          destination: low-can-usage-guide.md
+          label: Usage Guide
+        - source: images/CAN_bindings_communication.png
+        - source: images/CAN_level_mapping.png
+        - source: images/OpenXC_to_AGL.png
+
+-
+    url_fetch: GITHUB_FETCH
+    git_name : iotbzh/high-level-viwi-service
+    git_commit: master
+    src_prefix : docs
+    dst_prefix: signaling
+    documents:
+        - source: 1-Architecture.md
+          destination: high-viwi-architecture.md
+          label: Architecture presentation
+        - source: 2-Install-Usage.md
+          destination: high-viwi-install-usage-guide.md
+          label: Installation and Usage Guide
+        - source: images/high-level-arch.png
+-
     url_fetch: AGL_GITHUB_FETCH
     url_edit: AGL_GITHUB_EDIT
     git_name: "%project_source%/docs-agl"
@@ -120,9 +153,6 @@ repositories:
         - source: architecture.md
           destination: architecture.md
           label: Signaling Architecture
-        - source: low-level-can-service-guide.md
-          destination: low-level-can-service-guide.md
-          label: Low level CAN service Guide
         - source: high-level-viwi-service.md
           destination: high-level-viwi-service.md
           label: High level ViWi service Guide
@@ -136,9 +166,6 @@ repositories:
         - source: images/distributed-arch.svg
         - source: images/distributed-arch.png
         - source: images/signal-service-arch.svg
-        - source: images/OpenXC_to_AGL.png
-        - source: images/CAN_level_mapping.png
-        - source: images/CAN_bindings_communication.png
         - source: images/high-level-arch.png
 -
     url_fetch: http://iot.bzh/download/public/2016/%source%

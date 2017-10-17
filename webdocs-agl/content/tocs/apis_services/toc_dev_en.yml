@@ -65,8 +65,15 @@ children:
     name: Message Signaling
     children:
         - url: reference/signaling/architecture.html
-        - url: reference/signaling/low-level-can-service-guide.html
-        - url: reference/signaling/high-level-viwi-service.html
+        - name: Low level CAN service Guide
+          children:
+                - url: reference/signaling/low-can-architecture.html
+                - url: reference/signaling/low-can-installation-guide.html
+                - url: reference/signaling/low-can-usage-guide.html
+        - name: High level ViWi service Guide
+          children:
+                - url: reference/signaling/high-viwi-architecture.html
+                - url: reference/signaling/high-viwi-install-usage-guide.html
         - name: Developer Guidelines
           url: reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf
         - name: CAN Signaling Benchmark
