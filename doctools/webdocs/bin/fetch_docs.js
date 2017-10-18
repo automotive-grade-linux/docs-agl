@@ -31,10 +31,10 @@ var errorCount;
 var doneCB;
 
 function mkdirp (p) {
-    
-    if (fs.existsSync(p)) return;    
+
+    if (fs.existsSync(p)) return;
     var ptree= p.split('/');
-    
+
     for (var idx=0; idx < ptree.length; idx++) {
         var dirpath = ptree.slice(0,idx).join('/');
         console.log ("idx=%s", idx, dirpath);
@@ -73,7 +73,7 @@ function localCopy (argv, repo, document) {
     var srcURI = repo.url_fetch.replace ("%source%", path.join (repo.src_prefix, document.source));
     if (!document.destination) document.destination= path.join (repo.destination, document.source);
     else document.destination = path.join(repo.destination, document.destination);
-    
+
     var outFileDir  = path.dirname(document.destination);
     // create directory for the file if it doesn't exist
     if (!fs.existsSync(outFileDir)) fse.mkdirsSync(outFileDir);
@@ -81,7 +81,10 @@ function localCopy (argv, repo, document) {
     if (path.extname(srcURI)===".md"){
         // open the file for writing
         var outFile = fs.createWriteStream(document.destination);
-        var editURI  = repo.url_edit.replace  ("%source%", path.join (repo.src_prefix, document.source));
+        var editURI  = ""
+        if (repo.url_edit) {
+            editURI = repo.url_edit.replace  ("%source%", path.join (repo.src_prefix, document.source));
+        }
         // start a default front master
         var newFrontMatter = {
             edit_link: document.edit  || editURI || "",
@@ -133,7 +136,7 @@ function downloadEntry(argv, repo, document) {
         title:     document.title || document.label,
         origin_url: fetchURI
     };
-    
+
     // create directory for the file if it doesn't exist
     if (!fs.existsSync(outFileDir)) fse.mkdirsSync(outFileDir);
 
@@ -142,7 +145,7 @@ function downloadEntry(argv, repo, document) {
     getCount ++;
 
     if (argv.verbose) console.log ("      < src=%s", fetchURI);
-    
+
     // open an HTTP request for the file
     var protocol;
     if (fetchURI.startsWith("http:")) {
@@ -157,7 +160,7 @@ function downloadEntry(argv, repo, document) {
     var request= protocol.get(fetchURI, function (response) {
 
         if (argv.verbose) console.log ("      > dst=%s", document.destination);
-        
+
         if (response.statusCode !== 200) {
             console.error("ERROR: " + fetchURI + ": got %s errCount=%d", response.statusCode, errorCount);
             errorCount++;
@@ -176,7 +179,7 @@ function downloadEntry(argv, repo, document) {
 
         // process the response when it finishes
         response.on('end', function () {
-            
+
             if (isTextFile(document.source)) {
                 // merge new front matter and file's own front matter (if it had any)
                 //
@@ -208,9 +211,9 @@ function downloadEntry(argv, repo, document) {
                 }
             });
         });
-        
+
     }); // http request
-    
+
     request.on ('error', function(e) {
             console.error("Hoop: fetch URL=%s fail err=[%s]", fetchURI,  e);
             errorCount ++;
@@ -231,7 +234,7 @@ function FetchFiles (argv, item, fetchconf, version) {
         console.log ("ERROR: reading [%s] error=[%s]", fetchconf, error);
         process.exit(1);
     }
-    
+
     // get version
     if (fs.existsSync (version)) {
         var fetchVersion   = fs.readFileSync(version);
@@ -248,7 +251,7 @@ function FetchFiles (argv, item, fetchconf, version) {
         console.log ("    + Destination = [%s]", destination);
     }
     if (!fs.existsSync(destination)) fse.mkdirsSync(destination);
-    
+
     var global = {
         url_fetch  : tocConfig.url_fetch,
         url_edit   : tocConfig.url_edit,
@@ -261,11 +264,11 @@ function FetchFiles (argv, item, fetchconf, version) {
         console.log ("    * WARNING: no repositories defined in %s",fetchconf);
         return;
     }
-      
+
     for  (var idx in tocConfig.repositories) {
-        var repository =  tocConfig.repositories[idx];   
-        var repodest; 
-                
+        var repository =  tocConfig.repositories[idx];
+        var repodest;
+
         if (repository.dst_prefix) repodest= path.join (destination, repository.dst_prefix || "");
         else repodest=global.destination;
 
@@ -291,11 +294,22 @@ function FetchFiles (argv, item, fetchconf, version) {
             repo.url_fetch= path.join (path.dirname(path.dirname(config.SITE_DIR)), "%source%");
             do_local_copy=true;
         } else {
-            // get url from config is default formating present in config
-            if (config[repo.url_fetch]) repo.url_fetch = config[repo.url_fetch];
-            do_local_copy=false;
+            // Support url_fetch = local directory in order to allow user to test
+            // changes using local directory / git repo
+            try {
+                if (fs.statSync(repo.url_fetch).isDirectory()) {
+                    repo.url_fetch= path.join (repo.url_fetch, "%source%");
+                    do_local_copy=true;
+                }
+            } catch (err) {}
+
+            if (!do_local_copy) {
+                // get url from config is default formating present in config
+                if (config[repo.url_fetch]) repo.url_fetch = config[repo.url_fetch];
+                do_local_copy=false;
+            }
         }
-        
+
         if (config[repo.url_edit])  repo.url_edit  = config[repo.url_edit];
         if (config[repo.git_name])  repo.git_name  = config[repo.git_name];
         repo.url_fetch= repo.url_fetch.replace ("%repo%"  , repo.git_name);
@@ -311,7 +325,7 @@ function FetchFiles (argv, item, fetchconf, version) {
             console.log ("    + Fetching Repo=%s", repo.url_fetch);
         }
 
-        // if destination directory does not exist create it 
+        // if destination directory does not exist create it
         if (!fs.existsSync(repo.destination)) fse.mkdirsSync(repo.destination);
         else {
             if (!argv.force) {
@@ -339,7 +353,7 @@ function FetchFiles (argv, item, fetchconf, version) {
 }
 
 function main (conf, argv, nextRequest) {
-    config    = conf;  // make config global 
+    config    = conf;  // make config global
     getCount  = 0;     // Global writable active Streams
     errorCount=0;
     doneCB = nextRequest;
@@ -353,7 +367,7 @@ function main (conf, argv, nextRequest) {
         var tocDir   = path.join (config.TOCS_DIR, tocs[item]);
         var fetchconf= path.join (config.TOCS_DIR, tocs[item], config.FETCH_CONFIG);
         var version  = path.join (config.TOCS_DIR, tocs[item], config.VERSION_LATEST);
-        
+
         if (fs.existsSync(fetchconf)) {
             FetchFiles (argv, tocs[item], fetchconf, version);
         } else {
