@@ -139,6 +139,7 @@ repositories:
         - source: part-1/pictures/nb_new-project-1.png
         - source: part-1/pictures/nb_new-project-3.png
         - source: part-1/pictures/nb_new-project-4.png
+        - source: part-1/pictures/nb_new-project-5.png
         - source: part-1/pictures/nb_project_debug-1.png
         - source: part-1/pictures/xds-block-diagram.png
         - source: part-1/pictures/xds-dashboard-icon-1.png
