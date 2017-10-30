@@ -84,7 +84,19 @@ children:
     children:
         - url: reference/audio/resources.html
 -
-    name: HomeScreen
+    name: HMI Framework
+    children:
+        -
+            name: Home Screen Developper Guide
+            url: reference/hmi-framework/3_1-HomeScreen-Guide.html
+        -
+            name: Window Manager Developper Guide
+            url: reference/hmi-framework/3_2-WindowManager-Guide.html
+        -
+            name: Sound Manager Developper Guide
+            url: reference/hmi-framework/3_3-SoundManager-Guide.html
+-
+    name: HomeScreen (old)
     children:
         - url: reference/homescreen/homescreen_api.html
 

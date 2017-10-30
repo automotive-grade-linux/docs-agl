@@ -185,6 +185,62 @@ repositories:
           destination: resources.md
           label: Resources
 -
+    url_fetch: "GITHUB_FETCH"
+    git_name: hiroshi-kojima/AGL-HMIFW-Docs
+    git_commit: "master"
+    src_prefix: HomeScreen/
+    dst_prefix: hmi-framework/
+    documents:
+        - source: ApplicationGuide.md
+          destination: 3_1-HomeScreen-Guide.md
+          label: Home Screen Developper Guide
+        - source: parts/initialize.svg
+        - source: parts/initialize-registercallback.svg
+        - source: parts/initialize-set-event-handler.svg
+        - source: parts/on_screen_message.svg
+        - source: parts/software-stack.png
+        - source: parts/tap_shortcut.svg
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: hiroshi-kojima/AGL-HMIFW-Docs
+    git_commit: "master"
+    src_prefix: WindowManager/
+    dst_prefix: hmi-framework/
+    documents:
+        - source: ApplicationGuide.md
+          destination: 3_2-WindowManager-Guide.md
+          label: Window Manager Developper Guide
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: hiroshi-kojima/AGL-HMIFW-Docs
+    git_commit: "master"
+    src_prefix: SoundManager/
+    dst_prefix: hmi-framework/
+    documents:
+        - source: ApplicationGuide.md
+          destination: 3_3-SoundManager-Guide.md
+          label: Sound Manager Developper Guide
+        - source: Display_Audio_Transition1.md
+          destination: Display_Audio_Transition1.md
+          label: Sound Manager Developper Guide 2
+        - source: Display_Audio_Transition2.md
+          destination: Display_Audio_Transition2.md
+          label: Sound Manager Developper Guide 3
+        - source: parts/seq_startup.svg
+        - source: parts/am-component.png
+        - source: parts/seq_registration.svg
+        - source: parts/seq_connectsoundroute.svg
+        - source: parts/seq_startsoundstreaming.svg
+        - source: parts/seq_requestsoundmode.svg
+        - source: parts/seq_setmutestate.svg
+        - source: parts/seq_changevolume.svg
+        - source: parts/seq_stopsoundstreaming.svg
+        - source: parts/seq_disconnectsoundroute.svg
+        - source: parts/software-stack.png
+        - source: parts/seq_releasesoundmode.svg
+        - source: parts/typical-usecase.png
+        - source: parts/am-component.png
+-
     url_fetch  : GERRIT_FETCH
     git_commit : master
     git_name   : apps/homescreen
