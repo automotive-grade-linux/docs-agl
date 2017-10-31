@@ -185,10 +185,10 @@ repositories:
           destination: resources.md
           label: Resources
 -
-    url_fetch: "GITHUB_FETCH"
-    git_name: hiroshi-kojima/AGL-HMIFW-Docs
+    url_fetch: "GERRIT_FETCH"
+    git_name: apps/agl-service-homescreen-2017
     git_commit: "master"
-    src_prefix: HomeScreen/
+    src_prefix: doc/
     dst_prefix: hmi-framework/
     documents:
         - source: ApplicationGuide.md
@@ -201,20 +201,20 @@ repositories:
         - source: parts/software-stack.png
         - source: parts/tap_shortcut.svg
 -
-    url_fetch: "GITHUB_FETCH"
-    git_name: hiroshi-kojima/AGL-HMIFW-Docs
+    url_fetch: "GERRIT_FETCH"
+    git_name: apps/agl-service-windowmanager-2017
     git_commit: "master"
-    src_prefix: WindowManager/
+    src_prefix: doc/
     dst_prefix: hmi-framework/
     documents:
         - source: ApplicationGuide.md
           destination: 3_2-WindowManager-Guide.md
           label: Window Manager Developper Guide
 -
-    url_fetch: "GITHUB_FETCH"
-    git_name: hiroshi-kojima/AGL-HMIFW-Docs
+    url_fetch: "GERRIT_FETCH"
+    git_name: apps/agl-service-soundmanager-2017
     git_commit: "master"
-    src_prefix: SoundManager/
+    src_prefix: doc/
     dst_prefix: hmi-framework/
     documents:
         - source: ApplicationGuide.md
