@@ -60,7 +60,7 @@ Boot the **agl-demo-platform-qemux86-64.vmdk** image in qemu with kvm support:
 qemu-system-x86_64 -enable-kvm -m 2048 \
 	-hda agl-demo-platform-qemux86-64.vmdk \
 	-cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt \
-	-vga std -show-cursor \
+	-vga virtio -show-cursor \
 	-device virtio-rng-pci \
 	-serial mon:stdio -serial null \
 	-soundhw hda \
@@ -72,7 +72,7 @@ qemu-system-x86_64 -enable-kvm -m 2048 \
 
 #### Install
 
-Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 5.2.0 or later.
 
 #### Boot
 
