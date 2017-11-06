@@ -70,7 +70,8 @@ The essential and graphical packages you need for a supported OpenSUSE distribut
 
 ```bash
 sudo zypper install python gcc gcc-c++ git chrpath make wget python-xml \
-     diffstat texinfo python-curses patch socat libSDL-devel xterm curl
+     diffstat texinfo python-curses patch socat libSDL-devel xterm curl \
+     python3 python3-curses glibc-locale
 ```
 
 ### CentOS
