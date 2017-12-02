@@ -33,7 +33,10 @@ config = {
     
     //GEM_FILE : "Absolute Path to GemFile when not within DOCS_TOOLS directory"
 
-	GERRIT_FETCH: "https://gerrit.automotivelinux.org/gerrit/gitweb?p=%repo%.git;a=blob_plain;f=%source%;hb=%commit%",
+	// content not accessible through gerrit (see SPEC-1155)
+	//GERRIT_FETCH: "https://gerrit.automotivelinux.org/gerrit/gitweb?p=%repo%.git;a=blob_plain;f=%source%;hb=%commit%",
+	// alternate url using cgit
+	GERRIT_FETCH: "https://git.automotivelinux.org/%repo%/plain/%source%?h=%commit%",
 	AGL_GERRIT_BRANCH : "master",
 
 	LAST: undefined
