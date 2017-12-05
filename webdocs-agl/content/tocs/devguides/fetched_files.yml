@@ -130,23 +130,25 @@ repositories:
         - source: part-1/3_install-sdks.md
         - source: part-1/4_build-first-app.md
         - source: part-1/5_debug-first-app.md
-        - source: part-1/pictures/nb_new-project-2.png
-        - source: part-1/pictures/nb_newtool.png
-        - source: part-1/pictures/nb_xds_options.png
-        - source: part-1/pictures/xds-conf.png
-        - source: part-1/pictures/xds-dashboard-icon-2.png
-        - source: part-1/pictures/xds-dashboard-prj-1.png
         - source: part-1/pictures/nb_new-project-1.png
+        - source: part-1/pictures/nb_new-project-2.png
         - source: part-1/pictures/nb_new-project-3.png
         - source: part-1/pictures/nb_new-project-4.png
         - source: part-1/pictures/nb_new-project-5.png
+        - source: part-1/pictures/nb_newtool.png
         - source: part-1/pictures/nb_project_debug-1.png
+        - source: part-1/pictures/nb_xds_options.png
+        - source: part-1/pictures/xds-block-chain.png
         - source: part-1/pictures/xds-block-diagram.png
+        - source: part-1/pictures/xds-conf.png
         - source: part-1/pictures/xds-dashboard-icon-1.png
+        - source: part-1/pictures/xds-dashboard-icon-2.png
         - source: part-1/pictures/xds-dashboard-icon-3.png
+        - source: part-1/pictures/xds-dashboard-prj-1.png
         - source: part-1/pictures/xds-dashboard-prj-2.png
         - source: part-2/0_Abstract.md
         - source: part-2/1_xds-server.md
         - source: part-2/2_xds-agent.md
-        - source: part-2/3_xds-exec.md
+        - source: part-2/3_xds-cli.md
         - source: part-2/4_xds-gdb.md
+        - source: part-2/5_xds-exec.md
