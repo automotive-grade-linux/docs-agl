@@ -23,7 +23,7 @@
 # ------------------------------------
 # url: "GERRIT_FETCH"
 # git_commit: "master"
-# repositories: 
+# repositories:
 # -
 #    git_name: src/foo
 #    src_prefix: docs
@@ -43,7 +43,7 @@ git_commit : "AGL_GITHUB_BRANCH"
 #git_commit : # default defined in _tocs/xxxx/latest.yml
 #dst_prefix : # destination_path = destination_prefix + (document.destination || document.source)
 
-repositories:   
+repositories:
 -
     url_fetch: https://wiki.automotivelinux.org/_media/%source%
     dst_prefix: AGL_Specifications
@@ -68,3 +68,87 @@ repositories:
           label: Application Security
         - source: 07-system-hardening.md
           label: System Hardening
+
+-
+    git_name : "%project_source%/docs-agl"
+    src_prefix : docs/security-blueprint
+    dst_prefix: security
+    documents:
+          - source: README.md
+            label: Introduction
+          - source: WhiteBoxArchi.png
+            label: AGL architecture
+          - source: annexes/0_Abstract.md
+            label: Annexes
+          - source: annexes/ConfigNotes.md
+            label: Config notes
+          - source: annexes/todo.md
+            label: todo
+          - source: annexes/todoNotes.md
+            label: Todo notes
+          - source: part-1/0_Abstract.md
+            label: Introduction
+          - source: part-2/0_Abstract.md
+            label: Introduction
+          - source: part-2/1-Image.md
+            label: Image
+          - source: part-2/2-Communication-modes.md
+            label: Communication modes
+          - source: part-2/3-Consoles.md
+            label: Consoles
+          - source: part-3/0_Abstract.md
+            label: Introduction
+          - source: part-4/0_Abstract.md
+            label: Introduction
+          - source: part-4/1-General.md
+            label: General
+          - source: part-4/2-Memory.md
+            label: Memory
+          - source: part-4/3-Consoles.md
+            label: Consoles
+          - source: part-4/4-Debug.md
+            label: Debug
+          - source: part-4/5-FileSystems.md
+            label: File Systems
+          - source: part-5/0_Abstract.md
+            label: Introduction
+          - source: part-5/1-MAC.md
+            label: Mandatory Access Control
+          - source: part-5/2-SystemD.md
+            label: SystemD
+          - source: part-5/3-SystemBus.md
+            label: SystemBus
+          - source: part-5/4-Services.md
+            label: System services and daemons
+          - source: part-5/5-AppFw.md
+            label: App Framework
+          - source: part-5/6-Utilities.md
+            label: Utilities
+          - source: part-5/7-Users.md
+            label: Users
+          - source: part-6/0_Abstract.md
+            label: Introduction
+          - source: part-6/1-Installation.md
+            label: Installation
+          - source: part-6/2-PrivilegeManagement.md
+            label: Privilege management
+          - source: part-6/3-Signature.md
+            label: Signature
+          - source: part-6/4-Services.md
+            label: Services
+          - source: part-7/0_Abstract.md
+            label: Introduction
+          - source: part-7/1-BusAndConnectors.md
+            label: Bus and connectors
+          - source: part-7/2-Wireless.md
+            label: Wireless
+          - source: part-7/3-Cloud.md
+            label: Cloud
+          - source: part-8/0_Abstract.md
+            label: Introduction
+          - source: part-8/1-FOTA.md
+            label: FOTA
+          - source: part-8/2-SOTA.md
+            label: SOTA
+          - source: part-9/0_Abstract.md
+            label: Introduction

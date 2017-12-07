@@ -23,7 +23,7 @@
 # ------------------------------------
 # url: "GERRIT_FETCH"
 # git_commit: "master"
-# repositories: 
+# repositories:
 # -
 #    git_name: src/foo
 #    src_prefix: docs
@@ -40,7 +40,7 @@
 url_fetch  : "GERRIT_FETCH"
 git_commit : "AGL_GERRIT_BRANCH"
 
-repositories:   
+repositories:
 -
     git_name : src/app-framework-main
     git_commit: master
@@ -153,9 +153,6 @@ repositories:
         - source: architecture.md
           destination: architecture.md
           label: Signaling Architecture
-        - source: high-level-viwi-service.md
-          destination: high-level-viwi-service.md
-          label: High level ViWi service Guide
         - source: index.md
           destination: resources.md
           label: Resources
@@ -166,7 +163,6 @@ repositories:
         - source: images/distributed-arch.svg
         - source: images/distributed-arch.png
         - source: images/signal-service-arch.svg
-        - source: images/high-level-arch.png
 -
     url_fetch: http://iot.bzh/download/public/2016/%source%
     dst_prefix: iotbzh2016
@@ -267,4 +263,3 @@ repositories:
           destination: pictures/api_requestSurfaceIdToFullScreen.png
         - source: pictures/api_surfaceVisibilityChanged.png
           destination: pictures/api_surfaceVisibilityChanged.png
-
