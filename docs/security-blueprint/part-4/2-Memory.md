@@ -1,0 +1,144 @@
+# Memory
+
+## Restrict access to kernel memory
+
+The /dev/kmem file in Linux systems is directly mapped to kernel virtual memory. This can be disastrous if an attacker gains root access, as the attacker would have direct access to kernel virtual memory.
+
+To disable the /dev/kmem file, which is very infrequently used by applications, the following kernel option should be set in the compile-time kernel configuration:
+
+<!-- config -->
+
+Domain                         | `Config` name    | `Value`
+------------------------------ | ---------------- | -------
+Kernel-Memory-RestrictAccess-1 | `CONFIG_DEVKMEM` | `n`
+
+<!-- endconfig -->
+
+In case applications in userspace need /dev/kmem support, it should be available only for authenticated applications.
+
+--------------------------------------------------------------------------------
+
+## Disable access to a kernel core dump
+
+This kernel configuration disables access to a kernel core dump from user space. If enabled, it gives attackers a useful view into kernel memory.
+
+<!-- config -->
+
+Domain                   | `Config` name       | `Value`
+------------------------ | ------------------- | -------
+Kernel-Memory-CoreDump-1 | `CONFIG_PROC_KCORE` | `n`
+
+<!-- endconfig -->
+
+--------------------------------------------------------------------------------
+
+## Disable swap
+
+If not disabled, attackers can enable swap at runtime, add pressure to the memory subsystem and then scour the pages written to swap for useful information.
+
+<!-- config -->
+
+Domain               | `Config` name | `Value`
+-------------------- | ------------- | -------
+Kernel-Memory-Swap-1 | `CONFIG_SWAP` | `n`
+
+<!-- endconfig -->
+
+--------------------------------------------------------------------------------
+
+<!-- pagebreak -->
+
+## Disable "Load All Symbols"
+
+There is a /proc/kallsyms file which exposes the kernel memory space address of many kernel symbols (functions, variables, etc...). This information is useful to attackers in identifying kernel versions/configurations and in preparing payloads for the exploits of kernel space.
+
+Both `KALLSYMS_ALL` and `KALLSYMS` shall be disabled;
+
+<!-- config -->
+
+Domain                         | `Config` name         | `Value`
+------------------------------ | --------------------- | -------
+Kernel-Memory-LoadAllSymbols-1 | `CONFIG_KALLSYMS`     | `n`
+Kernel-Memory-LoadAllSymbols-2 | `CONFIG_KALLSYMS_ALL` | `n`
+
+<!-- endconfig -->
+
+--------------------------------------------------------------------------------
+
+## Stack protection
+
+To prevent stack-smashing, similar to the stack protector used for ELF programs in user-space, the kernel can protect its internal stacks as well.
+
+This configuration is supported in **Linux 3.11 and greater** and thus should only be enabled for such versions.
+
+This configuration also requires building the kernel with the **gcc compiler 4.2 or greater**.
+
+<!-- config -->
+
+Domain                | `Config` name              | `Value`
+--------------------- | -------------------------- | -------
+Kernel-Memory-Stack-1 | `CONFIG_CC_STACKPROTECTOR` | `y`
+
+<!-- endconfig -->
+
+--------------------------------------------------------------------------------
+
+## Disable access to /dev/mem
+
+The /dev/mem file in Linux systems is directly mapped to physical memory. This can be disastrous if an attacker gains root access, as the attacker would have direct access to physical memory through this convenient device file. It may not always be possible to disable such file, as some applications might need such support. In that case, then this device file should be available only for authenticated applications.
+
+This configuration is supported in **Linux 4.0 and greater** and thus should only be disabled for such versions.
+
+<!-- config -->
+
+Domain                 | `Config` name   | `Value`
+---------------------- | --------------- | -------
+Kernel-Memory-Access-1 | `CONFIG_DEVMEM` | `n`
+
+<!-- endconfig -->
+
+--------------------------------------------------------------------------------
+
+<!-- pagebreak -->
+
+## Disable cross-memory attach
+
+Disable the process_vm_*v syscalls which allow one process to peek/poke the virtual memory of another.
+
+This configuration is supported in **Linux 3.5 and greater** and thus should only be disabled for such versions.
+
+<!-- config -->
+
+Domain                         | `Config` name         | `Value`
+------------------------------ | --------------------- | -------
+Kernel-Memory-CrossMemAttach-1 | `CROSS_MEMORY_ATTACH` | `n`
+
+<!-- endconfig -->
+
+--------------------------------------------------------------------------------
+
+## Stack Smashing Attacks
+
+<!-- config -->
+
+Domain                        | `compiler` and `linker` options | _State_
+----------------------------- | ------------------------------- | --------
+Kernel-Memory-StackSmashing-1 | `-fstack-protector-all`         | _Enable_
+
+<!-- endconfig -->
+
+Emit extra code to check for buffer overflows, such as stack smashing attacks.
+
+--------------------------------------------------------------------------------
+
+## Detect Buffer Overflows
+
+<!-- config -->
+
+Domain                          | `compiler` and `linker` options | `Value`
+------------------------------- | ------------------------------- | -------
+Kernel-Memory-BufferOverflows-1 | `-D_FORTIFY_SOURCE`             | `2`
+
+<!-- endconfig -->
+
+Helps detect some buffer overflow errors.

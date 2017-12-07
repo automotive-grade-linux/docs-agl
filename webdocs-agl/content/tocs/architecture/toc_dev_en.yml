@@ -1,9 +1,9 @@
 #######################################################################
-# WARNING: 
+# WARNING:
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
-#  - do not forget to run 'docbuild --tocs' after any changes 
+#  - do not forget to run 'docbuild --tocs' after any changes
 #
-# 
+#
 ############################ SYNTAX ###################################
 # GLOBAL OPTIONS:
 #    name: TOC (page) title
@@ -13,7 +13,7 @@
 # TOC Entry:
 #     name: TOC entry (level 1)
 #     children:
-#         - 
+#         -
 #            name: optional name for TOC entry (default: use URL FrontMatter info)
 #            url: <subdir as defined with FETCH_DIR in conf/AppDefaults.js:
 #         -
@@ -41,7 +41,7 @@ children:
 -
     name: AGL Specifications
     children:
-        - 
+        -
             name: Automotive Grade Linux Requirements Specifications
             url: reference/AGL_Specifications/agl_spec_v1.0_final.pdf
 -
@@ -54,3 +54,63 @@ children:
         - url: reference/security/05-platform-security.html
         - url: reference/security/06-application-security.html
         - url: reference/security/07-system-hardening.html
+-
+    name: Upgraded Security Blueprint 2017
+    children:
+          - url: reference/security/README.html
+          - name: Part-1 Hardware
+            children:
+              - url: reference/security/part-1/0_Abstract.html
+          - name: Part-2 Secure Boot
+            children:
+              - url: reference/security/part-2/0_Abstract.html
+              - url: reference/security/part-2/1-Image.html
+              - url: reference/security/part-2/2-Communication-modes.html
+              - url: reference/security/part-2/3-Consoles.html
+          - name: Part-3 Hypervisor
+            children:
+              - url: reference/security/part-3/0_Abstract.html
+          - name: Part-4 Kernel
+            children:
+              - url: reference/security/part-4/0_Abstract.html
+              - url: reference/security/part-4/1-General.html
+              - url: reference/security/part-4/2-Memory.html
+              - url: reference/security/part-4/3-Consoles.html
+              - url: reference/security/part-4/4-Debug.html
+              - url: reference/security/part-4/5-FileSystems.html
+          - name: Part-5 Platform
+            children:
+              - url: reference/security/part-5/0_Abstract.html
+              - url: reference/security/part-5/1-MAC.html
+              - url: reference/security/part-5/2-SystemD.html
+              - url: reference/security/part-5/3-SystemBus.html
+              - url: reference/security/part-5/4-Services.html
+              - url: reference/security/part-5/5-AppFw.html
+              - url: reference/security/part-5/6-Utilities.html
+              - url: reference/security/part-5/7-Users.html
+          - name: Part-6 Application
+            children:
+              - url: reference/security/part-6/0_Abstract.html
+              - url: reference/security/part-6/1-Installation.html
+              - url: reference/security/part-6/2-PrivilegeManagement.html
+              - url: reference/security/part-6/3-Signature.html
+              - url: reference/security/part-6/4-Services.html
+          - name: Part-7 Connectivity
+            children:
+              - url: reference/security/part-7/0_Abstract.html
+              - url: reference/security/part-7/1-BusAndConnectors.html
+              - url: reference/security/part-7/2-Wireless.html
+              - url: reference/security/part-7/3-Cloud.html
+          - name: Part-8 Update
+            children:
+              - url: reference/security/part-8/0_Abstract.html
+              - url: reference/security/part-8/1-FOTA.html
+              - url: reference/security/part-8/2-SOTA.html
+          - name: Part-9
+            children:
+              - url: reference/security/part-9/0_Abstract.html
+          - name: Annexes
+            children:
+              - url: reference/security/annexes/0_Abstract.html
+              - url: reference/security/annexes/ConfigNotes.html
+              - url: reference/security/annexes/todoNotes.html
