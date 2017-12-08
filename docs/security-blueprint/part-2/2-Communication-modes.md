@@ -45,10 +45,10 @@ Boot-Communication-USB-5 | `CONFIG_USB_HOST_ETHER` | _Not defined_
 
 --------------------------------------------------------------------------------
 
-## Disable all Network Interfaces
+## Disable all unused Network Interfaces
 
-Preferably no network interface is allowed, but if required, then the enabled
-services should be restricted to only those used.
+Only used network interfaces should be enabled.
+Where possible, services should also be limited to those necessary.
 
 <!-- config -->
 

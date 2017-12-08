@@ -187,6 +187,14 @@ Kernel-General-Drivers-3 | Other `hotplug` bus | _Disabled_
 
 ## Position Independent Executables
 
+<!-- todo -->
+
+Domain                           | Improvement
+-------------------------------- | -----------------------------
+Kernel-General-IndependentExec-1 | Kernel or/and platform part ?
+
+<!-- endtodo -->
+
 <!-- config -->
 
 Domain                           | `compiler` and `linker` options | _State_
@@ -219,6 +227,14 @@ During program load, all dynamic symbols are resolved, allowing for the complete
 <!-- pagebreak -->
 
 ## Library linking
+
+<!-- todo -->
+
+Domain                          | Improvement
+------------------------------- | ---------------
+Kernel-General-LibraryLinking-1 | Keep this part?
+
+<!-- endtodo -->
 
 It is recommended that dynamic linking should generally not be allowed. This will avoid the user from replacing a library with malicious library. All libraries should be linked statically, but this is difficult to implement.
 
