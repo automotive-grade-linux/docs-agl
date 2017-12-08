@@ -1,12 +1,12 @@
 # Mandatory Access Control
 
-<!-- note -->
+<!-- section-note -->
 
 We decided to put the **MAC** protection on the platform part despite the fact
 that it applies to the kernel too, since its use will be mainly at the platform
 level (except floor part).
 
-<!-- endnote -->
+<!-- end-section-note -->
 
 **M**andatory **A**ccess **C**ontrol (**MAC**) is a protection provided by the
 Linux kernel that requires a **L**inux **S**ecurity **M**odule (**LSM**). AGL
@@ -58,7 +58,7 @@ Label | Name  | Execution **SMACK** | File Access **SMACK**
 `^`   | Hat   | `---` for all       | `rx` on all domains.
 `*`   | Star  | `rwx` for all       | None
 
-<!-- note -->
+<!-- section-note -->
 
 - The Hat label is Only for privileged system services (currently only
   systemd-journal). Useful for backup or virus scans. No file with this label
@@ -67,14 +67,14 @@ Label | Name  | Execution **SMACK** | File Access **SMACK**
 - The Star label is used for device files or `/tmp` Access restriction managed
   via **DAC**. Individual files remain protected by their **SMACK** label.
 
-<!-- endnote --> <!-- config -->
+<!-- end-section-note --> <!-- section-config -->
 
 Domain             | `Label` name | Recommendations
 ------------------ | ------------ | -----------------------------------------------------------
 Kernel-MAC-Floor-1 | `^`          | Only for privileged system services.
 Kernel-MAC-Floor-2 | `*`          | Used for device files or `/tmp` Access restriction via DAC.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -95,7 +95,7 @@ Label            | Name      | Execution **SMACK**                             |
 `System::Log`    | Log       | `rwa` for System label `xa` for user label      | None
 `System::Sub`    | SubSystem | Subsystem Config files                          | SubSystem only
 
-<!-- config -->
+<!-- section-config -->
 
 Domain              | `Label` name     | Recommendations
 ------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------
@@ -105,7 +105,7 @@ Kernel-MAC-System-3 | `System::Shared` | Files are created with the directory la
 Kernel-MAC-System-4 | `System::Log`    | Some limitation may impose to add `w` to enable append.
 Kernel-MAC-System-5 | `System::Sub`    | Isolation of risky Subsystem.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -125,7 +125,7 @@ Label               | Name   | Execution **SMACK**                              
 `User::Home`        | Home   | `rwx-t` from System label `r-x-l` from App                                  | None
 `User::App-Shared`  | Shared | `rwxat` from System and User domains label of $User                         | None
 
-<!-- config -->
+<!-- section-config -->
 
 Domain              | `Label` name        | Recommendations
 ------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -133,4 +133,4 @@ Kernel-MAC-System-1 | `User::Pkg::$AppID` | Only one Label is allowed per App. A
 Kernel-MAC-System-2 | `User::Home`        | AppFw needs to create a directory in `/home/$USER/App-Shared` at first launch if not present with label app-data access is `User::App-Shared` without transmute.
 Kernel-MAC-System-3 | `User::App-Shared`  | Shared space between all App running for a given user.
 
-<!-- endconfig -->
+<!-- end-section-config -->

@@ -124,11 +124,14 @@ children:
             name: xds-agent
             url: reference/xds/part-2/2_xds-agent.html
         -
-            name: xds-exec
-            url: reference/xds/part-2/3_xds-exec.html
+            name: xds-cli
+            url: reference/xds/part-2/3_xds-cli.html
         -
             name: xds-gdb
             url: reference/xds/part-2/4_xds-gdb.html
+        -
+            name: xds-exec
+            url: reference/xds/part-2/5_xds-exec.html
 -
     name: Guides
     children:

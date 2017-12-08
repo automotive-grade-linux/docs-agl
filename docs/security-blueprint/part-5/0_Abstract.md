@@ -15,12 +15,12 @@ to deal with, we must:
 - Manage user capabilities (_Users_ part).
 - Manage application permissions and policies (_AGLFw_ part).
 
-<!-- note -->
+<!-- section-note -->
 
 The tools and concepts used to meet these needs are only examples. Any other
 tool that meets the need can be used.
 
-<!-- endnote -->
+<!-- end-section-note -->
 
 In AGL, as in many other embedded systems, different security mechanisms settle
 in the core layers to ensure isolation and data privacy. While the Mandatory

@@ -6,14 +6,14 @@
 - Setup applications and services (_CGroups_, _namespaces_, autostart, permissions).
 - Use of `libsystemd` for its programs (event management, **D-Bus** interface).
 
-<!-- config -->
+<!-- section-config -->
 
 Domain             | Object         | Recommendations
 ------------------ | -------------- | ------------------------------------
 Platform-SystemD-1 | Security model | Use Namespaces for containerization.
 Platform-SystemD-2 | Security model | Use CGroups to organise processes.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 See [systemd integration and user management](http://iot.bzh/download/public/2017/AMM-Dresden/AGL-systemd.pdf) for more information.
 

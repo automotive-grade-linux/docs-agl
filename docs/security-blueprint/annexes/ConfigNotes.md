@@ -1,5 +1,5 @@
 # Config notes
-<!-- config -->
+<!-- section-config -->
 
 Domain               | Object     | Recommendations
 -------------------- | ---------- | ----------------------------------
@@ -474,4 +474,4 @@ Domain        | Object                                    | Recommendations
 ------------- | ----------------------------------------- | ---------------
 Update-FOTA-1 | Integrity, confidentiality and legitimacy | Must be secure.
 
-<!-- endconfig -->
+<!-- end-section-config -->

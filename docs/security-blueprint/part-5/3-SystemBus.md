@@ -14,11 +14,11 @@ It is important to protect against this type of attack to keep the system more
 stable.
 
 
-<!-- config -->
+<!-- section-config -->
 
 Domain          | Object         | Recommendations
 --------------- | -------------- | ------------------------------------
 Platform-DBus-1 | Security model | Use D-Bus as IPC.
 Platform-DBus-2 | Security model | Apply D-BUS security patches: [D-Bus CVE](https://www.cvedetails.com/vulnerability-list/vendor_id-13442/D-bus-Project.html)
 
-<!-- endconfig -->
+<!-- end-section-config -->

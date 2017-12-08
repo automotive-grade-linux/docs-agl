@@ -1,5 +1,5 @@
 # Todo notes
-<!-- todo -->
+<!-- section-todo -->
 
 Domain          | Improvement
 --------------- | ----------------------------------------------------
@@ -77,4 +77,4 @@ Domain                | Improvement
 SecureDev-CodeAudit-1 | Add CVE analyser.
 SecureDev-CodeAudit-2 | [OSSTMM](http://www.isecom.org/mirror/OSSTMM.3.pdf).
 
-<!-- endtodo -->
+<!-- end-section-todo -->

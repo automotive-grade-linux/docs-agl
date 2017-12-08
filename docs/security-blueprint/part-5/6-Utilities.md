@@ -5,13 +5,13 @@
   version of **busybox** in order to avoid all the tools useful only in
   development mode.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain               | `Tool` name | _State_
 -------------------- | ----------- | ----------------------------------------------------------------------
 Platform-Utilities-1 | `busybox`   | _Used_ to provide a number of tools. Do not compile development tools.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 ## Functionalities to exclude in production mode
 
@@ -21,7 +21,7 @@ thus complicate the fault finding process. The tools used only in development
 mode are marked by an '**agl-devel**' feature. When building in production mode,
 these tools will not be compiled.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                | `Utility` name and normal `path`                     | _State_
 --------------------- | ---------------------------------------------------- | ----------
@@ -69,10 +69,10 @@ Platform-Utilities-41 | `tail` (busybox)                                     | _
 Platform-Utilities-42 | `tee` (busybox)                                      | _Enabled_
 Platform-Utilities-43 | `test` (busybox)                                     | _Enabled_
 
-<!-- endconfig --> <!-- note -->
+<!-- end-section-config --> <!-- section-note -->
 
 The _Enabled_ Unix/Linux utilities above shall be permitted as they are often
 used in the start-up scripts and for USB logging. If any of these utilities are
 not required by the device then those should be removed.
 
-<!-- endnote -->
+<!-- end-section-note -->

@@ -6,13 +6,13 @@ describe attacks and how to prevent them with some recommendations. The main
 recommendation is to always follow the latest updates of these remote
 communication channels.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                  | Object | Recommendations
 ----------------------- | ------ | ------------------------------------------------------------------
 Connectivity-Wireless-1 | Update | Always follow the latest updates of remote communication channels.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 We will see the following parts:
 
@@ -26,13 +26,13 @@ We will see the following parts:
 
 - [NFC](#nfc)
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain                  | Improvement
 ----------------------- | -------------------------------------------
 Connectivity-Wireless-1 | Add communication channels (RFID, ZigBee?).
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 --------------------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ We can differentiate existing attacks on wifi in two categories: Those on
 
 - Should protect data sniffing.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                       | Tech name or object | Recommendations
 ---------------------------- | ------------------- | -------------------------------------------------------------------------
@@ -99,7 +99,7 @@ Connectivity-Wireless-Wifi-3 | WPA2                | Should protect data sniffin
 Connectivity-Wireless-Wifi-4 | PSK                 | Changing regularly the password.
 Connectivity-Wireless-Wifi-5 | Device              | Upgraded easily in software or firmware to have the last security update.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 See [Wifi attacks WEP WPA](https://matthieu.io/dl/wifi-attacks-wep-wpa.pdf)
 and [Breaking wep and wpa (Beck and Tews)](https://dl.aircrack-ng.org/breakingwepandwpa.pdf)
@@ -136,7 +136,7 @@ for more information.
   avoid using the "Just Works" association model. The device must verify that
   an authenticated link key was generated during pairing.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                            | Tech name     | Recommendations
 --------------------------------- | ------------- | ------------------------------------------------------------
@@ -146,7 +146,7 @@ Connectivity-Wireless-Bluetooth-3 | SSP           | Avoid using the "Just Works"
 Connectivity-Wireless-Bluetooth-4 | Visibility    | Configured by default as undiscoverable. Except when needed.
 Connectivity-Wireless-Bluetooth-5 | Anti-scanning | Used, inter alia, to slow down brute force attacks.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 See [Low energy and the automotive transformation](http://www.ti.com/lit/wp/sway008/sway008.pdf),
 [Gattacking Bluetooth Smart Devices](http://gattack.io/whitepaper.pdf),
@@ -179,14 +179,14 @@ for more information.
 
 - Check antenna legitimacy.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                           | Tech name | Recommendations
 -------------------------------- | --------- | --------------------------
 Connectivity-Wireless-Cellular-1 | GPRS/EDGE | Avoid
 Connectivity-Wireless-Cellular-2 | UMTS/HSPA | Protected against Jamming.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 See [A practical attack against GPRS/EDGE/UMTS/HSPA mobile data communications](https://media.blackhat.com/bh-dc-11/Perez-Pico/BlackHat_DC_2011_Perez-Pico_Mobile_Attacks-wp.pdf)
 for more information.
@@ -205,13 +205,13 @@ for more information.
 - Use the **R**adio **D**ata **S**ystem (**RDS**) only to send signals for audio
   output and meta concerning radio.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                        | Tech name | Recommendations
 ----------------------------- | --------- | --------------------------------------------
 Connectivity-Wireless-Radio-1 | RDS       | Only audio output and meta concerning radio.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -234,11 +234,11 @@ Connectivity-Wireless-Radio-1 | RDS       | Only audio output and meta concernin
   Certification Mark shows that products meet global interoperability standards.
 - NFC Modified Miller coding is preferred over NFC Manchester coding.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                      | Tech name | Recommendations
 --------------------------- | --------- | ------------------------------------------------------
 Connectivity-Wireless-NFC-1 | NFC       | Protected against relay and replay attacks.
 Connectivity-Wireless-NFC-2 | Device    | Disable unneeded and unapproved services and profiles.
 
-<!-- endconfig -->
+<!-- end-section-config -->

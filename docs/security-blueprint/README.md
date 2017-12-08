@@ -10,19 +10,19 @@ We will cover topics starting from the lowest level (_Hardware_) up to the highe
 
 The document is filled with tags to easily identify important points:
 
-<!-- config -->
+<!-- section-config -->
 
 - The _config_ tag quickly identifies the configurations and the recommendations to take.
 
-<!-- endconfig --><!-- note -->
+<!-- end-section-config --><!-- section-note -->
 
 - The _note_ tag allows you to notify some additional details.
 
-<!-- endnote --><!-- todo -->
+<!-- end-section-note --><!-- section-todo -->
 
 - The _todo_ tag shows the possible improvements.
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 In annexes of this document, you can find all the _config_ and _todo_ notes.
 
