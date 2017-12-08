@@ -2,13 +2,13 @@
 
 ## Abstract
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain          | Improvement
 --------------- | ----------------------------------------------------
 Boot-Abstract-1 | More generic and add examples (The chain of trust).
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 **Boot Hardening**: Steps/requirements to configure the boot sequence, in order
 to restrict the device from executing anything other than the approved software
@@ -29,13 +29,13 @@ they may be upgraded to requirements status in the future. In addition, specific
 operators may change some of these recommendations into requirements based on
 their specific needs and objectives.
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain          | Improvement
 --------------- | -------------------------------------------
 Boot-Abstract-1 | Review the definition of the "boot loader".
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 **Boot loader**: The boot loader consists of the Primary boot loader residing
 in **OTP** memory, sboot, U-Boot and Secure loader residing in external flash

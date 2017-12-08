@@ -8,7 +8,7 @@ The application framework manages:
 - Privileges granting and checking.
 - API for interaction with applications.
 
-<!-- note -->
+<!-- section-note -->
 
 - The **security model** refers to the security model used to ensure security
   and to the tools that are provided for implementing that model. It's an
@@ -20,19 +20,19 @@ The application framework manages:
   ensure security and privacy. It also includes features of reporting using
   audit features and by managing logs and alerts.
 
-<!-- endnote -->
+<!-- end-section-note -->
 
 The **AppFw** uses the security model to ensure the security and the privacy of
 the applications that it manages. It must be compliant with the underlying
 security model. But it should hide it to the applications.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                 | Object         | Recommendations
 ---------------------- | -------------- | --------------------------------
 Platform-AGLFw-AppFw-1 | Security model | Use the AppFw as Security model.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 See [AGL AppFw Privileges Management](http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf) and [AGL - Application Framework Documentation](http://iot.bzh/download/public/2017/SDK/AppFw-Documentation-v3.1.pdf) for more
 information.
@@ -50,13 +50,13 @@ permissions: Currently in AGL, this task depends on a policy-checker service
 
 Cynara interact with **D-Bus** in order to deliver this information.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                  | Object      | Recommendations
 ----------------------- | ----------- | -------------------------------------
 Platform-AGLFw-Cynara-1 | Permissions | Use Cynara as policy-checker service.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 ### Policies
 

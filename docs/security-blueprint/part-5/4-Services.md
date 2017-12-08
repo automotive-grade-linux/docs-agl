@@ -1,13 +1,13 @@
 # System services and daemons
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain              | Improvement
 ------------------- | -----------
 Platform-Services-1 | SystemD ?
 Platform-Services-2 | Secure daemon ?
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 ## Tools
 
@@ -25,7 +25,7 @@ Platform-Services-2 | Secure daemon ?
 - **alsa** is a software framework and part of the Linux kernel that provides an
   **API** for sound card device drivers.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain               | `Tool` name | _State_
 -------------------- | ----------- | -------
@@ -34,4 +34,4 @@ Platform-Utilities-2 | `bluez`     | _Used_ as a Bluetooth manager.
 Platform-Utilities-3 | `gstreamer` | _Used_ to manage multimedia file format.
 Platform-Utilities-4 | `alsa`      | _Used_ to provides an API for sound card device drivers.
 
-<!-- endconfig -->
+<!-- end-section-config -->

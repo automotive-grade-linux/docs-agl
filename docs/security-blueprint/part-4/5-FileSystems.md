@@ -8,14 +8,14 @@ To reduce the attack surface, file system data is parsed by the kernel, so any l
 
 NFS FileSystems are useful during development phases, but this can be a very helpful way for an attacker to get files when you are in production mode, so we must disable them.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                   | `Config` name   | `Value`
 ------------------------ | --------------- | -------
 Kernel-FileSystems-NFS-1 | `CONFIG_NFSD`   | `n`
 Kernel-FileSystems-NFS-2 | `CONFIG_NFS_FS` | `n`
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ There are several security restrictions that can be set on a filesystem when it 
 
 The following flags shall be used for mounting common filesystems:
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                     | `Partition`         | `Value`
 -------------------------- | ------------------- | -----------------------------------------------------------------
@@ -47,14 +47,14 @@ Kernel-FileSystems-Mount-5 | _Temporary storage_ | Add `nosuid`, `nodev` and `no
 Kernel-FileSystems-Mount-6 | `/dev/shm`          | Add `nosuid`, `nodev` and `noexec`.
 Kernel-FileSystems-Mount-7 | `/dev`              | Add `nosuid` and `noexec`.
 
-<!-- endconfig --> <!-- note -->
+<!-- end-section-config --> <!-- section-note -->
 
 If `CONFIG_DEVTMPFS_MOUNT` is set, then the kernel will mount /dev and will not apply the `nosuid`, `noexec` options. Either disable `CONFIG_DEVTMPFS_MOUNT` or add a remount with `noexec` and `nosuid` options to system startup.
 
-<!-- endnote --> <!-- config -->
+<!-- end-section-note --> <!-- section-config -->
 
 Domain                     | `Config` name           | _State_ or `Value`
 -------------------------- | ----------------------- | -----------------------------------------------------------------------
 Kernel-FileSystems-Mount-1 | `CONFIG_DEVTMPFS_MOUNT` | _Disabled_ or add remount with `noexec` and `nosuid` to system startup.
 
-<!-- endconfig -->
+<!-- end-section-config -->

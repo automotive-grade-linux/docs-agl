@@ -20,13 +20,13 @@ the sboot/U-Boot code, the board specific implementation of the Secure Loader
 will have to manage the entire USB initialization, enumeration, and read/write
 access to the mass storage device.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain        | Object                                    | Recommendations
 ------------- | ----------------------------------------- | ---------------
 Update-FOTA-1 | Integrity, confidentiality and legitimacy | Must be secure.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 Different possible type of **FOTA**:
 

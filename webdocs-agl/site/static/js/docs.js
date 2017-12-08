@@ -139,4 +139,17 @@ $(document).ready(function () {
             element.innerText = '';
         }
     });
+
+    $('#page-toc-source').each(function(index, element) {
+        // Process section-xxx (eg. section-note or section-config) in order
+        // to apply right style (see webdocs-agl/site/static/styles/scss/_sections.scss )
+        ['section-note', 'section-config', 'section-warning', 'section-todo'].forEach(function (sec) {
+            try {
+                res = element.innerHTML.replace(new RegExp('<!--[ ]*end-' + sec + '[ ]*-->', 'g'), '</div>');
+                element.innerHTML = res.replace(new RegExp('<!--[ ]*' + sec + '[ ]*-->', 'g'), '<div class="' + sec +'">');
+            } catch(err) { }
+        });
+    });
+
+
 });

@@ -11,23 +11,23 @@ Tools like:
 - [Code optimisation](https://github.com/jduck/lk-reducer).
 - [Kernel Drivers test](https://github.com/ucsb-seclab/dr_checker) with [docs](https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-machiry.pdf).
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain                  | Improvement
 ----------------------- | ------------
 SecureDev-SecureBuild-1 | Add content.
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 ## App/Widget signatures
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain                 | Improvement
 ---------------------- | ------------
 SecureDev-Signatures-1 | Add content.
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 ## Code audit
 
@@ -36,14 +36,14 @@ compliance with related good practices.
 
 - [Continuous Code Quality](https://www.sonarqube.org/).
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain                | Improvement
 --------------------- | -----------------------------------------------------
 SecureDev-CodeAudit-1 | Add CVE analyser.
 SecureDev-CodeAudit-2 | [OSSTMM](http://www.isecom.org/mirror/OSSTMM.3.pdf).
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 ### SATS
 

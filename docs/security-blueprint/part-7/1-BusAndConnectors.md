@@ -25,13 +25,13 @@ packets. We just describe them a bit:
   2001 on everywhere in a car, where the bandwidth and versatility of a **CAN**
   network is not required.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                             | Tech name | Recommendations
 ---------------------------------- | --------- | --------------------------------------------------------------------------
 Connectivity-BusAndConnector-Bus-1 | CAN       | Implement hardware solution in order to prohibit sending unwanted signals.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 See [Security in Automotive Bus Systems](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.728&rep=rep1&type=pdf) for more information.
 
@@ -42,7 +42,7 @@ the **USB** must be disabled to avoid attacks like BadUSB. If not, configure the
 Kernel to only enable the minimum require **USB** devices. The connectors used
 to diagnose the car like **OBD-II** must be disabled outside garages.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                                    | Tech name | Recommendations
 ----------------------------------------- | --------- | ----------------------------------------------------------------------
@@ -51,4 +51,4 @@ Connectivity-BusAndConnector-Connectors-2 | USB       | Confidential data exchan
 Connectivity-BusAndConnector-Connectors-3 | USB       | USB Boot on a ECU must be disable.
 Connectivity-BusAndConnector-Connectors-4 | OBD-II    | Must be disabled outside garages.
 
-<!-- endconfig -->
+<!-- end-section-config -->

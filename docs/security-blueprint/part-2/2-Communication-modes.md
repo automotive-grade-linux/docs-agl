@@ -21,7 +21,7 @@ required USB devices. User-initiated USB-filesystems should be treated with
 special care. Whether or not the filesystems are mounted in userspace
 (**FUSE**), restricted mount options should be observed.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain               | Communication modes       | _State_
 -------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ Boot-Communication-3 | `Ethernet`                | _Disabled_
 Boot-Communication-4 | U-boot and sboot `DOCSIS` | _Disabled_
 Boot-Communication-5 | `Serial ports`            | _Disabled_
 
-<!-- endconfig --> <!-- config -->
+<!-- end-section-config --> <!-- section-config -->
 
 Domain                   | `Config` name           | _State_
 ------------------------ | ----------------------- | -------------
@@ -41,7 +41,7 @@ Boot-Communication-USB-3 | `CONFIG_USB_KEYBOARD`   | _Not defined_
 Boot-Communication-USB-4 | `CONFIG_USB_STORAGE`    | _Not defined_
 Boot-Communication-USB-5 | `CONFIG_USB_HOST_ETHER` | _Not defined_
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -50,25 +50,25 @@ Boot-Communication-USB-5 | `CONFIG_USB_HOST_ETHER` | _Not defined_
 Preferably no network interface is allowed, but if required, then the enabled
 services should be restricted to only those used.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain               | Communication modes  | _State_
 -------------------- | -------------------- | ---------------------------------------------------------------------------------------------
 Boot-Communication-1 | `Network interfaces` | Preferably _no network interface is allowed_, otherwise, restrict the services to those used.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 ## Remove or Disable Unnecessary Services, Ports, and Devices
 
 Restrict the `services`, `ports` and `devices` to those used.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain               | Object                            | Recommendations
 -------------------- | --------------------------------- | -------------------------------------------------------------
 Boot-Communication-1 | `Services`, `ports` and `devices` | Restrict the `services`, `ports` and `devices` to those used.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 ## Disable flash access
 
@@ -78,12 +78,12 @@ In U-Boot following flash memory commands shall be disabled:
 
 **NAND**: Support for nand flash access available through `do_nand` has to be disabled.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                     | `Command` name | _State_
 -------------------------- | -------------- | ---------
 Boot-Communication-Flash-1 | `do_nand`      | _Disable_
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 Similarly sboot should disable flash access support through command line if any.
