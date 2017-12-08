@@ -5,7 +5,7 @@
 Serial console output shall be disabled. To disable console output in U-Boot,
 set the following macros:
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                 | `Config` name                           | `Value`
 ---------------------- | --------------------------------------- | ---------
@@ -13,24 +13,24 @@ Boot-Consoles-Serial-1 | `CONFIG_SILENT_CONSOLE`                 | `Disable`
 Boot-Consoles-Serial-2 | `CONFIG_SYS_DEVICE_NULLDEV`             | `Disable`
 Boot-Consoles-Serial-3 | `CONFIG_SILENT_CONSOLE_UPDATE_ON_RELOC` | `Disable`
 
-<!-- endconfig --> <!-- todo -->
+<!-- end-section-config --> <!-- section-todo -->
 
 Domain          | Improvement
 --------------- | ------------------------------------
 Boot-Consoles-1 | Secure loader: No reference earlier?
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 And set "**silent**" environment variable. For the Secure loader, disable the
 traces by undefined the below macro:
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                 | `Environment variable` name | _State_
 ---------------------- | --------------------------- | -------------
 Boot-Consoles-Serial-1 | `INC_DEBUG_PRINT`           | _Not defined_
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 For sboot proper configuration needs to be done to disable the serial console.
 
@@ -49,7 +49,7 @@ environment variable and not in non-volatile memory.
 
 Remove configuration options related to non-volatile memory, such as:
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                     | `Config` name                | _State_
 -------------------------- | ---------------------------- | ---------
@@ -66,7 +66,7 @@ Boot-Consoles-Variables-10 | `CONFIG_ENV_IS_IN_REMOTE`    | `#undef`
 Boot-Consoles-Variables-11 | `CONFIG_ENV_IS_IN_UBI`       | `#undef`
 Boot-Consoles-Variables-12 | `CONFIG_ENV_IS_NOWHERE`      | `#define`
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -88,7 +88,7 @@ mtest : Simple ram read/write test.
 loopw : Infinite write loop on address range.
 ```
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                  | `Command` name | _State_
 ----------------------- | -------------- | ----------
@@ -102,6 +102,6 @@ Boot-Consoles-MemDump-7 | `mdc`          | _Disabled_
 Boot-Consoles-MemDump-8 | `mtest`        | _Disabled_
 Boot-Consoles-MemDump-9 | `loopw`        | _Disabled_
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 Similarly, memory dump support shall be disabled from sboot.

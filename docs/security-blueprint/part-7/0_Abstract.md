@@ -4,13 +4,13 @@
 
 This part shows different Connectivity attacks on the car.
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain                  | Improvement
 ----------------------- | -----------------
 Connectivity-Abstract-1 | Improve abstract.
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 --------------------------------------------------------------------------------
 

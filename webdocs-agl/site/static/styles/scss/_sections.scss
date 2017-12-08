@@ -1,0 +1,83 @@
+
+/* section-note blocks */
+
+div.section-note {
+    background: #FCF8E3 none repeat scroll 0% 0%;
+    color: #4e4e4e;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #DDD;
+    border-color: #FAEBCC;
+    page-break-inside: avoid;
+}
+div.section-note table {
+    background: white;
+}
+
+div.section-note p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* section-warning blocks */
+
+div.section-warning {
+    background: #FD9595 none repeat scroll 0% 0%;
+    color: #4e4e4e;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #DDD;
+    border-color: #FF6B6B;
+    page-break-inside: avoid;
+}
+
+div.section-warning table {
+    background: white;
+}
+
+div.section-warning p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* section-config blocks */
+
+div.section-config {
+    background: #d2e2ee none repeat scroll 0% 0%;
+    color: #4e4e4e;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #DDD;
+    border-color: #b5c5d1;
+    page-break-inside: avoid;
+}
+
+div.section-config table {
+    background: white;
+}
+
+div.section-config p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* section-todo blocks */
+
+div.section-todo {
+    background: #d3eed2 none repeat scroll 0% 0%;
+    color: #4e4e4e;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #DDD;
+    border-color: #b1d5b0;
+    page-break-inside: avoid;
+}
+
+div.section-todo table {
+    background: white;
+}
+
+div.section-todo p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}

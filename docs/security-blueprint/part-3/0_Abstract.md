@@ -3,13 +3,13 @@
 Definition: "A hypervisor or virtual machine monitor (VMM) is computer software,
 firmware or hardware that creates and runs virtual machines".
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain                | Improvement
 --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Hypervisor-Abstract-1 | Complete Hypervisor part ([jailhouse](https://github.com/siemens/jailhouse) / [KVM](https://www.linux-kvm.org/page/Main_Page) / [Xen](https://www.xenproject.org/developers/teams/embedded-and-automotive.html)).
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 ## Native or Bare-metal hypervisors
 

@@ -24,18 +24,18 @@ provided by the system's drivers can be shared this way. The other advantage of
 this approach is that multiple applications can share the same resources at the
 same time.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                | Object           | Recommendations
 --------------------- | ---------------- | -----------------------------------------------------
 Platform-Users-root-1 | Main application | Should not execute as root.
 Platform-Users-root-2 | UI               | Should run in a context on a user with no capability.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 Root access should not be allowed for the following utilities:
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                | `Utility` name | _State_
 --------------------- | -------------- | -------------
@@ -45,7 +45,7 @@ Platform-Users-root-5 | `ssh`          | _Not allowed_
 Platform-Users-root-6 | `scp`          | _Not allowed_
 Platform-Users-root-7 | `sftp`         | _Not allowed_
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 Root access should not be allowed for the console device. The development
 environment should allow users to login with pre-created user accounts.
@@ -59,14 +59,14 @@ via `sudo`.
 
 ## Capabilities
 
-<!-- todo -->
+<!-- section-todo -->
 
 Domain                        | Improvement
 ----------------------------- | ------------------------
 Platform-Users-Capabilities-1 | Kernel or Platform-user?
 Platform-Users-Capabilities-2 | Add config note.
 
-<!-- endtodo -->
+<!-- end-section-todo -->
 
 The goal is to restrict functionality that will not be useful in **AGL**. They
 are integrated into the **LSM**. Each privileged transaction is associated with

@@ -8,14 +8,14 @@ as specified in the boot environment.
 In U-Boot set the "_bootdelay_" environment variable and/or define
 `CONFIG_BOOTDELAY` to _-2_.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                 | _Variable_ / `Config` name | `Value`
 ---------------------- | -------------------------- | -------
 Boot-Image-Selection-1 | `CONFIG_BOOTDELAY`         | `-2`
 Boot-Image-Selection-2 | _bootdelay_                | `-2`
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ CONFIG_DEFAULT_DEVICE_TREE: Specifies the default Device Tree used for the run-t
 Generate the U-Boot image with public keys to validate and load the image. It
 shall use RSA2048 and SHA256 for authentication.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                    | `Config` name                | _State_
 ------------------------- | ---------------------------- | --------
@@ -49,4 +49,4 @@ Boot-Image-Authenticity-4 | `CONFIG_OF_CONTROL`          | _Enable_
 Boot-Image-Authenticity-5 | `CONFIG_OF_SEPARATE`         | _Enable_
 Boot-Image-Authenticity-6 | `CONFIG_DEFAULT_DEVICE_TREE` | _Enable_
 
-<!-- endconfig -->
+<!-- end-section-config -->

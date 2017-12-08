@@ -10,14 +10,14 @@
 functionality by providing rules and allowing access or denying access based
 on a subscriber's profile and services purchased.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                       | Object           | Recommendations
 ---------------------------- | ---------------- | ----------------------------------------
 Application-Cloud-Download-1 | authentication | Must implement authentication process.
 Application-Cloud-Download-2 | Authorization    | Must implement Authorization process.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ Application-Cloud-Download-2 | Authorization    | Must implement Authorization p
 
 <!-- pagebreak -->
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                             | Object        | Recommendations
 ---------------------------------- | ------------- | ----------------------------------------------------------
@@ -60,7 +60,7 @@ Application-Cloud-Infrastructure-3 | Test          | Should implement scanning t
 Application-Cloud-Infrastructure-4 | Log           | Should implement security tools (IDS and IPS).
 Application-Cloud-Infrastructure-5 | App integrity | Applications must be signed by the code signing authority.
 
-<!-- endconfig -->
+<!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
@@ -98,10 +98,10 @@ to configure each application to **IPSec** standards.
 An additional means of protection would be to do the monitoring between users
 and the cloud as a **CASB** will provide.
 
-<!-- config -->
+<!-- section-config -->
 
 Domain                        | Object                                    | Recommendations
 ----------------------------- | ----------------------------------------- | ---------------------------------
 Application-Cloud-Transport-1 | Integrity, confidentiality and legitimacy | Should implement IPSec standards.
 
-<!-- endconfig -->
+<!-- end-section-config -->

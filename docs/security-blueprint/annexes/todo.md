@@ -8,20 +8,20 @@
 
 ## Important
 
-<!-- warning -->
+<!-- section-warning -->
 
 - Add pointers to the doc throughout the document.
 - Change cover title.
 
-<!-- endwarning -->
+<!-- end-section-warning -->
 
 ## Less important
 
-<!-- note -->
+<!-- section-note -->
 
 - Merge All todo notes and this page.
 - Order sub-chapters like chapters.
 - Use notes like "¹, ² or ³"?
 - Change pdf generated part number.
 
-<!-- endnote -->
+<!-- end-section-note -->
