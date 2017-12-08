@@ -81,6 +81,8 @@ Kernel-Memory-Stack-1 | `CONFIG_CC_STACKPROTECTOR` | `y`
 
 <!-- endconfig -->
 
+Other defenses include things like shadow stacks.
+
 --------------------------------------------------------------------------------
 
 ## Disable access to /dev/mem
