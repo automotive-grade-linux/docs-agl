@@ -3,6 +3,8 @@
 Definition: "A hypervisor or virtual machine monitor (VMM) is computer software,
 firmware or hardware that creates and runs virtual machines".
 
+It must include a signature verification (possibly delegated).
+
 <!-- todo -->
 
 Domain                | Improvement

@@ -99,8 +99,8 @@ Boot-Consoles-MemDump-8 | `mtest`        | _Disabled_
 Boot-Consoles-MemDump-9 | `loopw`        | _Disabled_
 
 Domain               | Object | Recommendations
--------------------- | ------ | --------------------
-Kernel-General-MAC-1 | SMACK  | Must implement a MAC
+-------------------- | ------ | ------------------------------------------
+Kernel-General-MAC-1 | SMACK  | Must implement a Mandatory Access Control.
 
 Domain                 | `Config` name  | `Value`
 ---------------------- | -------------- | -------
@@ -131,9 +131,9 @@ Domain                     | `Config` name        | `Value`
 Kernel-General-SocketMon-1 | `CONFIG_PACKET_DIAG` | `n`
 Kernel-General-SocketMon-2 | `CONFIG_UNIX_DIAG`   | `n`
 
-Domain                   | `Config` name | `Value`
------------------------- | ------------- | -------
-Kernel-General-BPF_JIT-1 | `BPF_JIT`     | `n`
+Domain                   | `Config` name    | `Value`
+------------------------ | ---------------- | -------
+Kernel-General-BPF_JIT-1 | `CONFIG_BPF_JIT` | `n`
 
 Domain                         | `Config` name             | `Value`
 ------------------------------ | ------------------------- | -------
@@ -453,10 +453,10 @@ Domain                      | Tech name | Recommendations
 Connectivity-Wireless-NFC-1 | NFC       | Protected against relay and replay attacks.
 Connectivity-Wireless-NFC-2 | Device    | Disable unneeded and unapproved services and profiles.
 
-Domain                       | Object           | Recommendations
----------------------------- | ---------------- | ----------------------------------------
+Domain                       | Object         | Recommendations
+---------------------------- | -------------- | --------------------------------------
 Application-Cloud-Download-1 | authentication | Must implement authentication process.
-Application-Cloud-Download-2 | Authorization    | Must implement Authorization process.
+Application-Cloud-Download-2 | Authorization  | Must implement Authorization process.
 
 Domain                             | Object        | Recommendations
 ---------------------------------- | ------------- | ----------------------------------------------------------

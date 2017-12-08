@@ -1,16 +1,24 @@
 # General configuration
 
-## MAC
+## Mandatory Access Control
 
 Kernel should controls access with labels and policy.
 
 <!-- config -->
 
 Domain               | Object | Recommendations
--------------------- | ------ | --------------------
-Kernel-General-MAC-1 | SMACK  | Must implement a MAC
+-------------------- | ------ | ------------------------------------------
+Kernel-General-MAC-1 | SMACK  | Must implement a Mandatory Access Control.
 
 <!-- endconfig -->
+
+<!-- todo -->
+
+Domain       | Improvement
+------------ | ----------------
+Kernel-MAC-1 | Add MAC config note.
+
+<!-- endtodo -->
 
 --------------------------------------------------------------------------------
 
@@ -129,15 +137,23 @@ This configuration for is supported in **Linux 3.16 and greater** and thus shoul
 
 <!-- config -->
 
-Domain                   | `Config` name | `Value`
------------------------- | ------------- | -------
-Kernel-General-BPF_JIT-1 | `BPF_JIT`     | `n`
+Domain                   | `Config` name    | `Value`
+------------------------ | ---------------- | -------
+Kernel-General-BPF_JIT-1 | `CONFIG_BPF_JIT` | `n`
 
 <!-- endconfig -->
 
 --------------------------------------------------------------------------------
 
 ## Enable Enforced Module Signing
+
+The kernel should never allow an unprivileged user the ability to load specific kernel modules,
+since that would provide a facility to unexpectedly extend the available attack surface.
+
+To protect against even privileged users, systems may need to either disable
+module loading entirely, or provide signed modules
+(e.g. CONFIG_MODULE_SIG_FORCE, or dm-crypt with LoadPin), to keep from having
+root load arbitrary kernel code via the module loader interface.
 
 This configuration is supported in **Linux 3.7 and greater** and thus should only be enabled for such versions.
 

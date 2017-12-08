@@ -1,6 +1,6 @@
 # Communication modes
 
-## Disable USB, Serial and Docsis Support
+## Disable USB, Serial and DOCSIS Support
 
 To disable USB support in U-Boot, following config's shall not be defined:
 

@@ -53,6 +53,7 @@ loads the Kernel/system image before passing control to it.
 The following table lists the terms utilized within this part of the document.
 
 Acronyms or Abbreviations | Description
-------------------------- | ---------------------------------
+------------------------- | -----------------------------------------------------------------------
 _FUSE_                    | **F**ilesystem in **U**ser**S**pac**E**
 _OTP_                     | **O**ne-**T**ime-**P**rogrammable
+_DOCSIS_                  | **D**ata **O**ver **C**able **S**ervice **I**nterface **S**pecification
