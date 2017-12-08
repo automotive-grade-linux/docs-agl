@@ -137,9 +137,9 @@ This configuration for is supported in **Linux 3.16 and greater** and thus shoul
 
 <!-- section-config -->
 
-Domain                   | `Config` name | `Value`
------------------------- | ------------- | -------
-Kernel-General-BPF_JIT-1 | `CONFIG_BPF_JIT`     | `n`
+Domain                   | `Config` name    | `Value`
+------------------------ | ---------------- | -------
+Kernel-General-BPF_JIT-1 | `CONFIG_BPF_JIT` | `n`
 
 <!-- end-section-config -->
 

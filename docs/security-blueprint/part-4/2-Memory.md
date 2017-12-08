@@ -79,6 +79,8 @@ Domain                | `Config` name              | `Value`
 --------------------- | -------------------------- | -------
 Kernel-Memory-Stack-1 | `CONFIG_CC_STACKPROTECTOR` | `y`
 
+Other defenses include things like shadow stacks.
+
 <!-- end-section-config -->
 
 --------------------------------------------------------------------------------
