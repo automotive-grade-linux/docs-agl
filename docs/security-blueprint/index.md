@@ -1,8 +1,8 @@
 ---
 
 title : security-blueprint
-date  : 2017-07-12
-version : 4.99.3
+date  : 2017-12-07
+version : 4.99.4
 category: security
 tags: security, architecture, automotive, linux
 layout: techdoc

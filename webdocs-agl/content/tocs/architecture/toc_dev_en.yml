@@ -106,7 +106,7 @@ children:
               - url: reference/security/part-8/0_Abstract.html
               - url: reference/security/part-8/1-FOTA.html
               - url: reference/security/part-8/2-SOTA.html
-          - name: Part-9
+          - name: Part-9 Secure development
             children:
               - url: reference/security/part-9/0_Abstract.html
           - name: Annexes

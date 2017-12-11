@@ -57,6 +57,8 @@ _ECU_                     | **E**lectronic **C**ontrol **U**nit
 
 - [security-blueprint](http://docs.automotivelinux.org/docs/architecture/en/dev/reference/security/01-overview.html).
   - _http:// docs.automotivelinux.org/docs/architecture/en/dev/reference/security/01-overview.html_
+- **[2017]** - [kernel security](https://www.kernel.org/doc/Documentation/security/).
+  - _https:// www.kernel.org/doc/Documentation/security/_
 - **[2017]** - [Systemd integration and user management](http://iot.bzh/download/public/2017/AMM-Dresden/AGL-systemd.pdf).
   - _http:// iot.bzh/download/public/2017/AMM-Dresden/AGL-systemd.pdf_
 - **[2017]** - [AGL - Application Framework Documentation](http://iot.bzh/download/public/2017/SDK/AppFw-Documentation-v3.1.pdf).

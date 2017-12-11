@@ -12,10 +12,10 @@ on a subscriber's profile and services purchased.
 
 <!-- section-config -->
 
-Domain                       | Object           | Recommendations
----------------------------- | ---------------- | ----------------------------------------
+Domain                       | Object         | Recommendations
+---------------------------- | -------------- | --------------------------------------
 Application-Cloud-Download-1 | authentication | Must implement authentication process.
-Application-Cloud-Download-2 | Authorization    | Must implement Authorization process.
+Application-Cloud-Download-2 | Authorization  | Must implement Authorization process.
 
 <!-- end-section-config -->
 

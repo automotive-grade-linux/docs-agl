@@ -21,8 +21,8 @@ Boot-Consoles-1 | Secure loader: No reference earlier?
 
 <!-- end-section-todo -->
 
-And set "**silent**" environment variable. For the Secure loader, disable the
-traces by undefined the below macro:
+And set "**silent**" environment variable. For the Secure loader,
+disable the traces by not defining the below macro:
 
 <!-- section-config -->
 

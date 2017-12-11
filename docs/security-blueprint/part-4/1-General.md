@@ -1,16 +1,24 @@
 # General configuration
 
-## MAC
+## Mandatory Access Control
 
 Kernel should controls access with labels and policy.
 
 <!-- section-config -->
 
 Domain               | Object | Recommendations
--------------------- | ------ | --------------------
-Kernel-General-MAC-1 | SMACK  | Must implement a MAC
+-------------------- | ------ | ------------------------------------------
+Kernel-General-MAC-1 | SMACK  | Must implement a Mandatory Access Control.
 
 <!-- end-section-config -->
+
+<!-- section-todo -->
+
+Domain       | Improvement
+------------ | ----------------
+Kernel-MAC-1 | Add MAC config note.
+
+<!-- end-section-todo -->
 
 --------------------------------------------------------------------------------
 
@@ -129,15 +137,23 @@ This configuration for is supported in **Linux 3.16 and greater** and thus shoul
 
 <!-- section-config -->
 
-Domain                   | `Config` name | `Value`
------------------------- | ------------- | -------
-Kernel-General-BPF_JIT-1 | `BPF_JIT`     | `n`
+Domain                   | `Config` name    | `Value`
+------------------------ | ---------------- | -------
+Kernel-General-BPF_JIT-1 | `CONFIG_BPF_JIT` | `n`
 
 <!-- end-section-config -->
 
 --------------------------------------------------------------------------------
 
 ## Enable Enforced Module Signing
+
+The kernel should never allow an unprivileged user the ability to load specific kernel modules,
+since that would provide a facility to unexpectedly extend the available attack surface.
+
+To protect against even privileged users, systems may need to either disable
+module loading entirely, or provide signed modules
+(e.g. CONFIG_MODULE_SIG_FORCE, or dm-crypt with LoadPin), to keep from having
+root load arbitrary kernel code via the module loader interface.
 
 This configuration is supported in **Linux 3.7 and greater** and thus should only be enabled for such versions.
 
@@ -171,6 +187,14 @@ Kernel-General-Drivers-3 | Other `hotplug` bus | _Disabled_
 
 ## Position Independent Executables
 
+<!-- section-todo -->
+
+Domain                           | Improvement
+-------------------------------- | -----------------------------
+Kernel-General-IndependentExec-1 | Kernel or/and platform part ?
+
+<!-- end-section-todo -->
+
 <!-- section-config -->
 
 Domain                           | `compiler` and `linker` options | _State_
@@ -203,6 +227,14 @@ During program load, all dynamic symbols are resolved, allowing for the complete
 <!-- pagebreak -->
 
 ## Library linking
+
+<!-- section-todo -->
+
+Domain                          | Improvement
+------------------------------- | ---------------
+Kernel-General-LibraryLinking-1 | Keep this part?
+
+<!-- end-section-todo -->
 
 It is recommended that dynamic linking should generally not be allowed. This will avoid the user from replacing a library with malicious library. All libraries should be linked statically, but this is difficult to implement.
 
