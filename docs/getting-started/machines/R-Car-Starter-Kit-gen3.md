@@ -1,4 +1,4 @@
-# AGL Kickstart on Renesas R-Car Starter Kit Gen3 V2.16 (h3ulcb, m3ulcb)
+# AGL Kickstart on Renesas R-Car Starter Kit Gen3 V2.23 (h3ulcb, m3ulcb)
 
 Here is a non exhaustive list of hardware parts that could be used to setup the R-Car Starter Kit Gen3 board development environment:
 
@@ -134,12 +134,25 @@ In case of failure of the build it is safe to first check that the Linux distrib
 
 # Booting AGL Image on R-Car Starter Kit Gen3 boards using a microSD card
 
-To boot the board using a micro-SD card, there are two operations that should be done prior to first initial boot:
+To boot the board using a micro-SD card, there are three operations that should be done prior to first initial boot:
 
+* Update all firmware on the device.
 * Create a SD-card with one ext4 partition,
 * Set up the board to boot on the SD-card.
 
 Then, for each build, the SD-card is merely rewritten and used to boot the configured board.
+
+## Firmware Update
+
+This proceedure is done in two steps.  The first step only needs to be done once per device.  The second step should be done, starting with the Eel release, per release.
+
+### Update Sample Loader and MiniMonitor
+
+Follow the documentation on the [eLinux.org wiki][R-car loader update] for the exact list of steps on how to perform the required steps to update to at least version 3.02.  This should be done even in the case where a **Kingfisher** or other expansion board will not be connected.
+
+### Update the firmware stack
+
+As an AArch64 platform both the **h3ulcb** and **m3ulcb** have a firmware stack that consists of multiple parts.  In both cases we have **ARM Trusted Firmware**, **OP-Tee** and **U-Boot** in use.  Starting with Eel you must update the firmware to at least the version referenced here.  For the exact steps required to flash the device see the eLinux.org wiki for **[h3ulcb][R-car h3ulcb firmware update]** or **[m3ulcb][R-car m3ulcb firmware update]** respectively.  In both cases the files listed in the table will be found in the *\$AGL_TOP/build/tmp/deploy/images/$MACHINE* directory as specified in previous steps.
 
 ## Prepare the SD-card on the host
 
@@ -618,7 +631,10 @@ Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside 
 * [AGL Developer Website](http://docs.automotivelinux.org)
 
 [R-car m3ulcb]: http://elinux.org/R-Car/Boards/M3SK
+[R-car m3ulcb firmware update]: https://elinux.org/R-Car/Boards/M3SK#Flashing_firmware
 [R-car h3ulcb]: http://elinux.org/R-Car/Boards/H3SK
+[R-car h3ulcb firmware update]: https://elinux.org/R-Car/Boards/H3SK#Flashing_firmware
+[R-car loader update]: http://elinux.org/R-Car/Boards/Kingfisher#How_to_update_of_Sample_Loader_and_MiniMonitor
 [R-car yocto]: http://elinux.org/R-Car/Boards/Yocto-Gen3
 [rcar Linux Drivers]: https://www.renesas.com/solutions/automotive/rcar-demoboard.html
 [rcar Linux Drivers 2]: https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
