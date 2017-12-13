@@ -134,13 +134,12 @@ In case of failure of the build it is safe to first check that the Linux distrib
 
 # Booting AGL Image on R-Car Starter Kit Gen3 boards using a microSD card
 
-To boot the board using a micro-SD card, there are three operations that should be done prior to first initial boot:
+To boot the board using a micro-SD card, there are two operations that must be done prior to first initial boot:
 
 * Update all firmware on the device.
-* Create a SD-card with one ext4 partition,
 * Set up the board to boot on the SD-card.
 
-Then, for each build, the SD-card is merely rewritten and used to boot the configured board.
+For each subsequent build you only need to rewrite the SD-card with the new image.
 
 ## Firmware Update
 
@@ -191,75 +190,9 @@ In the example above, we see:
 
 * the first SATA drive as 'sda'.
 * 'sdc' corresponds to the microSD card, and is also marked as removable device by *lsblk* which is a good confirmation.
-
-### Partition and format the SD-card
-
-* Create an EXT4 partition on the SD-card using fdisk and set the MBR.  
- For example, if the microSD card is */dev/sdc*:
-
-```bash
-sudo fdisk /dev/sdc
-
-  Welcome to fdisk (util-linux 2.27.1).
-  Changes will remain in memory only, until you decide to write them.
-  Be careful before using the write command.
-
-
-  Command (m for help): o
-  Created a new DOS disklabel with disk identifier 0x96e5850d.
-
-  Command (m for help): n
-  Partition type
-     p   primary (0 primary, 0 extended, 4 free)
-     e   extended (container for logical partitions)
-  Select (default p):
-
-  Using default response p.
-  Partition number (1-4, default 1):
-  First sector (2048-31291391, default 2048):
-  Last sector, +sectors or +size{K,M,G,T,P} (2048-31291391, default 31291391):
-
-  Created a new partition 1 of type 'Linux' and of size 14,9 GiB.
-
-  Command (m for help): w
-  The partition table has been altered.
-  Calling ioctl() to re-read partition table.
-  Syncing disks.
-```
-
-* Initialize the ext4 partition using “mke2fs”; for example, if the microSD card is associated with *sdc*:
-
-```bash
-sudo mke2fs -t ext4 -O ^64bit /dev/sdc1
-
-  mke2fs 1.42.13 (17-May-2015)
-  Creating filesystem with 3911168 4k blocks and 979200 inodes
-  Filesystem UUID: 690804b9-6c7d-4bbb-b1c1-e9357efabc52
-  Superblock backups stored on blocks:
-      32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
-
-  Allocating group tables: done
-  Writing inode tables: done
-  Creating journal (32768 blocks): done
-  Writing superblocks and filesystem accounting information: done
-```
-
-> **CAUTION**: Gen3 boards don't understand 64bits blocks used when filesystem
-> is formated with *64bits* feature so make sure you don't use it.
-
-### Copying the built image to the SD-card
-
-Insert the SD-card into your build host:
-
 * Your desktop system probably offers a choice to mount the SD-card automatically in some directory.
 * In the next sample code, we'll suppose that the SD-card mount directory is stored in the variable $SDCARD.
 * For example, if the microSD card is associated with device *sdc*:
-
-```bash
-export SDCARD=/tmp/agl
-mkdir -p $SDCARD
-sudo mount /dev/sdc1 $SDCARD
-```
 
 Go to your build directory:
 
@@ -267,73 +200,13 @@ Go to your build directory:
 cd $AGL_TOP/build/tmp/deploy/images/$MACHINE
 ```
 
-Make sure the filesystem is empty:
+The **.wic.xz** file can be uncompressed and written to the device you discovered in the previous step as follows:
+
 
 ```bash
-sudo rm -rf ${SDCARD:-bad_dir}/*
-```
-
-**IMPORTANT NOTE**: Verify that **tar** version is 1.28 or newer: this is required to create extended attributes correctly on the SD-card, and in particular SMACK labels used to enforce security. Check with the following command:
-
-```bash
-tar --version
-tar (GNU tar) 1.28
-[snip]
-```
-
-If your distribution is up to date on this dependency, you can use the host tool directly.  
-Let's define a variable for the following steps:
-
-```bash
-TAR=$(which tar)
-```
-
-Otherwise, a native up-to-date version of tar is also generated while building AGL distribution:
-
-```bash
-TAR=$AGL_TOP/build/tmp/sysroots/x86_64-linux/usr/bin/tar-native/tar
-$TAR --version
-tar (GNU tar) 1.28
-[snip]
-```
-
-Copy Automotive Grade Linux (AGL) files onto the mircoSD card by extracting the root file system archive:
-
-```bash
-sudo $TAR --extract --xz --numeric-owner --preserve-permissions --preserve-order --totals \
-           --xattrs-include='*' --directory=$SDCARD --file=agl-demo-platform-h3ulcb.tar.xz
-```
-
-Copy Kernel Image and Device Tree Blob file into the **boot** directory:
-
-* For machine h3ulcb (BSP >= 2.19):
-
-```bash
-sudo cp Image-r8a7795-es1-h3ulcb.dtb $SDCARD/boot/
-```
-
-* For machine h3ulcb (BSP < 2.19):
-
-```bash
-sudo cp Image-r8a7795-h3ulcb.dtb $SDCARD/boot/
-```
-
-* For machine m3ulcb:
-
-```bash
-sudo cp Image-r8a7796-m3ulcb.dtb $SDCARD/boot/
-```
-
-Ensure the changes have been written to the disk:
-
-```bash
-sync
-```
-
-Unmount the microSD card:
-
-```bash
-sudo umount $SDCARD
+  sudo umount /dev/sdc
+  xzcat agl-demo-platform-$MACHINE.wic.xz | sudo dd of=/dev/sdc bs=4M
+  sync
 ```
 
 ## Booting the board
