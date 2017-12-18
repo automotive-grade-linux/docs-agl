@@ -24,8 +24,11 @@ UEFI has evolved a lot recently and you likely want to check that your HW firmwa
 AGL provides ready made images for developers.
 You will find them on [AGL Download web site](https://download.automotivelinux.org/AGL/release)
 image are located in YourPreferedRelease/intel-corei7-64/deploy/images/intel-corei7-64/
-Create a bootable SD card with the script [mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh)
-check the available options with the -v option. mkefi-agl.sh -v
+Download the **wic.xz** file and decompress and use it directly or modify it with the script [mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh).
+With the script, check the available options with the -h option.
+```bash
+  mkefi-agl.sh -h
+```
 
 ### Building an AGL image from scratch using Yocto
 
@@ -105,7 +108,7 @@ internet connection and will required several GB on /tmp as well as on your buil
   bitbake agl-demo-platform
 ```
 
-**Your newly baked disk image (.hddimg) will be located at**:  
+**Your newly baked disk image (.wic.xz) will be located at**:
   `tmp/deploy/images/intel-corei7-64/`
 
 ##### Alternative: Download a *ready made* image from AGL web site
@@ -123,7 +126,7 @@ Follow the directory:
 
 and download the file:  
 
-`agl-demo-platform-intel-corei7-64.hddimg`
+`agl-demo-platform-intel-corei7-64.wic.xz`
 
 ## Create a bootable media
 
@@ -141,19 +144,32 @@ It does require to have access to a Linux machine with `sudo` or root password.
   #(eg. /dev/sdc or /dev/mmcblk0)
 ```
 
-### Download the script `mkefi-agl.sh`
+### Flash the image
+
+The **.wic.xz** file can be uncompressed and written to the device you discovered in the previous step as follows:
+
+```bash
+  xz -d agl-demo-platform-intel-corei7-64.wic.xz
+  sudo umount [device from above]
+  sudo dd if=agl-demo-platform-intel-corei7-64.wic of=[device from above] bs=4M
+  sync
+```
+
+However, in some cases you will want to use the script [mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh) instead.
+
+#### Download the script `mkefi-agl.sh`
 
 This script is present in the directory meta-agl/scripts from blowfish 2.0.4, alternatively you can download it from the following Git repo:  
 
 [https://github.com/dominig/mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh)
 
-### check the available options
+#### check the available options
 
 ```bash
   sh mkefi-agl.sh -v;
 ```
 
-### create your media with the command adjusted to your configuration
+#### create your media with the command adjusted to your configuration
 
 ```bash
   sudo sh mkefi-agl.sh MyAglImage.hdd /dev/sdX

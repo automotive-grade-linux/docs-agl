@@ -11,8 +11,8 @@ For instructions on how to update the BIOS on those platforms, please refer to t
 ## Creating a bootable image
 
 Multiple options are avaiable but `dd` and `tar` can very easily let you down due to the requirement to pass SMACK labels, create a proper UEFI configuration and a few other tricks.
-The script [mkefi-agl.sh](https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git;a=blob_plain;f=scripts/mkefi-agl.sh;hb=HEAD) has been done to help you.
-The option -h will print the help and the option -v will detail the operation and ease any debug.
+In some cases, the created **wic.xz** image can be used without modification, after decompression.  In other cases, the script [mkefi-agl.sh](https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git;a=blob_plain;f=scripts/mkefi-agl.sh;hb=HEAD) is needed.
+For that script, the option -h will print the help and the option -v will detail the operation and ease any debug.
 
 ## Selecting the SD or USB to boot
 
