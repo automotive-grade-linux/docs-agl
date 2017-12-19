@@ -51,6 +51,7 @@ set some constants
                         </ul>
                     </div>
 
+                    <!--
                     {% comment %}
                     Show a single edit-link if the page has a specific edit-link.
                     {% endcomment %}
@@ -115,15 +116,17 @@ set some constants
                             <a class="edit" href="{{ edit_link }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> {{ page.edit_source_text }}</a>
                         {% endif %}
                     {% endif %}
+                    -->
 
                     <!-- Language dropdown -->
+                    <!--
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{ site.data.docs-versions[page.language].name }}
                             <span class="caret"></span>
                         </button>
 
-                        <!-- List all languages -->
+                        <!-- List all languages - ->
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                             {% for other_language_entry in site.data.docs-versions %}
 
@@ -154,8 +157,10 @@ set some constants
                             {% endfor %}
                         </ul>
                     </div>
+                    -->
 
                     <!-- Version dropdown -->
+                    <!--
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{ page.version }}
@@ -166,7 +171,7 @@ set some constants
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="versionDropdown">
 
-                            <!-- List versions available in this language -->
+                            <!-- List versions available in this language - ->
                             {% for other_version in site.data.docs-versions[page.language].versions reversed %}
                             <li>
                                 {% comment %}
@@ -213,7 +218,9 @@ set some constants
                             {% endfor %}
                         </ul>
                     </div>
+                    -->
                 </div>
+                
 
                 {% comment %}
                 Get URL for this page in the latest version
@@ -229,7 +236,7 @@ set some constants
                 {% endunless %}
 
                 <!-- Show warnings for special versions -->
-                <!-- dev warning -->
+                <!-- dev warning
                 {% if page.version == 'dev' %}
                     <div class="alert docs-alert alert-info" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -241,8 +248,9 @@ set some constants
                         </a>
                     </div>
                 {% endif %}
-                
-                <!-- outdated warning -->
+                -->
+
+                <!-- outdated warning
                 {% if page.version != 'dev' and page.version != site.latest_docs_version %}
                     <div class="alert docs-alert alert-danger" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -254,6 +262,7 @@ set some constants
                         </a>
                     </div>
                 {% endif %}
+                -->
 
 
                 <div id="page-toc-source">
