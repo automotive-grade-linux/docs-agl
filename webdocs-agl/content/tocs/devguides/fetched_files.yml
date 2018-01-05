@@ -146,6 +146,8 @@ repositories:
         - source: part-1/pictures/xds-dashboard-icon-3.png
         - source: part-1/pictures/xds-dashboard-prj-1.png
         - source: part-1/pictures/xds-dashboard-prj-2.png
+        - source: part-1/pictures/xds-dashboard-sdks-install.png
+        - source: part-1/pictures/xds-dashboard-sdks-mgt.png
         - source: part-2/0_Abstract.md
         - source: part-2/1_xds-server.md
         - source: part-2/2_xds-agent.md
