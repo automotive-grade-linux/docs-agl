@@ -132,6 +132,27 @@ repositories:
           label: Installation and Usage Guide
         - source: images/high-level-arch.png
 -
+    url_fetch: "GERRIT_FETCH"
+    git_name: apps/agl-service-signal-composer
+    git_commit: "master"
+    src_prefix: docs/part-1/
+    dst_prefix: signaling
+    documents:
+        - source: 1-Architecture.md
+          destination: signal-composer-architecture.md
+          label: Architecture presentation
+        - source: 2-Configuration.md
+          destination: signal-composer-configuration.md
+          label: Configuration
+        - source: 3-Plugins.md
+          destination: signal-composer-plugins.md
+          label: Plugins
+        - source: 4-SignalComposerAPI.md
+          destination: signal-composer-api.md
+          label: Signal Composer API
+        - source: pictures/Global_Signaling_Architecture.png
+        - source: pictures/iotbzh_logo_small.png
+-
     url_fetch: AGL_GITHUB_FETCH
     url_edit: AGL_GITHUB_EDIT
     git_name: "%project_source%/docs-agl"

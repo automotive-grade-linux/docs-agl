@@ -74,6 +74,12 @@ children:
           children:
                 - url: reference/signaling/high-viwi-architecture.html
                 - url: reference/signaling/high-viwi-install-usage-guide.html
+        - name: Signal Composer service Guide
+          children:
+                - url: reference/signaling/signal-composer-architecture.html
+                - url: reference/signaling/signal-composer-configuration.html
+                - url: reference/signaling/signal-composer-plugins.html
+                - url: reference/signaling/signal-composer-api.html
         - name: Developer Guidelines
           url: reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf
         - name: CAN Signaling Benchmark
