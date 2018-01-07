@@ -118,8 +118,8 @@ repositories:
         - source: README.md
           destination: 2_4-Use-app-templates.md
 -
-    url_fetch: "GITHUB_FETCH"
-    git_name: iotbzh/xds-docs
+    url_fetch: "GERRIT_FETCH"
+    git_name: src/xds/xds-docs
     git_commit: "master"
     src_prefix: "docs"
     dst_prefix: "xds"
