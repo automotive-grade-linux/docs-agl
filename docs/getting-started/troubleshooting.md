@@ -96,12 +96,10 @@ To disable IVI-Shell and revert to the "plain old" weston desktop, you can follo
 * Reboot your target and you should then be able to start apps on the standard weston screen using afm-util
 
 ## Adding media files to play with MediaPlayer
-
-AGL include the default MediaPlayer sample app which can be used to play music. The lightmediascanner.service by default will search for media under /media folder. So if you plugin any USB stick containing music, they would be recognized and showed in the playlist of the MediaPlayer app menu.
-
-In case you want to store music in another place, modify the /usr/lib/systemd/user/lightmediascanner.service file and change the --directory parameter to the path of the folder.
-
-If you don’t want to touch the ligthmediascanner service, you can also add a folder named “Music” uder /home/root and put your music files there.
+AGL include the default MediaPlayer sample app which can be used to play music. The `lightmediascanner.service` by default will search for media under the `/media` folder. So if you plug in any USB stick containing music, they would be recognized and showed in the playlist of the MediaPlayer app menu.
 
 The current supported format is OGG. Please convert your files to ogg to play with MediaPlayer.
-AGL include the default MediaPlayer sample app which can be used to play music. The lightmediascanner.service by default will search for media under /media folder. So if you plugin any USB stick containing music, they would be recognized and showed in the playlist of the MediaPlayer app menu. 
+
+In case you want to store music in another place, modify the `/usr/lib/systemd/user/lightmediascanner.service` file and change the `--directory` parameter to the path of that folder.
+
+If you don’t want to touch the ligthmediascanner service, you can also add a folder named "Music" under `/home/root` and put your music files there.
