@@ -94,44 +94,141 @@ children:
     name: "X(cross) Development System: User's Guide"
     children:
         -
-            name: Getting Started
-            url: reference/xds/part-1/0_Abstract.html
+          name: Getting Started
+          url: reference/xds/part-1/0_Abstract.html
         -
-            name: Installing xds client tools
-            url: reference/xds/part-1/1_install-client.html
+          name: Installing xds client tools
+          url: reference/xds/part-1/1_install-client.html
         -
-            name: Installing xds-server
-            url: reference/xds/part-1/2_install-xds-server.html
+          name: Installing xds-server
+          children:
+              -
+                name: Installation
+                url: reference/xds/part-1/2_install-xds-server.html
+              -
+                name: Based on Docker container
+                url: reference/xds/part-1/2-1_install-xds-server-docker.html
+              -
+                name: Based on Virtual Machine appliance
+                url: reference/xds/part-1/2-2_install-xds-server-vm.html
+              -
+                name: Native installation
+                url: reference/xds/part-1/2-3_install-xds-server-native.html
         -
-            name: Installing AGL SDKs
-            url: reference/xds/part-1/3_install-sdks.html
+          name: Installing AGL SDKs
+          url: reference/xds/part-1/3_install-sdks.html
         -
-            name: Create your first AGL application
-            url: reference/xds/part-1/4_build-first-app.html
+          name: Create your first AGL application
+          children:
+              -
+                name: Prerequisites
+                url: reference/xds/part-1/4_build-first-app.html
+              -
+                name: Setup
+                url: reference/xds/part-1/4-1_build-first-app-setup.html
+              -
+                name: Build using command line tool
+                url: reference/xds/part-1/4-2_build-first-app-cmd.html
+              -
+                name: Build using XDS Dashboard
+                url: reference/xds/part-1/4-3_build-first-app-dashboard.html
+              -
+                name: Build using a source code editor / IDE
+                url: reference/xds/part-1/4-4_build-first-app-ide.html
         -
-            name: Debug your first AGL application
-            url: reference/xds/part-1/5_debug-first-app.html
+          name: Debug your first AGL application
+          children:
+              -
+                name: Prerequisites
+                url: reference/xds/part-1/5_debug-first-app.html
+              -
+                name: Configuration
+                url: reference/xds/part-1/5-1_debug-first-app-config.html
+              -
+                name: xds-gdb from command line
+                url: reference/xds/part-1/5-2_debug-first-app-cmd.html
+              -
+                name: xds-gdb within an IDE
+                url: reference/xds/part-1/5-3_debug-first-app-ide.html
+
 -
     name: "X(cross) Development System: Internals"
     children:
         -
-            name: Abstract
-            url: reference/xds/part-2/0_Abstract.html
+          name: Abstract
+          url: reference/xds/part-2/0_Abstract.html
         -
-            name: xds-server
-            url: reference/xds/part-2/1_xds-server.html
+          name: Prerequisites
+          url: reference/xds/part-2/1_Prerequisites.html
         -
-            name: xds-agent
-            url: reference/xds/part-2/2_xds-agent.html
+          name: XDS-server
+          children:
+              -
+                name: Abstract
+                url: reference/xds/part-2/1_xds-server/0_abstract.html
+              -
+                name: Configuration
+                url: reference/xds/part-2/1_xds-server/1_config.html
+              -
+                name: How to run
+                url: reference/xds/part-2/1_xds-server/2_how-to-run.html
+              -
+                name: Build from scratch
+                url: reference/xds/part-2/1_xds-server/3_build.html
+              -
+                name: Debugging
+                url: reference/xds/part-2/1_xds-server/4_debug.html
         -
-            name: xds-cli
-            url: reference/xds/part-2/3_xds-cli.html
+          name: XDS-agent
+          children:
+              -
+                name: Abstract
+                url: reference/xds/part-2/2_xds-agent/0_abstract.html
+              -
+                name: Configuration
+                url: reference/xds/part-2/2_xds-agent/1_config.html
+              -
+                name: Start
+                url: reference/xds/part-2/2_xds-agent/2_start.html
+              -
+                name: Build from scratch
+                url: reference/xds/part-2/2_xds-agent/3_build.html
+              -
+                name: Debugging
+                url: reference/xds/part-2/2_xds-agent/4_debug.html
         -
-            name: xds-gdb
-            url: reference/xds/part-2/4_xds-gdb.html
+          name: XDS-cli
+          children:
+              -
+                name: Abstract
+                url: reference/xds/part-2/3_xds-cli/0_abstract.html
+              -
+                name: Configuration
+                url: reference/xds/part-2/3_xds-cli/1_config.html
+              -
+                name: CLI Commands
+                url: reference/xds/part-2/3_xds-cli/2_commands.html
+              -
+                name: Build from scratch
+                url: reference/xds/part-2/3_xds-cli/3_build.html
+              -
+                name: Debugging
+                url: reference/xds/part-2/3_xds-cli/4_debug.html
         -
-            name: xds-exec
-            url: reference/xds/part-2/5_xds-exec.html
+          name: XDS-gdb
+          children:
+              -
+                name: Abstract
+                url: reference/xds/part-2/4_xds-gdb/0_abstract.html
+              -
+                name: Configuration
+                url: reference/xds/part-2/4_xds-gdb/1_config.html
+              -
+                name: Build from scratch
+                url: reference/xds/part-2/4_xds-gdb/2_build.html
+              -
+                name: Debugging
+                url: reference/xds/part-2/4_xds-gdb/3_debug.html
 -
     name: Guides
     children:
