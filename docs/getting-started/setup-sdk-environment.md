@@ -45,10 +45,10 @@ A pre-built image is available on automotivelinux download public site and can b
 First, download and load the image in your local Docker instance:
 
 ```bash
-wget -O - https://download.automotivelinux.org/AGL/snapshots/sdk/docker/docker_agl_worker-3.0.tar.xz | sudo docker load;
+wget -O - https://download.automotivelinux.org/AGL/snapshots/sdk/docker/docker_agl_worker-latest.tar.xz | sudo docker load;
 docker images;
       REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
-      docker.automotivelinux.org/agl/worker   3.0                 42009148bc03        6 days ago          926.9 MB
+      docker.automotivelinux.org/agl/worker   5.0                 42009148bc03        6 days ago          926.9 MB
       jenkins                                 latest              55720d63e328        5 weeks ago         711.9 MB
       hello-world                             latest              c54a2cc56cbb        5 months ago        1.848 kB
 ```
