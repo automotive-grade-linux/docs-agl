@@ -61,12 +61,14 @@ The Joule seems to refuse to boot with my SD-HC-I type cards while I had no prob
 ## Serial debug Port
 
 Serial debug port ID varies with the HW platform. By default AGL build Intel target as a MinnowBoard where serial is `/dev/ttyS0`, on Joule and MRB the serial debug is `/dev/ttyS2`.
+On Up boards the /dev/ttyS0 serial port is not easy to access and using /dev/ttyS4 which is routed on the Arduino connector.<br> [See pinout]( http://www.up-board.org/wp-content/uploads/2017/11/UP-Square-DatasheetV0.5.pdf)
 
 You may have to change the configuration in your bootloader which is located in the EFI partition.
 
 ## Serial debug cable
 
-On the MinnowBoard the serial cable is an FTDI serial cable. The wiring can be found [here](http://wiki.minnowboard.org/MinnowBoard_MAX_HW_Setup).  
+On the MinnowBoard the serial cable is an FTDI serial cable. The wiring can be found [here](http://wiki.minnowboard.org/MinnowBoard_MAX_HW_Setup).<br>
+Up Boards use the same FDDI 3.3V adaptor than the Minnow but the pin out is not adjacent and requires to split the pins.
 On the Joule the serial connection is done via the micro USB cable which is not provided in the Developer kit. Details can be found [here](https://software.intel.com/en-us/node/667851).  
 Interface speed is 115200 bps, 8 bits, no parity, no flow control
 
