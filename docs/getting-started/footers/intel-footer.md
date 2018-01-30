@@ -1,12 +1,14 @@
 ## BIOS update
 
-Both Joule and MinnowBoard require a BIOS upgrade before running AGL on them.
+Both Joule and MinnowBoard-Max (not needed on Turbo) require a BIOS upgrade before running AGL on them.
 
 **Do not loose any time trying without upgrading your BIOS first.**
 
 For instructions on how to update the BIOS on those platforms, please refer to these documents:
 * [MinnowBoard](https://firmware.intel.com/projects/minnowboard-max)
 * [Intel Joule](https://software.intel.com/en-us/flashing-the-bios-on-joule)
+* Intel MRB contact your technical support representative to get the non signed ABL firmware<br>
+**Note** MRB users need to replace the mkefi-agl.sh script by mkabl-agl.sh
 
 ## Creating a bootable image
 
@@ -14,6 +16,37 @@ Multiple options are avaiable but `dd` and `tar` can very easily let you down du
 The script [mkefi-agl.sh](https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git;a=blob_plain;f=scripts/mkefi-agl.sh;hb=HEAD) has been done to help you.
 The option -h will print the help and the option -v will detail the operation and ease any debug.
 
+## Installing your image on the internal eMMC
+
+It can be interesting to install the AGL image directly on the internal eMMC rather than to boot from and SD or a USB removable device.
+The easiest to do so, is to add the required tools in your removable boot device, boot AGL from the removable device and
+then use the mkefi-agl.sh script to install the image image on the internal eMMC.
+ * Add the tools to the AGL image.
+ ** Add a file site.conf in your build/conf directory with the following content:
+ ```
+ INHERIT += "rm_work"
+ IMAGE_INSTALL_append = " linux-firmware-iwlwifi-7265d"
+ IMAGE_INSTALL_append = " parted e2fsprogs dosfstools"
+ IMAGE_INSTALL_append = " linux-firmware-i915 linux-firmware-ibt linux-firmware-iwlwifi-8000c"
+ add the iwlifi for your own device as needed
+ ```
+ * rebuild your image and install it on your removable device with mkefi-agl.sh.
+ * add the AGL image file on your removable device in the home directory (for later installation)
+ ```
+ the AGL image file created by yocto (.wic.xz)
+ located in build/tmp/deploy/images/intel-corei7-64/agl-demo-platform-intel-corei7-64.wic.xz
+ ```
+ * boot AGL from your removable device
+ * connect to the AGL running image either via serial link or ssh
+ * locate the eMMC device name
+ * install image with mkefi-agl.sh
+ ```
+ cat /proc/partitions
+ ```
+ * install the AGL image on the eMMC with mkefi-agl.sh script
+ * remove the USB or SD boot device
+ * reboot
+ 
 ## Selecting the SD or USB to boot
 
 When booting a MinnowBoard or a Joule you can change the default boot device by hitting F2 during initial UEFI boot.  
