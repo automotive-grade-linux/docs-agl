@@ -5,7 +5,7 @@
 This documentation is aiming at people who want to run Automotive Grade
 Linux (AGL) on Intel Hardware (HW).
 While the reference HW used by AGL project is the Open Source MinnowBoard, this documentation [MinnowBoard wiki](https://minnowboard.org/) can be used to enable most of 64-bit Intel Architecture (IA) platforms using UEFI as boot loader.  
-In addition to the MinnowBoard, support for the [Joule Developer Kit](https://software.intel.com/en-us/iot/hardware/joule/dev-kit) has been added.
+In addition to the MinnowBoard, support for the [upCore & UpSquared boards](http://www.up-board.org/upsquared/) has been added.
 You need to run the 64-bit version of the UEFI bootloader.
 MinnowBoard Max and Turbot as well as Joule are both 64-bit capable.
 
@@ -13,7 +13,7 @@ MinnowBoard Max and Turbot as well as Joule are both 64-bit capable.
 
 If you are interested in creating ***applications*** to run on AGL, please visit the [Developing Apps for AGL](https://wiki.automotivelinux.org/agl-distro/developer_resources_intel_apps) documentation.
 
-UEFI has evolved a lot recently and you likely want to check that your HW firmware is up-to-date, this is mandatory for both the MinnowBoard and the Joule.
+UEFI has evolved a lot recently and you likely want to check that your HW firmware is up-to-date, this is mandatory for both the MinnowBoard-Max and the Joule. Not required on Minnowboard-Turbo and Up boards.
 
 [`https://firmware.intel.com/projects/minnowboard-max`](https://firmware.intel.com/projects/minnowboard-max)  
 [`https://software.intel.com/en-us/flashing-the-bios-on-joule`](https://software.intel.com/en-us/flashing-the-bios-on-joule)
@@ -48,11 +48,11 @@ To install the `repo` tool:
   chmod a+x ~/bin/repo;
 ```
 
-#### Configuring for the current *(older)* stable (Charming Chinook 3.0.x)
+#### Configuring for the current *(older)* stable (Electric Eel 5.0.x)
 
 ```bash
-  cd AGL-3.0.x;
-  repo init -b chinook -m default.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+  cd AGL-5.0.x;
+  repo init -b eel -m default.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 ```
 
 #### Configuring for master (DD)
@@ -93,7 +93,7 @@ Simply select that entry to replace porter in the -m option.
   source meta-agl/scripts/aglsetup.sh \
   -m intel-corei7-64 \
   -b build \
-  agl-devel agl-demo agl-appfw-smack agl-netboot
+  agl-devel agl-demo agl-appfw-smack agl-netboot agl-audio-4a-framework
 ```
 
 **Note:** use the option "-m joule" when building for a Joule developer Kit target.
@@ -105,7 +105,7 @@ internet connection and will required several GB on /tmp as well as on your buil
   bitbake agl-demo-platform
 ```
 
-**Your newly baked disk image (.hddimg) will be located at**:  
+**Your newly baked disk image (.wic.xz) will be located at**:  
   `tmp/deploy/images/intel-corei7-64/`
 
 ##### Alternative: Download a *ready made* image from AGL web site
