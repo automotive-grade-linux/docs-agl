@@ -110,16 +110,16 @@ You need to configure Audio in 2 places
  - alsa
  - 4A HAL
  
- ### alsa
+### alsa
  The file /etc/asound.conf (at the beginning) tells which hardware will be used.
  For example on an Intel Minnow or UP board your need to enter the following configuration.
- ```
+```
  pcm.Speakers {
     type dmix
     slave {pcm "hw:PCH,3"}
     ipc_key 1001          # ipc_key should be unique to each dmix
 }
- ```
+```
 The correct value (here hw:PCH,3) can be obtained with the command:
 ```
 aplay -l
