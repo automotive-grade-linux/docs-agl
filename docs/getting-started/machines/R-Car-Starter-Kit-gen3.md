@@ -1,4 +1,4 @@
-# AGL Kickstart on Renesas R-Car Starter Kit Gen3 V2.23 (h3ulcb, m3ulcb)
+# AGL Kickstart on Renesas R-Car Starter Kit Gen3 V2.23 (h3ulcb, m3ulcb, salvator-x)
 
 Here is a non exhaustive list of hardware parts that could be used to setup the R-Car Starter Kit Gen3 board development environment:
 
@@ -14,6 +14,9 @@ For more information and latest news, please check :
 
 * [elinux page for h3ulcb][R-car h3ulcb]
 * [elinux page for m3ulcb][R-car m3ulcb]
+* [elinux page for salvator-x][R-car salvator-x]
+
+Note that the Salvator-X has NDA restrictions, so less documentation is available both here and elsewhere.
 
 The following documents may also be helpful:
 
@@ -60,6 +63,11 @@ export MACHINE=h3ulcb
 export MACHINE=m3ulcb
     ```
 
+* for machine **h3-salvator-x**:
+
+    ```bash
+export MACHINE=h3-salvator-x
+
 Now, init your build environment:
 
 ```bash
@@ -101,6 +109,8 @@ grep -w -e "^MACHINE =" $AGL_TOP/build/conf/local.conf
   MACHINE = "h3ulcb"
 or
   MACHINE = "m3ulcb"
+or
+  MACHINE = "h3-salvator-x"
 ```
 
 Configure for Release or Development:
@@ -151,7 +161,7 @@ Follow the documentation on the [eLinux.org wiki][R-car loader update] for the e
 
 ### Update the firmware stack
 
-As an AArch64 platform both the **h3ulcb** and **m3ulcb** have a firmware stack that consists of multiple parts.  In both cases we have **ARM Trusted Firmware**, **OP-Tee** and **U-Boot** in use.  Starting with Eel you must update the firmware to at least the version referenced here.  For the exact steps required to flash the device see the eLinux.org wiki for **[h3ulcb][R-car h3ulcb firmware update]** or **[m3ulcb][R-car m3ulcb firmware update]** respectively.  In both cases the files listed in the table will be found in the *\$AGL_TOP/build/tmp/deploy/images/$MACHINE* directory as specified in previous steps.
+As an AArch64 platform both the **h3ulcb** and **m3ulcb** have a firmware stack that consists of multiple parts.  In both cases we have **ARM Trusted Firmware**, **OP-Tee** and **U-Boot** in use.  Starting with Eel you must update the firmware to at least the version referenced here.  For the exact steps required to flash the device see the eLinux.org wiki for **[h3ulcb][R-car h3ulcb firmware update]** or **[m3ulcb][R-car m3ulcb firmware update]** respectively.  In both cases the files listed in the table will be found in the *\$AGL_TOP/build/tmp/deploy/images/$MACHINE* directory as specified in previous steps.  The Salvator-X firmware update process is not documented on eLinux.
 
 ## Prepare the SD-card on the host
 
@@ -507,6 +517,7 @@ Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside 
 [R-car m3ulcb firmware update]: https://elinux.org/R-Car/Boards/M3SK#Flashing_firmware
 [R-car h3ulcb]: http://elinux.org/R-Car/Boards/H3SK
 [R-car h3ulcb firmware update]: https://elinux.org/R-Car/Boards/H3SK#Flashing_firmware
+[R-car salvator-x]: https://elinux.org/R-Car/Boards/Salvator-X
 [R-car loader update]: http://elinux.org/R-Car/Boards/Kingfisher#How_to_update_of_Sample_Loader_and_MiniMonitor
 [R-car yocto]: http://elinux.org/R-Car/Boards/Yocto-Gen3
 [rcar Linux Drivers]: https://www.renesas.com/solutions/automotive/rcar-demoboard.html
