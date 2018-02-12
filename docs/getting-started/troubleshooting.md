@@ -107,8 +107,8 @@ If you don’t want to touch the ligthmediascanner service, you can also add a f
 ## Configuring the Audio hardware
 AGL uses alsa as Audio configuration master. If the correct HW is not setup, the Audio system will fail to start what will also fails the demo Home Screen launch.
 You need to configure Audio in 2 places
- - alsa
- - 4A HAL
+ * alsa
+ * 4A HAL
  
 ### alsa
  The file /etc/asound.conf (at the beginning) tells which hardware will be used.
@@ -136,10 +136,10 @@ NOTE that the device number is not always 0. If you give no device number, alsa 
 As the default is hw:0 (card 0 device 0), it will always fail on a Minnow or UP board.
 
 For info HW device for common configuration are:
-- for USB Audio -> hw:AUDIO,0
-- for Intel Analog output -> hw:PCH,0 (not available on Minnow, Joule, Up boards, ...)
-- for Intel via -> HDMI hw:PCH,3
-- for MOST Unicens -> hw:ep016ch,0
+* for USB Audio -> hw:AUDIO,0
+* for Intel Analog output -> hw:PCH,0 (not available on Minnow, Joule, Up boards, ...)
+* for Intel via -> HDMI hw:PCH,3
+* for MOST Unicens -> hw:ep016ch,0
 
 ### 4A HAL configuration
 AGL 4A needs to know which HAL shall be used. This is configured in the file:
@@ -157,10 +157,37 @@ At the beginning of that file you will find the slected HAL (note the there is n
     "audio_roles": [
 ```
 Here you see "intel-minnow" but common values are:
-- Intel laptop -> intel-pc
-- Intel via HDMI -> intel-minnow
-- Renesas -> Rcar-M3
-- USB Audio Speaker -> usb-audio
-- MOSTS Unicens -> hal-most-unicens
+* Intel laptop -> intel-pc
+* Intel via HDMI -> intel-minnow
+* Renesas -> Rcar-M3
+* USB Audio Speaker -> usb-audio
+* MOSTS Unicens -> hal-most-unicens
 
 More HAL can be found on Gerrit (search projects named as 4a-hal*)
+
+## Installing the Map for the Navigation Application
+While the Navigation App is installed with all other demo Apps at first boot, the Maps required to be installed manually.
+
+### a) Method 1 on target download.
+
+ 1. Install the new image on the target
+ 2. boot a first time to install the demo Apps
+ 3. via ssh or serial connection, execute the script
+  * /usr/AGL/apps/download_mapdata_uk.sh <br>
+    or
+  * /usr/AGL/apps/download_mapdata_jp.sh
+
+### b) At image creation
+
+Download on your build machine the desired maps and uncompress them on your target image before 1st boot.
+This method is quicker and does not require to have the network enabled on the target device.
+Map can be found here.
+ * http://agl.wismobi.com/data/japan_TR9/navi_data.tar.gz
+ * http://agl.wismobi.com/data/UnitedKingdom_TR9/navi_data_UK.tar.gz
+
+Once that you have built your image on the SD card, uncompress the desired map in on the SD card at the position /YourMountPoint/var/mapdata <br>
+(YourMountPoint will vary with your build system).<br>
+
+You can also use the script from the image to install the Mapdata on your SD card but there is little adavange in using that method. e.g.
+ * download_mapdata_jp.sh /YourMountPoint
+
