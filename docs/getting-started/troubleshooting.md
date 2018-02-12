@@ -113,7 +113,7 @@ You need to configure Audio in 2 places
 ### alsa
  The file /etc/asound.conf (at the beginning) tells which hardware will be used.
  For example on an Intel Minnow or UP board your need to enter the following configuration.
-```
+```json
  pcm.Speakers {
     type dmix
     slave {pcm "hw:PCH,3"}
@@ -121,7 +121,7 @@ You need to configure Audio in 2 places
 }
 ```
 The correct value (here hw:PCH,3) can be obtained with the command:
-```
+```bash
 aplay -l
 **** List of PLAYBACK Hardware Devices ****
 card 0: PCH [HDA Intel PCH], device 3: HDMI 0 [HDMI 0]
@@ -147,7 +147,7 @@ AGL 4A needs to know which HAL shall be used. This is configured in the file:
 /usr/agl-service-audio-4a/ahl-agl-service-audio-4a-config.json
 ```
 At the beginning of that file you will find the slected HAL (note the there is no correct default value).
-```
+```json
 {
     "version": "0.2.0",
     "policy_module": "AudioPolicy_v1",
