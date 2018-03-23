@@ -1,9 +1,9 @@
 #######################################################################
-# WARNING: 
+# WARNING:
 #  - TOC should reference .HTML and .md (Index OK but Error 404)
-#  - do not forget to run 'docbuild --tocs' after any changes 
+#  - do not forget to run 'docbuild --tocs' after any changes
 #
-# 
+#
 ############################ SYNTAX ###################################
 # GLOBAL OPTIONS:
 #    name: TOC (page) title
@@ -13,7 +13,7 @@
 # TOC Entry:
 #     name: TOC entry (level 1)
 #     children:
-#         - 
+#         -
 #            name: optional name for TOC entry (default: use URL FrontMatter info)
 #            url: <subdir as defined with FETCH_DIR in conf/AppDefaults.js:
 #         -
@@ -88,7 +88,8 @@ children:
 -
     name: Audio Framework
     children:
-        - url: reference/audio/resources.html
+        - url: reference/audio/4a-framework.html
+        - url: reference/audio/bluez-alsa.html
 -
     name: HMI Framework
     children:
@@ -106,4 +107,4 @@ children:
     children:
         - url: reference/homescreen/homescreen_api.html
 
- 
+

@@ -198,9 +198,12 @@ repositories:
     src_prefix: docs/audio
     dst_prefix: audio
     documents:
-        - source: index.md
-          destination: resources.md
-          label: Resources
+        - source: 4a-framework.md
+          destination: 4a-framework.md
+          label: 4a-framework
+        - source: bluez-alsa.md
+          destination: bluez-alsa.md
+          label: bluez-alsa
 -
     url_fetch: "GERRIT_FETCH"
     git_name: apps/agl-service-homescreen-2017
