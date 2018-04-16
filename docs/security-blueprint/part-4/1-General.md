@@ -24,7 +24,7 @@ Kernel-MAC-1 | Add MAC config note.
 
 ## Disable kexec
 
-This prevents someone who gets root from supplanting the kernel. This can be used as a way to bypass signed kernels.
+**Kexec** is a system call that enables you to load and boot into another kernel from the currently running kernel. This feature is not required in a production environment.
 
 <!-- section-config -->
 
@@ -33,6 +33,12 @@ Domain                 | `Config` name  | `Value`
 Kernel-General-kexec-1 | `CONFIG_KEXEC` | `n`
 
 <!-- end-section-config -->
+
+<!-- section-note -->
+
+**kexec** can load arbitrary kernels but signing of new kernel can be enforced like it is can be enforced for new modules.
+
+<!-- end-section-note -->
 
 --------------------------------------------------------------------------------
 
@@ -80,7 +86,7 @@ Kernel-General-LegacyLinux-1 | `CONFIG_USELIB` | `n`
 
 ## Disable firmware auto-loading user mode helper
 
-The firmware auto loading helper, which is a utility executed by the kernel on `hotplug` events requiring firmware, needs to be set `setuid`. As a result of this, the helper utility is an attractive target for attackers with control of physical ports on the device. Disabling this configuration that is supported in **Linux 3.9 and greater**.
+The firmware auto loading helper, which is a utility executed by the kernel on `hotplug` events requiring firmware, can to be set `setuid`. As a result of this, the helper utility is an attractive target for attackers with control of physical ports on the device. Disabling this configuration that is supported in **Linux 3.9 and greater**.
 
 <!-- section-config -->
 
@@ -89,6 +95,12 @@ Domain                      | `Config` name                  | `Value`
 Kernel-General-FirmHelper-1 | `CONFIG_FW_LOADER_USER_HELPER` | `n`
 
 <!-- end-section-config -->
+
+<!-- section-note -->
+
+It doesn't strictly need to be `setuid`, there is an option of shipping firmware builtin into kernel without initrd/filesystem.
+
+<!-- end-section-note -->
 
 --------------------------------------------------------------------------------
 
@@ -152,7 +164,7 @@ since that would provide a facility to unexpectedly extend the available attack 
 
 To protect against even privileged users, systems may need to either disable
 module loading entirely, or provide signed modules
-(e.g. CONFIG_MODULE_SIG_FORCE, or dm-crypt with LoadPin), to keep from having
+(e.g. `CONFIG_MODULE_SIG_FORCE`, or dm-crypt with LoadPin), to keep from having
 root load arbitrary kernel code via the module loader interface.
 
 This configuration is supported in **Linux 3.7 and greater** and thus should only be enabled for such versions.
@@ -162,6 +174,16 @@ This configuration is supported in **Linux 3.7 and greater** and thus should onl
 Domain                         | `Config` name             | `Value`
 ------------------------------ | ------------------------- | -------
 Kernel-General-ModuleSigning-1 | `CONFIG_MODULE_SIG_FORCE` | `y`
+
+<!-- end-section-config -->
+
+It is also possible to block the loading of modules after startup with "kernel.modules_disabled".
+
+<!-- section-config -->
+
+Domain                         | `Variable` name           | `Value`
+------------------------------ | ------------------------- | -------
+Kernel-General-ModuleSigning-2 | `kernel.modules_disabled` | `1`
 
 <!-- end-section-config -->
 
@@ -236,12 +258,18 @@ Kernel-General-LibraryLinking-1 | Keep this part?
 
 <!-- end-section-todo -->
 
-It is recommended that dynamic linking should generally not be allowed. This will avoid the user from replacing a library with malicious library. All libraries should be linked statically, but this is difficult to implement.
+It is recommended that dynamic linking should generally not be allowed. This will avoid the user from replacing a library with malicious library.
 
 <!-- section-config -->
 
-Domain                          | `compiler` and `linker` options | _State_
-------------------------------- | ------------------------------- | --------
-Kernel-General-LibraryLinking-1 | `-static`                       | _Enable_
+Domain                          | Object          | Recommendations
+------------------------------- | --------------- | --------------------------------
+Kernel-General-LibraryLinking-1 | Dynamic linking | Should generally not be allowed.
 
 <!-- end-section-config -->
+
+<!-- section-note -->
+
+Linking everything statically doesn't change anything wrt security as binaries will live under same user:group as libraries and setuid executables ignore `LD_PRELOAD/LD_LIBRARY_PATH`. It also increases RSS footprint and creates problems with upgrading.
+
+<!-- end-section-note -->

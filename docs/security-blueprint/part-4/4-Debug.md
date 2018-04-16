@@ -16,6 +16,12 @@ Kernel-Debug-Symbols-1 | `CONFIG_DEBUG_INFO` | `n`
 
 These kernel debug symbols are enabled by other config items in the kernel. Care should be taken to disable those also. If `CONFIG_DEBUG_INFO` cannot be disabled, then enabling `CONFIG_DEBUG_INFO_REDUCED` is second best.
 
+<!-- section-note -->
+
+At least `CONFIG_DEBUG_INFO_REDUCED` should be always enabled for developers to convert addresses in oops messages to line numbers.
+
+<!-- end-section-note -->
+
 --------------------------------------------------------------------------------
 
 ## Disable Kprobes
