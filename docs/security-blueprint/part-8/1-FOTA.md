@@ -2,50 +2,40 @@
 
 The firmware update is critical since its alteration back to compromise the
 entire system. It is therefore necessary to take appropriate protective measures.
-The principle of verifying chain integrity fulfills much of AGL's security.
-During a firmware update, it is necessary to update the different signatures to
-check the integrity of the system.
 
-There is also the constraint of the update time: The system must start quickly
-and therefore, update itself as quickly. We imagine that the **FOTA** is mainly
-used in the vehicle maintenance session (e.g. Garage). We will then use no more
- **FOTA** but a wired update. There is a limit to what can be updated wirelessly.
- This maintenance update could solve these problems.
+AGL includes the _meta-updater_ Yocto layer that enables OTA software
+updates via [Uptane](https://uptane.github.io), an automotive-specific extension
+to [The Update Framework](https://theupdateframework.github.io/). Uptane and TUF
+are open standards that define a secure protocol for delivering and verifying
+updates even when the servers and network--internet and car-internal--aren't fully trusted.
 
-Field upgrades can be achieved securely by using a Secure Loader. This loader
-will authenticate an incoming image (USB, Serial, Network) prior to writing it
-to the flash memory on the device. It should not be possible to write to flash
-from bootloader (U-Boot). Note that because USB support is to be disabled within
-the sboot/U-Boot code, the board specific implementation of the Secure Loader
-will have to manage the entire USB initialization, enumeration, and read/write
-access to the mass storage device.
+_meta-updater_ includes the application [`aktualizr`](https://github.com/advancedtelematic/aktualizr),
+developed Advanced Telematic Systems (now part of HERE Technologies) that enables
+OTA for an ECU. `aktualizr` combined with Uptane is suitable for updating the
+firmware, software, and other packages on even functionally critical ECUs.
+`aktualizr` can be enabled with the free, open souce backend
+[`ota-community-edition`](https://github.com/advancedtelematic/ota-community-edition).
 
-<!-- section-config -->
+This FOTA update mechanism can be enabled through the `agl-sota` feature.
 
-Domain        | Object                                    | Recommendations
-------------- | ----------------------------------------- | ---------------
-Update-FOTA-1 | Integrity, confidentiality and legitimacy | Must be secure.
+## Building
 
-<!-- end-section-config -->
+To build an AGL image that uses `aktualizr`, the following can be used.
 
-Different possible type of **FOTA**:
+```
+source meta-agl/scripts/aglsetup.sh -m <machine> agl-sota <other-features...>
+```
 
-- Package-based like rpm, dpkg:
+During the build, _meta-updater_ will use credentials downloaded from `ota-community-edition`
+to sign metadata verifying the build as authentic. These signatures are part of the Uptane
+framework and are used to verify FOTA updates.
 
-  - `+` Simple.
-  - `-` Power-off.
-  - `-` Dependency.
+## Atomic Upgrades with Rollbacks
 
-- Full file system updates:
+`aktualizr`'s primary method of updating firmware is to use `libostree` with binary diffs.
+The binary diffs use the least amout of bandwidth, and by it's nature `libostree` stores
+current and previous firmware versions on disk or in flash memory to allow for rollbacks.
 
-  - `+` Robust.
-  - `-` Tends device-specific.
-  - `-` Need rsync or similar.
-
-- Atomic differential:
-
-  - `+` Robust.
-  - `+` Minimal bandwidth consumption.
-  - `+` Easy reusable.
-  - `-` Physically one file system (Corruption -> unbootable system).
-  - `-` No rollback logic.
+`libostree` is a content addressable object store much like `git`. Versions are specified
+via SHA2-256. These hashes are signed in the Uptane metadata and are robust against
+cryptographic compromise.
