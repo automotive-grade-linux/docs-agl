@@ -122,11 +122,11 @@ You can choose your source release
 
 ### Download Latest Stable Release
 
-To download all layers for the for the latest stable release, dab 4.0.2:
+To download all layers for the for the latest stable release, eel 5.0.2:
 
 ```bash
 cd $AGL_TOP
-repo init -b dab -m dab_4.0.2.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b eel -m eel_5.0.2.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
