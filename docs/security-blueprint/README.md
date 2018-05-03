@@ -2,7 +2,7 @@
 
 This document presents the different attacks that can be envisaged on a recent car in order to be able to create a set of tests verifying the security of Automotive Grade Linux (AGL).
 The more general utility behind this document is to protect the manufacturers, customers and third party from potential financial and information loss.
-This document is firstly based on the existing security-blueprint.
+This document is firstly based on an existing AGL security-blueprint.
 
 **For security to be effective, the concepts must be simple. And by default, anything that is not allowed is forbidden.**
 

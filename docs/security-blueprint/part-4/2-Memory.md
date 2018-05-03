@@ -44,6 +44,15 @@ Kernel-Memory-Swap-1 | `CONFIG_SWAP` | `n`
 
 <!-- end-section-config -->
 
+<!-- section-note -->
+
+- Enabling swap at runtime require `CAP_SYS_ADMIN`.
+- Swap block device is usually under root:disk.
+- Linux never swaps kernel pages.
+- If swap disabling is not possible, swap encryption should be enabled.
+
+<!-- end-section-note -->
+
 --------------------------------------------------------------------------------
 
 <!-- pagebreak -->
@@ -79,9 +88,9 @@ Domain                | `Config` name              | `Value`
 --------------------- | -------------------------- | -------
 Kernel-Memory-Stack-1 | `CONFIG_CC_STACKPROTECTOR` | `y`
 
-Other defenses include things like shadow stacks.
-
 <!-- end-section-config -->
+
+Other defenses include things like shadow stacks.
 
 --------------------------------------------------------------------------------
 
@@ -137,9 +146,10 @@ Emit extra code to check for buffer overflows, such as stack smashing attacks.
 
 <!-- section-config -->
 
-Domain                          | `compiler` and `linker` options | `Value`
-------------------------------- | ------------------------------- | -------
-Kernel-Memory-BufferOverflows-1 | `-D_FORTIFY_SOURCE`             | `2`
+Domain                          | `compiler` options and `config` name | `Value`
+------------------------------- | ------------------------------------ | -------
+Kernel-Memory-BufferOverflows-1 | `-D_FORTIFY_SOURCE`                  | `2`
+Kernel-Memory-BufferOverflows-2 | `CONFIG_FORTIFY_SOURCE`              | `y`
 
 <!-- end-section-config -->
 

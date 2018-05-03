@@ -139,6 +139,10 @@ Domain                         | `Config` name             | `Value`
 ------------------------------ | ------------------------- | -------
 Kernel-General-ModuleSigning-1 | `CONFIG_MODULE_SIG_FORCE` | `y`
 
+Domain                         | `Variable` name           | `Value`
+------------------------------ | ------------------------- | -------
+Kernel-General-ModuleSigning-2 | `kernel.modules_disabled` | `1`
+
 Domain                   | Object              | _State_
 ------------------------ | ------------------- | ----------
 Kernel-General-Drivers-1 | `USB`               | _Disabled_
@@ -153,10 +157,6 @@ Domain                            | `compiler` and `linker` options | _State_
 --------------------------------- | ------------------------------- | --------
 Kernel-General-OverwriteAttacks-1 | `-z,relro`                      | _Enable_
 Kernel-General-OverwriteAttacks-2 | `-z,now`                        | _Enable_
-
-Domain                          | `compiler` and `linker` options | _State_
-------------------------------- | ------------------------------- | --------
-Kernel-General-LibraryLinking-1 | `-static`                       | _Enable_
 
 Domain                         | `Config` name    | `Value`
 ------------------------------ | ---------------- | -------
@@ -192,9 +192,10 @@ Domain                        | `compiler` and `linker` options | _State_
 ----------------------------- | ------------------------------- | --------
 Kernel-Memory-StackSmashing-1 | `-fstack-protector-all`         | _Enable_
 
-Domain                          | `compiler` and `linker` options | `Value`
-------------------------------- | ------------------------------- | -------
-Kernel-Memory-BufferOverflows-1 | `-D_FORTIFY_SOURCE`             | `2`
+Domain                          | `compiler` options and `config` name | `Value`
+------------------------------- | ------------------------------------ | -------
+Kernel-Memory-BufferOverflows-1 | `-D_FORTIFY_SOURCE`                  | `2`
+Kernel-Memory-BufferOverflows-2 | `CONFIG_FORTIFY_SOURCE`              | `y`
 
 Domain                   | `Config` name                | `Value`
 ------------------------ | ---------------------------- | -------
