@@ -31,9 +31,9 @@ You need a recent version of nodejs > 4.6
 ```
  cd doctools/webdocs/
  npm install
- sudo zypper install ruby2.1-devel
- sudo zypper install '*rubygem-ffi' 
- sudo gem install jekyll
+ sudo zypper install ruby2.4-devel
+ sudo zypper install ruby2.4-rubygem-ffi
+ sudo gem.ruby2.4 install jekyll
  sudo ln -sf /usr/bin/jekyll.* /usr/bin/jekyll
 ```
 IMPORTANT: check that "jekyll" command exist.
