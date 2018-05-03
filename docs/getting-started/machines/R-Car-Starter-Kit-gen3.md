@@ -365,19 +365,17 @@ Follow the steps below to configure the boot from microSD card and to set screen
 
 * Turn the board on using the power switch.
 * Hit any key to stop autoboot (warning you have only few seconds).
-* Type **print** to check if you have correct parameters for booting your board:
+* Type **printenv** to check if you have correct parameters for booting your board:
   * For machine m3ulcb:
 
     ```bash
 => printenv
     baudrate=115200
-    bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
-    bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
+    bootcmd=ext4load mmc 0:1 0x48070000 /boot/boot.scr; source 0x48070000
     bootdelay=3
     fdt_high=0xffffffffffffffff
+    fdtfile=devicetree-Image-r8a7796-m3ulcb-kf.dtb
     initrd_high=0xffffffffffffffff
-    load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
-    load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
     stderr=serial
     stdin=serial
     stdout=serial
@@ -391,14 +389,12 @@ Follow the steps below to configure the boot from microSD card and to set screen
     ```bash
 => printenv
     baudrate=115200
-    bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
-    bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
+    bootcmd=ext4load mmc 0:1 0x48070000 /boot/boot.scr; source 0x48070000
     bootdelay=3
     fdt_high=0xffffffffffffffff
+    fdtfile=devicetree-Image-r8a7795-h3ulcb-kf.dtb
     filesize=cdeb
     initrd_high=0xffffffffffffffff
-    load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
-    load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
     stderr=serial
     stdin=serial
     stdout=serial
@@ -410,27 +406,25 @@ Follow the steps below to configure the boot from microSD card and to set screen
     * If not, copy line by line:
     
     ```bash
-setenv bootargs console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
-setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
-setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
+setenv bootcmd ext4load mmc 0:1 0x48070000 /boot/boot.scr\; source 0x48070000
     ```
 
     * For machine h3ulcb (BSP >= 2.19):
 
     ```bash
-setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
-    ```
-
-    * For machine h3ulcb (BSP < 2.19):
-
-    ```bash
-setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+setenv fdtfile devicetree-Image-r8a7795-h3ulcb.dtb
     ```
 
     * For machine m3ulcb:
 
     ```bash
-setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+setenv fdtfile devicetree-Image-r8a7796-m3ulcb.dtb
+    ```
+
+    * For machine m3ulcb with Kingfisher:
+
+    ```bash
+setenv fdtfile devicetree-Image-r8a7796-m3ulcb-kf.dtb
     ```
 
     * Finally save boot environment:
