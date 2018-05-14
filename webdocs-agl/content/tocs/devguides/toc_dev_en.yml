@@ -58,17 +58,8 @@ children:
             name: Setting up your operating system
             url: reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html
         -
-            name: Install Docker image
-            url: reference/sdk-devkit/docs/part-1/1_3-Install-agl-for-porter.html
-        -
             name: Inside the container
             url: reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html
-        -
-            name: Build image for Porter
-            url: reference/sdk-devkit/docs/part-1/1_5-Build-image-Porter.html
-        -
-            name: Porter image deployment
-            url: reference/sdk-devkit/docs/part-1/1_6-Porter-image-deployment.html
         -
             name: SDK compilation and installation
             url: reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html

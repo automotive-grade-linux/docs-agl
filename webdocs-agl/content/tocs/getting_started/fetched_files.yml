@@ -55,8 +55,6 @@ repositories:
       label: Build for Intel
     - source: machines/qemu.md
       label: Build for Qemu
-    - source: machines/porter.md
-      label: Build for Renesas Porter board
     - source: machines/R-Car-Starter-Kit-gen3.md
       label: Build for R Car Starter Kit gen3 board
     - source: machines/raspberrypi.md
@@ -65,8 +63,6 @@ repositories:
       label: Generic issues
     - source: footers/intel-footer.md
       label: Intel Boards
-    - source: footers/porter-footer.md
-      label: Porter board
     - source: footers/raspberrypi-footer.md
       label: Raspberry PI
     - source: images/RaspberryPi2-ModelB-debug-serial-cable.jpg
