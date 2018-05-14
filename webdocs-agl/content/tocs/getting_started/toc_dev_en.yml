@@ -45,7 +45,6 @@ children:
         - url: reference/customize_bitbake_conf.html
         - url: reference/machines/intel.html
         - url: reference/machines/qemu.html
-        - url: reference/machines/porter.html
         - url: reference/machines/R-Car-Starter-Kit-gen3.html
         - url: reference/machines/raspberrypi.html
 -
@@ -57,7 +56,6 @@ children:
     children:
         - url: reference/troubleshooting.html
         - url: reference/footers/intel-footer.html
-        - url: reference/footers/porter-footer.html
         - url: reference/footers/raspberrypi-footer.html
 -
     name: SDK

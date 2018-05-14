@@ -43,19 +43,6 @@ git_commit : "AGL_GERRIT_BRANCH"
 
 repositories:   
 -
-    git_name: AGL/meta-renesas
-    dst_prefix: renesas-gen2
-    documents:
-        - source: meta-rcar-gen2/README
-          destination: gen2.md
-          label: meta-rcar-gen2 layer
-        - source: meta-rcar-gen2/README.proprietary
-          destination: proprietary.md
-          label: Proprietary drivers
-        - source: meta-rcar-gen2/README-usbgadget.md 
-          destination: usb-gadget.md
-          label: USB Gadget on Porter board
--
     git_name: AGL/meta-renesas-rcar-gen3
     dst_prefix: renesas-gen3
     documents:
