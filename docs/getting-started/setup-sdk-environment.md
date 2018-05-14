@@ -7,6 +7,7 @@ The current tutorial has been tested on Linux, but may work with a few adjustmen
 
 First install docker on your host, if not already done.
 General instructions for Linux are available on the [Docker Site](https://docs.docker.com/engine/installation/linux/).
+Add yourself to the docker group.
 
 ## Step 2: setup persistent workspace
 
@@ -45,12 +46,17 @@ A pre-built image is available on automotivelinux download public site and can b
 First, download and load the image in your local Docker instance:
 
 ```bash
-wget -O - https://download.automotivelinux.org/AGL/snapshots/sdk/docker/docker_agl_worker-latest.tar.xz | sudo docker load;
+wget -O - https://download.automotivelinux.org/AGL/snapshots/sdk/docker/docker_agl_worker-latest.tar.xz | docker load;
 docker images;
       REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
-      docker.automotivelinux.org/agl/worker   5.0                 42009148bc03        6 days ago          926.9 MB
+      docker.automotivelinux.org/agl/worker-generic   5.99-95             6fcc19b4e0d7        2 weeks ago         1.56GB
       jenkins                                 latest              55720d63e328        5 weeks ago         711.9 MB
       hello-world                             latest              c54a2cc56cbb        5 months ago        1.848 kB
+```
+Identify the IMAGE_ID you just loaded. In the example above, this is 6fcc19b4e0d7
+
+```bash
+export IMAGE_ID=6fcc19b4e0d7
 ```
 
 #### Rebuilt image
@@ -65,13 +71,14 @@ Then, use the 'create_container' script to start a new, fresh container based on
 
 * The password for the id 'devel' inside the docker image is 'devel'.
 
+
 ```bash
 git clone https://git.automotivelinux.org/AGL/docker-worker-generator;
 cd docker-worker-generator;
-./contrib/create_container 0;
+./contrib/create_container 0 $IMAGE_ID;
 docker ps;
     CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
-    4fb7c550ad75        docker.automotivelinux.org/agl/worker:3.0   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
+    4fb7c550ad75        6fcc19b4e0d7   "/usr/bin/wait_for_ne"   33 hours ago        Up 33 hours         0.0.0.0:2222->22/tcp, 0.0.0.0:69->69/udp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:10809->10809/tcp   agl-worker-odin-0-sdx
 ```
 
 ## Step 4: install the AGL SDK for your target
