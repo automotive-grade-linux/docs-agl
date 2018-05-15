@@ -226,3 +226,16 @@ children:
         -
             name: AppFW - Privileges Management
             url: reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf
+
+-
+    name: "Continuous Integration - Automated Testing (CIAT)"
+    children:
+        -
+            name: Training
+            children:
+                -
+                    name:  "How to write tests (overview slides)"
+                    url: reference/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf
+                -
+                    name:  "How to write tests (detailed)"
+                    url: reference/CIAT/training/Hands_on_lab_documentation.pdf

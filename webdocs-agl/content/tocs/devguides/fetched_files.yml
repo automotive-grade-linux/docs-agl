@@ -176,3 +176,11 @@ repositories:
         - source: part-2/4_xds-gdb/1_config.md
         - source: part-2/4_xds-gdb/2_build.md
         - source: part-2/4_xds-gdb/3_debug.md
+
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: baylibre/agl-docs-baylibre
+    git_commit: "master"
+    documents:
+        - source: CIAT/training/How_to_write_your_own_tests_for_AGL.pdf
+        - source: CIAT/training/Hands_on_lab_documentation.pdf
