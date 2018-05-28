@@ -17,10 +17,6 @@ Domain                | Improvement
 --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Hypervisor-Abstract-1 | Complete Hypervisor part ([jailhouse](https://github.com/siemens/jailhouse) / [KVM](https://www.linux-kvm.org/page/Main_Page) / [Xen](https://www.xenproject.org/developers/teams/embedded-and-automotive.html)).
 
-Domain       | Improvement
------------- | ----------------
-Kernel-MAC-1 | Add MAC config note.
-
 Domain                           | Improvement
 -------------------------------- | -----------------------------
 Kernel-General-IndependentExec-1 | Kernel or/and platform part ?

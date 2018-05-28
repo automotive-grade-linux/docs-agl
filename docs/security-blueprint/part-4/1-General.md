@@ -6,19 +6,22 @@ Kernel should controls access with labels and policy.
 
 <!-- section-config -->
 
-Domain               | Object | Recommendations
--------------------- | ------ | ------------------------------------------
-Kernel-General-MAC-1 | SMACK  | Must implement a Mandatory Access Control.
+Domain               | `Config` name  | `Value`
+-------------------- | -------------- | --------------------------------------
+Kernel-General-MAC-1 | CONFIG_IP_NF_SECURITY   | m
+Kernel-General-MAC-2 | CONFIG_IP6_NF_SECURITY  | m
+Kernel-General-MAC-3 | CONFIG_EXT2_FS_SECURITY | y
+Kernel-General-MAC-4 | CONFIG_EXT3_FS_SECURITY | y
+Kernel-General-MAC-5 | CONFIG_EXT4_FS_SECURITY | y
+Kernel-General-MAC-6 | CONFIG_SECURITY         | y
+Kernel-General-MAC-7 | CONFIG_SECURITY_SMACK   | y
+Kernel-General-MAC-8 | CONFIG_TMPFS_XATTR      | y
 
 <!-- end-section-config -->
 
-<!-- section-todo -->
-
-Domain       | Improvement
------------- | ----------------
-Kernel-MAC-1 | Add MAC config note.
-
-<!-- end-section-todo -->
+Please also refer to the [**Mandatory Access Control** documentation in Platform](../part-5/1-MAC.html) part.
+You can also find useful documentation and links on wikipedia about [**MAC**](https://en.wikipedia.org/wiki/Mandatory_access_control)
+and about [**SMACK**](https://en.wikipedia.org/wiki/Simplified_Mandatory_Access_Control_Kernel).
 
 --------------------------------------------------------------------------------
 

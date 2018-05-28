@@ -98,9 +98,16 @@ Boot-Consoles-MemDump-7 | `mdc`          | _Disabled_
 Boot-Consoles-MemDump-8 | `mtest`        | _Disabled_
 Boot-Consoles-MemDump-9 | `loopw`        | _Disabled_
 
-Domain               | Object | Recommendations
--------------------- | ------ | ------------------------------------------
-Kernel-General-MAC-1 | SMACK  | Must implement a Mandatory Access Control.
+Domain               | `Config` name  | `Value`
+-------------------- | -------------- | --------------------------------------
+Kernel-General-MAC-1 | CONFIG_IP_NF_SECURITY   | m
+Kernel-General-MAC-2 | CONFIG_IP6_NF_SECURITY  | m
+Kernel-General-MAC-3 | CONFIG_EXT2_FS_SECURITY | y
+Kernel-General-MAC-4 | CONFIG_EXT3_FS_SECURITY | y
+Kernel-General-MAC-5 | CONFIG_EXT4_FS_SECURITY | y
+Kernel-General-MAC-6 | CONFIG_SECURITY         | y
+Kernel-General-MAC-7 | CONFIG_SECURITY_SMACK   | y
+Kernel-General-MAC-8 | CONFIG_TMPFS_XATTR      | y
 
 Domain                 | `Config` name  | `Value`
 ---------------------- | -------------- | -------
@@ -158,6 +165,10 @@ Domain                            | `compiler` and `linker` options | _State_
 Kernel-General-OverwriteAttacks-1 | `-z,relro`                      | _Enable_
 Kernel-General-OverwriteAttacks-2 | `-z,now`                        | _Enable_
 
+Domain                          | Object          | Recommendations
+------------------------------- | --------------- | --------------------------------
+Kernel-General-LibraryLinking-1 | Dynamic linking | Should generally not be allowed.
+
 Domain                         | `Config` name    | `Value`
 ------------------------------ | ---------------- | -------
 Kernel-Memory-RestrictAccess-1 | `CONFIG_DEVKMEM` | `n`
@@ -178,7 +189,6 @@ Kernel-Memory-LoadAllSymbols-2 | `CONFIG_KALLSYMS_ALL` | `n`
 Domain                | `Config` name              | `Value`
 --------------------- | -------------------------- | -------
 Kernel-Memory-Stack-1 | `CONFIG_CC_STACKPROTECTOR` | `y`
-Other defenses include things like shadow stacks.
 
 Domain                 | `Config` name   | `Value`
 ---------------------- | --------------- | -------
@@ -471,9 +481,5 @@ Application-Cloud-Infrastructure-5 | App integrity | Applications must be signed
 Domain                        | Object                                    | Recommendations
 ----------------------------- | ----------------------------------------- | ---------------------------------
 Application-Cloud-Transport-1 | Integrity, confidentiality and legitimacy | Should implement IPSec standards.
-
-Domain        | Object                                    | Recommendations
-------------- | ----------------------------------------- | ---------------
-Update-FOTA-1 | Integrity, confidentiality and legitimacy | Must be secure.
 
 <!-- end-section-config -->
