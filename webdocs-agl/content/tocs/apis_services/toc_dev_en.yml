@@ -84,6 +84,18 @@ children:
           url: reference/iotbzh2016/signaling/AGL-Message-Signaling-Developer-Guidelines.pdf
         - name: CAN Signaling Benchmark
           url: reference/iotbzh2016/signaling/AGL-AppFW-CAN-Signaling-Benchmark.pdf
+        - name: CanDevStudio Quickstart
+          children:
+                - name: Usage Guide
+                  url: reference/candevstudio/docs/1_Usage.html
+                - name: Bringing up a CAN device using socketcan backend
+                  url: reference/candevstudio/docs/2_can_device_socketcan_backend.html
+                - name: Add a CAN device in CANdevStudio
+                  url: reference/candevstudio/docs/3_Add_CAN_Device.html
+                - name: Configure a CanRawSender node
+                  url: reference/candevstudio/docs/4_Configure_CanRawSender_Node.html
+                - name: Using CanRawView
+                  url: reference/candevstudio/docs/5_Using_CanRawView.html
         - url: reference/signaling/resources.html
 -
     name: Audio Framework
