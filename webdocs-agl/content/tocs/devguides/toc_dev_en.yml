@@ -46,6 +46,24 @@ children:
         - url: reference/meta-agl-demo.html
         - url: reference/meta-agl-devel.html
 -
+    name: Host Configuration
+    children:
+        -
+            name: Abstract
+            url: reference/host-configuration/docs/0_Abstract.html
+        -
+            name: Prerequisites
+            url: reference/host-configuration/docs/1_Prerequisites.html
+        -
+            name: AGL Application Framework
+            url: reference/host-configuration/docs/2_AGL_Application_Framework.html
+        -
+            name: AGL XDS
+            url: reference/host-configuration/docs/3_AGL_XDS.html
+        -
+            name: CanDevStudio
+            url: reference/host-configuration/docs/4_Candevstudio.html
+-
     name: "Development Kit: build AGL image"
     children:
         -

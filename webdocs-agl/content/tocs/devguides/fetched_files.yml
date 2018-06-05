@@ -71,6 +71,16 @@ repositories:
     git_name: iotbzh/agl-documentation
     git_commit: "master"
     documents:
+        - source: host-configuration/docs/0_Abstract.md
+        - source: host-configuration/docs/1_Prerequisites.md
+        - source: host-configuration/docs/2_AGL_Application_Framework.md
+        - source: host-configuration/docs/3_AGL_XDS.md
+        - source: host-configuration/docs/4_Candevstudio.md
+-
+    url_fetch: "GITHUB_FETCH"
+    git_name: iotbzh/agl-documentation
+    git_commit: "master"
+    documents:
         - source: sdk-devkit/docs/part-1/1_0_Abstract.md
         - source: sdk-devkit/docs/part-1/1_1-Deploy_image.md
         - source: sdk-devkit/docs/part-1/1_2-Setting-up-your_os.md

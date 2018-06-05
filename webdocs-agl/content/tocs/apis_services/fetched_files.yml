@@ -153,6 +153,20 @@ repositories:
         - source: pictures/Global_Signaling_Architecture.png
         - source: pictures/iotbzh_logo_small.png
 -
+    url_fetch: "GITHUB_FETCH"
+    git_name: iotbzh/agl-documentation
+    git_commit: "master"
+    documents:
+        - source: candevstudio/docs/1_Usage.md
+        - source: candevstudio/docs/2_can_device_socketcan_backend.md
+        - source: candevstudio/docs/3_Add_CAN_Device.md
+        - source: candevstudio/docs/4_Configure_CanRawSender_Node.md
+        - source: candevstudio/docs/5_Using_CanRawView.md
+        - source: candevstudio/docs/pictures/CANdevStudio.png
+        - source: candevstudio/docs/pictures/canrawsender.png
+        - source: candevstudio/docs/pictures/canrawviewer.png
+
+-
     url_fetch: AGL_GITHUB_FETCH
     url_edit: AGL_GITHUB_EDIT
     git_name: "%project_source%/docs-agl"
