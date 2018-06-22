@@ -3,14 +3,14 @@
 ## Intro
 
 This is a quick howto for working on the 'master' branch. Working on the branch
-is easy as we maintain all changes through gerrit.automotivelinux.org. 
+is easy as we maintain all changes through gerrit.automotivelinux.org.
 If you are unfamiliar with gerrit, please read these fine how-to pages were put together from the
 Mediawiki community here: <https://www.mediawiki.org/wiki/Gerrit/Tutorial> . This covers the basics very well. Of course we'll work with gerrit.automotivelinux.org instead so apply likewise.
 
 ## Installation of tools
 
 Install `git` with your distributions package manager.
-A very useful tool is "git-review" (cmdline is then `git review`). 
+A very useful tool is "git-review" (cmdline is then `git review`).
 Install it from your distro or with `sudo pip install git-review`.
 
 ## Prerequisites
@@ -58,7 +58,7 @@ Follow these steps to submit a change to the 'master' branch:
    ```bash
    git review
    ```
-   
+
 1. (optional, but highly recommended!) Reset to gerrit/master
 
    ```bash
@@ -78,7 +78,7 @@ Example for meta-agl:
 
 ```bash
  repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
- repo sync 
+ repo sync
  cd meta-agl/
  git review -d 8233
 ```
@@ -104,7 +104,7 @@ This will pull-down change 8233. You can now edit a file:
 
 ```bash
 vi meta-xyz/recipes-foo/bar/baz.bb
-git commit -s --amend 
+git commit -s --amend
 ```
 
  Don't forget a test build

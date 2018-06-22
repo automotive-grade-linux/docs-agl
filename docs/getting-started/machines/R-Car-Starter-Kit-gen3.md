@@ -16,13 +16,22 @@ For more information and latest news, please check :
 * [elinux page for m3ulcb][R-car m3ulcb]
 * [elinux page for salvator-x][R-car salvator-x]
 
-Note that the Salvator-X has NDA restrictions, so less documentation is available both here and elsewhere.
+Infotainment Carrier Board :
+
+* [elinux page for Kingfisher][R-car Kingfisher]
+
+**Note**:That the Salvator-X has NDA restrictions, so less documentation is available both here and elsewhere.
 
 The following documents may also be helpful:
 
 * [Yocto-Gen3 on elinux][R-car yocto]
 
-# Building the AGL Demo Platform for R-Car Starter Kit Gen3
+## BSP Version of R-Car Starter Kit Gen3
+
+* AGL master: 3.7
+* AGL eel 5.0.3: 2.23.1
+
+## Building the AGL Demo Platform for R-Car Starter Kit Gen3
 
 Before setting up the build environment, you need to download the proprietary drivers.
 
@@ -30,10 +39,16 @@ Before setting up the build environment, you need to download the proprietary dr
   * If you are building **AGL Daring Dab or older release** download Renesas graphics drivers with a "click through" license from [here][rcar Linux Drivers].
   * Under the Target hardware: **R-Car H3/M3** section.
 
+* The version of the driver can be find here:
+
+```bash
+grep -rn ZIP_.= meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
+```
+
 **Note**:
 
-* You have to register with a free account on MyRenesas and accept the license conditions before downloading them the drivers.  
- The operation is fast and simple but nevertheless mandatory to access evaluation of non open-source drivers for free.  
+* You have to register with a free account on MyRenesas and accept the license conditions before downloading them the drivers.
+ The operation is fast and simple but nevertheless mandatory to access evaluation of non open-source drivers for free.
  Once you registered, you can download two zip files.
 * The files must be stored into your download directory (usually $HOME/Downloads, pointed by $XDG_DOWNLOAD_DIR).
 
@@ -47,7 +62,7 @@ ls -1 $XDG_DOWNLOAD_DIR
 -rw-r--r--. 1 1664 agl-sdk 3,0M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
 ```
 
-## Setting up the build environment
+### Setting up the build environment
 
 Define the type of R-Car Starter Kit board as a variable:
 
@@ -75,14 +90,15 @@ cd $AGL_TOP
 source meta-agl/scripts/aglsetup.sh -m $MACHINE -b build agl-devel agl-demo agl-netboot agl-appfw-smack agl-localdev
 ```
 
-**IMPORTANT NOTE**: Read the log to be sure you had no error during your setup. 
+**IMPORTANT NOTE**: Read the log to be sure you had no error during your setup.
+
 In case of missing graphics drivers, you could notice an error message as follow:
 
 ```bash
 [snip]
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/machine/h3ulcb/50_setup.sh
 /home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
-The graphics and multimedia acceleration packages for 
+The graphics and multimedia acceleration packages for
 the R-Car Gen3 board can be downloaded from:
  https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
 
@@ -121,11 +137,11 @@ Configure for Release or Development:
   * a SFTP server
   * the TCF Agent for easier application deployment and remote debugging
   * some extra system tools (usb, bluetooth ...)
-  * ...  
+  * ...
 
 We explicitely activate these debug facilities by specifying the “agl-devel agl-netboot” feature.
 
-## Build your image
+### Build your image
 
 The process to build an image is simple:
 
@@ -140,9 +156,10 @@ ls -l $AGL_TOP/build/tmp/deploy/images/$MACHINE
 ```
 
 **Note**:
-In case of failure of the build it is safe to first check that the Linux distribution chosen for your host has been validated for version 2.2 of Yocto.
 
-# Booting AGL Image on R-Car Starter Kit Gen3 boards using a microSD card
+In case of failure of the build it is safe to first check that the Linux distribution chosen for your host has been validated for the current version of Yocto used by AGL.
+
+## Booting AGL Image on R-Car Starter Kit Gen3 boards using a microSD card
 
 To boot the board using a micro-SD card, there are two operations that must be done prior to first initial boot:
 
@@ -151,19 +168,31 @@ To boot the board using a micro-SD card, there are two operations that must be d
 
 For each subsequent build you only need to rewrite the SD-card with the new image.
 
-## Firmware Update
+### Firmware Update
 
 This proceedure is done in two steps.  The first step only needs to be done once per device.  The second step should be done, starting with the Eel release, per release.
 
-### Update Sample Loader and MiniMonitor
+#### Update Sample Loader and MiniMonitor
 
 Follow the documentation on the [eLinux.org wiki][R-car loader update] for the exact list of steps on how to perform the required steps to update to at least version 3.02.  This should be done even in the case where a **Kingfisher** or other expansion board will not be connected.
 
-### Update the firmware stack
+#### Update the firmware stack
 
-As an AArch64 platform both the **h3ulcb** and **m3ulcb** have a firmware stack that consists of multiple parts.  In both cases we have **ARM Trusted Firmware**, **OP-Tee** and **U-Boot** in use.  Starting with Eel you must update the firmware to at least the version referenced here.  For the exact steps required to flash the device see the eLinux.org wiki for **[h3ulcb][R-car h3ulcb firmware update]** or **[m3ulcb][R-car m3ulcb firmware update]** respectively.  In both cases the files listed in the table will be found in the *\$AGL_TOP/build/tmp/deploy/images/$MACHINE* directory as specified in previous steps.  The Salvator-X firmware update process is not documented on eLinux.
+As an AArch64 platform, both the **h3ulcb** and **m3ulcb** have a firmware stack that consists of multiple parts.
 
-## Prepare the SD-card on the host
+In both cases we have **ARM Trusted Firmware**, **OP-Tee** and **U-Boot** in use.
+
+Starting with Eel you must update the firmware to at least the version referenced here.  For the exact steps required to flash the device see the eLinux.org wiki for **[h3ulcb][R-car h3ulcb firmware update]** or **[m3ulcb][R-car m3ulcb firmware update]** respectively.
+
+In both cases the files listed in the table will be found in the directory:
+
+```bash
+*\$AGL_TOP/build/tmp/deploy/images/$MACHINE*
+```
+
+The Salvator-X firmware update process is not documented on eLinux.
+
+### Prepare the SD-card on the host
 
 Plug the microSD card and get its associated device by either running *`dmesg | tail -15`* or *`lsblk`*, for example:
 
@@ -193,7 +222,7 @@ lsblk
   └─sdc2   8:34   1   788M  0 part
 ```
 
-**IMPORTANT NOTE**: This is a critical operation, each computer is different and removable devices can change from time to time: 
+**IMPORTANT NOTE**: This is a critical operation, each computer is different and removable devices can change from time to time:
 so you should repeat this operation each time you insert the microSD card to confirm the device name.
 
 In the example above, we see:
@@ -210,38 +239,45 @@ Go to your build directory:
 cd $AGL_TOP/build/tmp/deploy/images/$MACHINE
 ```
 
-The **.wic.xz** file can be uncompressed and written to the device you discovered in the previous step as follows:
+You can use bmaptool to copy the **.wic.xz** file to the storage device, discovered in the previous step:
 
+```bash
+bmaptool copy ./agl-demo-platform-$MACHINE.wic.xz /dev/sdc
+```
+
+Or you can be uncompressed and written to the device:
 
 ```bash
   sudo umount /dev/sdc
-  xzcat agl-demo-platform-$MACHINE.wic.xz | sudo dd of=/dev/sdc bs=4M
+  xzcat ./agl-demo-platform-$MACHINE.wic.xz | sudo dd of=/dev/sdc bs=4M
   sync
 ```
 
-## Booting the board
+Or
 
-* Turn the board off using the power switch.  
-* Insert the microSD-card.  
+### Booting the board
+
+* Turn the board off using the power switch.
+* Insert the microSD-card.
 * Verify that you have plugged in, at least, the following:
   * External monitor on HDMI port
   * Input device (keyboard, mouse, touchscreen...) on USB port.
 
-* Turn the board on using the power switch.  
- After a few seconds, you'll see the AGL splash screen on the display and you'll be able to log in on the console terminal or in the graphic screen.  
+* Turn the board on using the power switch.
+ After a few seconds, you'll see the AGL splash screen on the display and you'll be able to log in on the console terminal or in the graphic screen.
 
-# Serial Console Setup
+## Serial Console Setup
 
-## Install a serial client on your computer
+### Install a serial client on your computer
 
-This can be “screen”, “picocom”, “minicom”.  
-The lighter of the 3 is “picocom” (it has less dependencies).  
+This can be “screen”, “picocom”, “minicom”.
+The lighter of the 3 is “picocom” (it has less dependencies).
 
-## Plug a USB cable from your computer to the serial CP2102 USB port (micro USB-A)
+### Plug a USB cable from your computer to the serial CP2102 USB port (micro USB-A)
 
-With “dmesg” you can check the device created for the serial link. 
-Usually, it's /dev/ttyUSB0 but the number may vary depending on other USB serial ports connected to the host. 
-To get it, you must switch the board on. 
+With “dmesg” you can check the device created for the serial link.
+Usually, it's /dev/ttyUSB0 but the number may vary depending on other USB serial ports connected to the host.
+To get it, you must switch the board on.
 For example:
 
 ```bash
@@ -257,8 +293,8 @@ dmesg | tail
 [2097783.388658] usb 2-1.5.3: FTDI USB Serial Device converter now attached to ttyUSB0
 ```
 
-The link is attached to the device /dev/ttyUSB0.  
-It is time to launch your serial client.  
+The link is attached to the device /dev/ttyUSB0.
+It is time to launch your serial client.
 Example:
 
 ```bash
@@ -277,9 +313,9 @@ or
 screen /dev/ttyUSB0 115200
 ```
 
-## Power on the board to see a shell on the console
+### Power on the board to see a shell on the console
 
-* For machine h3ulcb:  
+* For machine h3ulcb:
 
 ```bash
 NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.7
@@ -359,7 +395,7 @@ Hit any key to stop autoboot:  0
 =>
 ```
 
-## Configure U-boot parameters
+### Configure U-boot parameters
 
 Follow the steps below to configure the boot from microSD card and to set screen resolution:
 
@@ -387,7 +423,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     ```
 
     * For machine h3ulcb:
-    
+
     ```bash
 => printenv
     baudrate=115200
@@ -408,7 +444,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     ```
 
     * If not, copy line by line:
-    
+
     ```bash
 setenv bootargs console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
 setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
@@ -445,14 +481,14 @@ saveenv
 run bootcmd
 ```
 
-## Console boot
+### Console boot
 
 After booting, you should see the wayland display on the external monitor and a login prompt on the console, such as:
 
 * For machine h3ulcb:
 
 ```bash
-Automotive Grade Linux 3.0.0+snapshot-20161201 h3ulcb ttySC0
+Automotive Grade Linux ${AGL_VERSION} h3ulcb ttySC0
 
 h3ulcb login: root
 ```
@@ -460,7 +496,7 @@ h3ulcb login: root
 * For machine m3ulcb:
 
 ```bash
-Automotive Grade Linux 3.0.0+snapshot-20161201 m3ulcb ttySC0
+Automotive Grade Linux ${AGL_VERSION} m3ulcb ttySC0
 
 m3ulcb login: root
 ```
@@ -470,22 +506,22 @@ Logging in on the console is easy:
 * login is 'root'
 * password is empty (not asked)
 
-## Network access
+### Network access
 
-If the board is connected to a local network using ethernet and if a DHCP server is able to distribute IP addresses, 
+If the board is connected to a local network using ethernet and if a DHCP server is able to distribute IP addresses,
 you can then determine the Gen3 board IP address and log in using ssh:
 
 ```bash
 m3ulcb login: root
 Last login: Tue Dec  6 09:55:15 UTC 2016 on tty2
 root@m3ulcb:~# ip -4 a
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
 3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     inet 10.0.0.27/24 brd 10.0.0.255 scope global eth0
        valid_lft forever preferred_lft forever
-root@m3ulcb:~# 
+root@m3ulcb:~#
 ```
 
 Here, IP address is 10.0.0.27. Logging in using SSH is easy:
@@ -493,7 +529,7 @@ Here, IP address is 10.0.0.27. Logging in using SSH is easy:
 ```bash
 $ ssh root@10.0.0.27
 Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
-root@m3ulcb:~# cat /etc/os-release 
+root@m3ulcb:~# cat /etc/os-release
 ID="poky-agl"
 NAME="Automotive Grade Linux"
 VERSION="3.0.0+snapshot-20161202 (chinook)"
@@ -501,13 +537,13 @@ VERSION_ID="3.0.0-snapshot-20161202"
 PRETTY_NAME="Automotive Grade Linux 3.0.0+snapshot-20161202 (chinook)"
 ```
 
-# More Documentation
+## More Documentation
 
 Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside a ready-to-use Docker container:
 
-* [AGL-Devkit-Build-your-1st-AGL-Application.pdf][Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]  
+* [AGL-Devkit-Build-your-1st-AGL-Application.pdf][Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]
  Generic guide on how to build various application types (HTML5, native, Qt, QML, …) for AGL.
-* [AGL-Devkit-HowTo_bake_a_service.pdf][Iot.bzh AGL_Phase2-Devkit-HowTo_bake_a_service]  
+* [AGL-Devkit-HowTo_bake_a_service.pdf][Iot.bzh AGL_Phase2-Devkit-HowTo_bake_a_service]
  Generic guide on how to add a new service in the BSP.
 * [AGL-Kickstart-on-Renesas-Porter-Board.pdf][Iot.bzh AGL-Kickstart-on-Renesas-Porter-Board]
 * [AGL-Devkit-Image-and-SDK-for-Porter.pdf][Iot.bzh AGL-Devkit-Image-and-SDK-for-Porter]
@@ -519,6 +555,7 @@ Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside 
 [R-car h3ulcb firmware update]: https://elinux.org/R-Car/Boards/H3SK#Flashing_firmware
 [R-car salvator-x]: https://elinux.org/R-Car/Boards/Salvator-X
 [R-car loader update]: http://elinux.org/R-Car/Boards/Kingfisher#How_to_update_of_Sample_Loader_and_MiniMonitor
+[R-car Kingfisher]: https://elinux.org/R-Car/Boards/Kingfisher
 [R-car yocto]: http://elinux.org/R-Car/Boards/Yocto-Gen3
 [rcar Linux Drivers]: https://www.renesas.com/solutions/automotive/rcar-demoboard.html
 [rcar Linux Drivers 2]: https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html

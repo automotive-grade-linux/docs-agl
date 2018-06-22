@@ -18,7 +18,7 @@ source meta-agl/scripts/aglsetup.sh -m raspberrypi2 agl-demo agl-netboot agl-app
 bitbake agl-demo-platform
 ```
 
-# Booting AGL Demo Platform on Raspberry Pi
+## Booting AGL Demo Platform on Raspberry Pi
 
 Follow the steps below to copy the image to microSD card and to boot it on Raspberry Pi 2 or 3:
 

@@ -24,7 +24,7 @@ The very first step is to ensure that your system can run the build system of th
 
 * if your system is Windows© or iOS© you should use a virtualization solution  (Virtualbox, VMWare ...) to run a Linux VM on your system.
 
-For AGL 2.1, Yocto Project 2.1, known as krogoth, has been selected for the BSP and build system.  
+For AGL 6.0, Yocto Project 2.4, known as rocko, has been selected for the BSP and build system.
 
 Reference data for configuring your system can be found in the Yocto documentation [Here][yocto ref Manual]
 
@@ -84,14 +84,14 @@ sudo yum install gawk make wget tar bzip2 gzip python unzip perl patch \
      socat SDL-devel xterm curl
 ```
 
-# Download AGL Source Code
+## Download AGL Source Code
 
-The AGL source code and Yocto layers are maintained on the AGL Gerrit server.  
+The AGL source code and Yocto layers are maintained on the AGL Gerrit server.
 For information on how to create accounts for gerrit see [Getting Started with AGL][Getting Started with AGL].
 
-## Setting up the build environment
+### Setting up the build environment
 
-In the following, your top level directory is noted as “AGL_TOP”.  
+In the following, your top level directory is noted as “AGL_TOP”.
 For example, we will set AGL_TOP to point to a directory “$HOME/workspace_agl”:
 
 ```bash
@@ -99,10 +99,10 @@ export AGL_TOP=$HOME/workspace_agl
 mkdir -p $AGL_TOP
 ```
 
-## Prepare Repo Tool
+### Prepare Repo Tool
 
-AGL Uses the 'repo' tool for managing repositories.  
-You need to setup layers of AGL.  
+AGL Uses the 'repo' tool for managing repositories.
+You need to setup layers of AGL.
 You can use the commands below to prepare Repo:
 
 ```bash
@@ -116,27 +116,17 @@ chmod a+x ~/bin/repo
 
 * More information about the tool 'repo' [Here][repo info]
 
-## Download source
+### Download source
 
 You can choose your source release
 
 ### Download Latest Stable Release
 
-To download all layers for the for the latest stable release, eel 5.0.2:
+To download all layers for the for the latest stable release, eel 5.0.3:
 
 ```bash
 cd $AGL_TOP
-repo init -b eel -m eel_5.0.2.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
-repo sync
-```
-
-### Download Latest on dab Branch
-
-To download all layers on the current release branch which may be in the midst of testing or changes prior to the next stable release:
-
-```bash
-cd $AGL_TOP
-repo init -b dab -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b eel -m eel_5.0.3.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
@@ -152,7 +142,8 @@ repo sync
 
 ## Set up Build Environment Info
 
-AGL has created a set up script for defining the target build and desired optional features.  
+AGL has created a set up script for defining the target build and desired optional features.
+
 To get a complete list of the options available run.
 
 ```bash
@@ -167,18 +158,40 @@ Once you run aglsetup.sh with your desired parameters, you can build any target 
 Here is the list of features for AGL 2.1 that can be specified in the aglsetup.sh command line:
 
 * in **meta-agl**
-  * **agl-archiver**:
-  * **agl-devel**: activate development options (empty root password, debugger, strace, valgrind …)
-  * **agl-isafw**:
-  * **agl-netboot**: enable network boot support through TFTP and NBD (see meta-netboot layer)
+  * agl-all-features
+  * agl-appfw-smack: enables IoT.bzh Application Framework + SMACK + Cynara
+  * agl-archiver
+  * agl-ci
+  * agl-ci-change-features
+  * agl-ci-change-features-nogfx
+  * agl-ci-snapshot-features
+  * agl-ci-snapshot-features-nogfx
+  * agl-devel: activate development options (empty root password, debugger, strace, valgrind …)
+  * agl-gplv2
+  * agl-isafw
+  * agl-netboot: enable network boot support through TFTP and NBD (see meta-netboot layer)
+  * agl-profile-graphical
+  * agl-profile-graphical-html5
+  * agl-profile-graphical-qt5
+  * agl-profile-hud
+  * agl-profile-telematics
+  * agl-ptest
+  * agl-sota: enable SOTA components and dependencies (meta-sota, meta-filesystems, meta-ruby, meta-rust are added)
+* in **meta-agl-demo**
+  * agl-demo: enable layer meta-agl-demo and meta-qt5 - required to build     * agl-demo-platform
+  * agl-iotivity
+  * agl-sdl
 * in **meta-agl-devel**
-  * **agl-oem-extra-libs**:
-  * **agl-renesas-kernel**:
+  * agl-audio-4a-framework
+  * agl-audio-soundmanager-framework
+  * agl-egvirt
+  * agl-hmi-framework
+  * agl-oem-extra-libs
+  * agl-renesas-kernel
+  * agl-telemetry
 * in **meta-agl-extra**
-  * **agl-appfw-smack**: enables IoT.bzh Application Framework + SMACK + Cynara
-  * **agl-demo**: enable layer meta-agl-demo and meta-qt5 - required to build     * agl-demo-platform
-  * **agl-localdev**: add a local layer named “meta-localdev” in meta directory and a local.dev.inc conf file if present
-  * **agl-sota**: enable SOTA components and dependencies (meta-sota, meta-filesystems, meta-ruby, meta-rust are added)
+  * agl-localdev: add a local layer named “meta-localdev” in meta directory and a local.dev.inc conf file if present
+  * blsched
 
 For newer features or to get more details on a given feature, take a look at the configuration files stored for each feature and/or each machine in meta-agl/templates and meta-agl-extra/templates.
 

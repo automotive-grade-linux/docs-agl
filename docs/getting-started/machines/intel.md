@@ -4,7 +4,7 @@
 
 This documentation is aiming at people who want to run Automotive Grade
 Linux (AGL) on Intel Hardware (HW).
-While the reference HW used by AGL project is the Open Source MinnowBoard, this documentation [MinnowBoard wiki](https://minnowboard.org/) can be used to enable most of 64-bit Intel Architecture (IA) platforms using UEFI as boot loader.  
+While the reference HW used by AGL project is the Open Source MinnowBoard, this documentation [MinnowBoard wiki](https://minnowboard.org/) can be used to enable most of 64-bit Intel Architecture (IA) platforms using UEFI as boot loader.
 In addition to the MinnowBoard, support for the [upCore & UpSquared boards](http://www.up-board.org/upsquared/) has been added.
 You need to run the 64-bit version of the UEFI bootloader.
 MinnowBoard Max and Turbot as well as Joule are both 64-bit capable.
@@ -15,12 +15,13 @@ If you are interested in creating ***applications*** to run on AGL, please visit
 
 UEFI has evolved a lot recently and you likely want to check that your HW firmware is up-to-date, this is mandatory for both the MinnowBoard-Max and the Joule. Not required on Minnowboard-Turbo and Up boards.
 
-[`https://firmware.intel.com/projects/minnowboard-max`](https://firmware.intel.com/projects/minnowboard-max)  
+[`https://firmware.intel.com/projects/minnowboard-max`](https://firmware.intel.com/projects/minnowboard-max)
 [`https://software.intel.com/en-us/flashing-the-bios-on-joule`](https://software.intel.com/en-us/flashing-the-bios-on-joule)
 
 ## Where to find an AGL bootable image
 
 ### Download a ready made image
+
 AGL provides ready made images for developers.
 You will find them on [AGL Download web site](https://download.automotivelinux.org/AGL/release)
 image are located in YourPreferedRelease/intel-corei7-64/deploy/images/intel-corei7-64/
@@ -72,7 +73,7 @@ Once that you repo is initialised either with the stable or WIP, you need to syn
 
 #### Building the AGL distro
 
-You are now ready to initialise your Yocto build.  
+You are now ready to initialise your Yocto build.
 When running the command:
 
 ```bash
@@ -86,7 +87,7 @@ You will notice the Intel entries
   joule
 ```
 
-Simply select that entry to replace porter in the -m option.  
+Simply select that entry to replace porter in the -m option.
 **Note:** agl-netboot option is required to create the right initramfs even if you do not boot from a network
 
 ```bash
@@ -105,30 +106,30 @@ internet connection and will required several GB on /tmp as well as on your buil
   bitbake agl-demo-platform
 ```
 
-**Your newly baked disk image (.wic.xz) will be located at**:  
+**Your newly baked disk image (.wic.xz) will be located at**:
   `tmp/deploy/images/intel-corei7-64/`
 
 ##### Alternative: Download a *ready made* image from AGL web site
 
-The Continuous Integration (CI) process from AGL creates and publish daily and stable builds.  
+The Continuous Integration (CI) process from AGL creates and publish daily and stable builds.
 Pointers to both can be found in [AGL supported HW](https://wiki.automotivelinux.org/agl-distro) (see Reference BSP/Intel).
 
 Once you have validated your process you can start to play/work with the snapshot pointer.
 
 Note that snapshot build may not work.
 
-Follow the directory:  
+Follow the directory:
 
 `intel-corei7-64/deploy/images/intel-corei7-64/`
 
-and download the file:  
+and download the file:
 
 `agl-demo-platform-intel-corei7-64.hddimg`
 
 ## Create a bootable media
 
-Depending your target HW you will use an USB stick, an SD card or a HDD/SDD.  
-The creation process remains the same independently of the selected support.  
+Depending your target HW you will use an USB stick, an SD card or a HDD/SDD.
+The creation process remains the same independently of the selected support.
 It does require to have access to a Linux machine with `sudo` or root password.
 
 ### Insert you removable media in the corresponding interface
@@ -143,7 +144,7 @@ It does require to have access to a Linux machine with `sudo` or root password.
 
 ### Download the script `mkefi-agl.sh`
 
-This script is present in the directory meta-agl/scripts from blowfish 2.0.4, alternatively you can download it from the following Git repo:  
+This script is present in the directory meta-agl/scripts from blowfish 2.0.4, alternatively you can download it from the following Git repo:
 
 [https://github.com/dominig/mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh)
 

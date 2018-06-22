@@ -1,12 +1,14 @@
 # AGL SDK Quick Setup
 
 This tutorial explains how to quickly setup an environment suitable to building and packaging AGL Applications using the SDK and a Docker container.
+
 The current tutorial has been tested on Linux, but may work with a few adjustments for Windows or MacOS.
 
 ## Step 1: install Docker
 
 First install docker on your host, if not already done.
 General instructions for Linux are available on the [Docker Site](https://docs.docker.com/engine/installation/linux/).
+
 Add yourself to the docker group.
 
 ## Step 2: setup persistent workspace
@@ -53,6 +55,7 @@ docker images;
       jenkins                                 latest              55720d63e328        5 weeks ago         711.9 MB
       hello-world                             latest              c54a2cc56cbb        5 months ago        1.848 kB
 ```
+
 Identify the IMAGE_ID you just loaded. In the example above, this is 6fcc19b4e0d7
 
 ```bash
@@ -70,7 +73,6 @@ Then, use the 'create_container' script to start a new, fresh container based on
 **Note**:
 
 * The password for the id 'devel' inside the docker image is 'devel'.
-
 
 ```bash
 git clone https://git.automotivelinux.org/AGL/docker-worker-generator;
