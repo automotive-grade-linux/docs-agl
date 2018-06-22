@@ -39,7 +39,7 @@ Before setting up the build environment, you need to download the proprietary dr
   * If you are building **AGL Daring Dab or older release** download Renesas graphics drivers with a "click through" license from [here][rcar Linux Drivers].
   * Under the Target hardware: **R-Car H3/M3** section.
 
-* The version of the driver can be find here:
+* The version of the driver can be found here:
 
 ```bash
 grep -rn ZIP_.= meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
@@ -47,8 +47,8 @@ grep -rn ZIP_.= meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.s
 
 **Note**:
 
-* You have to register with a free account on MyRenesas and accept the license conditions before downloading them the drivers.
- The operation is fast and simple but nevertheless mandatory to access evaluation of non open-source drivers for free.
+* You have to register with a free account on MyRenesas and accept the license conditions before downloading the drivers.
+ The operation is fast and simple nevertheless mandatory to access evaluation of non open-source drivers for free.
  Once you registered, you can download two zip files.
 * The files must be stored into your download directory (usually $HOME/Downloads, pointed by $XDG_DOWNLOAD_DIR).
 
@@ -82,6 +82,7 @@ export MACHINE=m3ulcb
 
     ```bash
 export MACHINE=h3-salvator-x
+    ```
 
 Now, init your build environment:
 
@@ -102,7 +103,7 @@ The graphics and multimedia acceleration packages for
 the R-Car Gen3 board can be downloaded from:
  https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
 
-These 2 files from there should be store in your'/home/devel/Téléchargements' directory.
+These 2 files from there should be store in your'/home/devel/Downloads' directory.
   R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
   R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
 /home/working/workspace_agl_master/build_gen3
@@ -148,6 +149,7 @@ The process to build an image is simple:
 ```bash
 bitbake agl-demo-platform
 ```
+You may need to install rpcgen to run this command.
 
 When finished (it may take few hours), you should get the final result:
 
