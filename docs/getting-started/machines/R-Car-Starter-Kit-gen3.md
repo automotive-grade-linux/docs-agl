@@ -68,21 +68,21 @@ Define the type of R-Car Starter Kit board as a variable:
 
 * for machine **h3ulcb** (Starter Kit Premier/H3) :
 
-    ```bash
+```bash
 export MACHINE=h3ulcb
-    ```
+```
 
 * for machine **m3ulcb** (Starter Kit Pro/M3):
 
-    ```bash
+```bash
 export MACHINE=m3ulcb
-    ```
+```
 
 * for machine **h3-salvator-x**:
 
-    ```bash
+```bash
 export MACHINE=h3-salvator-x
-    ```
+```
 
 Now, init your build environment:
 
