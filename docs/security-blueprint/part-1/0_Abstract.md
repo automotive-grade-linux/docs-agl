@@ -2,6 +2,13 @@
 
 ## Abstract
 
+The Automotive Grade Linux platform is a Linux distribution with **AGL** compliant applications and services.
+The platform includes the following hardware:
+
+- SoC (System-on-Chip).
+- Memory (RAM, ROM, storage, etc.).
+- Peripherals.
+
 You will find in this first part everything that concerns the hardware security.
 The goal is to protect system against all attacks that are trying to gain
 additional privileges by recovering and/or changing cryptographic keys in order

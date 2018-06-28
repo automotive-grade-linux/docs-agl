@@ -134,3 +134,32 @@ Kernel-MAC-System-2 | `User::Home`        | AppFw needs to create a directory in
 Kernel-MAC-System-3 | `User::App-Shared`  | Shared space between all App running for a given user.
 
 <!-- end-section-config -->
+
+## Attack Vectors
+
+There are 4 major components to the system:
+
+- The LSM kernel module.
+- The `smackfs` filesystem.
+- Basic utilities for policy management and checking.
+- The policy/configuration data.
+
+As with any mandatory access system, the policy management needs to be carefully separated
+from the checking, as the management utilities can become a convenient point of attack.
+Dynamic additions to the policy system need to be carefully verified, as the ability to
+update the policies is often needed, but introduces a possible threat. Finally,
+even if the policy management is well secured, the policy checking and failure response
+to that checking is also of vital importance to the smooth operation of the system.
+
+While **MAC** is a certainly a step up in security when compared to DAC, there are still
+many ways to compromise a SMACK-enabled Linux system. Some of these ways are as follows:
+
+- Disabling SMACK at invocation of the kernel (with command-line: security=none).
+- Disabling SMACK in the kernel build and redeploying the kernel.
+- Changing a SMACK attribute of a file or directory at install time.
+- Tampering with a process with the CAP_MAC_ADMIN privilege.
+- Setting/Re-setting the SMACK label of a file.
+- Tampering with the default domains (i.e. /etc/smack/accesses.d/default-access-domains).
+- Disabling or tampering with the SMACK filesystem (i.e. /smackfs).
+- Adding policies with `smackload` (adding the utility if not present).
+- Changing labels with `chsmack` (adding the utility if not present).
