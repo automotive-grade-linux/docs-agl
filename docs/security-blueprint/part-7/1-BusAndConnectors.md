@@ -25,6 +25,20 @@ packets. We just describe them a bit:
   2001 on everywhere in a car, where the bandwidth and versatility of a **CAN**
   network is not required.
 
+On just about every vehicle, **ECU**s (**E**lectronic **C**ontrol **U**nits)
+communicate over a CAN bus, which is a two-wire bus using hardware arbitration
+for messages sent on the shared medium. This is essentially a *trusted* network
+where all traffic is visible to all controllers and any controller can send any message.
+
+A malicious **ECU** on the CAN bus can easily inject messages destined for any
+other device, including things like the instrument cluster and the head unit.
+There are common ways for hardware to do USB to CAN and open source software to send
+and receive messages. For example, there is a driver included in the Linux kernel
+that can be used to send/receive CAN signals. A malicious device on the CAN bus can
+cause a great number of harmful things to happen to the system, including: sending
+bogus information to other devices, sending unintended commands to ECUs,
+causing DOS (Denial Of Service) on the CAN bus, etc.
+
 <!-- section-config -->
 
 Domain                             | Tech name | Recommendations

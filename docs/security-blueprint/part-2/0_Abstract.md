@@ -10,6 +10,11 @@ Boot-Abstract-1 | More generic and add examples (The chain of trust).
 
 <!-- end-section-todo -->
 
+Secure boot refers to preventing malicious software applications and
+“unauthorized” operating systems from loading during the system start-up process.
+The goal is to protect users from rootkits and other low-level malware attacks.
+Modern bootloaders come with features that can be used to enable secure boot in the system.
+
 **Boot Hardening**: Steps/requirements to configure the boot sequence, in order
 to restrict the device from executing anything other than the approved software
 image.
