@@ -119,13 +119,17 @@ repositories:
           - source: part-5/4-Services.md
             label: System services and daemons
           - source: part-5/5-AppFw.md
-            label: App Framework
+            label: Application Framework
+          - source: part-5/App-flow.png
+            label: Application Framework Flow
           - source: part-5/6-Utilities.md
             label: Utilities
           - source: part-5/7-Users.md
             label: Users
           - source: part-6/0_Abstract.md
             label: Introduction
+          - source: part-6/App_signing_flow.png
+            label: App Signing Flow
           - source: part-6/1-Installation.md
             label: Installation
           - source: part-6/2-PrivilegeManagement.md
