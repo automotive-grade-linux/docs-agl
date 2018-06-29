@@ -82,8 +82,6 @@ repositories:
             label: Annexes
           - source: annexes/ConfigNotes.md
             label: Config notes
-          - source: annexes/todo.md
-            label: todo
           - source: annexes/todoNotes.md
             label: Todo notes
           - source: part-1/0_Abstract.md

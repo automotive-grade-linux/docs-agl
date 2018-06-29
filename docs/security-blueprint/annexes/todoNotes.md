@@ -26,6 +26,10 @@ Domain                          | Improvement
 Kernel-General-LibraryLinking-1 | Keep this part?
 
 Domain              | Improvement
+------------------- | --------------------------------
+Platform-Abstract-1 | Create a graphics and sound part.
+
+Domain              | Improvement
 ------------------- | -----------
 Platform-Services-1 | SystemD ?
 Platform-Services-2 | Secure daemon ?

@@ -13,6 +13,14 @@ The platform includes the following software:
 - An atomic software update system (chapter Update).
 - Building and debug tools (based on Yocto project).
 
+<!-- section-todo -->
+
+Domain              | Improvement
+------------------- | --------------------------------
+Platform-Abstract-1 | Create a graphics and sound part.
+
+<!-- end-section-todo -->
+
 This part focuses on the AGL platform including all tools and techniques used to
 upgrade the security and downgrade the danger. It must be possible to apply the
 two fundamental principles written at the very beginning of the document. First
