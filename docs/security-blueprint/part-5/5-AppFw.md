@@ -57,7 +57,7 @@ and D-bus bindings. The afb_daemon and Binder form a web-service that
 is communicated to through http or a websocket from the application-proper.
 This http or websocket interface uses a standard unique web token for API communication.
 
-![App Framework Flow](App-flow.png)
+![Application Framework Flow](App-flow.png)
 
 ## Cynara
 
