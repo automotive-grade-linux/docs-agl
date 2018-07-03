@@ -73,14 +73,30 @@ repositories:
     src_prefix : docs
     dst_prefix: af-binder
     documents:
+        - source: index.md
+          label: Binder index
         - source: afb-overview.md
-          label: Binder Overview
+          label: Overview
         - source: afb-binding-writing.md
           label: How to write a binding ?
         - source: afb-binding-references.md
           label: Binding references
-        - source: afb-migration-v1-to-v2.md
-          label: Migration from v1 to v2
+        - source: reference-v3/types-and-globals.md
+          label: Types and globals
+        - source: reference-v3/func-api.md
+          label: Functions of class afb_api
+        - source: reference-v3/func-req.md
+          label: Functions of class afb_req
+        - source: reference-v3/func-event.md
+          label: Functions of class afb_event
+        - source: reference-v3/func-daemon.md
+          label: Functions of class afb_daemon
+        - source: reference-v3/func-service.md
+          label: Functions of class afb_service
+        - source: reference-v3/macro-log.md
+          label: Macros for logging
+        - source: afb-migration-to-binding-v3.md
+          label: Migration to bindings v3
         - source: afb-events-guide.md
           label: Binder events guide
         - source: afb-application-writing.md
@@ -89,8 +105,20 @@ repositories:
           label: Binder daemon vocabulary
         - source: afb-desktop-package.md
           label: Installing the binder on a desktop
+        - source: afb-daemon-debugging.md
+          label: Debugging binder and bindings
         - source: afb-daemon-options.md
           label: Options of afb-daemon
+        - source: protocol-x-afb-ws-json1.md
+          label: WebSocket protocol x-afb-ws-json1
+        - source: annexes.md
+          label: Annexes
+        - source: REVISIONS.md
+          label: Document revision
+        - source: legacy/afb-migration-v1-to-v2.md
+          label: LEGACY Migration from v1 to v2
+        - source: legacy/afb-binding-v2-references.md
+          label: LEGACY Binding V2 references
         - source: pictures/AFB_for_services.svg
         - source: pictures/basis.svg
         - source: pictures/interconnection.svg

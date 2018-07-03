@@ -52,14 +52,29 @@ children:
     name: Application Framework Binder
     children:
         - url: reference/af-binder/afb-overview.html
+        - url: reference/af-binder/afb-daemon-vocabulary.html
         - url: reference/af-binder/afb-binding-writing.html
-        - url: reference/af-binder/afb-binding-references.html
-        - url: reference/af-binder/afb-migration-v1-to-v2.html
+        - name: Binder references
+          children:
+               - url: reference/af-binder/reference-v3/types-and-globals.html
+               - url: reference/af-binder/reference-v3/macro-log.html
+               - url: reference/af-binder/reference-v3/func-api.html
+               - url: reference/af-binder/reference-v3/func-req.html
+               - url: reference/af-binder/reference-v3/func-event.html
+               - url: reference/af-binder/reference-v3/func-daemon.html
+               - url: reference/af-binder/reference-v3/func-service.html
         - url: reference/af-binder/afb-events-guide.html
         - url: reference/af-binder/afb-application-writing.html
-        - url: reference/af-binder/afb-daemon-vocabulary.html
-        - url: reference/af-binder/afb-desktop-package.html
-        - url: reference/af-binder/afb-daemon-options.html
+        - name: Annexes
+          children:
+                - url: reference/af-binder/afb-migration-to-binding-v3.html
+                - url: reference/af-binder/protocol-x-afb-ws-json1.html
+                - url: reference/af-binder/afb-desktop-package.html
+                - url: reference/af-binder/afb-daemon-options.html
+                - url: reference/af-binder/afb-daemon-debugging.html
+                - url: reference/af-binder/legacy/afb-migration-v1-to-v2.html
+                - url: reference/af-binder/legacy/afb-binding-v2-references.html
+        - url: REVISIONS.html
 
 -
     name: Message Signaling
