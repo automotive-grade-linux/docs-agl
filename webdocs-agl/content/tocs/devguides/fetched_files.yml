@@ -74,8 +74,9 @@ repositories:
         - source: host-configuration/docs/0_Abstract.md
         - source: host-configuration/docs/1_Prerequisites.md
         - source: host-configuration/docs/2_AGL_Application_Framework.md
-        - source: host-configuration/docs/3_AGL_XDS.md
-        - source: host-configuration/docs/4_Candevstudio.md
+        - source: host-configuration/docs/3_Binding_Build_Example.md
+        - source: host-configuration/docs/4_AGL_XDS.md
+        - source: host-configuration/docs/5_Candevstudio.md
 -
     url_fetch: "GITHUB_FETCH"
     git_name: iotbzh/agl-documentation
