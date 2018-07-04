@@ -58,11 +58,14 @@ children:
             name: AGL Application Framework
             url: reference/host-configuration/docs/2_AGL_Application_Framework.html
         -
+            name: Binding Build Example
+            url: reference/host-configuration/docs/3_Binding_Build_Example.html
+        -
             name: AGL XDS
-            url: reference/host-configuration/docs/3_AGL_XDS.html
+            url: reference/host-configuration/docs/4_AGL_XDS.html
         -
             name: CanDevStudio
-            url: reference/host-configuration/docs/4_Candevstudio.html
+            url: reference/host-configuration/docs/5_Candevstudio.html
 -
     name: "Development Kit: build AGL image"
     children:
