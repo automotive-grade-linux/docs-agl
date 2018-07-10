@@ -49,25 +49,6 @@ repositories:
     dst_prefix: AGL_Specifications
     documents:
         - source: agl_spec_v1.0_final.pdf
--
-    git_name : "%project_source%/docs-agl"
-    src_prefix : docs/sec-blueprint
-    dst_prefix: security
-    documents:
-        - source: 01-overview.md
-          label: Overview
-        - source: 02-adversaries.md
-          label: Adversaries
-        - source: 03-threat-analysis.md
-          label: Threat Analysis
-        - source: 04-security-concepts.md
-          label: Security Concepts
-        - source: 05-platform-security.md
-          label: Platform Security
-        - source: 06-application-security.md
-          label: Application Security
-        - source: 07-system-hardening.md
-          label: System Hardening
 
 -
     git_name : "%project_source%/docs-agl"
