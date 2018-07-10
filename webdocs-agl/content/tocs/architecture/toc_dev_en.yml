@@ -47,16 +47,6 @@ children:
 -
     name: Security Blueprint
     children:
-        - url: reference/security/01-overview.html
-        - url: reference/security/02-adversaries.html
-        - url: reference/security/03-threat-analysis.htm
-        - url: reference/security/04-security-concepts.html
-        - url: reference/security/05-platform-security.html
-        - url: reference/security/06-application-security.html
-        - url: reference/security/07-system-hardening.html
--
-    name: Upgraded Security Blueprint 2017
-    children:
           - url: reference/security/README.html
           - name: Part-1 Hardware
             children:
