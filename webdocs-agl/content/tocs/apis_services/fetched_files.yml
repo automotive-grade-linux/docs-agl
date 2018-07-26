@@ -146,6 +146,61 @@ repositories:
         - source: images/OpenXC_to_AGL.png
 
 -
+    git_name : apps/app-afb-test
+    git_commit: master
+    src_prefix : docs
+    dst_prefix: afb-test
+    documents:
+        - source: 0_Installation.md
+          destination: Installation.md
+          label: Installation
+        - source: 1_TestExample.md
+          destination: test-example.md
+          label: Test Example
+        - source: 2_LaunchTheExample.md
+          destination: launch-the-example.md
+          label: Launch The Example
+        - source: WriteYourTests/0_ProjectTree.md
+          destination: project-tree.md
+          label: Project Tree
+        - source: WriteYourTests/1_BindingConfiguration.md
+          destination: binding-configuration.md
+          label: Binding Configuration
+        - source: WriteYourTests/2_LUATestFiles.md
+          destination: Lua-test-files.md
+          label: LUA Test Files
+        - source: WriteYourTests/Reference/0_BindingTestFunctions.md
+          destination: binding-test-finctions.md
+          label: Binding Test Functions
+        - source: WriteYourTests/Reference/1_BindingAssertFunctions.md
+          destination: binding-assert-functions.md
+          label: Binding Assert Functions
+        - source: WriteYourTests/Reference/2_TestFrameworkFunctions.md
+          destination: test-framework-functions.md
+          label: Test Framework Functions
+        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.md
+          destination: general-assertions.md
+          label: General Assertions
+        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.md
+          destination: value-assertions.md
+          label: Value Assertions
+        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.md
+          destination: scientific-assertions.md
+          label: Scientific Assertions
+        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/3_StringAssertions.md
+          destination: string-assertions.md
+          label: String Assertions
+        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.md
+          destination: error-assertions.md
+          label: Error Assertions
+        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.md
+          destination: type-assertions.md
+          label: Type Assertions
+        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/6_TableAssertions.md
+          destination: table-assertions.md
+          label: Table Assertions
+
+-
     url_fetch: GITHUB_FETCH
     git_name : iotbzh/high-level-viwi-service
     git_commit: master
