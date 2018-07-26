@@ -77,6 +77,32 @@ children:
         - url: REVISIONS.html
 
 -
+    name: AGL Test Framework
+    children:
+        - url: reference/afb-test/Installation.html
+        - url: reference/afb-test/test-example.html
+        - url: reference/afb-test/launch-the-example.html
+        - name: Write Your Tests
+          children: 
+              - url: reference/afb-test/project-tree.html
+              - url: reference/afb-test/binding-configuration.html
+              - url: reference/afb-test/Lua-test-files.html
+              - name: References
+                children:
+                    - url: reference/afb-test/binding-test-finctions.html
+                    - url: reference/afb-test/binding-assert-functions.html
+                    - url: reference/afb-test/test-framework-functions.html
+                    - name: LuaUnit Assertion Functions
+                      children: 
+                          - url: reference/afb-test/general-assertions.html
+                          - url: reference/afb-test/value-assertions.html
+                          - url: reference/afb-test/scientific-assertions.html
+                          - url: reference/afb-test/string-assertions.html
+                          - url: reference/afb-test/error-assertions.html
+                          - url: reference/afb-test/type-assertions.html
+                          - url: reference/afb-test/table-assertions.html
+
+-
     name: Message Signaling
     children:
         - url: reference/signaling/architecture.html
