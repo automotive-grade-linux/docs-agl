@@ -559,8 +559,8 @@ Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside 
 [R-car loader update]: http://elinux.org/R-Car/Boards/Kingfisher#How_to_update_of_Sample_Loader_and_MiniMonitor
 [R-car Kingfisher]: https://elinux.org/R-Car/Boards/Kingfisher
 [R-car yocto]: http://elinux.org/R-Car/Boards/Yocto-Gen3
-[rcar Linux Drivers]: https://www.renesas.com/solutions/automotive/rcar-demoboard.html
-[rcar Linux Drivers 2]: https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
+[rcar Linux Drivers]: https://www.renesas.com/solutions/automotive/rcar-download/rcar-demoboard.html
+[rcar Linux Drivers 2]: https://www.renesas.com/en-us/solutions/automotive/rcar-download/rcar-demoboard-2.html
 [Iot.bzh AGL-Kickstart-on-Renesas-Porter-Board]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf
 [Iot.bzh AGL-Devkit-Image-and-SDK-for-Porter]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf
 [Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf
