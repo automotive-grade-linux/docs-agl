@@ -141,8 +141,20 @@ children:
 -
     name: Audio Framework
     children:
-        - url: reference/audio/4a-framework.html
         - url: reference/audio/bluez-alsa.html
+        - name: 4a Framework
+          children:
+              - url: reference/audio/4a-framework.html
+              - url: reference/audio/Play_Music.html
+              - name: Tips And Tricks
+                children:
+                    - url: reference/audio/TipsAndTricks/GetRolesList.html
+                    - url: reference/audio/TipsAndTricks/GetServiceStatus.html
+                    - url: reference/audio/TipsAndTricks/CheckApi.html
+                    - url: reference/audio/TipsAndTricks/GetHALsStatus.html
+                    - url: reference/audio/TipsAndTricks/GetAvailableDevices.html
+                    - url: reference/audio/TipsAndTricks/ChangeHal.html
+
 -
     name: HMI Framework
     children:
