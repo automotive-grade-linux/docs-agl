@@ -302,6 +302,29 @@ repositories:
           destination: bluez-alsa.md
           label: bluez-alsa
 -
+    url_fetch: GITHUB_FETCH
+    git_name : iotbzh/4a-docs
+    git_commit: master
+    src_prefix : docs
+    dst_prefix: audio
+    documents:
+        - source: Play_Music.md
+          label: Play Music
+        - source: TipsAndTricks/ChangeHal.md
+          label: Change Hal
+        - source: TipsAndTricks/CheckApi.md
+          label: Chack Api
+        - source: TipsAndTricks/GetAvailableDevices.md
+          label: Get Available Devices
+        - source: TipsAndTricks/GetHALsStatus.md
+          label: Get HALs Status
+        - source: TipsAndTricks/GetRolesList.md
+          label: Get Roles List
+        - source: TipsAndTricks/GetServiceStatus.md
+          label: Get Service Status
+        - source: images/MixerBaseMenu.png
+        - source: images/changeSound.png
+-  
     url_fetch: "GERRIT_FETCH"
     git_name: apps/agl-service-homescreen-2017
     git_commit: "master"
