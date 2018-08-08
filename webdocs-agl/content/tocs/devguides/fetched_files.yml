@@ -195,3 +195,18 @@ repositories:
     documents:
         - source: CIAT/training/How_to_write_your_own_tests_for_AGL.pdf
         - source: CIAT/training/Hands_on_lab_documentation.pdf
+-
+    url_fetch: "GERRIT_FETCH"
+    git_name: apps/app-controller-submodule
+    git_commit: master
+    src_prefix: docs
+    dst_prefix: ctrler
+    documents:
+        - source: Usage.md
+          label: Usage
+        - source: configSample.md
+          label: Configuration Sample
+        - source: controller.md
+          label: Installation
+        - source: controllerConfig.md
+          label: Binding Configuration
