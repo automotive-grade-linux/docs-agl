@@ -313,7 +313,7 @@ repositories:
         - source: TipsAndTricks/ChangeHal.md
           label: Change Hal
         - source: TipsAndTricks/CheckApi.md
-          label: Chack Api
+          label: Check Api
         - source: TipsAndTricks/GetAvailableDevices.md
           label: Get Available Devices
         - source: TipsAndTricks/GetHALsStatus.md

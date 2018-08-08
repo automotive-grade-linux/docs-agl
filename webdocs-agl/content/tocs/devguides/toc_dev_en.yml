@@ -249,6 +249,14 @@ children:
             url: reference/iotbzh2016/appfw/03-AGL-AppFW-Privileges-Management.pdf
 
 -
+    name: Controller Guide
+    children: 
+          - url: reference/ctrler/controller.html
+          - url: reference/ctrler/controllerConfig.html
+          - url: reference/ctrler/Usage.html
+          - url: reference/ctrler/configSample.html
+          
+-
     name: "Continuous Integration - Automated Testing (CIAT)"
     children:
         -
