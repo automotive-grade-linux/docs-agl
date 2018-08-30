@@ -404,7 +404,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
 * Turn the board on using the power switch.
 * Hit any key to stop autoboot (warning you have only few seconds).
 * Type **print** to check if you have correct parameters for booting your board:
-  * For machine m3ulcb:
+  * For machine h3ulcb:
 
     ```bash
 => printenv
@@ -424,7 +424,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     Environment size: 648/131068 bytes
     ```
 
-    * For machine h3ulcb:
+    * For machine m3ulcb:
 
     ```bash
 => printenv
