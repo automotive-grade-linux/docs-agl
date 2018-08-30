@@ -173,6 +173,7 @@ repositories:
         - source: part-2/1_xds-server/2_how-to-run.md
         - source: part-2/1_xds-server/3_build.md
         - source: part-2/1_xds-server/4_debug.md
+        - source: part-2/1_xds-server/5_test.md
         - source: part-2/2_xds-agent/0_abstract.md
         - source: part-2/2_xds-agent/1_config.md
         - source: part-2/2_xds-agent/2_start.md
