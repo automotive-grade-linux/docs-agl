@@ -190,6 +190,9 @@ children:
               -
                 name: Debugging
                 url: reference/xds/part-2/1_xds-server/4_debug.html
+              -
+                name: Test
+                url: reference/xds/part-2/1_xds-server/5_test.html
         -
           name: XDS-agent
           children:
