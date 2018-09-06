@@ -25,7 +25,7 @@ UEFI has evolved a lot recently and you likely want to check that your HW firmwa
 AGL provides ready made images for developers.
 You will find them on [AGL Download web site](https://download.automotivelinux.org/AGL/release)
 image are located in YourPreferedRelease/intel-corei7-64/deploy/images/intel-corei7-64/
-Create a bootable SD card with the script [mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh)
+Create a bootable SD card with the script [mkefi-agl.sh](https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git;a=blob_plain;f=scripts/mkefi-agl.sh;hb=HEAD) 
 check the available options with the -v option. mkefi-agl.sh -v
 
 ### Building an AGL image from scratch using Yocto
@@ -144,7 +144,9 @@ It does require to have access to a Linux machine with `sudo` or root password.
 
 ### Download the script `mkefi-agl.sh`
 
-This script is present in the directory meta-agl/scripts from blowfish 2.0.4, alternatively you can download it from the following Git repo:
+This script is present in the directory meta-agl/scripts from blowfish 2.0.4 : [mkefi-agl.sh](https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git;a=blob_plain;f=scripts/mkefi-agl.sh;hb=HEAD)
+
+Alternatively you can download it from the following Git repo:
 
 [https://github.com/dominig/mkefi-agl.sh](https://github.com/dominig/mkefi-agl.sh)
 
