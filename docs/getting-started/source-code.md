@@ -126,7 +126,7 @@ To download all layers for the for the latest stable release, eel 5.0.3:
 
 ```bash
 cd $AGL_TOP
-repo init -b eel -m eel_5.0.3.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b eel -m eel_5.1.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
 
