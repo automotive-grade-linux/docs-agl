@@ -3,11 +3,13 @@
 ## Prerequisites
 
 * At this step, you are assumed to have downloaded the [AGL source code](/docs/getting_started/en/dev/reference/source-code.html).
+
 See the related paragraph if not done yet.
 
 * For creating the microSD card, you will need **bmaptool**
-There are pre-built packages (.deb or .rpm) for the supported host OSes, available at this location:
-https://build.opensuse.org/package/show/isv:LinuxAutomotive:AGL_Master/bmap-tools
+
+There are pre-built packages (.deb or .rpm) for the supported host OSes, available at [this location](
+https://build.opensuse.org/package/show/isv:LinuxAutomotive:AGL_Master/bmap-tools)
 
 ## Hardware
 
@@ -65,10 +67,13 @@ grep -rn ZIP_.= $AGL_TOP/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_p
 * It is recommended to store these drivers into your download directory (usually $HOME/Downloads, pointed by $XDG_DOWNLOAD_DIR in some OS).
   * To avoid any errors, check that $XDG_DOWNLOAD_DIR is set to the directory where the drivers are stored, if not, set it using 'export' command
 * Be sure to have the need rights for these files using :
+
 ```bash
 chmod a+r $XDG_DOWNLOAD_DIR/*.zip
 ```
+
 * Check that the needed drivers files are found using :
+
 ```bash
 ls -1 $XDG_DOWNLOAD_DIR
 -rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
@@ -135,14 +140,14 @@ In any case, you can find out more information for the reason of the error in th
 ```bash
 [snip]
 
-~/workspace_agl/build/conf $ cat setup.log 
+~/workspace_agl/build/conf $ cat setup.log
 --- beginning of setup script
 --- fragment /home/thierry/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
 --- fragment /home/thierry/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
 ~/workspace_agl ~/workspace_agl/build
 ERROR: FILES "+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip+" NOT EXTRACTING CORRECTLY
 ERROR: FILES "+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip+" NOT EXTRACTING CORRECTLY
-The graphics and multimedia acceleration packages for 
+The graphics and multimedia acceleration packages for
 the R-Car Gen3 board BSP can be downloaded from:
 <https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html>
 
@@ -153,7 +158,6 @@ These 2 files from there should be stored in your
 ERROR: Script /home/thierry/workspace_agl/build/conf/setup.sh failed
 [snip]
 ```
-
 
 After this command, the working directory is changed to $AGL_TOP/build.
 
@@ -189,6 +193,7 @@ The process to build an image is simple:
 ```bash
 bitbake agl-demo-platform
 ```
+
 You may need to install rpcgen to run this command.
 
 When finished (it may take few hours), you should get the final result:
@@ -395,7 +400,7 @@ Hit any key to stop autoboot:  0
 
 * For machine m3ulcb:
 
-```bash
+```
 NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.14
 NOTICE:  BL2: PRR is R-Car M3 Ver1.0
 NOTICE:  BL2: Board is Starter Kit Rev1.0
@@ -430,7 +435,7 @@ In:    serial
 Out:   serial
 Err:   serial
 Net:   ravb
-Hit any key to stop autoboot:  0 
+Hit any key to stop autoboot:  0
 =>
 ```
 
@@ -443,8 +448,8 @@ Follow the steps below to configure the boot from microSD card and to set screen
 * Type **printenv** to check if you have correct parameters for booting your board:
   * Example for a h3ulcb:
 
-    ```bash
-=> printenv
+    ```
+    => printenv
     baudrate=115200
     bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
     bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
@@ -461,10 +466,10 @@ Follow the steps below to configure the boot from microSD card and to set screen
     Environment size: 648/131068 bytes
     ```
 
-    * Example for a m3ulcb:
+  * Example for a m3ulcb:
 
-    ```bash
-=> printenv
+    ```
+    => printenv
     baudrate=115200
     bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
     bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
@@ -484,52 +489,51 @@ Follow the steps below to configure the boot from microSD card and to set screen
 
     * To boot on a sd card, it is recommended to set your environment using these commands :
 
-    ```bash
-setenv bootargs console=ttySC0,115200 ignore_loglevel vmalloc=384M video=HDMI-A-1:1920x1080-32@60 root=/dev/mmcblk1p1 rw rootfstype=ext4 rootwait rootdelay=2
-setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
-setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
+    ```
+    setenv bootargs console=ttySC0,115200 ignore_loglevel vmalloc=384M video=HDMI-A-1:1920x1080-32@60 root=/dev/mmcblk1p1 rw rootfstype=ext4 rootwait rootdelay=2
+    setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
+    setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
     ```
 
     * For machine h3ulcb (BSP >= 2.19):
 
-    ```bash
-setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
+    ```
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
     ```
 
     * For machine h3ulcb (BSP < 2.19):
 
-    ```bash
-setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+    ```
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
     ```
 
     * For machine m3ulcb:
 
     ```bash
-setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
     ```
 
     * For machine m3ulcb with a kingfisher board:
 
     ```bash
-setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb-kf.dtb
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb-kf.dtb
     ```
+
     * For machine h3ulcb with a kingfisher board:
 
     ```bash
-setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb-kf.dtb
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb-kf.dtb
     ```
-
-
 
     * Finally save boot environment:
 
     ```bash
-saveenv
+    saveenv
     ```
 
 * Now you can boot:
 
-```bash
+```
 run bootcmd
 ```
 
