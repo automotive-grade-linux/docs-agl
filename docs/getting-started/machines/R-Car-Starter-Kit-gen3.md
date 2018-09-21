@@ -1,11 +1,22 @@
 # AGL Kickstart on Renesas R-Car Starter Kit Gen3 V2.23 (h3ulcb, m3ulcb, salvator-x)
 
+## Prerequisites
+
+* At this step, you are assumed to have downloaded the AGL source code. See the related paragraph
+if not done yet.
+
+* For creating the microSD card, you will need **bmaptool**
+There are pre-built packages (.deb or .rpm) for the supported host OSes, available at this location:
+https://build.opensuse.org/package/show/isv:LinuxAutomotive:AGL_Master/bmap-tools
+
+## Hardware
+
 Here is a non exhaustive list of hardware parts that could be used to setup the R-Car Starter Kit Gen3 board development environment:
 
 * Starter Kit Gen3 board with its power supply
-* micro USB-A cable for serial console
-* USB 2.0 Hub
-* Ethernet cable
+* micro USB-A cable for serial console (optional if using ethernet and ssh connexion)
+* USB 2.0 Hub (optional)
+* Ethernet cable (optional if using serial console)
 * HDMI type D (Micro connector) cable and associated display
 * micro-SD Card (at least 4GB)
 * USB touch screen device like the GeChic 1502i (optional)
@@ -29,34 +40,36 @@ The following documents may also be helpful:
 ## BSP Version of R-Car Starter Kit Gen3
 
 * AGL master: 3.7
-* AGL eel 5.0.3: 2.23.1
+* AGL eel 5.1.0: 2.23.1
 
 ## Building the AGL Demo Platform for R-Car Starter Kit Gen3
 
 Before setting up the build environment, you need to download the proprietary drivers.
 
-* Download Renesas graphics drivers with a "click through" license from [Renesas website][rcar Linux Drivers 2]
-  * If you are building **AGL Daring Dab or older release** download Renesas graphics drivers with a "click through" license from [here][rcar Linux Drivers].
-  * Under the Target hardware: **R-Car H3/M3** section.
-
-* The version of the driver can be found here:
+* The version of the drivers you need can be displayed this way:
 
 ```bash
-grep -rn ZIP_.= meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
+grep -rn ZIP_.= $AGL_TOP/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
 ```
+
+* Download Renesas graphics drivers with a "click through" license from [Renesas website][rcar Linux Drivers 2]
+  * If you are building **AGL Daring Dab or older release** download Renesas graphics drivers with a "click through" license from [here][rcar Linux Drivers].
+    -> only for older than daring dab (i.e. not for eel and ff ?)
+  * Under the Target hardware: **R-Car H3/M3** section.
 
 **Note**:
 
 * You have to register with a free account on MyRenesas and accept the license conditions before downloading the drivers.
  The operation is fast and simple nevertheless mandatory to access evaluation of non open-source drivers for free.
  Once you registered, you can download two zip files.
-* The files must be stored into your download directory (usually $HOME/Downloads, pointed by $XDG_DOWNLOAD_DIR).
-
-Here after is an example of the typical files downloaded at the time of writing:
-
+* It is recommended to store these drivers into your download directory (usually $HOME/Downloads, pointed by $XDG_DOWNLOAD_DIR in some OS).
+  * To avoid any errors, check that $XDG_DOWNLOAD_DIR is set to the directory where the drivers are stored, if not, set it using 'export' command
+* Be sure to have the need rights for these files using :
 ```bash
-test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 chmod a+r $XDG_DOWNLOAD_DIR/*.zip
+```
+* Check that the needed drivers files are found using :
+```bash
 ls -1 $XDG_DOWNLOAD_DIR
 -rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
 -rw-r--r--. 1 1664 agl-sdk 3,0M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
@@ -117,7 +130,34 @@ Generating setup file: /home/working/workspace_agl_master/build_gen3/agl-init-bu
 
 If you encounter this issue, or any other unwanted behavior, you can fix the error mentioned and then clean up by removing the “$AGL_TOP/build” directory then re-launch the procedure again.
 
+In any case, you can find out more information for the reason of the error in this file:
+
+```bash
+[snip]
+
+~/workspace_agl/build/conf $ cat setup.log 
+--- beginning of setup script
+--- fragment /home/thierry/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
+--- fragment /home/thierry/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
+~/workspace_agl ~/workspace_agl/build
+ERROR: FILES "+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip+" NOT EXTRACTING CORRECTLY
+ERROR: FILES "+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip+" NOT EXTRACTING CORRECTLY
+The graphics and multimedia acceleration packages for 
+the R-Car Gen3 board BSP can be downloaded from:
+<https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html>
+
+These 2 files from there should be stored in your
+'/home/thierry/Downloads' directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip
+ERROR: Script /home/thierry/workspace_agl/build/conf/setup.sh failed
+[snip]
+```
+
+
 After this command, the working directory is changed to $AGL_TOP/build.
+
+If you do not want do this, another option is to add the '**-f**' option to agl_setup.sh.
 
 Users may want to check that the board is correctly selected in the environment:
 
@@ -172,21 +212,19 @@ For each subsequent build you only need to rewrite the SD-card with the new imag
 
 ### Firmware Update
 
-This proceedure is done in two steps.  The first step only needs to be done once per device.  The second step should be done, starting with the Eel release, per release.
+This proceedure is done in two steps. The 'Sample Loader and MiniMonitor update' step only needs to be done once per device. The 'Firmware stack update' step is mandatory only if you use AGl Eel (version 5.0) or later.
 
-#### Update Sample Loader and MiniMonitor
+#### Sample Loader and MiniMonitor update
 
-Follow the documentation on the [eLinux.org wiki][R-car loader update] for the exact list of steps on how to perform the required steps to update to at least version 3.02.  This should be done even in the case where a **Kingfisher** or other expansion board will not be connected.
+Follow the documentation on the [eLinux.org wiki][R-car loader update] to update to at least version 3.02. This is mandatory to run AGL.
 
-#### Update the firmware stack
+#### Firmware stack update
 
-As an AArch64 platform, both the **h3ulcb** and **m3ulcb** have a firmware stack that consists of multiple parts.
+As an AArch64 platform, both **h3ulcb** and **m3ulcb** have a firmware stack divided in : **ARM Trusted Firmware**, **OP-Tee** and **U-Boot**.
 
-In both cases we have **ARM Trusted Firmware**, **OP-Tee** and **U-Boot** in use.
+If you use AGl Eel (version 5.0) or later, you must update the firmware using the following links to eLinux.org wiki: **[h3ulcb][R-car h3ulcb firmware update]** or **[m3ulcb][R-car m3ulcb firmware update]**.
 
-Starting with Eel you must update the firmware to at least the version referenced here.  For the exact steps required to flash the device see the eLinux.org wiki for **[h3ulcb][R-car h3ulcb firmware update]** or **[m3ulcb][R-car m3ulcb firmware update]** respectively.
-
-In both cases the files listed in the table will be found in the directory:
+The files listed in the eLinux.org wiki table will be found in the directory:
 
 ```bash
 *\$AGL_TOP/build/tmp/deploy/images/$MACHINE*
@@ -244,26 +282,24 @@ cd $AGL_TOP/build/tmp/deploy/images/$MACHINE
 You can use bmaptool to copy the **.wic.xz** file to the storage device, discovered in the previous step:
 
 ```bash
-bmaptool copy ./agl-demo-platform-$MACHINE.wic.xz /dev/sdc
+bmaptool copy ./agl-demo-platform-$MACHINE.wic.xz $SDCARD
 ```
 
 Or you can be uncompressed and written to the device:
 
 ```bash
   sudo umount /dev/sdc
-  xzcat ./agl-demo-platform-$MACHINE.wic.xz | sudo dd of=/dev/sdc bs=4M
+  xzcat ./agl-demo-platform-$MACHINE.wic.xz | sudo dd of=$SDCARD bs=4M
   sync
 ```
-
-Or
 
 ### Booting the board
 
 * Turn the board off using the power switch.
 * Insert the microSD-card.
-* Verify that you have plugged in, at least, the following:
-  * External monitor on HDMI port
-  * Input device (keyboard, mouse, touchscreen...) on USB port.
+* Verify that you have plugged in, at least :
+  * An external monitor on HDMI port
+  * An input device (keyboard, mouse, touchscreen...) on USB port.
 
 * Turn the board on using the power switch.
  After a few seconds, you'll see the AGL splash screen on the display and you'll be able to log in on the console terminal or in the graphic screen.
@@ -360,28 +396,30 @@ Hit any key to stop autoboot:  0
 * For machine m3ulcb:
 
 ```bash
-NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.8
-NOTICE:  BL2: PRR is R-Car M3 ES1.0
+NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.14
+NOTICE:  BL2: PRR is R-Car M3 Ver1.0
+NOTICE:  BL2: Board is Starter Kit Rev1.0
+NOTICE:  BL2: Boot device is HyperFlash(80MHz)
 NOTICE:  BL2: LCM state is CM
-NOTICE:  BL2: DDR1600(rev.0.15)
-NOTICE:  BL2: DRAM Split is 2ch
-NOTICE:  BL2: QoS is default setting(rev.0.14)
 NOTICE:  BL2: AVS setting succeeded. DVFS_SetVID=0x52
+NOTICE:  BL2: DDR1600(rev.0.22)NOTICE:  [COLD_BOOT]NOTICE:  ..0
+NOTICE:  BL2: DRAM Split is 2ch
+NOTICE:  BL2: QoS is default setting(rev.0.17)
 NOTICE:  BL2: Lossy Decomp areas
 NOTICE:       Entry 0: DCMPAREACRAx:0x80000540 DCMPAREACRBx:0x570
 NOTICE:       Entry 1: DCMPAREACRAx:0x40000000 DCMPAREACRBx:0x0
 NOTICE:       Entry 2: DCMPAREACRAx:0x20000000 DCMPAREACRBx:0x0
-NOTICE:  BL2: v1.1(release):41099f4
-NOTICE:  BL2: Built : 09:24:53, Nov 24 2016
+NOTICE:  BL2: v1.3(release):4eef9a2
+NOTICE:  BL2: Built : 00:25:19, Aug 25 2017
 NOTICE:  BL2: Normal boot
-NOTICE:  BL2: dst=0xe630f068 src=0x8180000 len=36(0x24)
-NOTICE:  BL2: dst=0x43f00000 src=0x8180400 len=3072(0xc00)
+NOTICE:  BL2: dst=0xe631e188 src=0x8180000 len=512(0x200)
+NOTICE:  BL2: dst=0x43f00000 src=0x8180400 len=6144(0x1800)
 NOTICE:  BL2: dst=0x44000000 src=0x81c0000 len=65536(0x10000)
 NOTICE:  BL2: dst=0x44100000 src=0x8200000 len=524288(0x80000)
-NOTICE:  BL2: dst=0x49000000 src=0x8640000 len=1048576(0x100000)
+NOTICE:  BL2: dst=0x50000000 src=0x8640000 len=1048576(0x100000)
 
 
-U-Boot 2015.04 (Nov 30 2016 - 18:25:18)
+U-Boot 2015.04-dirty (Aug 25 2017 - 10:55:49)
 
 CPU: Renesas Electronics R8A7796 rev 1.0
 Board: M3ULCB
@@ -391,9 +429,8 @@ MMC:   sh-sdhi: 0, sh-sdhi: 1
 In:    serial
 Out:   serial
 Err:   serial
-Net:   Board Net Initialization Failed
-No ethernet found.
-Hit any key to stop autoboot:  0
+Net:   ravb
+Hit any key to stop autoboot:  0 
 =>
 ```
 
@@ -403,8 +440,8 @@ Follow the steps below to configure the boot from microSD card and to set screen
 
 * Turn the board on using the power switch.
 * Hit any key to stop autoboot (warning you have only few seconds).
-* Type **print** to check if you have correct parameters for booting your board:
-  * For machine h3ulcb:
+* Type **printenv** to check if you have correct parameters for booting your board:
+  * Example for a h3ulcb:
 
     ```bash
 => printenv
@@ -424,7 +461,7 @@ Follow the steps below to configure the boot from microSD card and to set screen
     Environment size: 648/131068 bytes
     ```
 
-    * For machine m3ulcb:
+    * Example for a m3ulcb:
 
     ```bash
 => printenv
@@ -445,10 +482,10 @@ Follow the steps below to configure the boot from microSD card and to set screen
     Environment size: 557/131068 bytes
     ```
 
-    * If not, copy line by line:
+    * To boot on a sd card, it is recommended to set your environment using these commands :
 
     ```bash
-setenv bootargs console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
+setenv bootargs console=ttySC0,115200 ignore_loglevel vmalloc=384M video=HDMI-A-1:1920x1080-32@60 root=/dev/mmcblk1p1 rw rootfstype=ext4 rootwait rootdelay=2
 setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
 setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
     ```
@@ -470,6 +507,19 @@ setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
     ```bash
 setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
     ```
+
+    * For machine m3ulcb with a kingfisher board:
+
+    ```bash
+setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb-kf.dtb
+    ```
+    * For machine h3ulcb with a kingfisher board:
+
+    ```bash
+setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb-kf.dtb
+    ```
+
+
 
     * Finally save boot environment:
 
@@ -565,3 +615,4 @@ Detailed guides on how to build AGL for Renesas boards and using AGL SDK inside 
 [Iot.bzh AGL-Devkit-Image-and-SDK-for-Porter]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf
 [Iot.bzh AGL-Devkit-Build-your-1st-AGL-Application]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf
 [Iot.bzh AGL_Phase2-Devkit-HowTo_bake_a_service]: http://docs.automotivelinux.org/docs/devguides/en/dev/reference/iotbzh2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf
+
