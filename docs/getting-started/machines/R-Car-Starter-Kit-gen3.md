@@ -1,4 +1,4 @@
-# AGL Kickstart on Renesas R-Car Starter Kit Gen3 V2.23 (h3ulcb, m3ulcb, salvator-x)
+# AGL Kickstart on Renesas R-Car Starter Kit Gen3 (h3ulcb, m3ulcb, salvator-x(optional))
 
 ## Prerequisites
 
@@ -15,13 +15,13 @@ https://build.opensuse.org/package/show/isv:LinuxAutomotive:AGL_Master/bmap-tool
 
 Here is a non exhaustive list of hardware parts that could be used to setup the R-Car Starter Kit Gen3 board development environment:
 
-* Starter Kit Gen3 board with its power supply
+* Starter Kit Gen3 board with its 5V power supply
 * micro USB-A cable for serial console (optional if using ethernet and ssh connection)
 * USB 2.0 Hub (optional)
 * Ethernet cable (optional if using serial console)
 * HDMI type D (Micro connector) cable and associated display
-* micro-SD Card (at least 4GB)
-* USB touch screen device like the GeChic 1502i (optional)
+* micro-SD Card (at least 4GB) and recommend to use class 10 type.
+* USB touch screen device like the GeChic 1502i/1503i (optional)
 
 For more information and latest news, please check :
 
@@ -41,8 +41,12 @@ The following documents may also be helpful:
 
 ## BSP Version of R-Car Starter Kit Gen3
 
-* AGL master: 3.7
-* AGL eel 5.1.0: 2.23.1
+| AGL Version| Renesas version |
+|:-:|:-:|
+| AGL master  | 3.9.0 |
+| AGL 6.0.0 | 3.7.0 |
+| AGL 5.0.x, 5.1.0| 2.23.1 |
+| AGL 4.0.x |2.19.0 |
 
 ## Building the AGL Demo Platform for R-Car Starter Kit Gen3
 
@@ -55,8 +59,6 @@ grep -rn ZIP_.= $AGL_TOP/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_p
 ```
 
 * Download Renesas graphics drivers with a "click through" license from [Renesas website][rcar Linux Drivers 2]
-  * If you are building **AGL Daring Dab or older release** download Renesas graphics drivers with a "click through" license from [here][rcar Linux Drivers].
-    -> only for older than daring dab (i.e. not for eel and ff ?)
   * Under the Target hardware: **R-Car H3/M3** section.
 
 **Note**:
@@ -76,6 +78,15 @@ chmod a+r $XDG_DOWNLOAD_DIR/*.zip
 
 ```bash
 ls -1 $XDG_DOWNLOAD_DIR
+[master]
+-rw-r--r--. 1 1664 agl-sdk 5.0M Jun 28 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180627.zip
+-rw-r--r--. 1 1664 agl-sdk 3,1M Jun 28 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180627.zip
+
+[Flounder]
+-rw-r--r--. 1 1664 agl-sdk 4.9M Apr 24 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip
+-rw-r--r--. 1 1664 agl-sdk 3,0M Apr 24 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip
+
+[Eel]
 -rw-r--r--. 1 1664 agl-sdk 4.5M Dec  8 15:23 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
 -rw-r--r--. 1 1664 agl-sdk 3,0M Dec  8 15:24 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
 ```
