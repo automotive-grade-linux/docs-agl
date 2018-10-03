@@ -144,17 +144,20 @@ children:
         - url: reference/audio/bluez-alsa.html
         - name: 4a Framework
           children:
-              - url: reference/audio/4a-framework.html
-              - url: reference/audio/Play_Music.html
-              - name: Tips And Tricks
+              - url: reference/audio/4a-framework/README.html
+              - url: reference/audio/4a-framework/concepts.html
+              - url: reference/audio/4a-framework/components.html
+              - name: high-level-api
                 children:
-                    - url: reference/audio/TipsAndTricks/GetRolesList.html
-                    - url: reference/audio/TipsAndTricks/GetServiceStatus.html
-                    - url: reference/audio/TipsAndTricks/CheckApi.html
-                    - url: reference/audio/TipsAndTricks/GetHALsStatus.html
-                    - url: reference/audio/TipsAndTricks/GetAvailableDevices.html
-                    - url: reference/audio/TipsAndTricks/ChangeHal.html
-
+                  - url: reference/audio/high-level-api/README.html
+                  - url: reference/audio/high-level-api/kickstart.html
+                  - url: reference/audio/high-level-api/reference.html
+                  - name: Tips And Tricks
+                    children:
+                      - url: reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html
+                      - url: reference/audio/high-level-api/TipsAndTricks/4aTools.html
+                      - url: reference/audio/high-level-api/TipsAndTricks/Devices.html
+                      - url: reference/audio/high-level-api/TipsAndTricks/HALs.html
 -
     name: HMI Framework
     children:
