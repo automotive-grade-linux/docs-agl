@@ -109,23 +109,23 @@ children:
           name: Getting Started
           url: reference/xds/part-1/0_Abstract.html
         -
-          name: Installing xds client tools
-          url: reference/xds/part-1/1_install-client.html
-        -
           name: Installing xds-server
           children:
               -
                 name: Installation
-                url: reference/xds/part-1/2_install-xds-server.html
+                url: reference/xds/part-1/1_install-xds-server.html
               -
                 name: Based on Docker container
-                url: reference/xds/part-1/2-1_install-xds-server-docker.html
+                url: reference/xds/part-1/1-1_install-xds-server-docker.html
               -
                 name: Based on Virtual Machine appliance
-                url: reference/xds/part-1/2-2_install-xds-server-vm.html
+                url: reference/xds/part-1/1-2_install-xds-server-vm.html
               -
                 name: Native installation
-                url: reference/xds/part-1/2-3_install-xds-server-native.html
+                url: reference/xds/part-1/1-3_install-xds-server-native.html
+        -
+          name: Installing xds client tools
+          url: reference/xds/part-1/2_install-client.html
         -
           name: Installing AGL SDKs
           url: reference/xds/part-1/3_install-sdks.html
@@ -253,12 +253,12 @@ children:
 
 -
     name: Controller Guide
-    children: 
+    children:
           - url: reference/ctrler/controller.html
           - url: reference/ctrler/controllerConfig.html
           - url: reference/ctrler/Usage.html
           - url: reference/ctrler/configSample.html
-          
+
 -
     name: "Continuous Integration - Automated Testing (CIAT)"
     children:
