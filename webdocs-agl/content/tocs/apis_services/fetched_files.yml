@@ -316,6 +316,7 @@ repositories:
           label: Components
         - source: 4a-framework/images/4a-architecture.svg
         - source: 4a-framework/images/apps-architecture.svg
+        - source: 4a-framework/images/agl-audio-arch.png
         - source: high-level-api/README.md
           label: Abstract
         - source: high-level-api/kickstart.md
