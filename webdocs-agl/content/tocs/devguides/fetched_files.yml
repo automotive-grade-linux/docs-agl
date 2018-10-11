@@ -169,24 +169,24 @@ repositories:
         - source: part-2/0_Abstract.md
         - source: part-2/1_Prerequisites.md
         - source: part-2/1_xds-server/0_abstract.md
-        - source: part-2/1_xds-server/1_config.md
-        - source: part-2/1_xds-server/2_how-to-run.md
-        - source: part-2/1_xds-server/3_build.md
+        - source: part-2/1_xds-server/1_build.md
+        - source: part-2/1_xds-server/2_config.md
+        - source: part-2/1_xds-server/3_how-to-run.md
         - source: part-2/1_xds-server/4_debug.md
         - source: part-2/1_xds-server/5_test.md
         - source: part-2/2_xds-agent/0_abstract.md
-        - source: part-2/2_xds-agent/1_config.md
-        - source: part-2/2_xds-agent/2_start.md
-        - source: part-2/2_xds-agent/3_build.md
+        - source: part-2/2_xds-agent/1_build.md
+        - source: part-2/2_xds-agent/2_config.md
+        - source: part-2/2_xds-agent/3_start.md
         - source: part-2/2_xds-agent/4_debug.md
         - source: part-2/3_xds-cli/0_abstract.md
-        - source: part-2/3_xds-cli/1_config.md
-        - source: part-2/3_xds-cli/2_commands.md
-        - source: part-2/3_xds-cli/3_build.md
+        - source: part-2/3_xds-cli/1_build.md
+        - source: part-2/3_xds-cli/2_config.md
+        - source: part-2/3_xds-cli/3_commands.md
         - source: part-2/3_xds-cli/4_debug.md
         - source: part-2/4_xds-gdb/0_abstract.md
-        - source: part-2/4_xds-gdb/1_config.md
-        - source: part-2/4_xds-gdb/2_build.md
+        - source: part-2/4_xds-gdb/1_build.md
+        - source: part-2/4_xds-gdb/2_config.md
         - source: part-2/4_xds-gdb/3_debug.md
 
 -
