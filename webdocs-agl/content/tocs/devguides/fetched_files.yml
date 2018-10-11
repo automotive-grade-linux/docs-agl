@@ -133,11 +133,11 @@ repositories:
     dst_prefix: "xds"
     documents:
         - source: part-1/0_Abstract.md
-        - source: part-1/1_install-client.md
-        - source: part-1/2-1_install-xds-server-docker.md
-        - source: part-1/2-2_install-xds-server-vm.md
-        - source: part-1/2-3_install-xds-server-native.md
-        - source: part-1/2_install-xds-server.md
+        - source: part-1/1_install-xds-server.md
+        - source: part-1/1-1_install-xds-server-docker.md
+        - source: part-1/1-2_install-xds-server-vm.md
+        - source: part-1/1-3_install-xds-server-native.md
+        - source: part-1/2_install-client.md
         - source: part-1/3_install-sdks.md
         - source: part-1/4-1_build-first-app-setup.md
         - source: part-1/4-2_build-first-app-cmd.md
