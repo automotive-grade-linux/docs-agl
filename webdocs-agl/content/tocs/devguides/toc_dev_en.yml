@@ -179,14 +179,14 @@ children:
                 name: Abstract
                 url: reference/xds/part-2/1_xds-server/0_abstract.html
               -
+                name: Build from scratch
+                url: reference/xds/part-2/1_xds-server/1_build.html
+              -
                 name: Configuration
-                url: reference/xds/part-2/1_xds-server/1_config.html
+                url: reference/xds/part-2/1_xds-server/2_config.html
               -
                 name: How to run
-                url: reference/xds/part-2/1_xds-server/2_how-to-run.html
-              -
-                name: Build from scratch
-                url: reference/xds/part-2/1_xds-server/3_build.html
+                url: reference/xds/part-2/1_xds-server/3_how-to-run.html
               -
                 name: Debugging
                 url: reference/xds/part-2/1_xds-server/4_debug.html
@@ -200,14 +200,14 @@ children:
                 name: Abstract
                 url: reference/xds/part-2/2_xds-agent/0_abstract.html
               -
+                name: Build from scratch
+                url: reference/xds/part-2/2_xds-agent/1_build.html
+              -
                 name: Configuration
-                url: reference/xds/part-2/2_xds-agent/1_config.html
+                url: reference/xds/part-2/2_xds-agent/2_config.html
               -
                 name: Start
-                url: reference/xds/part-2/2_xds-agent/2_start.html
-              -
-                name: Build from scratch
-                url: reference/xds/part-2/2_xds-agent/3_build.html
+                url: reference/xds/part-2/2_xds-agent/3_start.html
               -
                 name: Debugging
                 url: reference/xds/part-2/2_xds-agent/4_debug.html
@@ -218,14 +218,14 @@ children:
                 name: Abstract
                 url: reference/xds/part-2/3_xds-cli/0_abstract.html
               -
+                name: Build from scratch
+                url: reference/xds/part-2/3_xds-cli/1_build.html
+              -
                 name: Configuration
-                url: reference/xds/part-2/3_xds-cli/1_config.html
+                url: reference/xds/part-2/3_xds-cli/2_config.html
               -
                 name: CLI Commands
-                url: reference/xds/part-2/3_xds-cli/2_commands.html
-              -
-                name: Build from scratch
-                url: reference/xds/part-2/3_xds-cli/3_build.html
+                url: reference/xds/part-2/3_xds-cli/3_commands.html
               -
                 name: Debugging
                 url: reference/xds/part-2/3_xds-cli/4_debug.html
@@ -236,11 +236,11 @@ children:
                 name: Abstract
                 url: reference/xds/part-2/4_xds-gdb/0_abstract.html
               -
-                name: Configuration
-                url: reference/xds/part-2/4_xds-gdb/1_config.html
-              -
                 name: Build from scratch
-                url: reference/xds/part-2/4_xds-gdb/2_build.html
+                url: reference/xds/part-2/4_xds-gdb/1_build.html
+              -
+                name: Configuration
+                url: reference/xds/part-2/4_xds-gdb/2_config.html
               -
                 name: Debugging
                 url: reference/xds/part-2/4_xds-gdb/3_debug.html
