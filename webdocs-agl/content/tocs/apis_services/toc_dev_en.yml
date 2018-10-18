@@ -74,7 +74,7 @@ children:
                 - url: reference/af-binder/afb-daemon-debugging.html
                 - url: reference/af-binder/legacy/afb-migration-v1-to-v2.html
                 - url: reference/af-binder/legacy/afb-binding-v2-references.html
-        - url: REVISIONS.html
+        - url: reference/af-binder/REVISIONS.html
 
 -
     name: AGL Test Framework
