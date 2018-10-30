@@ -154,49 +154,46 @@ repositories:
         - source: 0_Installation.md
           destination: Installation.md
           label: Installation
-        - source: 1_TestExample.md
-          destination: test-example.md
-          label: Test Example
-        - source: 2_LaunchTheExample.md
-          destination: launch-the-example.md
-          label: Launch The Example
-        - source: WriteYourTests/0_ProjectTree.md
-          destination: project-tree.md
-          label: Project Tree
-        - source: WriteYourTests/1_BindingConfiguration.md
-          destination: binding-configuration.md
-          label: Binding Configuration
-        - source: WriteYourTests/2_LUATestFiles.md
-          destination: Lua-test-files.md
-          label: LUA Test Files
-        - source: WriteYourTests/Reference/0_BindingTestFunctions.md
-          destination: binding-test-finctions.md
+        - source: 1_Write_the_tests.md
+          destination: write-the-tests.md
+          label: Write the tests
+        - source: 2_The_test_widget.md
+          destination: the-test-widget.md
+          label: The test widget
+        - source: 3_Launch_the_tests.md
+          destination: launch-the-tests.md
+          label: Launch the tests
+        - source: 4_Tests_Examples.md
+          destination: tests-examples.md
+          label: Tests examples
+        - source: Reference/0_BindingTestFunctions.md
+          destination: binding-test-functions.md
           label: Binding Test Functions
-        - source: WriteYourTests/Reference/1_BindingAssertFunctions.md
+        - source: Reference/1_BindingAssertFunctions.md
           destination: binding-assert-functions.md
           label: Binding Assert Functions
-        - source: WriteYourTests/Reference/2_TestFrameworkFunctions.md
+        - source: Reference/2_TestFrameworkFunctions.md
           destination: test-framework-functions.md
           label: Test Framework Functions
-        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.md
+        - source: Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.md
           destination: general-assertions.md
           label: General Assertions
-        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.md
+        - source: Reference/LuaUnitAssertionFunctions/1_ValueAssertions.md
           destination: value-assertions.md
           label: Value Assertions
-        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.md
+        - source: Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.md
           destination: scientific-assertions.md
           label: Scientific Assertions
-        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/3_StringAssertions.md
+        - source: Reference/LuaUnitAssertionFunctions/3_StringAssertions.md
           destination: string-assertions.md
           label: String Assertions
-        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.md
+        - source: Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.md
           destination: error-assertions.md
           label: Error Assertions
-        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.md
+        - source: Reference/LuaUnitAssertionFunctions/5_TypeAssertions.md
           destination: type-assertions.md
           label: Type Assertions
-        - source: WriteYourTests/Reference/LuaUnitAssertionFunctions/6_TableAssertions.md
+        - source: Reference/LuaUnitAssertionFunctions/6_TableAssertions.md
           destination: table-assertions.md
           label: Table Assertions
 
