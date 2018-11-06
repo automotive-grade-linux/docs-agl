@@ -119,12 +119,17 @@ repositories:
         - source: sdk-devkit/docs/part-2/pictures/xming_server.png
 -
     url_fetch: "GERRIT_FETCH"
-    git_name: apps/app-templates
+    git_name: src/cmake-apps-module
     git_commit: "master"
-    dst_prefix: sdk-devkit/docs/part-2
+    src_prefix: "docs/dev_guide"
+    dst_prefix: "cmakeafbtemplates"
     documents:
-        - source: README.md
-          destination: 2_4-Use-app-templates.md
+        - source: 0_Abstract.md
+        - source: 1_Quickstart.md
+        - source: 2_project_architecture.md
+        - source: 3_advanced_usage.md
+        - source: 4_advanced_customization.md
+        - source: 5_autobuild.md
 -
     url_fetch: "GERRIT_FETCH"
     git_name: src/xds/xds-docs

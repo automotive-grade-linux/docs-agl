@@ -99,9 +99,27 @@ children:
         -
             name: Developing with container
             url: reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html
+-
+    name: "Usage of CMake Afb Template module"
+    children:
         -
-            name: Use CMake templates to develop an app
-            url: reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html
+            name: "Abstract"
+            url: "reference/cmakeafbtemplates/0_Abstract.html"
+        -
+            name: "Quickstart"
+            url: "reference/cmakeafbtemplates/1_Quickstart.html"
+        -
+            name: "Project architecture"
+            url: "reference/cmakeafbtemplates/2_project_architecture.html"
+        -
+            name: "Advanced usage"
+            url: "reference/cmakeafbtemplates/3_advanced_usage.html"
+        -
+            name: "Advanced customization"
+            url: "reference/cmakeafbtemplates/4_advanced_customization.html"
+        -
+            name: "The autobuild script"
+            url: "reference/cmakeafbtemplates/5_autobuild.html"
 -
     name: "X(cross) Development System: User's Guide"
     children:
