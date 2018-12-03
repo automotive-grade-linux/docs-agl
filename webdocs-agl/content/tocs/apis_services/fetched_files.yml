@@ -330,6 +330,15 @@ repositories:
           label: HALs
         - source: high-level-api/TipsAndTricks/images/changeSound.png
         - source: high-level-api/TipsAndTricks/images/MixerBaseMenu.png
+-
+    url_fetch: "GERRIT_FETCH"
+    git_commit: "master"
+    git_name: src/pulseaudio-module-4a
+    dst_prefix: audio
+    documents:
+        - source: README.md
+          destination: pulseaudio-module-4a.md
+          label: Pulseaudio - 4A Integration Module
 -  
     url_fetch: "GERRIT_FETCH"
     git_name: apps/agl-service-homescreen

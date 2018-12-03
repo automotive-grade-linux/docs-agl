@@ -139,6 +139,7 @@ children:
     name: Audio Framework
     children:
         - url: reference/audio/bluez-alsa.html
+        - url: reference/audio/pulseaudio-module-4a.html
         - name: 4a Framework
           children:
               - url: reference/audio/4a-framework/README.html
