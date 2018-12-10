@@ -37,9 +37,11 @@
 				</div>
                 <div class="nav_bar_right">
                     <ul class="nav navbar-nav">
+{% comment %} <!-- disabled because posts are not updated - see SPEC-2029 -->
                         <li {% if page.blog_tab %}class="active"{% endif %}>
                             <a href="{{ site.baseurl }}/techpost" id="blog_button">TechPost<span class="badge" id="new_blog_count"></span></a>
                         </li>
+{% endcomment %}
                         <li {% if page.contribute_tab %}class="active"{% endif %}>
                             <a href="{{ site.baseurl }}/contribute">Contribute</a>
                         </li>

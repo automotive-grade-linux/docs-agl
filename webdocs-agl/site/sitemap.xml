@@ -4,9 +4,11 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
 
 <!-- posts -->
+{% comment %} <!-- posts disabled: SPEC-2029 -->
 {% for post in site.posts %}
 {% include sitemap_entry.html url=post.url change_frequency=post.change_frequency priority=post.priority %}
 {% endfor %}
+{% endcomment %}
 
 <!-- pages -->
 {% for site_page in site.pages %}
