@@ -67,39 +67,6 @@ children:
             name: CanDevStudio
             url: reference/host-configuration/docs/5_Candevstudio.html
 -
-    name: "Development Kit: build AGL image"
-    children:
-        -
-            name: Abstract
-            url: reference/sdk-devkit/docs/part-1/1_0_Abstract.html
-        -
-            name: Deploy image
-            url: reference/sdk-devkit/docs/part-1/1_1-Deploy_image.html
-        -
-            name: Setting up your operating system
-            url: reference/sdk-devkit/docs/part-1/1_2-Setting-up-your_os.html
-        -
-            name: Inside the container
-            url: reference/sdk-devkit/docs/part-1/1_4-Inside-the-container.html
-        -
-            name: SDK compilation and installation
-            url: reference/sdk-devkit/docs/part-1/1_7-SDK-compilation-installation.html
--
-    name: "Development Kit: build AGL application"
-    children:
-        -
-            name: Abstract
-            url: reference/sdk-devkit/docs/part-2/2_0_Abstract.html
-        -
-            name: Initialize SDK environment
-            url: reference/sdk-devkit/docs/part-2/2_1-Init-sdk-env.html
-        -
-            name: Trying out template
-            url: reference/sdk-devkit/docs/part-2/2_2-Trying-out-template.html
-        -
-            name: Developing with container
-            url: reference/sdk-devkit/docs/part-2/2_3-Dev-with-container.html
--
     name: "Usage of CMake Afb Template module"
     children:
         -
