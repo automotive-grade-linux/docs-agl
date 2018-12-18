@@ -2127,40 +2127,38 @@ language and running almost anywhere.</p>
 
 <h2 id="install-the-agl-application-framework">Install the AGL application framework</h2>
 
-<h3 id="debian">Debian</h3>
+<p>Use the right command line according to your distro</p>
+
+<p><strong>Debian</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install agl-app-framework-binder-dev
 </code></pre>
 </div>
 
-<h3 id="opensuse">openSUSE</h3>
+<p><strong>openSUSE</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo zypper install agl-app-framework-binder-devel
 </code></pre>
 </div>
 
-<h3 id="fedora">Fedora</h3>
+<p><strong>Fedora</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo dnf install agl-app-framework-binder-devel
 </code></pre>
 </div>
 
-<p>Then relaunch your terminal.</p>
+<p>To have environment variables set correctly to be able to use app-framework-binder just after the installation, you need to either logout/login or you can just manually source this file :</p>
 
-<blockquote>
-  <p><em>Note</em>: You need to source a config file to use app-framework-binder just after the installation.</p>
-
-  <div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source</span> /etc/profile.d/AGL-app-framework-binder.sh
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source</span> /etc/profile.d/AGL-app-framework-binder.sh
 </code></pre>
-  </div>
+</div>
 
-  <p>This file will be source for every new session.</p>
-</blockquote>
+<p>Note that this file will be source automatically for every new session.</p>
 
 <h2 id="agl-application-framework-documentation">AGL application framework documentation</h2>
 
 <p>You can find the AGL application framework documentation
- <a href="http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-main/0-introduction.html">here</a>.</p>
+ <a href="http://docs.automotivelinux.org/master/master/docs/apis_services/en/dev/reference/af-main/0-introduction.html">here</a>.</p>
 
 
 
@@ -2241,7 +2239,7 @@ language and running almost anywhere.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2018-12-18 00:04:47 +0000</small>
+		<small class="stats">Page rendered at:  2019-02-17 00:03:53 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/agl-documentation/master/host-configuration/docs/2_AGL_Application_Framework.md">Link to source document</small>
 		

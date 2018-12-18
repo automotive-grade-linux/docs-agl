@@ -2123,6 +2123,33 @@
 
 <p>Docker is installed on the host machine, please refer to <a href="https://docs.docker.com/engine/installation/">Docker documentation</a> for more details.</p>
 
+<!-- section-warning -->
+<blockquote>
+  <p><strong>Warning:</strong></p>
+
+  <p>Your user must be part of docker group. You can use following command to check it :
+<code class="highlighter-rouge">bash
+groups | grep docker
+</code></p>
+
+  <p>If not, please refer to <a href="https://docs.docker.com/install/linux/linux-postinstall/">docker post install instructions</a>.</p>
+
+  <p>Here are a short recap of commands you must execute :</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>sudo groupadd docker
+sudo usermod -aG docker <span class="nv">$USER</span>
+<span class="c"># Log out and log back in so that your group membership is re-evaluated</span>
+
+<span class="c"># You may also need to start docker service manually</span>
+sudo service docker start
+<span class="c"># or</span>
+sudo systemctl start docker
+</code></pre>
+  </div>
+
+  <!-- end-section-warning -->
+</blockquote>
+
 <h2 id="get-the-container">Get the container</h2>
 
 <p>Load the pre-build AGL SDK docker image including <code class="highlighter-rouge">xds-server</code>:</p>
@@ -2208,8 +2235,9 @@ inside and outside docker):</p>
   </tbody>
 </table>
 
-<!-- section-note -->
-<p><strong>Note:</strong></p>
+<h3 id="optional-settings">Optional settings</h3>
+
+<p><strong><code class="highlighter-rouge">--volume</code></strong></p>
 
 <p>You can add a new shared directory using <code class="highlighter-rouge">--volume</code> option in order
 to use for example with Path-Mapping folder type.</p>
@@ -2219,18 +2247,44 @@ bash ./xds-docker-create-container.sh --volume /my-workspace:<span class="nv">$H
 </code></pre>
 </div>
 
+<p><strong><code class="highlighter-rouge">--id</code></strong></p>
+
 <p>You can change docker used port with <code class="highlighter-rouge">-id</code> option</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create new XDS worker container with a different port number</span>
+<span class="nv">ID</span><span class="o">=</span>3
 bash ./xds-docker-create-container.sh -id <span class="k">${</span><span class="nv">ID</span><span class="k">}</span>
 
-<span class="c"># Check that new container is running</span>
+<span class="c"># Check that new container is running (in example below id has been set to 3)</span>
 docker ps | grep worker-xds
-f67079db4339        docker.automotivelinux.org/agl/worker-xds:5.0   <span class="s2">"/usr/bin/wait_for..."</span>   About a minute ago   Up 34 seconds       0.0.0.0:<span class="o">(</span>2222+ID<span class="o">)</span>-&gt;22/tcp, 0.0.0.0:<span class="o">(</span>8000+ID<span class="o">)</span>-&gt;8000/tcp, 0.0.0.0:<span class="o">(</span>10809+ID<span class="o">)</span>-&gt;10809/tcp   agl-xds-HOSTNAME-ID-USERNAME
+f67079db4339        docker.automotivelinux.org/agl/worker-xds:5.0   <span class="s2">"/usr/bin/wait_for..."</span>   About a minute ago   Up 34 seconds       0.0.0.0:2225-&gt;22/tcp, 0.0.0.0:8003-&gt;8000/tcp, 0.0.0.0:10892-&gt;10809/tcp   agl-xds-3
 </code></pre>
 </div>
 
-<!-- end-section-note -->
+<!-- section-warning -->
+<blockquote>
+  <p><strong>Warning:</strong>
+Changing container id will impact the port number used to connect to xds-server.
+So you may need to adjust xds-agent config in order to match the right port number.</p>
+
+  <p>In above example, with <code class="highlighter-rouge">id</code> set to 3, the export port number will be <code class="highlighter-rouge">8003</code> and &gt;consequently
+you must define xds-server <code class="highlighter-rouge">url</code> in <code class="highlighter-rouge">xds-agent</code> configuration as follow:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="err">...</span><span class="w">
+   </span><span class="nt">"xdsServers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8003"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="err">...</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+  </div>
+
+  <p>See also <a href="../part-2/2_xds-agent/2_config.html">xds-agent configuration</a> chapter for &gt;more details.
+<!-- end-section-warning --></p>
+</blockquote>
 
 <h3 id="manually-setup-docker-user-id">Manually setup docker user id</h3>
 
@@ -2301,7 +2355,7 @@ ssh -p 2222 devel@localhost journalctl --user --unit<span class="o">=</span>xds-
 to next chapter named <a href="./3_install-sdks.html">Installing AGL SDKs</a></p>
 
 <!-- section-note -->
-<p>Please refer to <a href="../part-2/1_xds-server/1_config.html">xds-server configuration</a> chapter for additional info about xds-server settings.
+<p>Please refer to <a href="../part-2/1_xds-server/2_config.html">xds-server configuration</a> chapter for additional info about xds-server settings.
 <!-- end-section-note --></p>
 
 
@@ -2383,7 +2437,7 @@ to next chapter named <a href="./3_install-sdks.html">Installing AGL SDKs</a></p
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2018-12-18 00:04:45 +0000</small>
+		<small class="stats">Page rendered at:  2019-02-17 00:03:51 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/1-1_install-xds-server-docker.md?h=master">Link to source document</small>
 		
