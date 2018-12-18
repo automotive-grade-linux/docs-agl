@@ -25,12 +25,14 @@
 <select name='h' onchange='this.form.submit();'>
 <option value='eel'>eel</option>
 <option value='flounder'>flounder</option>
+<option value='guppy'>guppy</option>
 <option value='master' selected='selected'>master</option>
-<option value='sandbox/wangzhiqiang/app_manager'>sandbox/wangzhiqiang/app_manager</option>
-<option value='sandbox/wangzhiqiang/ces_2019'>sandbox/wangzhiqiang/ces_2019</option>
-<option value='sandbox/wangzhiqiang/new_verbs'>sandbox/wangzhiqiang/new_verbs</option>
+<option value='sandbox/jobol/spec-2089'>sandbox/jobol/spec-2089</option>
+<option value='sandbox/wangzhiqiang/dbus_ws'>sandbox/wangzhiqiang/dbus_ws</option>
+<option value='sandbox/wangzhiqiang/hss_improvement'>sandbox/wangzhiqiang/hss_improvement</option>
 <option value='sandbox/wangzhiqiang/ons_dev'>sandbox/wangzhiqiang/ons_dev</option>
-<option value='sandbox/wangzhiqiang/private_event'>sandbox/wangzhiqiang/private_event</option>
+<option value='sandbox/wangzhiqiang/periphery_start'>sandbox/wangzhiqiang/periphery_start</option>
+<option value='sandbox/wangzhiqiang/run_mode'>sandbox/wangzhiqiang/run_mode</option>
 <option value='sandbox/zheng_wenlong/ces2019'>sandbox/zheng_wenlong/ces2019</option>
 </select> <input type='submit' value='switch'/></form></td></tr>
 <tr><td class='sub'>Applications need a new binding to communicate with homescreen</td><td class='sub right'>Grokmirror</td></tr></table>

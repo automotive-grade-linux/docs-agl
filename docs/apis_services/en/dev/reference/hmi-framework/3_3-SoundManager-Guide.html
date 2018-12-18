@@ -2600,12 +2600,16 @@ This service is based on GENIVI Audio Manager, and this package contains service
 The reason why this service is based on GENIVI Audio Manager is because GENIVI Audio Manager supports highly strong and flexible sound-right management function.</p>
 
 <p>In order to understand, the below figure shows the one of typical usecases.
-In this example, there are four sound mode.
-1. Audio Off
-1. Media Player
-1. Tel (Ring and talking)
-1. TTS (Text To Speech; typically it’s used by Navigation sound)
-<img src="parts/typical-usecase.png" alt="Figure: Typical usecase" /></p>
+In this example, there are four sound mode.</p>
+
+<ol>
+  <li>Audio Off</li>
+  <li>Media Player</li>
+  <li>Tel (Ring and talking)</li>
+  <li>TTS (Text To Speech; typically it’s used by Navigation sound)</li>
+</ol>
+
+<p><img src="parts/typical-usecase.png" alt="Figure: Typical usecase" /></p>
 
 <p>The important points are:</p>
 
@@ -2664,8 +2668,9 @@ In this example, there are four sound mode.
 
 <p>You can make Sound Manager object files by the following two stage operations.</p>
 
-<p><strong>Download recipe</strong>
-If repo is already done, please start with git clone</p>
+<h4 id="download-recipe">Download recipe</h4>
+
+<p>If repo is already done, please start with git clone</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>mkdir WORK
 <span class="nb">cd </span>WORK
@@ -2674,7 +2679,7 @@ repo sync
 </code></pre>
 </div>
 
-<p><strong>Bitbake</strong></p>
+<h4 id="bitbake">Bitbake</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo agl-devel agl-appfw-smack agl-hmi-framework
 bitbake agl-demo-platform
@@ -2731,8 +2736,6 @@ This library provides function style API calling interface. So you can include l
 Please also refer sample application and template.</p>
 
 <p>See also our <a href="#Sample\ code">Sample code</a>.</p>
-
-<p><br /></p>
 
 <hr />
 
@@ -2812,15 +2815,18 @@ On the other hand, regarding lower binder there is only one module in the system
 
 <p>“libsoundmanager” and “soundmanager_binding” provides several kinds of APIs, and these APIs basically correspond to GENIVI Audio Manager API. (Some APIs are Sound Manager original functions.)</p>
 
-<p>For understanding, GENIVI Audio Manager stands for one core module and three plug-ins.
-1. AudioManagerDaemon
-	This is a core module of Audio Manager.
-2. AudioManagerCommandPlugin
-	This is a command interface for Audio Manager.
-3. AudioManagerController
-	This plug-in can be used for sound-right management.
-4. AudioManagerRountingPlugin
-	This plug-in abstracts the hardware and software. And sometimes there may be multiple plug-ins.</p>
+<p>For understanding, GENIVI Audio Manager stands for one core module and three plug-ins.</p>
+
+<ol>
+  <li>AudioManagerDaemon
+  This is a core module of Audio Manager.</li>
+  <li>AudioManagerCommandPlugin
+  This is a command interface for Audio Manager.</li>
+  <li>AudioManagerController
+  This plug-in can be used for sound-right management.</li>
+  <li>AudioManagerRountingPlugin
+  This plug-in abstracts the hardware and software. And sometimes there may be multiple plug-ins.</li>
+</ol>
 
 <p>*) <a href="http://docs.projects.genivi.org/AudioManager/audiomanagercomponentspage.html">See also GENIVI AudioManager Components</a></p>
 
@@ -2955,7 +2961,7 @@ The below document should bring good understanding.</p>
 
 <div id="Sample\ code"></div>
 
-<h1 id="sample-code">Sample code</h1>
+<h2 id="sample-code">Sample code</h2>
 
 <p>You can find samples using Sound Manager as below.</p>
 
@@ -2966,18 +2972,10 @@ The below document should bring good understanding.</p>
 
 <div id="Limitation"></div>
 
-<h1 id="limitation">Limitation</h1>
+<h2 id="limitation">Limitation</h2>
 
 <ul>
-  <li>
-    <p>Minimum APIs and Events are prepared for RC2, the following APIs will be available for final version of EE.</p>
-  </li>
-  <li>
-    <p>getListMainSinks</p>
-  </li>
-  <li>
-    <p>Sound of application is not automatically muted for now because Audio Manager doesn’t automatically stop with current plugins.</p>
-  </li>
+  <li>Sound of application is not automatically muted for now because Audio Manager doesn’t stop with current plugins. Just notify stop/pause/play.</li>
 </ul>
 
 
@@ -3059,7 +3057,7 @@ The below document should bring good understanding.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2018-12-18 00:04:48 +0000</small>
+		<small class="stats">Page rendered at:  2019-03-13 00:03:39 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-soundmanager/plain/doc/ApplicationGuide.md?h=master">Link to source document</small>
 		
