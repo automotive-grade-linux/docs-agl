@@ -180,31 +180,3 @@ Here you see "intel-minnow" but common values are:
 
 More HAL can be found on Gerrit (search projects named as 4a-hal*)
 
-## Installing the Map for the Navigation Application
-
-While the Navigation App is installed with all other demo Apps at first boot, the Maps required to be installed manually.
-
-### a) Method 1 on target download
-
- 1. Install the new image on the target
- 2. boot a first time to install the demo Apps
- 3. via ssh or serial connection, execute the script
-    * /usr/AGL/apps/download_mapdata_uk.sh\
-    or
-    * /usr/AGL/apps/download_mapdata_jp.sh
-
-### b) At image creation
-
-Download on your build machine the desired maps and uncompress them on your target image before 1st boot.
-This method is quicker and does not require to have the network enabled on the target device.
-Map can be found here.
-
-* <http://agl.wismobi.com/data/japan_TR9/navi_data.tar.gz>
-* <http://agl.wismobi.com/data/UnitedKingdom_TR9/navi_data_UK.tar.gz>
-
-Once that you have built your image on the SD card, uncompress the desired map in on the SD card at the position /YourMountPoint/var/mapdata\
-(YourMountPoint will vary with your build system).
-
-You can also use the script from the image to install the Mapdata on your SD card but there is little adavange in using that method. e.g.
-
-* download_mapdata_jp.sh /YourMountPoint
